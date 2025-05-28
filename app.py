@@ -146,13 +146,19 @@ if historical_service and storage:
                     # Show template first
                     st.info("Processing your historical data...")
                     
-                    # Here you would process the uploaded file
-                    # For now, we'll show what the system expects
-                    template = historical_service.get_data_upload_template()
-                    st.subheader("Expected Data Format:")
-                    st.dataframe(template, use_container_width=True)
+                    # Process the uploaded file
+                    if uploaded_file.name.endswith('.csv'):
+                        df = pd.read_csv(uploaded_file)
+                    elif uploaded_file.name.endswith(('.xlsx', '.xls')):
+                        df = pd.read_excel(uploaded_file)
                     
-                    st.success("Ready to import! Please ensure your data matches this format.")
+                    # Convert DataFrame to records and import
+                    data_records = df.to_dict('records')
+                    if historical_service.import_historical_projects(data=data_records):
+                        st.success(f"Successfully imported {len(data_records)} historical projects!")
+                        st.info("Your pricing accuracy will now improve based on this historical data!")
+                    else:
+                        st.error("Failed to import data. Please check the format.")
                     
                 except Exception as e:
                     st.error(f"Error processing file: {str(e)}")
