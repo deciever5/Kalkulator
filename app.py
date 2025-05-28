@@ -13,7 +13,7 @@ from utils.ai_services import OpenAIService, AnthropicService
 
 # Page configuration
 st.set_page_config(
-    page_title="KAN-BUD Container Sales Calculator",
+    page_title="KAN-BUD Professional Container Solutions",
     page_icon="🏗️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -189,32 +189,32 @@ if historical_service and storage:
 
 # Sidebar navigation info
 with st.sidebar:
-    st.header("Navigation")
-    st.markdown("""
-    **Pages Available:**
-    1. 📦 Container Configurator
-    2. 🤖 AI Cost Estimator  
-    3. 🔧 Technical Analysis
-    4. 📋 Quote Generator
-    5. ⚖️ Comparison Tool
+    st.header(get_text('navigation', lang))
+    st.markdown(f"""
+    **{get_text('pages_available', lang)}**
+    1. 📦 {get_text('container_configurator', lang)}
+    2. 🤖 {get_text('ai_cost_estimator', lang)}
+    3. 🔧 {get_text('technical_analysis', lang)}
+    4. 📋 {get_text('quote_generator', lang)}
+    5. ⚖️ {get_text('comparison_tool', lang)}
     """)
     
     st.divider()
-    st.subheader("Quick Stats")
+    st.subheader(get_text('quick_stats', lang))
     
     # Display some quick statistics
     container_types = st.session_state.container_db.get_container_types()
-    st.metric("Available Container Types", len(container_types))
-    st.metric("Standard Sizes", "6 (20ft, 40ft, 45ft, 48ft, 53ft, Custom)")
-    st.metric("Modification Categories", "8")
+    st.metric(get_text('available_container_types', lang), len(container_types))
+    st.metric(get_text('standard_sizes', lang), "6 (20ft, 40ft, 45ft, 48ft, 53ft, Custom)")
+    st.metric(get_text('modification_categories', lang), "8")
 
 # Main dashboard content
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.subheader("📊 Quick Overview")
-    st.markdown("""
-    **Container Modification Services:**
+    st.subheader(f"📊 {get_text('quick_overview', lang)}")
+    st.markdown(f"""
+    **{get_text('container_modification_services', lang)}**
     - Structural reinforcements
     - Custom openings & windows
     - Insulation & HVAC systems
@@ -224,9 +224,9 @@ with col1:
     """)
 
 with col2:
-    st.subheader("🎯 Key Features")
-    st.markdown("""
-    **AI-Powered Analysis:**
+    st.subheader(f"🎯 {get_text('key_features', lang)}")
+    st.markdown(f"""
+    **{get_text('ai_powered_analysis', lang)}**
     - Intelligent cost estimation
     - Technical feasibility check
     - Material optimization
@@ -236,9 +236,9 @@ with col2:
     """)
 
 with col3:
-    st.subheader("💼 Sales Tools")
-    st.markdown("""
-    **Professional Outputs:**
+    st.subheader(f"💼 {get_text('sales_tools', lang)}")
+    st.markdown(f"""
+    **{get_text('professional_outputs', lang)}**
     - Detailed quotes
     - Technical specifications
     - 3D visualizations
