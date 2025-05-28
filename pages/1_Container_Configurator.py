@@ -41,11 +41,11 @@ with col1:
         # Display base specifications
         spec_col1, spec_col2 = st.columns(2)
         with spec_col1:
-            st.metric("Length (ft)", container_specs['length'])
-            st.metric("Width (ft)", container_specs['width'])
+            st.metric("Length (m)", f"{container_specs['length'] * 0.3048:.1f}")
+            st.metric("Width (m)", f"{container_specs['width'] * 0.3048:.1f}")
         with spec_col2:
-            st.metric("Height (ft)", container_specs['height'])
-            st.metric("Weight (lbs)", f"{container_specs['weight']:,}")
+            st.metric("Height (m)", f"{container_specs['height'] * 0.3048:.1f}")
+            st.metric("Weight (kg)", f"{container_specs['weight'] * 0.453592:.0f}")
     
     st.divider()
     

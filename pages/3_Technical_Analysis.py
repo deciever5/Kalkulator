@@ -60,10 +60,10 @@ st.subheader("🌍 Environmental Conditions")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    wind_load = st.number_input("Wind Load (mph)", min_value=0, max_value=200, value=90)
+    wind_load = st.number_input("Wind Load (km/h)", min_value=0, max_value=320, value=145)
 
 with col2:
-    snow_load = st.number_input("Snow Load (psf)", min_value=0, max_value=100, value=20)
+    snow_load = st.number_input("Snow Load (kN/m²)", min_value=0, max_value=5, value=1.0, step=0.1)
 
 with col3:
     seismic_zone = st.selectbox("Seismic Zone", ["Low", "Moderate", "High", "Very High"])
@@ -92,10 +92,20 @@ if st.button("🔍 Run Technical Analysis", type="primary", use_container_width=
                 config, analysis_params
             )
             
-            # Get AI technical recommendations
-            ai_analysis = st.session_state.openai_service.generate_technical_analysis(
-                config, analysis_params, structural_analysis
-            )
+            # Get AI technical recommendations using Anthropic (primary) 
+            try:
+                ai_analysis = st.session_state.anthropic_service.generate_technical_analysis(
+                    config, analysis_params, structural_analysis
+                )
+            except Exception as e:
+                # Fallback to OpenAI if available
+                try:
+                    ai_analysis = st.session_state.openai_service.generate_technical_analysis(
+                        config, analysis_params, structural_analysis
+                    )
+                except Exception as e2:
+                    st.warning("⚠️ AI analysis temporarily unavailable, showing structural calculations only")
+                    ai_analysis = {}
             
             # Store results
             st.session_state.technical_analysis = {
@@ -184,8 +194,8 @@ if 'technical_analysis' in st.session_state:
             
             fig.update_layout(
                 title="Load Distribution Diagram",
-                xaxis_title="Length (ft)",
-                yaxis_title="Load (lbs/ft)",
+                xaxis_title="Length (m)",
+                yaxis_title="Load (kN/m)",
                 height=400
             )
             

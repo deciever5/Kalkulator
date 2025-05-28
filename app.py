@@ -94,8 +94,8 @@ with col1:
     st.subheader("📈 Market Insights")
     
     # Sample market data visualization
-    dates = pd.date_range(start='2024-01-01', end='2024-12-31', freq='M')
-    steel_prices = [2800, 2850, 2920, 3100, 3050, 2980, 3150, 3200, 3180, 3250, 3300, 3280]
+    dates = pd.date_range(start='2024-01-01', end='2024-12-31', freq='ME')
+    steel_prices = [2800, 2850, 2920, 3100, 3050, 2980, 3150, 3200, 3180, 3250, 3300, 3280]  # €/tonne
     
     fig = go.Figure()
     fig.add_trace(go.Scatter(
@@ -109,7 +109,7 @@ with col1:
     fig.update_layout(
         title="Steel Price Trends 2024",
         xaxis_title="Month",
-        yaxis_title="Price (USD/ton)",
+        yaxis_title="Price (€/tonne)",
         height=400,
         showlegend=True
     )
