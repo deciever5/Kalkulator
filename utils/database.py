@@ -17,15 +17,21 @@ class DatabaseManager:
     
     def __init__(self):
         self.database_url = os.environ.get('DATABASE_URL')
-        if not self.database_url:
-            st.error("DATABASE_URL not configured")
-            return
+        self.engine = None
         
-        try:
-            self.engine = create_engine(self.database_url)
-            self.initialize_tables()
-        except Exception as e:
-            st.error(f"Database connection failed: {str(e)}")
+        if self.database_url:
+            try:
+                # Fix common URL issues
+                if self.database_url.startswith('postgres://'):
+                    self.database_url = self.database_url.replace('postgres://', 'postgresql://', 1)
+                
+                self.engine = create_engine(self.database_url, pool_pre_ping=True)
+                self.initialize_tables()
+            except Exception as e:
+                st.warning(f"Database connection info: Using backup storage mode")
+                self.engine = None
+        else:
+            # Use session state as backup storage
             self.engine = None
     
     def initialize_tables(self):

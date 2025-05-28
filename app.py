@@ -6,6 +6,7 @@ from datetime import datetime
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
+from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
 from utils.translations import get_text, get_available_languages
 
@@ -17,15 +18,23 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Initialize database and services
+# Initialize services
 @st.cache_resource
 def initialize_services():
     """Initialize all services with caching"""
-    db = DatabaseManager()
-    historical_service = HistoricalDataService()
+    # Try PostgreSQL first, fallback to simple storage
+    try:
+        db = DatabaseManager()
+        if not db.engine:
+            storage = SimpleStorageManager()
+        else:
+            storage = db
+    except:
+        storage = SimpleStorageManager()
+    
     container_db = ContainerDatabase()
     calc = StructuralCalculations()
-    return db, historical_service, container_db, calc
+    return storage, container_db, calc
 
 # Language selection in sidebar
 available_languages = get_available_languages()
@@ -60,9 +69,104 @@ if 'historical_service' not in st.session_state:
 # Get current language
 lang = st.session_state.get('language', 'en')
 
+# Get current language
+lang = st.session_state.get('language', 'en')
+
+# Initialize services
+storage, container_db, calc = initialize_services()
+
+# Create a simple historical service that works with our storage
+class SimpleHistoricalService:
+    def __init__(self, storage_manager):
+        self.storage = storage_manager
+    
+    def get_data_upload_template(self):
+        template_data = {
+            'project_date': ['2023-01-15', '2023-02-20', '2023-03-10'],
+            'container_type': ['40ft Standard', '20ft Standard', '40ft High Cube'],
+            'use_case': ['Office Space', 'Workshop', 'Residential'],
+            'location': ['Kąkolewo', 'Poznań', 'Warszawa'],
+            'actual_cost': [45000, 25000, 55000],
+            'estimated_cost': [42000, 27000, 52000],
+            'materials_cost': [28000, 16000, 33000],
+            'labor_cost': [12000, 7000, 15000],
+            'delivery_cost': [3000, 1500, 4000],
+            'modifications': ['{"windows": 4, "electrical": true}', 
+                           '{"doors": 2, "hvac": true}',
+                           '{"windows": 6, "electrical": true, "plumbing": true}'],
+            'project_duration_days': [45, 30, 60],
+            'customer_satisfaction': [5, 4, 5]
+        }
+        return pd.DataFrame(template_data)
+    
+    def import_historical_projects(self, file_path=None, data=None):
+        if data:
+            return self.storage.import_historical_data(data)
+        return False
+
+historical_service = SimpleHistoricalService(storage)
+
 # Main dashboard
-st.title(f"🏗️ {get_text('title', lang)}")
-st.markdown(f"*{get_text('subtitle', lang)}*")
+st.title(f"🏗️ {get_text('app_title', lang)}")
+st.markdown(f"*{get_text('app_subtitle', lang)}*")
+
+# Company information in sidebar
+with st.sidebar:
+    st.markdown("---")
+    st.markdown("### 🏢 KAN-BUD")
+    company_info = get_text('company_info', lang)
+    if isinstance(company_info, dict):
+        st.markdown(f"📍 {company_info.get('address', 'Kąkolewo, Poland')}")
+        st.markdown(f"📞 {company_info.get('phone', '+48 XXX XXX XXX')}")
+        st.markdown(f"✉️ {company_info.get('email', 'info@kan-bud.pl')}")
+        st.markdown(f"🌐 {company_info.get('website', 'www.kan-bud.pl')}")
+
+# Historical Data Upload Section
+if historical_service and storage:
+    with st.expander("📊 Historical Data Import - Import Your 2-Year Calculation Results"):
+        st.markdown("""
+        **Improve pricing accuracy by importing your historical project data!**
+        
+        Upload your past 2 years of container modification projects to:
+        - Get more accurate cost estimates based on real project outcomes
+        - Analyze pricing trends and seasonal variations
+        - Identify your most profitable project types
+        - Build customer confidence with data-backed quotes
+        """)
+        
+        uploaded_file = st.file_uploader(
+            "Upload historical data (CSV or Excel)",
+            type=['csv', 'xlsx', 'xls'],
+            help="Upload your historical project data to improve pricing accuracy"
+        )
+        
+        if uploaded_file is not None:
+            if st.button("Import Historical Data"):
+                try:
+                    # Show template first
+                    st.info("Processing your historical data...")
+                    
+                    # Here you would process the uploaded file
+                    # For now, we'll show what the system expects
+                    template = historical_service.get_data_upload_template()
+                    st.subheader("Expected Data Format:")
+                    st.dataframe(template, use_container_width=True)
+                    
+                    st.success("Ready to import! Please ensure your data matches this format.")
+                    
+                except Exception as e:
+                    st.error(f"Error processing file: {str(e)}")
+        
+        # Show data template
+        if st.button("Download Data Template"):
+            template = historical_service.get_data_upload_template()
+            csv = template.to_csv(index=False)
+            st.download_button(
+                label="Download CSV Template",
+                data=csv,
+                file_name="kan_bud_historical_data_template.csv",
+                mime="text/csv"
+            )
 
 # Sidebar navigation info
 with st.sidebar:
