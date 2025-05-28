@@ -215,36 +215,36 @@ with col1:
     st.subheader(f"📊 {get_text('quick_overview', lang)}")
     st.markdown(f"""
     **{get_text('container_modification_services', lang)}**
-    - Structural reinforcements
-    - Custom openings & windows
-    - Insulation & HVAC systems
-    - Electrical installations
-    - Plumbing & utilities
-    - Interior fit-outs
+    - {get_text('structural_reinforcements', lang)}
+    - {get_text('custom_openings_windows', lang)}
+    - {get_text('insulation_hvac', lang)}
+    - {get_text('electrical_installations', lang)}
+    - {get_text('plumbing_utilities', lang)}
+    - {get_text('interior_fitouts', lang)}
     """)
 
 with col2:
     st.subheader(f"🎯 {get_text('key_features', lang)}")
     st.markdown(f"""
     **{get_text('ai_powered_analysis', lang)}**
-    - Intelligent cost estimation
-    - Technical feasibility check
-    - Material optimization
-    - Compliance verification
-    - Risk assessment
-    - Timeline prediction
+    - {get_text('intelligent_cost_estimation', lang)}
+    - {get_text('technical_feasibility_check', lang)}
+    - {get_text('material_optimization', lang)}
+    - {get_text('compliance_verification', lang)}
+    - {get_text('risk_assessment', lang)}
+    - {get_text('timeline_prediction', lang)}
     """)
 
 with col3:
     st.subheader(f"💼 {get_text('sales_tools', lang)}")
     st.markdown(f"""
     **{get_text('professional_outputs', lang)}**
-    - Detailed quotes
-    - Technical specifications
-    - 3D visualizations
-    - Cost comparisons
-    - Project timelines
-    - Compliance reports
+    - {get_text('detailed_quotes', lang)}
+    - {get_text('technical_specifications', lang)}
+    - {get_text('visualizations_3d', lang)}
+    - {get_text('cost_comparisons', lang)}
+    - {get_text('project_timelines', lang)}
+    - {get_text('compliance_reports', lang)}
     """)
 
 st.divider()
@@ -253,7 +253,7 @@ st.divider()
 col1, col2 = st.columns([2, 1])
 
 with col1:
-    st.subheader("📈 Market Insights")
+    st.subheader(f"📈 {get_text('market_insights', lang)}")
     
     # Sample market data visualization
     dates = pd.date_range(start='2024-01-01', end='2024-12-31', freq='ME')
@@ -264,12 +264,12 @@ with col1:
         x=dates, 
         y=steel_prices,
         mode='lines+markers',
-        name='Steel Price ($/ton)',
+        name='Steel Price (€/tonne)',
         line=dict(color='#1f77b4', width=3)
     ))
     
     fig.update_layout(
-        title="Steel Price Trends 2024",
+        title=get_text('steel_price_trends', lang),
         xaxis_title="Month",
         yaxis_title="Price (€/tonne)",
         height=400,
@@ -279,25 +279,25 @@ with col1:
     st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-    st.subheader("🚀 Quick Actions")
+    st.subheader(f"🚀 {get_text('quick_actions', lang)}")
     
-    if st.button("🆕 New Container Project", use_container_width=True):
+    if st.button(f"🆕 {get_text('new_container_project', lang)}", use_container_width=True):
         st.switch_page("pages/1_Container_Configurator.py")
     
-    if st.button("💰 Get AI Cost Estimate", use_container_width=True):
+    if st.button(f"💰 {get_text('get_ai_cost_estimate', lang)}", use_container_width=True):
         st.switch_page("pages/2_AI_Cost_Estimator.py")
     
-    if st.button("🔍 Technical Analysis", use_container_width=True):
+    if st.button(f"🔍 {get_text('view_technical_analysis', lang)}", use_container_width=True):
         st.switch_page("pages/3_Technical_Analysis.py")
     
-    if st.button("📄 Generate Quote", use_container_width=True):
+    if st.button(f"📄 {get_text('generate_quote', lang)}", use_container_width=True):
         st.switch_page("pages/4_Quote_Generator.py")
     
     st.divider()
     
-    st.subheader("💡 Tips")
-    st.info("""
-    **Best Practices:**
+    st.subheader(f"💡 {get_text('tips', lang)}")
+    st.info(f"""
+    **{get_text('best_practices', lang)}**
     - Start with Container Configurator
     - Use AI Cost Estimator for accuracy
     - Run Technical Analysis for compliance
