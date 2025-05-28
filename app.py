@@ -5,14 +5,47 @@ import plotly.graph_objects as go
 from datetime import datetime
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
+from utils.database import DatabaseManager
+from utils.historical_data_service import HistoricalDataService
+from utils.translations import get_text, get_available_languages
 
 # Page configuration
 st.set_page_config(
-    page_title="Steel Container Sales Calculator",
+    page_title="KAN-BUD Container Sales Calculator",
     page_icon="🏗️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Initialize database and services
+@st.cache_resource
+def initialize_services():
+    """Initialize all services with caching"""
+    db = DatabaseManager()
+    historical_service = HistoricalDataService()
+    container_db = ContainerDatabase()
+    calc = StructuralCalculations()
+    return db, historical_service, container_db, calc
+
+# Language selection in sidebar
+available_languages = get_available_languages()
+if 'language' not in st.session_state:
+    st.session_state.language = 'en'
+
+with st.sidebar:
+    st.markdown("### 🌐 Language / Język")
+    selected_language = st.selectbox(
+        "Choose language:",
+        options=list(available_languages.keys()),
+        format_func=lambda x: available_languages[x],
+        index=list(available_languages.keys()).index(st.session_state.language)
+    )
+    
+    if selected_language != st.session_state.language:
+        st.session_state.language = selected_language
+        st.rerun()
+
+
 
 # Initialize session state
 if 'container_db' not in st.session_state:
@@ -21,9 +54,15 @@ if 'container_db' not in st.session_state:
 if 'calculations' not in st.session_state:
     st.session_state.calculations = StructuralCalculations()
 
+if 'historical_service' not in st.session_state:
+    st.session_state.historical_service = HistoricalDataService()
+
+# Get current language
+lang = st.session_state.get('language', 'en')
+
 # Main dashboard
-st.title("🏗️ Steel Container Sales Calculator")
-st.markdown("*AI-Powered Cost Estimation for Container Modifications*")
+st.title(f"🏗️ {get_text('title', lang)}")
+st.markdown(f"*{get_text('subtitle', lang)}*")
 
 # Sidebar navigation info
 with st.sidebar:
