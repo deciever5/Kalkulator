@@ -82,6 +82,7 @@ with col2:
     discount_offered = st.slider("Discount (%)", min_value=0, max_value=25, value=0)
     
     include_warranty = st.checkbox("Include Warranty", value=True)
+    warranty_period = "1 year"
     if include_warranty:
         warranty_period = st.selectbox("Warranty Period", ["1 year", "2 years", "5 years"])
 
@@ -144,14 +145,14 @@ if st.button("📄 Generate Professional Quote", type="primary", use_container_w
                 },
                 "services": {
                     "delivery": include_delivery,
-                    "delivery_distance": delivery_distance if include_delivery else 0,
+                    "delivery_distance": delivery_distance,
                     "installation": include_installation,
                     "permits": include_permits,
                     "site_prep": include_site_prep,
                     "utilities": include_utilities,
                     "maintenance": include_maintenance,
                     "warranty": include_warranty,
-                    "warranty_period": warranty_period if include_warranty and 'warranty_period' in locals() else None
+                    "warranty_period": warranty_period if include_warranty else None
                 },
                 "special_terms": special_terms,
                 "container_config": st.session_state.container_config
@@ -246,16 +247,16 @@ if 'generated_quote' in st.session_state:
                     "Category": category.replace('_', ' ').title(),
                     "Description": details.get('description', ''),
                     "Quantity": details.get('quantity', 1),
-                    "Unit Cost": f"${details.get('unit_cost', 0):,.2f}",
-                    "Total": f"${details.get('total', 0):,.2f}"
+                    "Unit Cost": f"€{details.get('unit_cost', 0):,.2f}",
+                    "Total": f"€{details.get('total', 0):,.2f}"
                 })
             else:
                 breakdown_data.append({
                     "Category": category.replace('_', ' ').title(),
                     "Description": "",
                     "Quantity": 1,
-                    "Unit Cost": f"${details:,.2f}",
-                    "Total": f"${details:,.2f}"
+                    "Unit Cost": f"€{details:,.2f}",
+                    "Total": f"€{details:,.2f}"
                 })
         
         breakdown_df = pd.DataFrame(breakdown_data)
@@ -266,15 +267,15 @@ if 'generated_quote' in st.session_state:
     
     with col1:
         subtotal = quote.get('subtotal', 0)
-        st.metric("Subtotal", f"${subtotal:,.2f}")
+        st.metric("Subtotal", f"€{subtotal:,.2f}")
     
     with col2:
         tax = quote.get('tax', 0)
-        st.metric("Tax", f"${tax:,.2f}")
+        st.metric("Tax", f"€{tax:,.2f}")
     
     with col3:
         total = quote.get('total_cost', 0)
-        st.metric("Total", f"${total:,.2f}")
+        st.metric("Total", f"€{total:,.2f}")
     
     # Terms and conditions
     if quote.get('terms_conditions'):

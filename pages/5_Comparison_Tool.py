@@ -211,16 +211,18 @@ if not comparison_df.empty:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("**Cost per Square Foot**")
+        st.markdown("**Cost per Square Metre**")
         cost_per_sqft = comparison_df[["Configuration", "Cost per Sq Ft"]].copy()
-        cost_per_sqft["Cost per Sq Ft"] = cost_per_sqft["Cost per Sq Ft"].apply(lambda x: f"${x:.2f}")
+        cost_per_sqft.columns = ["Configuration", "Cost per Sq M"]
+        cost_per_sqft["Cost per Sq M"] = cost_per_sqft["Cost per Sq M"] * 10.764
+        cost_per_sqft["Cost per Sq M"] = cost_per_sqft["Cost per Sq M"].apply(lambda x: f"€{x:.2f}")
         st.dataframe(cost_per_sqft, use_container_width=True)
     
     with col2:
         st.markdown("**Cost per Person (Based on Occupancy)**")
         comparison_df["Cost per Person"] = comparison_df["Total Cost"] / comparison_df["Occupancy"]
         cost_per_person = comparison_df[["Configuration", "Cost per Person"]].copy()
-        cost_per_person["Cost per Person"] = cost_per_person["Cost per Person"].apply(lambda x: f"${x:,.0f}")
+        cost_per_person["Cost per Person"] = cost_per_person["Cost per Person"].apply(lambda x: f"€{x:,.0f}")
         st.dataframe(cost_per_person, use_container_width=True)
 
 # Radar chart for multi-dimensional comparison
