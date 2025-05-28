@@ -9,6 +9,7 @@ from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
 from utils.translations import get_text, get_available_languages
+from utils.ai_services import OpenAIService, AnthropicService
 
 # Page configuration
 st.set_page_config(
@@ -34,7 +35,17 @@ def initialize_services():
     
     container_db = ContainerDatabase()
     calc = StructuralCalculations()
-    return storage, container_db, calc
+    historical_service = HistoricalDataService()
+    
+    # Initialize AI services
+    try:
+        openai_service = OpenAIService()
+        anthropic_service = AnthropicService()
+    except:
+        openai_service = None
+        anthropic_service = None
+    
+    return storage, container_db, calc, historical_service, openai_service, anthropic_service
 
 # Language selection in sidebar
 available_languages = get_available_languages()
@@ -73,7 +84,7 @@ lang = st.session_state.get('language', 'en')
 lang = st.session_state.get('language', 'en')
 
 # Initialize services
-storage, container_db, calc = initialize_services()
+storage, container_db, calc, historical_service_init, openai_service, anthropic_service = initialize_services()
 
 # Create a simple historical service that works with our storage
 class SimpleHistoricalService:
@@ -104,7 +115,11 @@ class SimpleHistoricalService:
             return self.storage.import_historical_data(data)
         return False
 
-historical_service = SimpleHistoricalService(storage)
+# Use the initialized historical service or create a simple one
+if historical_service_init:
+    historical_service = historical_service_init
+else:
+    historical_service = SimpleHistoricalService(storage)
 
 # Main dashboard
 st.title(f"🏗️ {get_text('app_title', lang)}")
