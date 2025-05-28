@@ -270,8 +270,8 @@ with col1:
     
     fig.update_layout(
         title=get_text('steel_price_trends', lang),
-        xaxis_title="Month",
-        yaxis_title="Price (€/tonne)",
+        xaxis_title=get_text('month', lang),
+        yaxis_title=f"{get_text('price', lang)} (€/tonne)",
         height=400,
         showlegend=True
     )
