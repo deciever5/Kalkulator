@@ -42,9 +42,9 @@ if 'language' not in st.session_state:
     st.session_state.language = 'en'
 
 with st.sidebar:
-    st.markdown("### 🌐 Language / Język")
+    st.markdown("### 🌐 " + get_text('language_selector', st.session_state.get('language', 'en')))
     selected_language = st.selectbox(
-        "Choose language:",
+        get_text('choose_language', st.session_state.get('language', 'en')),
         options=list(available_languages.keys()),
         format_func=lambda x: available_languages[x],
         index=list(available_languages.keys()).index(st.session_state.language)
@@ -123,52 +123,50 @@ with st.sidebar:
 
 # Historical Data Upload Section
 if historical_service and storage:
-    with st.expander("📊 Historical Data Import - Import Your 2-Year Calculation Results"):
-        st.markdown("""
-        **Improve pricing accuracy by importing your historical project data!**
-        
-        Upload your past 2 years of container modification projects to:
-        - Get more accurate cost estimates based on real project outcomes
-        - Analyze pricing trends and seasonal variations
-        - Identify your most profitable project types
-        - Build customer confidence with data-backed quotes
-        """)
+    with st.expander(f"📊 {get_text('historical_data_import', lang)}"):
+        st.markdown(get_text('improve_pricing_accuracy', lang))
+        st.markdown(f"\n{get_text('upload_historical_data', lang)}")
+        st.markdown(get_text('get_accurate_estimates', lang))
+        st.markdown(get_text('analyze_pricing_trends', lang))
+        st.markdown(get_text('identify_profitable_projects', lang))
+        st.markdown(get_text('build_customer_confidence', lang))
         
         uploaded_file = st.file_uploader(
-            "Upload historical data (CSV or Excel)",
+            get_text('upload_historical_file', lang),
             type=['csv', 'xlsx', 'xls'],
-            help="Upload your historical project data to improve pricing accuracy"
+            help=get_text('upload_help_text', lang)
         )
         
         if uploaded_file is not None:
-            if st.button("Import Historical Data"):
+            if st.button(get_text('import_historical_data', lang)):
                 try:
-                    # Show template first
-                    st.info("Processing your historical data...")
+                    st.info(get_text('processing_data', lang))
                     
                     # Process the uploaded file
+                    df = None
                     if uploaded_file.name.endswith('.csv'):
                         df = pd.read_csv(uploaded_file)
                     elif uploaded_file.name.endswith(('.xlsx', '.xls')):
                         df = pd.read_excel(uploaded_file)
                     
-                    # Convert DataFrame to records and import
-                    data_records = df.to_dict('records')
-                    if historical_service.import_historical_projects(data=data_records):
-                        st.success(f"Successfully imported {len(data_records)} historical projects!")
-                        st.info("Your pricing accuracy will now improve based on this historical data!")
-                    else:
-                        st.error("Failed to import data. Please check the format.")
+                    if df is not None:
+                        # Convert DataFrame to records and import
+                        data_records = df.to_dict('records')
+                        if historical_service.import_historical_projects(data=data_records):
+                            st.success(get_text('successfully_imported', lang).format(count=len(data_records)))
+                            st.info(get_text('pricing_accuracy_improved', lang))
+                        else:
+                            st.error(get_text('import_failed', lang))
                     
                 except Exception as e:
-                    st.error(f"Error processing file: {str(e)}")
+                    st.error(get_text('error_processing_file', lang).format(error=str(e)))
         
         # Show data template
-        if st.button("Download Data Template"):
+        if st.button(get_text('download_data_template', lang)):
             template = historical_service.get_data_upload_template()
             csv = template.to_csv(index=False)
             st.download_button(
-                label="Download CSV Template",
+                label=get_text('download_csv_template', lang),
                 data=csv,
                 file_name="kan_bud_historical_data_template.csv",
                 mime="text/csv"
