@@ -92,8 +92,9 @@ col1, col2 = st.columns(2)
 
 with col1:
     include_delivery = st.checkbox("Include Delivery", value=True)
+    delivery_distance = 0
     if include_delivery:
-        delivery_distance = st.number_input("Delivery Distance (miles)", min_value=0, max_value=1000, value=50)
+        delivery_distance = st.number_input("Delivery Distance (km)", min_value=0, max_value=1600, value=80)
     
     include_installation = st.checkbox("Include Installation", value=True)
     include_permits = st.checkbox("Include Permit Assistance", value=False)
@@ -150,7 +151,7 @@ if st.button("📄 Generate Professional Quote", type="primary", use_container_w
                     "utilities": include_utilities,
                     "maintenance": include_maintenance,
                     "warranty": include_warranty,
-                    "warranty_period": warranty_period if include_warranty else None
+                    "warranty_period": warranty_period if include_warranty and 'warranty_period' in locals() else None
                 },
                 "special_terms": special_terms,
                 "container_config": st.session_state.container_config
@@ -191,7 +192,7 @@ if 'generated_quote' in st.session_state:
     
     with col2:
         total_cost = quote.get('total_cost', 0)
-        st.metric("Total Quote Amount", f"${total_cost:,.2f}")
+        st.metric("Total Quote Amount", f"€{total_cost:,.2f}")
     
     # Customer and project info
     col1, col2 = st.columns(2)

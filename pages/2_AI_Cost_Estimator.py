@@ -120,23 +120,40 @@ if st.button("🚀 Generate AI Cost Estimate", type="primary", use_container_wid
         
         try:
             if ai_model == "OpenAI GPT-4o":
-                estimate = st.session_state.openai_service.generate_cost_estimate(estimation_data, base_costs)
-                st.session_state.ai_estimate = estimate
+                try:
+                    estimate = st.session_state.openai_service.generate_cost_estimate(estimation_data, base_costs)
+                    st.session_state.ai_estimate = estimate
+                except Exception as openai_error:
+                    if "quota" in str(openai_error) or "insufficient_quota" in str(openai_error):
+                        st.warning("⚠️ OpenAI quota exceeded. Using Anthropic Claude instead.")
+                        estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
+                        st.session_state.ai_estimate = estimate
+                    else:
+                        raise openai_error
                 
             elif ai_model == "Anthropic Claude":
                 estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
                 st.session_state.ai_estimate = estimate
                 
             else:  # Both models
-                openai_estimate = st.session_state.openai_service.generate_cost_estimate(estimation_data, base_costs)
-                claude_estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
-                
-                # Store both estimates for comparison
-                st.session_state.ai_estimate = {
-                    "openai": openai_estimate,
-                    "claude": claude_estimate,
-                    "comparison": True
-                }
+                try:
+                    openai_estimate = st.session_state.openai_service.generate_cost_estimate(estimation_data, base_costs)
+                except Exception as openai_error:
+                    if "quota" in str(openai_error) or "insufficient_quota" in str(openai_error):
+                        st.warning("⚠️ OpenAI quota exceeded. Using Anthropic Claude only.")
+                        estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
+                        st.session_state.ai_estimate = estimate
+                    else:
+                        raise openai_error
+                else:
+                    claude_estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
+                    
+                    # Store both estimates for comparison
+                    st.session_state.ai_estimate = {
+                        "openai": openai_estimate,
+                        "claude": claude_estimate,
+                        "comparison": True
+                    }
             
             st.success("✅ AI cost estimate generated successfully!")
             st.rerun()
@@ -161,25 +178,25 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
             st.markdown("### 🤖 OpenAI GPT-4o Estimate")
             openai_est = estimate["openai"]
             if isinstance(openai_est, dict):
-                st.metric("Total Cost", f"${openai_est.get('total_cost', 0):,.2f}")
+                st.metric("Total Cost", f"€{openai_est.get('total_cost', 0):,.2f}")
                 st.metric("Confidence", f"{openai_est.get('confidence', 0):.1%}")
                 
                 if 'breakdown' in openai_est:
                     with st.expander("Cost Breakdown"):
                         for category, cost in openai_est['breakdown'].items():
-                            st.write(f"**{category.replace('_', ' ').title()}:** ${cost:,.2f}")
+                            st.write(f"**{category.replace('_', ' ').title()}:** €{cost:,.2f}")
         
         with col2:
             st.markdown("### 🧠 Anthropic Claude Estimate")
             claude_est = estimate["claude"]
             if isinstance(claude_est, dict):
-                st.metric("Total Cost", f"${claude_est.get('total_cost', 0):,.2f}")
+                st.metric("Total Cost", f"€{claude_est.get('total_cost', 0):,.2f}")
                 st.metric("Confidence", f"{claude_est.get('confidence', 0):.1%}")
                 
                 if 'breakdown' in claude_est:
                     with st.expander("Cost Breakdown"):
                         for category, cost in claude_est['breakdown'].items():
-                            st.write(f"**{category.replace('_', ' ').title()}:** ${cost:,.2f}")
+                            st.write(f"**{category.replace('_', ' ').title()}:** €{cost:,.2f}")
         
         # Comparison analysis
         if isinstance(openai_est, dict) and isinstance(claude_est, dict):
@@ -191,7 +208,7 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
             col1, col2, col3 = st.columns(3)
             with col1:
                 avg_estimate = (openai_total + claude_total) / 2
-                st.metric("Average Estimate", f"${avg_estimate:,.2f}")
+                st.metric("Average Estimate", f"€{avg_estimate:,.2f}")
             
             with col2:
                 difference = abs(openai_total - claude_total)
@@ -213,7 +230,7 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
                 total_cost = estimate.get('total_cost', 0)
                 st.metric(
                     "Total Estimated Cost",
-                    f"${total_cost:,.2f}",
+                    f"€{total_cost:,.2f}",
                     help="Total project cost including materials, labor, and modifications"
                 )
             
