@@ -287,13 +287,13 @@ if not comparison_df.empty:
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.success(f"**💰 Most Cost-Effective:**\n{best_cost['Configuration']}\n${best_cost['Total Cost']:,.0f}")
+        st.success(f"**💰 Most Cost-Effective:**\n{best_cost['Configuration']}\n€{best_cost['Total Cost']:,.0f}")
     
     with col2:
         st.success(f"**🔒 Safest Design:**\n{best_safety['Configuration']}\nLoad Ratio: {best_safety['Load Ratio']:.2f}")
     
     with col3:
-        st.success(f"**📏 Best Value per Sq Ft:**\n{best_value['Configuration']}\n${best_value['Cost per Sq Ft']:.2f}/sq ft")
+        st.success(f"**📏 Best Value per Sq M:**\n{best_value['Configuration']}\n€{best_value['Cost per Sq Ft']*10.764:.2f}/sq m")
 
 # Export and action buttons
 st.divider()
