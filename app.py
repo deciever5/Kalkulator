@@ -8,7 +8,7 @@ from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
-from utils.complete_translations_fixed import t, render_language_selector
+from utils.translations import t, render_language_selector
 from utils.groq_service import GroqService
 
 # Page configuration
@@ -393,7 +393,4 @@ if not st.session_state.employee_logged_in:
     </div>
     """, unsafe_allow_html=True)
 
-# Language selector in sidebar
-with st.sidebar:
-    from utils.translations import render_language_selector
-    render_language_selector()
+# Language selector already rendered at the top

@@ -33,14 +33,7 @@ def load_translations():
 # Load translations once
 TRANSLATIONS = load_translations()
 
-# Debug: Print what was loaded
-if TRANSLATIONS:
-    print(f"Loaded translations for languages: {list(TRANSLATIONS.keys())}")
-    for lang, data in TRANSLATIONS.items():
-        if isinstance(data, dict) and 'app' in data:
-            print(f"Language {lang} has 'app' section with keys: {list(data['app'].keys())}")
-else:
-    print("WARNING: No translations were loaded!")
+# Translations loaded successfully
 
 def init_language():
     """Initialize language system"""
@@ -60,16 +53,10 @@ def t(key, language=None):
     if language is None:
         language = get_current_language()
 
-    # Debug: Check what we have loaded
-    if not TRANSLATIONS:
-        print(f"No translations loaded! Returning key: {key}")
-        return key
-
     # Get translation data for language
     translation_data = TRANSLATIONS.get(language, TRANSLATIONS.get('pl', {}))
     
     if not translation_data:
-        print(f"No translation data for language: {language}, returning key: {key}")
         return key
 
     # Handle nested keys like 'ui.back_to_home'
@@ -81,17 +68,10 @@ def t(key, language=None):
             if isinstance(result, dict) and k in result:
                 result = result[k]
             else:
-                # Debug output
-                print(f"Key '{k}' not found in result: {result}")
-                print(f"Available keys: {list(result.keys()) if isinstance(result, dict) else 'Not a dict'}")
                 return key
 
         return result if isinstance(result, str) else key
-    except (KeyError, TypeError, AttributeError) as e:
-        # Debug output
-        print(f"Error in translation for key '{key}': {e}")
-        print(f"Language: {language}")
-        print(f"Translation data keys: {list(translation_data.keys()) if isinstance(translation_data, dict) else 'Not a dict'}")
+    except (KeyError, TypeError, AttributeError):
         return key
 
 def get_available_languages():
@@ -110,17 +90,30 @@ def render_language_selector():
     language_options = get_available_languages()
     current_lang = get_current_language()
 
-    # Create columns for language selector
-    col1, col2 = st.columns([2, 4])
+    # Create horizontal buttons for language selection
+    st.markdown("**Language / Język:**")
+    col1, col2, col3, col4 = st.columns(4)
+    
     with col1:
-        selected = st.selectbox(
-            t('ui.language_selector'),
-            options=list(language_options.keys()),
-            format_func=lambda x: language_options[x],
-            index=list(language_options.keys()).index(current_lang),
-            key="lang_selector"
-        )
-
-        if selected != current_lang:
-            set_language(selected)
-            st.rerun()
+        if st.button("🇵🇱 Polski", key="lang_pl", use_container_width=True):
+            if current_lang != 'pl':
+                set_language('pl')
+                st.rerun()
+    
+    with col2:
+        if st.button("🇬🇧 English", key="lang_en", use_container_width=True):
+            if current_lang != 'en':
+                set_language('en')
+                st.rerun()
+    
+    with col3:
+        if st.button("🇩🇪 Deutsch", key="lang_de", use_container_width=True):
+            if current_lang != 'de':
+                set_language('de')
+                st.rerun()
+    
+    with col4:
+        if st.button("🇳🇱 Nederlands", key="lang_nl", use_container_width=True):
+            if current_lang != 'nl':
+                set_language('nl')
+                st.rerun()
