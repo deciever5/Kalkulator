@@ -4,21 +4,26 @@ from datetime import datetime, timedelta
 import json
 from utils.quote_generator import QuoteGenerator
 from utils.calculations import StructuralCalculations
-from utils.translations import get_text
+from utils.translations import t, render_language_selector
 
 st.set_page_config(page_title="Quote Generator", page_icon="📄", layout="wide")
+
+# Initialize language if not set
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+
+# Language selector
+render_language_selector()
 
 # Employee access control
 if 'employee_logged_in' not in st.session_state:
     st.session_state.employee_logged_in = False
 
-lang = st.session_state.get('language', 'en')
-
 if not st.session_state.employee_logged_in:
-    st.title("🔒 " + get_text('access_denied', lang))
-    st.error("Generator ofert jest dostępny tylko dla pracowników KAN-BUD.")
-    st.info("Zaloguj się jako pracownik w panelu bocznym, aby uzyskać dostęp do tego narzędzia.")
-    st.markdown("**Hasło dla pracowników:** kan-bud-employee-2024")
+    st.title("🔒 " + t('ui.access_denied'))
+    st.error(t('quote_generator.employee_only'))
+    st.info(t('quote_generator.login_info'))
+    st.markdown(f"**{t('quote_generator.employee_password')}:** kan-bud-employee-2024")
     st.stop()
 
 # Initialize services
@@ -28,33 +33,33 @@ if 'quote_generator' not in st.session_state:
 if 'calculations' not in st.session_state:
     st.session_state.calculations = StructuralCalculations()
 
-st.title("📄 Quote Generator")
-st.markdown("*Generate professional quotes and proposals for your container projects*")
+st.title(f"📄 {t('nav.quote_generator')}")
+st.markdown(f"*{t('quote_generator.description')}*")
 
 # Check if configuration and estimates exist
 if 'container_config' not in st.session_state or not st.session_state.container_config:
-    st.warning("⚠️ No container configuration found. Please configure your container first.")
-    if st.button("Go to Container Configurator"):
+    st.warning(f"⚠️ {t('quote_generator.no_config')}")
+    if st.button(t('quote_generator.go_to_configurator')):
         st.switch_page("pages/1_Container_Configurator.py")
     st.stop()
 
 # Quote configuration
-st.subheader("📋 Quote Information")
+st.subheader(f"📋 {t('quote_generator.quote_information')}")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("**Customer Information**")
-    customer_name = st.text_input("Customer Name*")
-    customer_company = st.text_input("Company Name")
-    customer_email = st.text_input("Email Address*")
-    customer_phone = st.text_input("Phone Number")
+    st.markdown(f"**{t('quote_generator.customer_information')}**")
+    customer_name = st.text_input(t('quote_generator.customer_name'))
+    customer_company = st.text_input(t('quote_generator.company_name'))
+    customer_email = st.text_input(t('quote_generator.email_address'))
+    customer_phone = st.text_input(t('quote_generator.phone_number'))
 
 with col2:
-    st.markdown("**Project Information**")
-    project_name = st.text_input("Project Name*")
-    project_location = st.text_input("Project Location*")
-    delivery_address = st.text_area("Delivery Address", height=100)
+    st.markdown(f"**{t('quote_generator.project_information')}**")
+    project_name = st.text_input(t('quote_generator.project_name'))
+    project_location = st.text_input(t('quote_generator.project_location'))
+    delivery_address = st.text_area(t('quote_generator.delivery_address'), height=100)
 
 # Quote parameters
 st.subheader("💼 Quote Parameters")

@@ -19,15 +19,23 @@ if 'employee_logged_in' not in st.session_state:
 # Get current language
 lang = st.session_state.get('language', 'en')
 
+# Initialize language if not set
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+
+# Language selector
+from utils.translations import t, render_language_selector
+render_language_selector()
+
 if not st.session_state.employee_logged_in:
-    st.title("🔒 " + get_text('access_denied', lang))
-    st.error("Analiza rysunków jest dostępna tylko dla pracowników KAN-BUD.")
-    st.info("Zaloguj się jako pracownik w panelu bocznym, aby uzyskać dostęp do tego narzędzia.")
-    st.markdown("**Hasło dla pracowników:** kan-bud-employee-2024")
+    st.title("🔒 " + t('ui.access_denied'))
+    st.error(t('drawing_analysis.employee_only'))
+    st.info(t('drawing_analysis.login_info'))
+    st.markdown(f"**{t('drawing_analysis.employee_password')}:** kan-bud-employee-2024")
     st.stop()
 
-st.title("📐 Analiza Rysunków Klienta")
-st.markdown("*Automatyczna analiza rysunków technicznych PDF/DWG dla dokładnych wycen*")
+st.title(f"📐 {t('nav.drawing_analysis')}")
+st.markdown(f"*{t('drawing_analysis.description')}*")
 
 # Initialize services
 document_analyzer = DocumentAnalyzer()

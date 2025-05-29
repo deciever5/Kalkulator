@@ -12,7 +12,8 @@
     "language_selector": "Taal / Language",
     "back_to_home": "← Terug naar Home",
     "go_to_ai_estimate": "🤖 Naar AI Schatting →",
-    "go_to_configurator": "🔧 Naar Configurator"
+    "go_to_configurator": "🔧 Naar Configurator",
+    "access_denied": "Toegang Geweigerd"
   },
   "nav": {
     "comparison_tool": "Vergelijkings\ntool",
@@ -171,5 +172,51 @@
   "total_cost": "Totale Kosten",
   "save_configuration": "💾 Configuratie Opslaan",
   "configuration_saved": "Configuratie succesvol opgeslagen!",
-  "systems_installations": "Systemen & Installaties"
+  "systems_installations": "Systemen & Installaties",
+  "quote_generator": {
+    "employee_only": "Offerte generator is alleen beschikbaar voor KAN-BUD medewerkers.",
+    "login_info": "Log in als medewerker om toegang te krijgen tot deze tool.",
+    "employee_password": "Medewerker wachtwoord",
+    "description": "Genereer professionele offertes en voorstellen voor uw container projecten",
+    "no_config": "Geen container configuratie gevonden. Configureer eerst uw container.",
+    "go_to_configurator": "Ga naar Container Configurator",
+    "quote_information": "Offerte Informatie",
+    "customer_information": "Klantinformatie",
+    "customer_name": "Klantnaam*",
+    "company_name": "Bedrijfsnaam",
+    "email_address": "E-mailadres*",
+    "phone_number": "Telefoonnummer",
+    "project_information": "Projectinformatie",
+    "project_name": "Projectnaam*",
+    "project_location": "Projectlocatie*",
+    "delivery_address": "Bezorgadres"
+  },
+  "comparison_tool": {
+    "employee_only": "Vergelijkingstool is alleen beschikbaar voor KAN-BUD medewerkers.",
+    "login_info": "Log in als medewerker om toegang te krijgen tot deze tool.",
+    "employee_password": "Medewerker wachtwoord",
+    "description": "Vergelijk verschillende container configuraties, kosten en technische specificaties"
+  },
+  "drawing_analysis": {
+    "employee_only": "Tekenanalyse is alleen beschikbaar voor KAN-BUD medewerkers.",
+    "login_info": "Log in als medewerker om toegang te krijgen tot deze tool.",
+    "employee_password": "Medewerker wachtwoord",
+    "description": "Automatische analyse van technische tekeningen PDF/DWG voor nauwkeurige offertes"
+  },
+  "admin": {
+    "access_required": "Administrator Toegang Vereist",
+    "privileges_required": "Deze sectie vereist administrator rechten",
+    "enter_password": "Administrator wachtwoord invoeren:",
+    "access_granted": "Administrator toegang verleend!",
+    "invalid_password": "Ongeldig wachtwoord",
+    "contact_it": "Neem contact op met KAN-BUD IT administrator voor toegangsgegevens",
+    "panel_title": "KAN-BUD Administrator Panel",
+    "panel_subtitle": "Business Configuratie & Data Management",
+    "logout": "Administrator Uitloggen",
+    "cost_settings": "Kosten Instellingen",
+    "margins_pricing": "Marges & Prijsstelling",
+    "historical_data": "Historische Data",
+    "user_management": "Gebruikersbeheer",
+    "system_settings": "Systeeminstellingen"
+  }
 }

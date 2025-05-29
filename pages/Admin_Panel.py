@@ -8,8 +8,15 @@ import pandas as pd
 from datetime import datetime
 import json
 from utils.simple_storage import SimpleStorageManager
-from utils.translations import get_text, get_available_languages
+from utils.translations import t, render_language_selector
 from utils.historical_data_service import HistoricalDataService
+
+# Initialize language if not set
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+
+# Language selector
+render_language_selector()
 
 # Admin authentication
 def check_admin_access():
@@ -17,35 +24,32 @@ def check_admin_access():
         st.session_state.admin_logged_in = False
     
     if not st.session_state.admin_logged_in:
-        st.title("🔐 Admin Access Required")
-        st.warning("This section requires administrator privileges")
+        st.title(f"🔐 {t('admin.access_required')}")
+        st.warning(t('admin.privileges_required'))
         
-        admin_password = st.text_input("Enter admin password:", type="password")
+        admin_password = st.text_input(t('admin.enter_password'), type="password")
         
-        if st.button("Login"):
+        if st.button(t('ui.login')):
             # Simple password check - in production, use proper authentication
             if admin_password == "kan-bud-admin-2024":  # Change this password!
                 st.session_state.admin_logged_in = True
-                st.success("Admin access granted!")
+                st.success(t('admin.access_granted'))
                 st.rerun()
             else:
-                st.error("Invalid password")
+                st.error(t('admin.invalid_password'))
         
-        st.info("Contact KAN-BUD IT administrator for access credentials")
+        st.info(t('admin.contact_it'))
         return False
     
     return True
 
 # Main admin panel
 def admin_panel():
-    # Get current language
-    lang = st.session_state.get('language', 'en')
-    
-    st.title("🛠️ KAN-BUD Admin Panel")
-    st.markdown("*Business Configuration & Data Management*")
+    st.title(f"🛠️ {t('admin.panel_title')}")
+    st.markdown(f"*{t('admin.panel_subtitle')}*")
     
     # Logout button
-    if st.sidebar.button("🚪 Admin Logout"):
+    if st.sidebar.button(f"🚪 {t('admin.logout')}"):
         st.session_state.admin_logged_in = False
         st.rerun()
     
@@ -54,11 +58,11 @@ def admin_panel():
     
     # Admin tabs
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "💰 Cost Settings", 
-        "📊 Margins & Pricing", 
-        "📈 Historical Data", 
-        "👥 User Management",
-        "⚙️ System Settings"
+        f"💰 {t('admin.cost_settings')}", 
+        f"📊 {t('admin.margins_pricing')}", 
+        f"📈 {t('admin.historical_data')}", 
+        f"👥 {t('admin.user_management')}",
+        f"⚙️ {t('admin.system_settings')}"
     ])
     
     with tab1:

@@ -11,7 +11,8 @@
     "language_selector": "Sprache / Language",
     "back_to_home": "← Zurück zur Startseite",
     "go_to_ai_estimate": "🤖 Zur KI-Schätzung →",
-    "go_to_configurator": "🔧 Zum Konfigurator"
+    "go_to_configurator": "🔧 Zum Konfigurator",
+    "access_denied": "Zugang Verweigert"
   },
   "nav": {
     "comparison_tool": "Vergleichs\nwerkzeug",
@@ -162,6 +163,52 @@
   "email": "E-Mail",
   "working_hours": "Arbeitszeiten",
   "mon_fri": "Mo-Fr 8:00-16:00",
+  "quote_generator": {
+    "employee_only": "Angebotsgenerator ist nur für KAN-BUD Mitarbeiter verfügbar.",
+    "login_info": "Melden Sie sich als Mitarbeiter an, um auf dieses Tool zuzugreifen.",
+    "employee_password": "Mitarbeiter-Passwort",
+    "description": "Erstellen Sie professionelle Angebote und Vorschläge für Ihre Container-Projekte",
+    "no_config": "Keine Container-Konfiguration gefunden. Bitte konfigurieren Sie zuerst Ihren Container.",
+    "go_to_configurator": "Zum Container-Konfigurator",
+    "quote_information": "Angebotsinformationen",
+    "customer_information": "Kundeninformationen",
+    "customer_name": "Kundenname*",
+    "company_name": "Firmenname",
+    "email_address": "E-Mail-Adresse*",
+    "phone_number": "Telefonnummer",
+    "project_information": "Projektinformationen",
+    "project_name": "Projektname*",
+    "project_location": "Projektstandort*",
+    "delivery_address": "Lieferadresse"
+  },
+  "comparison_tool": {
+    "employee_only": "Vergleichstool ist nur für KAN-BUD Mitarbeiter verfügbar.",
+    "login_info": "Melden Sie sich als Mitarbeiter an, um auf dieses Tool zuzugreifen.",
+    "employee_password": "Mitarbeiter-Passwort",
+    "description": "Vergleichen Sie verschiedene Container-Konfigurationen, Kosten und technische Spezifikationen"
+  },
+  "drawing_analysis": {
+    "employee_only": "Zeichnungsanalyse ist nur für KAN-BUD Mitarbeiter verfügbar.",
+    "login_info": "Melden Sie sich als Mitarbeiter an, um auf dieses Tool zuzugreifen.",
+    "employee_password": "Mitarbeiter-Passwort",
+    "description": "Automatische Analyse technischer Zeichnungen PDF/DWG für genaue Angebote"
+  },
+  "admin": {
+    "access_required": "Administrator-Zugang Erforderlich",
+    "privileges_required": "Dieser Bereich erfordert Administrator-Rechte",
+    "enter_password": "Administrator-Passwort eingeben:",
+    "access_granted": "Administrator-Zugang gewährt!",
+    "invalid_password": "Ungültiges Passwort",
+    "contact_it": "Kontaktieren Sie den KAN-BUD IT-Administrator für Zugangsdaten",
+    "panel_title": "KAN-BUD Administrator-Panel",
+    "panel_subtitle": "Business-Konfiguration & Datenmanagement",
+    "logout": "Administrator Abmelden",
+    "cost_settings": "Kosteneinstellungen",
+    "margins_pricing": "Margen & Preisgestaltung",
+    "historical_data": "Historische Daten",
+    "user_management": "Benutzerverwaltung",
+    "system_settings": "Systemeinstellungen"
+  },
   "configure_container": "Container Konfigurieren",
   "simple_process_2_steps": "Einfacher 2-Schritt-Prozess",
   "container_configurator_desc": "Professioneller Container-Modifikations-Konfigurator",

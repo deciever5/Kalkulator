@@ -7,21 +7,27 @@ from utils.translations import get_text
 
 st.set_page_config(page_title="Comparison Tool", page_icon="⚖️", layout="wide")
 
+# Initialize language if not set
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+
+# Language selector
+from utils.translations import t, render_language_selector
+render_language_selector()
+
 # Employee access control
 if 'employee_logged_in' not in st.session_state:
     st.session_state.employee_logged_in = False
 
-lang = st.session_state.get('language', 'en')
-
 if not st.session_state.employee_logged_in:
-    st.title("🔒 " + get_text('access_denied', lang))
-    st.error("Narzędzie porównań jest dostępne tylko dla pracowników KAN-BUD.")
-    st.info("Zaloguj się jako pracownik w panelu bocznym, aby uzyskać dostęp do tego narzędzia.")
-    st.markdown("**Hasło dla pracowników:** kan-bud-employee-2024")
+    st.title("🔒 " + t('ui.access_denied'))
+    st.error(t('comparison_tool.employee_only'))
+    st.info(t('comparison_tool.login_info'))
+    st.markdown(f"**{t('comparison_tool.employee_password')}:** kan-bud-employee-2024")
     st.stop()
 
-st.title("⚖️ Comparison Tool")
-st.markdown("*Compare different container configurations, costs, and technical specifications*")
+st.title(f"⚖️ {t('nav.comparison_tool')}")
+st.markdown(f"*{t('comparison_tool.description')}*")
 
 # Initialize comparison data in session state
 if 'comparison_data' not in st.session_state:

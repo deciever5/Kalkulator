@@ -12,7 +12,8 @@
     "language_selector": "Language / Język",
     "back_to_home": "← Back to Home",
     "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator"
+    "go_to_configurator": "🔧 Go to Configurator",
+    "access_denied": "Access Denied"
   },
   "nav": {
     "comparison_tool": "Comparison\nTool",
@@ -163,5 +164,51 @@
   "phone": "Phone",
   "email": "Email",
   "working_hours": "Working Hours",
-  "mon_fri": "Mon-Fri 8:00-16:00"
+  "mon_fri": "Mon-Fri 8:00-16:00",
+  "quote_generator": {
+    "employee_only": "Quote generator is available only for KAN-BUD employees.",
+    "login_info": "Log in as an employee to access this tool.",
+    "employee_password": "Employee password",
+    "description": "Generate professional quotes and proposals for your container projects",
+    "no_config": "No container configuration found. Please configure your container first.",
+    "go_to_configurator": "Go to Container Configurator",
+    "quote_information": "Quote Information",
+    "customer_information": "Customer Information",
+    "customer_name": "Customer Name*",
+    "company_name": "Company Name",
+    "email_address": "Email Address*",
+    "phone_number": "Phone Number",
+    "project_information": "Project Information",
+    "project_name": "Project Name*",
+    "project_location": "Project Location*",
+    "delivery_address": "Delivery Address"
+  },
+  "comparison_tool": {
+    "employee_only": "Comparison tool is available only for KAN-BUD employees.",
+    "login_info": "Log in as an employee to access this tool.",
+    "employee_password": "Employee password",
+    "description": "Compare different container configurations, costs, and technical specifications"
+  },
+  "drawing_analysis": {
+    "employee_only": "Drawing analysis is available only for KAN-BUD employees.",
+    "login_info": "Log in as an employee to access this tool.",
+    "employee_password": "Employee password",
+    "description": "Automatic analysis of technical drawings PDF/DWG for accurate quotes"
+  },
+  "admin": {
+    "access_required": "Admin Access Required",
+    "privileges_required": "This section requires administrator privileges",
+    "enter_password": "Enter admin password:",
+    "access_granted": "Admin access granted!",
+    "invalid_password": "Invalid password",
+    "contact_it": "Contact KAN-BUD IT administrator for access credentials",
+    "panel_title": "KAN-BUD Admin Panel",
+    "panel_subtitle": "Business Configuration & Data Management",
+    "logout": "Admin Logout",
+    "cost_settings": "Cost Settings",
+    "margins_pricing": "Margins & Pricing",
+    "historical_data": "Historical Data",
+    "user_management": "User Management",
+    "system_settings": "System Settings"
+  }
 }
