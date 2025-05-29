@@ -285,6 +285,19 @@
   },
   "form": {
     "labels": {
+      "container_type": "Container Type",
+      "main_purpose": "Hoofddoel",
+      "environment": "Omgeving",
+      "finish_level": "Afwerkingsniveau",
+      "flooring": "Vloerbedekking",
+      "climate_zone": "Klimaatzone",
+      "number_of_windows": "Aantal Ramen",
+      "additional_doors": "Extra Deuren",
+      "electrical_system": "Elektrisch Systeem",
+      "plumbing_system": "Loodgieterswerk Systeem",
+      "hvac_system": "HVAC Systeem",
+      "insulation_package": "Isolatiepakket",
+      "structural_reinforcement": "Structurele Versterking",
       "delivery_zone": "Leveringszone"
     }
   },

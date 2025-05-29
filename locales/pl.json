@@ -265,5 +265,29 @@
     "upload_drawings": "Prześlij rysunki techniczne",
     "file_formats_help": "Obsługujemy pliki PDF, DWG, JPG i PNG. Zalecamy format PDF dla najlepszej analizy.",
     "other": "Inne"
+  },
+  "quote_generator": {
+    "employee_only": "Generator ofert jest dostępny tylko dla pracowników KAN-BUD.",
+    "login_info": "Zaloguj się jako pracownik, aby uzyskać dostęp do tego narzędzia.",
+    "employee_password": "Hasło pracownika",
+    "description": "Generuj profesjonalne oferty i propozycje dla swoich projektów kontenerowych",
+    "no_config": "Nie znaleziono konfiguracji kontenera. Proszę najpierw skonfigurować kontener.",
+    "go_to_configurator": "Przejdź do Konfiguratora Kontenerów",
+    "quote_information": "Informacje o Ofercie",
+    "customer_information": "Informacje o Kliencie",
+    "customer_name": "Nazwa Klienta*",
+    "company_name": "Nazwa Firmy",
+    "email_address": "Adres Email*",
+    "phone_number": "Numer Telefonu",
+    "project_information": "Informacje o Projekcie",
+    "project_name": "Nazwa Projektu*",
+    "project_location": "Lokalizacja Projektu*",
+    "delivery_address": "Adres Dostawy"
+  },
+  "comparison_tool": {
+    "employee_only": "Narzędzie porównań jest dostępne tylko dla pracowników KAN-BUD.",
+    "login_info": "Zaloguj się jako pracownik, aby uzyskać dostęp do tego narzędzia.",
+    "employee_password": "Hasło pracownika",
+    "description": "Porównaj różne konfiguracje kontenerów, koszty i specyfikacje techniczne"
   }
 }

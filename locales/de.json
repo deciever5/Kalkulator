@@ -276,6 +276,19 @@
   },
   "form": {
     "labels": {
+      "container_type": "Container-Typ",
+      "main_purpose": "Hauptzweck",
+      "environment": "Umgebung",
+      "finish_level": "Ausstattungsgrad",
+      "flooring": "Bodenbelag",
+      "climate_zone": "Klimazone",
+      "number_of_windows": "Anzahl Fenster",
+      "additional_doors": "Zusätzliche Türen",
+      "electrical_system": "Elektrisches System",
+      "plumbing_system": "Sanitärsystem",
+      "hvac_system": "HVAC-System",
+      "insulation_package": "Isolierungspaket",
+      "structural_reinforcement": "Strukturelle Verstärkung",
       "delivery_zone": "Lieferzone"
     }
   },

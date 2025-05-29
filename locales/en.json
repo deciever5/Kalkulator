@@ -277,7 +277,20 @@
   },
   "form": {
     "labels": {
-      "delivery_zone": "Delivery zone"
+      "container_type": "Container Type",
+      "main_purpose": "Main Purpose",
+      "environment": "Environment",
+      "finish_level": "Finish Level",
+      "flooring": "Flooring",
+      "climate_zone": "Climate Zone",
+      "number_of_windows": "Number of Windows",
+      "additional_doors": "Additional Doors",
+      "electrical_system": "Electrical System",
+      "plumbing_system": "Plumbing System",
+      "hvac_system": "HVAC System",
+      "insulation_package": "Insulation Package",
+      "structural_reinforcement": "Structural Reinforcement",
+      "delivery_zone": "Delivery Zone"
     }
   },
   "labor_costs_30": "Labor Costs (30%)",
