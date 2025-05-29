@@ -97,37 +97,8 @@ def render_language_selector():
 
     current_lang = get_current_language()
 
-    # Add CSS for compact button styling
-    st.markdown("""
-    <style>
-    .language-selector {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 5px !important;
-        justify-content: flex-start !important;
-        align-items: center !important;
-        margin-bottom: 1rem !important;
-    }
-    .language-selector .stButton {
-        flex: none !important;
-        width: auto !important;
-        min-width: 40px !important;
-    }
-    .language-selector .stButton button {
-        width: 40px !important;
-        height: 35px !important;
-        padding: 5px !important;
-        font-size: 18px !important;
-        border-radius: 8px !important;
-        margin: 0 !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    # Create compact horizontal layout
-    st.markdown('<div class="language-selector">', unsafe_allow_html=True)
-    
-    col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 8])
+    # Create horizontal layout with narrow columns for flags
+    col1, col2, col3, col4, spacer = st.columns([0.8, 0.8, 0.8, 0.8, 10])
     
     with col1:
         if st.button("🇵🇱", key="lang_pl", help="Polski"):
@@ -152,5 +123,3 @@ def render_language_selector():
             if current_lang != 'nl':
                 set_language('nl')
                 st.rerun()
-    
-    st.markdown('</div>', unsafe_allow_html=True)
