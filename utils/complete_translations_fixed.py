@@ -79,6 +79,44 @@ TRANSLATIONS = {
         # Common navigation
         'back_to_home': 'Powrót do strony głównej',
         'go_to_configurator': 'Przejdź do konfiguratora',
+        
+        # Container use cases
+        'container.use_cases.office': 'Biuro',
+        'container.use_cases.residential': 'Mieszkalny',
+        'container.use_cases.storage': 'Magazyn',
+        'container.use_cases.workshop': 'Warsztat',
+        'container.use_cases.retail': 'Handel',
+        'container.use_cases.cafe_restaurant': 'Kawiarnia/Restauracja',
+        'container.use_cases.medical': 'Medyczny',
+        'container.use_cases.education': 'Edukacja',
+        
+        # Container environment
+        'container.environment.urban': 'Miejskie',
+        'container.environment.rural': 'Wiejskie',
+        'container.environment.industrial': 'Przemysłowe',
+        'container.environment.coastal': 'Nadmorskie',
+        'container.environment.mountain': 'Górskie',
+        
+        # Container finish levels
+        'container.finish_levels.basic': 'Podstawowy',
+        'container.finish_levels.standard': 'Standardowy',
+        'container.finish_levels.premium': 'Premium',
+        'container.finish_levels.luxury': 'Luksusowy',
+        
+        # Container flooring
+        'container.flooring.plywood': 'Sklejka',
+        'container.flooring.vinyl': 'Winyl',
+        'container.flooring.laminate': 'Laminat',
+        'container.flooring.hardwood': 'Drewno twarde',
+        'container.flooring.carpet': 'Wykładzina',
+        'container.flooring.ceramic_tiles': 'Płytki ceramiczne',
+        
+        # Container climate zones
+        'container.climate_zones.temperate': 'Umiarkowana',
+        'container.climate_zones.continental': 'Kontynentalna',
+        'container.climate_zones.mediterranean': 'Śródziemnomorska',
+        'container.climate_zones.northern': 'Północna',
+        'container.climate_zones.alpine': 'Alpejska',
     },
     
     'en': {
@@ -155,6 +193,44 @@ TRANSLATIONS = {
         # Common navigation
         'back_to_home': 'Back to Home',
         'go_to_configurator': 'Go to Configurator',
+        
+        # Container use cases
+        'container.use_cases.office': 'Office',
+        'container.use_cases.residential': 'Residential',
+        'container.use_cases.storage': 'Storage',
+        'container.use_cases.workshop': 'Workshop',
+        'container.use_cases.retail': 'Retail',
+        'container.use_cases.cafe_restaurant': 'Cafe/Restaurant',
+        'container.use_cases.medical': 'Medical',
+        'container.use_cases.education': 'Education',
+        
+        # Container environment
+        'container.environment.urban': 'Urban',
+        'container.environment.rural': 'Rural',
+        'container.environment.industrial': 'Industrial',
+        'container.environment.coastal': 'Coastal',
+        'container.environment.mountain': 'Mountain',
+        
+        # Container finish levels
+        'container.finish_levels.basic': 'Basic',
+        'container.finish_levels.standard': 'Standard',
+        'container.finish_levels.premium': 'Premium',
+        'container.finish_levels.luxury': 'Luxury',
+        
+        # Container flooring
+        'container.flooring.plywood': 'Plywood',
+        'container.flooring.vinyl': 'Vinyl',
+        'container.flooring.laminate': 'Laminate',
+        'container.flooring.hardwood': 'Hardwood',
+        'container.flooring.carpet': 'Carpet',
+        'container.flooring.ceramic_tiles': 'Ceramic Tiles',
+        
+        # Container climate zones
+        'container.climate_zones.temperate': 'Temperate',
+        'container.climate_zones.continental': 'Continental',
+        'container.climate_zones.mediterranean': 'Mediterranean',
+        'container.climate_zones.northern': 'Northern',
+        'container.climate_zones.alpine': 'Alpine',
     },
     
     'de': {
@@ -231,6 +307,44 @@ TRANSLATIONS = {
         # Common navigation
         'back_to_home': 'Zurück zur Startseite',
         'go_to_configurator': 'Zum Konfigurator',
+        
+        # Container use cases
+        'container.use_cases.office': 'Büro',
+        'container.use_cases.residential': 'Wohnbereich',
+        'container.use_cases.storage': 'Lager',
+        'container.use_cases.workshop': 'Werkstatt',
+        'container.use_cases.retail': 'Einzelhandel',
+        'container.use_cases.cafe_restaurant': 'Café/Restaurant',
+        'container.use_cases.medical': 'Medizinisch',
+        'container.use_cases.education': 'Bildung',
+        
+        # Container environment
+        'container.environment.urban': 'Städtisch',
+        'container.environment.rural': 'Ländlich',
+        'container.environment.industrial': 'Industriell',
+        'container.environment.coastal': 'Küsten',
+        'container.environment.mountain': 'Gebirge',
+        
+        # Container finish levels
+        'container.finish_levels.basic': 'Basis',
+        'container.finish_levels.standard': 'Standard',
+        'container.finish_levels.premium': 'Premium',
+        'container.finish_levels.luxury': 'Luxus',
+        
+        # Container flooring
+        'container.flooring.plywood': 'Sperrholz',
+        'container.flooring.vinyl': 'Vinyl',
+        'container.flooring.laminate': 'Laminat',
+        'container.flooring.hardwood': 'Hartholz',
+        'container.flooring.carpet': 'Teppich',
+        'container.flooring.ceramic_tiles': 'Keramikfliesen',
+        
+        # Container climate zones
+        'container.climate_zones.temperate': 'Gemäßigt',
+        'container.climate_zones.continental': 'Kontinental',
+        'container.climate_zones.mediterranean': 'Mediterran',
+        'container.climate_zones.northern': 'Nördlich',
+        'container.climate_zones.alpine': 'Alpin',
     },
     
     'nl': {
@@ -307,6 +421,44 @@ TRANSLATIONS = {
         # Common navigation
         'back_to_home': 'Terug naar Home',
         'go_to_configurator': 'Ga naar Configurator',
+        
+        # Container use cases
+        'container.use_cases.office': 'Kantoor',
+        'container.use_cases.residential': 'Residentieel',
+        'container.use_cases.storage': 'Opslag',
+        'container.use_cases.workshop': 'Werkplaats',
+        'container.use_cases.retail': 'Retail',
+        'container.use_cases.cafe_restaurant': 'Café/Restaurant',
+        'container.use_cases.medical': 'Medisch',
+        'container.use_cases.education': 'Onderwijs',
+        
+        # Container environment
+        'container.environment.urban': 'Stedelijk',
+        'container.environment.rural': 'Landelijk',
+        'container.environment.industrial': 'Industrieel',
+        'container.environment.coastal': 'Kust',
+        'container.environment.mountain': 'Berg',
+        
+        # Container finish levels
+        'container.finish_levels.basic': 'Basis',
+        'container.finish_levels.standard': 'Standaard',
+        'container.finish_levels.premium': 'Premium',
+        'container.finish_levels.luxury': 'Luxe',
+        
+        # Container flooring
+        'container.flooring.plywood': 'Multiplex',
+        'container.flooring.vinyl': 'Vinyl',
+        'container.flooring.laminate': 'Laminaat',
+        'container.flooring.hardwood': 'Hardhout',
+        'container.flooring.carpet': 'Tapijt',
+        'container.flooring.ceramic_tiles': 'Keramische Tegels',
+        
+        # Container climate zones
+        'container.climate_zones.temperate': 'Gematigd',
+        'container.climate_zones.continental': 'Continentaal',
+        'container.climate_zones.mediterranean': 'Mediterraan',
+        'container.climate_zones.northern': 'Noordelijk',
+        'container.climate_zones.alpine': 'Alpien',
     }
 }
 
