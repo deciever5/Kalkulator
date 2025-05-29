@@ -183,7 +183,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
     line-height: 1.6;
 }
 </style>
-
+""" + f"""
 <div class="main-header">
     <div class="company-name">🏗️ KAN-BUD</div>
     <div class="company-subtitle">{t('app.subtitle')}</div>

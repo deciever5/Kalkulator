@@ -183,7 +183,7 @@ with col2:
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Systems and installations
-st.markdown(f'<div class="config-section"><div class="section-title">⚙️ Systems & Installations</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="config-section"><div class="section-title">⚙️ {t("systems_installations")}</div>', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
@@ -241,35 +241,35 @@ config = {
 cost_breakdown = calculate_container_cost(config)
 
 # Summary
-st.markdown(f'<div class="config-section"><div class="section-title">📊 Configuration Summary</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="config-section"><div class="section-title">📊 {t("configuration_summary")}</div>', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("**Base Container:**")
-    st.write(f"• Type: {container_type}")
-    st.write(f"• Use Case: {main_purpose}")
-    st.write(f"• Environment: {environment}")
+    st.markdown(f"**{t('base_container')}:**")
+    st.write(f"• {t('type')}: {container_type_display}")
+    st.write(f"• {t('use_case')}: {main_purpose_display}")
+    st.write(f"• {t('environment')}: {environment_display}")
 
-    st.markdown("**Key Modifications:**")
-    st.write(f"• Finish Level: {finish_level}")
-    st.write(f"• Flooring: {flooring}")
-    st.write(f"• Windows: {number_of_windows}")
+    st.markdown(f"**{t('key_modifications')}:**")
+    st.write(f"• {t('finish_level')}: {finish_level_display}")
+    st.write(f"• {t('flooring')}: {flooring_display}")
+    st.write(f"• {t('windows')}: {number_of_windows}")
     if additional_doors:
-        st.write("• Additional doors included")
+        st.write(f"• {t('additional_doors_included')}")
 
 with col2:
-    st.markdown("**Cost Breakdown:**")
-    st.write(f"• Base Cost: €{cost_breakdown['base_cost']:,.2f}")
-    st.write(f"• Modifications: €{cost_breakdown['modifications_cost']:,.2f}")
-    st.write(f"• Multiplier: {cost_breakdown['multiplier']:.1f}x")
-    st.markdown(f"**Total Cost: €{cost_breakdown['total_cost']:,.2f}**")
+    st.markdown(f"**{t('cost_breakdown')}:**")
+    st.write(f"• {t('base_cost')}: €{cost_breakdown['base_cost']:,.2f}")
+    st.write(f"• {t('modifications')}: €{cost_breakdown['modifications_cost']:,.2f}")
+    st.write(f"• {t('multiplier')}: {cost_breakdown['multiplier']:.1f}x")
+    st.markdown(f"**{t('total_cost')}: €{cost_breakdown['total_cost']:,.2f}**")
 
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Save configuration
-if st.button("💾 Save Configuration", use_container_width=True, type="primary"):
+if st.button(t("save_configuration"), use_container_width=True, type="primary"):
     st.session_state.container_config = config
     st.session_state.cost_breakdown = cost_breakdown
-    st.success("Configuration saved successfully!")
+    st.success(t("configuration_saved"))
     st.balloons()
