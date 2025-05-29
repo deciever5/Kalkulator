@@ -26,9 +26,11 @@ def initialize_services():
     # Use PostgreSQL database
     try:
         db = DatabaseManager()
-        db.create_tables()  # Ensure tables exist
-        storage = db
-        st.success("📊 Database connected: PostgreSQL")
+        if db.engine:
+            storage = db
+            st.success("📊 Database connected: PostgreSQL")
+        else:
+            storage = SimpleStorageManager()
     except Exception as e:
         st.warning(f"⚠️ Database connection issue: {str(e)}")
         storage = SimpleStorageManager()
