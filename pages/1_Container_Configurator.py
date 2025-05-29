@@ -350,12 +350,19 @@ st.markdown("""
 
 col1, col2, col3, col4 = st.columns(4, gap="large")
 
-action_buttons = [
-    ("💰", "Wycena AI", "Uzyskaj automatyczną wycenę", "pages/2_AI_Cost_Estimator.py"),
-    ("🔧", "Analiza Techniczna", "Sprawdź parametry konstrukcyjne", "pages/3_Technical_Analysis.py"),
-    ("📄", "Generuj Ofertę", "Stwórz profesjonalną ofertę", "pages/4_Quote_Generator.py"),
-    ("⚖️", "Porównaj Opcje", "Porównaj z innymi konfiguracjami", "pages/5_Comparison_Tool.py")
-]
+# Show only client-facing options for non-employees
+if st.session_state.get('employee_logged_in', False):
+    action_buttons = [
+        ("💰", "Wycena AI", "Uzyskaj automatyczną wycenę", "pages/2_AI_Cost_Estimator.py"),
+        ("🔧", "Analiza Techniczna", "Sprawdź parametry konstrukcyjne", "pages/3_Technical_Analysis.py"),
+        ("📄", "Generuj Ofertę", "Stwórz profesjonalną ofertę", "pages/4_Quote_Generator.py"),
+        ("⚖️", "Porównaj Opcje", "Porównaj z innymi konfiguracjami", "pages/5_Comparison_Tool.py")
+    ]
+else:
+    # Client area - only basic functions
+    action_buttons = [
+        ("💰", "Wycena AI", "Uzyskaj automatyczną wycenę", "pages/2_AI_Cost_Estimator.py")
+    ]
 
 for i, (icon, title, desc, page) in enumerate(action_buttons):
     with [col1, col2, col3, col4][i]:

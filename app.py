@@ -56,26 +56,35 @@ if 'language' not in st.session_state:
 if 'employee_logged_in' not in st.session_state:
     st.session_state.employee_logged_in = False
 
-# Language selector at the very top
+if 'show_login' not in st.session_state:
+    st.session_state.show_login = False
+
+# Language selector at the very top with enhanced visibility
+st.markdown("""
+<div style="background: rgba(255,255,255,0.95); padding: 0.5rem; border-radius: 10px; margin-bottom: 1rem; border: 2px solid #e0e0e0;">
+<h4 style="text-align: center; margin: 0; color: #333; font-size: 1rem;">🌍 Choose Language / Wybierz Język / Sprache wählen / Kies Taal</h4>
+</div>
+""", unsafe_allow_html=True)
+
 col1, col2, col3, col4, col_spacer, col_login = st.columns([1, 1, 1, 1, 2, 1])
 
 with col1:
-    if st.button("🇬🇧", key="lang_en", help="English", use_container_width=True):
+    if st.button("🇬🇧 English", key="lang_en", help="English", use_container_width=True):
         st.session_state.language = 'en'
         st.rerun()
 
 with col2:
-    if st.button("🇵🇱", key="lang_pl", help="Polski", use_container_width=True):
+    if st.button("🇵🇱 Polski", key="lang_pl", help="Polski", use_container_width=True):
         st.session_state.language = 'pl'
         st.rerun()
 
 with col3:
-    if st.button("🇩🇪", key="lang_de", help="Deutsch", use_container_width=True):
+    if st.button("🇩🇪 Deutsch", key="lang_de", help="Deutsch", use_container_width=True):
         st.session_state.language = 'de'
         st.rerun()
 
 with col4:
-    if st.button("🇳🇱", key="lang_nl", help="Nederlands", use_container_width=True):
+    if st.button("🇳🇱 Nederlands", key="lang_nl", help="Nederlands", use_container_width=True):
         st.session_state.language = 'nl'
         st.rerun()
 
@@ -83,14 +92,16 @@ with col_login:
     # Employee login
     if not st.session_state.employee_logged_in:
         if st.button("👤", key="login_toggle_btn", help="Employee Login", use_container_width=True):
-            st.session_state.show_login = not st.session_state.get('show_login', False)
+            st.session_state.show_login = True
+            st.rerun()
     else:
         if st.button("🚪", key="emp_logout", help="Logout", use_container_width=True):
             st.session_state.employee_logged_in = False
+            st.session_state.show_login = False
             st.rerun()
 
 # Employee login form
-if st.session_state.get('show_login', False) and not st.session_state.employee_logged_in:
+if st.session_state.show_login and not st.session_state.employee_logged_in:
     col_a, col_b, col_c = st.columns([2, 2, 2])
     with col_b:
         employee_password = st.text_input("Password:", type="password", key="emp_pwd")
