@@ -2,7 +2,37 @@ import streamlit as st
 import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
-from utils.translations import t, render_language_selector, get_current_language
+from utils.complete_translations_fixed import get_translation
+from utils.global_language import get_current_language, set_language
+import streamlit as st
+
+def t(key):
+    return get_translation(key, get_current_language())
+
+def render_language_selector():
+    st.markdown("""
+    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+    """, unsafe_allow_html=True)
+    
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        if st.button("🇵🇱 PL", key="lang_pl_config", help="Polski", use_container_width=True):
+            set_language('pl')
+            st.rerun()
+    with col2:
+        if st.button("🇬🇧 EN", key="lang_en_config", help="English", use_container_width=True):
+            set_language('en')
+            st.rerun()
+    with col3:
+        if st.button("🇩🇪 DE", key="lang_de_config", help="Deutsch", use_container_width=True):
+            set_language('de')
+            st.rerun()
+    with col4:
+        if st.button("🇳🇱 NL", key="lang_nl_config", help="Nederlands", use_container_width=True):
+            set_language('nl')
+            st.rerun()
+    
+    st.markdown("</div>", unsafe_allow_html=True)
 
 # Page configuration
 st.set_page_config(

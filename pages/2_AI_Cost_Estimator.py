@@ -1,7 +1,30 @@
 import streamlit as st
 import json
-from utils.ai_services import estimate_cost_with_ai
-from utils.translations import t, render_language_selector
+from utils.groq_service import GroqService
+from utils.complete_translations_fixed import get_translation
+from utils.global_language import get_current_language, set_language
+
+def t(key):
+    return get_translation(key, get_current_language())
+
+def render_language_selector():
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+    with col1:
+        if st.button("🇵🇱 PL", key="lang_pl_ai", help="Polski", use_container_width=True):
+            set_language('pl')
+            st.rerun()
+    with col2:
+        if st.button("🇬🇧 EN", key="lang_en_ai", help="English", use_container_width=True):
+            set_language('en')
+            st.rerun()
+    with col3:
+        if st.button("🇩🇪 DE", key="lang_de_ai", help="Deutsch", use_container_width=True):
+            set_language('de')
+            st.rerun()
+    with col4:
+        if st.button("🇳🇱 NL", key="lang_nl_ai", help="Nederlands", use_container_width=True):
+            set_language('nl')
+            st.rerun()
 
 # Page configuration
 st.set_page_config(
