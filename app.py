@@ -10,6 +10,7 @@ from utils.simple_storage import SimpleStorageManager
 # Historical data service removed as not needed
 from utils.complete_translations_fixed import get_translation
 from utils.global_language import get_current_language, set_language
+from utils.translations import t, render_language_selector
 
 def t(key):
     """Translation function"""

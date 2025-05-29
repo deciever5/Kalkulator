@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
-from utils.translations import t, render_language_selector, get_current_language
+from utils.translations import t, render_language_selector
+from utils.complete_translations_fixed import get_translation, translate_options
 
 # Page configuration
 st.set_page_config(

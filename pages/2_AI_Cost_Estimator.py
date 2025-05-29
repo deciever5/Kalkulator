@@ -85,25 +85,25 @@ else:
             container_type_translated = t('container.types.20ft_refrigerated')
         else:
             container_type_translated = config['container_type']
-        
+
         # Translate main purpose
         purpose_key = config['main_purpose'].lower().replace(' ', '_')
         purpose_translated = t(f'container.use_cases.{purpose_key}')
         if purpose_translated == f'container.use_cases.{purpose_key}':
             purpose_translated = config['main_purpose']
-        
+
         # Translate environment
         env_key = config['environment'].lower()
         env_translated = t(f'container.environment.{env_key}')
         if env_translated == f'container.environment.{env_key}':
             env_translated = config['environment']
-        
+
         # Translate finish level
         finish_key = config['finish_level'].lower()
         finish_translated = t(f'container.finish_levels.{finish_key}')
         if finish_translated == f'container.finish_levels.{finish_key}':
             finish_translated = config['finish_level']
-        
+
         st.write(f"**{t('container_type')}:** {container_type_translated}")
         st.write(f"**{t('purpose')}:** {purpose_translated}")
         st.write(f"**{t('environment')}:** {env_translated}")
@@ -115,13 +115,13 @@ else:
         flooring_translated = t(f'container.flooring.{flooring_key}')
         if flooring_translated == f'container.flooring.{flooring_key}':
             flooring_translated = config['flooring']
-        
+
         # Translate climate zone
         climate_key = config['climate_zone'].lower().replace(' ', '_')
         climate_translated = t(f'container.climate_zones.{climate_key}')
         if climate_translated == f'container.climate_zones.{climate_key}':
             climate_translated = config['climate_zone']
-        
+
         st.write(f"**{t('flooring')}:** {flooring_translated}")
         st.write(f"**{t('climate_zone')}:** {climate_translated}")
         st.write(f"**{t('windows')}:** {config['number_of_windows']}")
