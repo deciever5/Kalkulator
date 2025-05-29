@@ -108,7 +108,10 @@ class OpenAIService:
         **Base Cost Calculations:**
         {json.dumps(base_costs, indent=2)}
 
-        Please provide a comprehensive cost estimate with the following JSON structure:
+        Please provide a comprehensive cost estimate with the following JSON structure.
+        
+        **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
+        
         {{
             "total_cost": 0,
             "confidence": 0.0,
@@ -288,6 +291,8 @@ class AnthropicService:
         Base Cost Calculations:
         {json.dumps(base_costs, indent=2)}
 
+        **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
+        
         Provide your analysis in the following JSON format:
         {{
             "total_cost": [total project cost in USD],
@@ -507,6 +512,8 @@ class GroqService:
 
         Base Costs: {json.dumps(base_costs, indent=2)}
 
+        **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
+        
         Provide estimate in this exact JSON format:
         {{
             "total_cost": [number],
@@ -671,6 +678,13 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "Auto-Select B
     Returns:
         Formatted cost estimate as string
     """
+    
+    # Import translations here to avoid circular imports
+    try:
+        from utils.translations import get_current_language, t
+        current_language = get_current_language()
+    except ImportError:
+        current_language = 'en'
 
     # Prepare estimation data
     estimation_data = {
@@ -678,7 +692,8 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "Auto-Select B
         "project_location": "Central Europe",
         "project_timeline": "Standard",
         "quality_level": "Standard",
-        "additional_notes": "Standard container modification project"
+        "additional_notes": "Standard container modification project",
+        "response_language": current_language
     }
 
     # Calculate base costs from config
@@ -721,7 +736,7 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "Auto-Select B
                 print(f"Anthropic service failed: {e}")
 
         # Final fallback - generate basic estimate
-        return generate_fallback_estimate(config, base_costs)
+        return generate_fallback_estimate(config, base_costs, current_language)
 
     except Exception as e:
         return f"Error generating AI estimate: {str(e)}"
@@ -772,8 +787,17 @@ def format_cost_estimate(result: Dict[str, Any], ai_model: str) -> str:
 
     return estimate_text
 
-def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any]) -> str:
+def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any], language: str = 'en') -> str:
     """Generate fallback estimate when AI services are unavailable"""
+    
+    # Import translations here to avoid circular imports
+    try:
+        from utils.translations import t
+    except ImportError:
+        # Fallback to English if translations not available
+        language = 'en'
+        def t(key, lang=None):
+            return key
 
     total_base = sum(base_costs.values())
 
@@ -792,34 +816,34 @@ def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any
     contingency = total_cost * 0.1
 
     return f"""
-## 🤖 Fallback Cost Estimate
+## 🤖 {t('fallback_cost_estimate', language)}
 
-### 💰 **Total Project Cost: €{total_cost:,.2f}**
-*Basic calculation when AI services are unavailable*
-
----
-
-### 📊 **Cost Breakdown:**
-- **Materials & Base Cost:** €{total_base:,.2f}
-- **Labor Costs (40%):** €{labor_cost:,.2f}
-- **Contingency (10%):** €{contingency:,.2f}
-- **Complexity Multiplier:** {multiplier}x
+### 💰 **{t('total_project_cost', language)}: €{total_cost:,.2f}**
+*{t('basic_calculation_ai_unavailable', language)}*
 
 ---
 
-### 💡 **Standard Recommendations:**
-1. Plan for standard delivery and installation timeline
-2. Consider local building code requirements
-3. Budget for potential site preparation needs
-4. Review electrical and plumbing requirements early
+### 📊 **{t('cost_breakdown', language)}:**
+- **{t('materials_base_cost', language)}:** €{total_base:,.2f}
+- **{t('labor_costs_40', language)}:** €{labor_cost:,.2f}
+- **{t('contingency_10', language)}:** €{contingency:,.2f}
+- **{t('complexity_multiplier', language)}:** {multiplier}x
 
 ---
 
-### ⚠️ **Standard Risk Factors:**
-1. Weather delays during construction
-2. Permit approval timeline variations
-3. Site access limitations for delivery
-4. Material price fluctuations
+### 💡 **{t('standard_recommendations', language)}:**
+1. {t('plan_standard_delivery', language)}
+2. {t('consider_building_codes', language)}
+3. {t('budget_site_preparation', language)}
+4. {t('review_electrical_plumbing', language)}
 
-*Note: This is a basic estimate. For more accurate pricing, please contact our team directly.*
+---
+
+### ⚠️ **{t('standard_risk_factors', language)}:**
+1. {t('weather_delays', language)}
+2. {t('permit_timeline_variations', language)}
+3. {t('site_access_limitations', language)}
+4. {t('material_price_fluctuations', language)}
+
+*{t('basic_estimate_note', language)}*
 """

@@ -240,5 +240,23 @@
     "historical_data": "Historische Data",
     "user_management": "Gebruikersbeheer",
     "system_settings": "Systeeminstellingen"
-  }
+  },
+  "fallback_cost_estimate": "Reserve Kostenschatting",
+  "total_project_cost": "Totale Projectkosten",
+  "basic_calculation_ai_unavailable": "Basisberekening wanneer AI-diensten niet beschikbaar zijn",
+  "materials_base_cost": "Materiaal & Basiskosten",
+  "labor_costs_40": "Arbeidskosten (40%)",
+  "contingency_10": "Onvoorzien (10%)",
+  "complexity_multiplier": "Complexiteit Vermenigvuldiger",
+  "standard_recommendations": "Standaard Aanbevelingen",
+  "plan_standard_delivery": "Plan voor standaard levering en installatietijdlijn",
+  "consider_building_codes": "Overweeg lokale bouwcodebepalingen",
+  "budget_site_preparation": "Budget voor mogelijke locatievoorbereiding",
+  "review_electrical_plumbing": "Beoordeel elektrische en loodgieterswerk vereisten vroeg",
+  "standard_risk_factors": "Standaard Risicofactoren",
+  "weather_delays": "Weersvertragingen tijdens constructie",
+  "permit_timeline_variations": "Variaties in vergunningsgoedkeuringstijdlijn",
+  "site_access_limitations": "Toegangsbeperkingen voor levering",
+  "material_price_fluctuations": "Materiaalprijs fluctuaties",
+  "basic_estimate_note": "Opmerking: Dit is een basisschatting. Voor nauwkeurigere prijzen, neem direct contact op met ons team."
 }
