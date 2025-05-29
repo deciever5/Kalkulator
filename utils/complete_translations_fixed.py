@@ -377,7 +377,13 @@ def t(key, language=None):
     if language is None:
         language = st.session_state.get('language', 'pl')
     
-    return TRANSLATIONS.get(language, {}).get(key, key)
+    # Debug: print key and language for troubleshooting
+    try:
+        result = TRANSLATIONS.get(language, {}).get(key, key)
+        return result
+    except Exception as e:
+        # Fallback to key if there's any error
+        return key
 
 def translate_list(items, language=None):
     """Translate a list of items (for dropdowns)"""

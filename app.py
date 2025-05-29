@@ -67,8 +67,9 @@ if 'employee_logged_in' not in st.session_state:
 if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
+# Employee login button
+col_spacer, col_login = st.columns([5, 1])
 with col_login:
-    # Employee login
     if not st.session_state.employee_logged_in:
         if st.button("👤", key="login_toggle_btn", help="Employee Login", use_container_width=True):
             st.session_state.show_login = True
@@ -185,9 +186,9 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 
 <div class="main-header">
     <div class="company-name">🏗️ KAN-BUD</div>
-    <div class="company-subtitle">{}</div>
+    <div class="company-subtitle">Professional Container Modification Solutions</div>
 </div>
-""".format(t('app.subtitle')), unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # Initialize session state
 if 'container_db' not in st.session_state:
