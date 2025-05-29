@@ -7,7 +7,7 @@ from utils.ai_services import OpenAIService, AnthropicService
 from utils.calculations import StructuralCalculations
 from utils.container_database import ContainerDatabase
 
-st.set_page_config(page_title="AI Cost Estimator", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="AI Cost Estimator", page_icon="🤖", layout="wide", initial_sidebar_state="collapsed")
 
 # Initialize services
 if 'container_db' not in st.session_state:
@@ -22,8 +22,21 @@ if 'openai_service' not in st.session_state:
 if 'anthropic_service' not in st.session_state:
     st.session_state.anthropic_service = AnthropicService()
 
-st.title("🤖 AI Cost Estimator")
-st.markdown("*Get intelligent cost estimates powered by advanced AI models*")
+# Navigation header
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col1:
+    if st.button("← Powrót do konfiguratora", key="config_nav"):
+        st.switch_page("pages/1_Container_Configurator.py")
+
+with col2:
+    st.markdown("### 🤖 Wycena AI")
+
+with col3:
+    if st.button("🏠 Strona główna", key="home_nav"):
+        st.switch_page("app.py")
+
+st.markdown("---")
 
 # Check if configuration exists
 if 'container_config' not in st.session_state or not st.session_state.container_config:

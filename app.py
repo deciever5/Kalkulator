@@ -153,14 +153,14 @@ if st.session_state.employee_logged_in:
 
 else:
     # Client view - modern, attractive layout
-    st.markdown("## 💼 Skonfiguruj Swój Kontener")
-    st.markdown("*Prosty proces w 2 krokach - od pomysłu do wyceny*")
+    st.markdown("## 💼 " + get_text('configure_container', lang))
+    st.markdown("*" + get_text('simple_process_2_steps', lang) + "*")
     
     # Large client action cards
     col1, col2 = st.columns(2, gap="large")
     
     with col1:
-        st.markdown("""
+        st.markdown(f"""
         <div style="
             border: 2px solid #1f77b4; 
             border-radius: 15px; 
@@ -171,19 +171,19 @@ else:
             margin-bottom: 20px;
         ">
             <h2 style="color: #1f77b4; margin-bottom: 15px;">
-                📦 KROK 1: Konfiguracja
+                📦 {get_text('step_1_configuration', lang)}
             </h2>
             <p style="font-size: 18px; color: #333; margin-bottom: 20px;">
-                Wybierz typ kontenera i dodaj modyfikacje zgodnie z Twoimi potrzebami
+                {get_text('choose_container_type', lang)}
             </p>
         </div>
         """, unsafe_allow_html=True)
         
-        if st.button("🚀 ROZPOCZNIJ KONFIGURACJĘ", key="client_config", use_container_width=True, type="primary"):
+        if st.button("🚀 " + get_text('start_configuration', lang), key="client_config", use_container_width=True, type="primary"):
             st.switch_page("pages/1_Container_Configurator.py")
     
     with col2:
-        st.markdown("""
+        st.markdown(f"""
         <div style="
             border: 2px solid #ff7f0e; 
             border-radius: 15px; 
@@ -194,15 +194,15 @@ else:
             margin-bottom: 20px;
         ">
             <h2 style="color: #ff7f0e; margin-bottom: 15px;">
-                🤖 KROK 2: Wycena AI
+                🤖 {get_text('step_2_ai_quote', lang)}
             </h2>
             <p style="font-size: 18px; color: #333; margin-bottom: 20px;">
-                Otrzymaj natychmiastową, inteligentną wycenę opartą na najnowszych danych rynkowych
+                {get_text('get_instant_quote', lang)}
             </p>
         </div>
         """, unsafe_allow_html=True)
         
-        if st.button("💰 OTRZYMAJ WYCENĘ", key="client_ai", use_container_width=True, type="secondary"):
+        if st.button("💰 " + get_text('get_quote', lang), key="client_ai", use_container_width=True, type="secondary"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Client benefits section

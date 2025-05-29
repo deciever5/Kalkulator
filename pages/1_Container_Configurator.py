@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 
-st.set_page_config(page_title="Container Configurator", page_icon="📦", layout="wide")
+st.set_page_config(page_title="Container Configurator", page_icon="📦", layout="wide", initial_sidebar_state="collapsed")
 
 # Initialize services
 if 'container_db' not in st.session_state:
@@ -13,8 +13,25 @@ if 'container_db' not in st.session_state:
 if 'calculations' not in st.session_state:
     st.session_state.calculations = StructuralCalculations()
 
-st.title("📦 Container Configurator")
-st.markdown("*Configure your container specifications and modifications*")
+# Navigation header
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col1:
+    if st.button("← Powrót do strony głównej", key="home_nav"):
+        st.switch_page("app.py")
+
+with col2:
+    st.markdown("### 📦 Konfigurator Kontenerów")
+
+with col3:
+    if 'employee_logged_in' in st.session_state and st.session_state.employee_logged_in:
+        if st.button("🤖 Przejdź do Wyceny AI →", key="ai_nav"):
+            st.switch_page("pages/2_AI_Cost_Estimator.py")
+    else:
+        if st.button("🤖 Przejdź do Wyceny AI →", key="ai_nav"):
+            st.switch_page("pages/2_AI_Cost_Estimator.py")
+
+st.markdown("---")
 
 # Initialize session state for configuration
 if 'container_config' not in st.session_state:
