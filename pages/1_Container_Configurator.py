@@ -136,7 +136,7 @@ with col1:
             st.markdown("<br>", unsafe_allow_html=True)
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">Waga</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{quick_translate('weight')}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['weight'] * 0.453592:.0f} kg</h2>
             </div>
             """, unsafe_allow_html=True)
@@ -144,9 +144,9 @@ with col1:
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Use case selection with enhanced styling
-    st.markdown("""
+    st.markdown(f"""
     <div class="config-section">
-        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🎯 Przeznaczenie</h3>
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🎯 {quick_translate('purpose')}</h3>
     """, unsafe_allow_html=True)
     
     use_cases = [
