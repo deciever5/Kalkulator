@@ -205,18 +205,18 @@ with col1:
 with col2:
     # Systems
     electrical_system = st.checkbox(
-        t('form.labels.electrical_system'),
+        t('electrical_system'),
         value=True,
         key="electrical_system"
     )
 
     plumbing_system = st.checkbox(
-        t('form.labels.plumbing_system'),
+        t('plumbing_system'),
         key="plumbing_system"
     )
 
     hvac_system = st.checkbox(
-        t('form.labels.hvac_system'),
+        t('hvac_system'),
         key="hvac_system"
     )
 

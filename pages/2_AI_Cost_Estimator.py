@@ -45,7 +45,7 @@ st.markdown("""
 # Header
 st.markdown(f"""
 <div class="main-header">
-    <div class="header-title">🤖 {t('nav.ai_cost_estimation')}</div>
+    <div class="header-title">🤖 {t('ai_cost_estimation')}</div>
     <div class="header-subtitle">{t('ai_powered_estimation')}</div>
 </div>
 """, unsafe_allow_html=True)
@@ -182,8 +182,3 @@ else:
 
             except Exception as e:
                 st.error(f"{t('error_generating_estimate')}: {str(e)}")
-
-    # Display saved estimate if available
-    if 'ai_estimate' in st.session_state:
-        st.markdown(f"### 📋 {t('saved_ai_estimate')}:")
-        st.markdown(st.session_state.ai_estimate)
