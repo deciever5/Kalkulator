@@ -136,56 +136,7 @@ with st.sidebar:
         st.markdown(f"✉️ {company_info.get('email', 'info@kan-bud.pl')}")
         st.markdown(f"🌐 {company_info.get('website', 'www.kan-bud.pl')}")
 
-# Historical Data Upload Section
-if historical_service and storage:
-    with st.expander(f"📊 {get_text('historical_data_import', lang)}"):
-        st.markdown(get_text('improve_pricing_accuracy', lang))
-        st.markdown(f"\n{get_text('upload_historical_data', lang)}")
-        st.markdown(get_text('get_accurate_estimates', lang))
-        st.markdown(get_text('analyze_pricing_trends', lang))
-        st.markdown(get_text('identify_profitable_projects', lang))
-        st.markdown(get_text('build_customer_confidence', lang))
-        
-        uploaded_file = st.file_uploader(
-            get_text('upload_historical_file', lang),
-            type=['csv', 'xlsx', 'xls'],
-            help=get_text('upload_help_text', lang)
-        )
-        
-        if uploaded_file is not None:
-            if st.button(get_text('import_historical_data', lang)):
-                try:
-                    st.info(get_text('processing_data', lang))
-                    
-                    # Process the uploaded file
-                    df = None
-                    if uploaded_file.name.endswith('.csv'):
-                        df = pd.read_csv(uploaded_file)
-                    elif uploaded_file.name.endswith(('.xlsx', '.xls')):
-                        df = pd.read_excel(uploaded_file)
-                    
-                    if df is not None:
-                        # Convert DataFrame to records and import
-                        data_records = df.to_dict('records')
-                        if historical_service.import_historical_projects(data=data_records):
-                            st.success(get_text('successfully_imported', lang).format(count=len(data_records)))
-                            st.info(get_text('pricing_accuracy_improved', lang))
-                        else:
-                            st.error(get_text('import_failed', lang))
-                    
-                except Exception as e:
-                    st.error(get_text('error_processing_file', lang).format(error=str(e)))
-        
-        # Show data template
-        if st.button(get_text('download_data_template', lang)):
-            template = historical_service.get_data_upload_template()
-            csv = template.to_csv(index=False)
-            st.download_button(
-                label=get_text('download_csv_template', lang),
-                data=csv,
-                file_name="kan_bud_historical_data_template.csv",
-                mime="text/csv"
-            )
+# Data import is now only available in Admin Panel
 
 # Sidebar navigation info
 with st.sidebar:

@@ -63,13 +63,27 @@ with col1:
     wind_load = st.number_input("Wind Load (km/h)", min_value=0, max_value=320, value=145)
 
 with col2:
-    snow_load = st.number_input("Snow Load (kN/m²)", min_value=0, max_value=5, value=1.0, step=0.1)
+    snow_load = st.number_input("Snow Load (kN/m²)", min_value=0.0, max_value=5.0, value=1.0, step=0.1)
 
 with col3:
-    seismic_zone = st.selectbox("Seismic Zone", ["Low", "Moderate", "High", "Very High"])
+    climate_zone = st.selectbox("Climate Zone", [
+        "Umiarkowana (Europa Środkowa)",
+        "Subpolarna (Skandynawia)",
+        "Morska (Wybrzeża)",
+        "Górska (Alpy, Karpaty)",
+        "Kontynentalna (Europa Wschodnia)",
+        "Śródziemnomorska (Południe)"
+    ])
 
 with col4:
-    corrosion_env = st.selectbox("Corrosion Environment", ["Mild", "Moderate", "Severe", "Marine"])
+    environmental_conditions = st.selectbox("Environmental Conditions", [
+        "Standardowe",
+        "Wysokie zasolenie (morskie)",
+        "Wysoka wilgotność",
+        "Przemysłowe (zanieczyszczenia)",
+        "Agresywne chemicznie",
+        "Ekstremalne temperatury"
+    ])
 
 # Generate analysis button
 if st.button("🔍 Run Technical Analysis", type="primary", use_container_width=True):
@@ -81,8 +95,8 @@ if st.button("🔍 Run Technical Analysis", type="primary", use_container_width=
             "safety_factor": float(safety_factor.split("(")[1].split(")")[0]),
             "wind_load": wind_load,
             "snow_load": snow_load,
-            "seismic_zone": seismic_zone,
-            "corrosion_env": corrosion_env,
+            "climate_zone": climate_zone,
+            "environmental_conditions": environmental_conditions,
             "analysis_depth": analysis_depth
         }
         

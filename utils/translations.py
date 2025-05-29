@@ -269,6 +269,8 @@ translations = {
         'month': 'Miesiąc',
         'price': 'Cena',
         'steel_price': 'Cena stali (€/tona)',
+        'drawing_analysis': 'Analiza Rysunków',
+        'admin_panel': 'Panel Administracyjny',
         'company_info': {
             'name': 'KAN-BUD',
             'address': 'Kąkolewo, Polska',
