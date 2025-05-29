@@ -83,7 +83,7 @@ if uploaded_files:
         st.write(f"📄 {file.name} ({file.size} bytes)")
 
 # Analysis section
-if uploaded_files and st.button("🔍 Analizuj Rysunki", type="primary"):
+if uploaded_files and st.button("🔍 Analizuj Rysunki (Groq AI)", type="primary"):
     
     project_context = {
         'container_type': container_type,
@@ -92,7 +92,7 @@ if uploaded_files and st.button("🔍 Analizuj Rysunki", type="primary"):
         'project_name': project_name
     }
     
-    with st.spinner("Analizuję rysunki za pomocą AI..."):
+    with st.spinner("Analizuję rysunki za pomocą Groq AI (darmowe i szybkie)..."):
         
         analysis_results = []
         
@@ -299,9 +299,9 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown("""
     **Format plików:**
-    • PDF - najlepsze wyniki analizy AI
-    • DWG - analiza metadanych
-    • JPG/PNG - analiza obrazów
+    • PDF - inteligentna analiza z Groq AI
+    • DWG - analiza metadanych  
+    • JPG/PNG - analiza kontekstu projektu
     
     **Jakość rysunków:**
     • Wysoką rozdzielczość (min. 300 DPI)
