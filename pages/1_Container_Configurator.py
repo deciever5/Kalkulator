@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
-from utils.global_language import init_language, get_current_language, render_language_selector, t, translate_list
+from utils.quick_translate import quick_translate, translate_dropdown_options, render_language_dropdown
 from utils.advanced_3d_visualizer import Advanced3DVisualizer
 
 st.set_page_config(page_title="Container Configurator", page_icon="📦", layout="wide", initial_sidebar_state="collapsed")
@@ -11,6 +11,9 @@ st.set_page_config(page_title="Container Configurator", page_icon="📦", layout
 # Initialize language
 if 'language' not in st.session_state:
     st.session_state.language = 'pl'
+
+# Language selector
+render_language_dropdown()
 
 # Initialize services
 if 'container_db' not in st.session_state:
@@ -73,10 +76,10 @@ st.markdown("""
 
 col1, col2 = st.columns(2)
 with col1:
-    if st.button(get_translation('back_to_home', st.session_state.language), key="home_nav", use_container_width=True):
+    if st.button(quick_translate('back_to_home'), key="home_nav", use_container_width=True):
         st.switch_page("app.py")
 with col2:
-    if st.button(get_translation('go_to_ai_estimate', st.session_state.language), key="ai_nav", use_container_width=True):
+    if st.button("🤖 Przejdź do Wyceny AI →", key="ai_nav", use_container_width=True):
         st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 st.markdown("</div></div></div>", unsafe_allow_html=True)
