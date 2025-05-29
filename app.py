@@ -175,40 +175,85 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 </div>
 """, unsafe_allow_html=True)
 
-# Header controls
-col1, col2, col3 = st.columns([2, 1, 1])
+# Modern language selector with flags in top-right corner
+st.markdown("""
+<div style="position: fixed; top: 20px; right: 20px; display: flex; align-items: center; gap: 15px; z-index: 1000; background: rgba(255, 255, 255, 0.95); padding: 10px; border-radius: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+    <div style="display: flex; gap: 8px;">
+        <div style="font-size: 20px; cursor: pointer; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; border: 2px solid transparent;" onclick="window.location.reload()" title="English">🇬🇧</div>
+        <div style="font-size: 20px; cursor: pointer; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; border: 2px solid transparent;" onclick="window.location.reload()" title="Polski">🇵🇱</div>
+        <div style="font-size: 20px; cursor: pointer; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; border: 2px solid transparent;" onclick="window.location.reload()" title="Deutsch">🇩🇪</div>
+        <div style="font-size: 20px; cursor: pointer; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; border: 2px solid transparent;" onclick="window.location.reload()" title="Nederlands">🇳🇱</div>
+    </div>
+    <div style="border-left: 1px solid #ccc; padding-left: 15px;">
+        <div style="
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        " title="Logowanie pracownika">👤 Login</div>
+    </div>
+</div>
+
+<style>
+.language-flag:hover {
+    border-color: #1e3c72 !important;
+    transform: scale(1.1);
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Language change buttons (functional)
+col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 2])
+
+with col1:
+    if st.button("🇬🇧", key="lang_en", help="English"):
+        st.session_state.language = 'en'
+        st.rerun()
 
 with col2:
-    # Language selector with improved styling
-    st.markdown("##### 🌐 Język / Language")
-    selected_language = st.selectbox(
-        "",
-        options=list(available_languages.keys()),
-        format_func=lambda x: available_languages[x],
-        index=list(available_languages.keys()).index(st.session_state.language),
-        label_visibility="collapsed"
-    )
-    
-    if selected_language != st.session_state.language:
-        st.session_state.language = selected_language
+    if st.button("🇵🇱", key="lang_pl", help="Polski"):
+        st.session_state.language = 'pl'
         st.rerun()
 
 with col3:
-    # Enhanced employee login
+    if st.button("🇩🇪", key="lang_de", help="Deutsch"):
+        st.session_state.language = 'de'
+        st.rerun()
+
+with col4:
+    if st.button("🇳🇱", key="lang_nl", help="Nederlands"):
+        st.session_state.language = 'nl'
+        st.rerun()
+
+with col5:
+    # Employee login
     if not st.session_state.employee_logged_in:
-        with st.expander("👤 Panel Pracownika", expanded=False):
-            st.markdown("**Dostęp dla pracowników KAN-BUD**")
+        if st.button("👤 Panel Pracownika", key="show_login"):
+            st.session_state.show_login = not st.session_state.get('show_login', False)
+            
+        if st.session_state.get('show_login', False):
             employee_password = st.text_input("Hasło:", type="password", key="emp_pwd")
-            if st.button("🔐 Zaloguj", key="emp_login", use_container_width=True):
-                if employee_password == "kan-bud-employee-2024":
-                    st.session_state.employee_logged_in = True
-                    st.success("✅ Pomyślnie zalogowano!")
+            col_a, col_b = st.columns(2)
+            with col_a:
+                if st.button("Zaloguj", key="emp_login"):
+                    if employee_password == "kan-bud-employee-2024":
+                        st.session_state.employee_logged_in = True
+                        st.session_state.show_login = False
+                        st.success("Zalogowano!")
+                        st.rerun()
+                    else:
+                        st.error("Błędne hasło")
+            with col_b:
+                if st.button("Anuluj", key="cancel_login"):
+                    st.session_state.show_login = False
                     st.rerun()
-                else:
-                    st.error("❌ Błędne hasło")
     else:
-        st.success("✅ Zalogowany jako Pracownik")
-        if st.button("🚪 Wyloguj", key="emp_logout", use_container_width=True):
+        st.success("✅ Pracownik")
+        if st.button("🚪 Wyloguj", key="emp_logout"):
             st.session_state.employee_logged_in = False
             st.rerun()
 
