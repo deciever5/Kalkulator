@@ -114,7 +114,8 @@
       "error_generating": "Fehler beim Erstellen der KI-Schätzung: {error}"
     }
   },
-  "employee_tools": "Mitarbeiter-Tools",
+  "employee_tools": "Mitarbeiter-Tools", 
+  "ai_cost_estimation": "KI-Kostenschätzung",
   "ai_powered_estimation": "KI-gestützte Kostenschätzung für Container-Modifikationen",
   "no_configuration_found": "Keine Container-Konfiguration gefunden. Bitte konfigurieren Sie zuerst Ihren Container.",
   "current_configuration": "Aktuelle Konfiguration",

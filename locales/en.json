@@ -115,6 +115,7 @@
     }
   },
   "employee_tools": "Employee Tools",
+  "ai_cost_estimation": "AI Cost Estimation",
   "ai_powered_estimation": "AI-powered container modification cost estimation",
   "no_configuration_found": "No container configuration found. Please configure your container first.",
   "current_configuration": "Current Configuration",

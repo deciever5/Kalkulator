@@ -115,6 +115,7 @@
     }
   },
   "employee_tools": "Narzędzia Pracownicze",
+  "ai_cost_estimation": "Wycena AI",
   "ai_powered_estimation": "Wycena modyfikacji kontenerów z wykorzystaniem AI",
   "no_configuration_found": "Nie znaleziono konfiguracji kontenera. Proszę najpierw skonfigurować kontener.",
   "current_configuration": "Aktualna Konfiguracja",

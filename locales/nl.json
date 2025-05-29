@@ -115,6 +115,7 @@
     }
   },
   "employee_tools": "Medewerker Tools",
+  "ai_cost_estimation": "AI Kostenschatting", 
   "ai_powered_estimation": "AI-aangedreven kostenschatting voor containermodificaties",
   "no_configuration_found": "Geen containerconfiguratie gevonden. Configureer eerst uw container.",
   "current_configuration": "Huidige Configuratie",
