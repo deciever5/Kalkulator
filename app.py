@@ -59,6 +59,14 @@ if 'employee_logged_in' not in st.session_state:
 # Modern header with enhanced styling
 st.markdown("""
 <style>
+/* Hide sidebar completely */
+.css-1d391kg {display: none !important;}
+.css-1y4p8pa {margin-left: 0 !important;}
+.css-17eq0hr {display: none !important;}
+section[data-testid="stSidebar"] {display: none !important;}
+.css-164nlkn {margin-left: 0 !important;}
+div[data-testid="stSidebarNav"] {display: none !important;}
+
 .main-header {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     padding: 2rem;
