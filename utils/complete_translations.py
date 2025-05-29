@@ -12,6 +12,8 @@ COMPLETE_TRANSLATIONS = {
         'back_to_home': '← Back to Home',
         'go_to_ai_estimate': '🤖 Go to AI Estimate →',
         'go_to_configurator': '🔧 Go to Configurator',
+        'ai_cost_estimation': 'AI Cost Estimation',
+        'container_configurator': 'Container Configurator',
         
         # Container types
         '20ft Standard': '20ft Standard',
@@ -111,6 +113,8 @@ COMPLETE_TRANSLATIONS = {
         'back_to_home': '← Powrót do strony głównej',
         'go_to_ai_estimate': '🤖 Przejdź do Wyceny AI →',
         'go_to_configurator': '🔧 Przejdź do Konfiguratora',
+        'ai_cost_estimation': 'Wycena AI',
+        'container_configurator': 'Konfigurator Kontenerów',
         
         # Container types
         '20ft Standard': '20ft Standard',

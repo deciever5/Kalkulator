@@ -3,7 +3,8 @@ import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from utils.ai_services import OpenAIService, AnthropicService, GroqService
+from utils.groq_service import GroqService
+from utils.global_language import init_language, get_current_language, render_language_selector, t, translate_list
 from utils.calculations import StructuralCalculations
 from utils.container_database import ContainerDatabase
 
@@ -16,31 +17,28 @@ if 'container_db' not in st.session_state:
 if 'calculations' not in st.session_state:
     st.session_state.calculations = StructuralCalculations()
 
-if 'openai_service' not in st.session_state:
-    st.session_state.openai_service = OpenAIService()
+# Initialize language
+init_language()
 
-if 'anthropic_service' not in st.session_state:
-    try:
-        st.session_state.anthropic_service = AnthropicService()
-    except ValueError as e:
-        st.session_state.anthropic_service = None
-
-# Initialize Groq service (free option)
+# Initialize Groq service
 if 'groq_service' not in st.session_state:
     st.session_state.groq_service = GroqService()
+
+# Language selector
+render_language_selector()
 
 # Navigation header
 col1, col2, col3 = st.columns([1, 2, 1])
 
 with col1:
-    if st.button("← Powrót do konfiguratora", key="config_nav"):
+    if st.button(t('back_to_home'), key="config_nav"):
         st.switch_page("pages/1_Container_Configurator.py")
 
 with col2:
-    st.markdown("### 🤖 Wycena AI")
+    st.markdown(f"### 🤖 {t('ai_cost_estimation')}")
 
 with col3:
-    if st.button("🏠 Strona główna", key="home_nav"):
+    if st.button(t('back_to_home'), key="home_nav"):
         st.switch_page("app.py")
 
 st.markdown("---")
