@@ -30,9 +30,10 @@ def initialize_services():
             storage = db
             st.success("📊 Database connected: PostgreSQL")
         else:
+            st.info("📊 Database: Using local storage mode")
             storage = SimpleStorageManager()
     except Exception as e:
-        st.warning(f"⚠️ Database connection issue: {str(e)}")
+        st.info("📊 Database: Using local storage mode")
         storage = SimpleStorageManager()
     
     container_db = ContainerDatabase()
@@ -62,15 +63,19 @@ if 'employee_logged_in' not in st.session_state:
 st.markdown("""
 <style>
 /* Hide sidebar completely */
+section[data-testid="stSidebar"] {display: none !important;}
+.stSidebar {display: none !important;}
+button[kind="header"] {display: none !important;}
+button[data-testid="collapsedControl"] {display: none !important;}
 .css-1d391kg {display: none !important;}
 .css-1y4p8pa {margin-left: 0 !important;}
 .css-17eq0hr {display: none !important;}
-section[data-testid="stSidebar"] {display: none !important;}
 .css-164nlkn {margin-left: 0 !important;}
 div[data-testid="stSidebarNav"] {display: none !important;}
 button[data-testid="baseButton-header"] {display: none !important;}
 .css-1544g2n {display: none !important;}
 .css-18e3th9 {display: none !important;}
+[data-testid="stSidebarCollapseButton"] {display: none !important;}
 
 .main-header {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
