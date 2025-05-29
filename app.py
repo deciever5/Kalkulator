@@ -351,16 +351,16 @@ else:
         ">
             <div style="font-size: 4rem; margin-bottom: 1rem;">🤖</div>
             <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                {get_text('step_2_ai_quote', lang)}
+                {get_text('step_2_ai_quote', st.session_state.language)}
             </h2>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                {get_text('get_instant_quote', lang)}
+                {get_text('get_instant_quote', st.session_state.language)}
             </p>
         </div>
         """, unsafe_allow_html=True)
         
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("💰 " + get_text('get_quote', lang), key="client_ai", use_container_width=True, type="secondary"):
+        if st.button("💰 " + get_text('get_quote', st.session_state.language), key="client_ai", use_container_width=True, type="secondary"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Enhanced client benefits section
