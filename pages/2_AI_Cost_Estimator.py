@@ -1,20 +1,4 @@
 import streamlit as st
-import pandas as pd
-from utils.calculations import calculate_container_cost
-from utils.ai_services import OpenAIService, AnthropicService
-from utils.translations import t, render_language_selector
-
-# Page configuration
-st.set_page_config(
-    page_title="AI Cost Estimator - KAN-BUD",
-    page_icon="🤖",
-    layout="wide"
-)
-
-# Language selector at the top
-render_language_selector()
-
-import streamlit as st
 import json
 from utils.ai_services import estimate_cost_with_ai
 from utils.translations import t, render_language_selector
@@ -62,7 +46,7 @@ st.markdown("""
 st.markdown(f"""
 <div class="main-header">
     <div class="header-title">🤖 {t('nav.ai_cost_estimation')}</div>
-    <div class="header-subtitle">AI-powered container modification cost estimation</div>
+    <div class="header-subtitle">{t('ai_powered_estimation')}</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -78,45 +62,45 @@ with col2:
 
 # Check if configuration exists
 if 'container_config' not in st.session_state:
-    st.warning("No container configuration found. Please configure your container first.")
-    if st.button("🔧 Go to Configurator", use_container_width=True):
+    st.warning(t('no_configuration_found'))
+    if st.button(f"🔧 {t('ui.go_to_configurator')}", use_container_width=True):
         st.switch_page("pages/1_Container_Configurator.py")
 else:
     # Display configuration
     config = st.session_state.container_config
 
-    st.markdown("### Current Configuration:")
+    st.markdown(f"### {t('current_configuration')}:")
     col1, col2 = st.columns(2)
 
     with col1:
-        st.write(f"**Container Type:** {config['container_type']}")
-        st.write(f"**Purpose:** {config['main_purpose']}")
-        st.write(f"**Environment:** {config['environment']}")
-        st.write(f"**Finish Level:** {config['finish_level']}")
+        st.write(f"**{t('container_type')}:** {config['container_type']}")
+        st.write(f"**{t('purpose')}:** {config['main_purpose']}")
+        st.write(f"**{t('environment')}:** {config['environment']}")
+        st.write(f"**{t('finish_level')}:** {config['finish_level']}")
 
     with col2:
-        st.write(f"**Flooring:** {config['flooring']}")
-        st.write(f"**Climate Zone:** {config['climate_zone']}")
-        st.write(f"**Windows:** {config['number_of_windows']}")
-        st.write(f"**Additional Doors:** {'Yes' if config['additional_doors'] else 'No'}")
+        st.write(f"**{t('flooring')}:** {config['flooring']}")
+        st.write(f"**{t('climate_zone')}:** {config['climate_zone']}")
+        st.write(f"**{t('windows')}:** {config['number_of_windows']}")
+        st.write(f"**{t('additional_doors')}:** {t('yes') if config['additional_doors'] else t('no')}")
 
     st.markdown("---")
 
     # AI model selection
-    st.markdown("### AI Model Selection:")
+    st.markdown(f"### {t('ai_model_selection')}:")
     ai_model = st.selectbox(
-        "Choose AI Model:",
+        t('choose_ai_model'),
         [
-            "Auto-Select Best",
+            t('auto_select_best'),
             "Groq Llama-3.1-70B",
-            "Groq Llama-3.1-8B",
+            "Groq Llama-3.1-8B", 
             "Groq Mixtral-8x7B"
         ],
         key="ai_model_select"
     )
 
     # Generate estimate button
-    if st.button("🚀 Generate AI Cost Estimate", use_container_width=True, type="primary"):
+    if st.button(f"🚀 {t('generate_ai_estimate')}", use_container_width=True, type="primary"):
         with st.spinner(t('ai.messages.generating')):
             try:
                 # Call AI service
@@ -127,19 +111,19 @@ else:
                     st.success(t('ai.messages.estimate_generated'))
 
                     # Display estimate
-                    st.markdown("### 🤖 AI Cost Estimate:")
+                    st.markdown(f"### 🤖 {t('ai_cost_estimate')}:")
                     st.markdown(estimate)
 
                     # Save estimate
-                    if st.button("💾 Save Estimate", key="save_estimate"):
-                        st.success("Estimate saved!")
+                    if st.button(f"💾 {t('save_estimate')}", key="save_estimate"):
+                        st.success(t('estimate_saved'))
                 else:
-                    st.error("Failed to generate estimate. Please try again.")
+                    st.error(t('failed_generate_estimate'))
 
             except Exception as e:
-                st.error(f"Error generating estimate: {str(e)}")
+                st.error(f"{t('error_generating_estimate')}: {str(e)}")
 
     # Display saved estimate if available
     if 'ai_estimate' in st.session_state:
-        st.markdown("### 📋 Saved AI Estimate:")
+        st.markdown(f"### 📋 {t('saved_ai_estimate')}:")
         st.markdown(st.session_state.ai_estimate)
