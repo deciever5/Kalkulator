@@ -171,7 +171,7 @@ else:
                     {t('contact_for_quote')}
                     """)
                     
-                    if st.button(f"📧 {t('send_inquiry_cta')}", key="inquiry_cta", use_container_width=True):
+                    if st.button(f"📧 {t('send_inquiry_cta')}", key="inquiry_cta", use_container_width=True, type="primary"):
                         st.switch_page("pages/8_Send_Inquiry.py")
 
                     # Save estimate
