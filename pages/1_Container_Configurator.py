@@ -1,9 +1,8 @@
-
 import streamlit as st
 import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
-from utils.translations import t, get_current_language, render_language_selector
+from utils.translations import t, render_language_selector
 
 # Page configuration
 st.set_page_config(
@@ -100,7 +99,7 @@ with col1:
         key="container_type_display"
     )
     container_type = container_types[container_type_display]
-    
+
     # Main purpose
     main_purposes = {
         t('container.use_cases.office_space'): "Office Space",
@@ -118,7 +117,7 @@ with col1:
         key="main_purpose_display"
     )
     main_purpose = main_purposes[main_purpose_display]
-    
+
     # Environment
     environments = {
         t('container.environment.indoor'): "Indoor",
@@ -147,7 +146,7 @@ with col2:
         key="finish_level_display"
     )
     finish_level = finish_levels[finish_level_display]
-    
+
     # Flooring
     floorings = {
         t('container.flooring.plywood'): "Plywood",
@@ -162,7 +161,7 @@ with col2:
         key="flooring_display"
     )
     flooring = floorings[flooring_display]
-    
+
     # Climate zone
     climate_zones = {
         t('container.climate_zones.central_european'): "Central European",
@@ -197,7 +196,7 @@ with col1:
         value=2,
         key="number_of_windows"
     )
-    
+
     additional_doors = st.checkbox(
         t('form.labels.additional_doors'),
         key="additional_doors"
@@ -210,12 +209,12 @@ with col2:
         value=True,
         key="electrical_system"
     )
-    
+
     plumbing_system = st.checkbox(
         t('form.labels.plumbing_system'),
         key="plumbing_system"
     )
-    
+
     hvac_system = st.checkbox(
         t('form.labels.hvac_system'),
         key="hvac_system"
@@ -251,7 +250,7 @@ with col1:
     st.write(f"• Type: {container_type}")
     st.write(f"• Use Case: {main_purpose}")
     st.write(f"• Environment: {environment}")
-    
+
     st.markdown("**Key Modifications:**")
     st.write(f"• Finish Level: {finish_level}")
     st.write(f"• Flooring: {flooring}")

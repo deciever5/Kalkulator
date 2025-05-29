@@ -1,11 +1,25 @@
 {
   "ui": {
+    "employee_login": "Login Pracownika",
+    "logout": "Wyloguj",
+    "password": "Hasło:",
+    "login": "Zaloguj",
+    "logged_in": "Zalogowano!",
+    "wrong_password": "Nieprawidłowe hasło",
+    "cancel": "Anuluj",
+    "open": "Otwórz",
     "language_selector": "Język / Language",
     "back_to_home": "← Powrót do strony głównej",
     "go_to_ai_estimate": "🤖 Przejdź do Wyceny AI →",
     "go_to_configurator": "🔧 Przejdź do Konfiguratora"
   },
   "nav": {
+    "comparison_tool": "Narzędzie\nPorównań",
+    "comparison_tool_desc": "Porównywanie konfiguracji",
+    "drawing_analysis": "Analiza\nRysunków",
+    "drawing_analysis_desc": "Analiza dokumentów AI",
+    "admin_panel": "Panel\nAdministracyjny", 
+    "admin_panel_desc": "Zarządzanie systemem",
     "ai_cost_estimation": "Wycena AI",
     "container_configurator": "Konfigurator Kontenerów",
     "technical_analysis": "Analiza Techniczna",

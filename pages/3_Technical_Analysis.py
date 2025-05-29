@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from utils.calculations import StructuralCalculations
-from utils.translations import t, get_current_language, render_language_selector
+from utils.translations import t, render_language_selector, get_current_language, render_language_selector
 
 # Page configuration
 st.set_page_config(
@@ -11,6 +11,13 @@ st.set_page_config(
     page_icon="🔧",
     layout="wide"
 )
+
+# Initialize language if not set
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+
+# Language selector
+render_language_selector()
 
 # Language selector at the top
 render_language_selector()

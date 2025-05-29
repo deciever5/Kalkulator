@@ -1,12 +1,26 @@
 
 {
   "ui": {
+    "employee_login": "Employee Login",
+    "logout": "Logout",
+    "password": "Password:",
+    "login": "Login",
+    "logged_in": "Logged in!",
+    "wrong_password": "Wrong password",
+    "cancel": "Cancel",
+    "open": "Open",
     "language_selector": "Language / Język",
     "back_to_home": "← Back to Home",
     "go_to_ai_estimate": "🤖 Go to AI Estimate →",
     "go_to_configurator": "🔧 Go to Configurator"
   },
   "nav": {
+    "comparison_tool": "Comparison\nTool",
+    "comparison_tool_desc": "Compare configurations",
+    "drawing_analysis": "Drawing\nAnalysis", 
+    "drawing_analysis_desc": "AI document analysis",
+    "admin_panel": "Admin\nPanel",
+    "admin_panel_desc": "System management",
     "ai_cost_estimation": "AI Cost Estimation",
     "container_configurator": "Container Configurator",
     "technical_analysis": "Technical Analysis",

@@ -1,12 +1,26 @@
 
 {
   "ui": {
+    "employee_login": "Mitarbeiter-Login",
+    "logout": "Abmelden",
+    "password": "Passwort:",
+    "login": "Anmelden",
+    "logged_in": "Angemeldet!",
+    "wrong_password": "Falsches Passwort",
+    "cancel": "Abbrechen",
+    "open": "Öffnen",
     "language_selector": "Sprache / Language",
     "back_to_home": "← Zurück zur Startseite",
     "go_to_ai_estimate": "🤖 Zur KI-Schätzung →",
     "go_to_configurator": "🔧 Zum Konfigurator"
   },
   "nav": {
+    "comparison_tool": "Vergleichs\nwerkzeug",
+    "comparison_tool_desc": "Konfigurationen vergleichen",
+    "drawing_analysis": "Zeichnungs\nanalyse",
+    "drawing_analysis_desc": "KI-Dokumentenanalyse",
+    "admin_panel": "Admin\nPanel",
+    "admin_panel_desc": "Systemverwaltung",
     "ai_cost_estimation": "KI-Kostenschätzung",
     "container_configurator": "Container-Konfigurator",
     "technical_analysis": "Technische Analyse",

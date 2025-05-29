@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from utils.calculations import calculate_container_cost
 from utils.ai_services import OpenAIService, AnthropicService
-from utils.translations import t, get_current_language, render_language_selector
+from utils.translations import t, render_language_selector
 
 # Page configuration
 st.set_page_config(
@@ -17,7 +17,7 @@ render_language_selector()
 import streamlit as st
 import json
 from utils.ai_services import estimate_cost_with_ai
-from utils.translations import t, get_current_language
+from utils.translations import t, render_language_selector
 
 # Page configuration
 st.set_page_config(
@@ -25,6 +25,13 @@ st.set_page_config(
     page_icon="🤖",
     layout="wide"
 )
+
+# Initialize language if not set
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+
+# Language selector
+render_language_selector()
 
 st.markdown("""
 <style>

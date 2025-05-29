@@ -6,7 +6,7 @@ from datetime import datetime
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
-fromutils.simple_storage import SimpleStorageManager
+from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
 from utils.translations import t, render_language_selector
 from utils.groq_service import GroqService
@@ -71,11 +71,11 @@ if 'show_login' not in st.session_state:
 col_spacer, col_login = st.columns([5, 1])
 with col_login:
     if not st.session_state.employee_logged_in:
-        if st.button("👤", key="login_toggle_btn", help="Employee Login", use_container_width=True):
+        if st.button("👤", key="login_toggle_btn", help=t('ui.employee_login'), use_container_width=True):
             st.session_state.show_login = True
             st.rerun()
     else:
-        if st.button("🚪", key="emp_logout", help="Logout", use_container_width=True):
+        if st.button("🚪", key="emp_logout", help=t('ui.logout'), use_container_width=True):
             st.session_state.employee_logged_in = False
             st.session_state.show_login = False
             st.rerun()
@@ -84,19 +84,19 @@ with col_login:
 if st.session_state.show_login and not st.session_state.employee_logged_in:
     col_a, col_b, col_c = st.columns([2, 2, 2])
     with col_b:
-        employee_password = st.text_input("Password:", type="password", key="emp_pwd")
+        employee_password = st.text_input(t('ui.password'), type="password", key="emp_pwd")
         col_x, col_y = st.columns(2)
         with col_x:
-            if st.button("Login", key="emp_login", use_container_width=True):
+            if st.button(t('ui.login'), key="emp_login", use_container_width=True):
                 if employee_password == "kan-bud-employee-2024":
                     st.session_state.employee_logged_in = True
                     st.session_state.show_login = False
-                    st.success("Logged in!")
+                    st.success(t('ui.logged_in'))
                     st.rerun()
                 else:
-                    st.error("Wrong password")
+                    st.error(t('ui.wrong_password'))
         with col_y:
-            if st.button("Cancel", key="cancel_login", use_container_width=True):
+            if st.button(t('ui.cancel'), key="cancel_login", use_container_width=True):
                 st.session_state.show_login = False
                 st.rerun()
 
@@ -235,16 +235,16 @@ if st.session_state.employee_logged_in:
                 <div class="feature-description">{desc}</div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"Open {title}", key=key, use_container_width=True, type="primary"):
+            if st.button(f"{t('ui.open')} {title}", key=key, use_container_width=True, type="primary"):
                 st.switch_page(page)
 
     # Secondary tools
     col5, col6, col7 = st.columns([1, 1, 1], gap="large")
 
     secondary_tools = [
-        ("⚖️", "Narzędzie\nPorównań", "Porównywanie konfiguracji", "pages/5_Comparison_Tool.py", "emp_compare"),
-        ("📐", "Analiza\nRysunków", "Analiza dokumentów AI", "pages/6_Drawing_Analysis.py", "emp_draw"),
-        ("🔐", "Panel\nAdministracyjny", "Zarządzanie systemem", "pages/Admin_Panel.py", "emp_admin")
+        ("⚖️", t('nav.comparison_tool'), t('nav.comparison_tool_desc'), "pages/5_Comparison_Tool.py", "emp_compare"),
+        ("📐", t('nav.drawing_analysis'), t('nav.drawing_analysis_desc'), "pages/6_Drawing_Analysis.py", "emp_draw"),
+        ("🔐", t('nav.admin_panel'), t('nav.admin_panel_desc'), "pages/Admin_Panel.py", "emp_admin")
     ]
 
     for i, (icon, title, desc, page, key) in enumerate(secondary_tools):
@@ -256,7 +256,7 @@ if st.session_state.employee_logged_in:
                 <div class="feature-description">{desc}</div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"Otwórz {title}", key=key, use_container_width=True):
+            if st.button(f"{t('ui.open')} {title}", key=key, use_container_width=True):
                 st.switch_page(page)
 
 else:
