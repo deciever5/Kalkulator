@@ -6,7 +6,7 @@ from datetime import datetime
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
-from utils.simple_storage import SimpleStorageManager
+fromutils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
 from utils.translations import t, render_language_selector
 from utils.groq_service import GroqService
@@ -286,16 +286,16 @@ else:
         ">
             <div style="font-size: 4rem; margin-bottom: 1rem;">📦</div>
             <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                Step 1: Configuration
+                {t('step_1_configuration')}
             </h2>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                Choose container type and specifications
+                {t('choose_container_type')}
             </p>
         </div>
         """, unsafe_allow_html=True)
 
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("🚀 Start Configuration", key="client_config", use_container_width=True, type="primary"):
+        if st.button(t('start_configuration'), key="client_config", use_container_width=True, type="primary"):
             st.switch_page("pages/1_Container_Configurator.py")
 
     with col2:
@@ -309,16 +309,16 @@ else:
         ">
             <div style="font-size: 4rem; margin-bottom: 1rem;">🤖</div>
             <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                Step 2: AI Quote
+                {t('step_2_ai_quote')}
             </h2>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                Get instant quote
+                {t('get_instant_quote')}
             </p>
         </div>
         """, unsafe_allow_html=True)
 
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("💰 Get Quote", key="client_ai", use_container_width=True, type="secondary"):
+        if st.button(t('get_quote'), key="client_ai", use_container_width=True, type="secondary"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Enhanced client benefits section

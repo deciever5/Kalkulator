@@ -1,4 +1,3 @@
-
 {
   "ui": {
     "language_selector": "Język / Language",
@@ -130,5 +129,12 @@
   "phone": "Telefon",
   "email": "Email",
   "working_hours": "Godziny pracy",
-  "mon_fri": "Pon-Pt 8:00-16:00"
+  "mon_fri": "Pn-Pt 8:00-16:00",
+  "configure_container": "Skonfiguruj Kontener",
+  "step_1_configuration": "Krok 1: Konfiguracja",
+  "choose_container_type": "Wybierz typ kontenera i specyfikacje", 
+  "step_2_ai_quote": "Krok 2: Oferta AI",
+  "get_instant_quote": "Otrzymaj natychmiastową wycenę",
+  "start_configuration": "Rozpocznij Konfigurację",
+  "get_quote": "Otrzymaj Ofertę"
 }

@@ -1,3 +1,18 @@
+import streamlit as st
+import pandas as pd
+from utils.calculations import calculate_container_cost
+from utils.ai_services import OpenAIService, AnthropicService
+from utils.translations import t, get_current_language, render_language_selector
+
+# Page configuration
+st.set_page_config(
+    page_title="AI Cost Estimator - KAN-BUD",
+    page_icon="🤖",
+    layout="wide"
+)
+
+# Language selector at the top
+render_language_selector()
 
 import streamlit as st
 import json
@@ -62,24 +77,24 @@ if 'container_config' not in st.session_state:
 else:
     # Display configuration
     config = st.session_state.container_config
-    
+
     st.markdown("### Current Configuration:")
     col1, col2 = st.columns(2)
-    
+
     with col1:
         st.write(f"**Container Type:** {config['container_type']}")
         st.write(f"**Purpose:** {config['main_purpose']}")
         st.write(f"**Environment:** {config['environment']}")
         st.write(f"**Finish Level:** {config['finish_level']}")
-    
+
     with col2:
         st.write(f"**Flooring:** {config['flooring']}")
         st.write(f"**Climate Zone:** {config['climate_zone']}")
         st.write(f"**Windows:** {config['number_of_windows']}")
         st.write(f"**Additional Doors:** {'Yes' if config['additional_doors'] else 'No'}")
-    
+
     st.markdown("---")
-    
+
     # AI model selection
     st.markdown("### AI Model Selection:")
     ai_model = st.selectbox(
@@ -92,31 +107,31 @@ else:
         ],
         key="ai_model_select"
     )
-    
+
     # Generate estimate button
     if st.button("🚀 Generate AI Cost Estimate", use_container_width=True, type="primary"):
         with st.spinner(t('ai.messages.generating')):
             try:
                 # Call AI service
                 estimate = estimate_cost_with_ai(config, ai_model)
-                
+
                 if estimate:
                     st.session_state.ai_estimate = estimate
                     st.success(t('ai.messages.estimate_generated'))
-                    
+
                     # Display estimate
                     st.markdown("### 🤖 AI Cost Estimate:")
                     st.markdown(estimate)
-                    
+
                     # Save estimate
                     if st.button("💾 Save Estimate", key="save_estimate"):
                         st.success("Estimate saved!")
                 else:
                     st.error("Failed to generate estimate. Please try again.")
-                    
+
             except Exception as e:
                 st.error(f"Error generating estimate: {str(e)}")
-    
+
     # Display saved estimate if available
     if 'ai_estimate' in st.session_state:
         st.markdown("### 📋 Saved AI Estimate:")

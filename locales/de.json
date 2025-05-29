@@ -130,5 +130,12 @@
   "phone": "Telefon",
   "email": "E-Mail",
   "working_hours": "Arbeitszeiten",
-  "mon_fri": "Mo-Fr 8:00-16:00"
+  "mon_fri": "Mo-Fr 8:00-16:00",
+  "configure_container": "Container Konfigurieren",
+  "step_1_configuration": "Schritt 1: Konfiguration",
+  "choose_container_type": "Container-Typ und Spezifikationen wählen",
+  "step_2_ai_quote": "Schritt 2: KI-Angebot",
+  "get_instant_quote": "Sofortige Kostenschätzung erhalten",
+  "start_configuration": "Konfiguration starten",
+  "get_quote": "Angebot erhalten"
 }

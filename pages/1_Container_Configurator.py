@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
-from utils.translations import t, get_current_language
+from utils.translations import t, get_current_language, render_language_selector
 
 # Page configuration
 st.set_page_config(
@@ -11,6 +11,9 @@ st.set_page_config(
     page_icon="📦",
     layout="wide"
 )
+
+# Language selector at the top
+render_language_selector()
 
 # Initialize database
 if 'container_db' not in st.session_state:
@@ -79,53 +82,104 @@ with col2:
         st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Configuration form
-st.markdown(f'<div class="config-section"><div class="section-title">🏗️ {t("container.types.20ft_standard").split()[0]} Configuration</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="config-section"><div class="section-title">🏗️ {t("configure_container")}</div>', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
 with col1:
     # Container type
-    container_type = st.selectbox(
+    container_types = {
+        t('container.types.20ft_standard'): "20ft Standard",
+        t('container.types.40ft_standard'): "40ft Standard", 
+        t('container.types.40ft_high_cube'): "40ft High Cube",
+        t('container.types.20ft_refrigerated'): "20ft Refrigerated"
+    }
+    container_type_display = st.selectbox(
         t('form.labels.container_type'),
-        ["20ft Standard", "40ft Standard", "40ft High Cube", "20ft Refrigerated"],
-        key="container_type"
+        list(container_types.keys()),
+        key="container_type_display"
     )
+    container_type = container_types[container_type_display]
     
     # Main purpose
-    main_purpose = st.selectbox(
+    main_purposes = {
+        t('container.use_cases.office_space'): "Office Space",
+        t('container.use_cases.residential'): "Residential",
+        t('container.use_cases.storage'): "Storage",
+        t('container.use_cases.workshop'): "Workshop",
+        t('container.use_cases.retail'): "Retail",
+        t('container.use_cases.restaurant'): "Restaurant",
+        t('container.use_cases.medical'): "Medical",
+        t('container.use_cases.laboratory'): "Laboratory"
+    }
+    main_purpose_display = st.selectbox(
         t('form.labels.main_purpose'),
-        ["Office Space", "Residential", "Storage", "Workshop", "Retail", "Restaurant", "Medical", "Laboratory"],
-        key="main_purpose"
+        list(main_purposes.keys()),
+        key="main_purpose_display"
     )
+    main_purpose = main_purposes[main_purpose_display]
     
     # Environment
-    environment = st.selectbox(
+    environments = {
+        t('container.environment.indoor'): "Indoor",
+        t('container.environment.outdoor'): "Outdoor",
+        t('container.environment.marine'): "Marine",
+        t('container.environment.industrial'): "Industrial"
+    }
+    environment_display = st.selectbox(
         t('form.labels.environment'),
-        ["Indoor", "Outdoor", "Marine", "Industrial"],
-        key="environment"
+        list(environments.keys()),
+        key="environment_display"
     )
+    environment = environments[environment_display]
 
 with col2:
     # Finish level
-    finish_level = st.selectbox(
+    finish_levels = {
+        t('container.finish_levels.basic'): "Basic",
+        t('container.finish_levels.standard'): "Standard",
+        t('container.finish_levels.premium'): "Premium",
+        t('container.finish_levels.luxury'): "Luxury"
+    }
+    finish_level_display = st.selectbox(
         t('form.labels.finish_level'),
-        ["Basic", "Standard", "Premium", "Luxury"],
-        key="finish_level"
+        list(finish_levels.keys()),
+        key="finish_level_display"
     )
+    finish_level = finish_levels[finish_level_display]
     
     # Flooring
-    flooring = st.selectbox(
+    floorings = {
+        t('container.flooring.plywood'): "Plywood",
+        t('container.flooring.vinyl'): "Vinyl",
+        t('container.flooring.carpet'): "Carpet",
+        t('container.flooring.hardwood'): "Hardwood",
+        t('container.flooring.polished_concrete'): "Polished Concrete"
+    }
+    flooring_display = st.selectbox(
         t('form.labels.flooring'),
-        ["Plywood", "Vinyl", "Carpet", "Hardwood", "Polished Concrete"],
-        key="flooring"
+        list(floorings.keys()),
+        key="flooring_display"
     )
+    flooring = floorings[flooring_display]
     
     # Climate zone
-    climate_zone = st.selectbox(
+    climate_zones = {
+        t('container.climate_zones.central_european'): "Central European",
+        t('container.climate_zones.scandinavian'): "Scandinavian",
+        t('container.climate_zones.mediterranean'): "Mediterranean",
+        t('container.climate_zones.atlantic_maritime'): "Atlantic Maritime",
+        t('container.climate_zones.continental'): "Continental",
+        t('container.climate_zones.alpine'): "Alpine",
+        t('container.climate_zones.baltic'): "Baltic",
+        t('container.climate_zones.temperate_oceanic'): "Temperate Oceanic"
+    }
+    climate_zone_display = st.selectbox(
         t('form.labels.climate_zone'),
-        ["Central European", "Scandinavian", "Mediterranean", "Atlantic Maritime", "Continental", "Alpine", "Baltic", "Temperate Oceanic"],
-        key="climate_zone"
+        list(climate_zones.keys()),
+        key="climate_zone_display"
     )
+    climate_zone = climate_zones[climate_zone_display]
 
 st.markdown('</div>', unsafe_allow_html=True)
 
