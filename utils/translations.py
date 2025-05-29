@@ -97,8 +97,35 @@ def render_language_selector():
 
     current_lang = get_current_language()
 
-    # Create horizontal layout with narrow columns for flags
-    col1, col2, col3, col4, spacer = st.columns([0.8, 0.8, 0.8, 0.8, 10])
+    # Add CSS to force horizontal layout
+    st.markdown("""
+    <style>
+    .language-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+    }
+    .language-buttons .stButton {
+        flex: none !important;
+        width: auto !important;
+        min-width: 50px !important;
+    }
+    .language-buttons .stButton button {
+        width: 50px !important;
+        height: 40px !important;
+        padding: 5px !important;
+        font-size: 20px !important;
+        border-radius: 8px !important;
+        margin: 0 !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Create equal width columns for consistent horizontal layout
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
     
     with col1:
         if st.button("🇵🇱", key="lang_pl", help="Polski"):
