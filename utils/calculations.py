@@ -8,6 +8,71 @@ from typing import Dict, List, Any, Tuple
 import pandas as pd
 from datetime import datetime
 
+def calculate_container_cost(config):
+    """Calculate container cost based on configuration"""
+    base_costs = {
+        "20ft Standard": 8000,
+        "40ft Standard": 12000,
+        "40ft High Cube": 14000,
+        "20ft Refrigerated": 15000
+    }
+    
+    base_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
+    
+    # Add modification costs
+    modifications_cost = 0
+    
+    # Use case multipliers
+    use_case_multipliers = {
+        'Office Space': 1.5,
+        'Residential': 2.0,
+        'Storage': 1.0,
+        'Workshop': 1.3,
+        'Retail': 1.8,
+        'Restaurant': 2.2,
+        'Medical': 2.5,
+        'Laboratory': 3.0
+    }
+    
+    multiplier = use_case_multipliers.get(config.get('main_purpose', 'Storage'), 1.0)
+    
+    # Environment costs
+    if config.get('environment') == 'Marine':
+        modifications_cost += 2000
+    elif config.get('environment') == 'Industrial':
+        modifications_cost += 1500
+    
+    # Finish level costs
+    finish_costs = {
+        'Basic': 0,
+        'Standard': 3000,
+        'Premium': 8000,
+        'Luxury': 15000
+    }
+    modifications_cost += finish_costs.get(config.get('finish_level', 'Basic'), 0)
+    
+    # Windows and doors
+    modifications_cost += config.get('number_of_windows', 0) * 800
+    if config.get('additional_doors'):
+        modifications_cost += 1200
+    
+    # Systems
+    if config.get('electrical_system'):
+        modifications_cost += 2500
+    if config.get('plumbing_system'):
+        modifications_cost += 3500
+    if config.get('hvac_system'):
+        modifications_cost += 4000
+    
+    total_cost = (base_cost + modifications_cost) * multiplier
+    
+    return {
+        'base_cost': base_cost,
+        'modifications_cost': modifications_cost,
+        'multiplier': multiplier,
+        'total_cost': total_cost
+    }
+
 class StructuralCalculations:
     """Class for structural engineering calculations and analysis"""
     

@@ -1,10 +1,8 @@
-import streamlit as st
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.translations import init_language, t, translate_options, render_language_selector
-from utils.ai_services import get_ai_cost_estimate
+import streamlit as st
+import json
+from utils.ai_services import estimate_cost_with_ai
+from utils.translations import t, get_current_language
 
 # Page configuration
 st.set_page_config(
@@ -13,118 +11,113 @@ st.set_page_config(
     layout="wide"
 )
 
-# Initialize translation system
-init_language()
+st.markdown("""
+<style>
+.main-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.header-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.header-subtitle {
+    color: #e8f4f8;
+    font-size: 1.2rem;
+    text-align: center;
+}
+</style>
+""", unsafe_allow_html=True)
 
-# Add language selector in sidebar
-with st.sidebar:
-    render_language_selector()
-
-# Page header
-st.title(t('ai_cost_estimator'))
-st.markdown(f"### {t('generating_estimate')}")
-
-# Configuration form
-with st.form("ai_config"):
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.subheader(t('base_container_spec'))
-
-        container_type = st.selectbox(
-            t('container_type'),
-            options=['20ft Standard', '40ft Standard', '40ft High Cube', '20ft Refrigerated'],
-            format_func=lambda x: t(x)
-        )
-
-        main_purpose = st.selectbox(
-            t('main_purpose'),
-            options=['Office Space', 'Residential', 'Storage', 'Workshop', 'Retail', 'Restaurant', 'Medical', 'Laboratory'],
-            format_func=lambda x: t(x)
-        )
-
-        environment = st.selectbox(
-            t('environment'),
-            options=['Indoor', 'Outdoor', 'Marine', 'Industrial'],
-            format_func=lambda x: t(x)
-        )
-
-    with col2:
-        st.subheader(t('modification_requirements'))
-
-        finish_level = st.selectbox(
-            t('finish_level'),
-            options=['Basic', 'Standard', 'Premium', 'Luxury'],
-            format_func=lambda x: t(x)
-        )
-
-        flooring = st.selectbox(
-            t('flooring'),
-            options=['Plywood', 'Vinyl', 'Carpet', 'Hardwood', 'Polished Concrete'],
-            format_func=lambda x: t(x)
-        )
-
-        climate_zone = st.selectbox(
-            t('climate_zone'),
-            options=['Central European', 'Scandinavian', 'Mediterranean', 'Atlantic Maritime', 'Continental', 'Alpine', 'Baltic', 'Temperate Oceanic'],
-            format_func=lambda x: t(x)
-        )
-
-    # Systems section
-    st.subheader(t('systems_installations'))
-
-    col3, col4 = st.columns(2)
-
-    with col3:
-        electrical_system = st.checkbox(t('electrical_system'), value=True)
-        plumbing_system = st.checkbox(t('plumbing_system'), value=False)
-        hvac_system = st.checkbox(t('hvac_system'), value=True)
-
-    with col4:
-        insulation_package = st.checkbox(t('insulation_package'), value=True)
-        structural_reinforcement = st.checkbox(t('structural_reinforcement'), value=False)
-
-    # Submit button
-    submitted = st.form_submit_button(t('generate_estimate'), use_container_width=True)
-
-# Results section
-if submitted:
-    with st.spinner(t('generating_estimate')):
-        try:
-            # Prepare configuration
-            config = {
-                'container_type': container_type,
-                'main_purpose': main_purpose,
-                'environment': environment,
-                'climate_zone': climate_zone,
-                'finish_level': finish_level,
-                'flooring': flooring,
-                'electrical_system': electrical_system,
-                'plumbing_system': plumbing_system,
-                'hvac_system': hvac_system,
-                'insulation_package': insulation_package,
-                'structural_reinforcement': structural_reinforcement
-            }
-
-            # Get AI estimate
-            estimate = get_ai_cost_estimate(config)
-
-            if estimate:
-                st.success(t('estimate_ready'))
-                st.markdown(estimate)
-            else:
-                st.error(t('error_occurred'))
-
-        except Exception as e:
-            st.error(f"{t('error_occurred')}: {str(e)}")
+# Header
+st.markdown(f"""
+<div class="main-header">
+    <div class="header-title">🤖 {t('nav.ai_cost_estimation')}</div>
+    <div class="header-subtitle">AI-powered container modification cost estimation</div>
+</div>
+""", unsafe_allow_html=True)
 
 # Navigation
-st.markdown("---")
 col1, col2 = st.columns(2)
 with col1:
-    if st.button(t('back_to_home'), key="home_nav", use_container_width=True):
+    if st.button(t('ui.back_to_home'), key="home_nav", use_container_width=True):
         st.switch_page("app.py")
 
 with col2:
-    if st.button(t('go_to_configurator'), key="config_nav", use_container_width=True):
+    if st.button(t('ui.go_to_configurator'), key="config_nav", use_container_width=True):
         st.switch_page("pages/1_Container_Configurator.py")
+
+# Check if configuration exists
+if 'container_config' not in st.session_state:
+    st.warning("No container configuration found. Please configure your container first.")
+    if st.button("🔧 Go to Configurator", use_container_width=True):
+        st.switch_page("pages/1_Container_Configurator.py")
+else:
+    # Display configuration
+    config = st.session_state.container_config
+    
+    st.markdown("### Current Configuration:")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.write(f"**Container Type:** {config['container_type']}")
+        st.write(f"**Purpose:** {config['main_purpose']}")
+        st.write(f"**Environment:** {config['environment']}")
+        st.write(f"**Finish Level:** {config['finish_level']}")
+    
+    with col2:
+        st.write(f"**Flooring:** {config['flooring']}")
+        st.write(f"**Climate Zone:** {config['climate_zone']}")
+        st.write(f"**Windows:** {config['number_of_windows']}")
+        st.write(f"**Additional Doors:** {'Yes' if config['additional_doors'] else 'No'}")
+    
+    st.markdown("---")
+    
+    # AI model selection
+    st.markdown("### AI Model Selection:")
+    ai_model = st.selectbox(
+        "Choose AI Model:",
+        [
+            "Auto-Select Best",
+            "Groq Llama-3.1-70B",
+            "Groq Llama-3.1-8B",
+            "Groq Mixtral-8x7B"
+        ],
+        key="ai_model_select"
+    )
+    
+    # Generate estimate button
+    if st.button("🚀 Generate AI Cost Estimate", use_container_width=True, type="primary"):
+        with st.spinner(t('ai.messages.generating')):
+            try:
+                # Call AI service
+                estimate = estimate_cost_with_ai(config, ai_model)
+                
+                if estimate:
+                    st.session_state.ai_estimate = estimate
+                    st.success(t('ai.messages.estimate_generated'))
+                    
+                    # Display estimate
+                    st.markdown("### 🤖 AI Cost Estimate:")
+                    st.markdown(estimate)
+                    
+                    # Save estimate
+                    if st.button("💾 Save Estimate", key="save_estimate"):
+                        st.success("Estimate saved!")
+                else:
+                    st.error("Failed to generate estimate. Please try again.")
+                    
+            except Exception as e:
+                st.error(f"Error generating estimate: {str(e)}")
+    
+    # Display saved estimate if available
+    if 'ai_estimate' in st.session_state:
+        st.markdown("### 📋 Saved AI Estimate:")
+        st.markdown(st.session_state.ai_estimate)

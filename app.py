@@ -8,7 +8,7 @@ from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
-from utils.translations import init_language, t, render_language_selector
+from utils.translations import init_language, t, get_current_language, set_language
 from utils.groq_service import GroqService
 
 # Page configuration
@@ -23,7 +23,6 @@ st.set_page_config(
 @st.cache_resource
 def initialize_services():
     """Initialize all services with caching"""
-    # Use PostgreSQL database
     try:
         db = DatabaseManager()
         if db.engine:
@@ -31,7 +30,6 @@ def initialize_services():
         else:
             storage = SimpleStorageManager()
     except Exception as e:
-        # Only show database errors to employees/admins
         if st.session_state.get('employee_logged_in', False):
             st.error(f"Database initialization failed: {str(e)}")
         storage = SimpleStorageManager()
@@ -39,20 +37,16 @@ def initialize_services():
     container_db = ContainerDatabase()
     calc = StructuralCalculations()
 
-    # Initialize historical service with error handling
     try:
         historical_service = HistoricalDataService()
     except Exception as e:
-        # Only show errors to employees/admins
         if st.session_state.get('employee_logged_in', False):
             st.error(f"Historical data initialization: {str(e)}")
         historical_service = None
 
-    # Initialize AI services (Groq)
     try:
         groq_service = GroqService()
     except Exception as e:
-        # Only show AI service errors to employees/admins
         if st.session_state.get('employee_logged_in', False):
             st.warning(f"Groq AI service initialization: {str(e)}")
         groq_service = None
@@ -62,14 +56,6 @@ def initialize_services():
 # Initialize translation system
 init_language()
 
-# Sync language between session state and i18n system
-if 'language' not in st.session_state:
-    st.session_state.language = 'pl'
-
-from utils.translations import render_language_selector
-#from utils.i18n import set_locale, get_locale
-#set_locale(st.session_state.language)
-
 # Employee authentication
 if 'employee_logged_in' not in st.session_state:
     st.session_state.employee_logged_in = False
@@ -77,31 +63,17 @@ if 'employee_logged_in' not in st.session_state:
 if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
-# Initialize language if not set
-if 'language' not in st.session_state:
-    st.session_state.language = 'pl'
-
 # Language selector with flag buttons and login
 col_lang1, col_lang2, col_lang3, col_lang4, col_spacer, col_login = st.columns([1, 1, 1, 1, 2, 1])
 
-language_options = {
-    'pl': {'flag': '🇵🇱', 'name': 'Polski'},
-    'en': {'flag': '🇬🇧', 'name': 'English'},
-    'de': {'flag': '🇩🇪', 'name': 'Deutsch'},
-    'nl': {'flag': '🇳🇱', 'name': 'Nederlands'}
-}
-
-current_lang = st.session_state.get('language', 'pl')
+current_lang = get_current_language()
 
 with col_lang1:
     if st.button(f"🇵🇱 Polski", key="lang_pl", 
                 help="Zmień język na polski",
                 type="primary" if current_lang == 'pl' else "secondary",
                 use_container_width=True):
-        st.session_state.language = 'pl'
-        st.session_state.i18n_locale = 'pl'
-        #from utils.i18n import set_locale
-        #set_locale('pl')
+        set_language('pl')
         st.rerun()
 
 with col_lang2:
@@ -109,10 +81,7 @@ with col_lang2:
                 help="Change language to English",
                 type="primary" if current_lang == 'en' else "secondary",
                 use_container_width=True):
-        st.session_state.language = 'en'
-        st.session_state.i18n_locale = 'en'
-        #from utils.i18n import set_locale
-        #set_locale('en')
+        set_language('en')
         st.rerun()
 
 with col_lang3:
@@ -120,10 +89,7 @@ with col_lang3:
                 help="Sprache auf Deutsch ändern",
                 type="primary" if current_lang == 'de' else "secondary",
                 use_container_width=True):
-        st.session_state.language = 'de'
-        st.session_state.i18n_locale = 'de'
-        #from utils.i18n import set_locale
-        #set_locale('de')
+        set_language('de')
         st.rerun()
 
 with col_lang4:
@@ -131,10 +97,7 @@ with col_lang4:
                 help="Verander taal naar Nederlands",
                 type="primary" if current_lang == 'nl' else "secondary",
                 use_container_width=True):
-        st.session_state.language = 'nl'
-        st.session_state.i18n_locale = 'nl'
-        #from utils.i18n import set_locale
-        #set_locale('nl')
+        set_language('nl')
         st.rerun()
 
 with col_login:
@@ -204,7 +167,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     padding: 2rem;
     border-radius: 15px;
-    margin-bottom: 2rem;```python
+    margin-bottom: 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 .company-name {
@@ -220,12 +183,6 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 1rem;
-}
-.header-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
 }
 .feature-card {
     background: white;
@@ -257,33 +214,13 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
     color: #666;
     line-height: 1.6;
 }
-.benefits-section {
-    background: linear-gradient(135deg, #f8fbff 0%, #e8f4f8 100%);
-    padding: 3rem 2rem;
-    border-radius: 15px;
-    margin: 2rem 0;
-}
-.benefit-card {
-    background: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    height: 100%;
-}
-.contact-section {
-    background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
-    color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-}
 </style>
 
 <div class="main-header">
     <div class="company-name">🏗️ KAN-BUD</div>
-    <div class="company-subtitle">AI-Powered Cost Estimation for Container Modifications</div>
+    <div class="company-subtitle">{}</div>
 </div>
-""", unsafe_allow_html=True)
+""".format(t('app.subtitle')), unsafe_allow_html=True)
 
 # Initialize session state
 if 'container_db' not in st.session_state:
@@ -295,22 +232,19 @@ if 'calculations' not in st.session_state:
 if 'historical_service' not in st.session_state:
     st.session_state.historical_service = HistoricalDataService()
 
-# Get current language
-lang = st.session_state.get('language', 'en')
-
 # Initialize services
 storage, container_db, calc, historical_service_init, groq_service = initialize_services()
 
 st.markdown("---")
 
-# Modern client-focused main dashboard
+# Main dashboard content
 if st.session_state.employee_logged_in:
-    # Employee view - enhanced card layout
+    # Employee view
     st.markdown(f"""
     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
                 color: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0; text-align: center;">
-        <h2 style="margin: 0;">🔧 {t('employee_tools')}</h2>
-        <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">{t('full_system_access')}</p>
+        <h2 style="margin: 0;">🔧 Employee Tools</h2>
+        <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">Full system access and advanced features</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -318,10 +252,10 @@ if st.session_state.employee_logged_in:
     col1, col2, col3, col4 = st.columns(4, gap="large")
 
     tools = [
-        ("📦", t('container_configurator_title'), t('container_configurator_desc'), "pages/1_Container_Configurator.py", "emp_config"),
-        ("🤖", t('ai_cost_estimator_title'), t('ai_cost_estimator_desc'), "pages/2_AI_Cost_Estimator.py", "emp_ai"),
-        ("🔧", t('technical_analysis'), "Obliczenia strukturalne", "pages/3_Technical_Analysis.py", "emp_tech"),
-        ("📋", t('quote_generator'), "Profesjonalne oferty", "pages/4_Quote_Generator.py", "emp_quote")
+        ("📦", t('nav.container_configurator'), "Professional container configuration", "pages/1_Container_Configurator.py", "emp_config"),
+        ("🤖", t('nav.ai_cost_estimation'), "AI cost estimation", "pages/2_AI_Cost_Estimator.py", "emp_ai"), 
+        ("🔧", t('nav.technical_analysis'), "Technical analysis", "pages/3_Technical_Analysis.py", "emp_tech"),
+        ("📋", t('nav.quote_generator'), "Quote generator", "pages/4_Quote_Generator.py", "emp_quote")
     ]
 
     for i, (icon, title, desc, page, key) in enumerate(tools):
@@ -329,11 +263,11 @@ if st.session_state.employee_logged_in:
             st.markdown(f"""
             <div class="feature-card">
                 <div class="feature-icon">{icon}</div>
-                <div class="feature-title">{title.replace(chr(10), ' ')}</div>
+                <div class="feature-title">{title}</div>
                 <div class="feature-description">{desc}</div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"{t('open_tool')} {title.replace(chr(10), ' ')}", key=key, use_container_width=True, type="primary"):
+            if st.button(f"Open {title}", key=key, use_container_width=True, type="primary"):
                 st.switch_page(page)
 
     # Secondary tools
@@ -350,27 +284,27 @@ if st.session_state.employee_logged_in:
             st.markdown(f"""
             <div class="feature-card">
                 <div class="feature-icon">{icon}</div>
-                <div class="feature-title">{title.replace(chr(10), ' ')}</div>
+                <div class="feature-title">{title}</div>
                 <div class="feature-description">{desc}</div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"Otwórz {title.replace(chr(10), ' ')}", key=key, use_container_width=True):
+            if st.button(f"Otwórz {title}", key=key, use_container_width=True):
                 st.switch_page(page)
 
 else:
-    # Client view - enhanced modern layout
+    # Client view
     st.markdown(f"""
     <div style="text-align: center; margin: 2rem 0;">
         <h2 style="color: #1e3c72; font-size: 2.5rem; margin-bottom: 0.5rem;">
-            💼 {t('configure_container')}
+            💼 Configure Your Container
         </h2>
         <p style="font-size: 1.3rem; color: #666; font-style: italic;">
-            {t('simple_process_2_steps')}
+            Simple 2-step process
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Enhanced client action cards
+    # Client action cards
     col1, col2 = st.columns(2, gap="large")
 
     with col1:
@@ -384,16 +318,16 @@ else:
         ">
             <div style="font-size: 4rem; margin-bottom: 1rem;">📦</div>
             <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                {t('step_1_configuration')}
+                Step 1: Configuration
             </h2>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                {t('choose_container_type')}
+                Choose container type and specifications
             </p>
         </div>
         """, unsafe_allow_html=True)
 
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("🚀 " + t('start_configuration'), key="client_config", use_container_width=True, type="primary"):
+        if st.button("🚀 Start Configuration", key="client_config", use_container_width=True, type="primary"):
             st.switch_page("pages/1_Container_Configurator.py")
 
     with col2:
@@ -407,16 +341,16 @@ else:
         ">
             <div style="font-size: 4rem; margin-bottom: 1rem;">🤖</div>
             <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                {t('step_2_ai_quote')}
+                Step 2: AI Quote
             </h2>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                {t('get_instant_quote')}
+                Get instant quote
             </p>
         </div>
         """, unsafe_allow_html=True)
 
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("💰 " + t('get_quote'), key="client_ai", use_container_width=True, type="secondary"):
+        if st.button("💰 Get Quote", key="client_ai", use_container_width=True, type="secondary"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Enhanced client benefits section
@@ -493,4 +427,5 @@ if not st.session_state.employee_logged_in:
 
 # Language selector in sidebar
 with st.sidebar:
+    from utils.translations import render_language_selector
     render_language_selector()
