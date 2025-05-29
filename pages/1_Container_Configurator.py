@@ -13,25 +13,64 @@ if 'container_db' not in st.session_state:
 if 'calculations' not in st.session_state:
     st.session_state.calculations = StructuralCalculations()
 
-# Navigation header
-col1, col2, col3 = st.columns([1, 2, 1])
+# Enhanced navigation header
+st.markdown("""
+<style>
+.nav-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    color: white;
+}
+.config-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    border: 1px solid #e8f4f8;
+}
+.metric-card {
+    background: linear-gradient(135deg, #f8fbff 0%, #e8f4f8 100%);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.action-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.action-button:hover {
+    transform: translateY(-2px);
+}
+</style>
 
+<div class="nav-header">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h2 style="margin: 0; color: white;">📦 Konfigurator Kontenerów</h2>
+            <p style="margin: 0; opacity: 0.9;">Projektuj swój idealny kontener krok po kroku</p>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+""", unsafe_allow_html=True)
+
+col1, col2 = st.columns(2)
 with col1:
-    if st.button("← Powrót do strony głównej", key="home_nav"):
+    if st.button("← Powrót do strony głównej", key="home_nav", use_container_width=True):
         st.switch_page("app.py")
-
 with col2:
-    st.markdown("### 📦 Konfigurator Kontenerów")
+    if st.button("🤖 Przejdź do Wyceny AI →", key="ai_nav", use_container_width=True):
+        st.switch_page("pages/2_AI_Cost_Estimator.py")
 
-with col3:
-    if 'employee_logged_in' in st.session_state and st.session_state.employee_logged_in:
-        if st.button("🤖 Przejdź do Wyceny AI →", key="ai_nav"):
-            st.switch_page("pages/2_AI_Cost_Estimator.py")
-    else:
-        if st.button("🤖 Przejdź do Wyceny AI →", key="ai_nav"):
-            st.switch_page("pages/2_AI_Cost_Estimator.py")
-
-st.markdown("---")
+st.markdown("</div></div></div>", unsafe_allow_html=True)
 
 # Initialize session state for configuration
 if 'container_config' not in st.session_state:
@@ -41,36 +80,66 @@ if 'container_config' not in st.session_state:
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.subheader("🏗️ Base Container Specifications")
+    st.markdown("""
+    <div class="config-section">
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🏗️ Specyfikacja Bazowa Kontenera</h3>
+    """, unsafe_allow_html=True)
     
     # Container type selection
     container_types = st.session_state.container_db.get_container_types()
     selected_type = st.selectbox(
-        "Container Type",
+        "Typ Kontenera",
         options=list(container_types.keys()),
-        help="Select the base container type for modification"
+        help="Wybierz bazowy typ kontenera do modyfikacji"
     )
     
     if selected_type:
         container_specs = container_types[selected_type]
         st.session_state.container_config['base_type'] = selected_type
         
-        # Display base specifications
+        st.markdown("<br>", unsafe_allow_html=True)
+        # Display base specifications with enhanced styling
         spec_col1, spec_col2 = st.columns(2)
         with spec_col1:
-            st.metric("Length (m)", f"{container_specs['length'] * 0.3048:.1f}")
-            st.metric("Width (m)", f"{container_specs['width'] * 0.3048:.1f}")
+            st.markdown(f"""
+            <div class="metric-card">
+                <h4 style="margin: 0; color: #1e3c72;">Długość</h4>
+                <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['length'] * 0.3048:.1f} m</h2>
+            </div>
+            """, unsafe_allow_html=True)
+            st.markdown("<br>", unsafe_allow_html=True)
+            st.markdown(f"""
+            <div class="metric-card">
+                <h4 style="margin: 0; color: #1e3c72;">Szerokość</h4>
+                <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['width'] * 0.3048:.1f} m</h2>
+            </div>
+            """, unsafe_allow_html=True)
         with spec_col2:
-            st.metric("Height (m)", f"{container_specs['height'] * 0.3048:.1f}")
-            st.metric("Weight (kg)", f"{container_specs['weight'] * 0.453592:.0f}")
+            st.markdown(f"""
+            <div class="metric-card">
+                <h4 style="margin: 0; color: #1e3c72;">Wysokość</h4>
+                <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['height'] * 0.3048:.1f} m</h2>
+            </div>
+            """, unsafe_allow_html=True)
+            st.markdown("<br>", unsafe_allow_html=True)
+            st.markdown(f"""
+            <div class="metric-card">
+                <h4 style="margin: 0; color: #1e3c72;">Waga</h4>
+                <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['weight'] * 0.453592:.0f} kg</h2>
+            </div>
+            """, unsafe_allow_html=True)
     
-    st.divider()
+    st.markdown("</div>", unsafe_allow_html=True)
     
-    # Use case selection
-    st.subheader("🎯 Intended Use Case")
+    # Use case selection with enhanced styling
+    st.markdown("""
+    <div class="config-section">
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🎯 Przeznaczenie</h3>
+    """, unsafe_allow_html=True)
+    
     use_cases = [
         "Office Space",
-        "Residential Living",
+        "Residential Living", 
         "Workshop/Manufacturing",
         "Storage/Warehouse",
         "Retail/Commercial",
@@ -81,63 +150,85 @@ with col1:
         "Custom Industrial"
     ]
     
-    selected_use_case = st.selectbox("Primary Use Case", use_cases)
+    selected_use_case = st.selectbox("Główne Przeznaczenie", use_cases)
     st.session_state.container_config['use_case'] = selected_use_case
     
+    st.markdown("<br>", unsafe_allow_html=True)
     # Occupancy and environment
     col_occ1, col_occ2 = st.columns(2)
     with col_occ1:
-        occupancy = st.number_input("Expected Occupancy", min_value=1, max_value=50, value=4)
+        occupancy = st.number_input("Przewidywana Obsada", min_value=1, max_value=50, value=4)
     with col_occ2:
-        environment = st.selectbox("Environment", ["Indoor", "Outdoor", "Marine", "Industrial"])
+        environment = st.selectbox("Środowisko", ["Indoor", "Outdoor", "Marine", "Industrial"])
     
     st.session_state.container_config.update({
         'occupancy': occupancy,
         'environment': environment
     })
+    
+    st.markdown("</div>", unsafe_allow_html=True)
 
 with col2:
-    st.subheader("🔧 Modification Requirements")
+    st.markdown("""
+    <div class="config-section">
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🔧 Wymagania Modyfikacji</h3>
+    """, unsafe_allow_html=True)
     
-    # Structural modifications
-    st.markdown("**Structural Modifications**")
     modifications = {}
     
-    # Windows and doors
+    # Structural modifications
+    st.markdown("##### 🏗️ Modyfikacje Strukturalne")
     col_mod1, col_mod2 = st.columns(2)
     with col_mod1:
-        modifications['windows'] = st.number_input("Number of Windows", min_value=0, max_value=20, value=0)
-        modifications['doors'] = st.number_input("Number of Doors", min_value=1, max_value=10, value=1)
+        modifications['windows'] = st.number_input("Liczba Okien", min_value=0, max_value=20, value=0)
+        modifications['doors'] = st.number_input("Liczba Drzwi", min_value=1, max_value=10, value=1)
     with col_mod2:
-        modifications['skylights'] = st.number_input("Skylights", min_value=0, max_value=10, value=0)
-        modifications['vents'] = st.number_input("Ventilation Openings", min_value=0, max_value=20, value=2)
+        modifications['skylights'] = st.number_input("Świetliki", min_value=0, max_value=10, value=0)
+        modifications['vents'] = st.number_input("Otwory Wentylacyjne", min_value=0, max_value=20, value=2)
     
+    st.markdown("<br>", unsafe_allow_html=True)
     # Structural reinforcements
-    st.markdown("**Structural Reinforcements**")
-    modifications['reinforcement_walls'] = st.checkbox("Wall Reinforcement")
-    modifications['reinforcement_roof'] = st.checkbox("Roof Reinforcement")
-    modifications['reinforcement_floor'] = st.checkbox("Floor Reinforcement")
-    modifications['additional_support'] = st.checkbox("Additional Support Beams")
+    st.markdown("##### 🔨 Wzmocnienia Konstrukcyjne")
+    col_reinf1, col_reinf2 = st.columns(2)
+    with col_reinf1:
+        modifications['reinforcement_walls'] = st.checkbox("Wzmocnienie Ścian")
+        modifications['reinforcement_roof'] = st.checkbox("Wzmocnienie Dachu")
+    with col_reinf2:
+        modifications['reinforcement_floor'] = st.checkbox("Wzmocnienie Podłogi")
+        modifications['additional_support'] = st.checkbox("Dodatkowe Podpory")
     
-    # Systems and utilities
-    st.markdown("**Systems & Utilities**")
+    st.markdown("</div>", unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="config-section">
+        <h4 style="color: #1e3c72; margin-bottom: 1rem;">⚡ Systemy i Instalacje</h4>
+    """, unsafe_allow_html=True)
+    
     col_sys1, col_sys2 = st.columns(2)
     with col_sys1:
-        modifications['electrical'] = st.checkbox("Electrical System")
-        modifications['plumbing'] = st.checkbox("Plumbing System")
+        modifications['electrical'] = st.checkbox("System Elektryczny")
+        modifications['plumbing'] = st.checkbox("System Hydrauliczny")
     with col_sys2:
-        modifications['hvac'] = st.checkbox("HVAC System")
-        modifications['insulation'] = st.checkbox("Insulation Package")
+        modifications['hvac'] = st.checkbox("System HVAC")
+        modifications['insulation'] = st.checkbox("Pakiet Izolacyjny")
+    
+    st.markdown("</div>", unsafe_allow_html=True)
     
     # Interior finishes
-    st.markdown("**Interior Finishes**")
-    finish_level = st.selectbox("Finish Level", ["Basic", "Standard", "Premium", "Luxury"])
+    st.markdown("""
+    <div class="config-section">
+        <h4 style="color: #1e3c72; margin-bottom: 1rem;">🎨 Wykończenia Wnętrza</h4>
+    """, unsafe_allow_html=True)
+    
+    finish_level = st.selectbox("Poziom Wykończenia", ["Basic", "Standard", "Premium", "Luxury"])
     modifications['finish_level'] = finish_level
     
-    flooring_type = st.selectbox("Flooring", ["Plywood", "Vinyl", "Carpet", "Hardwood", "Polished Concrete"])
+    flooring_type = st.selectbox("Podłogi", ["Plywood", "Vinyl", "Carpet", "Hardwood", "Polished Concrete"])
     modifications['flooring'] = flooring_type
     
     st.session_state.container_config['modifications'] = modifications
+    
+    st.markdown("</div>", unsafe_allow_html=True)
 
 # Configuration summary and visualization
 st.divider()
@@ -242,30 +333,48 @@ with col2:
         
         st.plotly_chart(fig, use_container_width=True)
 
-# Action buttons
-st.divider()
-col1, col2, col3, col4 = st.columns(4)
+# Enhanced action buttons
+st.markdown("""
+<div style="background: linear-gradient(135deg, #f8fbff 0%, #e8f4f8 100%); 
+           padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+    <h3 style="text-align: center; color: #1e3c72; margin-bottom: 1.5rem;">
+        🚀 Następne Kroki
+    </h3>
+</div>
+""", unsafe_allow_html=True)
 
-with col1:
-    if st.button("💰 Get AI Cost Estimate", use_container_width=True):
-        st.switch_page("pages/2_AI_Cost_Estimator.py")
+col1, col2, col3, col4 = st.columns(4, gap="large")
 
-with col2:
-    if st.button("🔧 Technical Analysis", use_container_width=True):
-        st.switch_page("pages/3_Technical_Analysis.py")
+action_buttons = [
+    ("💰", "Wycena AI", "Uzyskaj automatyczną wycenę", "pages/2_AI_Cost_Estimator.py"),
+    ("🔧", "Analiza Techniczna", "Sprawdź parametry konstrukcyjne", "pages/3_Technical_Analysis.py"),
+    ("📄", "Generuj Ofertę", "Stwórz profesjonalną ofertę", "pages/4_Quote_Generator.py"),
+    ("⚖️", "Porównaj Opcje", "Porównaj z innymi konfiguracjami", "pages/5_Comparison_Tool.py")
+]
 
-with col3:
-    if st.button("📄 Generate Quote", use_container_width=True):
-        st.switch_page("pages/4_Quote_Generator.py")
+for i, (icon, title, desc, page) in enumerate(action_buttons):
+    with [col1, col2, col3, col4][i]:
+        st.markdown(f"""
+        <div style="background: white; border-radius: 10px; padding: 1.5rem; 
+                   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); text-align: center;
+                   border: 1px solid #e8f4f8; margin-bottom: 1rem;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">{icon}</div>
+            <h4 style="color: #1e3c72; margin-bottom: 0.5rem;">{title}</h4>
+            <p style="color: #666; font-size: 0.9rem; margin: 0;">{desc}</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        if st.button(f"Otwórz {title}", key=f"action_{i}", use_container_width=True, type="primary"):
+            st.switch_page(page)
 
-with col4:
-    if st.button("⚖️ Compare Options", use_container_width=True):
-        st.switch_page("pages/5_Comparison_Tool.py")
-
-# Save configuration
-if st.button("💾 Save Configuration", use_container_width=True):
-    if 'container_config' in st.session_state and st.session_state.container_config:
-        st.success("✅ Configuration saved successfully!")
-        st.json(st.session_state.container_config)
-    else:
-        st.error("❌ Please complete the configuration before saving.")
+# Enhanced save configuration
+st.markdown("<br>", unsafe_allow_html=True)
+col_save1, col_save2, col_save3 = st.columns([1, 2, 1])
+with col_save2:
+    if st.button("💾 Zapisz Konfigurację", use_container_width=True, type="secondary"):
+        if 'container_config' in st.session_state and st.session_state.container_config:
+            st.success("✅ Konfiguracja została pomyślnie zapisana!")
+            with st.expander("Podgląd zapisanej konfiguracji"):
+                st.json(st.session_state.container_config)
+        else:
+            st.error("❌ Proszę uzupełnić konfigurację przed zapisaniem.")
