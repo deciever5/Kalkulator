@@ -76,6 +76,19 @@ button[data-testid="baseButton-header"] {display: none !important;}
 .css-1544g2n {display: none !important;}
 .css-18e3th9 {display: none !important;}
 [data-testid="stSidebarCollapseButton"] {display: none !important;}
+[data-testid="stSidebarUserContent"] {display: none !important;}
+[data-testid="stSidebarContent"] {display: none !important;}
+button[title="Open sidebar navigation"] {display: none !important;}
+button[aria-label="Open sidebar navigation"] {display: none !important;}
+.css-1vq4p4l {display: none !important;}
+.css-1d391kg {display: none !important;}
+.css-6qob1r {margin-left: 0 !important;}
+.css-1cypcdb {margin-left: 0 !important;}
+.css-18e3th9 {margin-left: 0 !important;}
+.css-1d391kg {margin-left: 0 !important;}
+.main .block-container {margin-left: 0 !important; max-width: 100% !important;}
+.stApp > header {display: none !important;}
+.stApp [data-testid="stHeader"] {display: none !important;}
 
 .main-header {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
