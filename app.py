@@ -16,7 +16,7 @@ st.set_page_config(
     page_title="KAN-BUD Professional Container Solutions",
     page_icon="🏗️",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # Initialize services
@@ -47,7 +47,7 @@ def initialize_services():
     
     return storage, container_db, calc, historical_service, openai_service, anthropic_service
 
-# Language selection in sidebar
+# Language selection
 available_languages = get_available_languages()
 if 'language' not in st.session_state:
     st.session_state.language = 'en'
@@ -56,60 +56,45 @@ if 'language' not in st.session_state:
 if 'employee_logged_in' not in st.session_state:
     st.session_state.employee_logged_in = False
 
-with st.sidebar:
-    st.markdown("### 🌐 " + get_text('language_selector', st.session_state.get('language', 'en')))
+# Modern client-focused header
+col1, col2, col3 = st.columns([2, 1, 1])
+
+with col1:
+    st.markdown("# 🏗️ KAN-BUD")
+    st.markdown("### " + get_text('subtitle', st.session_state.get('language', 'en')))
+
+with col2:
+    # Language selector
+    st.markdown("**🌐 Język / Language**")
     selected_language = st.selectbox(
-        get_text('choose_language', st.session_state.get('language', 'en')),
+        "",
         options=list(available_languages.keys()),
         format_func=lambda x: available_languages[x],
-        index=list(available_languages.keys()).index(st.session_state.language)
+        index=list(available_languages.keys()).index(st.session_state.language),
+        label_visibility="collapsed"
     )
     
     if selected_language != st.session_state.language:
         st.session_state.language = selected_language
         st.rerun()
-    
-    st.markdown("---")
-    
-    # Employee login section
+
+with col3:
+    # Discrete employee login in header
     if not st.session_state.employee_logged_in:
-        st.markdown("### 👤 " + get_text('employee_login', st.session_state.language))
-        employee_password = st.text_input(get_text('password', st.session_state.language), type="password", key="emp_pwd")
-        
-        if st.button(get_text('login', st.session_state.language)):
-            if employee_password == "kan-bud-employee-2024":  # Employee password
-                st.session_state.employee_logged_in = True
-                st.success("Zalogowano jako pracownik!")
-                st.rerun()
-            else:
-                st.error("Nieprawidłowe hasło")
-        
-        st.info("Hasło dla pracowników: kan-bud-employee-2024")
+        with st.expander("👤 Pracownicy", expanded=False):
+            employee_password = st.text_input("Hasło:", type="password", key="emp_pwd")
+            if st.button("Zaloguj", key="emp_login"):
+                if employee_password == "kan-bud-employee-2024":
+                    st.session_state.employee_logged_in = True
+                    st.success("Zalogowano!")
+                    st.rerun()
+                else:
+                    st.error("Błędne hasło")
     else:
-        st.markdown("### ✅ " + get_text('employee_area', st.session_state.language))
-        st.success("Zalogowany jako pracownik")
-        if st.button(get_text('logout', st.session_state.language)):
+        st.success("✅ Pracownik")
+        if st.button("Wyloguj", key="emp_logout"):
             st.session_state.employee_logged_in = False
             st.rerun()
-    
-    st.markdown("---")
-    
-    # Show available pages based on user type
-    if st.session_state.employee_logged_in:
-        st.markdown("### 🔧 " + get_text('employee_tools', st.session_state.language))
-        st.markdown("- " + get_text('container_configurator', st.session_state.language))
-        st.markdown("- " + get_text('ai_cost_estimator', st.session_state.language))
-        st.markdown("- " + get_text('technical_analysis', st.session_state.language))
-        st.markdown("- " + get_text('quote_generator', st.session_state.language))
-        st.markdown("- " + get_text('comparison_tool', st.session_state.language))
-        st.markdown("- " + get_text('drawing_analysis', st.session_state.language))
-        st.markdown("- " + get_text('admin_panel', st.session_state.language))
-    else:
-        st.markdown("### 👥 " + get_text('client_area', st.session_state.language))
-        st.markdown("- " + get_text('container_configurator', st.session_state.language))
-        st.markdown("- " + get_text('ai_cost_estimator', st.session_state.language))
-
-
 
 # Initialize session state
 if 'container_db' not in st.session_state:
@@ -124,186 +109,141 @@ if 'historical_service' not in st.session_state:
 # Get current language
 lang = st.session_state.get('language', 'en')
 
-# Get current language
-lang = st.session_state.get('language', 'en')
-
 # Initialize services
 storage, container_db, calc, historical_service_init, openai_service, anthropic_service = initialize_services()
 
-# Create a simple historical service that works with our storage
-class SimpleHistoricalService:
-    def __init__(self, storage_manager):
-        self.storage = storage_manager
-    
-    def get_data_upload_template(self):
-        template_data = {
-            'project_date': ['2023-01-15', '2023-02-20', '2023-03-10'],
-            'container_type': ['40ft Standard', '20ft Standard', '40ft High Cube'],
-            'use_case': ['Office Space', 'Workshop', 'Residential'],
-            'location': ['Kąkolewo', 'Poznań', 'Warszawa'],
-            'actual_cost': [45000, 25000, 55000],
-            'estimated_cost': [42000, 27000, 52000],
-            'materials_cost': [28000, 16000, 33000],
-            'labor_cost': [12000, 7000, 15000],
-            'delivery_cost': [3000, 1500, 4000],
-            'modifications': ['{"windows": 4, "electrical": true}', 
-                           '{"doors": 2, "hvac": true}',
-                           '{"windows": 6, "electrical": true, "plumbing": true}'],
-            'project_duration_days': [45, 30, 60],
-            'customer_satisfaction': [5, 4, 5]
-        }
-        return pd.DataFrame(template_data)
-    
-    def import_historical_projects(self, file_path=None, data=None):
-        if data:
-            return self.storage.import_historical_data(data)
-        return False
+st.markdown("---")
 
-# Use the initialized historical service or create a simple one
-if historical_service_init:
-    historical_service = historical_service_init
+# Modern client-focused main dashboard
+if st.session_state.employee_logged_in:
+    # Employee view - show all tools
+    st.markdown("## 🔧 Narzędzia dla Pracowników")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        if st.button("📦 Konfigurator\nKontenerów", key="emp_config", use_container_width=True, type="primary"):
+            st.switch_page("pages/1_Container_Configurator.py")
+    
+    with col2:
+        if st.button("🤖 Szacowanie\nKosztów AI", key="emp_ai", use_container_width=True):
+            st.switch_page("pages/2_AI_Cost_Estimator.py")
+    
+    with col3:
+        if st.button("🔧 Analiza\nTechniczna", key="emp_tech", use_container_width=True):
+            st.switch_page("pages/3_Technical_Analysis.py")
+    
+    with col4:
+        if st.button("📋 Generator\nOfert", key="emp_quote", use_container_width=True):
+            st.switch_page("pages/4_Quote_Generator.py")
+    
+    col5, col6, col7, col8 = st.columns(4)
+    
+    with col5:
+        if st.button("⚖️ Narzędzie\nPorównań", key="emp_compare", use_container_width=True):
+            st.switch_page("pages/5_Comparison_Tool.py")
+    
+    with col6:
+        if st.button("📐 Analiza\nRysunków", key="emp_draw", use_container_width=True):
+            st.switch_page("pages/6_Drawing_Analysis.py")
+    
+    with col7:
+        if st.button("🔐 Panel\nAdministracyjny", key="emp_admin", use_container_width=True):
+            st.switch_page("pages/Admin_Panel.py")
+
 else:
-    historical_service = SimpleHistoricalService(storage)
+    # Client view - modern, attractive layout
+    st.markdown("## 💼 Skonfiguruj Swój Kontener")
+    st.markdown("*Prosty proces w 2 krokach - od pomysłu do wyceny*")
+    
+    # Large client action cards
+    col1, col2 = st.columns(2, gap="large")
+    
+    with col1:
+        st.markdown("""
+        <div style="
+            border: 2px solid #1f77b4; 
+            border-radius: 15px; 
+            padding: 30px; 
+            text-align: center; 
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        ">
+            <h2 style="color: #1f77b4; margin-bottom: 15px;">
+                📦 KROK 1: Konfiguracja
+            </h2>
+            <p style="font-size: 18px; color: #333; margin-bottom: 20px;">
+                Wybierz typ kontenera i dodaj modyfikacje zgodnie z Twoimi potrzebami
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        if st.button("🚀 ROZPOCZNIJ KONFIGURACJĘ", key="client_config", use_container_width=True, type="primary"):
+            st.switch_page("pages/1_Container_Configurator.py")
+    
+    with col2:
+        st.markdown("""
+        <div style="
+            border: 2px solid #ff7f0e; 
+            border-radius: 15px; 
+            padding: 30px; 
+            text-align: center; 
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe6cc 100%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        ">
+            <h2 style="color: #ff7f0e; margin-bottom: 15px;">
+                🤖 KROK 2: Wycena AI
+            </h2>
+            <p style="font-size: 18px; color: #333; margin-bottom: 20px;">
+                Otrzymaj natychmiastową, inteligentną wycenę opartą na najnowszych danych rynkowych
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        if st.button("💰 OTRZYMAJ WYCENĘ", key="client_ai", use_container_width=True, type="secondary"):
+            st.switch_page("pages/2_AI_Cost_Estimator.py")
 
-# Main dashboard
-st.title(f"🏗️ {get_text('app_title', lang)}")
-st.markdown(f"*{get_text('app_subtitle', lang)}*")
-
-# Company information in sidebar
-with st.sidebar:
+# Client benefits section
+if not st.session_state.employee_logged_in:
     st.markdown("---")
-    st.markdown("### 🏢 KAN-BUD")
-    company_info = get_text('company_info', lang)
-    if isinstance(company_info, dict):
-        st.markdown(f"📍 {company_info.get('address', 'Kąkolewo, Poland')}")
-        st.markdown(f"📞 {company_info.get('phone', '+48 XXX XXX XXX')}")
-        st.markdown(f"✉️ {company_info.get('email', 'info@kan-bud.pl')}")
-        st.markdown(f"🌐 {company_info.get('website', 'www.kan-bud.pl')}")
-
-# Data import is now only available in Admin Panel
-
-# Sidebar navigation info
-with st.sidebar:
-    st.header(get_text('navigation', lang))
-    st.markdown(f"""
-    **{get_text('pages_available', lang)}**
-    1. 📦 {get_text('container_configurator', lang)}
-    2. 🤖 {get_text('ai_cost_estimator', lang)}
-    3. 🔧 {get_text('technical_analysis', lang)}
-    4. 📋 {get_text('quote_generator', lang)}
-    5. ⚖️ {get_text('comparison_tool', lang)}
-    """)
+    st.markdown("## ✨ Dlaczego KAN-BUD?")
     
-    st.divider()
-    st.subheader(get_text('quick_stats', lang))
+    col1, col2, col3 = st.columns(3)
     
-    # Display some quick statistics
-    container_types = st.session_state.container_db.get_container_types()
-    st.metric(get_text('available_container_types', lang), len(container_types))
-    st.metric(get_text('standard_sizes', lang), "6 (20ft, 40ft, 45ft, 48ft, 53ft, Custom)")
-    st.metric(get_text('modification_categories', lang), "8")
-
-# Main dashboard content
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.subheader(f"📊 {get_text('quick_overview', lang)}")
-    st.markdown(f"""
-    **{get_text('container_modification_services', lang)}**
-    - {get_text('structural_reinforcements', lang)}
-    - {get_text('custom_openings_windows', lang)}
-    - {get_text('insulation_hvac', lang)}
-    - {get_text('electrical_installations', lang)}
-    - {get_text('plumbing_utilities', lang)}
-    - {get_text('interior_fitouts', lang)}
-    """)
-
-with col2:
-    st.subheader(f"🎯 {get_text('key_features', lang)}")
-    st.markdown(f"""
-    **{get_text('ai_powered_analysis', lang)}**
-    - {get_text('intelligent_cost_estimation', lang)}
-    - {get_text('technical_feasibility_check', lang)}
-    - {get_text('material_optimization', lang)}
-    - {get_text('compliance_verification', lang)}
-    - {get_text('risk_assessment', lang)}
-    - {get_text('timeline_prediction', lang)}
-    """)
-
-with col3:
-    st.subheader(f"💼 {get_text('sales_tools', lang)}")
-    st.markdown(f"""
-    **{get_text('professional_outputs', lang)}**
-    - {get_text('detailed_quotes', lang)}
-    - {get_text('technical_specifications', lang)}
-    - {get_text('visualizations_3d', lang)}
-    - {get_text('cost_comparisons', lang)}
-    - {get_text('project_timelines', lang)}
-    - {get_text('compliance_reports', lang)}
-    """)
-
-st.divider()
-
-# Recent activity and quick actions
-col1, col2 = st.columns([2, 1])
-
-with col1:
-    st.subheader(f"📈 {get_text('market_insights', lang)}")
+    with col1:
+        st.markdown("""
+        ### 🎯 Precyzyjne Wyceny
+        - Wykorzystanie AI i danych historycznych
+        - Uwzględnienie europejskich norm klimatycznych
+        - Transparentne kalkulacje kosztów
+        """)
     
-    # Sample market data visualization
-    dates = pd.date_range(start='2024-01-01', end='2024-12-31', freq='ME')
-    steel_prices = [2800, 2850, 2920, 3100, 3050, 2980, 3150, 3200, 3180, 3250, 3300, 3280]  # €/tonne
+    with col2:
+        st.markdown("""
+        ### ⚡ Szybka Realizacja
+        - Doświadczenie z setkami projektów
+        - Własny park maszynowy
+        - Lokalizacja w centrum Polski
+        """)
     
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(
-        x=dates, 
-        y=steel_prices,
-        mode='lines+markers',
-        name='Steel Price (€/tonne)',
-        line=dict(color='#1f77b4', width=3)
-    ))
+    with col3:
+        st.markdown("""
+        ### 🔧 Pełen Serwis
+        - Projekt i wykonanie
+        - Transport i montaż
+        - Wsparcie posprzedażowe
+        """)
     
-    fig.update_layout(
-        title=get_text('steel_price_trends', lang),
-        xaxis_title=get_text('month', lang),
-        yaxis_title=f"{get_text('price', lang)} (€/tonne)",
-        height=400,
-        showlegend=True
-    )
+    # Contact information for clients
+    st.markdown("---")
+    st.markdown("## 📞 Kontakt")
     
-    st.plotly_chart(fig, use_container_width=True)
-
-with col2:
-    st.subheader(f"🚀 {get_text('quick_actions', lang)}")
-    
-    if st.button(f"🆕 {get_text('new_container_project', lang)}", use_container_width=True):
-        st.switch_page("pages/1_Container_Configurator.py")
-    
-    if st.button(f"💰 {get_text('get_ai_cost_estimate', lang)}", use_container_width=True):
-        st.switch_page("pages/2_AI_Cost_Estimator.py")
-    
-    if st.button(f"🔍 {get_text('view_technical_analysis', lang)}", use_container_width=True):
-        st.switch_page("pages/3_Technical_Analysis.py")
-    
-    if st.button(f"📄 {get_text('generate_quote', lang)}", use_container_width=True):
-        st.switch_page("pages/4_Quote_Generator.py")
-    
-    st.divider()
-    
-    st.subheader(f"💡 {get_text('tips', lang)}")
-    st.info(f"""
-    **{get_text('best_practices', lang)}**
-    - Start with Container Configurator
-    - Use AI Cost Estimator for accuracy
-    - Run Technical Analysis for compliance
-    - Generate professional quotes
-    """)
-
-# Footer
-st.divider()
-st.markdown("""
-<div style='text-align: center; color: #666; font-size: 0.8em;'>
-<p>Steel Container Sales Calculator v1.0 | Built with Streamlit & AI</p>
-<p>For technical support, contact your system administrator</p>
-</div>
-""", unsafe_allow_html=True)
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown("**📍 Adres**\nKąkolewo, Polska")
+    with col2:
+        st.markdown("**📞 Telefon**\n+48 XXX XXX XXX")
+    with col3:
+        st.markdown("**✉️ Email**\ninfo@kan-bud.pl")
