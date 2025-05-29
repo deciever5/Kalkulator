@@ -92,36 +92,34 @@ def get_available_languages():
     }
 
 def render_language_selector():
-    """Render language selector with flags"""
+    """Render language selector with flags only"""
     init_language()
 
-    language_options = get_available_languages()
     current_lang = get_current_language()
 
-    # Create horizontal buttons for language selection
-    st.markdown("**Language / Język:**")
-    col1, col2, col3, col4 = st.columns(4)
+    # Create compact flag-only buttons for language selection
+    col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
     
     with col1:
-        if st.button("🇵🇱 Polski", key="lang_pl", use_container_width=True):
+        if st.button("🇵🇱", key="lang_pl", help="Polski"):
             if current_lang != 'pl':
                 set_language('pl')
                 st.rerun()
     
     with col2:
-        if st.button("🇬🇧 English", key="lang_en", use_container_width=True):
+        if st.button("🇬🇧", key="lang_en", help="English"):
             if current_lang != 'en':
                 set_language('en')
                 st.rerun()
     
     with col3:
-        if st.button("🇩🇪 Deutsch", key="lang_de", use_container_width=True):
+        if st.button("🇩🇪", key="lang_de", help="Deutsch"):
             if current_lang != 'de':
                 set_language('de')
                 st.rerun()
     
     with col4:
-        if st.button("🇳🇱 Nederlands", key="lang_nl", use_container_width=True):
+        if st.button("🇳🇱", key="lang_nl", help="Nederlands"):
             if current_lang != 'nl':
                 set_language('nl')
                 st.rerun()
