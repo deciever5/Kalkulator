@@ -1,0 +1,98 @@
+
+{
+  "ui": {
+    "language_selector": "Sprache / Language",
+    "back_to_home": "← Zurück zur Startseite",
+    "go_to_ai_estimate": "🤖 Zur KI-Schätzung →",
+    "go_to_configurator": "🔧 Zum Konfigurator"
+  },
+  "nav": {
+    "ai_cost_estimation": "KI-Kostenschätzung",
+    "container_configurator": "Container-Konfigurator",
+    "technical_analysis": "Technische Analyse",
+    "quote_generator": "Angebotsgenerator",
+    "comparison_tool": "Vergleichstool"
+  },
+  "app": {
+    "title": "KAN-BUD Professionelle Container-Lösungen",
+    "subtitle": "Erweiterte Plattform für Stahlcontainer-Modifikation und Kostenschätzung"
+  },
+  "container": {
+    "types": {
+      "20ft_standard": "20ft Standard",
+      "40ft_standard": "40ft Standard",
+      "40ft_high_cube": "40ft Hochcontainer",
+      "20ft_refrigerated": "20ft Kühlcontainer"
+    },
+    "use_cases": {
+      "office_space": "Büroraum",
+      "residential": "Wohnbereich",
+      "storage": "Lager",
+      "workshop": "Werkstatt",
+      "retail": "Einzelhandel",
+      "restaurant": "Restaurant",
+      "medical": "Medizinisch",
+      "laboratory": "Labor"
+    },
+    "environment": {
+      "indoor": "Innenbereich",
+      "outdoor": "Außenbereich",
+      "marine": "Marin",
+      "industrial": "Industriell"
+    },
+    "climate_zones": {
+      "central_european": "Mitteleuropäisch",
+      "scandinavian": "Skandinavisch",
+      "mediterranean": "Mediterran",
+      "atlantic_maritime": "Atlantisch-Maritim",
+      "continental": "Kontinental",
+      "alpine": "Alpin",
+      "baltic": "Baltisch",
+      "temperate_oceanic": "Gemäßigt Ozeanisch"
+    },
+    "finish_levels": {
+      "basic": "Basis",
+      "standard": "Standard",
+      "premium": "Premium",
+      "luxury": "Luxus"
+    },
+    "flooring": {
+      "plywood": "Sperrholz",
+      "vinyl": "Vinyl",
+      "carpet": "Teppich",
+      "hardwood": "Hartholz",
+      "polished_concrete": "Polierter Beton"
+    }
+  },
+  "form": {
+    "labels": {
+      "container_type": "Container-Typ",
+      "main_purpose": "Hauptzweck",
+      "environment": "Umgebung",
+      "finish_level": "Ausstattungsgrad",
+      "flooring": "Bodenbelag",
+      "climate_zone": "Klimazone",
+      "number_of_windows": "Anzahl Fenster",
+      "additional_doors": "Zusätzliche Türen",
+      "electrical_system": "Elektrisches System",
+      "plumbing_system": "Sanitärsystem",
+      "hvac_system": "HVAC-System",
+      "insulation_package": "Isolierungspaket",
+      "structural_reinforcement": "Strukturelle Verstärkung"
+    }
+  },
+  "ai": {
+    "models": {
+      "openai_gpt4": "OpenAI GPT-4o",
+      "anthropic_claude": "Anthropic Claude",
+      "auto_select": "Automatische Auswahl"
+    },
+    "messages": {
+      "generating": "KI analysiert Ihre Konfiguration und erstellt Kostenschätzungen...",
+      "quota_exceeded": "OpenAI-Kontingent überschritten. Verwende Anthropic Claude stattdessen.",
+      "unavailable": "KI-Analyse vorübergehend nicht verfügbar",
+      "estimate_generated": "KI-Kostenschätzung erfolgreich erstellt!",
+      "error_generating": "Fehler beim Erstellen der KI-Schätzung: {error}"
+    }
+  }
+}

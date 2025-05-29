@@ -1,0 +1,98 @@
+
+{
+  "ui": {
+    "language_selector": "Taal / Language",
+    "back_to_home": "← Terug naar Home",
+    "go_to_ai_estimate": "🤖 Naar AI Schatting →",
+    "go_to_configurator": "🔧 Naar Configurator"
+  },
+  "nav": {
+    "ai_cost_estimation": "AI Kostenschatting",
+    "container_configurator": "Container Configurator",
+    "technical_analysis": "Technische Analyse",
+    "quote_generator": "Offerte Generator",
+    "comparison_tool": "Vergelijkingstool"
+  },
+  "app": {
+    "title": "KAN-BUD Professionele Container Oplossingen",
+    "subtitle": "Geavanceerd Platform voor Staalcontainer Modificatie en Kostenschatting"
+  },
+  "container": {
+    "types": {
+      "20ft_standard": "20ft Standaard",
+      "40ft_standard": "40ft Standaard",
+      "40ft_high_cube": "40ft Hoge Container",
+      "20ft_refrigerated": "20ft Koel Container"
+    },
+    "use_cases": {
+      "office_space": "Kantoorruimte",
+      "residential": "Residentieel",
+      "storage": "Opslag",
+      "workshop": "Werkplaats",
+      "retail": "Winkel",
+      "restaurant": "Restaurant",
+      "medical": "Medisch",
+      "laboratory": "Laboratorium"
+    },
+    "environment": {
+      "indoor": "Binnen",
+      "outdoor": "Buiten",
+      "marine": "Marien",
+      "industrial": "Industrieel"
+    },
+    "climate_zones": {
+      "central_european": "Midden-Europees",
+      "scandinavian": "Scandinavisch",
+      "mediterranean": "Mediterraan",
+      "atlantic_maritime": "Atlantisch Maritiem",
+      "continental": "Continentaal",
+      "alpine": "Alpien",
+      "baltic": "Baltisch",
+      "temperate_oceanic": "Gematigd Oceanisch"
+    },
+    "finish_levels": {
+      "basic": "Basis",
+      "standard": "Standaard",
+      "premium": "Premium",
+      "luxury": "Luxe"
+    },
+    "flooring": {
+      "plywood": "Multiplex",
+      "vinyl": "Vinyl",
+      "carpet": "Tapijt",
+      "hardwood": "Hardhout",
+      "polished_concrete": "Gepolijst Beton"
+    }
+  },
+  "form": {
+    "labels": {
+      "container_type": "Container Type",
+      "main_purpose": "Hoofddoel",
+      "environment": "Omgeving",
+      "finish_level": "Afwerkingsniveau",
+      "flooring": "Vloerbedekking",
+      "climate_zone": "Klimaatzone",
+      "number_of_windows": "Aantal Ramen",
+      "additional_doors": "Extra Deuren",
+      "electrical_system": "Elektrisch Systeem",
+      "plumbing_system": "Loodgieterswerk",
+      "hvac_system": "HVAC Systeem",
+      "insulation_package": "Isolatiepakket",
+      "structural_reinforcement": "Structurele Versterking"
+    }
+  },
+  "ai": {
+    "models": {
+      "openai_gpt4": "OpenAI GPT-4o",
+      "anthropic_claude": "Anthropic Claude",
+      "auto_select": "Automatische Selectie"
+    },
+    "messages": {
+      "generating": "AI analyseert uw configuratie en genereert kostenschattingen...",
+      "quota_exceeded": "OpenAI quotum overschreden. Gebruik Anthropic Claude in plaats daarvan.",
+      "unavailable": "AI analyse tijdelijk niet beschikbaar",
+      "estimate_generated": "AI kostenschatting succesvol gegenereerd!",
+      "error_generating": "Fout bij het genereren van AI schatting: {error}"
+    }
+  }
+}

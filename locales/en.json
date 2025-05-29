@@ -1,0 +1,98 @@
+
+{
+  "ui": {
+    "language_selector": "Language / Język",
+    "back_to_home": "← Back to Home",
+    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
+    "go_to_configurator": "🔧 Go to Configurator"
+  },
+  "nav": {
+    "ai_cost_estimation": "AI Cost Estimation",
+    "container_configurator": "Container Configurator",
+    "technical_analysis": "Technical Analysis",
+    "quote_generator": "Quote Generator",
+    "comparison_tool": "Comparison Tool"
+  },
+  "app": {
+    "title": "KAN-BUD Professional Container Solutions",
+    "subtitle": "Advanced Steel Container Modification & Cost Estimation Platform"
+  },
+  "container": {
+    "types": {
+      "20ft_standard": "20ft Standard",
+      "40ft_standard": "40ft Standard",
+      "40ft_high_cube": "40ft High Cube",
+      "20ft_refrigerated": "20ft Refrigerated"
+    },
+    "use_cases": {
+      "office_space": "Office Space",
+      "residential": "Residential",
+      "storage": "Storage",
+      "workshop": "Workshop",
+      "retail": "Retail",
+      "restaurant": "Restaurant",
+      "medical": "Medical",
+      "laboratory": "Laboratory"
+    },
+    "environment": {
+      "indoor": "Indoor",
+      "outdoor": "Outdoor",
+      "marine": "Marine",
+      "industrial": "Industrial"
+    },
+    "climate_zones": {
+      "central_european": "Central European",
+      "scandinavian": "Scandinavian",
+      "mediterranean": "Mediterranean",
+      "atlantic_maritime": "Atlantic Maritime",
+      "continental": "Continental",
+      "alpine": "Alpine",
+      "baltic": "Baltic",
+      "temperate_oceanic": "Temperate Oceanic"
+    },
+    "finish_levels": {
+      "basic": "Basic",
+      "standard": "Standard",
+      "premium": "Premium",
+      "luxury": "Luxury"
+    },
+    "flooring": {
+      "plywood": "Plywood",
+      "vinyl": "Vinyl",
+      "carpet": "Carpet",
+      "hardwood": "Hardwood",
+      "polished_concrete": "Polished Concrete"
+    }
+  },
+  "form": {
+    "labels": {
+      "container_type": "Container Type",
+      "main_purpose": "Main Purpose",
+      "environment": "Environment",
+      "finish_level": "Finish Level",
+      "flooring": "Flooring",
+      "climate_zone": "Climate Zone",
+      "number_of_windows": "Number of Windows",
+      "additional_doors": "Additional Doors",
+      "electrical_system": "Electrical System",
+      "plumbing_system": "Plumbing System",
+      "hvac_system": "HVAC System",
+      "insulation_package": "Insulation Package",
+      "structural_reinforcement": "Structural Reinforcement"
+    }
+  },
+  "ai": {
+    "models": {
+      "openai_gpt4": "OpenAI GPT-4o",
+      "anthropic_claude": "Anthropic Claude",
+      "auto_select": "Auto-Select Best"
+    },
+    "messages": {
+      "generating": "AI is analyzing your configuration and generating cost estimates...",
+      "quota_exceeded": "OpenAI quota exceeded. Using Anthropic Claude instead.",
+      "unavailable": "AI analysis temporarily unavailable",
+      "estimate_generated": "AI cost estimate generated successfully!",
+      "error_generating": "Error generating AI estimate: {error}"
+    }
+  }
+}

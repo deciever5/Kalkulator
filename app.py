@@ -8,7 +8,7 @@ from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
-from utils.translations import get_text, get_available_languages
+from utils.i18n import init_i18n, t, render_language_selector
 from utils.groq_service import GroqService
 
 # Page configuration
@@ -35,10 +35,10 @@ def initialize_services():
         if st.session_state.get('employee_logged_in', False):
             st.error(f"Database initialization failed: {str(e)}")
         storage = SimpleStorageManager()
-    
+
     container_db = ContainerDatabase()
     calc = StructuralCalculations()
-    
+
     # Initialize historical service with error handling
     try:
         historical_service = HistoricalDataService()
@@ -47,7 +47,7 @@ def initialize_services():
         if st.session_state.get('employee_logged_in', False):
             st.error(f"Historical data initialization: {str(e)}")
         historical_service = None
-    
+
     # Initialize AI services (Groq)
     try:
         groq_service = GroqService()
@@ -56,13 +56,12 @@ def initialize_services():
         if st.session_state.get('employee_logged_in', False):
             st.warning(f"Groq AI service initialization: {str(e)}")
         groq_service = None
-    
+
     return storage, container_db, calc, historical_service, groq_service
 
-# Language selection
-available_languages = get_available_languages()
-if 'language' not in st.session_state:
-    st.session_state.language = 'en'
+# Initialize i18n and language selector
+init_i18n()
+render_language_selector("main")
 
 # Employee authentication
 if 'employee_logged_in' not in st.session_state:
@@ -81,7 +80,7 @@ with col_lang:
         'de': 'Deutsch',
         'nl': 'Nederlands'
     }
-    
+
     current_lang = st.session_state.get('language', 'pl')
     selected_language = st.selectbox(
         "Language / Język:",
@@ -90,7 +89,7 @@ with col_lang:
         index=list(language_options.keys()).index(current_lang),
         key="language_selector"
     )
-    
+
     if selected_language != current_lang:
         st.session_state.language = selected_language
         st.rerun()
@@ -271,21 +270,21 @@ if st.session_state.employee_logged_in:
     st.markdown(f"""
     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
                 color: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0; text-align: center;">
-        <h2 style="margin: 0;">🔧 {get_text('employee_tools', st.session_state.language)}</h2>
-        <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">{get_text('full_system_access', st.session_state.language)}</p>
+        <h2 style="margin: 0;">🔧 {t('employee_tools')}</h2>
+        <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">{t('full_system_access')}</p>
     </div>
     """, unsafe_allow_html=True)
-    
+
     # Primary tools
     col1, col2, col3, col4 = st.columns(4, gap="large")
-    
+
     tools = [
-        ("📦", get_text('container_configurator_title', st.session_state.language), get_text('container_configurator_desc', st.session_state.language), "pages/1_Container_Configurator.py", "emp_config"),
-        ("🤖", get_text('ai_cost_estimator_title', st.session_state.language), get_text('ai_cost_estimator_desc', st.session_state.language), "pages/2_AI_Cost_Estimator.py", "emp_ai"),
-        ("🔧", get_text('technical_analysis', st.session_state.language), "Obliczenia strukturalne", "pages/3_Technical_Analysis.py", "emp_tech"),
-        ("📋", get_text('quote_generator', st.session_state.language), "Profesjonalne oferty", "pages/4_Quote_Generator.py", "emp_quote")
+        ("📦", t('container_configurator_title'), t('container_configurator_desc'), "pages/1_Container_Configurator.py", "emp_config"),
+        ("🤖", t('ai_cost_estimator_title'), t('ai_cost_estimator_desc'), "pages/2_AI_Cost_Estimator.py", "emp_ai"),
+        ("🔧", t('technical_analysis'), "Obliczenia strukturalne", "pages/3_Technical_Analysis.py", "emp_tech"),
+        ("📋", t('quote_generator'), "Profesjonalne oferty", "pages/4_Quote_Generator.py", "emp_quote")
     ]
-    
+
     for i, (icon, title, desc, page, key) in enumerate(tools):
         with [col1, col2, col3, col4][i]:
             st.markdown(f"""
@@ -295,18 +294,18 @@ if st.session_state.employee_logged_in:
                 <div class="feature-description">{desc}</div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"{get_text('open_tool', st.session_state.language)} {title.replace(chr(10), ' ')}", key=key, use_container_width=True, type="primary"):
+            if st.button(f"{t('open_tool')} {title.replace(chr(10), ' ')}", key=key, use_container_width=True, type="primary"):
                 st.switch_page(page)
-    
+
     # Secondary tools
     col5, col6, col7 = st.columns([1, 1, 1], gap="large")
-    
+
     secondary_tools = [
         ("⚖️", "Narzędzie\nPorównań", "Porównywanie konfiguracji", "pages/5_Comparison_Tool.py", "emp_compare"),
         ("📐", "Analiza\nRysunków", "Analiza dokumentów AI", "pages/6_Drawing_Analysis.py", "emp_draw"),
         ("🔐", "Panel\nAdministracyjny", "Zarządzanie systemem", "pages/Admin_Panel.py", "emp_admin")
     ]
-    
+
     for i, (icon, title, desc, page, key) in enumerate(secondary_tools):
         with [col5, col6, col7][i]:
             st.markdown(f"""
@@ -324,17 +323,17 @@ else:
     st.markdown(f"""
     <div style="text-align: center; margin: 2rem 0;">
         <h2 style="color: #1e3c72; font-size: 2.5rem; margin-bottom: 0.5rem;">
-            💼 {get_text('configure_container', st.session_state.language)}
+            💼 {t('configure_container')}
         </h2>
         <p style="font-size: 1.3rem; color: #666; font-style: italic;">
-            {get_text('simple_process_2_steps', st.session_state.language)}
+            {t('simple_process_2_steps')}
         </p>
     </div>
     """, unsafe_allow_html=True)
-    
+
     # Enhanced client action cards
     col1, col2 = st.columns(2, gap="large")
-    
+
     with col1:
         st.markdown(f"""
         <div class="feature-card" style="
@@ -346,18 +345,18 @@ else:
         ">
             <div style="font-size: 4rem; margin-bottom: 1rem;">📦</div>
             <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                {get_text('step_1_configuration', st.session_state.language)}
+                {t('step_1_configuration')}
             </h2>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                {get_text('choose_container_type', st.session_state.language)}
+                {t('choose_container_type')}
             </p>
         </div>
         """, unsafe_allow_html=True)
-        
+
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("🚀 " + get_text('start_configuration', st.session_state.language), key="client_config", use_container_width=True, type="primary"):
+        if st.button("🚀 " + t('start_configuration'), key="client_config", use_container_width=True, type="primary"):
             st.switch_page("pages/1_Container_Configurator.py")
-    
+
     with col2:
         st.markdown(f"""
         <div class="feature-card" style="
@@ -369,16 +368,16 @@ else:
         ">
             <div style="font-size: 4rem; margin-bottom: 1rem;">🤖</div>
             <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                {get_text('step_2_ai_quote', st.session_state.language)}
+                {t('step_2_ai_quote')}
             </h2>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                {get_text('get_instant_quote', st.session_state.language)}
+                {t('get_instant_quote')}
             </p>
         </div>
         """, unsafe_allow_html=True)
-        
+
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("💰 " + get_text('get_quote', st.session_state.language), key="client_ai", use_container_width=True, type="secondary"):
+        if st.button("💰 " + t('get_quote'), key="client_ai", use_container_width=True, type="secondary"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Enhanced client benefits section
@@ -386,30 +385,30 @@ if not st.session_state.employee_logged_in:
     st.markdown(f"""
     <div class="benefits-section">
         <h2 style="text-align: center; color: #1e3c72; margin-bottom: 2rem; font-size: 2.2rem;">
-            ✨ {get_text('why_kan_bud', st.session_state.language)}
+            ✨ {t('why_kan_bud')}
         </h2>
     """, unsafe_allow_html=True)
-    
+
     col1, col2, col3 = st.columns(3, gap="large")
-    
+
     benefits = [
-        ("🎯", get_text('precise_quotes', st.session_state.language), [
-            get_text('ai_historical_data', st.session_state.language),
-            get_text('european_climate_standards', st.session_state.language), 
-            get_text('transparent_calculations', st.session_state.language)
+        ("🎯", t('precise_quotes'), [
+            t('ai_historical_data'),
+            t('european_climate_standards'), 
+            t('transparent_calculations')
         ]),
-        ("⚡", get_text('fast_realization', st.session_state.language), [
-            get_text('hundreds_of_projects', st.session_state.language),
-            get_text('own_machinery', st.session_state.language),
-            get_text('poland_center', st.session_state.language)
+        ("⚡", t('fast_realization'), [
+            t('hundreds_of_projects'),
+            t('own_machinery'),
+            t('poland_center')
         ]),
-        ("🔧", get_text('full_service', st.session_state.language), [
-            get_text('design_execution', st.session_state.language),
-            get_text('transport_assembly', st.session_state.language),
-            get_text('after_sales_support', st.session_state.language)
+        ("🔧", t('full_service'), [
+            t('design_execution'),
+            t('transport_assembly'),
+            t('after_sales_support')
         ])
     ]
-    
+
     for i, (icon, title, features) in enumerate(benefits):
         with [col1, col2, col3][i]:
             st.markdown(f"""
@@ -421,33 +420,33 @@ if not st.session_state.employee_logged_in:
                 </ul>
             </div>
             """, unsafe_allow_html=True)
-    
+
     st.markdown("</div>", unsafe_allow_html=True)
-    
+
     # Enhanced contact section
     st.markdown(f"""
     <div class="contact-section">
-        <h2 style="margin-bottom: 2rem; font-size: 2.2rem;">📞 {get_text('contact_us', st.session_state.language)}</h2>
+        <h2 style="margin-bottom: 2rem; font-size: 2.2rem;">📞 {t('contact_us')}</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">📍</div>
-                <h4 style="margin-bottom: 0.5rem;">{get_text('address', st.session_state.language)}</h4>
+                <h4 style="margin-bottom: 0.5rem;">{t('address')}</h4>
                 <p style="opacity: 0.9;">Kąkolewo, Polska</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">📞</div>
-                <h4 style="margin-bottom: 0.5rem;">{get_text('phone', st.session_state.language)}</h4>
+                <h4 style="margin-bottom: 0.5rem;">{t('phone')}</h4>
                 <p style="opacity: 0.9;">+48 XXX XXX XXX</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">✉️</div>
-                <h4 style="margin-bottom: 0.5rem;">{get_text('email', st.session_state.language)}</h4>
+                <h4 style="margin-bottom: 0.5rem;">{t('email')}</h4>
                 <p style="opacity: 0.9;">info@kan-bud.pl</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌐</div>
-                <h4 style="margin-bottom: 0.5rem;">{get_text('working_hours', st.session_state.language)}</h4>
-                <p style="opacity: 0.9;">{get_text('mon_fri', st.session_state.language)}</p>
+                <h4 style="margin-bottom: 0.5rem;">{t('working_hours')}</h4>
+                <p style="opacity: 0.9;">{t('mon_fri')}</p>
             </div>
         </div>
     </div>
