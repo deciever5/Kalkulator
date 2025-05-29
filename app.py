@@ -52,6 +52,10 @@ available_languages = get_available_languages()
 if 'language' not in st.session_state:
     st.session_state.language = 'en'
 
+# Employee authentication
+if 'employee_logged_in' not in st.session_state:
+    st.session_state.employee_logged_in = False
+
 with st.sidebar:
     st.markdown("### 🌐 " + get_text('language_selector', st.session_state.get('language', 'en')))
     selected_language = st.selectbox(
@@ -64,6 +68,46 @@ with st.sidebar:
     if selected_language != st.session_state.language:
         st.session_state.language = selected_language
         st.rerun()
+    
+    st.markdown("---")
+    
+    # Employee login section
+    if not st.session_state.employee_logged_in:
+        st.markdown("### 👤 " + get_text('employee_login', st.session_state.language))
+        employee_password = st.text_input(get_text('password', st.session_state.language), type="password", key="emp_pwd")
+        
+        if st.button(get_text('login', st.session_state.language)):
+            if employee_password == "kan-bud-employee-2024":  # Employee password
+                st.session_state.employee_logged_in = True
+                st.success("Zalogowano jako pracownik!")
+                st.rerun()
+            else:
+                st.error("Nieprawidłowe hasło")
+        
+        st.info("Hasło dla pracowników: kan-bud-employee-2024")
+    else:
+        st.markdown("### ✅ " + get_text('employee_area', st.session_state.language))
+        st.success("Zalogowany jako pracownik")
+        if st.button(get_text('logout', st.session_state.language)):
+            st.session_state.employee_logged_in = False
+            st.rerun()
+    
+    st.markdown("---")
+    
+    # Show available pages based on user type
+    if st.session_state.employee_logged_in:
+        st.markdown("### 🔧 " + get_text('employee_tools', st.session_state.language))
+        st.markdown("- " + get_text('container_configurator', st.session_state.language))
+        st.markdown("- " + get_text('ai_cost_estimator', st.session_state.language))
+        st.markdown("- " + get_text('technical_analysis', st.session_state.language))
+        st.markdown("- " + get_text('quote_generator', st.session_state.language))
+        st.markdown("- " + get_text('comparison_tool', st.session_state.language))
+        st.markdown("- " + get_text('drawing_analysis', st.session_state.language))
+        st.markdown("- " + get_text('admin_panel', st.session_state.language))
+    else:
+        st.markdown("### 👥 " + get_text('client_area', st.session_state.language))
+        st.markdown("- " + get_text('container_configurator', st.session_state.language))
+        st.markdown("- " + get_text('ai_cost_estimator', st.session_state.language))
 
 
 

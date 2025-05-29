@@ -4,8 +4,22 @@ from datetime import datetime, timedelta
 import json
 from utils.quote_generator import QuoteGenerator
 from utils.calculations import StructuralCalculations
+from utils.translations import get_text
 
 st.set_page_config(page_title="Quote Generator", page_icon="📄", layout="wide")
+
+# Employee access control
+if 'employee_logged_in' not in st.session_state:
+    st.session_state.employee_logged_in = False
+
+lang = st.session_state.get('language', 'en')
+
+if not st.session_state.employee_logged_in:
+    st.title("🔒 " + get_text('access_denied', lang))
+    st.error("Generator ofert jest dostępny tylko dla pracowników KAN-BUD.")
+    st.info("Zaloguj się jako pracownik w panelu bocznym, aby uzyskać dostęp do tego narzędzia.")
+    st.markdown("**Hasło dla pracowników:** kan-bud-employee-2024")
+    st.stop()
 
 # Initialize services
 if 'quote_generator' not in st.session_state:
