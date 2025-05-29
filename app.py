@@ -56,6 +56,59 @@ if 'language' not in st.session_state:
 if 'employee_logged_in' not in st.session_state:
     st.session_state.employee_logged_in = False
 
+# Language selector at the very top
+col1, col2, col3, col4, col_spacer, col_login = st.columns([1, 1, 1, 1, 2, 1])
+
+with col1:
+    if st.button("🇬🇧", key="lang_en", help="English", use_container_width=True):
+        st.session_state.language = 'en'
+        st.rerun()
+
+with col2:
+    if st.button("🇵🇱", key="lang_pl", help="Polski", use_container_width=True):
+        st.session_state.language = 'pl'
+        st.rerun()
+
+with col3:
+    if st.button("🇩🇪", key="lang_de", help="Deutsch", use_container_width=True):
+        st.session_state.language = 'de'
+        st.rerun()
+
+with col4:
+    if st.button("🇳🇱", key="lang_nl", help="Nederlands", use_container_width=True):
+        st.session_state.language = 'nl'
+        st.rerun()
+
+with col_login:
+    # Employee login
+    if not st.session_state.employee_logged_in:
+        if st.button("👤", key="show_login", help="Employee Login", use_container_width=True):
+            st.session_state.show_login = not st.session_state.get('show_login', False)
+    else:
+        if st.button("🚪", key="emp_logout", help="Logout", use_container_width=True):
+            st.session_state.employee_logged_in = False
+            st.rerun()
+
+# Employee login form
+if st.session_state.get('show_login', False) and not st.session_state.employee_logged_in:
+    col_a, col_b, col_c = st.columns([2, 2, 2])
+    with col_b:
+        employee_password = st.text_input("Password:", type="password", key="emp_pwd")
+        col_x, col_y = st.columns(2)
+        with col_x:
+            if st.button("Login", key="emp_login", use_container_width=True):
+                if employee_password == "kan-bud-employee-2024":
+                    st.session_state.employee_logged_in = True
+                    st.session_state.show_login = False
+                    st.success("Logged in!")
+                    st.rerun()
+                else:
+                    st.error("Wrong password")
+        with col_y:
+            if st.button("Cancel", key="cancel_login", use_container_width=True):
+                st.session_state.show_login = False
+                st.rerun()
+
 # Modern header with enhanced styling
 st.markdown("""
 <style>
@@ -172,60 +225,9 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 </div>
 """, unsafe_allow_html=True)
 
-# Language selector above banner
-col1, col2, col3, col4, col_spacer, col_login = st.columns([1, 1, 1, 1, 2, 1])
-
-with col1:
-    if st.button("🇬🇧", key="lang_en", help="English", use_container_width=True):
-        st.session_state.language = 'en'
-        st.rerun()
-
-with col2:
-    if st.button("🇵🇱", key="lang_pl", help="Polski", use_container_width=True):
-        st.session_state.language = 'pl'
-        st.rerun()
-
-with col3:
-    if st.button("🇩🇪", key="lang_de", help="Deutsch", use_container_width=True):
-        st.session_state.language = 'de'
-        st.rerun()
-
-with col4:
-    if st.button("🇳🇱", key="lang_nl", help="Nederlands", use_container_width=True):
-        st.session_state.language = 'nl'
-        st.rerun()
-
-with col_login:
-    # Employee login
-    if not st.session_state.employee_logged_in:
-        if st.button("👤", key="show_login", help="Employee Login", use_container_width=True):
-            st.session_state.show_login = not st.session_state.get('show_login', False)
-    else:
-        if st.button("🚪", key="emp_logout", help="Logout", use_container_width=True):
-            st.session_state.employee_logged_in = False
-            st.rerun()
-
-# Employee login form
-if st.session_state.get('show_login', False) and not st.session_state.employee_logged_in:
-    col_a, col_b, col_c = st.columns([2, 2, 2])
-    with col_b:
-        employee_password = st.text_input("Password:", type="password", key="emp_pwd")
-        col_x, col_y = st.columns(2)
-        with col_x:
-            if st.button("Login", key="emp_login", use_container_width=True):
-                if employee_password == "kan-bud-employee-2024":
-                    st.session_state.employee_logged_in = True
-                    st.session_state.show_login = False
-                    st.success("Logged in!")
-                    st.rerun()
-                else:
-                    st.error("Wrong password")
-        with col_y:
-            if st.button("Cancel", key="cancel_login", use_container_width=True):
-                st.session_state.show_login = False
-                st.rerun()
-
-st.markdown("---")
+# Language change information
+if st.session_state.language != 'en':
+    st.info(f"Language changed to: {available_languages[st.session_state.language]}")
 
 # Initialize session state
 if 'container_db' not in st.session_state:
