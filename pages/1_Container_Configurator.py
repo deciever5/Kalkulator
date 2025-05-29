@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
-from utils.quick_translate import quick_translate, translate_dropdown_options, render_language_dropdown
+from utils.complete_translations_fixed import t, translate_list, render_language_selector
 from utils.advanced_3d_visualizer import Advanced3DVisualizer
 
 st.set_page_config(page_title="Container Configurator", page_icon="📦", layout="wide", initial_sidebar_state="collapsed")
