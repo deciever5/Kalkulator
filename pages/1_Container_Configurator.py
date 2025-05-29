@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.complete_translations import get_translation, translate_options
+from utils.advanced_3d_visualizer import Advanced3DVisualizer
 
 st.set_page_config(page_title="Container Configurator", page_icon="📦", layout="wide", initial_sidebar_state="collapsed")
 
@@ -17,6 +18,9 @@ if 'container_db' not in st.session_state:
 
 if 'calculations' not in st.session_state:
     st.session_state.calculations = StructuralCalculations()
+
+if 'visualizer_3d' not in st.session_state:
+    st.session_state.visualizer_3d = Advanced3DVisualizer()
 
 # Enhanced navigation header
 st.markdown("""
