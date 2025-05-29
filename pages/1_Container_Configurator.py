@@ -274,73 +274,46 @@ with col1:
             st.write(f"• {mod}")
 
 with col2:
-    # Simple 3D visualization placeholder
-    st.markdown("**Container Visualization**")
+    # Advanced 3D visualization with all modifications
+    st.markdown("**🏗️ Advanced 3D Container Model**")
     
     if 'base_type' in st.session_state.container_config:
-        # Create a simple 3D wireframe representation
-        container_specs = container_types[st.session_state.container_config['base_type']]
+        # Create advanced 3D model with all modifications
+        fig_3d = st.session_state.visualizer_3d.create_3d_model(st.session_state.container_config)
         
-        # Define container corners
-        length = container_specs['length']
-        width = container_specs['width']
-        height = container_specs['height']
+        # Display the advanced 3D model
+        st.plotly_chart(fig_3d, use_container_width=True)
         
-        # Create 3D box visualization
-        fig = go.Figure()
+        # Add visualization controls
+        st.markdown("**🎛️ Visualization Controls**")
         
-        # Define the 8 corners of the container
-        x = [0, length, length, 0, 0, length, length, 0]
-        y = [0, 0, width, width, 0, 0, width, width]
-        z = [0, 0, 0, 0, height, height, height, height]
+        col_a, col_b = st.columns(2)
         
-        # Create the wireframe
-        edges = [
-            [0, 1], [1, 2], [2, 3], [3, 0],  # bottom face
-            [4, 5], [5, 6], [6, 7], [7, 4],  # top face
-            [0, 4], [1, 5], [2, 6], [3, 7]   # vertical edges
-        ]
+        with col_a:
+            show_interior = st.checkbox("Show Interior Layout", value=True)
+            show_systems = st.checkbox("Show Systems (Electrical/Plumbing)", value=True)
         
-        for edge in edges:
-            fig.add_trace(go.Scatter3d(
-                x=[x[edge[0]], x[edge[1]]],
-                y=[y[edge[0]], y[edge[1]]],
-                z=[z[edge[0]], z[edge[1]]],
-                mode='lines',
-                line=dict(color='blue', width=4),
-                showlegend=False
-            ))
+        with col_b:
+            show_modifications = st.checkbox("Show Modifications", value=True)
+            show_structure = st.checkbox("Show Structural Frame", value=True)
         
-        # Add modifications visualization
-        mods = st.session_state.container_config.get('modifications', {})
-        
-        # Add windows (simple rectangles on sides)
-        if mods.get('windows', 0) > 0:
-            for i in range(min(mods['windows'], 4)):  # Max 4 windows for visualization
-                side = i % 2  # Alternate between sides
-                if side == 0:  # Front/back
-                    fig.add_trace(go.Scatter3d(
-                        x=[length/4 + (i//2)*length/2, 3*length/4 + (i//2)*length/2],
-                        y=[0, 0] if i < 2 else [width, width],
-                        z=[height/3, 2*height/3],
-                        mode='lines',
-                        line=dict(color='lightblue', width=6),
-                        name='Windows' if i == 0 else None,
-                        showlegend=i == 0
-                    ))
-        
-        fig.update_layout(
-            scene=dict(
-                xaxis_title='Length (ft)',
-                yaxis_title='Width (ft)',
-                zaxis_title='Height (ft)',
-                aspectmode='data'
-            ),
-            title=f"{st.session_state.container_config['base_type']} Configuration",
-            height=400
-        )
-        
-        st.plotly_chart(fig, use_container_width=True)
+        # Update visualization based on controls
+        if not show_interior or not show_systems or not show_modifications or not show_structure:
+            # Create filtered configuration
+            filtered_config = st.session_state.container_config.copy()
+            
+            if not show_systems:
+                mods = filtered_config.get('modifications', {})
+                mods.pop('electrical', None)
+                mods.pop('plumbing', None)
+                mods.pop('hvac', None)
+            
+            if not show_modifications:
+                filtered_config['modifications'] = {}
+            
+            # Recreate visualization with filters
+            fig_filtered = st.session_state.visualizer_3d.create_3d_model(filtered_config)
+            st.plotly_chart(fig_filtered, use_container_width=True, key="filtered_view")
 
 # Enhanced action buttons
 st.markdown("""

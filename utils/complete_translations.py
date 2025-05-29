@@ -65,6 +65,45 @@ COMPLETE_TRANSLATIONS = {
         'finish_level': 'Finish Level',
         'flooring': 'Flooring',
         'climate_zone': 'Climate Zone',
+        
+        # Additional options
+        'number_of_windows': 'Number of Windows',
+        'additional_doors': 'Additional Doors',
+        'electrical_system': 'Electrical System',
+        'plumbing_system': 'Plumbing System',
+        'hvac_system': 'HVAC System',
+        'insulation_package': 'Insulation Package',
+        'structural_reinforcement': 'Structural Reinforcement',
+        
+        # Analysis types
+        'Wind Load Analysis': 'Wind Load Analysis',
+        'Seismic Analysis': 'Seismic Analysis',
+        'Snow Load Analysis': 'Snow Load Analysis',
+        'Foundation Analysis': 'Foundation Analysis',
+        'Thermal Analysis': 'Thermal Analysis',
+        
+        # AI Models
+        'OpenAI GPT-4o': 'OpenAI GPT-4o',
+        'Anthropic Claude': 'Anthropic Claude',
+        'Auto-Select Best': 'Auto-Select Best',
+        
+        # Customer types
+        'Individual': 'Individual',
+        'Business': 'Business',
+        'Government': 'Government',
+        'Non-Profit': 'Non-Profit',
+        
+        # Project sizes
+        'Small': 'Small',
+        'Medium': 'Medium',
+        'Large': 'Large',
+        'Extra Large': 'Extra Large',
+        
+        # Quote status
+        'pending': 'Pending',
+        'accepted': 'Accepted',
+        'rejected': 'Rejected',
+        'expired': 'Expired',
     },
     
     'pl': {
@@ -125,6 +164,45 @@ COMPLETE_TRANSLATIONS = {
         'finish_level': 'Poziom Wykończenia',
         'flooring': 'Podłogi',
         'climate_zone': 'Strefa Klimatyczna',
+        
+        # Additional options
+        'number_of_windows': 'Liczba Okien',
+        'additional_doors': 'Dodatkowe Drzwi',
+        'electrical_system': 'System Elektryczny',
+        'plumbing_system': 'System Hydrauliczny',
+        'hvac_system': 'System HVAC',
+        'insulation_package': 'Pakiet Izolacji',
+        'structural_reinforcement': 'Wzmocnienie Konstrukcyjne',
+        
+        # Analysis types
+        'Wind Load Analysis': 'Analiza Obciążeń Wiatrem',
+        'Seismic Analysis': 'Analiza Sejsmiczna',
+        'Snow Load Analysis': 'Analiza Obciążeń Śniegiem',
+        'Foundation Analysis': 'Analiza Fundamentów',
+        'Thermal Analysis': 'Analiza Termiczna',
+        
+        # AI Models
+        'OpenAI GPT-4o': 'OpenAI GPT-4o',
+        'Anthropic Claude': 'Anthropic Claude',
+        'Auto-Select Best': 'Automatyczny Wybór',
+        
+        # Customer types
+        'Individual': 'Osoba Fizyczna',
+        'Business': 'Firma',
+        'Government': 'Instytucja Rządowa',
+        'Non-Profit': 'Organizacja Non-Profit',
+        
+        # Project sizes
+        'Small': 'Mały',
+        'Medium': 'Średni',
+        'Large': 'Duży',
+        'Extra Large': 'Bardzo Duży',
+        
+        # Quote status
+        'pending': 'Oczekujący',
+        'accepted': 'Zaakceptowany',
+        'rejected': 'Odrzucony',
+        'expired': 'Wygasły',
     },
     
     'de': {
@@ -185,6 +263,45 @@ COMPLETE_TRANSLATIONS = {
         'finish_level': 'Ausstattungsgrad',
         'flooring': 'Bodenbelag',
         'climate_zone': 'Klimazone',
+        
+        # Additional options
+        'number_of_windows': 'Anzahl Fenster',
+        'additional_doors': 'Zusätzliche Türen',
+        'electrical_system': 'Elektrisches System',
+        'plumbing_system': 'Sanitärsystem',
+        'hvac_system': 'HVAC-System',
+        'insulation_package': 'Isolierungspaket',
+        'structural_reinforcement': 'Strukturelle Verstärkung',
+        
+        # Analysis types
+        'Wind Load Analysis': 'Windlastanalyse',
+        'Seismic Analysis': 'Seismische Analyse',
+        'Snow Load Analysis': 'Schneelastanalyse',
+        'Foundation Analysis': 'Fundamentanalyse',
+        'Thermal Analysis': 'Thermische Analyse',
+        
+        # AI Models
+        'OpenAI GPT-4o': 'OpenAI GPT-4o',
+        'Anthropic Claude': 'Anthropic Claude',
+        'Auto-Select Best': 'Automatische Auswahl',
+        
+        # Customer types
+        'Individual': 'Privatperson',
+        'Business': 'Unternehmen',
+        'Government': 'Regierung',
+        'Non-Profit': 'Gemeinnützig',
+        
+        # Project sizes
+        'Small': 'Klein',
+        'Medium': 'Mittel',
+        'Large': 'Groß',
+        'Extra Large': 'Sehr Groß',
+        
+        # Quote status
+        'pending': 'Ausstehend',
+        'accepted': 'Angenommen',
+        'rejected': 'Abgelehnt',
+        'expired': 'Abgelaufen',
     },
     
     'nl': {
@@ -245,6 +362,45 @@ COMPLETE_TRANSLATIONS = {
         'finish_level': 'Afwerkingsniveau',
         'flooring': 'Vloerbedekking',
         'climate_zone': 'Klimaatzone',
+        
+        # Additional options
+        'number_of_windows': 'Aantal Ramen',
+        'additional_doors': 'Extra Deuren',
+        'electrical_system': 'Elektrisch Systeem',
+        'plumbing_system': 'Loodgieterswerk',
+        'hvac_system': 'HVAC Systeem',
+        'insulation_package': 'Isolatiepakket',
+        'structural_reinforcement': 'Structurele Versterking',
+        
+        # Analysis types
+        'Wind Load Analysis': 'Windbelasting Analyse',
+        'Seismic Analysis': 'Seismische Analyse',
+        'Snow Load Analysis': 'Sneeuwbelasting Analyse',
+        'Foundation Analysis': 'Fundament Analyse',
+        'Thermal Analysis': 'Thermische Analyse',
+        
+        # AI Models
+        'OpenAI GPT-4o': 'OpenAI GPT-4o',
+        'Anthropic Claude': 'Anthropic Claude',
+        'Auto-Select Best': 'Automatische Selectie',
+        
+        # Customer types
+        'Individual': 'Particulier',
+        'Business': 'Bedrijf',
+        'Government': 'Overheid',
+        'Non-Profit': 'Non-Profit',
+        
+        # Project sizes
+        'Small': 'Klein',
+        'Medium': 'Gemiddeld',
+        'Large': 'Groot',
+        'Extra Large': 'Extra Groot',
+        
+        # Quote status
+        'pending': 'In Behandeling',
+        'accepted': 'Geaccepteerd',
+        'rejected': 'Afgewezen',
+        'expired': 'Verlopen',
     }
 }
 
