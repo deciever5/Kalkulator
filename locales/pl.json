@@ -250,5 +250,19 @@
   },
   "labor_costs_30": "Koszty pracy (30%)",
   "base_cost": "Koszt podstawowy", 
-  "modifications": "Modyfikacje"
+  "modifications": "Modyfikacje",
+  "drawing_analysis": {
+    "employee_only": "Analiza rysunków jest dostępna tylko dla pracowników KAN-BUD.",
+    "login_info": "Zaloguj się jako pracownik, aby uzyskać dostęp do tego narzędzia.",
+    "employee_password": "Hasło pracownika",
+    "description": "Automatyczna analiza rysunków technicznych PDF/DWG dla dokładnych wycen",
+    "project_context": "Kontekst Projektu",
+    "project_location": "Lokalizacja projektu",
+    "project_name": "Nazwa projektu",
+    "project_name_placeholder": "np. Biuro kontenerowe - Poznań",
+    "file_upload": "Przesyłanie Rysunków",
+    "upload_drawings": "Prześlij rysunki techniczne",
+    "file_formats_help": "Obsługujemy pliki PDF, DWG, JPG i PNG. Zalecamy format PDF dla najlepszej analizy.",
+    "other": "Inne"
+  },
 }

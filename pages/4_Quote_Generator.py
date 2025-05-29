@@ -77,7 +77,7 @@ with col2:
         "Quote Validity",
         ["30 days", "60 days", "90 days", "Custom"]
     )
-    
+
     if validity_period == "Custom":
         custom_validity = st.number_input("Validity Days", min_value=1, max_value=365, value=30)
 
@@ -94,12 +94,12 @@ col1, col2 = st.columns(2)
 
 with col1:
     profit_margin = st.slider("Profit Margin (%)", min_value=10, max_value=50, value=25)
-    
+
     contingency = st.slider("Contingency (%)", min_value=5, max_value=20, value=10)
 
 with col2:
     discount_offered = st.slider("Discount (%)", min_value=0, max_value=25, value=0)
-    
+
     include_warranty = st.checkbox("Include Warranty", value=True)
     warranty_period = "1 year"
     if include_warranty:
@@ -115,7 +115,7 @@ with col1:
     delivery_distance = 0
     if include_delivery:
         delivery_distance = st.number_input("Delivery Distance (km)", min_value=0, max_value=1600, value=80)
-    
+
     include_installation = st.checkbox("Include Installation", value=True)
     include_permits = st.checkbox("Include Permit Assistance", value=False)
 
@@ -133,14 +133,14 @@ special_terms = st.text_area(
 
 # Generate quote button
 if st.button("📄 Generate Professional Quote", type="primary", use_container_width=True):
-    
+
     # Validate required fields
     required_fields = [customer_name, customer_email, project_name, project_location]
     if not all(required_fields):
         st.error("❌ Please fill in all required fields marked with *")
     else:
         with st.spinner("📄 Generating professional quote..."):
-            
+
             # Prepare quote data
             quote_data = {
                 "customer": {
@@ -176,47 +176,47 @@ if st.button("📄 Generate Professional Quote", type="primary", use_container_w
                 "special_terms": special_terms,
                 "container_config": st.session_state.container_config
             }
-            
+
             # Get cost estimates
             if 'ai_estimate' in st.session_state:
                 quote_data["cost_estimate"] = st.session_state.ai_estimate
-            
+
             if 'technical_analysis' in st.session_state:
                 quote_data["technical_analysis"] = st.session_state.technical_analysis
-            
+
             try:
                 # Generate quote
                 quote = st.session_state.quote_generator.generate_quote(quote_data)
                 st.session_state.generated_quote = quote
-                
+
                 st.success("✅ Quote generated successfully!")
                 st.rerun()
-                
+
             except Exception as e:
                 st.error(f"❌ Error generating quote: {str(e)}")
 
 # Display generated quote
 if 'generated_quote' in st.session_state:
     quote = st.session_state.generated_quote
-    
+
     st.divider()
     st.subheader("📄 Generated Quote")
-    
+
     # Quote header
     col1, col2 = st.columns([2, 1])
-    
+
     with col1:
         st.markdown(f"### Quote #{quote.get('quote_number', 'N/A')}")
         st.write(f"**Date:** {quote.get('date', datetime.now().strftime('%Y-%m-%d'))}")
         st.write(f"**Valid Until:** {quote.get('valid_until', 'N/A')}")
-    
+
     with col2:
         total_cost = quote.get('total_cost', 0)
         st.metric("Total Quote Amount", f"€{total_cost:,.2f}")
-    
+
     # Customer and project info
     col1, col2 = st.columns(2)
-    
+
     with col1:
         st.markdown("**Customer Information:**")
         customer = quote.get('customer', {})
@@ -226,7 +226,7 @@ if 'generated_quote' in st.session_state:
         st.write(f"**Email:** {customer.get('email', 'N/A')}")
         if customer.get('phone'):
             st.write(f"**Phone:** {customer.get('phone')}")
-    
+
     with col2:
         st.markdown("**Project Information:**")
         project = quote.get('project', {})
@@ -234,30 +234,30 @@ if 'generated_quote' in st.session_state:
         st.write(f"**Location:** {project.get('location', 'N/A')}")
         if project.get('delivery_address'):
             st.write(f"**Delivery:** {project.get('delivery_address')}")
-    
+
     # Container specifications
     st.subheader("📦 Container Specifications")
-    
+
     config = quote.get('container_config', {})
     col1, col2 = st.columns(2)
-    
+
     with col1:
         st.write(f"**Base Type:** {config.get('base_type', 'N/A')}")
         st.write(f"**Use Case:** {config.get('use_case', 'N/A')}")
         st.write(f"**Occupancy:** {config.get('occupancy', 'N/A')} people")
-    
+
     with col2:
         st.write(f"**Environment:** {config.get('environment', 'N/A')}")
         mods = config.get('modifications', {})
         mod_count = sum(1 for v in mods.values() if (isinstance(v, bool) and v) or (isinstance(v, int) and v > 0))
         st.write(f"**Modifications:** {mod_count} items")
-    
+
     # Cost breakdown
     st.subheader("💰 Cost Breakdown")
-    
+
     if 'cost_breakdown' in quote:
         breakdown = quote['cost_breakdown']
-        
+
         # Create breakdown table
         breakdown_data = []
         for category, details in breakdown.items():
@@ -277,37 +277,37 @@ if 'generated_quote' in st.session_state:
                     "Unit Cost": f"€{details:,.2f}",
                     "Total": f"€{details:,.2f}"
                 })
-        
+
         breakdown_df = pd.DataFrame(breakdown_data)
         st.dataframe(breakdown_df, use_container_width=True)
-    
+
     # Summary costs
     col1, col2, col3 = st.columns(3)
-    
+
     with col1:
         subtotal = quote.get('subtotal', 0)
         st.metric("Subtotal", f"€{subtotal:,.2f}")
-    
+
     with col2:
         tax = quote.get('tax', 0)
         st.metric("Tax", f"€{tax:,.2f}")
-    
+
     with col3:
         total = quote.get('total_cost', 0)
         st.metric("Total", f"€{total:,.2f}")
-    
+
     # Terms and conditions
     if quote.get('terms_conditions'):
         st.subheader("📋 Terms & Conditions")
         terms = quote['terms_conditions']
         for term in terms:
             st.write(f"• {term}")
-    
+
     # Project timeline
     if quote.get('timeline'):
         st.subheader("📅 Project Timeline")
         timeline = quote['timeline']
-        
+
         timeline_df = pd.DataFrame([
             {
                 "Phase": phase,
@@ -316,29 +316,29 @@ if 'generated_quote' in st.session_state:
             }
             for phase, details in timeline.items()
         ])
-        
+
         st.dataframe(timeline_df, use_container_width=True)
 
 # Action buttons
 if 'generated_quote' in st.session_state:
     st.divider()
     col1, col2, col3, col4 = st.columns(4)
-    
+
     with col1:
         if st.button("📧 Email Quote", use_container_width=True):
             st.success("✅ Quote email functionality would be implemented here")
-    
+
     with col2:
         if st.button("📱 Download PDF", use_container_width=True):
             # PDF generation would be implemented here
             st.success("✅ PDF download functionality would be implemented here")
-    
+
     with col3:
         if st.button("🔄 Create New Quote", use_container_width=True):
             if 'generated_quote' in st.session_state:
                 del st.session_state.generated_quote
             st.rerun()
-    
+
     with col4:
         if st.button("⚖️ Compare Quotes", use_container_width=True):
             st.switch_page("pages/5_Comparison_Tool.py")
@@ -346,14 +346,14 @@ if 'generated_quote' in st.session_state:
 # Quote templates and history
 with st.expander("📝 Quote Templates & History"):
     col1, col2 = st.columns(2)
-    
+
     with col1:
         st.markdown("**Available Templates:**")
         templates = ["Standard Container", "Residential Unit", "Office Space", "Workshop", "Custom"]
         selected_template = st.selectbox("Load Template", templates)
         if st.button("Load Template"):
             st.info(f"Template '{selected_template}' loaded")
-    
+
     with col2:
         st.markdown("**Recent Quotes:**")
         st.write("• Quote #2024-001 - ABC Company")

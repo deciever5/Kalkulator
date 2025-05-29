@@ -6,7 +6,7 @@ Analyzes customer drawings (PDF/DWG) to extract pricing elements
 import streamlit as st
 import pandas as pd
 from utils.document_analyzer import DocumentAnalyzer
-from utils.translations import get_text, get_available_languages
+from utils.translations import t, get_available_languages
 from utils.simple_storage import SimpleStorageManager
 import json
 
@@ -42,34 +42,37 @@ document_analyzer = DocumentAnalyzer()
 storage = SimpleStorageManager()
 
 # Project context form
-st.subheader("🏗️ Kontekst Projektu")
+st.subheader(f"🏗️ {t('drawing_analysis.project_context')}")
 
 col1, col2 = st.columns(2)
 
 with col1:
     container_type = st.selectbox(
-        "Typ kontenera",
-        ["20ft Standard", "40ft Standard", "40ft High Cube", "45ft Standard", "Custom"]
+        t('form.labels.container_type'),
+        [t('container.types.20ft_standard'), t('container.types.40ft_standard'), 
+         t('container.types.40ft_high_cube'), "45ft Standard", "Custom"]
     )
     
     use_case = st.selectbox(
-        "Przeznaczenie",
-        ["Biuro", "Mieszkanie", "Warsztat", "Magazyn", "Sklep", "Restauracja", "Inne"]
+        t('form.labels.main_purpose'),
+        [t('container.use_cases.office_space'), t('container.use_cases.residential'), 
+         t('container.use_cases.workshop'), t('container.use_cases.storage'), 
+         t('container.use_cases.retail'), t('container.use_cases.restaurant'), t('drawing_analysis.other')]
     )
 
 with col2:
-    location = st.text_input("Lokalizacja projektu", value="Polska")
+    location = st.text_input(t('drawing_analysis.project_location'), value="Polska")
     
-    project_name = st.text_input("Nazwa projektu", placeholder="np. Biuro kontenerowe - Poznań")
+    project_name = st.text_input(t('drawing_analysis.project_name'), placeholder=t('drawing_analysis.project_name_placeholder'))
 
 # File upload section
-st.subheader("📤 Przesyłanie Rysunków")
+st.subheader(f"📤 {t('drawing_analysis.file_upload')}")
 
 uploaded_files = st.file_uploader(
-    "Prześlij rysunki techniczne",
+    t('drawing_analysis.upload_drawings'),
     type=['pdf', 'dwg', 'jpg', 'png'],
     accept_multiple_files=True,
-    help="Obsługujemy pliki PDF, DWG, JPG i PNG. Zalecamy format PDF dla najlepszej analizy."
+    help=t('drawing_analysis.file_formats_help')
 )
 
 if uploaded_files:

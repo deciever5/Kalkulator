@@ -214,7 +214,15 @@
     "employee_only": "Zeichnungsanalyse ist nur für KAN-BUD Mitarbeiter verfügbar.",
     "login_info": "Melden Sie sich als Mitarbeiter an, um auf dieses Tool zuzugreifen.",
     "employee_password": "Mitarbeiter-Passwort",
-    "description": "Automatische Analyse technischer Zeichnungen PDF/DWG für genaue Angebote"
+    "description": "Automatische Analyse technischer Zeichnungen PDF/DWG für genaue Angebote",
+    "project_context": "Projektkontext",
+    "project_location": "Projektstandort",
+    "project_name": "Projektname",
+    "project_name_placeholder": "z.B. Container Büro - Poznań",
+    "file_upload": "Datei Upload",
+    "upload_drawings": "Technische Zeichnungen hochladen",
+    "file_formats_help": "Wir unterstützen PDF, DWG, JPG und PNG Dateien. Wir empfehlen PDF Format für beste Analyse.",
+    "other": "Andere"
   },
   "admin": {
     "access_required": "Administrator-Zugang Erforderlich",

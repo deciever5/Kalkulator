@@ -215,7 +215,15 @@
     "employee_only": "Drawing analysis is available only for KAN-BUD employees.",
     "login_info": "Log in as an employee to access this tool.",
     "employee_password": "Employee password",
-    "description": "Automatic analysis of technical drawings PDF/DWG for accurate quotes"
+    "description": "Automatic analysis of technical drawings PDF/DWG for accurate quotes",
+    "project_context": "Project Context",
+    "project_location": "Project location",
+    "project_name": "Project name",
+    "project_name_placeholder": "e.g. Container Office - Poznań",
+    "file_upload": "File Upload",
+    "upload_drawings": "Upload technical drawings",
+    "file_formats_help": "We support PDF, DWG, JPG and PNG files. We recommend PDF format for best analysis.",
+    "other": "Other"
   },
   "admin": {
     "access_required": "Admin Access Required",

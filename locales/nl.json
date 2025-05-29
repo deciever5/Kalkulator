@@ -223,7 +223,15 @@
     "employee_only": "Tekenanalyse is alleen beschikbaar voor KAN-BUD medewerkers.",
     "login_info": "Log in als medewerker om toegang te krijgen tot deze tool.",
     "employee_password": "Medewerker wachtwoord",
-    "description": "Automatische analyse van technische tekeningen PDF/DWG voor nauwkeurige offertes"
+    "description": "Automatische analyse van technische tekeningen PDF/DWG voor nauwkeurige offertes",
+    "project_context": "Project Context",
+    "project_location": "Project locatie",
+    "project_name": "Project naam",
+    "project_name_placeholder": "bijv. Container Kantoor - Poznań",
+    "file_upload": "Bestand Upload",
+    "upload_drawings": "Upload technische tekeningen",
+    "file_formats_help": "We ondersteunen PDF, DWG, JPG en PNG bestanden. We raden PDF formaat aan voor beste analyse.",
+    "other": "Anders"
   },
   "admin": {
     "access_required": "Administrator Toegang Vereist",
