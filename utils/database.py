@@ -28,7 +28,6 @@ class DatabaseManager:
                 self.engine = create_engine(self.database_url, pool_pre_ping=True)
                 self.initialize_tables()
             except Exception as e:
-                st.warning(f"Database connection info: Using backup storage mode")
                 self.engine = None
         else:
             # Use session state as backup storage

@@ -28,12 +28,9 @@ def initialize_services():
         db = DatabaseManager()
         if db.engine:
             storage = db
-            st.success("📊 Database connected: PostgreSQL")
         else:
-            st.info("📊 Database: Using local storage mode")
             storage = SimpleStorageManager()
     except Exception as e:
-        st.info("📊 Database: Using local storage mode")
         storage = SimpleStorageManager()
     
     container_db = ContainerDatabase()
@@ -175,45 +172,46 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 </div>
 """, unsafe_allow_html=True)
 
-# Language selector and employee login in header
-st.markdown("---")
+# Language selector above banner
+col1, col2, col3, col4, col_spacer, col_login = st.columns([1, 1, 1, 1, 2, 1])
 
-# Language and login in top-right corner style
-col_empty, col_flags, col_login = st.columns([4, 2, 1])
+with col1:
+    if st.button("🇬🇧", key="lang_en", help="English", use_container_width=True):
+        st.session_state.language = 'en'
+        st.rerun()
 
-with col_flags:
-    st.markdown("##### 🌐 Language")
-    flag_col1, flag_col2, flag_col3, flag_col4 = st.columns(4)
-    
-    with flag_col1:
-        if st.button("🇬🇧", key="lang_en", help="English", use_container_width=True):
-            st.session_state.language = 'en'
-            st.rerun()
-    
-    with flag_col2:
-        if st.button("🇵🇱", key="lang_pl", help="Polski", use_container_width=True):
-            st.session_state.language = 'pl'
-            st.rerun()
-    
-    with flag_col3:
-        if st.button("🇩🇪", key="lang_de", help="Deutsch", use_container_width=True):
-            st.session_state.language = 'de'
-            st.rerun()
-    
-    with flag_col4:
-        if st.button("🇳🇱", key="lang_nl", help="Nederlands", use_container_width=True):
-            st.session_state.language = 'nl'
-            st.rerun()
+with col2:
+    if st.button("🇵🇱", key="lang_pl", help="Polski", use_container_width=True):
+        st.session_state.language = 'pl'
+        st.rerun()
+
+with col3:
+    if st.button("🇩🇪", key="lang_de", help="Deutsch", use_container_width=True):
+        st.session_state.language = 'de'
+        st.rerun()
+
+with col4:
+    if st.button("🇳🇱", key="lang_nl", help="Nederlands", use_container_width=True):
+        st.session_state.language = 'nl'
+        st.rerun()
 
 with col_login:
-    st.markdown("##### 🔐 Login")
     # Employee login
     if not st.session_state.employee_logged_in:
         if st.button("👤", key="show_login", help="Employee Login", use_container_width=True):
             st.session_state.show_login = not st.session_state.get('show_login', False)
-            
-        if st.session_state.get('show_login', False):
-            employee_password = st.text_input("Password:", type="password", key="emp_pwd")
+    else:
+        if st.button("🚪", key="emp_logout", help="Logout", use_container_width=True):
+            st.session_state.employee_logged_in = False
+            st.rerun()
+
+# Employee login form
+if st.session_state.get('show_login', False) and not st.session_state.employee_logged_in:
+    col_a, col_b, col_c = st.columns([2, 2, 2])
+    with col_b:
+        employee_password = st.text_input("Password:", type="password", key="emp_pwd")
+        col_x, col_y = st.columns(2)
+        with col_x:
             if st.button("Login", key="emp_login", use_container_width=True):
                 if employee_password == "kan-bud-employee-2024":
                     st.session_state.employee_logged_in = True
@@ -222,14 +220,12 @@ with col_login:
                     st.rerun()
                 else:
                     st.error("Wrong password")
+        with col_y:
             if st.button("Cancel", key="cancel_login", use_container_width=True):
                 st.session_state.show_login = False
                 st.rerun()
-    else:
-        st.success("✅")
-        if st.button("🚪", key="emp_logout", help="Logout", use_container_width=True):
-            st.session_state.employee_logged_in = False
-            st.rerun()
+
+st.markdown("---")
 
 # Initialize session state
 if 'container_db' not in st.session_state:
