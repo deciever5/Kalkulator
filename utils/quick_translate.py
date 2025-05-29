@@ -49,7 +49,31 @@ TRANSLATIONS = {
         'main_purpose': 'Główne Przeznaczenie',
         'environment': 'Środowisko',
         'climate_zone': 'Strefa Klimatyczna',
-        'language': 'Język'
+        'language': 'Język',
+        
+        # Configuration page
+        'base_container_spec': '🏗️ Specyfikacja Bazowa Kontenera',
+        'length': 'Długość',
+        'width': 'Szerokość', 
+        'height': 'Wysokość',
+        'container_help': 'Wybierz bazowy typ kontenera do modyfikacji',
+        'use_case_help': 'Wybierz główne przeznaczenie kontenera',
+        'climate_help': 'Wybierz strefę klimatyczną dla odpowiedniej izolacji',
+        'modifications': 'Modyfikacje',
+        'windows': 'Okna',
+        'additional_doors': 'Dodatkowe Drzwi',
+        'insulation_type': 'Typ Izolacji',
+        'electrical_system': 'System Elektryczny',
+        'plumbing': 'Instalacja Wodna',
+        'hvac': 'System HVAC',
+        'number_of_windows': 'Liczba okien',
+        'number_of_doors': 'Liczba dodatkowych drzwi',
+        'select_insulation': 'Wybierz typ izolacji',
+        'electrical_needed': 'Czy potrzebny system elektryczny?',
+        'plumbing_needed': 'Czy potrzebna instalacja wodna?',
+        'hvac_needed': 'Czy potrzebny system HVAC?',
+        'weight': 'Waga',
+        'purpose': 'Przeznaczenie',
     },
     'en': {
         # Keep English as default
@@ -60,7 +84,31 @@ TRANSLATIONS = {
         'main_purpose': 'Main Purpose',
         'environment': 'Environment',
         'climate_zone': 'Climate Zone',
-        'language': 'Language'
+        'language': 'Language',
+        
+        # Configuration page
+        'base_container_spec': '🏗️ Base Container Specification',
+        'length': 'Length',
+        'width': 'Width', 
+        'height': 'Height',
+        'container_help': 'Select base container type for modification',
+        'use_case_help': 'Select main purpose of the container',
+        'climate_help': 'Select climate zone for appropriate insulation',
+        'modifications': 'Modifications',
+        'windows': 'Windows',
+        'additional_doors': 'Additional Doors',
+        'insulation_type': 'Insulation Type',
+        'electrical_system': 'Electrical System',
+        'plumbing': 'Plumbing',
+        'hvac': 'HVAC System',
+        'number_of_windows': 'Number of windows',
+        'number_of_doors': 'Number of additional doors',
+        'select_insulation': 'Select insulation type',
+        'electrical_needed': 'Electrical system needed?',
+        'plumbing_needed': 'Plumbing installation needed?',
+        'hvac_needed': 'HVAC system needed?',
+        'weight': 'Weight',
+        'purpose': 'Purpose',
     }
 }
 

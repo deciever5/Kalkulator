@@ -92,17 +92,17 @@ if 'container_config' not in st.session_state:
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.markdown("""
+    st.markdown(f"""
     <div class="config-section">
-        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🏗️ Specyfikacja Bazowa Kontenera</h3>
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">{quick_translate('base_container_spec')}</h3>
     """, unsafe_allow_html=True)
     
     # Container type selection
     container_types = st.session_state.container_db.get_container_types()
     selected_type = st.selectbox(
-        "Typ Kontenera",
+        quick_translate('container_type'),
         options=list(container_types.keys()),
-        help="Wybierz bazowy typ kontenera do modyfikacji"
+        help=quick_translate('container_help')
     )
     
     if selected_type:
@@ -115,21 +115,21 @@ with col1:
         with spec_col1:
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">Długość</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{quick_translate('length')}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['length'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
             st.markdown("<br>", unsafe_allow_html=True)
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">Szerokość</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{quick_translate('width')}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['width'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
         with spec_col2:
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">Wysokość</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{quick_translate('height')}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['height'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
