@@ -23,14 +23,17 @@ class HistoricalDataService:
         try:
             if self.db and self.db.engine:
                 # Try to load existing historical data
+                from sqlalchemy import text
                 query = "SELECT COUNT(*) FROM historical_projects"
                 with self.db.engine.connect() as conn:
-                    result = conn.execute(query).fetchone()
+                    result = conn.execute(text(query)).fetchone()
                     if result[0] == 0:
                         # If no data exists, create sample structure for data import
                         self.initialize_sample_structure()
         except Exception as e:
-            st.warning(f"Historical data initialization: {str(e)}")
+            # Only show database errors to employees/admins
+            if st.session_state.get('employee_logged_in', False):
+                st.warning(f"Historical data initialization: {str(e)}")
             self.initialize_sample_structure()
     
     def initialize_sample_structure(self):
