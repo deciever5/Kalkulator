@@ -227,5 +227,8 @@
   "permit_timeline_variations": "Różnice w harmonogramie pozwoleń",
   "site_access_limitations": "Ograniczenia dostępu do placu dla dostawy",
   "material_price_fluctuations": "Wahania cen materiałów",
-  "basic_estimate_note": "Uwaga: To jest podstawowa wycena. Dla dokładniejszych cen skontaktuj się bezpośrednio z naszym zespołem."
+  "basic_estimate_note": "Uwaga: To jest podstawowa wycena. Aby uzyskać dokładniejsze ceny, skontaktuj się z naszym zespołem.",
+  "labor_costs_30": "Koszty pracy (30%)",
+  "base_cost": "Koszt podstawowy", 
+  "modifications": "Modyfikacje"
 }

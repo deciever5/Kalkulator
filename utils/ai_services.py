@@ -805,54 +805,38 @@ def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any
         '40ft Standard': 12000
     }
 
-    # Calculate base costs
-    base_cost = base_prices.get(container_type, 8000)
-
-    # Calculate modification costs
-    modifications_cost = 0
-
-    # Finish level multipliers```python
-    finish_multipliers = {
-        'Basic': 1.0,
-        'Standard': 1.3,
-        'Premium': 1.8,
-        'Luxury': 2.5
+    # Use same calculation logic as configurator
+    from utils.calculations import calculate_container_cost
+    
+    # Create config in same format as configurator
+    config_for_calc = {
+        'container_type': container_type,
+        'main_purpose': config.get('main_purpose', 'Office Space'),
+        'environment': config.get('environment', 'Indoor'),
+        'finish_level': config.get('finish_level', 'Basic'),
+        'number_of_windows': config.get('number_of_windows', 0),
+        'additional_doors': config.get('additional_doors', False),
+        'electrical_system': config.get('electrical_system', True),
+        'plumbing_system': config.get('plumbing_system', False),
+        'hvac_system': config.get('hvac_system', False)
     }
-
-    finish_multiplier = finish_multipliers.get(config.get('finish_level', 'Basic'), 1.0)
-    finish_cost = base_cost * (finish_multiplier - 1)
-    modifications_cost += finish_cost
-
-    # Calculate complexity multiplier
-    complexity_multiplier = 1.0
-    if config.get('environment') in ['Marine', 'Industrial']:
-        complexity_multiplier += 0.2
-    if config.get('climate_zone') in ['Scandinavian', 'Alpine']:
-        complexity_multiplier += 0.1
-
-    # Calculate total material cost
-    materials_base_cost = base_cost + modifications_cost
-
-    # Calculate labor costs (40% of materials)
-    labor_cost = materials_base_cost * 0.4
-
-    # Calculate subtotal before complexity multiplier
-    subtotal_before_multiplier = materials_base_cost + labor_cost
-
-    # Apply complexity multiplier to subtotal
-    subtotal_after_multiplier = subtotal_before_multiplier * complexity_multiplier
-
-    # Calculate contingency (10% of final subtotal)
-    contingency = subtotal_after_multiplier * 0.1
-
-    # Final total
-    total_cost = subtotal_after_multiplier + contingency
+    
+    # Get cost breakdown using same logic as configurator
+    cost_breakdown = calculate_container_cost(config_for_calc)
+    
+    base_cost = cost_breakdown['base_cost']
+    modifications_cost = cost_breakdown['modifications_cost'] 
+    total_cost = cost_breakdown['total_cost']
+    
+    # Calculate component costs for breakdown
+    labor_cost = total_cost * 0.3  # 30% labor
+    contingency = total_cost * 0.1  # 10% contingency
 
     cost_breakdown = f"""
 📊 {t('cost_breakdown', language)}:
-{t('materials_base_cost', language)}: €{materials_base_cost:,.2f}
-{t('labor_costs_40', language)}: €{labor_cost:,.2f}
-{t('complexity_multiplier', language)}: {complexity_multiplier:.1f}x
+{t('base_cost', language)}: €{base_cost:,.2f}
+{t('modifications', language)}: €{modifications_cost:,.2f}
+{t('labor_costs_30', language)}: €{labor_cost:,.2f}
 {t('contingency_10', language)}: €{contingency:,.2f}
 """
 
