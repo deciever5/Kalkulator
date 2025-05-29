@@ -163,7 +163,9 @@ class SimpleStorageManager:
                 self.add_historical_project(project)
             return True
         except Exception as e:
-            st.error(f"Error importing data: {str(e)}")
+            # Only show storage errors to employees/admins
+            if st.session_state.get('employee_logged_in', False):
+                st.error(f"Error importing data: {str(e)}")
             return False
     
     def get_storage_stats(self) -> Dict[str, int]:

@@ -139,7 +139,9 @@ class DatabaseManager:
                 conn.execute(text(tables_sql))
                 conn.commit()
         except SQLAlchemyError as e:
-            st.error(f"Failed to initialize database tables: {str(e)}")
+            # Only show database errors to employees/admins
+            if st.session_state.get('employee_logged_in', False):
+                st.error(f"Failed to initialize database tables: {str(e)}")
     
     def insert_historical_data(self, data: List[Dict[str, Any]]) -> bool:
         """Insert historical project data for improved pricing accuracy"""
@@ -152,7 +154,9 @@ class DatabaseManager:
             df.to_sql('historical_projects', self.engine, if_exists='append', index=False)
             return True
         except Exception as e:
-            st.error(f"Failed to insert historical data: {str(e)}")
+            # Only show database errors to employees/admins
+            if st.session_state.get('employee_logged_in', False):
+                st.error(f"Failed to insert historical data: {str(e)}")
             return False
     
     def get_historical_pricing_data(self, container_type: str, use_case: str, 

@@ -504,10 +504,22 @@ class Advanced3DVisualizer:
             fig.add_trace(trace)
         
         for trace in modified_model.data:
-            # Offset the x coordinates
+            # Offset the x coordinates for comparison view
             if hasattr(trace, 'x') and trace.x is not None:
-                trace.x = [x + offset for x in trace.x]
-            fig.add_trace(trace)
+                # Create new trace with offset coordinates
+                new_trace = go.Scatter3d(
+                    x=[x + offset for x in trace.x] if trace.x else None,
+                    y=trace.y,
+                    z=trace.z,
+                    mode=trace.mode,
+                    line=trace.line if hasattr(trace, 'line') else None,
+                    marker=trace.marker if hasattr(trace, 'marker') else None,
+                    name=trace.name,
+                    showlegend=trace.showlegend
+                )
+                fig.add_trace(new_trace)
+            else:
+                fig.add_trace(trace)
         
         # Update layout for comparison view
         fig.update_layout(

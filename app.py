@@ -31,17 +31,31 @@ def initialize_services():
         else:
             storage = SimpleStorageManager()
     except Exception as e:
+        # Only show database errors to employees/admins
+        if st.session_state.get('employee_logged_in', False):
+            st.error(f"Database initialization failed: {str(e)}")
         storage = SimpleStorageManager()
     
     container_db = ContainerDatabase()
     calc = StructuralCalculations()
-    historical_service = HistoricalDataService()
+    
+    # Initialize historical service with error handling
+    try:
+        historical_service = HistoricalDataService()
+    except Exception as e:
+        # Only show errors to employees/admins
+        if st.session_state.get('employee_logged_in', False):
+            st.error(f"Historical data initialization: {str(e)}")
+        historical_service = None
     
     # Initialize AI services
     try:
         openai_service = OpenAIService()
         anthropic_service = AnthropicService()
-    except:
+    except Exception as e:
+        # Only show AI service errors to employees/admins
+        if st.session_state.get('employee_logged_in', False):
+            st.warning(f"AI services initialization: {str(e)}")
         openai_service = None
         anthropic_service = None
     
