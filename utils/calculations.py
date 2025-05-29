@@ -199,46 +199,66 @@ class StructuralCalculations:
         }
     
     def _calculate_loads(self, config: Dict[str, Any], analysis_params: Dict[str, Any]) -> Dict[str, float]:
-        """Calculate design loads"""
+        """Calculate design loads according to European standards (EN 1991)"""
         
         use_case = config.get('use_case', 'Office Space')
         occupancy = config.get('occupancy', 4)
         
-        # Live loads based on use case
+        # Live loads based on use case (EN 1991-1-1) - in kN/m²
         live_load_mapping = {
-            "Office Space": 50,  # psf
-            "Residential Living": 40,
-            "Workshop/Manufacturing": 125,
-            "Storage/Warehouse": 125,
-            "Retail/Commercial": 75
+            "Office Space": 2.5,  # kN/m²
+            "Residential Living": 2.0,
+            "Workshop/Manufacturing": 5.0,
+            "Storage/Warehouse": 7.5,
+            "Retail/Commercial": 4.0
         }
         
-        live_load = live_load_mapping.get(use_case, 50)
+        live_load = live_load_mapping.get(use_case, 2.5)
         
-        # Dead loads (structure + finishes)
-        dead_load = 15  # psf (basic structure)
+        # Dead loads (structure + finishes) - in kN/m²
+        dead_load = 1.0  # kN/m² (basic structure)
         
         modifications = config.get('modifications', {})
         if modifications.get('insulation'):
-            dead_load += 2  # Additional dead load for insulation
+            dead_load += 0.15  # Additional dead load for insulation
         
         if modifications.get('hvac'):
-            dead_load += 5  # Additional dead load for HVAC
+            dead_load += 0.25  # Additional dead load for HVAC
         
         # Environmental loads
-        wind_load = analysis_params.get('wind_load', 90)  # mph
-        snow_load = analysis_params.get('snow_load', 20)  # psf
+        wind_load = analysis_params.get('wind_load', 120)  # km/h
+        snow_load = analysis_params.get('snow_load', 1.5)  # kN/m²
+        climate_zone = analysis_params.get('climate_zone', 'Umiarkowana (Europa Środkowa)')
+        environmental_conditions = analysis_params.get('environmental_conditions', 'Standardowe')
         
-        # Convert wind speed to pressure (simplified)
-        wind_pressure = 0.00256 * (wind_load ** 2)  # psf
+        # Import European climate standards
+        from .european_climate_standards import EuropeanClimateStandards
+        climate_std = EuropeanClimateStandards()
+        
+        # Adjust loads based on European climate zones
+        climate_factors = climate_std.get_climate_factors(climate_zone)
+        env_factors = climate_std.get_environmental_factors(environmental_conditions)
+        
+        # Adjusted snow load based on climate zone
+        adjusted_snow_load = climate_std.calculate_snow_load(snow_load, climate_zone)
+        
+        # Adjusted wind load based on climate zone  
+        adjusted_wind_load = climate_std.calculate_wind_load(wind_load, climate_zone)
+        
+        # Convert wind speed to pressure (EN 1991-1-4) - in kN/m²
+        wind_pressure = (adjusted_wind_load / 3.6) ** 2 * 0.0006  # kN/m²
         
         return {
             "dead_load": dead_load,
             "live_load": live_load,
             "wind_load": wind_pressure,
-            "snow_load": snow_load,
-            "total_vertical": dead_load + live_load + snow_load,
-            "wind_pressure": wind_pressure
+            "snow_load": adjusted_snow_load,
+            "total_vertical": dead_load + live_load + adjusted_snow_load,
+            "wind_pressure": wind_pressure,
+            "climate_zone": climate_zone,
+            "environmental_conditions": environmental_conditions,
+            "climate_factors": climate_factors,
+            "environmental_factors": env_factors
         }
     
     def _analyze_structure(self, container_specs: Dict[str, float], loads: Dict[str, float], 
@@ -339,15 +359,25 @@ class StructuralCalculations:
     
     def _check_compliance(self, config: Dict[str, Any], analysis_params: Dict[str, Any], 
                          structural_results: Dict[str, Any]) -> Dict[str, Dict[str, str]]:
-        """Check building code compliance"""
+        """Check European building code compliance"""
         
-        building_code = analysis_params.get('building_code', 'IBC (International Building Code)')
+        building_code = analysis_params.get('building_code', 'EN (European Norms)')
         use_case = config.get('use_case', 'Office Space')
+        climate_zone = analysis_params.get('climate_zone', 'Umiarkowana (Europa Środkowa)')
+        environmental_conditions = analysis_params.get('environmental_conditions', 'Standardowe')
+        
+        # Import European climate standards for compliance requirements
+        from .european_climate_standards import EuropeanClimateStandards
+        climate_std = EuropeanClimateStandards()
+        
+        # Get specific compliance requirements for climate zone and use case
+        compliance_reqs = climate_std.get_compliance_requirements(climate_zone, use_case)
         
         compliance_results = {
-            "building_codes": {},
-            "safety": {},
-            "structural": {}
+            "european_standards": {},
+            "climate_specific": {},
+            "structural": {},
+            "environmental": {}
         }
         
         # Structural compliance
