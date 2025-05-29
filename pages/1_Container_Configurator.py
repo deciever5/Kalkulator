@@ -162,16 +162,16 @@ with col1:
         "Custom Industrial"
     ]
     
-    selected_use_case = st.selectbox("Główne Przeznaczenie", use_cases)
+    selected_use_case = st.selectbox(quick_translate('main_purpose'), translate_dropdown_options(use_cases))
     st.session_state.container_config['use_case'] = selected_use_case
     
     st.markdown("<br>", unsafe_allow_html=True)
     # Occupancy and environment
     col_occ1, col_occ2 = st.columns(2)
     with col_occ1:
-        occupancy = st.number_input("Przewidywana Obsada", min_value=1, max_value=50, value=4)
+        occupancy = st.number_input(quick_translate('expected_occupancy'), min_value=1, max_value=50, value=4)
     with col_occ2:
-        environment = st.selectbox("Środowisko", ["Indoor", "Outdoor", "Marine", "Industrial"])
+        environment = st.selectbox(quick_translate('environment_label'), translate_dropdown_options(["Indoor", "Outdoor", "Marine", "Industrial"]))
     
     st.session_state.container_config.update({
         'occupancy': occupancy,
@@ -181,33 +181,33 @@ with col1:
     st.markdown("</div>", unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""
+    st.markdown(f"""
     <div class="config-section">
-        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🔧 Wymagania Modyfikacji</h3>
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🔧 {quick_translate('modification_requirements')}</h3>
     """, unsafe_allow_html=True)
     
     modifications = {}
     
     # Structural modifications
-    st.markdown("##### 🏗️ Modyfikacje Strukturalne")
+    st.markdown(f"##### 🏗️ {quick_translate('structural_modifications')}")
     col_mod1, col_mod2 = st.columns(2)
     with col_mod1:
-        modifications['windows'] = st.number_input("Liczba Okien", min_value=0, max_value=20, value=0)
-        modifications['doors'] = st.number_input("Liczba Drzwi", min_value=1, max_value=10, value=1)
+        modifications['windows'] = st.number_input(quick_translate('number_of_windows'), min_value=0, max_value=20, value=0)
+        modifications['doors'] = st.number_input(quick_translate('number_of_doors'), min_value=1, max_value=10, value=1)
     with col_mod2:
-        modifications['skylights'] = st.number_input("Świetliki", min_value=0, max_value=10, value=0)
-        modifications['vents'] = st.number_input("Otwory Wentylacyjne", min_value=0, max_value=20, value=2)
+        modifications['skylights'] = st.number_input(quick_translate('skylights'), min_value=0, max_value=10, value=0)
+        modifications['vents'] = st.number_input(quick_translate('ventilation_openings'), min_value=0, max_value=20, value=2)
     
     st.markdown("<br>", unsafe_allow_html=True)
     # Structural reinforcements
-    st.markdown("##### 🔨 Wzmocnienia Konstrukcyjne")
+    st.markdown(f"##### 🔨 {quick_translate('structural_reinforcements')}")
     col_reinf1, col_reinf2 = st.columns(2)
     with col_reinf1:
-        modifications['reinforcement_walls'] = st.checkbox("Wzmocnienie Ścian")
-        modifications['reinforcement_roof'] = st.checkbox("Wzmocnienie Dachu")
+        modifications['reinforcement_walls'] = st.checkbox(quick_translate('wall_reinforcement'))
+        modifications['reinforcement_roof'] = st.checkbox(quick_translate('roof_reinforcement'))
     with col_reinf2:
-        modifications['reinforcement_floor'] = st.checkbox("Wzmocnienie Podłogi")
-        modifications['additional_support'] = st.checkbox("Dodatkowe Podpory")
+        modifications['reinforcement_floor'] = st.checkbox(quick_translate('floor_reinforcement'))
+        modifications['additional_support'] = st.checkbox(quick_translate('additional_support'))
     
     st.markdown("</div>", unsafe_allow_html=True)
     
