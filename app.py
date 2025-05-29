@@ -8,7 +8,7 @@ from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
-from utils.i18n import init_i18n, t, render_language_selector
+from utils.translations import init_language, t, render_language_selector
 from utils.groq_service import GroqService
 
 # Page configuration
@@ -59,15 +59,16 @@ def initialize_services():
 
     return storage, container_db, calc, historical_service, groq_service
 
-# Initialize i18n
-init_i18n()
+# Initialize translation system
+init_language()
 
 # Sync language between session state and i18n system
 if 'language' not in st.session_state:
     st.session_state.language = 'pl'
-    
-from utils.i18n import set_locale, get_locale
-set_locale(st.session_state.language)
+
+from utils.translations import render_language_selector
+#from utils.i18n import set_locale, get_locale
+#set_locale(st.session_state.language)
 
 # Employee authentication
 if 'employee_logged_in' not in st.session_state:
@@ -99,8 +100,8 @@ with col_lang1:
                 use_container_width=True):
         st.session_state.language = 'pl'
         st.session_state.i18n_locale = 'pl'
-        from utils.i18n import set_locale
-        set_locale('pl')
+        #from utils.i18n import set_locale
+        #set_locale('pl')
         st.rerun()
 
 with col_lang2:
@@ -110,8 +111,8 @@ with col_lang2:
                 use_container_width=True):
         st.session_state.language = 'en'
         st.session_state.i18n_locale = 'en'
-        from utils.i18n import set_locale
-        set_locale('en')
+        #from utils.i18n import set_locale
+        #set_locale('en')
         st.rerun()
 
 with col_lang3:
@@ -121,8 +122,8 @@ with col_lang3:
                 use_container_width=True):
         st.session_state.language = 'de'
         st.session_state.i18n_locale = 'de'
-        from utils.i18n import set_locale
-        set_locale('de')
+        #from utils.i18n import set_locale
+        #set_locale('de')
         st.rerun()
 
 with col_lang4:
@@ -132,8 +133,8 @@ with col_lang4:
                 use_container_width=True):
         st.session_state.language = 'nl'
         st.session_state.i18n_locale = 'nl'
-        from utils.i18n import set_locale
-        set_locale('nl')
+        #from utils.i18n import set_locale
+        #set_locale('nl')
         st.rerun()
 
 with col_login:
@@ -203,7 +204,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     padding: 2rem;
     border-radius: 15px;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem;```python
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 .company-name {
@@ -489,3 +490,7 @@ if not st.session_state.employee_logged_in:
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+# Language selector in sidebar
+with st.sidebar:
+    render_language_selector()

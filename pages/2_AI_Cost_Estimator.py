@@ -1,391 +1,130 @@
 import streamlit as st
-import json
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-from utils.groq_service import GroqService
-from utils.i18n import init_i18n, t, get_locale, set_locale
-from utils.calculations import StructuralCalculations
-from utils.container_database import ContainerDatabase
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-st.set_page_config(page_title="AI Cost Estimator", page_icon="🤖", layout="wide", initial_sidebar_state="collapsed")
+from utils.translations import init_language, t, translate_options, render_language_selector
+from utils.ai_services import get_ai_cost_estimate
 
-# Initialize services
-if 'container_db' not in st.session_state:
-    st.session_state.container_db = ContainerDatabase()
+# Page configuration
+st.set_page_config(
+    page_title="AI Cost Estimator - KAN-BUD",
+    page_icon="🤖",
+    layout="wide"
+)
 
-if 'calculations' not in st.session_state:
-    st.session_state.calculations = StructuralCalculations()
+# Initialize translation system
+init_language()
 
-# Initialize i18n
-init_i18n()
+# Add language selector in sidebar
+with st.sidebar:
+    render_language_selector()
 
-# Sync language state properly
-if 'language' not in st.session_state:
-    st.session_state.language = 'pl'
-if 'i18n_locale' not in st.session_state:
-    st.session_state.i18n_locale = st.session_state.language
-set_locale(st.session_state.language)
+# Page header
+st.title(t('ai_cost_estimator'))
+st.markdown(f"### {t('generating_estimate')}")
 
-# Initialize Groq service
-if 'groq_service' not in st.session_state:
-    st.session_state.groq_service = GroqService()
-
-# Language selector with flag buttons
-col_lang1, col_lang2, col_lang3, col_lang4, col_spacer = st.columns([1, 1, 1, 1, 2])
-
-current_lang = get_locale()
-
-with col_lang1:
-    if st.button(f"🇵🇱 Polski", key="lang_pl_ai", 
-                type="primary" if current_lang == 'pl' else "secondary",
-                use_container_width=True):
-        st.session_state.language = 'pl'
-        st.session_state.i18n_locale = 'pl'
-        set_locale('pl')
-        st.rerun()
-
-with col_lang2:
-    if st.button(f"🇬🇧 English", key="lang_en_ai", 
-                type="primary" if current_lang == 'en' else "secondary",
-                use_container_width=True):
-        st.session_state.language = 'en'
-        st.session_state.i18n_locale = 'en'
-        set_locale('en')
-        st.rerun()
-
-with col_lang3:
-    if st.button(f"🇩🇪 Deutsch", key="lang_de_ai", 
-                type="primary" if current_lang == 'de' else "secondary",
-                use_container_width=True):
-        st.session_state.language = 'de'
-        st.session_state.i18n_locale = 'de'
-        set_locale('de')
-        st.rerun()
-
-with col_lang4:
-    if st.button(f"🇳🇱 Nederlands", key="lang_nl_ai", 
-                type="primary" if current_lang == 'nl' else "secondary",
-                use_container_width=True):
-        st.session_state.language = 'nl'
-        st.session_state.i18n_locale = 'nl'
-        set_locale('nl')
-        st.rerun()
-
-# Navigation header
-col1, col2, col3 = st.columns([1, 2, 1])
-
-with col1:
-    if st.button(t('ui.go_to_configurator'), key="config_nav"):
-        st.switch_page("pages/1_Container_Configurator.py")
-
-with col2:
-    st.markdown(f"### 🤖 {t('nav.ai_cost_estimation')}")
-
-with col3:
-    if st.button(t('ui.back_to_home'), key="home_nav"):
-        st.switch_page("app.py")
-
-st.markdown("---")
-
-# Check if configuration exists
-if 'container_config' not in st.session_state or not st.session_state.container_config:
-    st.warning("⚠️ No container configuration found. Please configure your container first.")
-    if st.button("Go to Container Configurator"):
-        st.switch_page("pages/1_Container_Configurator.py")
-    st.stop()
-
-# Display current configuration summary
-with st.expander("📋 Current Configuration", expanded=False):
-    config = st.session_state.container_config
+# Configuration form
+with st.form("ai_config"):
     col1, col2 = st.columns(2)
 
     with col1:
-        st.write(f"**Base Type:** {config.get('base_type', 'Not set')}")
-        st.write(f"**Use Case:** {config.get('use_case', 'Not set')}")
-        st.write(f"**Occupancy:** {config.get('occupancy', 'Not set')} people")
+        st.subheader(t('base_container_spec'))
 
-    with col2:
-        st.write(f"**Environment:** {config.get('environment', 'Not set')}")
-        mods = config.get('modifications', {})
-        mod_count = sum(1 for v in mods.values() if (isinstance(v, bool) and v) or (isinstance(v, int) and v > 0))
-        st.write(f"**Modifications:** {mod_count} items")
-
-# AI Model Selection
-st.subheader("🧠 AI Model Selection")
-col1, col2 = st.columns(2)
-
-with col1:
-    ai_model = st.selectbox(
-        "Select AI Model",
-        ["Groq Llama (Free)", "OpenAI GPT-4o", "Anthropic Claude", "All Models (Comparison)"],
-        help="Choose which AI model to use for cost estimation. Groq is completely free!"
-    )
-
-with col2:
-    estimation_depth = st.selectbox(
-        "Estimation Depth",
-        ["Quick Estimate", "Detailed Analysis", "Comprehensive Report"],
-        help="Choose the level of detail for the cost analysis"
-    )
-
-# Cost estimation parameters
-st.subheader("⚙️ Estimation Parameters")
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    project_location = st.selectbox(
-        "Project Location",
-        ["United States - General", "US - West Coast", "US - East Coast", "US - Midwest", "US - South", "Canada", "International"],
-        help="Location affects material and labor costs"
-    )
-
-with col2:
-    project_timeline = st.selectbox(
-        "Project Timeline",
-        ["Rush (2-4 weeks)", "Standard (6-8 weeks)", "Extended (10-12 weeks)", "Flexible"],
-        help="Timeline affects labor costs and material availability"
-    )
-
-with col3:
-    quality_level = st.selectbox(
-        "Quality Level",
-        ["Economy", "Standard", "Premium", "Luxury"],
-        help="Quality level affects material selection and finishes"
-    )
-
-# Additional considerations
-st.subheader("📝 Additional Requirements")
-additional_notes = st.text_area(
-    "Special Requirements or Notes",
-    placeholder="Enter any special requirements, constraints, or additional information that might affect the cost estimate...",
-    height=100
-)
-
-# Generate estimate button
-if st.button("🚀 Generate AI Cost Estimate", type="primary", use_container_width=True):
-    with st.spinner("🤖 AI is analyzing your configuration and generating cost estimates..."):
-
-        # Prepare data for AI analysis
-        estimation_data = {
-            "container_config": st.session_state.container_config,
-            "project_location": project_location,
-            "project_timeline": project_timeline,
-            "quality_level": quality_level,
-            "additional_notes": additional_notes,
-            "estimation_depth": estimation_depth
-        }
-
-        # Calculate base costs using traditional methods
-        base_costs = st.session_state.calculations.calculate_base_costs(
-            st.session_state.container_config
+        container_type = st.selectbox(
+            t('container_type'),
+            options=['20ft Standard', '40ft Standard', '40ft High Cube', '20ft Refrigerated'],
+            format_func=lambda x: t(x)
         )
 
-        try:
-            if ai_model == "OpenAI GPT-4o":
-                try:
-                    estimate = st.session_state.openai_service.generate_cost_estimate(estimation_data, base_costs)
-                    st.session_state.ai_estimate = estimate
-                except Exception as openai_error:
-                    if "quota" in str(openai_error) or "insufficient_quota" in str(openai_error):
-                        st.warning("⚠️ OpenAI quota exceeded. Using Anthropic Claude instead.")
-                        estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
-                        st.session_state.ai_estimate = estimate
-                    else:
-                        raise openai_error
+        main_purpose = st.selectbox(
+            t('main_purpose'),
+            options=['Office Space', 'Residential', 'Storage', 'Workshop', 'Retail', 'Restaurant', 'Medical', 'Laboratory'],
+            format_func=lambda x: t(x)
+        )
 
-            elif ai_model == "Anthropic Claude":
-                estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
-                st.session_state.ai_estimate = estimate
-            
-            elif ai_model == "Groq Llama (Free)":
-                 estimate = st.session_state.groq_service.generate_cost_estimate(estimation_data, base_costs)
-                 st.session_state.ai_estimate = estimate
-
-            else:  # Both models
-                try:
-                    openai_estimate = st.session_state.openai_service.generate_cost_estimate(estimation_data, base_costs)
-                except Exception as openai_error:
-                    if "quota" in str(openai_error) or "insufficient_quota" in str(openai_error):
-                        st.warning("⚠️ OpenAI quota exceeded. Using Anthropic Claude only.")
-                        estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
-                        st.session_state.ai_estimate = estimate
-                    else:
-                        raise openai_error
-                else:
-                    claude_estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
-
-                    # Store both estimates for comparison
-                    st.session_state.ai_estimate = {
-                        "openai": openai_estimate,
-                        "claude": claude_estimate,
-                        "comparison": True
-                    }
-
-            st.success("✅ AI cost estimate generated successfully!")
-            st.rerun()
-
-        except Exception as e:
-            st.error(f"❌ Error generating AI estimate: {str(e)}")
-            st.info("💡 Please check your API keys and try again. You can also use the traditional calculation method.")
-
-# Display results if available
-if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
-    st.divider()
-
-    estimate = st.session_state.ai_estimate
-
-    if isinstance(estimate, dict) and estimate.get("comparison"):
-        # Display comparison between models
-        st.subheader("🔄 AI Model Comparison")
-
-        col1, col2 = st.columns(2)
-
-        with col1:
-            st.markdown("### 🤖 OpenAI GPT-4o Estimate")
-            openai_est = estimate["openai"]
-            if isinstance(openai_est, dict):
-                st.metric("Total Cost", f"€{openai_est.get('total_cost', 0):,.2f}")
-                st.metric("Confidence", f"{openai_est.get('confidence', 0):.1%}")
-
-                if 'breakdown' in openai_est:
-                    with st.expander("Cost Breakdown"):
-                        for category, cost in openai_est['breakdown'].items():
-                            st.write(f"**{category.replace('_', ' ').title()}:** €{cost:,.2f}")
-
-        with col2:
-            st.markdown("### 🧠 Anthropic Claude Estimate")
-            claude_est = estimate["claude"]
-            if isinstance(claude_est, dict):
-                st.metric("Total Cost", f"€{claude_est.get('total_cost', 0):,.2f}")
-                st.metric("Confidence", f"{claude_est.get('confidence', 0):.1%}")
-
-                if 'breakdown' in claude_est:
-                    with st.expander("Cost Breakdown"):
-                        for category, cost in claude_est['breakdown'].items():
-                            st.write(f"**{category.replace('_', ' ').title()}:** €{cost:,.2f}")
-
-        # Comparison analysis
-        if isinstance(openai_est, dict) and isinstance(claude_est, dict):
-            openai_total = openai_est.get('total_cost', 0)
-            claude_total = claude_est.get('total_cost', 0)
-
-            st.subheader("📊 Comparison Analysis")
-
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                avg_estimate = (openai_total + claude_total) / 2
-                st.metric("Average Estimate", f"€{avg_estimate:,.2f}")
-
-            with col2:
-                difference = abs(openai_total - claude_total)
-                variance_pct = (difference / avg_estimate) * 100 if avg_estimate > 0 else 0
-                st.metric("Variance", f"{variance_pct:.1f}%")
-
-            with col3:
-                recommended = "OpenAI" if openai_est.get('confidence', 0) > claude_est.get('confidence', 0) else "Claude"
-                st.metric("Recommended", recommended)
-
-    else:
-        # Display single model estimate
-        st.subheader("💰 AI Cost Estimate Results")
-
-        if isinstance(estimate, dict):
-            col1, col2, col3 = st.columns(3)
-
-            with col1:
-                total_cost = estimate.get('total_cost', 0)
-                st.metric(
-                    "Total Estimated Cost",
-                    f"€{total_cost:,.2f}",
-                    help="Total project cost including materials, labor, and modifications"
-                )
-
-            with col2:
-                confidence = estimate.get('confidence', 0)
-                st.metric(
-                    "AI Confidence",
-                    f"{confidence:.1%}",
-                    help="AI model's confidence in the estimate accuracy"
-                )
-
-            with col3:
-                timeline = estimate.get('estimated_timeline', 'Not specified')
-                st.metric(
-                    "Estimated Timeline",
-                    timeline,
-                    help="Projected completion time for the project"
-                )
-
-            # Cost breakdown visualization
-            if 'breakdown' in estimate:
-                st.subheader("📊 Cost Breakdown")
-
-                breakdown = estimate['breakdown']
-                categories = list(breakdown.keys())
-                values = list(breakdown.values())
-
-                col1, col2 = st.columns([1, 1])
-
-                with col1:
-                    # Pie chart
-                    fig_pie = px.pie(
-                        values=values,
-                        names=[cat.replace('_', ' ').title() for cat in categories],
-                        title="Cost Distribution"
-                    )
-                    st.plotly_chart(fig_pie, use_container_width=True)
-
-                with col2:
-                    # Bar chart
-                    fig_bar = px.bar(
-                        x=values,
-                        y=[cat.replace('_', ' ').title() for cat in categories],
-                        orientation='h',
-                        title="Cost by Category"
-                    )
-                    fig_bar.update_layout(yaxis={'categoryorder': 'total ascending'})
-                    st.plotly_chart(fig_bar, use_container_width=True)
-
-            # Detailed analysis
-            if 'analysis' in estimate:
-                st.subheader("🔍 AI Analysis & Recommendations")
-                analysis = estimate['analysis']
-
-                if 'recommendations' in analysis:
-                    st.markdown("**💡 AI Recommendations:**")
-                    for rec in analysis['recommendations']:
-                        st.write(f"• {rec}")
-
-                if 'risk_factors' in analysis:
-                    st.markdown("**⚠️ Risk Factors:**")
-                    for risk in analysis['risk_factors']:
-                        st.warning(f"• {risk}")
-
-                if 'cost_optimization' in analysis:
-                    st.markdown("**💰 Cost Optimization Opportunities:**")
-                    for opt in analysis['cost_optimization']:
-                        st.info(f"• {opt}")
-
-# Action buttons
-if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
-    st.divider()
-    col1, col2, col3, col4 = st.columns(4)
-
-    with col1:
-        if st.button("🔧 Technical Analysis", use_container_width=True):
-            st.switch_page("pages/3_Technical_Analysis.py")
+        environment = st.selectbox(
+            t('environment'),
+            options=['Indoor', 'Outdoor', 'Marine', 'Industrial'],
+            format_func=lambda x: t(x)
+        )
 
     with col2:
-        if st.button("📄 Generate Quote", use_container_width=True):
-            st.switch_page("pages/4_Quote_Generator.py")
+        st.subheader(t('modification_requirements'))
+
+        finish_level = st.selectbox(
+            t('finish_level'),
+            options=['Basic', 'Standard', 'Premium', 'Luxury'],
+            format_func=lambda x: t(x)
+        )
+
+        flooring = st.selectbox(
+            t('flooring'),
+            options=['Plywood', 'Vinyl', 'Carpet', 'Hardwood', 'Polished Concrete'],
+            format_func=lambda x: t(x)
+        )
+
+        climate_zone = st.selectbox(
+            t('climate_zone'),
+            options=['Central European', 'Scandinavian', 'Mediterranean', 'Atlantic Maritime', 'Continental', 'Alpine', 'Baltic', 'Temperate Oceanic'],
+            format_func=lambda x: t(x)
+        )
+
+    # Systems section
+    st.subheader(t('systems_installations'))
+
+    col3, col4 = st.columns(2)
 
     with col3:
-        if st.button("⚖️ Compare Options", use_container_width=True):
-            st.switch_page("pages/5_Comparison_Tool.py")
+        electrical_system = st.checkbox(t('electrical_system'), value=True)
+        plumbing_system = st.checkbox(t('plumbing_system'), value=False)
+        hvac_system = st.checkbox(t('hvac_system'), value=True)
 
     with col4:
-        if st.button("🔄 New Estimate", use_container_width=True):
-            if 'ai_estimate' in st.session_state:
-                del st.session_state.ai_estimate
-            st.rerun()
+        insulation_package = st.checkbox(t('insulation_package'), value=True)
+        structural_reinforcement = st.checkbox(t('structural_reinforcement'), value=False)
+
+    # Submit button
+    submitted = st.form_submit_button(t('generate_estimate'), use_container_width=True)
+
+# Results section
+if submitted:
+    with st.spinner(t('generating_estimate')):
+        try:
+            # Prepare configuration
+            config = {
+                'container_type': container_type,
+                'main_purpose': main_purpose,
+                'environment': environment,
+                'climate_zone': climate_zone,
+                'finish_level': finish_level,
+                'flooring': flooring,
+                'electrical_system': electrical_system,
+                'plumbing_system': plumbing_system,
+                'hvac_system': hvac_system,
+                'insulation_package': insulation_package,
+                'structural_reinforcement': structural_reinforcement
+            }
+
+            # Get AI estimate
+            estimate = get_ai_cost_estimate(config)
+
+            if estimate:
+                st.success(t('estimate_ready'))
+                st.markdown(estimate)
+            else:
+                st.error(t('error_occurred'))
+
+        except Exception as e:
+            st.error(f"{t('error_occurred')}: {str(e)}")
+
+# Navigation
+st.markdown("---")
+col1, col2 = st.columns(2)
+with col1:
+    if st.button(t('back_to_home'), key="home_nav", use_container_width=True):
+        st.switch_page("app.py")
+
+with col2:
+    if st.button(t('go_to_configurator'), key="config_nav", use_container_width=True):
+        st.switch_page("pages/1_Container_Configurator.py")
