@@ -277,7 +277,7 @@ if st.session_state.employee_logged_in:
                 <div class="feature-description">{desc}</div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"Otwórz {title.replace(chr(10), ' ')}", key=key, use_container_width=True, type="primary"):
+            if st.button(f"{get_text('open_tool', st.session_state.language)} {title.replace(chr(10), ' ')}", key=key, use_container_width=True, type="primary"):
                 st.switch_page(page)
     
     # Secondary tools
@@ -306,10 +306,10 @@ else:
     st.markdown(f"""
     <div style="text-align: center; margin: 2rem 0;">
         <h2 style="color: #1e3c72; font-size: 2.5rem; margin-bottom: 0.5rem;">
-            💼 {get_text('configure_container', lang)}
+            💼 {get_text('configure_container', st.session_state.language)}
         </h2>
         <p style="font-size: 1.3rem; color: #666; font-style: italic;">
-            {get_text('simple_process_2_steps', lang)}
+            {get_text('simple_process_2_steps', st.session_state.language)}
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -328,16 +328,16 @@ else:
         ">
             <div style="font-size: 4rem; margin-bottom: 1rem;">📦</div>
             <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                {get_text('step_1_configuration', lang)}
+                {get_text('step_1_configuration', st.session_state.language)}
             </h2>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                {get_text('choose_container_type', lang)}
+                {get_text('choose_container_type', st.session_state.language)}
             </p>
         </div>
         """, unsafe_allow_html=True)
         
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("🚀 " + get_text('start_configuration', lang), key="client_config", use_container_width=True, type="primary"):
+        if st.button("🚀 " + get_text('start_configuration', st.session_state.language), key="client_config", use_container_width=True, type="primary"):
             st.switch_page("pages/1_Container_Configurator.py")
     
     with col2:
