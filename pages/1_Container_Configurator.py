@@ -13,7 +13,7 @@ if 'language' not in st.session_state:
     st.session_state.language = 'pl'
 
 # Language selector
-render_language_dropdown()
+render_language_selector()
 
 # Initialize services
 if 'container_db' not in st.session_state:
@@ -76,10 +76,10 @@ st.markdown("""
 
 col1, col2 = st.columns(2)
 with col1:
-    if st.button(quick_translate('back_to_home'), key="home_nav", use_container_width=True):
+    if st.button(t('back_to_home'), key="home_nav", use_container_width=True):
         st.switch_page("app.py")
 with col2:
-    if st.button("🤖 Przejdź do Wyceny AI →", key="ai_nav", use_container_width=True):
+    if st.button(t('go_to_ai_estimate'), key="ai_nav", use_container_width=True):
         st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 st.markdown("</div></div></div>", unsafe_allow_html=True)
@@ -94,15 +94,15 @@ col1, col2 = st.columns([1, 1])
 with col1:
     st.markdown(f"""
     <div class="config-section">
-        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">{quick_translate('base_container_spec')}</h3>
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">{t('base_container_spec')}</h3>
     """, unsafe_allow_html=True)
     
     # Container type selection
     container_types = st.session_state.container_db.get_container_types()
     selected_type = st.selectbox(
-        quick_translate('container_type'),
+        t('container_type'),
         options=list(container_types.keys()),
-        help=quick_translate('container_help')
+        help=t('container_help')
     )
     
     if selected_type:
@@ -115,28 +115,28 @@ with col1:
         with spec_col1:
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">{quick_translate('length')}</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{t('length')}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['length'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
             st.markdown("<br>", unsafe_allow_html=True)
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">{quick_translate('width')}</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{t('width')}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['width'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
         with spec_col2:
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">{quick_translate('height')}</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{t('height')}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['height'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
             st.markdown("<br>", unsafe_allow_html=True)
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">{quick_translate('weight')}</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{t('weight')}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['weight'] * 0.453592:.0f} kg</h2>
             </div>
             """, unsafe_allow_html=True)
@@ -146,7 +146,7 @@ with col1:
     # Use case selection with enhanced styling
     st.markdown(f"""
     <div class="config-section">
-        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🎯 {quick_translate('purpose')}</h3>
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🎯 {t('purpose')}</h3>
     """, unsafe_allow_html=True)
     
     use_cases = [
@@ -162,16 +162,16 @@ with col1:
         "Custom Industrial"
     ]
     
-    selected_use_case = st.selectbox(quick_translate('main_purpose'), translate_dropdown_options(use_cases))
+    selected_use_case = st.selectbox(t('main_purpose'), translate_list(use_cases))
     st.session_state.container_config['use_case'] = selected_use_case
     
     st.markdown("<br>", unsafe_allow_html=True)
     # Occupancy and environment
     col_occ1, col_occ2 = st.columns(2)
     with col_occ1:
-        occupancy = st.number_input(quick_translate('expected_occupancy'), min_value=1, max_value=50, value=4)
+        occupancy = st.number_input(t('expected_occupancy'), min_value=1, max_value=50, value=4)
     with col_occ2:
-        environment = st.selectbox(quick_translate('environment_label'), translate_dropdown_options(["Indoor", "Outdoor", "Marine", "Industrial"]))
+        environment = st.selectbox(t('environment_label'), translate_list(["Indoor", "Outdoor", "Marine", "Industrial"]))
     
     st.session_state.container_config.update({
         'occupancy': occupancy,
@@ -183,31 +183,31 @@ with col1:
 with col2:
     st.markdown(f"""
     <div class="config-section">
-        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🔧 {quick_translate('modification_requirements')}</h3>
+        <h3 style="color: #1e3c72; margin-bottom: 1.5rem;">🔧 {t('modification_requirements')}</h3>
     """, unsafe_allow_html=True)
     
     modifications = {}
     
     # Structural modifications
-    st.markdown(f"##### 🏗️ {quick_translate('structural_modifications')}")
+    st.markdown(f"##### 🏗️ {t('structural_modifications')}")
     col_mod1, col_mod2 = st.columns(2)
     with col_mod1:
-        modifications['windows'] = st.number_input(quick_translate('number_of_windows'), min_value=0, max_value=20, value=0)
-        modifications['doors'] = st.number_input(quick_translate('number_of_doors'), min_value=1, max_value=10, value=1)
+        modifications['windows'] = st.number_input(t('number_of_windows'), min_value=0, max_value=20, value=0)
+        modifications['doors'] = st.number_input(t('number_of_doors'), min_value=1, max_value=10, value=1)
     with col_mod2:
-        modifications['skylights'] = st.number_input(quick_translate('skylights'), min_value=0, max_value=10, value=0)
-        modifications['vents'] = st.number_input(quick_translate('ventilation_openings'), min_value=0, max_value=20, value=2)
+        modifications['skylights'] = st.number_input(t('skylights'), min_value=0, max_value=10, value=0)
+        modifications['vents'] = st.number_input(t('ventilation_openings'), min_value=0, max_value=20, value=2)
     
     st.markdown("<br>", unsafe_allow_html=True)
     # Structural reinforcements
-    st.markdown(f"##### 🔨 {quick_translate('structural_reinforcements')}")
+    st.markdown(f"##### 🔨 {t('structural_reinforcements')}")
     col_reinf1, col_reinf2 = st.columns(2)
     with col_reinf1:
-        modifications['reinforcement_walls'] = st.checkbox(quick_translate('wall_reinforcement'))
-        modifications['reinforcement_roof'] = st.checkbox(quick_translate('roof_reinforcement'))
+        modifications['reinforcement_walls'] = st.checkbox(t('wall_reinforcement'))
+        modifications['reinforcement_roof'] = st.checkbox(t('roof_reinforcement'))
     with col_reinf2:
-        modifications['reinforcement_floor'] = st.checkbox(quick_translate('floor_reinforcement'))
-        modifications['additional_support'] = st.checkbox(quick_translate('additional_support'))
+        modifications['reinforcement_floor'] = st.checkbox(t('floor_reinforcement'))
+        modifications['additional_support'] = st.checkbox(t('additional_support'))
     
     st.markdown("</div>", unsafe_allow_html=True)
     

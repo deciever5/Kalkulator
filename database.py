@@ -13,26 +13,7 @@ from typing import Dict, List, Any, Optional
 
 Base = declarative_base()
 
-class HistoricalProject(Base):
-    """Store historical project data for pricing accuracy"""
-    __tablename__ = 'historical_projects'
-    
-    id = Column(Integer, primary_key=True)
-    project_name = Column(String(255), nullable=False)
-    container_type = Column(String(100), nullable=False)
-    use_case = Column(String(100), nullable=False)
-    modifications = Column(JSON)
-    actual_cost = Column(Float, nullable=False)
-    estimated_cost = Column(Float)
-    completion_date = Column(DateTime, nullable=False)
-    location = Column(String(255))
-    customer_type = Column(String(100))
-    project_size_category = Column(String(50))
-    complexity_score = Column(Float)
-    material_costs = Column(JSON)
-    labor_hours = Column(Float)
-    timeline_weeks = Column(Integer)
-    created_at = Column(DateTime, default=datetime.utcnow)
+# Historical projects removed as not needed at this stage
 
 class CustomerData(Base):
     """Store customer information and preferences"""
