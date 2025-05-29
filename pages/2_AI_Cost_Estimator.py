@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from utils.ai_services import OpenAIService, AnthropicService
+from utils.ai_services import OpenAIService, AnthropicService, GroqService
 from utils.calculations import StructuralCalculations
 from utils.container_database import ContainerDatabase
 
@@ -20,7 +20,14 @@ if 'openai_service' not in st.session_state:
     st.session_state.openai_service = OpenAIService()
 
 if 'anthropic_service' not in st.session_state:
-    st.session_state.anthropic_service = AnthropicService()
+    try:
+        st.session_state.anthropic_service = AnthropicService()
+    except ValueError as e:
+        st.session_state.anthropic_service = None
+
+# Initialize Groq service (free option)
+if 'groq_service' not in st.session_state:
+    st.session_state.groq_service = GroqService()
 
 # Navigation header
 col1, col2, col3 = st.columns([1, 2, 1])
@@ -49,12 +56,12 @@ if 'container_config' not in st.session_state or not st.session_state.container_
 with st.expander("📋 Current Configuration", expanded=False):
     config = st.session_state.container_config
     col1, col2 = st.columns(2)
-    
+
     with col1:
         st.write(f"**Base Type:** {config.get('base_type', 'Not set')}")
         st.write(f"**Use Case:** {config.get('use_case', 'Not set')}")
         st.write(f"**Occupancy:** {config.get('occupancy', 'Not set')} people")
-    
+
     with col2:
         st.write(f"**Environment:** {config.get('environment', 'Not set')}")
         mods = config.get('modifications', {})
@@ -67,9 +74,9 @@ col1, col2 = st.columns(2)
 
 with col1:
     ai_model = st.selectbox(
-        "Choose AI Model",
-        ["OpenAI GPT-4o", "Anthropic Claude", "Both Models (Comparison)"],
-        help="Select which AI model to use for cost estimation"
+        "Select AI Model",
+        ["Groq Llama (Free)", "OpenAI GPT-4o", "Anthropic Claude", "All Models (Comparison)"],
+        help="Choose which AI model to use for cost estimation. Groq is completely free!"
     )
 
 with col2:
@@ -115,7 +122,7 @@ additional_notes = st.text_area(
 # Generate estimate button
 if st.button("🚀 Generate AI Cost Estimate", type="primary", use_container_width=True):
     with st.spinner("🤖 AI is analyzing your configuration and generating cost estimates..."):
-        
+
         # Prepare data for AI analysis
         estimation_data = {
             "container_config": st.session_state.container_config,
@@ -125,12 +132,12 @@ if st.button("🚀 Generate AI Cost Estimate", type="primary", use_container_wid
             "additional_notes": additional_notes,
             "estimation_depth": estimation_depth
         }
-        
+
         # Calculate base costs using traditional methods
         base_costs = st.session_state.calculations.calculate_base_costs(
             st.session_state.container_config
         )
-        
+
         try:
             if ai_model == "OpenAI GPT-4o":
                 try:
@@ -143,11 +150,15 @@ if st.button("🚀 Generate AI Cost Estimate", type="primary", use_container_wid
                         st.session_state.ai_estimate = estimate
                     else:
                         raise openai_error
-                
+
             elif ai_model == "Anthropic Claude":
                 estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
                 st.session_state.ai_estimate = estimate
-                
+            
+            elif ai_model == "Groq Llama (Free)":
+                 estimate = st.session_state.groq_service.generate_cost_estimate(estimation_data, base_costs)
+                 st.session_state.ai_estimate = estimate
+
             else:  # Both models
                 try:
                     openai_estimate = st.session_state.openai_service.generate_cost_estimate(estimation_data, base_costs)
@@ -160,17 +171,17 @@ if st.button("🚀 Generate AI Cost Estimate", type="primary", use_container_wid
                         raise openai_error
                 else:
                     claude_estimate = st.session_state.anthropic_service.generate_cost_estimate(estimation_data, base_costs)
-                    
+
                     # Store both estimates for comparison
                     st.session_state.ai_estimate = {
                         "openai": openai_estimate,
                         "claude": claude_estimate,
                         "comparison": True
                     }
-            
+
             st.success("✅ AI cost estimate generated successfully!")
             st.rerun()
-            
+
         except Exception as e:
             st.error(f"❌ Error generating AI estimate: {str(e)}")
             st.info("💡 Please check your API keys and try again. You can also use the traditional calculation method.")
@@ -178,67 +189,67 @@ if st.button("🚀 Generate AI Cost Estimate", type="primary", use_container_wid
 # Display results if available
 if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
     st.divider()
-    
+
     estimate = st.session_state.ai_estimate
-    
+
     if isinstance(estimate, dict) and estimate.get("comparison"):
         # Display comparison between models
         st.subheader("🔄 AI Model Comparison")
-        
+
         col1, col2 = st.columns(2)
-        
+
         with col1:
             st.markdown("### 🤖 OpenAI GPT-4o Estimate")
             openai_est = estimate["openai"]
             if isinstance(openai_est, dict):
                 st.metric("Total Cost", f"€{openai_est.get('total_cost', 0):,.2f}")
                 st.metric("Confidence", f"{openai_est.get('confidence', 0):.1%}")
-                
+
                 if 'breakdown' in openai_est:
                     with st.expander("Cost Breakdown"):
                         for category, cost in openai_est['breakdown'].items():
                             st.write(f"**{category.replace('_', ' ').title()}:** €{cost:,.2f}")
-        
+
         with col2:
             st.markdown("### 🧠 Anthropic Claude Estimate")
             claude_est = estimate["claude"]
             if isinstance(claude_est, dict):
                 st.metric("Total Cost", f"€{claude_est.get('total_cost', 0):,.2f}")
                 st.metric("Confidence", f"{claude_est.get('confidence', 0):.1%}")
-                
+
                 if 'breakdown' in claude_est:
                     with st.expander("Cost Breakdown"):
                         for category, cost in claude_est['breakdown'].items():
                             st.write(f"**{category.replace('_', ' ').title()}:** €{cost:,.2f}")
-        
+
         # Comparison analysis
         if isinstance(openai_est, dict) and isinstance(claude_est, dict):
             openai_total = openai_est.get('total_cost', 0)
             claude_total = claude_est.get('total_cost', 0)
-            
+
             st.subheader("📊 Comparison Analysis")
-            
+
             col1, col2, col3 = st.columns(3)
             with col1:
                 avg_estimate = (openai_total + claude_total) / 2
                 st.metric("Average Estimate", f"€{avg_estimate:,.2f}")
-            
+
             with col2:
                 difference = abs(openai_total - claude_total)
                 variance_pct = (difference / avg_estimate) * 100 if avg_estimate > 0 else 0
                 st.metric("Variance", f"{variance_pct:.1f}%")
-            
+
             with col3:
                 recommended = "OpenAI" if openai_est.get('confidence', 0) > claude_est.get('confidence', 0) else "Claude"
                 st.metric("Recommended", recommended)
-    
+
     else:
         # Display single model estimate
         st.subheader("💰 AI Cost Estimate Results")
-        
+
         if isinstance(estimate, dict):
             col1, col2, col3 = st.columns(3)
-            
+
             with col1:
                 total_cost = estimate.get('total_cost', 0)
                 st.metric(
@@ -246,7 +257,7 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
                     f"€{total_cost:,.2f}",
                     help="Total project cost including materials, labor, and modifications"
                 )
-            
+
             with col2:
                 confidence = estimate.get('confidence', 0)
                 st.metric(
@@ -254,7 +265,7 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
                     f"{confidence:.1%}",
                     help="AI model's confidence in the estimate accuracy"
                 )
-            
+
             with col3:
                 timeline = estimate.get('estimated_timeline', 'Not specified')
                 st.metric(
@@ -262,17 +273,17 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
                     timeline,
                     help="Projected completion time for the project"
                 )
-            
+
             # Cost breakdown visualization
             if 'breakdown' in estimate:
                 st.subheader("📊 Cost Breakdown")
-                
+
                 breakdown = estimate['breakdown']
                 categories = list(breakdown.keys())
                 values = list(breakdown.values())
-                
+
                 col1, col2 = st.columns([1, 1])
-                
+
                 with col1:
                     # Pie chart
                     fig_pie = px.pie(
@@ -281,7 +292,7 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
                         title="Cost Distribution"
                     )
                     st.plotly_chart(fig_pie, use_container_width=True)
-                
+
                 with col2:
                     # Bar chart
                     fig_bar = px.bar(
@@ -292,22 +303,22 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
                     )
                     fig_bar.update_layout(yaxis={'categoryorder': 'total ascending'})
                     st.plotly_chart(fig_bar, use_container_width=True)
-            
+
             # Detailed analysis
             if 'analysis' in estimate:
                 st.subheader("🔍 AI Analysis & Recommendations")
                 analysis = estimate['analysis']
-                
+
                 if 'recommendations' in analysis:
                     st.markdown("**💡 AI Recommendations:**")
                     for rec in analysis['recommendations']:
                         st.write(f"• {rec}")
-                
+
                 if 'risk_factors' in analysis:
                     st.markdown("**⚠️ Risk Factors:**")
                     for risk in analysis['risk_factors']:
                         st.warning(f"• {risk}")
-                
+
                 if 'cost_optimization' in analysis:
                     st.markdown("**💰 Cost Optimization Opportunities:**")
                     for opt in analysis['cost_optimization']:
@@ -317,19 +328,19 @@ if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
 if 'ai_estimate' in st.session_state and st.session_state.ai_estimate:
     st.divider()
     col1, col2, col3, col4 = st.columns(4)
-    
+
     with col1:
         if st.button("🔧 Technical Analysis", use_container_width=True):
             st.switch_page("pages/3_Technical_Analysis.py")
-    
+
     with col2:
         if st.button("📄 Generate Quote", use_container_width=True):
             st.switch_page("pages/4_Quote_Generator.py")
-    
+
     with col3:
         if st.button("⚖️ Compare Options", use_container_width=True):
             st.switch_page("pages/5_Comparison_Tool.py")
-    
+
     with col4:
         if st.button("🔄 New Estimate", use_container_width=True):
             if 'ai_estimate' in st.session_state:

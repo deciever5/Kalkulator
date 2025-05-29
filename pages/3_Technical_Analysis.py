@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 from utils.calculations import StructuralCalculations
-from utils.ai_services import OpenAIService, AnthropicService
+from utils.ai_services import OpenAIService, AnthropicService, GroqService
 from utils.container_database import ContainerDatabase
 from utils.translations import get_text
 
