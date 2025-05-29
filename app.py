@@ -82,7 +82,7 @@ with col4:
 with col_login:
     # Employee login
     if not st.session_state.employee_logged_in:
-        if st.button("👤", key="show_login", help="Employee Login", use_container_width=True):
+        if st.button("👤", key="login_toggle_btn", help="Employee Login", use_container_width=True):
             st.session_state.show_login = not st.session_state.get('show_login', False)
     else:
         if st.button("🚪", key="emp_logout", help="Logout", use_container_width=True):
