@@ -7,7 +7,7 @@ import streamlit as st
 import plotly.graph_objects as go
 from utils.advanced_3d_visualizer import Advanced3DVisualizer
 from utils.container_database import ContainerDatabase
-from utils.complete_translations import get_translation, translate_options
+from utils.complete_translations_fixed import get_translation, translate_options
 
 st.set_page_config(page_title="3D Visualization", page_icon="🏗️", layout="wide", initial_sidebar_state="collapsed")
 

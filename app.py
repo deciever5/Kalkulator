@@ -7,7 +7,7 @@ from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
-from utils.historical_data_service import HistoricalDataService
+# Historical data service removed as not needed
 from utils.translations import t, render_language_selector
 from utils.groq_service import GroqService
 
@@ -72,13 +72,11 @@ col_spacer, col_login = st.columns([5, 1])
 with col_login:
     if not st.session_state.employee_logged_in:
         if st.button("👤", key="login_toggle_btn", help=t('ui.employee_login'), use_container_width=True):
-            st.session_state.show_login = True
-            st.rerun()
+            st.session_state.show_login = not st.session_state.show_login
     else:
         if st.button("🚪", key="emp_logout", help=t('ui.logout'), use_container_width=True):
             st.session_state.employee_logged_in = False
             st.session_state.show_login = False
-            st.rerun()
 
 # Employee login form
 if st.session_state.show_login and not st.session_state.employee_logged_in:
@@ -92,7 +90,6 @@ if st.session_state.show_login and not st.session_state.employee_logged_in:
                     st.session_state.employee_logged_in = True
                     st.session_state.show_login = False
                     st.success(t('ui.logged_in'))
-                    st.rerun()
                 else:
                     st.error(t('ui.wrong_password'))
         with col_y:
