@@ -117,6 +117,7 @@ st.markdown("""
 
 col1, col2 = st.columns(2)
 with col1:
+    current_language = st.session_state.get('language', 'pl')
     home_text = "Powrót do głównej" if current_language == 'pl' else "Back to Home" if current_language == 'en' else "Zurück zur Startseite" if current_language == 'de' else "Terug naar home"
     if st.button(home_text, key="home_nav", use_container_width=True):
         st.switch_page("app.py")
