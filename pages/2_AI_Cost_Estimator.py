@@ -156,6 +156,23 @@ else:
                     # Display estimate
                     st.markdown(f"### 🤖 {t('ai_cost_estimate')}:")
                     st.markdown(estimate)
+                    
+                    # Legal disclaimer
+                    st.warning(f"""
+                    ⚠️ **{t('estimate_disclaimer_title')}**
+                    
+                    {t('estimate_disclaimer_text')}
+                    """)
+                    
+                    # Call to action
+                    st.info(f"""
+                    📧 **{t('get_precise_quote')}**
+                    
+                    {t('contact_for_quote')}
+                    """)
+                    
+                    if st.button(f"📧 {t('send_inquiry_cta')}", key="inquiry_cta", use_container_width=True):
+                        st.switch_page("pages/8_Send_Inquiry.py")
 
                     # Save estimate
                     if st.button(f"💾 {t('save_estimate')}", key="save_estimate"):
