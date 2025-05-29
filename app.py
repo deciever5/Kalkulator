@@ -8,7 +8,7 @@ from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
-from utils.translations import init_language, t, get_current_language, set_language
+from utils.complete_translations_fixed import t, render_language_selector
 from utils.groq_service import GroqService
 
 # Page configuration
@@ -53,8 +53,12 @@ def initialize_services():
 
     return storage, container_db, calc, historical_service, groq_service
 
-# Initialize translation system
-init_language()
+# Initialize language
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+
+# Language selector
+render_language_selector()
 
 # Employee authentication
 if 'employee_logged_in' not in st.session_state:
@@ -62,43 +66,6 @@ if 'employee_logged_in' not in st.session_state:
 
 if 'show_login' not in st.session_state:
     st.session_state.show_login = False
-
-# Language selector with flag buttons and login
-col_lang1, col_lang2, col_lang3, col_lang4, col_spacer, col_login = st.columns([1, 1, 1, 1, 2, 1])
-
-current_lang = get_current_language()
-
-with col_lang1:
-    if st.button(f"🇵🇱 Polski", key="lang_pl", 
-                help="Zmień język na polski",
-                type="primary" if current_lang == 'pl' else "secondary",
-                use_container_width=True):
-        set_language('pl')
-        st.rerun()
-
-with col_lang2:
-    if st.button(f"🇬🇧 English", key="lang_en", 
-                help="Change language to English",
-                type="primary" if current_lang == 'en' else "secondary",
-                use_container_width=True):
-        set_language('en')
-        st.rerun()
-
-with col_lang3:
-    if st.button(f"🇩🇪 Deutsch", key="lang_de", 
-                help="Sprache auf Deutsch ändern",
-                type="primary" if current_lang == 'de' else "secondary",
-                use_container_width=True):
-        set_language('de')
-        st.rerun()
-
-with col_lang4:
-    if st.button(f"🇳🇱 Nederlands", key="lang_nl", 
-                help="Verander taal naar Nederlands",
-                type="primary" if current_lang == 'nl' else "secondary",
-                use_container_width=True):
-        set_language('nl')
-        st.rerun()
 
 with col_login:
     # Employee login
