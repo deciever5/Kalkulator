@@ -8,12 +8,13 @@ from utils.advanced_3d_visualizer import Advanced3DVisualizer
 
 st.set_page_config(page_title="Container Configurator", page_icon="📦", layout="wide", initial_sidebar_state="collapsed")
 
-# Initialize language
-if 'language' not in st.session_state:
-    st.session_state.language = 'pl'
-
 # Initialize i18n
 init_i18n()
+
+# Sync language state
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+set_locale(st.session_state.language)
 
 # Language selector with flag buttons
 col_lang1, col_lang2, col_lang3, col_lang4, col_spacer = st.columns([1, 1, 1, 1, 2])
@@ -24,6 +25,8 @@ with col_lang1:
     if st.button(f"🇵🇱 Polski", key="lang_pl_config", 
                 type="primary" if current_lang == 'pl' else "secondary",
                 use_container_width=True):
+        st.session_state.language = 'pl'
+        st.session_state.i18n_locale = 'pl'
         set_locale('pl')
         st.rerun()
 
@@ -31,6 +34,8 @@ with col_lang2:
     if st.button(f"🇬🇧 English", key="lang_en_config", 
                 type="primary" if current_lang == 'en' else "secondary",
                 use_container_width=True):
+        st.session_state.language = 'en'
+        st.session_state.i18n_locale = 'en'
         set_locale('en')
         st.rerun()
 
@@ -38,6 +43,8 @@ with col_lang3:
     if st.button(f"🇩🇪 Deutsch", key="lang_de_config", 
                 type="primary" if current_lang == 'de' else "secondary",
                 use_container_width=True):
+        st.session_state.language = 'de'
+        st.session_state.i18n_locale = 'de'
         set_locale('de')
         st.rerun()
 

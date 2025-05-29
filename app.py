@@ -63,9 +63,11 @@ def initialize_services():
 init_i18n()
 
 # Sync language between session state and i18n system
-if 'language' in st.session_state:
-    from utils.i18n import set_locale
-    set_locale(st.session_state.language)
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+    
+from utils.i18n import set_locale, get_locale
+set_locale(st.session_state.language)
 
 # Employee authentication
 if 'employee_logged_in' not in st.session_state:
@@ -96,6 +98,7 @@ with col_lang1:
                 type="primary" if current_lang == 'pl' else "secondary",
                 use_container_width=True):
         st.session_state.language = 'pl'
+        st.session_state.i18n_locale = 'pl'
         from utils.i18n import set_locale
         set_locale('pl')
         st.rerun()
@@ -106,6 +109,7 @@ with col_lang2:
                 type="primary" if current_lang == 'en' else "secondary",
                 use_container_width=True):
         st.session_state.language = 'en'
+        st.session_state.i18n_locale = 'en'
         from utils.i18n import set_locale
         set_locale('en')
         st.rerun()
@@ -116,6 +120,7 @@ with col_lang3:
                 type="primary" if current_lang == 'de' else "secondary",
                 use_container_width=True):
         st.session_state.language = 'de'
+        st.session_state.i18n_locale = 'de'
         from utils.i18n import set_locale
         set_locale('de')
         st.rerun()
@@ -126,6 +131,7 @@ with col_lang4:
                 type="primary" if current_lang == 'nl' else "secondary",
                 use_container_width=True):
         st.session_state.language = 'nl'
+        st.session_state.i18n_locale = 'nl'
         from utils.i18n import set_locale
         set_locale('nl')
         st.rerun()

@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from utils.groq_service import GroqService
-from utils.global_language import init_language, get_current_language, render_language_selector, t, translate_list
+from utils.i18n import init_i18n, t, get_locale, set_locale
 from utils.calculations import StructuralCalculations
 from utils.container_database import ContainerDatabase
 
@@ -17,8 +17,13 @@ if 'container_db' not in st.session_state:
 if 'calculations' not in st.session_state:
     st.session_state.calculations = StructuralCalculations()
 
-# Initialize language
-init_language()
+# Initialize i18n
+init_i18n()
+
+# Sync language state
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+set_locale(st.session_state.language)
 
 # Initialize Groq service
 if 'groq_service' not in st.session_state:
@@ -27,48 +32,56 @@ if 'groq_service' not in st.session_state:
 # Language selector with flag buttons
 col_lang1, col_lang2, col_lang3, col_lang4, col_spacer = st.columns([1, 1, 1, 1, 2])
 
-current_lang = get_current_language()
+current_lang = get_locale()
 
 with col_lang1:
     if st.button(f"🇵🇱 Polski", key="lang_pl_ai", 
                 type="primary" if current_lang == 'pl' else "secondary",
                 use_container_width=True):
-        set_language('pl')
+        st.session_state.language = 'pl'
+        st.session_state.i18n_locale = 'pl'
+        set_locale('pl')
         st.rerun()
 
 with col_lang2:
     if st.button(f"🇬🇧 English", key="lang_en_ai", 
                 type="primary" if current_lang == 'en' else "secondary",
                 use_container_width=True):
-        set_language('en')
+        st.session_state.language = 'en'
+        st.session_state.i18n_locale = 'en'
+        set_locale('en')
         st.rerun()
 
 with col_lang3:
     if st.button(f"🇩🇪 Deutsch", key="lang_de_ai", 
                 type="primary" if current_lang == 'de' else "secondary",
                 use_container_width=True):
-        set_language('de')
+        st.session_state.language = 'de'
+        st.session_state.i18n_locale = 'de'
+        set_locale('de')
         st.rerun()
 
 with col_lang4:
     if st.button(f"🇳🇱 Nederlands", key="lang_nl_ai", 
                 type="primary" if current_lang == 'nl' else "secondary",
                 use_container_width=True):
-        set_language('nl')
+        st.session_state.language = 'nl'
+        st.session_state.i18n_locale = 'nl'
+        set_locale('nl')
         st.rerun()
 
 # Navigation header
 col1, col2, col3 = st.columns([1, 2, 1])
 
 with col1:
-    if st.button(t('back_to_home'), key="config_nav"):
+    if st.button(t('ui.go_to_configurator'), key="config_nav"):
         st.switch_page("pages/1_Container_Configurator.py")
 
 with col2:
-    st.markdown(f"### 🤖 {t('ai_cost_estimation')}")
+    st.markdown(f"### 🤖 {t('nav.ai_cost_estimation')}")
 
 with col3:
-    if st.button(t('back_to_home'), key="home_nav"):
+    if st.button(t('ui.back_to_home'), key="home_nav"):
         st.switch_page("app.py")
 
 st.markdown("---")
