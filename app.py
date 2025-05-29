@@ -315,6 +315,58 @@ else:
         if st.button(t('get_quote'), key="client_ai", use_container_width=True, type="secondary"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
+# Customer services section - moved here after configuration/AI sections
+if not st.session_state.employee_logged_in:
+    st.markdown(f"""
+    <div style="margin: 3rem 0;">
+        <h2 style="text-align: center; color: #1e3c72; margin-bottom: 2rem;">
+            🛠️ {t('additional_services')}
+        </h2>
+    </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown(f"""
+        <div class="feature-card" style="
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            text-align: center;
+            padding: 2rem;
+        ">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📐</div>
+            <h3 style="color: #2c3e50; margin-bottom: 1rem;">
+                {t('drawing_analysis_service')}
+            </h3>
+            <p style="color: #34495e; margin-bottom: 0;">
+                {t('upload_drawings_estimate')}
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        if st.button(t('analyze_drawings'), key="customer_drawing_analysis", use_container_width=True):
+            st.switch_page("pages/9_Customer_Drawing_Analysis.py")
+
+    with col2:
+        st.markdown(f"""
+        <div class="feature-card" style="
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            text-align: center;
+            padding: 2rem;
+        ">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📧</div>
+            <h3 style="color: #2c3e50; margin-bottom: 1rem;">
+                {t('send_inquiry_service')}
+            </h3>
+            <p style="color: #34495e; margin-bottom: 0;">
+                {t('get_detailed_quote_text')}
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        if st.button(t('send_inquiry'), key="customer_inquiry", use_container_width=True):
+            st.switch_page("pages/8_Send_Inquiry.py")
+
 # Enhanced client benefits section
 if not st.session_state.employee_logged_in:
     st.markdown(f"""
@@ -387,57 +439,7 @@ if not st.session_state.employee_logged_in:
     </div>
     """, unsafe_allow_html=True)
 
-# Customer services section
-if not st.session_state.employee_logged_in:
-    st.markdown(f"""
-    <div style="margin: 3rem 0;">
-        <h2 style="text-align: center; color: #1e3c72; margin-bottom: 2rem;">
-            🛠️ {t('additional_services')}
-        </h2>
-    </div>
-    """, unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown(f"""
-        <div class="feature-card" style="
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            text-align: center;
-            padding: 2rem;
-        ">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">📐</div>
-            <h3 style="color: #2c3e50; margin-bottom: 1rem;">
-                {t('drawing_analysis_service')}
-            </h3>
-            <p style="color: #34495e; margin-bottom: 0;">
-                {t('upload_drawings_estimate')}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-        if st.button(t('analyze_drawings'), key="customer_drawing_analysis", use_container_width=True):
-            st.switch_page("pages/9_Customer_Drawing_Analysis.py")
-
-    with col2:
-        st.markdown(f"""
-        <div class="feature-card" style="
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            text-align: center;
-            padding: 2rem;
-        ">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">📧</div>
-            <h3 style="color: #2c3e50; margin-bottom: 1rem;">
-                {t('send_inquiry_service')}
-            </h3>
-            <p style="color: #34495e; margin-bottom: 0;">
-                {t('get_detailed_quote_text')}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-        if st.button(t('send_inquiry'), key="customer_inquiry", use_container_width=True):
-            st.switch_page("pages/8_Send_Inquiry.py")
 
 # Employee tools section
 if st.session_state.employee_logged_in:

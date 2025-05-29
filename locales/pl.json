@@ -203,8 +203,15 @@
   "estimate_disclaimer_title": "Ważne - Informacja Prawna",
   "estimate_disclaimer_text": "Powyższa wycena ma charakter orientacyjny i nie stanowi oferty w rozumieniu Kodeksu Cywilnego. Ostateczna cena może ulec zmianie w zależności od szczegółowych wymagań projektu, aktualnych cen materiałów i robocizny.",
   "get_precise_quote": "Chcesz otrzymać precyzyjną ofertę?",
-  "contact_for_quote": "Skontaktuj się z nami poprzez formularz zapytania - nasi eksperci przygotują dla Ciebie szczegółową wycenę dostosowaną do Twoich potrzeb.",
-  "send_inquiry_cta": "Wyślij Zapytanie o Ofertę",
+  "contact_for_quote": "Skontaktuj się z nami, aby uzyskać szczegółową wycenę dostosowaną do Twoich potrzeb.",
+  "send_inquiry_cta": "Wyślij zapytanie",
+  "drawing_analysis_service": "Analiza Rysunków",
+  "upload_drawings_estimate": "Prześlij rysunki techniczne i otrzymaj precyzyjną wycenę",
+  "send_inquiry_service": "Wyślij Zapytanie",
+  "get_detailed_quote_text": "Otrzymaj szczegółową wycenę dostosowaną do Twoich potrzeb",
+  "analyze_drawings": "Analizuj Rysunki",
+  "send_inquiry": "Wyślij Zapytanie",
+  "additional_services": "Dodatkowe Usługi",
   "delivery_cost": "Koszt transportu",
   "delivery": {
     "zones": {
