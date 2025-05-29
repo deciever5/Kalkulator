@@ -3,8 +3,13 @@ import pandas as pd
 import plotly.graph_objects as go
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
+from utils.translations import get_text
 
 st.set_page_config(page_title="Container Configurator", page_icon="📦", layout="wide", initial_sidebar_state="collapsed")
+
+# Initialize language
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
 
 # Initialize services
 if 'container_db' not in st.session_state:
@@ -64,10 +69,10 @@ st.markdown("""
 
 col1, col2 = st.columns(2)
 with col1:
-    if st.button("← Powrót do strony głównej", key="home_nav", use_container_width=True):
+    if st.button(get_text('back_to_home', st.session_state.language), key="home_nav", use_container_width=True):
         st.switch_page("app.py")
 with col2:
-    if st.button("🤖 Przejdź do Wyceny AI →", key="ai_nav", use_container_width=True):
+    if st.button(get_text('go_to_ai_estimate', st.session_state.language), key="ai_nav", use_container_width=True):
         st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 st.markdown("</div></div></div>", unsafe_allow_html=True)
