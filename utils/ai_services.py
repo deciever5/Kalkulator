@@ -821,4 +821,5 @@ def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any
 3. Site access limitations for delivery
 4. Material price fluctuations
 
-*Note: This is a basic estimate.
+*Note: This is a basic estimate. For more accurate pricing, please contact our team directly.*
+"""
