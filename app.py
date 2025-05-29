@@ -407,29 +407,29 @@ if not st.session_state.employee_logged_in:
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Enhanced contact section
-    st.markdown("""
+    st.markdown(f"""
     <div class="contact-section">
-        <h2 style="margin-bottom: 2rem; font-size: 2.2rem;">📞 Skontaktuj się z nami</h2>
+        <h2 style="margin-bottom: 2rem; font-size: 2.2rem;">📞 {get_text('contact_us', st.session_state.language)}</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">📍</div>
-                <h4 style="margin-bottom: 0.5rem;">Adres</h4>
+                <h4 style="margin-bottom: 0.5rem;">{get_text('address', st.session_state.language)}</h4>
                 <p style="opacity: 0.9;">Kąkolewo, Polska</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">📞</div>
-                <h4 style="margin-bottom: 0.5rem;">Telefon</h4>
+                <h4 style="margin-bottom: 0.5rem;">{get_text('phone', st.session_state.language)}</h4>
                 <p style="opacity: 0.9;">+48 XXX XXX XXX</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">✉️</div>
-                <h4 style="margin-bottom: 0.5rem;">Email</h4>
+                <h4 style="margin-bottom: 0.5rem;">{get_text('email', st.session_state.language)}</h4>
                 <p style="opacity: 0.9;">info@kan-bud.pl</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌐</div>
-                <h4 style="margin-bottom: 0.5rem;">Godziny pracy</h4>
-                <p style="opacity: 0.9;">Pon-Pt: 8:00-17:00</p>
+                <h4 style="margin-bottom: 0.5rem;">{get_text('working_hours', st.session_state.language)}</h4>
+                <p style="opacity: 0.9;">{get_text('mon_fri', st.session_state.language)}</p>
             </div>
         </div>
     </div>
