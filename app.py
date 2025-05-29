@@ -9,7 +9,7 @@ from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
 from utils.translations import get_text, get_available_languages
-from utils.ai_services import OpenAIService, AnthropicService
+from utils.groq_service import GroqService
 
 # Page configuration
 st.set_page_config(
@@ -48,18 +48,16 @@ def initialize_services():
             st.error(f"Historical data initialization: {str(e)}")
         historical_service = None
     
-    # Initialize AI services
+    # Initialize AI services (Groq)
     try:
-        openai_service = OpenAIService()
-        anthropic_service = AnthropicService()
+        groq_service = GroqService()
     except Exception as e:
         # Only show AI service errors to employees/admins
         if st.session_state.get('employee_logged_in', False):
-            st.warning(f"AI services initialization: {str(e)}")
-        openai_service = None
-        anthropic_service = None
+            st.warning(f"Groq AI service initialization: {str(e)}")
+        groq_service = None
     
-    return storage, container_db, calc, historical_service, openai_service, anthropic_service
+    return storage, container_db, calc, historical_service, groq_service
 
 # Language selection
 available_languages = get_available_languages()
@@ -73,33 +71,28 @@ if 'employee_logged_in' not in st.session_state:
 if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
-# Language selector at the very top with enhanced visibility
-st.markdown("""
-<div style="background: rgba(255,255,255,0.95); padding: 0.5rem; border-radius: 10px; margin-bottom: 1rem; border: 2px solid #e0e0e0;">
-<h4 style="text-align: center; margin: 0; color: #333; font-size: 1rem;">🌍 Choose Language / Wybierz Język / Sprache wählen / Kies Taal</h4>
-</div>
-""", unsafe_allow_html=True)
+# Language selector dropdown
+col_lang, col_spacer, col_login = st.columns([2, 4, 1])
 
-col1, col2, col3, col4, col_spacer, col_login = st.columns([1, 1, 1, 1, 2, 1])
-
-with col1:
-    if st.button("🇬🇧 English", key="lang_en", help="English", use_container_width=True):
-        st.session_state.language = 'en'
-        st.rerun()
-
-with col2:
-    if st.button("🇵🇱 Polski", key="lang_pl", help="Polski", use_container_width=True):
-        st.session_state.language = 'pl'
-        st.rerun()
-
-with col3:
-    if st.button("🇩🇪 Deutsch", key="lang_de", help="Deutsch", use_container_width=True):
-        st.session_state.language = 'de'
-        st.rerun()
-
-with col4:
-    if st.button("🇳🇱 Nederlands", key="lang_nl", help="Nederlands", use_container_width=True):
-        st.session_state.language = 'nl'
+with col_lang:
+    language_options = {
+        'en': 'English',
+        'pl': 'Polski', 
+        'de': 'Deutsch',
+        'nl': 'Nederlands'
+    }
+    
+    current_lang = st.session_state.get('language', 'pl')
+    selected_language = st.selectbox(
+        "Language / Język:",
+        options=list(language_options.keys()),
+        format_func=lambda x: language_options[x],
+        index=list(language_options.keys()).index(current_lang),
+        key="language_selector"
+    )
+    
+    if selected_language != current_lang:
+        st.session_state.language = selected_language
         st.rerun()
 
 with col_login:
@@ -268,7 +261,7 @@ if 'historical_service' not in st.session_state:
 lang = st.session_state.get('language', 'en')
 
 # Initialize services
-storage, container_db, calc, historical_service_init, openai_service, anthropic_service = initialize_services()
+storage, container_db, calc, historical_service_init, groq_service = initialize_services()
 
 st.markdown("---")
 

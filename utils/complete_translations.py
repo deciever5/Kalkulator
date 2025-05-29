@@ -35,15 +35,15 @@ COMPLETE_TRANSLATIONS = {
         'Marine': 'Marine',
         'Industrial': 'Industrial',
         
-        # Climate zones (European and African)
+        # European Climate zones
         'Central European': 'Central European',
         'Scandinavian': 'Scandinavian',
         'Mediterranean': 'Mediterranean',
         'Atlantic Maritime': 'Atlantic Maritime',
         'Continental': 'Continental',
         'Alpine': 'Alpine',
-        'North African': 'North African',
-        'Sub-Saharan': 'Sub-Saharan',
+        'Baltic': 'Baltic',
+        'Temperate Oceanic': 'Temperate Oceanic',
         
         # Finish levels
         'Basic': 'Basic',
