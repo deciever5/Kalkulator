@@ -83,60 +83,28 @@ class OpenAIService:
             raise Exception(f"OpenAI technical analysis error: {str(e)}")
 
     def _build_cost_estimation_prompt(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> str:
-        """Build prompt for cost estimation"""
-
+        """Build optimized prompt for cost estimation"""
         config = estimation_data.get("container_config", {})
+        
+        # Build compact configuration summary
+        config_summary = [
+            f"Type: {config.get('base_type', 'Unknown')}",
+            f"Use: {config.get('use_case', 'Unknown')}",
+            f"Occupancy: {config.get('occupancy', 1)}",
+            f"Environment: {config.get('environment', 'Unknown')}"
+        ]
+        
+        modifications = config.get('modifications', {})
+        if modifications:
+            mod_list = [f"{k}: {v}" for k, v in modifications.items() if v]
+            config_summary.append(f"Modifications: {', '.join(mod_list)}")
 
-        prompt = f"""
-        Analyze the following container modification project and provide a detailed cost estimate in JSON format.
+        return f"""Analyze container project. Config: {'; '.join(config_summary)}
+Location: {estimation_data.get('project_location', 'Europe')}
+Base costs: {json.dumps(base_costs, separators=(',', ':'))}
 
-        **Container Configuration:**
-        - Base Type: {config.get('base_type', 'Unknown')}
-        - Use Case: {config.get('use_case', 'Unknown')}
-        - Occupancy: {config.get('occupancy', 1)} people
-        - Environment: {config.get('environment', 'Unknown')}
-
-        **Modifications Required:**
-        {json.dumps(config.get('modifications', {}), indent=2)}
-
-        **Project Parameters:**
-        - Location: {estimation_data.get('project_location', 'Unknown')}
-        - Timeline: {estimation_data.get('project_timeline', 'Unknown')}
-        - Quality Level: {estimation_data.get('quality_level', 'Standard')}
-        - Additional Notes: {estimation_data.get('additional_notes', 'None')}
-
-        **Base Cost Calculations:**
-        {json.dumps(base_costs, indent=2)}
-
-        Please provide a comprehensive cost estimate with the following JSON structure.
-
-        **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
-
-        {{
-            "total_cost": 0,
-            "confidence": 0.0,
-            "estimated_timeline": "weeks",
-            "breakdown": {{
-                "container_base": 0,
-                "structural_modifications": 0,
-                "systems_installation": 0,
-                "finishes_interior": 0,
-                "labor_costs": 0,
-                "permits_fees": 0,
-                "delivery_logistics": 0,
-                "contingency": 0
-            }},
-            "analysis": {{
-                "recommendations": ["recommendation1", "recommendation2"],
-                "risk_factors": ["risk1", "risk2"],
-                "cost_optimization": ["optimization1", "optimization2"]
-            }}
-        }}
-
-        Consider current market conditions, regional pricing variations, and the specific requirements of the project.
-        """
-
-        return prompt
+Respond in {estimation_data.get('response_language', 'en')} with JSON:
+{{"total_cost":0,"confidence":0.8,"estimated_timeline":"8-12 weeks","breakdown":{{"container_base":0,"structural_modifications":0,"systems_installation":0,"finishes_interior":0,"labor_costs":0,"permits_fees":0,"delivery_logistics":0,"contingency":0}},"analysis":{{"recommendations":[],"risk_factors":[],"cost_optimization":[]}}}}"""
 
     def _build_technical_analysis_prompt(self, config: Dict[str, Any], analysis_params: Dict[str, Any], 
                                        structural_analysis: Dict[str, Any]) -> str:

@@ -19,53 +19,60 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Initialize services
+# Initialize services with lazy loading
 @st.cache_resource
-def initialize_services():
-    """Initialize all services with caching"""
+def get_storage_service():
+    """Initialize storage service only when needed"""
     try:
         db = DatabaseManager()
-        if db.engine:
-            storage = db
-        else:
-            storage = SimpleStorageManager()
-    except Exception as e:
-        if st.session_state.get('employee_logged_in', False):
-            st.error(f"Database initialization failed: {str(e)}")
-        storage = SimpleStorageManager()
+        return db if db.engine else SimpleStorageManager()
+    except Exception:
+        return SimpleStorageManager()
 
-    container_db = ContainerDatabase()
-    calc = StructuralCalculations()
+@st.cache_resource
+def get_container_db():
+    """Initialize container database only when needed"""
+    return ContainerDatabase()
 
+@st.cache_resource
+def get_calculations_service():
+    """Initialize calculations service only when needed"""
+    return StructuralCalculations()
+
+@st.cache_resource
+def get_historical_service():
+    """Initialize historical service only when needed"""
     try:
-        historical_service = HistoricalDataService()
-    except Exception as e:
-        if st.session_state.get('employee_logged_in', False):
-            st.error(f"Historical data initialization: {str(e)}")
-        historical_service = None
+        return HistoricalDataService()
+    except Exception:
+        return None
 
+@st.cache_resource
+def get_groq_service():
+    """Initialize Groq service only when needed"""
     try:
-        groq_service = GroqService()
-    except Exception as e:
-        if st.session_state.get('employee_logged_in', False):
-            st.warning(f"Groq AI service initialization: {str(e)}")
-        groq_service = None
+        return GroqService()
+    except Exception:
+        return None
 
-    return storage, container_db, calc, historical_service, groq_service
+# Initialize session state efficiently
+def init_session_state():
+    """Initialize session state with default values"""
+    defaults = {
+        'language': 'pl',
+        'employee_logged_in': False,
+        'show_login': False,
+        'services_initialized': False
+    }
+    
+    for key, value in defaults.items():
+        if key not in st.session_state:
+            st.session_state[key] = value
 
-# Initialize language
-if 'language' not in st.session_state:
-    st.session_state.language = 'pl'
+init_session_state()
 
 # Language selector
 render_language_selector()
-
-# Employee authentication
-if 'employee_logged_in' not in st.session_state:
-    st.session_state.employee_logged_in = False
-
-if 'show_login' not in st.session_state:
-    st.session_state.show_login = False
 
 # Employee login button
 col_spacer, col_login = st.columns([5, 1])
@@ -190,18 +197,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 </div>
 """, unsafe_allow_html=True)
 
-# Initialize session state
-if 'container_db' not in st.session_state:
-    st.session_state.container_db = ContainerDatabase()
-
-if 'calculations' not in st.session_state:
-    st.session_state.calculations = StructuralCalculations()
-
-if 'historical_service' not in st.session_state:
-    st.session_state.historical_service = HistoricalDataService()
-
-# Initialize services
-storage, container_db, calc, historical_service_init, groq_service = initialize_services()
+# Services are now initialized lazily when needed
 
 st.markdown("---")
 

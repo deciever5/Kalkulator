@@ -7,31 +7,39 @@ import streamlit as st
 import json
 import os
 
+@st.cache_data
 def load_translations():
-    """Load all translation files"""
+    """Load all translation files with caching"""
     translations = {}
     locales_dir = "locales"
 
-    if os.path.exists(locales_dir):
-        for filename in os.listdir(locales_dir):
-            if filename.endswith('.json'):
-                lang_code = filename[:-5]  # Remove .json extension
-                try:
-                    with open(os.path.join(locales_dir, filename), 'r', encoding='utf-8') as f:
-                        content = f.read()
-                        if content.strip():  # Check if file is not empty
-                            translations[lang_code] = json.loads(content)
-                        else:
-                            print(f"Warning: {filename} is empty")
-                except json.JSONDecodeError as e:
-                    print(f"JSON decode error in {filename}: {e}")
-                except Exception as e:
-                    print(f"Error loading {filename}: {e}")
+    if not os.path.exists(locales_dir):
+        return translations
+
+    for filename in os.listdir(locales_dir):
+        if not filename.endswith('.json'):
+            continue
+            
+        lang_code = filename[:-5]  # Remove .json extension
+        file_path = os.path.join(locales_dir, filename)
+        
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read().strip()
+                if content:
+                    translations[lang_code] = json.loads(content)
+        except (json.JSONDecodeError, FileNotFoundError, UnicodeDecodeError) as e:
+            print(f"Error loading {filename}: {e}")
+            continue
 
     return translations
 
-# Load translations once
-TRANSLATIONS = load_translations()
+# Load translations with caching
+def get_translations():
+    """Get translations with lazy loading"""
+    return load_translations()
+
+TRANSLATIONS = get_translations()
 
 # Translations loaded successfully
 

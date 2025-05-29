@@ -27,7 +27,7 @@ class DocumentAnalyzer:
         try:
             # Convert file to text content for Groq analysis
             file_bytes = uploaded_file.read()
-            
+
             # Reset file pointer for potential future use
             uploaded_file.seek(0)
 
@@ -41,7 +41,7 @@ class DocumentAnalyzer:
                 return result
             except Exception as e:
                 st.warning(f"Groq analysis failed: {str(e)}")
-                
+
                 # Try OpenAI if available
                 try:
                     base64_file = base64.b64encode(file_bytes).decode()
@@ -197,21 +197,21 @@ class DocumentAnalyzer:
 
     def _analyze_with_groq(self, filename: str, prompt: str, project_context: Dict[str, Any]) -> Dict[str, Any]:
         """Analyze drawing using Groq AI based on filename and context"""
-        
+
         # Build enhanced prompt with filename context
         enhanced_prompt = f"""
         {prompt}
-        
+
         DODATKOWE INFORMACJE:
         - Nazwa pliku: {filename}
         - Kontekst projektu: {json.dumps(project_context, indent=2)}
-        
+
         Na podstawie nazwy pliku i kontekstu projektu, przeprowadź inteligentną analizę i oszacuj elementy konstrukcyjne.
         Jeśli nazwa pliku zawiera wskazówki (np. "plan", "elewacja", "przekroj"), uwzględnij to w analizie.
-        
+
         Odpowiedz TYLKO w formacie JSON bez dodatkowych komentarzy.
         """
-        
+
         try:
             # Use Groq for text-based analysis
             response = self.groq_service.client.chat.completions.create(
@@ -229,30 +229,30 @@ class DocumentAnalyzer:
                 temperature=0.1,
                 max_tokens=2000
             )
-            
+
             result_text = response.choices[0].message.content
-            
+
             # Extract JSON from response
             json_match = re.search(r'\{.*\}', result_text, re.DOTALL)
             if json_match:
                 result = json.loads(json_match.group())
             else:
                 result = self._parse_text_response(result_text)
-                
+
             result['analysis_confidence'] = 'medium'
             result['analysis_method'] = 'groq_context_analysis'
-            
+
             return result
-            
+
         except Exception as e:
             raise Exception(f"Groq analysis failed: {str(e)}")
 
     def _analyze_with_intelligent_fallback(self, filename: str, project_context: Dict[str, Any]) -> Dict[str, Any]:
         """Intelligent fallback analysis based on filename and project context"""
-        
+
         # Analyze filename for clues
         filename_lower = filename.lower()
-        
+
         # Initialize base structure
         result = {
             "structural_elements": {
@@ -287,11 +287,11 @@ class DocumentAnalyzer:
                 "Zalecana ręczna weryfikacja przez zespół techniczny"
             ]
         }
-        
+
         # Analyze project context
         use_case = project_context.get('use_case', '').lower()
         container_type = project_context.get('container_type', '').lower()
-        
+
         # Make intelligent estimates based on use case
         if 'office' in use_case or 'biuro' in use_case:
             result["structural_elements"]["windows"]["count"] = 4
@@ -299,7 +299,7 @@ class DocumentAnalyzer:
             result["installations"]["electrical"]["complexity"] = "standard"
             result["installations"]["electrical"]["elements"] = ["oświetlenie LED", "gniazdka 230V", "internet"]
             result["cost_impact_summary"]["major_cost_drivers"] = ["okna", "instalacja elektryczna", "wykończenia"]
-            
+
         elif 'residential' in use_case or 'mieszkal' in use_case:
             result["structural_elements"]["windows"]["count"] = 6
             result["structural_elements"]["doors"]["count"] = 2
@@ -308,7 +308,7 @@ class DocumentAnalyzer:
             result["installations"]["hvac"]["complexity"] = "standard"
             result["cost_impact_summary"]["major_cost_drivers"] = ["instalacja hydrauliczna", "HVAC", "izolacja"]
             result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 25
-            
+
         elif 'restaurant' in use_case or 'gastronomia' in use_case:
             result["structural_elements"]["windows"]["count"] = 2
             result["structural_elements"]["doors"]["count"] = 3
@@ -317,7 +317,7 @@ class DocumentAnalyzer:
             result["installations"]["hvac"]["complexity"] = "advanced"
             result["cost_impact_summary"]["major_cost_drivers"] = ["wentylacja przemysłowa", "instalacja gazowa", "wykończenia specjalne"]
             result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 40
-            
+
         elif 'workshop' in use_case or 'warsztat' in use_case:
             result["structural_elements"]["windows"]["count"] = 2
             result["structural_elements"]["doors"]["count"] = 2
@@ -325,23 +325,23 @@ class DocumentAnalyzer:
             result["installations"]["electrical"]["complexity"] = "advanced"
             result["cost_impact_summary"]["major_cost_drivers"] = ["wzmocnienia strukturalne", "instalacja 400V", "wentylacja"]
             result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 20
-            
+
         # Analyze filename for additional clues
         if any(word in filename_lower for word in ['plan', 'floor', 'plan_pietra']):
             result["recommendations"].append("Plik zawiera plan piętra - możliwa szczegółowa analiza rozkładu")
-            
+
         if any(word in filename_lower for word in ['elewacja', 'facade', 'elevation']):
             result["recommendations"].append("Plik zawiera elewację - analiza okien i drzwi")
             result["structural_elements"]["windows"]["count"] += 2
-            
+
         if any(word in filename_lower for word in ['przekroj', 'section', 'cross']):
             result["recommendations"].append("Plik zawiera przekrój - analiza strukturalna")
             result["structural_elements"]["reinforcements"].append("wzmocnienia widoczne w przekroju")
-            
+
         result['analysis_confidence'] = 'medium'
         result['analysis_method'] = 'intelligent_fallback'
         result['status'] = 'context_based_analysis'
-        
+
         return result
 
     def _analyze_with_anthropic(self, base64_file: str, prompt: str) -> Dict[str, Any]:
@@ -467,6 +467,50 @@ class DocumentAnalyzer:
             "analysis_method": "fallback",
             "status": "failed"
         }
+
+    def _fallback_analysis(self, project_context: Dict[str, Any]) -> Dict[str, Any]:
+        """Provide fallback analysis when AI services fail - optimized"""
+
+        # Create result template once
+        return {
+            "structural_elements": {
+                "windows": {"count": 2, "types": ["standard"]},
+                "doors": {"count": 1, "types": ["main entrance"]},
+                "skylights": {"count": 0, "types": []},
+                "openings": {"total_area": "15 m²", "percentage": "8%"}
+            },
+            "installations": {
+                "electrical": {"complexity": "basic", "elements": ["podstawowe oświetlenie"]},
+                "plumbing": {"complexity": "none", "elements": []},
+                "hvac": {"complexity": "basic", "elements": ["wentylacja grawitacyjna"]}
+            },
+            "cost_impact_summary": {
+                "major_cost_drivers": self._get_cost_drivers(project_context),
+                "estimated_additional_cost_percentage": 10
+            },
+            "recommendations": self._get_recommendations(project_context)
+        }
+
+    def _get_cost_drivers(self, context: Dict[str, Any]) -> List[str]:
+        """Get cost drivers based on project context"""
+        use_case = context.get('use_case', '').lower()
+        drivers = []
+
+        if 'office' in use_case or 'biuro' in use_case:
+            drivers.extend(["okna", "instalacja elektryczna", "wykończenia"])
+        elif 'residential' in use_case or 'mieszkal' in use_case:
+            drivers.extend(["instalacja wodno-kanalizacyjna", "izolacja", "wykończenia"])
+        else:
+            drivers.extend(["modyfikacje strukturalne", "podstawowe instalacje"])
+
+        return drivers
+
+    def _get_recommendations(self, context: Dict[str, Any]) -> List[str]:
+        """Get recommendations based on project context"""
+        return [
+            "Analiza oparta na kontekście projektu",
+            "Zalecana ręczna weryfikacja przez zespół techniczny"
+        ]
 
     def calculate_cost_adjustments(self, analysis_result: Dict[str, Any], 
                                  base_estimate: float) -> Dict[str, Any]:

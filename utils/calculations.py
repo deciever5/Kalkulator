@@ -8,33 +8,39 @@ from typing import Dict, List, Any, Tuple
 import pandas as pd
 from datetime import datetime
 
+# Cache lookup tables
+BASE_COSTS = {
+    "20ft Standard": 8000,
+    "40ft Standard": 12000,
+    "40ft High Cube": 14000,
+    "20ft Refrigerated": 15000
+}
+
+USE_CASE_MULTIPLIERS = {
+    'Office Space': 1.5,
+    'Residential': 2.0,
+    'Storage': 1.0,
+    'Workshop': 1.3,
+    'Retail': 1.8,
+    'Restaurant': 2.2,
+    'Medical': 2.5,
+    'Laboratory': 3.0
+}
+
+FINISH_COSTS = {
+    'Basic': 0,
+    'Standard': 3000,
+    'Premium': 8000,
+    'Luxury': 15000
+}
+
 def calculate_container_cost(config):
-    """Calculate container cost based on configuration"""
-    base_costs = {
-        "20ft Standard": 8000,
-        "40ft Standard": 12000,
-        "40ft High Cube": 14000,
-        "20ft Refrigerated": 15000
-    }
+    """Calculate container cost based on configuration - optimized"""
+    base_cost = BASE_COSTS.get(config.get('container_type', '20ft Standard'), 8000)
+    multiplier = USE_CASE_MULTIPLIERS.get(config.get('main_purpose', 'Storage'), 1.0)
     
-    base_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
-    
-    # Add modification costs
+    # Calculate modifications cost efficiently
     modifications_cost = 0
-    
-    # Use case multipliers
-    use_case_multipliers = {
-        'Office Space': 1.5,
-        'Residential': 2.0,
-        'Storage': 1.0,
-        'Workshop': 1.3,
-        'Retail': 1.8,
-        'Restaurant': 2.2,
-        'Medical': 2.5,
-        'Laboratory': 3.0
-    }
-    
-    multiplier = use_case_multipliers.get(config.get('main_purpose', 'Storage'), 1.0)
     
     # Environment costs
     if config.get('environment') == 'Marine':
