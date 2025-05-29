@@ -140,9 +140,9 @@ st.markdown("""
 
 <div class="main-header">
     <div class="company-name">🏗️ KAN-BUD</div>
-    <div class="company-subtitle">{}</div>
+    <div class="company-subtitle">AI-Powered Cost Estimation for Container Modifications</div>
 </div>
-""".format(get_text('subtitle', st.session_state.get('language', 'en'))), unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # Header controls
 col1, col2, col3 = st.columns([2, 1, 1])
