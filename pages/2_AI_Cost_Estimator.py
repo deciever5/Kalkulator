@@ -20,9 +20,11 @@ if 'calculations' not in st.session_state:
 # Initialize i18n
 init_i18n()
 
-# Sync language state
+# Sync language state properly
 if 'language' not in st.session_state:
     st.session_state.language = 'pl'
+if 'i18n_locale' not in st.session_state:
+    st.session_state.i18n_locale = st.session_state.language
 set_locale(st.session_state.language)
 
 # Initialize Groq service

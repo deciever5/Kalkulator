@@ -8,6 +8,16 @@ from utils.advanced_3d_visualizer import Advanced3DVisualizer
 
 st.set_page_config(page_title="Container Configurator", page_icon="📦", layout="wide", initial_sidebar_state="collapsed")
 
+# Initialize services first
+if 'container_db' not in st.session_state:
+    st.session_state.container_db = ContainerDatabase()
+
+if 'calculations' not in st.session_state:
+    st.session_state.calculations = StructuralCalculations()
+
+if 'visualizer_3d' not in st.session_state:
+    st.session_state.visualizer_3d = Advanced3DVisualizer()
+
 # Initialize i18n
 init_i18n()
 
@@ -52,6 +62,8 @@ with col_lang4:
     if st.button(f"🇳🇱 Nederlands", key="lang_nl_config", 
                 type="primary" if current_lang == 'nl' else "secondary",
                 use_container_width=True):
+        st.session_state.language = 'nl'
+        st.session_state.i18n_locale = 'nl'
         set_locale('nl')
         st.rerun()
 
@@ -105,10 +117,12 @@ st.markdown("""
 
 col1, col2 = st.columns(2)
 with col1:
-    if st.button(t('ui.back_to_home'), key="home_nav", use_container_width=True):
+    home_text = "Powrót do głównej" if current_language == 'pl' else "Back to Home" if current_language == 'en' else "Zurück zur Startseite" if current_language == 'de' else "Terug naar home"
+    if st.button(home_text, key="home_nav", use_container_width=True):
         st.switch_page("app.py")
 with col2:
-    if st.button(t('ui.go_to_ai_estimate'), key="ai_nav", use_container_width=True):
+    ai_text = "Wycena AI" if current_language == 'pl' else "AI Cost Estimate" if current_language == 'en' else "KI-Kostenschätzung" if current_language == 'de' else "AI Kostenraming"
+    if st.button(ai_text, key="ai_nav", use_container_width=True):
         st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 st.markdown("</div></div></div>", unsafe_allow_html=True)
@@ -128,10 +142,14 @@ with col1:
 
     # Container type selection
     container_types = st.session_state.container_db.get_container_types()
+    
+    # Get current language for translations
+    current_language = st.session_state.get('language', 'pl')
+    
     selected_type = st.selectbox(
-        t('form.labels.container_type'),
+        "Typ kontenera" if current_language == 'pl' else "Container Type" if current_language == 'en' else "Containertyp" if current_language == 'de' else "Containertype",
         options=list(container_types.keys()),
-        help=t('container_help')
+        help="Wybierz podstawowy typ kontenera" if current_language == 'pl' else "Select base container type"
     )
 
     if selected_type:
@@ -142,30 +160,36 @@ with col1:
         # Display base specifications with enhanced styling
         spec_col1, spec_col2 = st.columns(2)
         with spec_col1:
+            length_label = "Długość" if current_language == 'pl' else "Length" if current_language == 'en' else "Länge" if current_language == 'de' else "Lengte"
+            width_label = "Szerokość" if current_language == 'pl' else "Width" if current_language == 'en' else "Breite" if current_language == 'de' else "Breedte"
+            
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">{t('length')}</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{length_label}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['length'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
             st.markdown("<br>", unsafe_allow_html=True)
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">{t('width')}</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{width_label}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['width'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
         with spec_col2:
+            height_label = "Wysokość" if current_language == 'pl' else "Height" if current_language == 'en' else "Höhe" if current_language == 'de' else "Hoogte"
+            weight_label = "Waga" if current_language == 'pl' else "Weight" if current_language == 'en' else "Gewicht" if current_language == 'de' else "Gewicht"
+            
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">{t('height')}</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{height_label}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['height'] * 0.3048:.1f} m</h2>
             </div>
             """, unsafe_allow_html=True)
             st.markdown("<br>", unsafe_allow_html=True)
             st.markdown(f"""
             <div class="metric-card">
-                <h4 style="margin: 0; color: #1e3c72;">{t('weight')}</h4>
+                <h4 style="margin: 0; color: #1e3c72;">{weight_label}</h4>
                 <h2 style="margin: 0.5rem 0; color: #667eea;">{container_specs['weight'] * 0.453592:.0f} kg</h2>
             </div>
             """, unsafe_allow_html=True)
@@ -191,16 +215,19 @@ with col1:
         "Custom Industrial"
     ]
 
-    selected_use_case = st.selectbox(t('main_purpose'), use_cases)
+    purpose_label = "Główne przeznaczenie" if current_language == 'pl' else "Main Purpose" if current_language == 'en' else "Hauptzweck" if current_language == 'de' else "Hoofddoel"
+    selected_use_case = st.selectbox(purpose_label, use_cases)
     st.session_state.container_config['use_case'] = selected_use_case
 
     st.markdown("<br>", unsafe_allow_html=True)
     # Occupancy and environment
     col_occ1, col_occ2 = st.columns(2)
     with col_occ1:
-        occupancy = st.number_input(t('expected_occupancy'), min_value=1, max_value=50, value=4)
+        occupancy_label = "Oczekiwana liczba osób" if current_language == 'pl' else "Expected Occupancy" if current_language == 'en' else "Erwartete Belegung" if current_language == 'de' else "Verwachte bezetting"
+        occupancy = st.number_input(occupancy_label, min_value=1, max_value=50, value=4)
     with col_occ2:
-        environment = st.selectbox(t('environment_label'), ["Indoor", "Outdoor", "Marine", "Industrial"])
+        env_label = "Środowisko" if current_language == 'pl' else "Environment" if current_language == 'en' else "Umgebung" if current_language == 'de' else "Omgeving"
+        environment = st.selectbox(env_label, ["Indoor", "Outdoor", "Marine", "Industrial"])
 
     st.session_state.container_config.update({
         'occupancy': occupancy,
