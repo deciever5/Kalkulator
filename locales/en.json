@@ -274,9 +274,9 @@
   "basic_estimate_note": "Note: This is a basic estimate. For more accurate pricing, please contact our team directly.",
   "estimate_disclaimer_title": "Important - Legal Notice",
   "estimate_disclaimer_text": "The above estimate is indicative and does not constitute an offer within the meaning of the Civil Code. The final price may change depending on detailed project requirements, current material and labor costs.",
-  "get_precise_quote": "Want to receive a precise quote?",
-  "contact_for_quote": "Contact us through the inquiry form - our experts will prepare a detailed quote tailored to your needs.",
-  "send_inquiry_cta": "Send Quote Inquiry",
+  "get_precise_quote": "Get Precise Quote",
+  "contact_for_quote": "Contact us for a detailed quote tailored to your needs.",
+  "send_inquiry_cta": "Send Inquiry",
   "delivery_logistics": "Delivery & Logistics",
   "delivery_cost": "Delivery cost",
   "delivery": {

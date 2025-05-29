@@ -32,28 +32,38 @@ st.warning(f"""
 # Check if there's a saved configuration or estimate
 has_config = 'container_config' in st.session_state and st.session_state.container_config
 has_estimate = 'ai_estimate' in st.session_state
+has_inquiry_data = 'inquiry_config' in st.session_state
 
-if has_config or has_estimate:
+# Use inquiry data if available (from AI estimator or other sources)
+config_to_use = st.session_state.get('inquiry_config', st.session_state.get('container_config', {}))
+estimate_to_use = st.session_state.get('inquiry_estimate', st.session_state.get('ai_estimate', ''))
+
+if has_config or has_estimate or has_inquiry_data:
     st.success(f"✅ {t('send_inquiry.config_detected')}")
     
     # Show summary of current configuration
-    with st.expander(f"📋 {t('send_inquiry.current_config')}"):
-        if has_config:
-            config = st.session_state.container_config
+    with st.expander(f"📋 {t('send_inquiry.current_config')}", expanded=True):
+        if config_to_use:
             col1, col2 = st.columns(2)
             
             with col1:
-                st.write(f"**{t('form.labels.container_type')}:** {config.get('container_type', 'N/A')}")
-                st.write(f"**{t('form.labels.main_purpose')}:** {config.get('main_purpose', 'N/A')}")
-                st.write(f"**{t('form.labels.environment')}:** {config.get('environment', 'N/A')}")
+                st.write(f"**{t('form.labels.container_type')}:** {config_to_use.get('container_type', 'N/A')}")
+                st.write(f"**{t('form.labels.main_purpose')}:** {config_to_use.get('main_purpose', 'N/A')}")
+                st.write(f"**{t('form.labels.environment')}:** {config_to_use.get('environment', 'N/A')}")
             
             with col2:
-                st.write(f"**{t('form.labels.finish_level')}:** {config.get('finish_level', 'N/A')}")
-                st.write(f"**{t('form.labels.delivery_zone')}:** {config.get('delivery_zone', 'N/A')}")
+                st.write(f"**{t('form.labels.finish_level')}:** {config_to_use.get('finish_level', 'N/A')}")
+                st.write(f"**{t('form.labels.delivery_zone')}:** {config_to_use.get('delivery_zone', 'N/A')}")
                 
                 if 'cost_breakdown' in st.session_state:
                     total_cost = st.session_state.cost_breakdown.get('total_cost', 0)
                     st.write(f"**{t('total_cost')}:** €{total_cost:,.2f}")
+        
+        # Show AI estimate if available
+        if estimate_to_use:
+            st.markdown("**AI Cost Estimate:**")
+            with st.container():
+                st.markdown(estimate_to_use[:300] + "..." if len(estimate_to_use) > 300 else estimate_to_use)
 
 # Customer information form
 st.subheader(f"👤 {t('send_inquiry.customer_info')}")
@@ -142,10 +152,22 @@ uploaded_files = st.file_uploader(
     help=t('send_inquiry.file_formats_help')
 )
 
+# File size validation
+files_valid = True
+total_size = 0
+max_total_size = 15 * 1024 * 1024  # 15MB in bytes
+
 if uploaded_files:
-    st.info(f"{t('send_inquiry.files_attached')}: {len(uploaded_files)}")
     for file in uploaded_files:
-        st.write(f"📄 {file.name}")
+        total_size += file.size
+    
+    if total_size > max_total_size:
+        st.error(f"❌ Total file size ({total_size / (1024*1024):.1f} MB) exceeds 15MB limit. Please reduce file sizes or remove some files.")
+        files_valid = False
+    else:
+        st.success(f"✅ {t('send_inquiry.files_attached')}: {len(uploaded_files)} files ({total_size / (1024*1024):.1f} MB / 15 MB)")
+        for file in uploaded_files:
+            st.write(f"📄 {file.name} ({file.size / (1024*1024):.1f} MB)")
 
 # Contact preferences
 st.subheader(f"📞 {t('send_inquiry.contact_preferences')}")
@@ -184,10 +206,13 @@ st.divider()
 
 # Validation
 required_fields = [customer_name, customer_email, customer_phone, customer_city, project_location, expected_timeline, inquiry_type]
-all_required_filled = all(field.strip() for field in required_fields) and privacy_consent
+all_required_filled = all(field.strip() for field in required_fields) and privacy_consent and files_valid
 
 if not all_required_filled:
-    st.warning(f"⚠️ {t('send_inquiry.fill_required_fields')}")
+    if not files_valid:
+        st.warning(f"⚠️ Please fix file size issues before submitting.")
+    else:
+        st.warning(f"⚠️ {t('send_inquiry.fill_required_fields')}")
 
 if st.button(f"📧 {t('send_inquiry.submit_inquiry')}", use_container_width=True, type="primary", disabled=not all_required_filled):
     # Prepare inquiry data
@@ -224,14 +249,18 @@ if st.button(f"📧 {t('send_inquiry.submit_inquiry')}", use_container_width=Tru
     }
     
     # Add configuration data if available
-    if has_config:
-        inquiry_data['container_config'] = st.session_state.container_config
+    if config_to_use:
+        inquiry_data['container_config'] = config_to_use
         
-    if has_estimate:
-        inquiry_data['ai_estimate'] = st.session_state.ai_estimate
+    if estimate_to_use:
+        inquiry_data['ai_estimate'] = estimate_to_use
         
     if 'cost_breakdown' in st.session_state:
         inquiry_data['cost_breakdown'] = st.session_state.cost_breakdown
+        
+    # Add source information
+    if 'inquiry_source' in st.session_state:
+        inquiry_data['source'] = st.session_state.inquiry_source
     
     # Save inquiry (in real app, this would be sent via email/API)
     try:
@@ -259,6 +288,14 @@ if st.button(f"📧 {t('send_inquiry.submit_inquiry')}", use_container_width=Tru
         """)
         
         st.balloons()
+        
+        # Clear inquiry transfer data
+        if 'inquiry_source' in st.session_state:
+            del st.session_state.inquiry_source
+        if 'inquiry_config' in st.session_state:
+            del st.session_state.inquiry_config
+        if 'inquiry_estimate' in st.session_state:
+            del st.session_state.inquiry_estimate
         
         # Option to create new inquiry
         if st.button(f"📝 {t('send_inquiry.new_inquiry')}", use_container_width=True):

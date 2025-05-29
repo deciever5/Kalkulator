@@ -320,5 +320,8 @@
   },
   "labor_costs_30": "Arbeidskosten (30%)",
   "base_cost": "Basiskosten",
-  "modifications": "Aanpassingen"
+  "modifications": "Aanpassingen",
+  "get_precise_quote": "Nauwkeurige Offerte Verkrijgen",
+  "contact_for_quote": "Neem contact met ons op voor een gedetailleerde offerte op maat.",
+  "send_inquiry_cta": "Aanvraag Verzenden"
 }
