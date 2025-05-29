@@ -59,9 +59,8 @@ def initialize_services():
 
     return storage, container_db, calc, historical_service, groq_service
 
-# Initialize i18n and language selector
+# Initialize i18n
 init_i18n()
-render_language_selector("main")
 
 # Employee authentication
 if 'employee_logged_in' not in st.session_state:
@@ -70,28 +69,52 @@ if 'employee_logged_in' not in st.session_state:
 if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
-# Language selector dropdown
-col_lang, col_spacer, col_login = st.columns([2, 4, 1])
+# Initialize language if not set
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
 
-with col_lang:
-    language_options = {
-        'en': 'English',
-        'pl': 'Polski', 
-        'de': 'Deutsch',
-        'nl': 'Nederlands'
-    }
+# Language selector with flag buttons and login
+col_lang1, col_lang2, col_lang3, col_lang4, col_spacer, col_login = st.columns([1, 1, 1, 1, 2, 1])
 
-    current_lang = st.session_state.get('language', 'pl')
-    selected_language = st.selectbox(
-        "Language / Język:",
-        options=list(language_options.keys()),
-        format_func=lambda x: language_options[x],
-        index=list(language_options.keys()).index(current_lang),
-        key="language_selector"
-    )
+language_options = {
+    'pl': {'flag': '🇵🇱', 'name': 'Polski'},
+    'en': {'flag': '🇬🇧', 'name': 'English'},
+    'de': {'flag': '🇩🇪', 'name': 'Deutsch'},
+    'nl': {'flag': '🇳🇱', 'name': 'Nederlands'}
+}
 
-    if selected_language != current_lang:
-        st.session_state.language = selected_language
+current_lang = st.session_state.get('language', 'pl')
+
+with col_lang1:
+    if st.button(f"🇵🇱 Polski", key="lang_pl", 
+                help="Zmień język na polski",
+                type="primary" if current_lang == 'pl' else "secondary",
+                use_container_width=True):
+        st.session_state.language = 'pl'
+        st.rerun()
+
+with col_lang2:
+    if st.button(f"🇬🇧 English", key="lang_en", 
+                help="Change language to English",
+                type="primary" if current_lang == 'en' else "secondary",
+                use_container_width=True):
+        st.session_state.language = 'en'
+        st.rerun()
+
+with col_lang3:
+    if st.button(f"🇩🇪 Deutsch", key="lang_de", 
+                help="Sprache auf Deutsch ändern",
+                type="primary" if current_lang == 'de' else "secondary",
+                use_container_width=True):
+        st.session_state.language = 'de'
+        st.rerun()
+
+with col_lang4:
+    if st.button(f"🇳🇱 Nederlands", key="lang_nl", 
+                help="Verander taal naar Nederlands",
+                type="primary" if current_lang == 'nl' else "secondary",
+                use_container_width=True):
+        st.session_state.language = 'nl'
         st.rerun()
 
 with col_login:
@@ -241,10 +264,6 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
     <div class="company-subtitle">AI-Powered Cost Estimation for Container Modifications</div>
 </div>
 """, unsafe_allow_html=True)
-
-# Language change information
-if st.session_state.language != 'en':
-    st.info(f"Language changed to: {available_languages[st.session_state.language]}")
 
 # Initialize session state
 if 'container_db' not in st.session_state:
