@@ -64,14 +64,48 @@ def calculate_container_cost(config):
     if config.get('hvac_system'):
         modifications_cost += 4000
     
-    total_cost = (base_cost + modifications_cost) * multiplier
+    # Calculate delivery costs based on delivery zone
+    delivery_cost = calculate_delivery_cost(config.get('delivery_zone', 'Local'), config.get('container_type', '20ft Standard'))
+    
+    total_cost = (base_cost + modifications_cost) * multiplier + delivery_cost
     
     return {
         'base_cost': base_cost,
         'modifications_cost': modifications_cost,
         'multiplier': multiplier,
+        'delivery_cost': delivery_cost,
         'total_cost': total_cost
     }
+
+def calculate_delivery_cost(delivery_zone, container_type):
+    """Calculate delivery cost based on zone and container type"""
+    
+    # Base delivery costs by zone (in EUR)
+    zone_costs = {
+        'Local': 800,           # Poland local (do 100km)
+        'Poland': 1200,         # Poland nationwide
+        'Central_Europe': 2500, # Germany, Czech Republic, Slovakia, Austria
+        'Western_Europe': 3500, # France, Netherlands, Belgium, Luxembourg
+        'Northern_Europe': 4000, # Denmark, Sweden, Norway, Finland
+        'Southern_Europe': 4200, # Italy, Spain, Portugal, Greece
+        'Eastern_Europe': 3200,  # Hungary, Romania, Bulgaria, Croatia
+        'UK_Ireland': 4500,     # United Kingdom, Ireland
+        'International': 6500   # Outside Europe
+    }
+    
+    base_delivery = zone_costs.get(delivery_zone, 800)
+    
+    # Container size multipliers
+    size_multipliers = {
+        "20ft Standard": 1.0,
+        "40ft Standard": 1.4,
+        "40ft High Cube": 1.5,
+        "20ft Refrigerated": 1.2
+    }
+    
+    multiplier = size_multipliers.get(container_type, 1.0)
+    
+    return base_delivery * multiplier
 
 class StructuralCalculations:
     """Class for structural engineering calculations and analysis"""
@@ -707,35 +741,67 @@ class StructuralCalculations:
     
     def calculate_project_timeline(self, config: Dict[str, Any], 
                                  structural_results: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
-        """Calculate project timeline based on scope"""
+        """Calculate project timeline based on scope - minimum 6-8 weeks"""
         
         modifications = config.get('modifications', {})
         base_type = config.get('base_type', '40ft Standard')
+        delivery_zone = config.get('delivery_zone', 'Local')
         
         timeline = {}
         
-        # Phase 1: Design and Permits
-        design_weeks = 2
+        # Phase 1: Design and Documentation (1-2 weeks minimum)
+        design_weeks = 2  # Minimum 2 weeks for documentation
         if structural_results.get("stress_ratio", 0) > 0.7:
-            design_weeks += 2  # Additional time for structural engineering
+            design_weeks = 3  # Complex projects need more time
+        if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
+            design_weeks = 3  # Structural modifications need detailed engineering
         
-        timeline["Design_and_Permits"] = {
+        timeline["Design_and_Documentation"] = {
             "duration": f"{design_weeks} weeks",
-            "description": "Design development, engineering, permit applications"
+            "description": "Technical documentation, engineering calculations, permit applications"
         }
         
-        # Phase 2: Site Preparation
+        # Phase 2: Material Procurement and Delivery (3-4 weeks minimum)
+        procurement_weeks = 3  # Minimum 3 weeks for materials
+        
+        # Adjust based on delivery zone
+        delivery_time_adjustments = {
+            'Local': 0,
+            'Poland': 0.5,
+            'Central_Europe': 1,
+            'Western_Europe': 1.5,
+            'Northern_Europe': 2,
+            'Southern_Europe': 2,
+            'Eastern_Europe': 1.5,
+            'UK_Ireland': 2.5,
+            'International': 4
+        }
+        
+        procurement_weeks += delivery_time_adjustments.get(delivery_zone, 0)
+        
+        # Additional time for complex modifications
+        if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
+            procurement_weeks += 1
+        if modifications.get('hvac') or modifications.get('electrical'):
+            procurement_weeks += 0.5
+        
+        timeline["Material_Procurement"] = {
+            "duration": f"{procurement_weeks:.1f} weeks",
+            "description": f"Container procurement, material sourcing, delivery from {delivery_zone}"
+        }
+        
+        # Phase 3: Site Preparation  
         site_prep_weeks = 1
         foundation_type = structural_results.get("foundation_type", "Concrete Pads")
         if foundation_type != "Concrete Pads":
             site_prep_weeks += 1
         
         timeline["Site_Preparation"] = {
-            "duration": f"{site_prep_weeks} weeks",
+            "duration": f"{site_prep_weeks} weeks", 
             "description": f"Site preparation, {foundation_type.lower()} installation"
         }
         
-        # Phase 3: Container Modifications
+        # Phase 4: Container Modifications
         mod_weeks = 2
         if modifications.get('windows', 0) > 2:
             mod_weeks += 1
@@ -747,7 +813,7 @@ class StructuralCalculations:
             "description": "Structural modifications, openings, reinforcements"
         }
         
-        # Phase 4: Systems Installation
+        # Phase 5: Systems Installation
         systems_weeks = 2
         if modifications.get('electrical'):
             systems_weeks += 1
@@ -757,11 +823,11 @@ class StructuralCalculations:
             systems_weeks += 1
         
         timeline["Systems_Installation"] = {
-            "duration": f"{systems_weeks} weeks",
+            "duration": f"{systems_weeks} weeks", 
             "description": "Electrical, plumbing, HVAC installation"
         }
         
-        # Phase 5: Finishes
+        # Phase 6: Interior Finishes
         finish_weeks = 1
         if modifications.get('insulation'):
             finish_weeks += 1
@@ -775,10 +841,25 @@ class StructuralCalculations:
             "description": "Insulation, flooring, interior finishes"
         }
         
-        # Phase 6: Final Inspections
+        # Phase 7: Final Inspections and Commissioning
         timeline["Final_Inspections"] = {
             "duration": "1 week",
-            "description": "Final inspections, testing, commissioning"
+            "description": "Final inspections, testing, commissioning, handover"
+        }
+        
+        # Calculate total timeline and ensure minimum 6-8 weeks
+        total_weeks = design_weeks + procurement_weeks + site_prep_weeks + mod_weeks + systems_weeks + finish_weeks + 1
+        
+        if total_weeks < 6:
+            # Adjust procurement time to meet minimum
+            adjustment = 6 - total_weeks
+            timeline["Material_Procurement"]["duration"] = f"{procurement_weeks + adjustment:.1f} weeks"
+            timeline["Material_Procurement"]["description"] += f" (adjusted for minimum project timeline)"
+            total_weeks = 6
+        
+        timeline["Total_Project_Duration"] = {
+            "duration": f"{total_weeks:.1f} weeks",
+            "description": f"Complete project delivery (minimum 6-8 weeks for quality assurance)"
         }
         
         return timeline

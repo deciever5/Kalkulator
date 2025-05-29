@@ -251,6 +251,26 @@
   "site_access_limitations": "Site access limitations for delivery",
   "material_price_fluctuations": "Material price fluctuations",
   "basic_estimate_note": "Note: This is a basic estimate. For more accurate pricing, please contact our team directly.",
+  "delivery_logistics": "Delivery & Logistics",
+  "delivery_cost": "Delivery cost",
+  "delivery": {
+    "zones": {
+      "local": "Local (up to 100km)",
+      "poland": "Poland (nationwide)",
+      "central_europe": "Central Europe (DE, CZ, SK, AT)",
+      "western_europe": "Western Europe (FR, NL, BE, LU)",
+      "northern_europe": "Northern Europe (DK, SE, NO, FI)", 
+      "southern_europe": "Southern Europe (IT, ES, PT, GR)",
+      "eastern_europe": "Eastern Europe (HU, RO, BG, HR)",
+      "uk_ireland": "United Kingdom & Ireland",
+      "international": "International (outside Europe)"
+    }
+  },
+  "form": {
+    "labels": {
+      "delivery_zone": "Delivery zone"
+    }
+  },
   "labor_costs_30": "Labor Costs (30%)",
   "base_cost": "Base Cost",
   "modifications": "Modifications"

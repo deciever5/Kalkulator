@@ -222,6 +222,30 @@ with col2:
 
 st.markdown('</div>', unsafe_allow_html=True)
 
+# Delivery and logistics
+st.markdown(f'<div class="config-section"><div class="section-title">🚛 {t("delivery_logistics")}</div>', unsafe_allow_html=True)
+
+delivery_zones = {
+    t('delivery.zones.local'): "Local",
+    t('delivery.zones.poland'): "Poland", 
+    t('delivery.zones.central_europe'): "Central_Europe",
+    t('delivery.zones.western_europe'): "Western_Europe",
+    t('delivery.zones.northern_europe'): "Northern_Europe",
+    t('delivery.zones.southern_europe'): "Southern_Europe",
+    t('delivery.zones.eastern_europe'): "Eastern_Europe",
+    t('delivery.zones.uk_ireland'): "UK_Ireland",
+    t('delivery.zones.international'): "International"
+}
+
+delivery_zone_display = st.selectbox(
+    t('form.labels.delivery_zone'),
+    list(delivery_zones.keys()),
+    key="delivery_zone_display"
+)
+delivery_zone = delivery_zones[delivery_zone_display]
+
+st.markdown('</div>', unsafe_allow_html=True)
+
 # Configuration summary and cost calculation
 config = {
     'container_type': container_type,
@@ -234,7 +258,8 @@ config = {
     'additional_doors': additional_doors,
     'electrical_system': electrical_system,
     'plumbing_system': plumbing_system,
-    'hvac_system': hvac_system
+    'hvac_system': hvac_system,
+    'delivery_zone': delivery_zone
 }
 
 # Calculate cost
@@ -262,6 +287,7 @@ with col2:
     st.markdown(f"**{t('cost_breakdown')}:**")
     st.write(f"• {t('base_cost')}: €{cost_breakdown['base_cost']:,.2f}")
     st.write(f"• {t('modifications')}: €{cost_breakdown['modifications_cost']:,.2f}")
+    st.write(f"• {t('delivery_cost')}: €{cost_breakdown['delivery_cost']:,.2f}")
     st.write(f"• {t('multiplier')}: {cost_breakdown['multiplier']:.1f}x")
     st.markdown(f"**{t('total_cost')}: €{cost_breakdown['total_cost']:,.2f}**")
 

@@ -227,7 +227,27 @@
   "permit_timeline_variations": "Różnice w harmonogramie pozwoleń",
   "site_access_limitations": "Ograniczenia dostępu do placu dla dostawy",
   "material_price_fluctuations": "Wahania cen materiałów",
-  "basic_estimate_note": "Uwaga: To jest podstawowa wycena. Aby uzyskać dokładniejsze ceny, skontaktuj się z naszym zespołem.",
+  "basic_estimate_note": "Uwaga: To jest podstawowa wycena. Aby uzyskać dokładniejszą wycenę, skontaktuj się bezpośrednio z naszym zespołem.",
+  "delivery_logistics": "Transport i Logistyka",
+  "delivery_cost": "Koszt transportu",
+  "delivery": {
+    "zones": {
+      "local": "Lokalny (do 100km)",
+      "poland": "Polska (cały kraj)",
+      "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
+      "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
+      "northern_europe": "Europa Północna (DK, SE, NO, FI)",
+      "southern_europe": "Europa Południowa (IT, ES, PT, GR)",
+      "eastern_europe": "Europa Wschodnia (HU, RO, BG, HR)",
+      "uk_ireland": "Wielka Brytania i Irlandia",
+      "international": "Międzynarodowy (poza Europą)"
+    }
+  },
+  "form": {
+    "labels": {
+      "delivery_zone": "Strefa dostawy"
+    }
+  },
   "labor_costs_30": "Koszty pracy (30%)",
   "base_cost": "Koszt podstawowy", 
   "modifications": "Modyfikacje"

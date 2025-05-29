@@ -258,7 +258,27 @@
   "permit_timeline_variations": "Variaties in vergunningsgoedkeuringstijdlijn",
   "site_access_limitations": "Toegangsbeperkingen voor levering",
   "material_price_fluctuations": "Materiaalprijs fluctuaties",
-  "basic_estimate_note": "Opmerking: Dit is een basisschatting. Neem contact op met ons team voor meer nauwkeurige prijzen.",
+  "basic_estimate_note": "Opmerking: Dit is een basisschatting. Voor nauwkeurigere prijzen kunt u rechtstreeks contact opnemen met ons team.",
+  "delivery_logistics": "Levering & Logistiek",
+  "delivery_cost": "Leveringskosten",
+  "delivery": {
+    "zones": {
+      "local": "Lokaal (tot 100km)",
+      "poland": "Polen (landelijk)",
+      "central_europe": "Midden-Europa (DE, CZ, SK, AT)",
+      "western_europe": "West-Europa (FR, NL, BE, LU)",
+      "northern_europe": "Noord-Europa (DK, SE, NO, FI)",
+      "southern_europe": "Zuid-Europa (IT, ES, PT, GR)",
+      "eastern_europe": "Oost-Europa (HU, RO, BG, HR)",
+      "uk_ireland": "Verenigd Koninkrijk & Ierland",
+      "international": "Internationaal (buiten Europa)"
+    }
+  },
+  "form": {
+    "labels": {
+      "delivery_zone": "Leveringszone"
+    }
+  },
   "labor_costs_30": "Arbeidskosten (30%)",
   "base_cost": "Basiskosten",
   "modifications": "Aanpassingen"

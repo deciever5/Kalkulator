@@ -249,7 +249,27 @@
   "permit_timeline_variations": "Variationen der Genehmigungszeitleiste",
   "site_access_limitations": "Standortzugangsbeschränkungen für Lieferung",
   "material_price_fluctuations": "Materialpreisschwankungen",
-  "basic_estimate_note": "Hinweis: Dies ist eine Grundschätzung. Für genauere Preise kontaktieren Sie bitte unser Team.",
+  "basic_estimate_note": "Hinweis: Dies ist eine grundlegende Schätzung. Für eine genauere Preisgestaltung wenden Sie sich bitte direkt an unser Team.",
+  "delivery_logistics": "Lieferung & Logistik",
+  "delivery_cost": "Lieferkosten",
+  "delivery": {
+    "zones": {
+      "local": "Lokal (bis 100km)",
+      "poland": "Polen (landesweit)",
+      "central_europe": "Mitteleuropa (DE, CZ, SK, AT)",
+      "western_europe": "Westeuropa (FR, NL, BE, LU)",
+      "northern_europe": "Nordeuropa (DK, SE, NO, FI)",
+      "southern_europe": "Südeuropa (IT, ES, PT, GR)",
+      "eastern_europe": "Osteuropa (HU, RO, BG, HR)",
+      "uk_ireland": "Großbritannien & Irland",
+      "international": "International (außerhalb Europas)"
+    }
+  },
+  "form": {
+    "labels": {
+      "delivery_zone": "Lieferzone"
+    }
+  },
   "labor_costs_30": "Arbeitskosten (30%)",
   "base_cost": "Grundkosten",
   "modifications": "Änderungen",
