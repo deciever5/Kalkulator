@@ -97,29 +97,29 @@ def render_language_selector():
 
     current_lang = get_current_language()
 
-    # Create compact flag-only buttons for language selection
-    col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
+    # Create compact flag-only buttons for language selection in one row
+    col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        if st.button("🇵🇱", key="lang_pl", help="Polski"):
+        if st.button("🇵🇱", key="lang_pl", help="Polski", use_container_width=True):
             if current_lang != 'pl':
                 set_language('pl')
                 st.rerun()
     
     with col2:
-        if st.button("🇬🇧", key="lang_en", help="English"):
+        if st.button("🇬🇧", key="lang_en", help="English", use_container_width=True):
             if current_lang != 'en':
                 set_language('en')
                 st.rerun()
     
     with col3:
-        if st.button("🇩🇪", key="lang_de", help="Deutsch"):
+        if st.button("🇩🇪", key="lang_de", help="Deutsch", use_container_width=True):
             if current_lang != 'de':
                 set_language('de')
                 st.rerun()
     
     with col4:
-        if st.button("🇳🇱", key="lang_nl", help="Nederlands"):
+        if st.button("🇳🇱", key="lang_nl", help="Nederlands", use_container_width=True):
             if current_lang != 'nl':
                 set_language('nl')
                 st.rerun()
