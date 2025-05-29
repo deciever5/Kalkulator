@@ -267,7 +267,7 @@ else:
     """, unsafe_allow_html=True)
     
     # Enhanced client action cards
-    col1, col2 = st.columns(2, gap="xl")
+    col1, col2 = st.columns(2, gap="large")
     
     with col1:
         st.markdown(f"""
