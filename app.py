@@ -1,8 +1,14 @@
 import streamlit as st
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-from datetime import datetime
+
+# Set page config first - before any other Streamlit commands
+st.set_page_config(
+    page_title="KAN-BUD Professional Container Solutions",
+    page_icon="🏗️",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+# Import after page config
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
@@ -10,14 +16,6 @@ from utils.simple_storage import SimpleStorageManager
 from utils.historical_data_service import HistoricalDataService
 from utils.translations import t, render_language_selector
 from utils.groq_service import GroqService
-
-# Page configuration
-st.set_page_config(
-    page_title="KAN-BUD Professional Container Solutions",
-    page_icon="🏗️",
-    layout="wide",
-    initial_sidebar_state="collapsed"
-)
 
 # Initialize services with lazy loading
 @st.cache_resource
@@ -64,7 +62,7 @@ def init_session_state():
         'show_login': False,
         'services_initialized': False
     }
-    
+
     for key, value in defaults.items():
         if key not in st.session_state:
             st.session_state[key] = value
