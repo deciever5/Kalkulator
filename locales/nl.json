@@ -15,17 +15,21 @@
     "access_denied": "Toegang Geweigerd"
   },
   "nav": {
-    "comparison_tool": "Vergelijkings\ntool",
+    "comparison_tool": "Vergelijkings\nTool",
     "comparison_tool_desc": "Configuraties vergelijken",
-    "drawing_analysis": "Tekening\nanalyse",
-    "drawing_analysis_desc": "AI documentanalyse",
+    "drawing_analysis": "Tekening\nAnalyse",
+    "drawing_analysis_desc": "AI document analyse",
     "admin_panel": "Admin\nPaneel",
     "admin_panel_desc": "Systeembeheer",
     "ai_cost_estimation": "AI Kostenschatting",
     "container_configurator": "Container Configurator",
     "technical_analysis": "Technische Analyse",
     "quote_generator": "Offerte Generator",
-    "comparison_tool": "Vergelijkingstool"
+    "comparison_tool": "Vergelijkingstool",
+    "send_inquiry": "Verstuur\nAanvraag",
+    "send_inquiry_desc": "Offerteaanvraag formulier",
+    "drawing_analysis_customer": "Tekening\nAnalyse",
+    "drawing_analysis_customer_desc": "Gratis documentanalyse"
   },
   "app": {
     "title": "KAN-BUD Professionele Container Oplossingen",

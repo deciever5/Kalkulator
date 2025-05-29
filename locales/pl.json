@@ -25,7 +25,11 @@
     "container_configurator": "Konfigurator Kontenerów",
     "technical_analysis": "Analiza Techniczna",
     "quote_generator": "Generator Ofert",
-    "comparison_tool": "Narzędzie Porównań"
+    "comparison_tool": "Narzędzie Porównań",
+    "send_inquiry": "Wyślij\nZapytanie",
+    "send_inquiry_desc": "Formularz zapytania ofertowego",
+    "drawing_analysis_customer": "Analiza\nRysunków",
+    "drawing_analysis_customer_desc": "Bezpłatna analiza dokumentów"
   },
   "app": {
     "title": "KAN-BUD Profesjonalne Rozwiązania Kontenerowe",
@@ -338,6 +342,8 @@
     "tip_1": "Używaj plików PDF w wysokiej rozdzielczości",
     "tip_2": "Upewnij się, że wymiary są czytelne",
     "tip_3": "Załącz wszystkie istotne widoki i przekroje"
+  },
+  "admin": {
     "privileges_required": "Ta sekcja wymaga uprawnień administratora",
     "enter_password": "Wprowadź hasło administratora:",
     "access_granted": "Przyznano dostęp administratora!",

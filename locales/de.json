@@ -25,7 +25,11 @@
     "container_configurator": "Container-Konfigurator",
     "technical_analysis": "Technische Analyse",
     "quote_generator": "Angebotsgenerator",
-    "comparison_tool": "Vergleichstool"
+    "comparison_tool": "Vergleichstool",
+    "send_inquiry": "Anfrage\nSenden",
+    "send_inquiry_desc": "Anfrageformular",
+    "drawing_analysis_customer": "Zeichnungs\nAnalyse",
+    "drawing_analysis_customer_desc": "Kostenlose Dokumentenanalyse"
   },
   "app": {
     "title": "KAN-BUD Professionelle Container-Lösungen",
