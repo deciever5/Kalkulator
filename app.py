@@ -23,14 +23,14 @@ st.set_page_config(
 @st.cache_resource
 def initialize_services():
     """Initialize all services with caching"""
-    # Try PostgreSQL first, fallback to simple storage
+    # Use PostgreSQL database
     try:
         db = DatabaseManager()
-        if not db.engine:
-            storage = SimpleStorageManager()
-        else:
-            storage = db
-    except:
+        db.create_tables()  # Ensure tables exist
+        storage = db
+        st.success("📊 Database connected: PostgreSQL")
+    except Exception as e:
+        st.warning(f"⚠️ Database connection issue: {str(e)}")
         storage = SimpleStorageManager()
     
     container_db = ContainerDatabase()
@@ -66,6 +66,9 @@ st.markdown("""
 section[data-testid="stSidebar"] {display: none !important;}
 .css-164nlkn {margin-left: 0 !important;}
 div[data-testid="stSidebarNav"] {display: none !important;}
+button[data-testid="baseButton-header"] {display: none !important;}
+.css-1544g2n {display: none !important;}
+.css-18e3th9 {display: none !important;}
 
 .main-header {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
