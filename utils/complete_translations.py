@@ -134,15 +134,15 @@ COMPLETE_TRANSLATIONS = {
         'Marine': 'Morskie',
         'Industrial': 'Przemysłowe',
         
-        # Climate zones (European and African)
+        # European Climate zones
         'Central European': 'Europa Środkowa',
         'Scandinavian': 'Skandynawski',
         'Mediterranean': 'Śródziemnomorski',
         'Atlantic Maritime': 'Atlantycki Morski',
         'Continental': 'Kontynentalny',
         'Alpine': 'Alpejski',
-        'North African': 'Północnoafrykański',
-        'Sub-Saharan': 'Subsaharyjski',
+        'Baltic': 'Bałtycki',
+        'Temperate Oceanic': 'Umiarkowany Oceaniczny',
         
         # Finish levels
         'Basic': 'Podstawowy',
@@ -233,15 +233,15 @@ COMPLETE_TRANSLATIONS = {
         'Marine': 'Marin',
         'Industrial': 'Industriell',
         
-        # Climate zones (European and African)
+        # European Climate zones
         'Central European': 'Mitteleuropäisch',
         'Scandinavian': 'Skandinavisch',
         'Mediterranean': 'Mediterran',
         'Atlantic Maritime': 'Atlantisch-Maritim',
         'Continental': 'Kontinental',
         'Alpine': 'Alpin',
-        'North African': 'Nordafrikanisch',
-        'Sub-Saharan': 'Subsahara',
+        'Baltic': 'Baltisch',
+        'Temperate Oceanic': 'Gemäßigt Ozeanisch',
         
         # Finish levels
         'Basic': 'Basis',
@@ -332,15 +332,15 @@ COMPLETE_TRANSLATIONS = {
         'Marine': 'Marien',
         'Industrial': 'Industrieel',
         
-        # Climate zones (European and African)
+        # European Climate zones
         'Central European': 'Midden-Europees',
         'Scandinavian': 'Scandinavisch',
         'Mediterranean': 'Mediterraan',
         'Atlantic Maritime': 'Atlantisch Maritiem',
         'Continental': 'Continentaal',
         'Alpine': 'Alpien',
-        'North African': 'Noord-Afrikaans',
-        'Sub-Saharan': 'Sub-Sahara',
+        'Baltic': 'Baltisch',
+        'Temperate Oceanic': 'Gematigd Oceanisch',
         
         # Finish levels
         'Basic': 'Basis',
