@@ -18,14 +18,29 @@ def load_translations():
                 lang_code = filename[:-5]  # Remove .json extension
                 try:
                     with open(os.path.join(locales_dir, filename), 'r', encoding='utf-8') as f:
-                        translations[lang_code] = json.load(f)
+                        content = f.read()
+                        if content.strip():  # Check if file is not empty
+                            translations[lang_code] = json.loads(content)
+                        else:
+                            print(f"Warning: {filename} is empty")
+                except json.JSONDecodeError as e:
+                    print(f"JSON decode error in {filename}: {e}")
                 except Exception as e:
-                    st.error(f"Error loading {filename}: {e}")
+                    print(f"Error loading {filename}: {e}")
 
     return translations
 
 # Load translations once
 TRANSLATIONS = load_translations()
+
+# Debug: Print what was loaded
+if TRANSLATIONS:
+    print(f"Loaded translations for languages: {list(TRANSLATIONS.keys())}")
+    for lang, data in TRANSLATIONS.items():
+        if isinstance(data, dict) and 'app' in data:
+            print(f"Language {lang} has 'app' section with keys: {list(data['app'].keys())}")
+else:
+    print("WARNING: No translations were loaded!")
 
 def init_language():
     """Initialize language system"""
@@ -45,10 +60,16 @@ def t(key, language=None):
     if language is None:
         language = get_current_language()
 
+    # Debug: Check what we have loaded
+    if not TRANSLATIONS:
+        print(f"No translations loaded! Returning key: {key}")
+        return key
+
     # Get translation data for language
     translation_data = TRANSLATIONS.get(language, TRANSLATIONS.get('pl', {}))
     
     if not translation_data:
+        print(f"No translation data for language: {language}, returning key: {key}")
         return key
 
     # Handle nested keys like 'ui.back_to_home'
@@ -60,12 +81,17 @@ def t(key, language=None):
             if isinstance(result, dict) and k in result:
                 result = result[k]
             else:
-                # Return key if translation not found
+                # Debug output
+                print(f"Key '{k}' not found in result: {result}")
+                print(f"Available keys: {list(result.keys()) if isinstance(result, dict) else 'Not a dict'}")
                 return key
 
         return result if isinstance(result, str) else key
-    except (KeyError, TypeError, AttributeError):
-        # Return the key if any error occurs during translation
+    except (KeyError, TypeError, AttributeError) as e:
+        # Debug output
+        print(f"Error in translation for key '{key}': {e}")
+        print(f"Language: {language}")
+        print(f"Translation data keys: {list(translation_data.keys()) if isinstance(translation_data, dict) else 'Not a dict'}")
         return key
 
 def get_available_languages():
