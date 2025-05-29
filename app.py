@@ -8,7 +8,32 @@ from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
 # Historical data service removed as not needed
-from utils.translations import t, render_language_selector
+from utils.complete_translations_fixed import get_translation
+from utils.global_language import get_current_language, set_language
+
+def t(key):
+    """Translation function"""
+    return get_translation(key, get_current_language())
+
+def render_language_selector():
+    """Render language selector"""
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        if st.button("🇵🇱 Polski", key="lang_pl", help="Polish"):
+            set_language('pl')
+            st.rerun()
+    with col2:
+        if st.button("🇬🇧 English", key="lang_en", help="English"):
+            set_language('en')
+            st.rerun()
+    with col3:
+        if st.button("🇩🇪 Deutsch", key="lang_de", help="German"):
+            set_language('de')
+            st.rerun()
+    with col4:
+        if st.button("🇳🇱 Nederlands", key="lang_nl", help="Dutch"):
+            set_language('nl')
+            st.rerun()
 from utils.groq_service import GroqService
 
 # Page configuration
@@ -37,12 +62,7 @@ def initialize_services():
     container_db = ContainerDatabase()
     calc = StructuralCalculations()
 
-    try:
-        historical_service = HistoricalDataService()
-    except Exception as e:
-        if st.session_state.get('employee_logged_in', False):
-            st.error(f"Historical data initialization: {str(e)}")
-        historical_service = None
+    # Historical data service removed
 
     try:
         groq_service = GroqService()
@@ -51,7 +71,7 @@ def initialize_services():
             st.warning(f"Groq AI service initialization: {str(e)}")
         groq_service = None
 
-    return storage, container_db, calc, historical_service, groq_service
+    return storage, container_db, calc, groq_service
 
 # Initialize language
 if 'language' not in st.session_state:
@@ -194,11 +214,8 @@ if 'container_db' not in st.session_state:
 if 'calculations' not in st.session_state:
     st.session_state.calculations = StructuralCalculations()
 
-if 'historical_service' not in st.session_state:
-    st.session_state.historical_service = HistoricalDataService()
-
 # Initialize services
-storage, container_db, calc, historical_service_init, groq_service = initialize_services()
+storage, container_db, calc, groq_service = initialize_services()
 
 st.markdown("---")
 
