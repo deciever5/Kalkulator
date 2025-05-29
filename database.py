@@ -13,7 +13,7 @@ from typing import Dict, List, Any, Optional
 
 Base = declarative_base()
 
-# Historical projects removed as not needed at this stage
+# Database models for KAN-BUD Container Calculator
 
 class CustomerData(Base):
     """Store customer information and preferences"""
@@ -83,60 +83,9 @@ class DatabaseManager:
         """Get database session"""
         return self.SessionLocal()
     
-    def add_historical_project(self, project_data: Dict[str, Any]) -> int:
-        """Add a historical project for learning"""
-        session = self.get_session()
-        try:
-            project = HistoricalProject(
-                project_name=project_data['project_name'],
-                container_type=project_data['container_type'],
-                use_case=project_data['use_case'],
-                modifications=project_data.get('modifications', {}),
-                actual_cost=project_data['actual_cost'],
-                estimated_cost=project_data.get('estimated_cost'),
-                completion_date=project_data['completion_date'],
-                location=project_data.get('location'),
-                customer_type=project_data.get('customer_type'),
-                project_size_category=project_data.get('project_size_category'),
-                complexity_score=project_data.get('complexity_score'),
-                material_costs=project_data.get('material_costs', {}),
-                labor_hours=project_data.get('labor_hours'),
-                timeline_weeks=project_data.get('timeline_weeks')
-            )
-            session.add(project)
-            session.commit()
-            project_id = project.id
-            return project_id
-        finally:
-            session.close()
+    # Historical project functionality removed
     
-    def get_similar_projects(self, container_type: str, use_case: str, modifications: Dict) -> List[Dict]:
-        """Find similar historical projects for pricing reference"""
-        session = self.get_session()
-        try:
-            projects = session.query(HistoricalProject).filter(
-                HistoricalProject.container_type == container_type,
-                HistoricalProject.use_case == use_case
-            ).order_by(HistoricalProject.completion_date.desc()).limit(10).all()
-            
-            result = []
-            for project in projects:
-                result.append({
-                    'id': project.id,
-                    'project_name': project.project_name,
-                    'actual_cost': project.actual_cost,
-                    'estimated_cost': project.estimated_cost,
-                    'completion_date': project.completion_date,
-                    'modifications': project.modifications,
-                    'material_costs': project.material_costs,
-                    'labor_hours': project.labor_hours,
-                    'timeline_weeks': project.timeline_weeks,
-                    'complexity_score': project.complexity_score
-                })
-            
-            return result
-        finally:
-            session.close()
+    # Similar projects functionality removed
     
     def save_customer(self, customer_data: Dict[str, Any]) -> int:
         """Save customer information"""
