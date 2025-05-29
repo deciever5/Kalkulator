@@ -194,6 +194,7 @@
   "total_cost": "Całkowity Koszt",
   "save_configuration": "💾 Zapisz Konfigurację",
   "configuration_saved": "Konfiguracja zapisana pomyślnie!",
+  "get_ai_analysis": "Otrzymaj Analizę AI",
   "systems_installations": "Systemy i Instalacje",
   "admin": {
     "access_required": "Wymagany Dostęp Administratora",

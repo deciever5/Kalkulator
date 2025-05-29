@@ -293,9 +293,20 @@ with col2:
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Save configuration
-if st.button(t("save_configuration"), use_container_width=True, type="primary"):
-    st.session_state.container_config = config
-    st.session_state.cost_breakdown = cost_breakdown
-    st.success(t("configuration_saved"))
-    st.balloons()
+# Save configuration and AI analysis buttons
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button(t("save_configuration"), use_container_width=True, type="primary"):
+        st.session_state.container_config = config
+        st.session_state.cost_breakdown = cost_breakdown
+        st.success(t("configuration_saved"))
+        st.balloons()
+
+with col2:
+    if st.button(f"🤖 {t('get_ai_analysis')}", use_container_width=True, type="secondary"):
+        # Save configuration first
+        st.session_state.container_config = config
+        st.session_state.cost_breakdown = cost_breakdown
+        # Navigate to AI Cost Estimator
+        st.switch_page("pages/2_AI_Cost_Estimator.py")
