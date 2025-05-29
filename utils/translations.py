@@ -47,19 +47,26 @@ def t(key, language=None):
 
     # Get translation data for language
     translation_data = TRANSLATIONS.get(language, TRANSLATIONS.get('pl', {}))
+    
+    if not translation_data:
+        return key
 
     # Handle nested keys like 'ui.back_to_home'
     keys = key.split('.')
     result = translation_data
 
-    for k in keys:
-        if isinstance(result, dict) and k in result:
-            result = result[k]
-        else:
-            # Return key if translation not found
-            return key
+    try:
+        for k in keys:
+            if isinstance(result, dict) and k in result:
+                result = result[k]
+            else:
+                # Return key if translation not found
+                return key
 
-    return result if isinstance(result, str) else key
+        return result if isinstance(result, str) else key
+    except (KeyError, TypeError, AttributeError):
+        # Return the key if any error occurs during translation
+        return key
 
 def get_available_languages():
     """Get available languages"""
