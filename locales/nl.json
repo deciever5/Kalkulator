@@ -279,6 +279,11 @@
   "site_access_limitations": "Toegangsbeperkingen voor levering",
   "material_price_fluctuations": "Materiaalprijs fluctuaties",
   "basic_estimate_note": "Opmerking: Dit is een basisschatting. Voor nauwkeurigere prijzen kunt u rechtstreeks contact opnemen met ons team.",
+  "estimate_disclaimer_title": "Belangrijk - Juridische Kennisgeving",
+  "estimate_disclaimer_text": "Bovenstaande schatting is indicatief en vormt geen aanbod in de zin van het Burgerlijk Wetboek. De uiteindelijke prijs kan wijzigen afhankelijk van gedetailleerde projectvereisten, huidige materiaal- en arbeidskosten.",
+  "get_precise_quote": "Wilt u een nauwkeurige offerte ontvangen?",
+  "contact_for_quote": "Neem contact met ons op via het aanvraagformulier - onze experts bereiden een gedetailleerde offerte voor die is afgestemd op uw behoeften.",
+  "send_inquiry_cta": "Offerteaanvraag Versturen",
   "delivery_logistics": "Levering & Logistiek",
   "delivery_cost": "Leveringskosten",
   "delivery": {

@@ -270,6 +270,11 @@
   "site_access_limitations": "Standortzugangsbeschränkungen für Lieferung",
   "material_price_fluctuations": "Materialpreisschwankungen",
   "basic_estimate_note": "Hinweis: Dies ist eine grundlegende Schätzung. Für eine genauere Preisgestaltung wenden Sie sich bitte direkt an unser Team.",
+  "estimate_disclaimer_title": "Wichtig - Rechtlicher Hinweis",
+  "estimate_disclaimer_text": "Die obige Schätzung ist unverbindlich und stellt kein Angebot im Sinne des Bürgerlichen Gesetzbuchs dar. Der endgültige Preis kann sich je nach detaillierten Projektanforderungen, aktuellen Material- und Arbeitskosten ändern.",
+  "get_precise_quote": "Möchten Sie ein präzises Angebot erhalten?",
+  "contact_for_quote": "Kontaktieren Sie uns über das Anfrageformular - unsere Experten erstellen Ihnen ein detailliertes, auf Ihre Bedürfnisse zugeschnittenes Angebot.",
+  "send_inquiry_cta": "Angebotsanfrage Senden",
   "delivery_logistics": "Lieferung & Logistik",
   "delivery_cost": "Lieferkosten",
   "delivery": {
