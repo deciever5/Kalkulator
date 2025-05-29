@@ -250,11 +250,11 @@ st.markdown("---")
 # Modern client-focused main dashboard
 if st.session_state.employee_logged_in:
     # Employee view - enhanced card layout
-    st.markdown("""
+    st.markdown(f"""
     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
                 color: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0; text-align: center;">
-        <h2 style="margin: 0;">🔧 Narzędzia dla Pracowników</h2>
-        <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">Pełny dostęp do wszystkich funkcji systemu</p>
+        <h2 style="margin: 0;">🔧 {get_text('employee_tools', st.session_state.language)}</h2>
+        <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">{get_text('full_system_access', st.session_state.language)}</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -262,10 +262,10 @@ if st.session_state.employee_logged_in:
     col1, col2, col3, col4 = st.columns(4, gap="large")
     
     tools = [
-        ("📦", "Konfigurator\nKontenerów", "Tworzenie konfiguracji kontenerów", "pages/1_Container_Configurator.py", "emp_config"),
-        ("🤖", "Szacowanie\nKosztów AI", "Automatyczne wyceny AI", "pages/2_AI_Cost_Estimator.py", "emp_ai"),
-        ("🔧", "Analiza\nTechniczna", "Obliczenia strukturalne", "pages/3_Technical_Analysis.py", "emp_tech"),
-        ("📋", "Generator\nOfert", "Profesjonalne oferty", "pages/4_Quote_Generator.py", "emp_quote")
+        ("📦", get_text('container_configurator_title', st.session_state.language), get_text('container_configurator_desc', st.session_state.language), "pages/1_Container_Configurator.py", "emp_config"),
+        ("🤖", get_text('ai_cost_estimator_title', st.session_state.language), get_text('ai_cost_estimator_desc', st.session_state.language), "pages/2_AI_Cost_Estimator.py", "emp_ai"),
+        ("🔧", get_text('technical_analysis', st.session_state.language), "Obliczenia strukturalne", "pages/3_Technical_Analysis.py", "emp_tech"),
+        ("📋", get_text('quote_generator', st.session_state.language), "Profesjonalne oferty", "pages/4_Quote_Generator.py", "emp_quote")
     ]
     
     for i, (icon, title, desc, page, key) in enumerate(tools):
