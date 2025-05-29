@@ -317,6 +317,13 @@
     }
   },
   "labor_costs_30": "Arbeitskosten (30%)",
+  "drawing_analysis_service": "Zeichnungsanalyse",
+  "upload_drawings_estimate": "Technische Zeichnungen hochladen und präzise Schätzung erhalten",
+  "send_inquiry_service": "Anfrage Senden",
+  "get_detailed_quote_text": "Detailliertes Angebot nach Ihren Bedürfnissen erhalten",
+  "analyze_drawings": "Zeichnungen Analysieren",
+  "send_inquiry": "Anfrage Senden",
+  "additional_services": "Zusätzliche Dienstleistungen",
   "base_cost": "Grundkosten",
   "modifications": "Änderungen",
   "configure_container": "Container Konfigurieren",

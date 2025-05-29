@@ -13,70 +13,12 @@ from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
-from utils.complete_translations_fixed import get_translation
-from utils.global_language import get_current_language, set_language
+from utils.translations import t, init_language, get_current_language, set_language
 
-def t(key):
-    """Translation function"""
-    return get_translation(key, get_current_language())
+init_language()
 
-def render_language_selector():
-    """Render horizontal language selector with flags"""
-    st.markdown("""
-    <style>
-    .language-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-bottom: 20px;
-        flex-wrap: nowrap;
-    }
-    .stButton > button {
-        height: 45px;
-        min-width: 80px;
-        font-size: 14px;
-        font-weight: bold;
-        border-radius: 8px;
-        border: 2px solid #e8f4f8;
-        background: white;
-        transition: all 0.2s;
-    }
-    .stButton > button:hover {
-        border-color: #2E86AB;
-        background: #f0f8ff;
-        transform: translateY(-1px);
-    }
-    @media (max-width: 768px) {
-        .language-buttons {
-            gap: 5px;
-        }
-        .stButton > button {
-            min-width: 65px;
-            font-size: 12px;
-            height: 40px;
-        }
-    }
-    </style>
-    """, unsafe_allow_html=True)
-    
-    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
-    
-    with col1:
-        if st.button("🇵🇱 PL", key="lang_pl", help="Polski", use_container_width=True):
-            set_language('pl')
-            st.rerun()
-    with col2:
-        if st.button("🇬🇧 EN", key="lang_en", help="English", use_container_width=True):
-            set_language('en')
-            st.rerun()
-    with col3:
-        if st.button("🇩🇪 DE", key="lang_de", help="Deutsch", use_container_width=True):
-            set_language('de')
-            st.rerun()
-    with col4:
-        if st.button("🇳🇱 NL", key="lang_nl", help="Nederlands", use_container_width=True):
-            set_language('nl')
-            st.rerun()
+# Use the language selector from translations.py
+from utils.translations import render_language_selector
 from utils.groq_service import GroqService
 
 # Initialize services with lazy loading

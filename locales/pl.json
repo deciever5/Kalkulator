@@ -245,6 +245,13 @@
   "site_access_limitations": "Ograniczenia dostępu do placu dla dostawy",
   "material_price_fluctuations": "Wahania cen materiałów",
   "basic_estimate_note": "Uwaga: To jest podstawowa wycena. Aby uzyskać dokładniejszą wycenę, skontaktuj się bezpośrednio z naszym zespołem.",
+  "drawing_analysis_service": "Analiza Rysunków",
+  "upload_drawings_estimate": "Prześlij rysunki techniczne i otrzymaj precyzyjną wycenę",
+  "send_inquiry_service": "Wyślij Zapytanie", 
+  "get_detailed_quote_text": "Otrzymaj szczegółową wycenę dostosowaną do Twoich potrzeb",
+  "analyze_drawings": "Analizuj Rysunki",
+  "send_inquiry": "Wyślij Zapytanie",
+  "additional_services": "Dodatkowe Usługi",
   "send_inquiry": {
     "description": "Otrzymaj szczegółową ofertę dostosowaną do Twoich potrzeb",
     "disclaimer_title": "Ważna Informacja",

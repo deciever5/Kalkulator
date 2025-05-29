@@ -1,11 +1,9 @@
 import streamlit as st
 import json
 from utils.groq_service import GroqService
-from utils.complete_translations_fixed import get_translation
-from utils.global_language import get_current_language, set_language
+from utils.translations import t, init_language, get_current_language, set_language
 
-def t(key):
-    return get_translation(key, get_current_language())
+init_language()
 
 def render_language_selector():
     col1, col2, col3, col4 = st.columns([1, 1, 1, 1])

@@ -318,6 +318,13 @@
     }
   },
   "labor_costs_30": "Labor Costs (30%)",
+  "drawing_analysis_service": "Drawing Analysis",
+  "upload_drawings_estimate": "Upload technical drawings and get precise estimate",
+  "send_inquiry_service": "Send Inquiry",
+  "get_detailed_quote_text": "Get detailed quote tailored to your needs",
+  "analyze_drawings": "Analyze Drawings",
+  "send_inquiry": "Send Inquiry",
+  "additional_services": "Additional Services",
   "base_cost": "Base Cost",
   "modifications": "Modifications"
 }
