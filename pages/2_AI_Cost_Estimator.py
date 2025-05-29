@@ -73,14 +73,57 @@ else:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.write(f"**{t('container_type')}:** {config['container_type']}")
-        st.write(f"**{t('purpose')}:** {config['main_purpose']}")
-        st.write(f"**{t('environment')}:** {config['environment']}")
-        st.write(f"**{t('finish_level')}:** {config['finish_level']}")
+        # Translate container type
+        container_type_key = config['container_type'].lower().replace(' ', '_').replace('ft', 'ft')
+        if container_type_key == '20ft_standard':
+            container_type_translated = t('container.types.20ft_standard')
+        elif container_type_key == '40ft_standard':
+            container_type_translated = t('container.types.40ft_standard')
+        elif container_type_key == '40ft_high_cube':
+            container_type_translated = t('container.types.40ft_high_cube')
+        elif container_type_key == '20ft_refrigerated':
+            container_type_translated = t('container.types.20ft_refrigerated')
+        else:
+            container_type_translated = config['container_type']
+        
+        # Translate main purpose
+        purpose_key = config['main_purpose'].lower().replace(' ', '_')
+        purpose_translated = t(f'container.use_cases.{purpose_key}')
+        if purpose_translated == f'container.use_cases.{purpose_key}':
+            purpose_translated = config['main_purpose']
+        
+        # Translate environment
+        env_key = config['environment'].lower()
+        env_translated = t(f'container.environment.{env_key}')
+        if env_translated == f'container.environment.{env_key}':
+            env_translated = config['environment']
+        
+        # Translate finish level
+        finish_key = config['finish_level'].lower()
+        finish_translated = t(f'container.finish_levels.{finish_key}')
+        if finish_translated == f'container.finish_levels.{finish_key}':
+            finish_translated = config['finish_level']
+        
+        st.write(f"**{t('container_type')}:** {container_type_translated}")
+        st.write(f"**{t('purpose')}:** {purpose_translated}")
+        st.write(f"**{t('environment')}:** {env_translated}")
+        st.write(f"**{t('finish_level')}:** {finish_translated}")
 
     with col2:
-        st.write(f"**{t('flooring')}:** {config['flooring']}")
-        st.write(f"**{t('climate_zone')}:** {config['climate_zone']}")
+        # Translate flooring
+        flooring_key = config['flooring'].lower().replace(' ', '_')
+        flooring_translated = t(f'container.flooring.{flooring_key}')
+        if flooring_translated == f'container.flooring.{flooring_key}':
+            flooring_translated = config['flooring']
+        
+        # Translate climate zone
+        climate_key = config['climate_zone'].lower().replace(' ', '_')
+        climate_translated = t(f'container.climate_zones.{climate_key}')
+        if climate_translated == f'container.climate_zones.{climate_key}':
+            climate_translated = config['climate_zone']
+        
+        st.write(f"**{t('flooring')}:** {flooring_translated}")
+        st.write(f"**{t('climate_zone')}:** {climate_translated}")
         st.write(f"**{t('windows')}:** {config['number_of_windows']}")
         st.write(f"**{t('additional_doors')}:** {t('yes') if config['additional_doors'] else t('no')}")
 

@@ -109,9 +109,9 @@ class OpenAIService:
         {json.dumps(base_costs, indent=2)}
 
         Please provide a comprehensive cost estimate with the following JSON structure.
-        
+
         **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
-        
+
         {{
             "total_cost": 0,
             "confidence": 0.0,
@@ -292,7 +292,7 @@ class AnthropicService:
         {json.dumps(base_costs, indent=2)}
 
         **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
-        
+
         Provide your analysis in the following JSON format:
         {{
             "total_cost": [total project cost in USD],
@@ -513,7 +513,7 @@ class GroqService:
         Base Costs: {json.dumps(base_costs, indent=2)}
 
         **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
-        
+
         Provide estimate in this exact JSON format:
         {{
             "total_cost": [number],
@@ -678,7 +678,7 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "Auto-Select B
     Returns:
         Formatted cost estimate as string
     """
-    
+
     # Import translations here to avoid circular imports
     try:
         from utils.translations import get_current_language, t
@@ -789,7 +789,7 @@ def format_cost_estimate(result: Dict[str, Any], ai_model: str) -> str:
 
 def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any], language: str = 'en') -> str:
     """Generate fallback estimate when AI services are unavailable"""
-    
+
     # Import translations here to avoid circular imports
     try:
         from utils.translations import t
@@ -799,21 +799,62 @@ def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any
         def t(key, lang=None):
             return key
 
-    total_base = sum(base_costs.values())
+    container_type = config.get('container_type')
+    base_prices = {
+        '20ft Standard': 8000,
+        '40ft Standard': 12000
+    }
 
-    # Apply complexity multiplier
-    multiplier = 1.0
-    if config.get('finish_level') == 'Premium':
-        multiplier = 1.3
-    elif config.get('finish_level') == 'Luxury':
-        multiplier = 1.6
+    # Calculate base costs
+    base_cost = base_prices.get(container_type, 8000)
 
-    if config.get('environment') == 'Outdoor':
-        multiplier += 0.2
+    # Calculate modification costs
+    modifications_cost = 0
 
-    total_cost = total_base * multiplier
-    labor_cost = total_cost * 0.4
-    contingency = total_cost * 0.1
+    # Finish level multipliers```python
+    finish_multipliers = {
+        'Basic': 1.0,
+        'Standard': 1.3,
+        'Premium': 1.8,
+        'Luxury': 2.5
+    }
+
+    finish_multiplier = finish_multipliers.get(config.get('finish_level', 'Basic'), 1.0)
+    finish_cost = base_cost * (finish_multiplier - 1)
+    modifications_cost += finish_cost
+
+    # Calculate complexity multiplier
+    complexity_multiplier = 1.0
+    if config.get('environment') in ['Marine', 'Industrial']:
+        complexity_multiplier += 0.2
+    if config.get('climate_zone') in ['Scandinavian', 'Alpine']:
+        complexity_multiplier += 0.1
+
+    # Calculate total material cost
+    materials_base_cost = base_cost + modifications_cost
+
+    # Calculate labor costs (40% of materials)
+    labor_cost = materials_base_cost * 0.4
+
+    # Calculate subtotal before complexity multiplier
+    subtotal_before_multiplier = materials_base_cost + labor_cost
+
+    # Apply complexity multiplier to subtotal
+    subtotal_after_multiplier = subtotal_before_multiplier * complexity_multiplier
+
+    # Calculate contingency (10% of final subtotal)
+    contingency = subtotal_after_multiplier * 0.1
+
+    # Final total
+    total_cost = subtotal_after_multiplier + contingency
+
+    cost_breakdown = f"""
+📊 {t('cost_breakdown', language)}:
+{t('materials_base_cost', language)}: €{materials_base_cost:,.2f}
+{t('labor_costs_40', language)}: €{labor_cost:,.2f}
+{t('complexity_multiplier', language)}: {complexity_multiplier:.1f}x
+{t('contingency_10', language)}: €{contingency:,.2f}
+"""
 
     return f"""
 ## 🤖 {t('fallback_cost_estimate', language)}
@@ -823,11 +864,7 @@ def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any
 
 ---
 
-### 📊 **{t('cost_breakdown', language)}:**
-- **{t('materials_base_cost', language)}:** €{total_base:,.2f}
-- **{t('labor_costs_40', language)}:** €{labor_cost:,.2f}
-- **{t('contingency_10', language)}:** €{contingency:,.2f}
-- **{t('complexity_multiplier', language)}:** {multiplier}x
+{cost_breakdown}
 
 ---
 
