@@ -365,30 +365,30 @@ else:
 
 # Enhanced client benefits section
 if not st.session_state.employee_logged_in:
-    st.markdown("""
+    st.markdown(f"""
     <div class="benefits-section">
         <h2 style="text-align: center; color: #1e3c72; margin-bottom: 2rem; font-size: 2.2rem;">
-            ✨ Dlaczego KAN-BUD?
+            ✨ {get_text('why_kan_bud', st.session_state.language)}
         </h2>
     """, unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns(3, gap="large")
     
     benefits = [
-        ("🎯", "Precyzyjne Wyceny", [
-            "Wykorzystanie AI i danych historycznych",
-            "Uwzględnienie europejskich norm klimatycznych", 
-            "Transparentne kalkulacje kosztów"
+        ("🎯", get_text('precise_quotes', st.session_state.language), [
+            get_text('ai_historical_data', st.session_state.language),
+            get_text('european_climate_standards', st.session_state.language), 
+            get_text('transparent_calculations', st.session_state.language)
         ]),
-        ("⚡", "Szybka Realizacja", [
-            "Doświadczenie z setkami projektów",
-            "Własny park maszynowy",
-            "Lokalizacja w centrum Polski"
+        ("⚡", get_text('fast_realization', st.session_state.language), [
+            get_text('hundreds_of_projects', st.session_state.language),
+            get_text('own_machinery', st.session_state.language),
+            get_text('poland_center', st.session_state.language)
         ]),
-        ("🔧", "Pełen Serwis", [
-            "Projekt i wykonanie",
-            "Transport i montaż",
-            "Wsparcie posprzedażowe"
+        ("🔧", get_text('full_service', st.session_state.language), [
+            get_text('design_execution', st.session_state.language),
+            get_text('transport_assembly', st.session_state.language),
+            get_text('after_sales_support', st.session_state.language)
         ])
     ]
     
