@@ -97,29 +97,60 @@ def render_language_selector():
 
     current_lang = get_current_language()
 
-    # Create compact flag-only buttons for language selection in one row
-    col1, col2, col3, col4 = st.columns(4)
+    # Add CSS for compact button styling
+    st.markdown("""
+    <style>
+    .language-selector {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 5px !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        margin-bottom: 1rem !important;
+    }
+    .language-selector .stButton {
+        flex: none !important;
+        width: auto !important;
+        min-width: 40px !important;
+    }
+    .language-selector .stButton button {
+        width: 40px !important;
+        height: 35px !important;
+        padding: 5px !important;
+        font-size: 18px !important;
+        border-radius: 8px !important;
+        margin: 0 !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Create compact horizontal layout
+    st.markdown('<div class="language-selector">', unsafe_allow_html=True)
+    
+    col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 8])
     
     with col1:
-        if st.button("🇵🇱", key="lang_pl", help="Polski", use_container_width=True):
+        if st.button("🇵🇱", key="lang_pl", help="Polski"):
             if current_lang != 'pl':
                 set_language('pl')
                 st.rerun()
     
     with col2:
-        if st.button("🇬🇧", key="lang_en", help="English", use_container_width=True):
+        if st.button("🇬🇧", key="lang_en", help="English"):
             if current_lang != 'en':
                 set_language('en')
                 st.rerun()
     
     with col3:
-        if st.button("🇩🇪", key="lang_de", help="Deutsch", use_container_width=True):
+        if st.button("🇩🇪", key="lang_de", help="Deutsch"):
             if current_lang != 'de':
                 set_language('de')
                 st.rerun()
     
     with col4:
-        if st.button("🇳🇱", key="lang_nl", help="Nederlands", use_container_width=True):
+        if st.button("🇳🇱", key="lang_nl", help="Nederlands"):
             if current_lang != 'nl':
                 set_language('nl')
                 st.rerun()
+    
+    st.markdown('</div>', unsafe_allow_html=True)
