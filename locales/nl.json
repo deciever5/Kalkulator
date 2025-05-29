@@ -89,10 +89,11 @@
       "number_of_windows": "Aantal Ramen",
       "additional_doors": "Extra Deuren",
       "electrical_system": "Elektrisch Systeem",
-      "plumbing_system": "Loodgieterswerk",
+      "plumbing_system": "Loodgieterswerk Systeem",
       "hvac_system": "HVAC Systeem",
       "insulation_package": "Isolatiepakket",
-      "structural_reinforcement": "Structurele Versterking"
+      "structural_reinforcement": "Structurele Versterking",
+      "delivery_zone": "Leveringszone"
     }
   },
   "ai": {

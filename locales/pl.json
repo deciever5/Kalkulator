@@ -92,7 +92,8 @@
       "plumbing_system": "System Hydrauliczny",
       "hvac_system": "System HVAC",
       "insulation_package": "Pakiet Izolacji",
-      "structural_reinforcement": "Wzmocnienie Konstrukcyjne"
+      "structural_reinforcement": "Wzmocnienie Konstrukcyjne",
+      "delivery_zone": "Strefa Dostawy"
     }
   },
   "ai": {
@@ -264,5 +265,5 @@
     "upload_drawings": "Prześlij rysunki techniczne",
     "file_formats_help": "Obsługujemy pliki PDF, DWG, JPG i PNG. Zalecamy format PDF dla najlepszej analizy.",
     "other": "Inne"
-  },
+  }
 }

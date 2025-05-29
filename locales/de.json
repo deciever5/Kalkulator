@@ -92,7 +92,8 @@
       "plumbing_system": "Sanitärsystem",
       "hvac_system": "HVAC-System",
       "insulation_package": "Isolierungspaket",
-      "structural_reinforcement": "Strukturelle Verstärkung"
+      "structural_reinforcement": "Strukturelle Verstärkung",
+      "delivery_zone": "Lieferzone"
     }
   },
   "ai": {
