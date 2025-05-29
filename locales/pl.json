@@ -28,7 +28,7 @@
   },
   "app": {
     "title": "KAN-BUD Profesjonalne Rozwiązania Kontenerowe",
-    "subtitle": "Zaawansowana Platforma Modyfikacji Kontenerów Stalowych i Szacowania Kosztów"
+    "subtitle": "Profesjonalne Rozwiązania Modyfikacji Kontenerów"
   },
   "container": {
     "types": {
@@ -119,6 +119,7 @@
   "open_tool": "Otwórz",
   "configure_container": "Skonfiguruj Swój Kontener",
   "simple_process_2_steps": "Prosty proces w 2 krokach",
+  "container_configurator_desc": "Profesjonalny konfigurator modyfikacji kontenerów",
   "step_1_configuration": "Krok 1: Konfiguracja",
   "choose_container_type": "Wybierz typ kontenera i specyfikacje",
   "step_2_ai_quote": "Krok 2: Wycena AI",

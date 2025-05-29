@@ -29,7 +29,7 @@
   },
   "app": {
     "title": "KAN-BUD Professional Container Solutions",
-    "subtitle": "Advanced Steel Container Modification & Cost Estimation Platform"
+    "subtitle": "Professional Container Modification Solutions"
   },
   "container": {
     "types": {
@@ -120,6 +120,7 @@
   "open_tool": "Open",
   "configure_container": "Configure Your Container",
   "simple_process_2_steps": "Simple 2-step process",
+  "container_configurator_desc": "Professional container modification configurator",
   "step_1_configuration": "Step 1: Configuration",
   "choose_container_type": "Choose container type and specifications",
   "step_2_ai_quote": "Step 2: AI Quote",

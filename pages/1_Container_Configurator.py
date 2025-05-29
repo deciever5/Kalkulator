@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
-from utils.translations import t, render_language_selector
+from utils.translations import t, render_language_selector, get_current_language
 
 # Page configuration
 st.set_page_config(
@@ -63,7 +63,7 @@ st.markdown("""
 st.markdown(f"""
 <div class="main-header">
     <div class="header-title">📦 {t('nav.container_configurator')}</div>
-    <div class="header-subtitle">Professional container modification configurator</div>
+    <div class="header-subtitle">{t('container_configurator_desc')}</div>
 </div>
 """, unsafe_allow_html=True)
 

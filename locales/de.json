@@ -29,7 +29,7 @@
   },
   "app": {
     "title": "KAN-BUD Professionelle Container-Lösungen",
-    "subtitle": "Erweiterte Plattform für Stahlcontainer-Modifikation und Kostenschätzung"
+    "subtitle": "Professionelle Container-Modifikationslösungen"
   },
   "container": {
     "types": {
@@ -146,6 +146,8 @@
   "working_hours": "Arbeitszeiten",
   "mon_fri": "Mo-Fr 8:00-16:00",
   "configure_container": "Container Konfigurieren",
+  "simple_process_2_steps": "Einfacher 2-Schritt-Prozess",
+  "container_configurator_desc": "Professioneller Container-Modifikations-Konfigurator",
   "step_1_configuration": "Schritt 1: Konfiguration",
   "choose_container_type": "Container-Typ und Spezifikationen wählen",
   "step_2_ai_quote": "Schritt 2: KI-Angebot",

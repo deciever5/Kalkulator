@@ -29,7 +29,7 @@
   },
   "app": {
     "title": "KAN-BUD Professionele Container Oplossingen",
-    "subtitle": "Geavanceerd Platform voor Staalcontainer Modificatie en Kostenschatting"
+    "subtitle": "Professionele Container Modificatie Oplossingen"
   },
   "container": {
     "types": {
@@ -146,6 +146,8 @@
   "working_hours": "Werkuren",
   "mon_fri": "Ma-Vr 8:00-16:00",
   "configure_container": "Container Configureren",
+  "simple_process_2_steps": "Eenvoudig 2-stappen proces",
+  "container_configurator_desc": "Professionele container modificatie configurator",
   "step_1_configuration": "Stap 1: Configuratie", 
   "choose_container_type": "Kies containertype en specificaties",
   "step_2_ai_quote": "Stap 2: AI Offerte",

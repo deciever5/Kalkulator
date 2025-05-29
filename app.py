@@ -186,7 +186,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 
 <div class="main-header">
     <div class="company-name">🏗️ KAN-BUD</div>
-    <div class="company-subtitle">Professional Container Modification Solutions</div>
+    <div class="company-subtitle">{t('app.subtitle')}</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -264,10 +264,10 @@ else:
     st.markdown(f"""
     <div style="text-align: center; margin: 2rem 0;">
         <h2 style="color: #1e3c72; font-size: 2.5rem; margin-bottom: 0.5rem;">
-            💼 Configure Your Container
+            💼 {t('configure_container')}
         </h2>
         <p style="font-size: 1.3rem; color: #666; font-style: italic;">
-            Simple 2-step process
+            {t('simple_process_2_steps')}
         </p>
     </div>
     """, unsafe_allow_html=True)
