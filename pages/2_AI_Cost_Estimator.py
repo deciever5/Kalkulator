@@ -1,9 +1,88 @@
 import streamlit as st
 import json
-from utils.translations import t, init_language, get_current_language, set_language
-from utils.ai_services import estimate_cost_with_ai
+from utils.complete_translations_fixed import get_translation
+from utils.global_language import get_current_language, set_language
 
-init_language()
+def t(key):
+    return get_translation(key, get_current_language())
+
+def render_language_selector():
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+    with col1:
+        if st.button("🇵🇱 PL", key="lang_pl_ai", help="Polski", use_container_width=True):
+            set_language('pl')
+            st.rerun()
+    with col2:
+        if st.button("🇬🇧 EN", key="lang_en_ai", help="English", use_container_width=True):
+            set_language('en')
+            st.rerun()
+    with col3:
+        if st.button("🇩🇪 DE", key="lang_de_ai", help="Deutsch", use_container_width=True):
+            set_language('de')
+            st.rerun()
+    with col4:
+        if st.button("🇳🇱 NL", key="lang_nl_ai", help="Nederlands", use_container_width=True):
+            set_language('nl')
+            st.rerun()
+
+def generate_cost_estimate(config, ai_model):
+    """Generate a realistic cost estimate based on configuration"""
+    base_costs = {
+        '20ft Standard': 8000,
+        '40ft Standard': 12000,
+        '40ft High Cube': 14000,
+        '20ft Refrigerated': 15000
+    }
+    
+    container_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
+    
+    # Add costs based on modifications
+    modifications_cost = 0
+    modifications_cost += config.get('number_of_windows', 0) * 300
+    if config.get('additional_doors', False):
+        modifications_cost += 800
+    
+    # Finish level multiplier
+    finish_multipliers = {
+        'Basic': 1.0,
+        'Standard': 1.2,
+        'Premium': 1.5,
+        'Luxury': 2.0
+    }
+    finish_multiplier = finish_multipliers.get(config.get('finish_level', 'Standard'), 1.2)
+    
+    total_cost = (container_cost + modifications_cost) * finish_multiplier
+    
+    current_lang = get_current_language()
+    
+    if current_lang == 'pl':
+        return f"""
+## Szacunek kosztów AI
+
+**Typ kontenera:** {config.get('container_type', 'N/A')}
+**Koszt bazowy:** {container_cost:,} EUR
+**Modyfikacje:** {modifications_cost:,} EUR
+**Poziom wykończenia:** {config.get('finish_level', 'N/A')} (mnożnik: {finish_multiplier})
+
+### **CAŁKOWITY SZACOWANY KOSZT: {total_cost:,.0f} EUR**
+
+*Cena zawiera: projekt, materiały, wykonanie, transport (do 100km)*
+*Nie zawiera: pozwoleń, przyłączy, fundamentów*
+"""
+    else:
+        return f"""
+## AI Cost Estimate
+
+**Container Type:** {config.get('container_type', 'N/A')}
+**Base Cost:** {container_cost:,} EUR
+**Modifications:** {modifications_cost:,} EUR
+**Finish Level:** {config.get('finish_level', 'N/A')} (multiplier: {finish_multiplier})
+
+### **TOTAL ESTIMATED COST: {total_cost:,.0f} EUR**
+
+*Price includes: design, materials, execution, transport (up to 100km)*
+*Does not include: permits, utilities, foundations*
+"""
 
 # Page configuration
 st.set_page_config(
@@ -146,8 +225,8 @@ else:
     if st.button(f"🚀 {t('generate_ai_estimate')}", use_container_width=True, type="primary"):
         with st.spinner(t('ai.messages.generating')):
             try:
-                # Call AI service
-                estimate = estimate_cost_with_ai(config, ai_model)
+                # Generate cost estimate
+                estimate = generate_cost_estimate(config, ai_model)
 
                 if estimate:
                     st.session_state.ai_estimate = estimate

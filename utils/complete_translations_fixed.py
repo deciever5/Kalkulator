@@ -118,6 +118,15 @@ TRANSLATIONS = {
         'generate_ai_estimate': 'Wygeneruj szacunek AI',
         'ai.messages.generating': 'Generowanie szacunku...',
         'ai.messages.estimate_generated': 'Szacunek został wygenerowany',
+        'ai_cost_estimate': 'Szacunek kosztów AI',
+        'estimate_disclaimer_title': 'Ważne zastrzeżenie prawne',
+        'estimate_disclaimer_text': 'Ten szacunek ma charakter orientacyjny i nie stanowi oferty handlowej. Ostateczna cena może się różnić od przedstawionego szacunku.',
+        'get_precise_quote': 'Otrzymaj precyzyjną ofertę',
+        'contact_for_quote': 'Skontaktuj się z nami, aby otrzymać szczegółową ofertę handlową dostosowaną do Twoich potrzeb.',
+        'save_estimate': 'Zapisz szacunek',
+        'estimate_saved': 'Szacunek został zapisany',
+        'failed_generate_estimate': 'Nie udało się wygenerować szacunku',
+        'error_generating_estimate': 'Błąd podczas generowania szacunku',
     },
     
     'en': {
@@ -233,6 +242,15 @@ TRANSLATIONS = {
         'generate_ai_estimate': 'Generate AI Estimate',
         'ai.messages.generating': 'Generating estimate...',
         'ai.messages.estimate_generated': 'Estimate generated successfully',
+        'ai_cost_estimate': 'AI Cost Estimate',
+        'estimate_disclaimer_title': 'Important Legal Disclaimer',
+        'estimate_disclaimer_text': 'This estimate is indicative and does not constitute a commercial offer. Final price may differ from the presented estimate.',
+        'get_precise_quote': 'Get Precise Quote',
+        'contact_for_quote': 'Contact us to receive a detailed commercial quote tailored to your needs.',
+        'save_estimate': 'Save Estimate',
+        'estimate_saved': 'Estimate saved',
+        'failed_generate_estimate': 'Failed to generate estimate',
+        'error_generating_estimate': 'Error generating estimate',
         
         # UI elements
         'ui.open': 'Open',
