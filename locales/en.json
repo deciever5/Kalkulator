@@ -73,6 +73,15 @@
   "email": "Email",
   "working_hours": "Working Hours",
   "mon_fri": "Mon-Fri 8:00-17:00",
+  "advanced_modifications": "Advanced Modifications",
+  "air_intakes": "Air Intakes & Ventilation",
+  "roof_modifications": "Roof Modifications",
+  "security_features": "Security Features",
+  "exterior_cladding": "Exterior Cladding",
+  "additional_openings": "Additional Openings",
+  "fire_safety": "Fire Safety Systems",
+  "accessibility_features": "Accessibility Features",
+  "paint_finish": "Paint & Finish",
   "container": {
     "types": {
       "20ft_standard": "20ft Standard",

@@ -210,30 +210,110 @@ with col1:
         min_value=0,
         max_value=20,
         value=2,
-        key="number_of_windows"
+        key="number_of_windows",
+        help=t('help.windows')
     )
 
     additional_doors = st.checkbox(
         t('form.labels.additional_doors'),
-        key="additional_doors"
+        key="additional_doors",
+        help=t('help.additional_doors')
+    )
+    
+    # Air intakes and ventilation
+    air_intakes = st.selectbox(
+        t('air_intakes'),
+        [t('air_intakes.none'), t('air_intakes.standard'), t('air_intakes.industrial'), t('air_intakes.marine_grade')],
+        key="air_intakes",
+        help=t('help.air_intakes')
+    )
+    
+    # Roof modifications
+    roof_modifications = st.selectbox(
+        t('roof_modifications'),
+        [t('roof_modifications.none'), t('roof_modifications.skylight'), t('roof_modifications.roof_hatch'), t('roof_modifications.solar_ready')],
+        key="roof_modifications",
+        help=t('help.roof_modifications')
     )
 
 with col2:
     # Systems
-    electrical_system = st.checkbox(
+    electrical_system = st.selectbox(
         t('electrical_system'),
-        value=True,
-        key="electrical_system"
+        [t('electrical.basic'), t('electrical.standard'), t('electrical.industrial'), t('electrical.smart_system')],
+        index=1,
+        key="electrical_system",
+        help=t('help.electrical_system')
     )
 
-    plumbing_system = st.checkbox(
+    plumbing_system = st.selectbox(
         t('plumbing_system'),
-        key="plumbing_system"
+        [t('plumbing.none'), t('plumbing.basic'), t('plumbing.full'), t('plumbing.commercial')],
+        key="plumbing_system",
+        help=t('help.plumbing_system')
     )
 
-    hvac_system = st.checkbox(
+    hvac_system = st.selectbox(
         t('hvac_system'),
-        key="hvac_system"
+        [t('hvac.none'), t('hvac.basic'), t('hvac.split_system'), t('hvac.central'), t('hvac.heat_pump')],
+        key="hvac_system",
+        help=t('help.hvac_system')
+    )
+
+# Advanced modifications section
+st.markdown(f'<div class="config-section"><div class="section-title">🔧 {t("advanced_modifications")}</div>', unsafe_allow_html=True)
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    # Security features
+    security_features = st.selectbox(
+        t('security_features'),
+        [t('security.basic'), t('security.standard'), t('security.advanced'), t('security.high_security')],
+        key="security_features",
+        help=t('help.security_features')
+    )
+    
+    # Exterior cladding
+    exterior_cladding = st.selectbox(
+        t('exterior_cladding'),
+        [t('cladding.none'), t('cladding.metal'), t('cladding.composite'), t('cladding.wood'), t('cladding.brick_veneer')],
+        key="exterior_cladding",
+        help=t('help.exterior_cladding')
+    )
+
+with col2:
+    # Additional openings
+    additional_openings = st.selectbox(
+        t('additional_openings'),
+        [t('openings.none'), t('openings.service_hatch'), t('openings.loading_door'), t('openings.emergency_exit')],
+        key="additional_openings",
+        help=t('help.additional_openings')
+    )
+    
+    # Fire safety systems
+    fire_safety = st.selectbox(
+        t('fire_safety'),
+        [t('fire_safety.basic'), t('fire_safety.smoke_detection'), t('fire_safety.sprinkler'), t('fire_safety.full_system')],
+        key="fire_safety",
+        help=t('help.fire_safety')
+    )
+
+with col3:
+    # Accessibility features
+    accessibility = st.selectbox(
+        t('accessibility_features'),
+        [t('accessibility.standard'), t('accessibility.ramp'), t('accessibility.full_ada'), t('accessibility.disabled_friendly')],
+        key="accessibility",
+        help=t('help.accessibility')
+    )
+    
+    # Custom paint finish
+    paint_finish = st.selectbox(
+        t('paint_finish'),
+        [t('paint.standard'), t('paint.premium'), t('paint.anti_corrosion'), t('paint.custom_color')],
+        key="paint_finish",
+        help=t('help.paint_finish')
     )
 
 st.markdown('</div>', unsafe_allow_html=True)
@@ -275,6 +355,14 @@ config = {
     'electrical_system': electrical_system,
     'plumbing_system': plumbing_system,
     'hvac_system': hvac_system,
+    'air_intakes': air_intakes,
+    'roof_modifications': roof_modifications,
+    'security_features': security_features,
+    'exterior_cladding': exterior_cladding,
+    'additional_openings': additional_openings,
+    'fire_safety': fire_safety,
+    'accessibility': accessibility,
+    'paint_finish': paint_finish,
     'delivery_zone': delivery_zone
 }
 
