@@ -81,9 +81,10 @@ st.subheader(f"📤 {t('drawing_analysis_customer.file_upload')}")
 
 uploaded_files = st.file_uploader(
     t('drawing_analysis_customer.upload_drawings'),
-    type=['pdf', 'jpg', 'png'],
+    type=['pdf', 'jpg', 'jpeg', 'png'],
     accept_multiple_files=True,
-    help=t('drawing_analysis_customer.file_formats_help')
+    help=t('drawing_analysis_customer.file_formats_help'),
+    key="drawing_analysis_uploader"
 )
 
 if uploaded_files:
