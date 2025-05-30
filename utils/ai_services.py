@@ -702,7 +702,7 @@ class GroqService:
             }},
             "technical_assessment": {{
                 "                "structural_engineering": ["[requirement in {language}]", "[requirement in {language}]"],
-                "building_compliance": ["[code requirement inlanguage}]", "[code requirement in {language}]"],
+                "building_compliance": ["[code requirement in {language}]", "[code requirement in {language}]"],
                 "technical_challenges": ["[challenge in {language}]"]
             }},
             "project_execution": {{
