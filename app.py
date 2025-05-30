@@ -184,7 +184,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 
 /* Custom button styling */
 .stButton > button {
-    height: 480px !important;
+    height: 960px !important;
     white-space: pre-line !important;
     font-size: 16px !important;
     border: 2px solid #e8f4f8 !important;
@@ -204,7 +204,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 /* Special styling for primary action buttons */
 div[data-testid="column"]:nth-child(1) .stButton > button,
 div[data-testid="column"]:nth-child(2) .stButton > button {
-    height: 520px !important;
+    height: 1040px !important;
     color: white !important;
     font-weight: bold !important;
 }
