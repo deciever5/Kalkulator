@@ -436,5 +436,7 @@
     "historical_data": "Historická Data",
     "user_management": "Správa Uživatelů",
     "system_settings": "Nastavení Systému"
-  }
+  },
+  "estimate_disclaimer_title": "Důležité - Právní Oznámení",
+  "estimate_disclaimer_text": "Výše uvedený odhad je orientační a nepředstavuje nabídku ve smyslu Občanského zákoníku. Konečná cena se může změnit v závislosti na detailních požadavcích projektu, aktuálních nákladech na materiál a práci."
 }

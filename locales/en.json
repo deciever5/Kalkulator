@@ -354,6 +354,8 @@
   "basic_estimate_note": "Note: This is a basic estimate. For more accurate pricing, please contact our team directly.",
   "estimate_disclaimer_title": "Important - Legal Notice",
   "estimate_disclaimer_text": "The above estimate is indicative and does not constitute an offer within the meaning of the Civil Code. The final price may change depending on detailed project requirements, current material and labor costs.",
+  "technical_analysis": "Technical\nAnalysis",
+  "quote_generator": "Quote\nGenerator",
   "send_inquiry": {
     "title": "Inquiry Form",
     "description": "Get a detailed quote tailored to your container project",
