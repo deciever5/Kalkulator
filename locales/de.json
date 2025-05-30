@@ -114,7 +114,7 @@
       "error_generating": "Fehler beim Erstellen der KI-Schätzung: {error}"
     }
   },
-  "employee_tools": "Mitarbeiter-Tools", 
+  "employee_tools": "Mitarbeiter-Tools",
   "ai_cost_estimation": "KI-Kostenschätzung",
   "ai_powered_estimation": "KI-gestützte Kostenschätzung für Container-Modifikationen",
   "no_configuration_found": "Keine Container-Konfiguration gefunden. Bitte konfigurieren Sie zuerst Ihren Container.",
@@ -151,7 +151,7 @@
   "simple_process_2_steps": "Einfacher 2-Schritt-Prozess",
   "step_1_configuration": "Schritt 1: Konfiguration",
   "choose_container_type": "Container-Typ und Spezifikationen wählen",
-  "step_2_ai_quote": "Schritt 2: KI-Angebot",
+  "step_2_ai_quote": "KI-Angebot",
   "get_instant_quote": "Sofortige Kostenschätzung erhalten",
   "start_configuration": "Konfiguration starten",
   "get_quote": "Angebot erhalten",
@@ -177,7 +177,7 @@
   "electrical_system": "Elektrisches System",
   "plumbing_system": "Sanitärsystem",
   "hvac_system": "HLK-System",
-  "insulation_package": "Isolierungspaket", 
+  "insulation_package": "Isolierungspaket",
   "structural_reinforcement": "Strukturelle Verstärkung",
   "delivery_logistics": "Lieferung & Logistik",
   "why_kan_bud": "Warum KAN-BUD?",
@@ -346,71 +346,8 @@
     "data_protection_info": "Datenschutzinformationen",
     "data_retention": "Datenspeicherung",
     "why_professional_inquiry": "Warum eine professionelle Anfrage stellen?",
-    "preparation_tips": "Tipps für beste Ergebnisse",
-    "config_detected": "Gespeicherte Konfiguration vom Konfigurator erkannt",
-    "current_config": "Aktuelle Konfiguration",
-    "customer_info": "Kundeninformationen",
-    "full_name": "Vor- und Nachname",
-    "company_name": "Firmenname",
-    "email": "E-Mail-Adresse",
-    "phone": "Telefon",
-    "city": "Stadt",
-    "country": "Land",
-    "project_details": "Projektdetails",
-    "project_name": "Projektname",
-    "project_location": "Projektstandort",
-    "expected_timeline": "Erwarteter Zeitplan",
-    "budget_range": "Ungefährer Budgetbereich",
-    "timeline": {
-      "asap": "So schnell wie möglich",
-      "within_month": "Innerhalb eines Monats",
-      "within_quarter": "Innerhalb eines Quartals",
-      "within_half_year": "Innerhalb eines halben Jahres",
-      "planning_phase": "Planungsphase"
+    "preparation_tips": "Tipps für beste Ergebnisse"
     },
-    "budget": {
-      "not_specified": "Nicht angegeben",
-      "up_to_50k": "Bis €50.000",
-      "50k_100k": "€50.000 - €100.000",
-      "100k_200k": "€100.000 - €200.000",
-      "over_200k": "Über €200.000"
-    },
-    "additional_requirements": "Zusätzliche Anforderungen",
-    "inquiry_type": "Art der Anfrage",
-    "types": {
-      "detailed_quote": "Detailliertes Angebot",
-      "technical_consultation": "Technische Beratung",
-      "site_visit": "Standortbesichtigung",
-      "drawing_analysis": "Zeichnungsanalyse",
-      "general_info": "Allgemeine Informationen"
-    },
-    "special_requirements": "Besondere Anforderungen",
-    "special_requirements_placeholder": "Beschreiben Sie zusätzliche Anforderungen, technische Spezifikationen, zu erfüllende Standards...",
-    "additional_message": "Zusätzliche Nachricht",
-    "additional_message_placeholder": "Alle zusätzlichen Informationen, die uns helfen, ein besseres Angebot zu erstellen...",
-    "attachments": "Anhänge",
-    "upload_files": "Dateien zum Anhängen auswählen",
-    "file_formats_help": "Unterstützte Formate: PDF, DWG, JPG, PNG, DOC, DOCX",
-    "files_attached": "Dateien angehängt",
-    "contact_preferences": "Kontaktpräferenzen",
-    "preferred_contact": "Bevorzugte Kontaktmethode",
-    "contact": {
-      "email": "E-Mail",
-      "phone": "Telefon",
-      "both": "E-Mail und Telefon"
-    },
-    "best_time": "Beste Kontaktzeit",
-    "time": {
-      "morning": "Morgens (8:00-12:00)",
-      "afternoon": "Nachmittags (12:00-17:00)",
-      "evening": "Abends (17:00-20:00)",
-      "anytime": "Jederzeit"
-    },
-    "privacy_consent": "Ich stimme der Verarbeitung meiner persönlichen Daten zur Bearbeitung der Anfrage zu",
-    "marketing_consent": "Ich stimme dem Erhalt von Marketinginformationen zu (optional)",
-    "fill_required_fields": "Bitte füllen Sie alle mit * markierten Pflichtfelder aus",
-    "submit_inquiry": "Anfrage senden",
-    "success_title": "Anfrage erfolgreich gesendet!",
-    "success_message": "Vielen Dank für Ihre Anfrage. Unser Team wird Sie innerhalb von 24 Stunden kontaktieren."
+    "additional_doors": "Zusätzliche Türen"
   }
 }

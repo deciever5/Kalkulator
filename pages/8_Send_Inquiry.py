@@ -59,36 +59,36 @@ col1, col2 = st.columns(2)
 
 with col1:
     customer_name = st.text_input(
-        f"*{t('send_inquiry.full_name', 'Full Name')}",
+        f"*{t('send_inquiry.full_name')}",
         placeholder="Jan Kowalski",
         help="Required field"
     )
     
     customer_company = st.text_input(
-        t('send_inquiry.company_name', 'Company Name'),
+        t('send_inquiry.company_name'),
         placeholder="Company Ltd. (optional)"
     )
     
     customer_email = st.text_input(
-        f"*{t('send_inquiry.email', 'Email Address')}",
+        f"*{t('send_inquiry.email')}",
         placeholder="jan@company.com",
         help="Required for communication"
     )
 
 with col2:
     customer_phone = st.text_input(
-        f"*{t('send_inquiry.phone', 'Phone Number')}",
+        f"*{t('send_inquiry.phone')}",
         placeholder="+48 123 456 789",
         help="Required for quick contact"
     )
     
     customer_city = st.text_input(
-        f"*{t('send_inquiry.city', 'City')}",
+        f"*{t('send_inquiry.city')}",
         placeholder="Warsaw"
     )
     
     customer_country = st.selectbox(
-        f"*{t('send_inquiry.country', 'Country')}",
+        f"*{t('send_inquiry.country')}",
         ["Poland", "Germany", "Czech Republic", "Slovakia", "Austria", "Netherlands", "Belgium", "Other"],
         help="Select your country"
     )
