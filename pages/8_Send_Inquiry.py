@@ -106,7 +106,7 @@ with col1:
 
 with col2:
     budget_range = st.selectbox(
-        f"{t('send_inquiry.budget_Range')} (EUR)",
+        f"{t('send_inquiry.budget_range')} (EUR)",
         [
             t('send_inquiry.budget.not_specified'),
             t('send_inquiry.budget.up_to_50k'),
