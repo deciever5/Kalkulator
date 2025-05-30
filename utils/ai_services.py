@@ -638,51 +638,48 @@ class GeminiService:
         **EUROPEAN MARKET BASE COSTS:**
         {json.dumps(base_costs, indent=2)}
 
-        **CRITICAL PRICING GUIDELINES:**
-        - For 40ft HC containers with workshop use: base cost €5,000-7,000
-        - Structural reinforcement for heavy loads: €8,000-15,000
-        - Soundproofing walls: €3,000-6,000 per container
-        - Fire barrier partitions: €2,000-4,000
-        - Large air intakes (3x including gate-wide): €4,000-8,000
-        - Additional gates (2x) and doors (2x): €6,000-12,000
-        - Custom holes and openings: €1,000-3,000
-        - Premium finish and industrial environment: 20-30% markup
-        - Labor costs for complex modifications: 40-50% of material costs
+        **DYNAMIC PRICING GUIDELINES - ADAPT TO USER CONFIGURATION:**
+        Base the estimate on the ACTUAL configuration provided above. Consider:
         
-        The final total should realistically range €40,000-60,000 for this specification level.
+        Container Type Pricing:
+        - 20ft Standard: €3,000-5,000 base
+        - 40ft Standard: €4,500-6,500 base  
+        - 40ft High Cube: €5,000-7,000 base
+        - Refrigerated: €6,000-9,000 base
+        
+        Modification Complexity Levels:
+        - Basic (minimal mods): €8,000-15,000 total
+        - Standard (moderate mods): €15,000-35,000 total
+        - Advanced (extensive mods): €35,000-65,000 total
+        - Premium (complex systems): €65,000-100,000+ total
+        
+        CRITICAL: Analyze the comprehensive specifications above and price accordingly.
+        Simple office containers should be €15k-25k, not €50k+.
 
         Provide detailed cost analysis in this exact JSON format:
         {{
             "cost_analysis": {{
-                "total_cost": [total in EUR - must be realistic €40k-60k range],
+                "total_cost": [total in EUR - analyze actual requirements, not preset range],
                 "confidence_level": [0.7-0.9 for detailed specs],
                 "estimated_timeline": "[duration with phases]",
                 "breakdown": {{
-                    "container_base": [base cost €5k-7k],
-                    "structural_reinforcement": [€8k-15k for heavy load support],
-                    "soundproofing": [€3k-6k for acoustic treatment],
-                    "fire_safety": [€2k-4k for fire barriers],
-                    "ventilation_intakes": [€4k-8k for 3 large intakes],
-                    "additional_access": [€6k-12k for gates and doors],
-                    "custom_openings": [€1k-3k for holes],
-                    "labor_costs": [40-50% of material total],
-                    "delivery_logistics": [delivery cost],
-                    "contingency": [10% buffer]
+                    [Include only relevant cost categories based on actual configuration]
                 }}
             }},
             "user_configuration": {{
                 "container_type": "{container_type}",
                 "main_purpose": "{main_purpose}",
-                "additional_requirements": "{user_prompt[:100] if user_prompt else 'Standard'}"
+                "key_specifications": "{estimation_data.get('comprehensive_specifications', 'Standard configuration')[:200]}",
+                "user_requirements": "{estimation_data.get('all_requirements', 'None specified')[:200]}"
             }},
             "recommendations": [
-                "Specific recommendation based on heavy-duty workshop requirements",
-                "Technical optimization for soundproofing and fire safety",
-                "Cost-effective approach for complex ventilation needs"
+                "Recommendations specific to the actual configuration provided",
+                "Technical optimizations based on stated purpose and requirements",
+                "Cost optimization suggestions relevant to this specific project"
             ]
         }}
         
-        Focus on accurate European pricing that reflects the complexity of these industrial modifications.
+        IMPORTANT: Base ALL costs on the actual configuration above. A basic office conversion should cost €15k-25k, while complex industrial setups might reach €60k+. Match the estimate to the complexity.
         """
 
         return prompt
