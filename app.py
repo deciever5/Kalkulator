@@ -184,7 +184,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 
 /* Custom button styling */
 .stButton > button {
-    height: 180px !important;
+    height: 360px !important;
     white-space: pre-line !important;
     font-size: 16px !important;
     border: 2px solid #e8f4f8 !important;
@@ -204,7 +204,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 /* Special styling for primary action buttons */
 div[data-testid="column"]:nth-child(1) .stButton > button,
 div[data-testid="column"]:nth-child(2) .stButton > button {
-    height: 200px !important;
+    height: 400px !important;
     color: white !important;
     font-weight: bold !important;
 }
@@ -406,14 +406,6 @@ else:
 
 # Customer services section - moved here after configuration/AI sections
 if not st.session_state.employee_logged_in:
-    st.markdown(f"""
-    <div style="margin: 3rem 0;">
-        <h2 style="text-align: center; color: #1e3c72; margin-bottom: 2rem;">
-            🛠️ {t('additional_services')}
-        </h2>
-    </div>
-    """, unsafe_allow_html=True)
-
     col1, col2 = st.columns(2)
 
     with col1:
