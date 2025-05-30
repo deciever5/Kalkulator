@@ -439,6 +439,11 @@
     "new_inquiry": "Nieuwe Aanvraag Verzenden",
     "error": "Fout bij het verzenden van aanvraag",
     "why_professional_inquiry": "Waarom een Professionele Aanvraag Indienen?",
-    "preparation_tips": "Tips voor de Beste Resultaten"
+    "preparation_tips": "Tips voor Beste Resultaten"
+  },
+  "back_to_home": "← Terug naar Home",
+  "go_to_configurator": "🔧 Ga naar Configurator",
+  "send_inquiry": "Aanvraag Verzenden",
+  "send_inquiry_button": "Aanvraag Verzenden"or de Beste Resultaten"
   }
 }

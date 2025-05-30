@@ -235,6 +235,8 @@
   },
   "back_to_home": "← Powrót do strony głównej",
   "go_to_configurator": "🔧 Przejdź do konfiguratora",
+  "send_inquiry": "Wyślij zapytanie",
+  "send_inquiry_button": "Wyślij Zapytanie",
   "employee_tools": "Narzędzia Pracownicze",
   "ai_cost_estimation": "Wycena AI",
   "ai_powered_estimation": "Wycena modyfikacji kontenerów z wykorzystaniem AI",

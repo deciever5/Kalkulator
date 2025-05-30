@@ -522,7 +522,7 @@
     "next_steps": "Was passiert als Nächstes",
     "step_1": "Unser Experte wird Ihre Anforderungen analysieren",
     "step_2": "Wir werden Sie kontaktieren, um zusätzliche Informationen zu erhalten",
-    "step_3": "Sie erhalten ein detailliertes, auf Ihre Bedürfnisse zugeschnittenes Angebot",
+    "step_3": "Sie erhalten ein detailliertes, auf Ihre bedürfnisse zugeschnittenes Angebot",
     "contact_info": "Kontaktinformationen",
     "new_inquiry": "Neue Anfrage senden",
     "error": "Fehler beim Senden der Anfrage",
@@ -531,6 +531,6 @@
   },
   "back_to_home": "← Zurück zur Startseite",
   "go_to_configurator": "🔧 Zum Konfigurator",
-  "send_inquiry": "Anfrage senden",
+  "send_inquiry_button": "Anfrage Senden",
   "get_detailed_quote_text": "Detaillierte Offerte nach Ihren Bedürfnissen erhalten"
 }

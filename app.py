@@ -423,7 +423,7 @@ if not st.session_state.employee_logged_in:
         </div>
         """, unsafe_allow_html=True)
 
-        if st.button(t('send_inquiry'), key="customer_inquiry", use_container_width=True):
+        if st.button(t('send_inquiry_button'), key="customer_inquiry", use_container_width=True):
             st.switch_page("pages/8_Send_Inquiry.py")
 
 # Enhanced client benefits section
