@@ -1,17 +1,17 @@
+# Page configuration - MUST BE FIRST
 import streamlit as st
+st.set_page_config(
+    page_title="Container Configurator - KAN-BUD",
+    page_icon="📦",
+    layout="wide"
+)
+
 import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
 from utils.translations import t, init_language, get_current_language, set_language
 
 init_language()
-
-# Page configuration
-st.set_page_config(
-    page_title="Container Configurator - KAN-BUD",
-    page_icon="📦",
-    layout="wide"
-)
 
 # Initialize database
 if 'container_db' not in st.session_state:
