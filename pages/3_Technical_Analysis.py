@@ -21,11 +21,8 @@ from utils.shared_header import render_shared_header
 if 'language' not in st.session_state:
     st.session_state.language = 'pl'
 
-# Language selector
-render_language_selector()
-
-# Language selector at the top
-render_language_selector()
+# Render consistent header with language selector at top
+render_shared_header(show_login=True, current_page="Technical_Analysis")
 
 st.markdown("""
 <style>
