@@ -90,49 +90,6 @@ def generate_cost_estimate(config, ai_model):
 {t('basic_estimate_note')}
 """
 
-st.markdown("""
-<style>
-.main-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-.header-title {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-.header-subtitle {
-    color: #e8f4f8;
-    font-size: 1.2rem;
-    text-align: center;
-}
-</style>
-""", unsafe_allow_html=True)
-
-# Header
-st.markdown(f"""
-<div class="main-header">
-    <div class="header-title">🤖 {t('ai_cost_estimation')}</div>
-    <div class="header-subtitle">{t('ai_powered_estimation')}</div>
-</div>
-""", unsafe_allow_html=True)
-
-# Navigation
-col1, col2 = st.columns(2)
-with col1:
-    if st.button(t('ui.back_to_home'), key="home_nav", use_container_width=True):
-        st.switch_page("app.py")
-
-with col2:
-    if st.button(t('ui.go_to_configurator'), key="config_nav", use_container_width=True):
-        st.switch_page("pages/1_Container_Configurator.py")
-
 # Check if configuration exists
 if 'container_config' not in st.session_state:
     st.warning(t('no_configuration_found'))
