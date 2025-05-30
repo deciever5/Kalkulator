@@ -357,8 +357,11 @@
   "estimate_disclaimer_title": "Wichtig - Rechtlicher Hinweis",
   "estimate_disclaimer_text": "Die obige Schätzung ist unverbindlich und stellt kein Angebot im Sinne des Bürgerlichen Gesetzbuchs dar. Der endgültige Preis kann sich je nach detaillierten Projektanforderungen, aktuellen Material- und Arbeitskosten ändern.",
   "send_inquiry": {
-    "title": "Anfrageformular",
+    "title": "Anfrageformular", 
     "description": "Erhalten Sie ein detailliertes Angebot für Ihr Containerprojekt",
+    "project_name_placeholder": "z.B. Container-Büro - Poznań",
+    "special_requirements_placeholder": "Beschreiben Sie zusätzliche Anforderungen, technische Spezifikationen, zu erfüllende Standards...",
+    "additional_message_placeholder": "Alle zusätzlichen Informationen, die uns helfen, ein besseres Angebot zu erstellen...",
     "disclaimer_title": "Wichtige Information",
     "disclaimer_text": "Dieses Formular dient zur Einreichung von Anfragen für detaillierte Angebote. Schätzungen aus unserem Rechner sind keine kommerziellen Angebote nach geltendem Recht.",
     "config_detected": "Konfiguration vom Rechner erkannt",

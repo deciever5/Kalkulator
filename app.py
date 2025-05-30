@@ -41,6 +41,7 @@ def get_calculations_service():
 def get_historical_service():
     """Initialize historical service only when needed"""
     try:
+        from utils.historical_data_service import HistoricalDataService
         return HistoricalDataService()
     except Exception:
         return None
@@ -67,11 +68,15 @@ def init_session_state():
         if key not in st.session_state:
             st.session_state[key] = value
 
-init_session_state()
-
-# Force reload translations when language changes
-if 'prev_language' not in st.session_state:
-    st.session_state.prev_language = st.session_state.language
+try:
+    init_session_state()
+    
+    # Force reload translations when language changes
+    if 'prev_language' not in st.session_state:
+        st.session_state.prev_language = st.session_state.language
+except Exception as e:
+    st.error(f"Initialization error: {e}")
+    st.stop()
 
 # Modern header with enhanced styling and top navigation
 st.markdown("""
@@ -220,12 +225,13 @@ with col_login:
     if is_main_page:
         if not st.session_state.employee_logged_in:
             if st.button("👤", key="login_toggle_btn", help=t('ui.employee_login'), use_container_width=True):
-                st.session_state.show_login = True
+                st.session_state.show_login = not st.session_state.get('show_login', False)
                 st.rerun()
         else:
             if st.button("🚪", key="emp_logout", help=t('ui.logout'), use_container_width=True):
                 st.session_state.employee_logged_in = False
-                st.session_state.show_login = False
+                if 'show_login' in st.session_state:
+                    del st.session_state.show_login
                 st.rerun()
 
 # Employee login form

@@ -119,6 +119,11 @@ def get_nested_translation(translation_data, key):
             return None
     return result if isinstance(result, str) else None
 
+@st.cache_data
+def get_cached_translations():
+    """Cache translations to avoid repeated loading"""
+    return load_translations()
+
 def t(key: str, fallback: str = None, **kwargs) -> str:
     """
     Get translation for given key in current language
@@ -132,8 +137,8 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
     lang = st.session_state.get('language', 'pl')
 
     try:
-        # Always load fresh translations to avoid caching issues
-        translations = load_translations()
+        # Use cached translations
+        translations = get_cached_translations()
         
         # Get translation value
         if lang not in translations:
