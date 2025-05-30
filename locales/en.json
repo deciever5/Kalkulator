@@ -316,7 +316,10 @@
     "tips_text": "For the most accurate analysis, ensure your drawings include:",
     "tip_1": "Clear dimensions and specifications",
     "tip_2": "All technical details visible",
-    "tip_3": "High resolution (minimum 300 DPI)"
+    "tip_3": "High resolution (minimum 300 DPI)",
+    "config_required": "Configuration Required",
+    "config_required_text": "For accurate technical drawing analysis, basic container configuration is required. Without configuration, analysis will be limited to basic estimates.",
+    "analysis_failed_reasons": "Possible reasons for analysis failure"
   },
   "admin": {
     "access_required": "Admin Access Required",

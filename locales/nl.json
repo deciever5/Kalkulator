@@ -353,7 +353,10 @@
     "tips_text": "Voor de meest nauwkeurige analyse, zorg ervoor dat uw tekeningen bevatten:",
     "tip_1": "Duidelijke afmetingen en specificaties",
     "tip_2": "Alle technische details zichtbaar",
-    "tip_3": "Hoge resolutie (minimaal 300 DPI)"
+    "tip_3": "Hoge resolutie (minimaal 300 DPI)",
+    "config_required": "Configuratie Vereist",
+    "config_required_text": "Voor nauwkeurige technische tekenanalyse is een basisconfiguratie van de container vereist. Zonder configuratie zal de analyse beperkt zijn tot basisschattingen.",
+    "analysis_failed_reasons": "Mogelijke redenen voor analysefalen"
   },
   "admin": {
     "access_required": "Administrator Toegang Vereist",

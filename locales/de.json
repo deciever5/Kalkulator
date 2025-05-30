@@ -337,7 +337,10 @@
     "tips_text": "Für die genaueste Analyse stellen Sie sicher, dass Ihre Zeichnungen enthalten:",
     "tip_1": "Klare Abmessungen und Spezifikationen",
     "tip_2": "Alle technischen Details sichtbar",
-    "tip_3": "Hohe Auflösung (mindestens 300 DPI)"
+    "tip_3": "Hohe Auflösung (mindestens 300 DPI)",
+    "config_required": "Konfiguration Erforderlich",
+    "config_required_text": "Für eine genaue technische Zeichnungsanalyse ist eine grundlegende Container-Konfiguration erforderlich. Ohne Konfiguration wird die Analyse auf grundlegende Schätzungen beschränkt.",
+    "analysis_failed_reasons": "Mögliche Gründe für Analysefehler"
   },
   "admin": {
     "access_required": "Admin-Zugang erforderlich",
