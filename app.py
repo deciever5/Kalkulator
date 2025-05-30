@@ -290,15 +290,8 @@ if st.session_state.employee_logged_in:
 
     for i, (icon, title, desc, page, key) in enumerate(tools):
         with [col1, col2, col3, col4][i]:
-            st.markdown(f"""
-            <div class="feature-card" onclick="window.location.href='#{key}';" style="cursor: pointer;">
-                <div class="feature-icon">{icon}</div>
-                <div class="feature-title">{title}</div>
-                <div class="feature-description">{desc}</div>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            if st.button(f"{icon} {title}", key=key, use_container_width=True, type="primary"):
+            # Create clickable card using button
+            if st.button(f"{icon}\n\n**{title}**\n\n{desc}", key=f"{key}_card", use_container_width=True, help=f"Click to open {title}"):
                 st.switch_page(page)
 
     # Secondary tools
@@ -312,15 +305,8 @@ if st.session_state.employee_logged_in:
 
     for i, (icon, title, desc, page, key) in enumerate(secondary_tools):
         with [col5, col6, col7][i]:
-            st.markdown(f"""
-            <div class="feature-card" style="cursor: pointer;">
-                <div class="feature-icon">{icon}</div>
-                <div class="feature-title">{title}</div>
-                <div class="feature-description">{desc}</div>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            if st.button(f"{icon} {title}", key=key, use_container_width=True):
+            # Create clickable card using button
+            if st.button(f"{icon}\n\n**{title}**\n\n{desc}", key=f"{key}_card", use_container_width=True, help=f"Click to open {title}"):
                 st.switch_page(page)
 
 else:
@@ -340,49 +326,21 @@ else:
     col1, col2 = st.columns(2, gap="large")
 
     with col1:
-        st.markdown(f"""
-        <div class="feature-card" style="
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-            transform: scale(1.02);
-            cursor: pointer;
-        ">
-            <div style="font-size: 4rem; margin-bottom: 1rem;">📦</div>
-            <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                {t('step_1_configuration')}
-            </h2>
-            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                {t('choose_container_type')}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-        if st.button("📦 " + t('start_configuration'), key="client_config", use_container_width=True, type="primary"):
+        # Create clickable card using button
+        if st.button(f"📦\n\n**{t('step_1_configuration')}**\n\n{t('choose_container_type')}", 
+                    key="client_config_card", 
+                    use_container_width=True, 
+                    type="primary",
+                    help=f"Click to {t('start_configuration')}"):
             st.switch_page("pages/1_Container_Configurator.py")
 
     with col2:
-        st.markdown(f"""
-        <div class="feature-card" style="
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-            transform: scale(1.02);
-            cursor: pointer;
-        ">
-            <div style="font-size: 4rem; margin-bottom: 1rem;">🤖</div>
-            <h2 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">
-                {t('step_2_ai_quote')}
-            </h2>
-            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">
-                {t('get_instant_quote')}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-        if st.button("🤖 " + t('get_quote'), key="client_ai", use_container_width=True, type="secondary"):
+        # Create clickable card using button
+        if st.button(f"🤖\n\n**{t('step_2_ai_quote')}**\n\n{t('get_instant_quote')}", 
+                    key="client_ai_card", 
+                    use_container_width=True, 
+                    type="secondary",
+                    help=f"Click to {t('get_quote')}"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Customer services section - moved here after configuration/AI sections
@@ -398,45 +356,19 @@ if not st.session_state.employee_logged_in:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown(f"""
-        <div class="feature-card" style="
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            text-align: center;
-            padding: 2rem;
-            cursor: pointer;
-        ">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">📐</div>
-            <h3 style="color: #2c3e50; margin-bottom: 1rem;">
-                {t('drawing_analysis_service')}
-            </h3>
-            <p style="color: #34495e; margin-bottom: 0;">
-                {t('upload_drawings_estimate')}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-        if st.button("📐 " + t('analyze_drawings'), key="customer_drawing_analysis", use_container_width=True):
+        # Create clickable card using button
+        if st.button(f"📐\n\n**{t('drawing_analysis_service')}**\n\n{t('upload_drawings_estimate')}", 
+                    key="customer_drawing_analysis_card", 
+                    use_container_width=True,
+                    help=f"Click to {t('analyze_drawings')}"):
             st.switch_page("pages/9_Customer_Drawing_Analysis.py")
 
     with col2:
-        st.markdown(f"""
-        <div class="feature-card" style="
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            text-align: center;
-            padding: 2rem;
-            cursor: pointer;
-        ">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">📧</div>
-            <h3 style="color: #2c3e50; margin-bottom: 1rem;">
-                {t('send_inquiry_service')}
-            </h3>
-            <p style="color: #34495e; margin-bottom: 0;">
-                {t('get_detailed_quote_text')}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-        if st.button("📧 " + t('send_inquiry_button'), key="customer_inquiry", use_container_width=True):
+        # Create clickable card using button
+        if st.button(f"📧\n\n**{t('send_inquiry_service')}**\n\n{t('get_detailed_quote_text')}", 
+                    key="customer_inquiry_card", 
+                    use_container_width=True,
+                    help=f"Click to {t('send_inquiry_button')}"):
             st.switch_page("pages/8_Send_Inquiry.py")
 
 # Enhanced client benefits section
