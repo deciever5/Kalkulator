@@ -96,6 +96,109 @@ with col2:
     if st.button(ai_text, key="ai_nav", use_container_width=True):
         st.switch_page("pages/2_AI_Cost_Estimator.py")
 
+# Professional Card Layout Demo Section
+st.markdown("## Professional Card Layout Preview")
+st.markdown("**New visual improvements for your presentation:**")
+
+# Configuration Cards Demo
+st.markdown("### 1. Configuration Cards")
+col1, col2 = st.columns(2)
+
+with col1:
+    specs_20ft = create_specs_grid({
+        "Length": "6.1m",
+        "Width": "2.4m", 
+        "Height": "2.6m",
+        "Area": "14.6m²"
+    })
+    render_configuration_card(
+        "20ft", 
+        "20ft Standard Container",
+        "Perfect for small offices, studios, or storage solutions",
+        specs_20ft
+    )
+
+with col2:
+    specs_40ft = create_specs_grid({
+        "Length": "12.2m",
+        "Width": "2.4m",
+        "Height": "2.9m", 
+        "Area": "29.3m²"
+    })
+    render_configuration_card(
+        "40ft-hc",
+        "40ft High Cube Container", 
+        "Ideal for residential units, workshops, or retail spaces",
+        specs_40ft
+    )
+
+# Cost Breakdown Cards Demo
+st.markdown("### 2. Cost Breakdown Cards")
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    render_cost_breakdown_card(
+        "Container Base", 8500, 28.3, get_cost_icon('container'), 'container'
+    )
+
+with col2:
+    render_cost_breakdown_card(
+        "Structural Work", 12000, 40.0, get_cost_icon('structural'), 'structural'
+    )
+
+with col3:
+    render_cost_breakdown_card(
+        "Electrical Systems", 6500, 21.7, get_cost_icon('electrical'), 'electrical'
+    )
+
+# Feature Cards Demo
+st.markdown("### 3. Feature Cards (Hover to expand)")
+col1, col2 = st.columns(2)
+
+with col1:
+    upgrade_options = create_upgrade_list([
+        "Standard windows (2x1m)",
+        "Large panoramic windows (3x1.5m)",
+        "Double-glazed thermal windows",
+        "Security windows with bars"
+    ])
+    render_feature_card(
+        "Window Configuration",
+        "Add natural light and ventilation",
+        "No windows",
+        upgrade_options,
+        "Solid steel walls",
+        "2-4 modern windows with frames"
+    )
+
+with col2:
+    electrical_options = create_upgrade_list([
+        "Basic electrical (6 outlets)",
+        "Professional office setup (12 outlets)",
+        "Industrial grade (20 outlets + 3-phase)",
+        "Smart home automation system"
+    ])
+    render_feature_card(
+        "Electrical System",
+        "Power distribution and lighting solutions", 
+        "No electrical",
+        electrical_options,
+        "No power infrastructure",
+        "Complete electrical installation"
+    )
+
+# Quote Summary Card Demo
+st.markdown("### 4. Executive Quote Summary Card")
+render_quote_summary_card(
+    total_cost=30000,
+    project_duration="8-12 weeks",
+    confidence_rating=0.92,
+    container_type="40ft High Cube",
+    modifications_count=8
+)
+
+st.markdown("---")
+
 # Configuration form
 st.markdown(f'<div class="config-section"><div class="section-title">🏗️ {t("configure_container")}</div>', unsafe_allow_html=True)
 
