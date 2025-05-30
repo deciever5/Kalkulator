@@ -360,5 +360,17 @@
   "send_inquiry": "Send Inquiry",
   "additional_services": "Additional Services",
   "base_cost": "Base Cost",
-  "modifications": "Modifications"
+  "modifications": "Modifications",
+  "send_inquiry_form": {
+    "success": "Inquiry submitted successfully!",
+    "error": "Error during inquiry submission",
+    "title": "Professional Inquiry Form", 
+    "project_requirements": "Project Requirements",
+    "recommended_files": "Recommended Documents",
+    "privacy_section": "Privacy & Data Protection (RODO/GDPR)",
+    "data_protection_info": "Data Protection Information",
+    "data_retention": "Data Retention",
+    "why_professional_inquiry": "Why Submit a Professional Inquiry?",
+    "preparation_tips": "Tips for Best Results"
+  }
 }
