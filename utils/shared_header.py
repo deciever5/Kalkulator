@@ -77,6 +77,7 @@ def render_shared_header():
 
         if selected_language != current_lang:
             set_language(selected_language)
+            # Force immediate rerun to apply language change
             st.rerun()
 
     with col_login:

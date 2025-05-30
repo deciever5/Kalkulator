@@ -54,18 +54,27 @@ def set_language(lang_code):
     """Set current language and clear cache"""
     print(f"Setting language to: {lang_code}")
     st.session_state.language = lang_code
-    # Clear the translation cache to force reload
-    load_translations.clear()
-    # Force reload of translations
+    
+    # Clear the translation cache completely
+    if hasattr(load_translations, 'clear'):
+        load_translations.clear()
+    
+    # Force complete reload of translations
     global TRANSLATIONS
     TRANSLATIONS = load_translations()
+    
     print(f"Available languages after reload: {list(TRANSLATIONS.keys())}")
     
     # Verify the language data is loaded
     if lang_code in TRANSLATIONS:
-        print(f"Successfully loaded {lang_code} translations")
+        print(f"Successfully loaded {lang_code} translations with {len(TRANSLATIONS[lang_code])} top-level keys")
+        # Check for a common key to verify the translation is working
+        test_key = "ui.language_selector"
+        test_result = t(test_key, lang_code)
+        print(f"Test translation for '{test_key}': {test_result}")
     else:
-        print(f"Warning: {lang_code} translations not found!")
+        print(f"ERROR: {lang_code} translations not found!")
+        print(f"Translation files should be in locales/{lang_code}.json")
 
 def t(key, language=None):
     """Translate text key using nested key access (e.g., 'ui.back_to_home')"""
@@ -75,67 +84,52 @@ def t(key, language=None):
     # Refresh translations to ensure we have the latest
     translations = get_translations()
     
-    # Debug: Print available languages
-    print(f"Available languages: {list(translations.keys())}")
-    print(f"Requested language: {language}")
-    
-    # Get translation data for requested language
+    # Get translation data for requested language - must exist
     translation_data = translations.get(language)
     
     if not translation_data:
-        print(f"No translation data found for language: {language}")
-        # Only fallback if the requested language truly doesn't exist
+        print(f"ERROR: Language '{language}' not found in translations!")
+        print(f"Available languages: {list(translations.keys())}")
+        # Only fallback if the language file doesn't exist at all
         translation_data = translations.get('en', translations.get('pl', {}))
         if not translation_data:
-            print(f"No fallback translation data found")
             return key
 
     # Handle nested keys like 'ui.back_to_home'
     keys = key.split('.')
     result = translation_data
 
-    # First try to get the key from the requested language
-    try:
-        for k in keys:
-            if isinstance(result, dict) and k in result:
-                result = result[k]
-            else:
-                # Key not found in requested language, try fallbacks
-                print(f"Key '{k}' not found in {language} for path: {key}")
-                
-                # Try fallback languages only for missing specific keys
-                for fallback_lang in ['en', 'pl']:
-                    if fallback_lang != language and fallback_lang in translations:
-                        fallback_data = translations[fallback_lang]
-                        fallback_result = fallback_data
-                        
-                        # Navigate to the same key path in fallback language
-                        key_found = True
-                        for fk in keys:
-                            if isinstance(fallback_result, dict) and fk in fallback_result:
-                                fallback_result = fallback_result[fk]
-                            else:
-                                key_found = False
-                                break
-                        
-                        if key_found and isinstance(fallback_result, str):
-                            print(f"Using fallback {fallback_lang} for key: {key}")
-                            return fallback_result
-                
-                print(f"Translation key not found: {key} in any language")
-                return key
-
-        # Return the result if it's a string
-        if isinstance(result, str):
-            print(f"Found translation for {key} in {language}: {result[:50]}...")
-            return result
+    # Navigate through the nested structure
+    for k in keys:
+        if isinstance(result, dict) and k in result:
+            result = result[k]
         else:
-            print(f"Translation result is not a string for key: {key}")
-            return key
+            # Only use fallback if key is completely missing from the language file
+            # This should rarely happen since translation files should be complete
+            for fallback_lang in ['en', 'pl']:
+                if fallback_lang != language and fallback_lang in translations:
+                    fallback_data = translations[fallback_lang]
+                    fallback_result = fallback_data
+                    
+                    # Try to find the key in fallback language
+                    fallback_found = True
+                    for fk in keys:
+                        if isinstance(fallback_result, dict) and fk in fallback_result:
+                            fallback_result = fallback_result[fk]
+                        else:
+                            fallback_found = False
+                            break
+                    
+                    if fallback_found and isinstance(fallback_result, str):
+                        print(f"WARNING: Key '{key}' missing from {language}, using {fallback_lang}")
+                        return fallback_result
             
-    except (KeyError, TypeError, AttributeError) as e:
-        print(f"Translation error for key {key}: {e}")
-        return key
+            # If no fallback found, return the key itself
+            print(f"Translation key not found: {key}")
+            return key
+
+    # Return the result if it's a string
+    return result if isinstance(result, str) else key
 
 def get_available_languages():
     """Get available languages"""
