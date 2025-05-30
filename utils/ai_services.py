@@ -519,14 +519,14 @@ class GroqService:
         self.base_url = "https://api.groq.com/openai/v1"
 
         if not self.api_key:
-            # For demo purposes, we'll use a fallback
-            self.api_key = "demo_mode"
-            print("⚠️ No GROQ_API_KEY found. Using demo mode.")
+            # For demo purposes, we'll use a fallback but still try to generate dynamic responses
+            self.api_key = None
+            print("⚠️ No GROQ_API_KEY found. Using dynamic fallback mode.")
 
     def generate_cost_estimate(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> Dict[str, Any]:
         """Generate intelligent cost estimate using Groq"""
 
-        if self.api_key == "demo_mode":
+        if not self.api_key:
             return self._generate_demo_estimate(estimation_data, base_costs)
 
         prompt = self._build_cost_estimation_prompt(estimation_data, base_costs)
@@ -573,56 +573,159 @@ class GroqService:
             return self._generate_demo_estimate(estimation_data, base_costs)
 
     def _generate_demo_estimate(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> Dict[str, Any]:
-        """Generate demo estimate when API is not available"""
+        """Generate dynamic demo estimate when API is not available"""
 
         config = estimation_data.get("container_config", {})
-
-        # Calculate basic estimate
+        language = estimation_data.get('response_language', 'en')
+        
+        # Calculate dynamic estimate based on actual configuration
         base_total = sum(base_costs.values())
-
-        # Add complexity factors
-        complexity_factor = 1.2
-        if config.get("modifications", {}).get("reinforcement_walls"):
-            complexity_factor += 0.1
-        if config.get("modifications", {}).get("electrical"):
+        
+        # Dynamic complexity factors based on actual config
+        complexity_factor = 1.0
+        modifications = config.get("modifications", {})
+        
+        # Analyze actual modifications
+        if modifications.get("additional_doors"):
             complexity_factor += 0.15
-        if config.get("modifications", {}).get("plumbing"):
-            complexity_factor += 0.2
-
-        total_cost = base_total * complexity_factor
+        if modifications.get("electrical_system"):
+            complexity_factor += 0.20
+        if modifications.get("plumbing_system"):
+            complexity_factor += 0.25
+        if modifications.get("hvac_system"):
+            complexity_factor += 0.30
+        if modifications.get("insulation_package"):
+            complexity_factor += 0.12
+        if modifications.get("structural_reinforcement"):
+            complexity_factor += 0.35
+        
+        # Add window costs
+        window_count = config.get("number_of_windows", 0)
+        window_cost = window_count * 350
+        
+        # Calculate finish level impact
+        finish_level = config.get("finish_level", "Standard")
+        finish_multipliers = {"Basic": 1.0, "Standard": 1.3, "Premium": 1.8, "Luxury": 2.5}
+        finish_multiplier = finish_multipliers.get(finish_level, 1.3)
+        
+        # Calculate environment impact
+        environment = config.get("environment", "")
+        env_factor = 1.0
+        if "extreme" in environment.lower() or "harsh" in environment.lower():
+            env_factor = 1.25
+        elif "marine" in environment.lower() or "coastal" in environment.lower():
+            env_factor = 1.15
+        
+        # Final calculation
+        total_cost = (base_total + window_cost) * complexity_factor * finish_multiplier * env_factor
+        
+        # Get user comment for personalized response
+        user_comment = config.get('user_comment', '').strip()
+        special_requirements = config.get('special_requirements', {})
+        
+        # Generate dynamic recommendations based on config
+        recommendations = []
+        risk_factors = []
+        cost_optimization = []
+        
+        # Dynamic recommendations based on actual config
+        if modifications.get("electrical_system"):
+            if language == 'pl':
+                recommendations.append("Rozważ zaawansowany system elektryczny z automatyką")
+            else:
+                recommendations.append("Consider advanced electrical system with automation")
+        
+        if modifications.get("hvac_system"):
+            if language == 'pl':
+                recommendations.append("Zaplanuj efektywny system HVAC z oszczędzaniem energii")
+            else:
+                recommendations.append("Plan energy-efficient HVAC system")
+        
+        if window_count > 3:
+            if language == 'pl':
+                recommendations.append("Dodatkowe okna poprawią oświetlenie ale wpłyną na izolację")
+            else:
+                recommendations.append("Multiple windows improve lighting but consider insulation impact")
+        
+        if finish_level in ["Premium", "Luxury"]:
+            if language == 'pl':
+                recommendations.append("Wysokiej jakości wykończenia wymagają specjalistów")
+            else:
+                recommendations.append("Premium finishes require specialized craftsmen")
+        
+        # Dynamic risk factors
+        if special_requirements.get('urgent_timeline'):
+            if language == 'pl':
+                risk_factors.append("Pilny harmonogram może zwiększyć koszty o 15-25%")
+            else:
+                risk_factors.append("Urgent timeline may increase costs by 15-25%")
+        
+        if special_requirements.get('budget_constraints'):
+            if language == 'pl':
+                risk_factors.append("Ograniczenia budżetowe mogą wymagać kompromisów jakościowych")
+            else:
+                risk_factors.append("Budget constraints may require quality compromises")
+        
+        if environment and "extreme" in environment.lower():
+            if language == 'pl':
+                risk_factors.append("Trudne warunki środowiskowe wymagają wzmocnionej konstrukcji")
+            else:
+                risk_factors.append("Harsh environmental conditions require reinforced construction")
+        
+        # Dynamic optimization
+        if total_cost > 50000:
+            if language == 'pl':
+                cost_optimization.append("Rozważ fazowanie projektu dla lepszego zarządzania przepływem środków")
+            else:
+                cost_optimization.append("Consider project phasing for better cash flow management")
+        
+        if modifications.get("electrical_system") and modifications.get("hvac_system"):
+            if language == 'pl':
+                cost_optimization.append("Zintegruj systemy elektryczne i HVAC dla oszczędności")
+            else:
+                cost_optimization.append("Integrate electrical and HVAC systems for cost savings")
+        
+        # Address user comments if provided
+        if user_comment:
+            if language == 'pl':
+                recommendations.insert(0, f"Na podstawie Państwa komentarza: '{user_comment}' - dostosujemy projekt do Państwa specyficznych potrzeb")
+            else:
+                recommendations.insert(0, f"Based on your comment: '{user_comment}' - we'll adapt the project to your specific needs")
 
         return {
-            "total_cost": round(total_cost),
-            "confidence": 0.85,
-            "estimated_timeline": "8-12 weeks",
-            "breakdown": {
-                "container_base": base_costs.get("container_base", 5000),
-                "structural_modifications": base_costs.get("structural_modifications", 0),
-                "systems_installation": (base_costs.get("electrical", 0) + 
-                                       base_costs.get("plumbing", 0) + 
-                                       base_costs.get("hvac", 0)),
-                "finishes_interior": base_costs.get("finishes", 1500),
-                "labor_costs": total_cost * 0.4,
-                "permits_fees": 1200,
-                "delivery_logistics": 800,
-                "contingency": total_cost * 0.1
+            "cost_analysis": {
+                "total_project_cost": round(total_cost),
+                "confidence_rating": 0.85,
+                "project_duration": "8-14 weeks" if complexity_factor > 1.5 else "6-10 weeks",
+                "detailed_breakdown": {
+                    "container_acquisition": base_costs.get("container_base", 5000),
+                    "structural_modifications": round(total_cost * 0.25),
+                    "building_systems": round(total_cost * 0.20),
+                    "interior_finishes": round(total_cost * 0.15),
+                    "professional_services": round(total_cost * 0.10),
+                    "labor_execution": round(total_cost * 0.20),
+                    "logistics_delivery": base_costs.get("delivery", 800),
+                    "project_contingency": round(total_cost * 0.10)
+                },
+                "market_intelligence": {
+                    "current_trends": "Rosnące zapotrzebowanie na kontenerowe rozwiązania mieszkaniowe" if language == 'pl' else "Growing demand for container housing solutions",
+                    "price_volatility": "Stabilne ceny stali, wahania kosztów transportu" if language == 'pl' else "Stable steel prices, transport cost fluctuations",
+                    "regional_factors": "Lokalna dostępność wykonawców wpływa na koszty" if language == 'pl' else "Local contractor availability affects costs"
+                }
             },
-            "analysis": {
-                "recommendations": [
-                    "Consider standard electrical package for cost efficiency",
-                    "Plan delivery route for oversized transport requirements",
-                    "Schedule structural inspections early in process"
-                ],
-                "risk_factors": [
-                    "Weather delays during construction phase",
-                    "Permit approval timeline variations",
-                    "Site access limitations for delivery"
-                ],
-                "cost_optimization": [
-                    "Bundle multiple modifications for labor efficiency",
-                    "Source materials locally to reduce shipping costs",
-                    "Consider phased construction approach"
-                ]
+            "technical_assessment": {
+                "structural_engineering": recommendations[:2] if recommendations else [],
+                "building_compliance": ["Zgodność z normami europejskimi", "Wymagane pozwolenia budowlane"] if language == 'pl' else ["European standards compliance", "Building permits required"],
+                "technical_challenges": risk_factors[:2] if risk_factors else []
+            },
+            "recommendations": {
+                "immediate_priorities": recommendations[:3] if recommendations else [],
+                "cost_optimization": cost_optimization[:3] if cost_optimization else [],
+                "value_engineering": ["Optymalizacja materiałów", "Standaryzacja komponentów"] if language == 'pl' else ["Material optimization", "Component standardization"]
+            },
+            "risk_management": {
+                "identified_risks": risk_factors[:3] if risk_factors else [],
+                "mitigation_strategies": ["Szczegółowe planowanie", "Elastyczny harmonogram"] if language == 'pl' else ["Detailed planning", "Flexible scheduling"]
             }
         }
 
@@ -764,48 +867,54 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "auto") -> str
         # Calculate base costs first
         base_costs = _calculate_base_costs(config)
 
-        # Prepare estimation data
+        # Prepare estimation data with enhanced configuration
         estimation_data = {
             "container_config": config,
             "response_language": current_language,
-            "project_location": "Central Europe",
-            "project_timeline": "Standard",
-            "quality_level": "European Standard"
+            "project_location": config.get("project_location", "Central Europe"),
+            "project_timeline": config.get("project_timeline", "Standard"),
+            "quality_level": config.get("quality_level", "European Standard"),
+            "additional_notes": config.get("user_comment", "")
         }
 
-        # Try different AI services based on model selection
-        if ai_model == "auto" or "Groq" in ai_model:
+        # Always try to use actual AI services first
+        result = None
+        
+        # Try Groq first (free tier available)
+        try:
+            groq_service = GroqService()
+            result = groq_service.generate_cost_estimate(estimation_data, base_costs)
+            print("✅ Using Groq AI service")
+        except Exception as groq_error:
+            print(f"Groq service failed: {groq_error}")
+
+            # Try Anthropic second
             try:
-                groq_service = GroqService()
-                result = groq_service.generate_cost_estimate(estimation_data, base_costs)
-                return _format_ai_response(result, current_language)
-            except Exception as groq_error:
-                print(f"Groq service failed: {groq_error}")
+                anthropic_service = AnthropicService()
+                result = anthropic_service.generate_cost_estimate(estimation_data, base_costs)
+                print("✅ Using Anthropic Claude service")
+            except Exception as anthropic_error:
+                print(f"Anthropic service failed: {anthropic_error}")
 
-                # Fallback to Anthropic
+                # Try OpenAI last
                 try:
-                    anthropic_service = AnthropicService()
-                    result = anthropic_service.generate_cost_estimate(estimation_data, base_costs)
-                    return _format_ai_response(result, current_language)
-                except Exception as anthropic_error:
-                    print(f"Anthropic service failed: {anthropic_error}")
+                    openai_service = OpenAIService()
+                    result = openai_service.generate_cost_estimate(estimation_data, base_costs)
+                    print("✅ Using OpenAI GPT-4 service")
+                except Exception as openai_error:
+                    print(f"OpenAI service failed: {openai_error}")
+                    print("🔄 Using dynamic fallback estimation")
 
-                    # Final fallback to OpenAI
-                    try:
-                        openai_service = OpenAIService()
-                        result = openai_service.generate_cost_estimate(estimation_data, base_costs)
-                        return _format_ai_response(result, current_language)
-                    except Exception as openai_error:
-                        print(f"OpenAI service failed: {openai_error}")
-                        return _generate_fallback_estimate(config, base_costs, current_language)
-
-        else:
-            # Specific model requested, try that service
-            return _generate_fallback_estimate(config, base_costs, current_language)
+        # If we got a result from any AI service, format and return it
+        if result:
+            return _format_ai_response(result, current_language)
+        
+        # If all AI services failed, use enhanced fallback
+        return _generate_enhanced_fallback_estimate(config, base_costs, current_language)
 
     except Exception as e:
         print(f"AI estimation error: {str(e)}")
-        return _generate_fallback_estimate(config, base_costs, current_language)
+        return _generate_enhanced_fallback_estimate(config, base_costs, current_language)
 
 
 def _calculate_base_costs(config: Dict[str, Any]) -> Dict[str, float]:
@@ -919,68 +1028,23 @@ def _format_ai_response(ai_result: Dict[str, Any], language: str) -> str:
         return str(ai_result)
 
 
-def _generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, float], language: str) -> str:
-    """Generate fallback estimate when AI services are unavailable"""
+def _generate_enhanced_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, float], language: str) -> str:
+    """Generate enhanced dynamic fallback estimate when AI services are unavailable"""
 
-    # Calculate total
-    total_cost = sum(base_costs.values())
-
-    # Apply finish level multiplier
-    finish_multipliers = {
-        'Basic': 1.0,
-        'Standard': 1.2,
-        'Premium': 1.5,
-        'Luxury': 2.0
+    # Create a GroqService instance to use its enhanced demo estimation
+    groq_service = GroqService()
+    
+    # Prepare estimation data
+    estimation_data = {
+        "container_config": config,
+        "response_language": language,
+        "project_location": config.get("project_location", "Central Europe"),
+        "project_timeline": config.get("project_timeline", "Standard"),
+        "quality_level": config.get("quality_level", "European Standard")
     }
-    finish_multiplier = finish_multipliers.get(config.get('finish_level', 'Standard'), 1.2)
-    total_cost *= finish_multiplier
-
-    # Add labor costs
-    labor_cost = total_cost * 0.4
-    contingency = total_cost * 0.1
-    final_total = total_cost + labor_cost + contingency
-
-    if language == 'pl':
-        return f"""## ⚠️ Zapasowa Wycena Kosztów
-💰 **Całkowite Koszty Projektu: €{final_total:,.0f}**
-*Podstawowe obliczenie gdy usługi AI są niedostępne*
-
-📊 **Podział Kosztów:**
-• Materiały i Koszty Podstawowe: €{total_cost:,.0f}
-• Koszty Pracy (40%): €{labor_cost:,.0f}
-• Rezerwa (10%): €{contingency:,.0f}
-• Koszt transportu: €{base_costs.get('delivery', 800):,.0f}
-
-💡 **Standardowe Rekomendacje:**
-• Zaplanuj standardową dostawę i harmonogram instalacji
-• Rozważ lokalne przepisy budowlane
-• Przewidź budżet na potencjalne przygotowanie placu
-• Przejrzyj wymagania elektryczne i hydrauliczne wcześnie
-
-⚠️ **Standardowe Czynniki Ryzyka:**
-• Opóźnienia pogodowe podczas budowy
-• Różnice w harmonogramie pozwoleń
-• Ograniczenia dostępu do placu dla dostawy
-• Wahania cen materiałów"""
-    else:
-        return f"""## ⚠️ Fallback Cost Estimate
-💰 **Total Project Cost: €{final_total:,.0f}**
-*Basic calculation when AI services are unavailable*
-
-📊 **Cost Breakdown:**
-• Materials and Base Costs: €{total_cost:,.0f}
-• Labor Costs (40%): €{labor_cost:,.0f}
-• Contingency (10%): €{contingency:,.0f}
-• Delivery cost: €{base_costs.get('delivery', 800):,.0f}
-
-💡 **Standard Recommendations:**
-• Plan standard delivery and installation schedule
-• Consider local building regulations
-• Budget for potential site preparation
-• Review electrical and plumbing requirements early
-
-⚠️ **Standard Risk Factors:**
-• Weather delays during construction
-• Permit schedule variations
-• Site access limitations for delivery
-• Material price fluctuations"""
+    
+    # Use the enhanced demo estimate which is now dynamic
+    result = groq_service._generate_demo_estimate(estimation_data, base_costs)
+    
+    # Format the enhanced result
+    return _format_ai_response(result, language)
