@@ -387,24 +387,9 @@ def create_animated_counter(target_value, label, prefix="€", suffix="", durati
         time.sleep(duration / steps)
 
 def show_calculation_animation(calculation_data):
-    """Show animated calculation process with steps"""
+    """Show simplified calculation process with progress bar only"""
     
     st.markdown("### 🔄 Calculating Your Quote...")
     
-    calculation_steps = [
-        "📦 Analyzing container specifications...",
-        "🔧 Processing modifications and features...", 
-        "💰 Calculating material and labor costs...",
-        "🚛 Computing delivery and logistics...",
-        "🎯 Applying discounts and optimizations...",
-        "✅ Finalizing your custom quote..."
-    ]
-    
-    # Show loading animation
-    show_loading_animation("Calculating comprehensive quote", 3)
-    
-    # Show calculation steps
-    show_calculation_steps(calculation_steps, 0.6)
-    
-    # Show success
-    show_success_animation("Quote Generated Successfully!", 1.5)
+    # Show only loading animation with progress bar
+    show_loading_animation("Calculating comprehensive quote", 2.0)

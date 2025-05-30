@@ -545,6 +545,10 @@ class GeminiService:
             response_text = response.text
             print(f"Raw Gemini response: {response_text[:200]}...")
             
+            # Remove markdown code block formatting if present
+            if '```json' in response_text:
+                response_text = response_text.replace('```json', '').replace('```', '')
+            
             start = response_text.find('{')
             end = response_text.rfind('}') + 1
             
