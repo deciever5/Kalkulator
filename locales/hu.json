@@ -288,7 +288,13 @@
     "contact_preferences": "Kapcsolattartási Preferenciák",
     "preferred_contact": "Előnyben Részesített Kapcsolatfelvételi Mód",
     "why_professional_inquiry": "Miért Küldjön Szakmai Érdeklődést?",
-    "preparation_tips": "Tippek a Legjobb Eredményekhez"
+    "preparation_tips": "Tippek a Legjobb Eredményekhez",
+        "contact": {
+      "email": "Email",
+      "phone": "Telefon",
+      "both": "Email és Telefon"
+    },
+    "preferred_method": "Előnyben részesített módszer"
   },
   "environment": "Környezet",
   "finish_level": "Befejezési Szint",
