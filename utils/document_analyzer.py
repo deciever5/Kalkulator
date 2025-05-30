@@ -25,36 +25,46 @@ class DocumentAnalyzer:
         Analyze PDF technical drawing and extract elements for pricing
         """
         try:
-            # Convert file to text content for Groq analysis
+            # Ensure file pointer is at beginning
+            uploaded_file.seek(0)
+            
+            # Convert file to text content for analysis
             file_bytes = uploaded_file.read()
-
+            
             # Reset file pointer for potential future use
             uploaded_file.seek(0)
 
             analysis_prompt = self._build_drawing_analysis_prompt(project_context)
 
-            # Try Groq first (free and fast), then fallback to text analysis
+            # Try Groq first (free and fast), then fallback to intelligent analysis
             try:
-                st.info("Analizuję rysunek za pomocą Groq AI...")
+                st.info("🤖 Analyzing drawing with Groq AI...")
                 result = self._analyze_with_groq(uploaded_file.name, analysis_prompt, project_context)
                 result['ai_model_used'] = 'Groq Llama3'
+                result['status'] = 'success'
                 return result
             except Exception as e:
                 st.warning(f"Groq analysis failed: {str(e)}")
 
                 # Try OpenAI if available
                 try:
-                    base64_file = base64.b64encode(file_bytes).decode()
-                    result = self._analyze_with_openai(base64_file, analysis_prompt)
-                    result['ai_model_used'] = 'OpenAI GPT-4o'
-                    return result
+                    if len(file_bytes) < 20 * 1024 * 1024:  # Only try if file is under 20MB
+                        base64_file = base64.b64encode(file_bytes).decode()
+                        result = self._analyze_with_openai(base64_file, analysis_prompt)
+                        result['ai_model_used'] = 'OpenAI GPT-4o'
+                        result['status'] = 'success'
+                        return result
+                    else:
+                        raise Exception("File too large for OpenAI analysis")
                 except Exception as e2:
                     st.warning(f"OpenAI analysis also failed: {str(e2)}")
-                    # Use intelligent fallback based on filename and context
-                    return self._analyze_with_intelligent_fallback(uploaded_file.name, project_context)
+                    
+                # Use intelligent fallback based on filename and context
+                st.info("🧠 Using intelligent fallback analysis...")
+                return self._analyze_with_intelligent_fallback(uploaded_file.name, project_context)
 
         except Exception as e:
-            st.error(f"Błąd podczas analizy dokumentu: {str(e)}")
+            st.error(f"Document analysis error: {str(e)}")
             return self._get_fallback_analysis()
 
     def analyze_dwg_metadata(self, uploaded_file) -> Dict[str, Any]:
