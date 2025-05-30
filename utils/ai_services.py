@@ -798,7 +798,7 @@ class GroqService:
             "project_execution": {
                 "critical_path_analysis": critical_path[:4],
                 "resource_allocation": resource_allocation,
-                "project_timeline": f"Łączny czas realizacji: {timeline}, w tym 2 tygodnie na pozwolenia" if language == 'pl' else f"Total execution time: {timeline}, including 2 weeks for permits"
+                "project_timeline": f"Łączny czas realizacji: {'8-14 tygodni' if complexity_factor > 1.5 else '6-10 tygodni'}, w tym 2 tygodnie na pozwolenia" if language == 'pl' else f"Total execution time: {'8-14 weeks' if complexity_factor > 1.5 else '6-10 weeks'}, including 2 weeks for permits"
             },
             "recommendations": {
                 "immediate_priorities": recommendations[:3] if recommendations else [],
