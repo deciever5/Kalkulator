@@ -73,12 +73,34 @@ def init_session_state():
 
 init_session_state()
 
-# Language selector
-render_language_selector()
+# Top navigation bar with language selector and login in top-right corner
+col_spacer, col_lang, col_login = st.columns([4, 1.5, 0.5])
 
-# Employee login button
-col_spacer, col_login = st.columns([5, 1])
+with col_lang:
+    # Language selector in top-right area
+    current_lang = get_current_language()
+    language_options = {
+        'pl': '🇵🇱 Polski',
+        'en': '🇬🇧 English',
+        'de': '🇩🇪 Deutsch',
+        'nl': '🇳🇱 Nederlands'
+    }
+    
+    selected_language = st.selectbox(
+        "🌐",
+        options=list(language_options.keys()),
+        format_func=lambda x: language_options[x],
+        index=list(language_options.keys()).index(current_lang),
+        key="top_language_selector",
+        label_visibility="collapsed"
+    )
+    
+    if selected_language != current_lang:
+        set_language(selected_language)
+        st.rerun()
+
 with col_login:
+    # Employee login button in top-right corner
     if not st.session_state.employee_logged_in:
         if st.button("👤", key="login_toggle_btn", help=t('ui.employee_login'), use_container_width=True):
             st.session_state.show_login = True

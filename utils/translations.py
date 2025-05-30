@@ -90,36 +90,5 @@ def get_available_languages():
     }
 
 def render_language_selector():
-    """Render language selector with dropdown"""
-    init_language()
-
-    current_lang = get_current_language()
-    
-    # Language options with flags
-    language_options = {
-        'pl': '🇵🇱 Polski',
-        'en': '🇬🇧 English',
-        'de': '🇩🇪 Deutsch',
-        'nl': '🇳🇱 Nederlands'
-    }
-    
-    # Create columns to position the dropdown
-    col1, col2, col3 = st.columns([4, 2, 1])
-    
-    with col2:
-        # Get current language display text
-        current_display = language_options[current_lang]
-        
-        # Create selectbox with language options
-        selected_language = st.selectbox(
-            "🌐 Language",
-            options=list(language_options.keys()),
-            format_func=lambda x: language_options[x],
-            index=list(language_options.keys()).index(current_lang),
-            key="language_selector"
-        )
-        
-        # Update language if changed
-        if selected_language != current_lang:
-            set_language(selected_language)
-            st.rerun()
+    """Language selector is now handled in main app navigation - this function kept for compatibility"""
+    pass
