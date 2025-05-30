@@ -26,12 +26,12 @@ def generate_cost_estimate(config, ai_model):
     """Generate AI-powered cost estimate with animated loading"""
     from utils.ai_services import estimate_cost_with_ai
     from utils.animations import show_calculation_animation, create_animated_counter
-    
+
     # Show animated calculation process
     calculation_container = st.container()
     with calculation_container:
         show_calculation_animation(config)
-    
+
     try:
         # Call the actual AI service with the configuration
         ai_estimate = estimate_cost_with_ai(config, ai_model)
@@ -40,12 +40,12 @@ def generate_cost_estimate(config, ai_model):
         # Fallback to configurator pricing when AI fails
         from utils.calculations import StructuralCalculations
         calc = StructuralCalculations()
-        
+
         try:
             # Use the base cost calculation method that exists
             cost_breakdown = calc.calculate_base_costs(config)
             total_cost = cost_breakdown.get('subtotal', 0)
-            
+
             return f"""
 ## ⚠️ {t('ai_service_error')}
 
@@ -156,12 +156,12 @@ else:
         st.write(f"**{t('climate_zone')}:** {climate_translated}")
         st.write(f"**{t('windows')}:** {config['number_of_windows']}")
         st.write(f"**{t('additional_doors')}:** {t('yes') if config['additional_doors'] else t('no')}")
-        
+
         # Show all advanced modifications from the enhanced configurator
         st.write(f"**{t('electrical_system')}:** {config.get('electrical_system', 'N/A')}")
         st.write(f"**{t('plumbing_system')}:** {config.get('plumbing_system', 'N/A')}")
         st.write(f"**{t('hvac_system')}:** {config.get('hvac_system', 'N/A')}")
-        
+
         if config.get('air_intakes'):
             st.write(f"**{t('air_intakes_label')}:** {config.get('air_intakes', 'N/A')}")
         if config.get('roof_modifications'):
@@ -170,7 +170,7 @@ else:
             st.write(f"**{t('security_features')}:** {config.get('security_features', 'N/A')}")
         if config.get('paint_finish'):
             st.write(f"**{t('paint_finish')}:** {config.get('paint_finish', 'N/A')}")
-        
+
         # Show detailed modifications
         modifications = config.get('modifications', {})
         if modifications:
@@ -186,11 +186,11 @@ else:
                         mod_count += 1
             if mod_count == 0:
                 st.write("• No additional modifications")
-        
+
         # Show cost-impacting factors
         if config.get('user_comment', '').strip():
             st.markdown(f"**User Requirements:** {config['user_comment'][:100]}{'...' if len(config['user_comment']) > 100 else ''}")
-        
+
         special_reqs = config.get('special_requirements', {})
         if any(special_reqs.values()):
             active_reqs = [key.replace('_', ' ').title() for key, value in special_reqs.items() if value]
@@ -200,7 +200,7 @@ else:
 
     # User input section for additional details
     st.markdown(f"### 💬 {t('additional_project_details')}:")
-    
+
     user_comment = st.text_area(
         t('project_specific_requirements'),
         placeholder=t('project_comment_placeholder'),
@@ -208,16 +208,16 @@ else:
         help=t('project_comment_help'),
         key="user_project_comment"
     )
-    
+
     # Specific requirement checkboxes
     st.markdown(f"**{t('specific_considerations')}:**")
     col1, col2 = st.columns(2)
-    
+
     with col1:
         special_location = st.checkbox(t('special_location_requirements'), key="special_location")
         urgent_timeline = st.checkbox(t('urgent_timeline_needed'), key="urgent_timeline")
         custom_modifications = st.checkbox(t('custom_modifications_needed'), key="custom_mods")
-    
+
     with col2:
         sustainability_focus = st.checkbox(t('sustainability_priority'), key="sustainability")
         budget_constraints = st.checkbox(t('budget_constraints'), key="budget_limit")
@@ -239,35 +239,35 @@ else:
             ],
             key="ai_model_select"
         )
-        
+
         # Show pricing rates for employees
         with st.expander("💰 View Current Pricing Rates"):
             from utils.calculations import StructuralCalculations
             calc = StructuralCalculations()
             rates = calc.get_all_pricing_rates()
-            
+
             col1, col2 = st.columns(2)
-            
+
             with col1:
                 st.markdown("**Labor Rates:**")
                 for role, rate in rates["labor_rates"].items():
                     st.write(f"• {role.replace('_', ' ').title()}: {rate}")
-                    
+
                 st.markdown("**Markup Rates:**")
                 for rate_type, rate in rates["markup_rates"].items():
                     st.write(f"• {rate_type.replace('_', ' ').title()}: {rate}")
-            
+
             with col2:
                 st.markdown("**Container Base Costs:**")
                 for container, cost in rates["container_base_costs"].items():
                     st.write(f"• {container.replace('_', ' ').title()}: {cost}")
-                    
+
                 st.markdown("**Modification Costs:**")
                 for mod, cost in rates["modification_costs"].items():
                     st.write(f"• {mod.replace('_', ' ').title()}: {cost}")
-            
+
             st.markdown("**Tax Rate:** " + rates["tax_rate"])
-            
+
             st.markdown("**Calculation Method:**")
             for step, description in rates["calculation_method"].items():
                 st.write(f"{step.replace('_', ' ').title()}: {description}")
@@ -290,7 +290,7 @@ else:
                     'budget_constraints': budget_constraints,
                     'regulatory_concerns': regulatory_concerns
                 }
-                
+
                 # Generate cost estimate
                 estimate = generate_cost_estimate(enhanced_config, ai_model)
 
