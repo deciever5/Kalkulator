@@ -272,20 +272,27 @@ Provide detailed response in this JSON format:
     def _process_cost_estimate_response(self, response: Dict[str, Any]) -> Dict[str, Any]:
         """Process and validate cost estimate response"""
 
-        # Ensure required fields exist
-        processed = {
-            "total_cost": response.get("total_cost", 0),
-            "confidence": min(1.0, max(0.0, response.get("confidence", 0.8))),
-            "estimated_timeline": response.get("estimated_timeline", "8-12 weeks"),
-            "breakdown": response.get("breakdown", {}),
-            "analysis": response.get("analysis", {})
-        }
+        # Return the full response structure for comprehensive display
+        if isinstance(response, dict) and len(response) > 5:
+            # This appears to be a comprehensive response, return as-is
+            return response
 
-        # Validate breakdown adds up to total
-        breakdown_total = sum(processed["breakdown"].values())
-        if abs(breakdown_total - processed["total_cost"]) > 100:  # Allow small rounding differences
-            # Adjust total to match breakdown
-            processed["total_cost"] = breakdown_total
+        # Fallback processing for simple responses
+        processed = {
+            "cost_analysis": {
+                "total_cost": response.get("total_cost", response.get("total_project_cost", 0)),
+                "confidence": min(1.0, max(0.0, response.get("confidence", response.get("confidence_level", 0.8)))),
+                "estimated_timeline": response.get("estimated_timeline", response.get("project_duration", "8-12 weeks")),
+                "breakdown": response.get("breakdown", response.get("detailed_breakdown", {})),
+                "market_insights": response.get("market_insights", response.get("market_intelligence", {}))
+            },
+            "technical_assessment": response.get("technical_assessment", {}),
+            "project_management": response.get("project_management", response.get("project_execution", {})),
+            "risk_analysis": response.get("risk_analysis", response.get("risk_assessment", {})),
+            "recommendations": response.get("recommendations", response.get("strategic_recommendations", {})),
+            "sustainability": response.get("sustainability", response.get("sustainability_analysis", {})),
+            "regulatory_compliance": response.get("regulatory_compliance", {})
+        }
 
         return processed
 
@@ -770,18 +777,27 @@ class GroqService:
     def _process_cost_estimate_response(self, response: Dict[str, Any]) -> Dict[str, Any]:
         """Process and validate cost estimate response"""
 
-        processed = {
-            "total_cost": response.get("total_cost", 0),
-            "confidence": min(1.0, max(0.0, response.get("confidence", 0.8))),
-            "estimated_timeline": response.get("estimated_timeline", "8-12 weeks"),
-            "breakdown": response.get("breakdown", {}),
-            "analysis": response.get("analysis", {})
-        }
+        # Return the full response structure for comprehensive display
+        if isinstance(response, dict) and len(response) > 5:
+            # This appears to be a comprehensive response, return as-is
+            return response
 
-        # Validate breakdown adds up to total
-        breakdown_total = sum(processed["breakdown"].values())
-        if abs(breakdown_total - processed["total_cost"]) > 100:
-            processed["total_cost"] = breakdown_total
+        # Fallback processing for simple responses
+        processed = {
+            "cost_analysis": {
+                "total_cost": response.get("total_cost", response.get("total_project_cost", 0)),
+                "confidence": min(1.0, max(0.0, response.get("confidence", response.get("confidence_level", 0.8)))),
+                "estimated_timeline": response.get("estimated_timeline", response.get("project_duration", "8-12 weeks")),
+                "breakdown": response.get("breakdown", response.get("detailed_breakdown", {})),
+                "market_insights": response.get("market_insights", response.get("market_intelligence", {}))
+            },
+            "technical_assessment": response.get("technical_assessment", {}),
+            "project_management": response.get("project_management", response.get("project_execution", {})),
+            "risk_analysis": response.get("risk_analysis", response.get("risk_assessment", {})),
+            "recommendations": response.get("recommendations", response.get("strategic_recommendations", {})),
+            "sustainability": response.get("sustainability", response.get("sustainability_analysis", {})),
+            "regulatory_compliance": response.get("regulatory_compliance", {})
+        }
 
         return processed
 
@@ -992,6 +1008,14 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "Auto-Select B
 def format_cost_estimate(result: Dict[str, Any], ai_model: str) -> str:
     """Format enhanced AI cost estimate result into comprehensive readable format"""
     
+    # Check if this is a raw JSON response that needs parsing
+    if isinstance(result, str):
+        try:
+            import json
+            result = json.loads(result)
+        except:
+            return result  # Return as-is if not parseable JSON
+    
     # Handle both old and new response formats
     cost_analysis = result.get('cost_analysis', result)
     total_cost = cost_analysis.get('total_project_cost', cost_analysis.get('total_cost', 0))
@@ -1013,7 +1037,7 @@ def format_cost_estimate(result: Dict[str, Any], ai_model: str) -> str:
 ### 📊 **Detailed Cost Breakdown:**
 """
     
-    # Enhanced breakdown display
+    # Enhanced breakdown display with more flexible mapping
     cost_items = [
         ('container_acquisition', 'container_base', 'Container Acquisition'),
         ('structural_modifications', 'structural_modifications', 'Structural Modifications'),
@@ -1030,64 +1054,129 @@ def format_cost_estimate(result: Dict[str, Any], ai_model: str) -> str:
         if cost > 0:
             estimate_text += f"- **{label}:** €{cost:,.2f}\n"
 
-    # Market intelligence if available
-    market_insights = cost_analysis.get('market_intelligence', {})
+    # Market intelligence with enhanced display
+    market_insights = cost_analysis.get('market_intelligence', cost_analysis.get('market_insights', {}))
     if market_insights:
         estimate_text += "\n### 📈 **Market Intelligence:**\n"
         for key, value in market_insights.items():
-            if value:
-                estimate_text += f"- **{key.replace('_', ' ').title()}:** {value}\n"
+            if value and str(value).strip():
+                label = key.replace('_', ' ').title()
+                estimate_text += f"- **{label}:** {value}\n"
 
-    # Technical assessment
+    # Technical assessment with enhanced categories
     technical = result.get('technical_assessment', {})
     if technical:
         estimate_text += "\n### 🔧 **Technical Assessment:**\n"
         for category, items in technical.items():
-            if items and isinstance(items, list):
-                estimate_text += f"**{category.replace('_', ' ').title()}:**\n"
-                for i, item in enumerate(items[:3], 1):  # Limit to 3 items
-                    estimate_text += f"{i}. {item}\n"
+            if items:
+                category_label = category.replace('_', ' ').title()
+                estimate_text += f"\n**{category_label}:**\n"
+                if isinstance(items, list):
+                    for i, item in enumerate(items[:4], 1):  # Show up to 4 items
+                        estimate_text += f"{i}. {item}\n"
+                else:
+                    estimate_text += f"- {items}\n"
 
-    # Risk analysis
+    # Project execution details
+    project_execution = result.get('project_execution', result.get('project_management', {}))
+    if project_execution:
+        estimate_text += "\n### 📋 **Project Execution Plan:**\n"
+        
+        # Critical path
+        critical_path = project_execution.get('critical_path_analysis', project_execution.get('critical_path', []))
+        if critical_path:
+            estimate_text += "\n**Critical Path:**\n"
+            for i, phase in enumerate(critical_path[:5], 1):
+                estimate_text += f"{i}. {phase}\n"
+        
+        # Resource requirements
+        resources = project_execution.get('resource_planning', project_execution.get('resource_requirements', {}))
+        if resources:
+            estimate_text += "\n**Resource Requirements:**\n"
+            for key, value in resources.items():
+                if value:
+                    label = key.replace('_', ' ').title()
+                    estimate_text += f"- **{label}:** {value}\n"
+
+    # Risk analysis with comprehensive display
     risk_analysis = result.get('risk_assessment', result.get('risk_analysis', {}))
     if risk_analysis:
-        estimate_text += "\n### ⚠️ **Risk Analysis:**\n"
-        for risk_type, risks in risk_analysis.items():
-            if risks and isinstance(risks, list) and 'risk' in risk_type:
-                estimate_text += f"**{risk_type.replace('_', ' ').title()}:**\n"
-                for i, risk in enumerate(risks[:2], 1):  # Limit to 2 items
+        estimate_text += "\n### ⚠️ **Risk Analysis & Mitigation:**\n"
+        
+        # Display all risk categories
+        risk_categories = ['technical_risks', 'financial_risks', 'schedule_risks', 'operational_risks']
+        for risk_type in risk_categories:
+            risks = risk_analysis.get(risk_type, [])
+            if risks and isinstance(risks, list):
+                category_label = risk_type.replace('_', ' ').title()
+                estimate_text += f"\n**{category_label}:**\n"
+                for i, risk in enumerate(risks[:3], 1):
                     estimate_text += f"{i}. {risk}\n"
+        
+        # Mitigation strategies
+        mitigation = risk_analysis.get('mitigation_strategies', [])
+        if mitigation:
+            estimate_text += f"\n**Mitigation Strategies:**\n"
+            for i, strategy in enumerate(mitigation[:4], 1):
+                estimate_text += f"{i}. {strategy}\n"
 
-    # Strategic recommendations
+    # Strategic recommendations with expanded display
     recommendations = result.get('strategic_recommendations', result.get('recommendations', {}))
     if recommendations:
         estimate_text += "\n### 💡 **Strategic Recommendations:**\n"
         
         # Handle both old and new format
         if isinstance(recommendations, dict):
-            for category, items in recommendations.items():
+            rec_categories = ['priority_actions', 'immediate_actions', 'cost_optimization', 'value_additions', 'alternative_approaches']
+            for category in rec_categories:
+                items = recommendations.get(category, [])
                 if items and isinstance(items, list):
-                    estimate_text += f"**{category.replace('_', ' ').title()}:**\n"
-                    for i, item in enumerate(items[:3], 1):
+                    category_label = category.replace('_', ' ').title()
+                    estimate_text += f"\n**{category_label}:**\n"
+                    for i, item in enumerate(items[:4], 1):
                         estimate_text += f"{i}. {item}\n"
         else:
             # Old format compatibility
             analysis = result.get('analysis', {})
             old_recommendations = analysis.get('recommendations', [])
-            for i, rec in enumerate(old_recommendations, 1):
+            for i, rec in enumerate(old_recommendations[:5], 1):
                 estimate_text += f"{i}. {rec}\n"
 
-    # Sustainability metrics if available
+    # Sustainability analysis with detailed metrics
     sustainability = result.get('sustainability_analysis', result.get('sustainability', {}))
     if sustainability:
         estimate_text += "\n### 🌱 **Sustainability Analysis:**\n"
         for key, value in sustainability.items():
-            if value:
+            if value and str(value).strip():
                 label = key.replace('_', ' ').title()
                 if isinstance(value, (int, float)):
-                    estimate_text += f"- **{label}:** {value}%\n" if 'percentage' in key else f"- **{label}:** {value}\n"
+                    if 'percentage' in key.lower():
+                        estimate_text += f"- **{label}:** {value}%\n"
+                    elif 'rating' in key.lower():
+                        estimate_text += f"- **{label}:** {value}/10\n"
+                    else:
+                        estimate_text += f"- **{label}:** {value}\n"
                 else:
                     estimate_text += f"- **{label}:** {value}\n"
+
+    # Regulatory compliance information
+    regulatory = result.get('regulatory_compliance', {})
+    if regulatory:
+        estimate_text += "\n### 📋 **Regulatory Compliance:**\n"
+        for category, items in regulatory.items():
+            if items:
+                category_label = category.replace('_', ' ').title()
+                estimate_text += f"\n**{category_label}:**\n"
+                if isinstance(items, list):
+                    for i, item in enumerate(items[:3], 1):
+                        estimate_text += f"{i}. {item}\n"
+                else:
+                    estimate_text += f"- {items}\n"
+
+    # Add debugging info for development
+    if len(estimate_text.split('\n')) < 20:  # If response seems too short
+        estimate_text += f"\n\n---\n**Debug Info:** Response keys: {list(result.keys())}\n"
+        estimate_text += f"**Total sections processed:** {len([k for k in result.keys() if result[k]])}\n"
 
     return estimate_text
 
