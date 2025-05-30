@@ -620,8 +620,11 @@ class GeminiService:
         **STANDARD MODIFICATIONS FROM CONFIGURATOR:**
         {chr(10).join('- ' + mod for mod in modifications) if modifications else '- No modifications specified'}
         
+        **COMPREHENSIVE CONFIGURATION SPECIFICATIONS:**
+        {estimation_data.get('comprehensive_specifications', 'Standard configuration')}
+        
         **CRITICAL - ADDITIONAL USER REQUIREMENTS:**
-        {user_prompt if user_prompt else 'No additional requirements specified'}
+        {estimation_data.get('all_requirements', user_prompt if user_prompt else 'No additional requirements specified')}
         
         **IMPORTANT:** You MUST account for ALL specifications in the user requirements section above. This includes:
         - Structural reinforcements for heavy loads

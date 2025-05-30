@@ -103,98 +103,51 @@ else:
     col1, col2 = st.columns(2)
 
     with col1:
-        # Translate container type
-        container_type_key = config['container_type'].lower().replace(' ', '_').replace('ft', 'ft')
-        if container_type_key == '20ft_standard':
-            container_type_translated = t('container.types.20ft_standard')
-        elif container_type_key == '40ft_standard':
-            container_type_translated = t('container.types.40ft_standard')
-        elif container_type_key == '40ft_high_cube':
-            container_type_translated = t('container.types.40ft_high_cube')
-        elif container_type_key == '20ft_refrigerated':
-            container_type_translated = t('container.types.20ft_refrigerated')
-        else:
-            container_type_translated = config['container_type']
-
-        # Translate main purpose
-        purpose_key = config['main_purpose'].lower().replace(' ', '_')
-        purpose_translated = t(f'container.use_cases.{purpose_key}')
-        if purpose_translated == f'container.use_cases.{purpose_key}':
-            purpose_translated = config['main_purpose']
-
-        # Translate environment
-        env_key = config['environment'].lower()
-        env_translated = t(f'container.environment.{env_key}')
-        if env_translated == f'container.environment.{env_key}':
-            env_translated = config['environment']
-
-        # Translate finish level
-        finish_key = config['finish_level'].lower()
-        finish_translated = t(f'container.finish_levels.{finish_key}')
-        if finish_translated == f'container.finish_levels.{finish_key}':
-            finish_translated = config['finish_level']
-
-        st.write(f"**{t('container_type')}:** {container_type_translated}")
-        st.write(f"**{t('purpose')}:** {purpose_translated}")
-        st.write(f"**{t('environment')}:** {env_translated}")
-        st.write(f"**{t('finish_level')}:** {finish_translated}")
+        st.write(f"**{t('container_type')}:** {config.get('container_type', 'N/A')}")
+        st.write(f"**Materiał konstrukcyjny:** {config.get('construction_material', 'N/A')}")
+        st.write(f"**Izolacja:** {config.get('insulation', 'N/A')}")
+        st.write(f"**{t('purpose')}:** {config.get('main_purpose', 'N/A')}")
+        st.write(f"**{t('environment')}:** {config.get('environment', 'N/A')}")
+        st.write(f"**{t('finish_level')}:** {config.get('finish_level', 'N/A')}")
+        st.write(f"**{t('flooring')}:** {config.get('flooring', 'N/A')}")
+        st.write(f"**{t('climate_zone')}:** {config.get('climate_zone', 'N/A')}")
 
     with col2:
-        # Translate flooring
-        flooring_key = config['flooring'].lower().replace(' ', '_')
-        flooring_translated = t(f'container.flooring.{flooring_key}')
-        if flooring_translated == f'container.flooring.{flooring_key}':
-            flooring_translated = config['flooring']
-
-        # Translate climate zone
-        climate_key = config['climate_zone'].lower().replace(' ', '_')
-        climate_translated = t(f'container.climate_zones.{climate_key}')
-        if climate_translated == f'container.climate_zones.{climate_key}':
-            climate_translated = config['climate_zone']
-
-        st.write(f"**{t('flooring')}:** {flooring_translated}")
-        st.write(f"**{t('climate_zone')}:** {climate_translated}")
-        st.write(f"**{t('windows')}:** {config.get('num_windows', 'N/A')}")
-        st.write(f"**{t('additional_doors')}:** {config.get('additional_openings', 'N/A')}")
-
-        # Show all advanced modifications from the enhanced configurator
+        st.write(f"**Okna:** {config.get('num_windows', 'N/A')}")
+        if config.get('window_types'):
+            st.write(f"**Typ okien:** {', '.join(config.get('window_types', []))}")
+        st.write(f"**Oświetlenie:** {config.get('lighting', 'N/A')}")
+        st.write(f"**Wentylacja:** {config.get('ventilation', 'N/A')}")
+        st.write(f"**Modyfikacje dachu:** {config.get('roof_modifications', 'N/A')}")
         st.write(f"**{t('electrical_system')}:** {config.get('electrical_system', 'N/A')}")
         st.write(f"**{t('plumbing_system')}:** {config.get('plumbing_system', 'N/A')}")
         st.write(f"**{t('hvac_system')}:** {config.get('hvac_system', 'N/A')}")
 
-        if config.get('air_intakes'):
-            st.write(f"**{t('air_intakes_label')}:** {config.get('air_intakes', 'N/A')}")
-        if config.get('roof_modifications'):
-            st.write(f"**{t('roof_modifications_label')}:** {config.get('roof_modifications', 'N/A')}")
-        if config.get('security_features'):
-            st.write(f"**{t('security_features')}:** {config.get('security_features', 'N/A')}")
-        if config.get('paint_finish'):
-            st.write(f"**{t('paint_finish')}:** {config.get('paint_finish', 'N/A')}")
+    # Show additional systems and modifications
+    st.markdown("### Dodatkowe systemy i modyfikacje:")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.write(f"**Układ wewnętrzny:** {config.get('interior_layout', 'N/A')}")
+        st.write(f"**Zabezpieczenia:** {config.get('security_systems', 'N/A')}")
+        st.write(f"**Okładzina zewnętrzna:** {config.get('exterior_cladding', 'N/A')}")
+        st.write(f"**Dodatkowe otwory:** {config.get('additional_openings', 'N/A')}")
+        
+    with col2:
+        st.write(f"**Systemy przeciwpożarowe:** {config.get('fire_systems', 'N/A')}")
+        st.write(f"**Dostępność:** {config.get('accessibility', 'N/A')}")
+        st.write(f"**Malowanie:** {config.get('paint_finish', 'N/A')}")
+        st.write(f"**Strefa dostawy:** {config.get('delivery_zone', 'N/A')}")
 
-        # Show detailed modifications
-        modifications = config.get('modifications', {})
-        if modifications:
-            st.markdown("**Modifications:**")
-            mod_count = 0
-            for key, value in modifications.items():
-                if value:
-                    if isinstance(value, bool):
-                        st.write(f"• {key.replace('_', ' ').title()}")
-                        mod_count += 1
-                    elif isinstance(value, (int, float)) and value > 0:
-                        st.write(f"• {key.replace('_', ' ').title()}: {value}")
-                        mod_count += 1
-            if mod_count == 0:
-                st.write("• No additional modifications")
-
-        # Show cost-impacting factors
-        if config.get('user_comment', '').strip():
-            st.markdown(f"**User Requirements:** {config['user_comment'][:100]}{'...' if len(config['user_comment']) > 100 else ''}")
-
-        special_reqs = config.get('special_requirements', {})
-        if any(special_reqs.values()):
-            active_reqs = [key.replace('_', ' ').title() for key, value in special_reqs.items() if value]
-            st.markdown(f"**Special Requirements:** {', '.join(active_reqs)}")
+    # Show special comments
+    if config.get('system_comments') or config.get('advanced_comments') or config.get('general_comments'):
+        st.markdown("### Dodatkowe wymagania klienta:")
+        if config.get('system_comments'):
+            st.write(f"**Systemy:** {config.get('system_comments')}")
+        if config.get('advanced_comments'):
+            st.write(f"**Modyfikacje:** {config.get('advanced_comments')}")
+        if config.get('general_comments'):
+            st.write(f"**Ogólne:** {config.get('general_comments')}")
 
     st.markdown("---")
 
@@ -279,9 +232,62 @@ else:
     if st.button(f"🚀 {t('generate_ai_estimate')}", use_container_width=True, type="primary"):
         with st.spinner(t('ai.messages.generating')):
             try:
-                # Prepare enhanced config with user input
+                # Prepare enhanced config with user input and comprehensive configuration
                 enhanced_config = config.copy()
                 enhanced_config['user_comment'] = user_comment
+                
+                # Add all comprehensive configuration details for AI analysis
+                comprehensive_details = []
+                if config.get('construction_material'):
+                    comprehensive_details.append(f"Materiał konstrukcyjny: {config['construction_material']}")
+                if config.get('insulation'):
+                    comprehensive_details.append(f"Izolacja: {config['insulation']}")
+                if config.get('lighting'):
+                    comprehensive_details.append(f"Oświetlenie: {config['lighting']}")
+                if config.get('ventilation'):
+                    comprehensive_details.append(f"Wentylacja: {config['ventilation']}")
+                if config.get('roof_modifications'):
+                    comprehensive_details.append(f"Modyfikacje dachu: {config['roof_modifications']}")
+                if config.get('interior_layout'):
+                    comprehensive_details.append(f"Układ wewnętrzny: {config['interior_layout']}")
+                if config.get('security_systems'):
+                    comprehensive_details.append(f"Zabezpieczenia: {config['security_systems']}")
+                if config.get('exterior_cladding'):
+                    comprehensive_details.append(f"Okładzina zewnętrzna: {config['exterior_cladding']}")
+                if config.get('additional_openings'):
+                    comprehensive_details.append(f"Dodatkowe otwory: {config['additional_openings']}")
+                if config.get('fire_systems'):
+                    comprehensive_details.append(f"Systemy przeciwpożarowe: {config['fire_systems']}")
+                if config.get('accessibility'):
+                    comprehensive_details.append(f"Dostępność: {config['accessibility']}")
+                if config.get('delivery_zone'):
+                    comprehensive_details.append(f"Strefa dostawy: {config['delivery_zone']}")
+                if config.get('transport_type'):
+                    comprehensive_details.append(f"Transport: {config['transport_type']}")
+                if config.get('installation'):
+                    comprehensive_details.append(f"Montaż: {config['installation']}")
+                if config.get('office_equipment'):
+                    comprehensive_details.append(f"Wyposażenie biurowe: {config['office_equipment']}")
+                if config.get('appliances'):
+                    comprehensive_details.append(f"Sprzęt AGD: {config['appliances']}")
+                if config.get('it_systems'):
+                    comprehensive_details.append(f"Systemy IT: {config['it_systems']}")
+                
+                # Combine all comments and requirements
+                all_comments = []
+                if config.get('system_comments'):
+                    all_comments.append(f"Wymagania systemów: {config['system_comments']}")
+                if config.get('advanced_comments'):
+                    all_comments.append(f"Wymagania modyfikacji: {config['advanced_comments']}")
+                if config.get('general_comments'):
+                    all_comments.append(f"Wymagania ogólne: {config['general_comments']}")
+                if user_comment:
+                    all_comments.append(f"Dodatkowe wymagania: {user_comment}")
+                
+                # Create detailed requirements string for AI
+                enhanced_config['comprehensive_specifications'] = "; ".join(comprehensive_details)
+                enhanced_config['all_requirements'] = "; ".join(all_comments)
+                
                 enhanced_config['special_requirements'] = {
                     'special_location': special_location,
                     'urgent_timeline': urgent_timeline,
