@@ -341,13 +341,35 @@ h3, .stMarkdown h3 {
     line-height: 1.6;
 }
 
+/* Navigation card improvements */
+.nav-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    margin: var(--space-2) 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    border-color: var(--primary-500);
+}
+
 /* Custom button styling */
 .stButton > button {
-    height: 1920px !important;
+    min-height: 44px !important;
     white-space: pre-line !important;
-    font-size: 16px !important;
-    border: 2px solid #e8f4f8 !important;
-    border-radius: 15px !important;
+    font-size: var(--text-base) !important;
+    border: 1px solid var(--gray-200) !important;
+    border-radius: var(--radius-lg) !important;
     background: white !important;
     color: #333 !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
