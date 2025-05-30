@@ -23,8 +23,14 @@ if 'show_login' not in st.session_state:
 render_shared_header(show_login=False)
 
 def generate_cost_estimate(config, ai_model):
-    """Generate AI-powered cost estimate using actual AI services"""
+    """Generate AI-powered cost estimate with animated loading"""
     from utils.ai_services import estimate_cost_with_ai
+    from utils.animations import show_calculation_animation, create_animated_counter
+    
+    # Show animated calculation process
+    calculation_container = st.container()
+    with calculation_container:
+        show_calculation_animation(config)
     
     try:
         # Call the actual AI service with the configuration

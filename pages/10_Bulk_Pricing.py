@@ -125,6 +125,8 @@ with col2:
 
 # Add to bulk order
 if st.button("Add to Bulk Order", type="primary"):
+    from utils.animations import show_loading_animation, show_success_animation
+    
     container_config = {
         "container_type": container_type,
         "main_purpose": main_purpose,
@@ -137,11 +139,15 @@ if st.button("Add to Bulk Order", type="primary"):
         "delivery_zone": "poland"
     }
     
+    # Show loading animation
+    show_loading_animation("Adding containers to bulk order...", 1.5)
+    
     # Add multiple containers based on quantity
     for _ in range(quantity):
         st.session_state.bulk_containers.append(container_config.copy())
     
-    st.success(f"Added {quantity} containers to bulk order")
+    # Show success animation
+    show_success_animation(f"Added {quantity} containers successfully!", 1)
     st.rerun()
 
 # Display current bulk order

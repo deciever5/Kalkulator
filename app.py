@@ -70,6 +70,11 @@ def init_session_state():
 
 try:
     init_session_state()
+    
+    # Load animations and micro-interactions
+    from utils.animations import add_hover_animations, add_page_transition
+    add_hover_animations()
+    add_page_transition()
 
     # Force reload translations when language changes
     if 'prev_language' not in st.session_state:

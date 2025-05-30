@@ -20,8 +20,12 @@ if 'employee_logged_in' not in st.session_state:
 if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
+# Load animations
+from utils.animations import add_hover_animations, show_loading_animation, create_animated_counter
+add_hover_animations()
+
 # Render shared header without login button
-render_shared_header(show_login=False)
+render_shared_header(show_login=False, current_page="Container_Configurator")
 
 # Initialize database
 if 'container_db' not in st.session_state:
