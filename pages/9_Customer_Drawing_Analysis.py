@@ -27,6 +27,13 @@ st.info(f"""
 {t('drawing_analysis_customer.info_text')}
 """)
 
+# Configuration requirement notice
+st.warning(f"""
+⚠️ **{t('drawing_analysis_customer.config_required', 'Konfiguracja Wymagana')}**
+
+{t('drawing_analysis_customer.config_required_text', 'Dla dokładnej analizy rysunków technicznych wymagana jest podstawowa konfiguracja kontenera. Bez konfiguracji analiza będzie ograniczona do podstawowych oszacowań.')}
+""")
+
 # Check if basic configuration exists
 if 'container_config' not in st.session_state:
     st.warning(f"⚠️ {t('drawing_analysis_customer.no_config', 'Nie znaleziono konfiguracji kontenera. Najpierw skonfiguruj swój kontener.')}")
@@ -89,6 +96,13 @@ with col2:
 
 # File upload section - Always show with fallback translations
 st.subheader(f"📤 {t('drawing_analysis_customer.file_upload', 'Przesyłanie Plików')}")
+
+# Additional configuration info
+if 'container_config' not in st.session_state or not st.session_state.container_config.get('container_type'):
+    st.info(f"""
+    💡 **{t('drawing_analysis_customer.config_tip', 'Wskazówka')}:** 
+    {t('drawing_analysis_customer.config_tip_text', 'Skonfiguruj swój kontener przed analizą rysunków, aby otrzymać dokładniejsze wyniki i dostosowane wyceny.')}
+    """)
 
 uploaded_files = st.file_uploader(
     t('drawing_analysis_customer.upload_drawings', 'Prześlij rysunki techniczne'),
@@ -179,6 +193,13 @@ if uploaded_files and st.button(f"🔍 {t('drawing_analysis_customer.analyze_but
                         
                     else:
                         st.error(f"❌ {t('drawing_analysis_customer.analysis_failed')}")
+                        st.warning(f"""
+                        **{t('drawing_analysis_customer.analysis_failed_reasons', 'Możliwe przyczyny niepowodzenia analizy')}:**
+                        • Plik może być uszkodzony lub w nieobsługiwanym formacie
+                        • Rysunek może nie zawierać wystarczających szczegółów technicznych
+                        • Brak połączenia z usługą analizy AI
+                        • Konfiguracja kontenera może być niepełna
+                        """)
                         st.info("Attempting fallback analysis based on project context...")
                         
                         # Show fallback results
