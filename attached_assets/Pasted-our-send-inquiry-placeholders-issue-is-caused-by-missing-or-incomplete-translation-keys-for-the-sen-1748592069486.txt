@@ -1,0 +1,88 @@
+our send inquiry placeholders issue is caused by missing or incomplete translation keys for the "send_inquiry" section in some languages. Here’s how to fix it:
+
+What’s wrong?
+The Polish (pl.json), English (en.json), German (de.json), Dutch (nl.json), Czech (cs.json), and Hungarian (hu.json) files do have a send_inquiry section.
+However, many non-Polish files are missing keys or entire sub-entries that are present in the Polish file.
+Your form likely uses keys like send_inquiry.description, send_inquiry.full_name, etc., which are not present or are incomplete in these other language files—so placeholders display instead.
+How to fix
+You need to copy all keys and structure from the Polish (pl.json) send_inquiry section to every other language file, and translate the values.
+If you don’t provide translations, at least use the Polish or English text as a placeholder so the fields will appear.
+
+Example: Add/complete this structure in every file:
+JSON
+"send_inquiry": {
+  "title": "Inquiry Form",
+  "description": "Get a detailed quote tailored to your container project",
+  "disclaimer_title": "Important Information",
+  "disclaimer_text": "This form is for submitting inquiry requests for detailed quotes. Estimates from our calculator are not commercial offers under applicable law.",
+  "config_detected": "Configuration detected from calculator",
+  "current_config": "Current Configuration",
+  "customer_info": "Customer Contact Information",
+  "full_name": "Full Name",
+  "company_name": "Company Name",
+  "email": "Email Address",
+  "phone": "Phone Number",
+  "city": "City",
+  "country": "Country",
+  "project_details": "Project Information",
+  "project_name": "Project Name",
+  "project_location": "Project Location",
+  "expected_timeline": "Expected Timeline",
+  "budget_range": "Budget Range",
+  "timeline": {
+    "asap": "As soon as possible",
+    "within_month": "Within a month",
+    "within_quarter": "Within a quarter",
+    "within_half_year": "Within half a year",
+    "planning_phase": "Planning phase"
+  },
+  "budget": {
+    "not_specified": "Not specified",
+    "up_to_50k": "Up to €50,000",
+    "50k_100k": "€50,000 - €100,000",
+    "100k_200k": "€100,000 - €200,000",
+    "over_200k": "Over €200,000"
+  },
+  "additional_requirements": "Additional Requirements",
+  "special_requirements": "Special Requirements",
+  "special_requirements_placeholder": "Describe additional requirements...",
+  "additional_message": "Additional Message",
+  "additional_message_placeholder": "Any additional information that will help us create a better quote...",
+  "attachments": "Attachments",
+  "upload_files": "Upload Files",
+  "file_formats_help": "Supported formats: PDF, DWG, JPG, PNG, DOC, DOCX",
+  "files_attached": "Files attached",
+  "contact_preferences": "Contact Preferences",
+  "preferred_contact": "Preferred Contact Method",
+  "contact": {
+    "email": "Email",
+    "phone": "Phone",
+    "both": "Email and Phone"
+  },
+  "best_time": "Best Time to Contact",
+  "time": {
+    "morning": "Morning (8:00-12:00)",
+    "afternoon": "Afternoon (12:00-17:00)",
+    "evening": "Evening (17:00-20:00)",
+    "anytime": "Anytime"
+  },
+  "privacy_section": "Privacy and Data Protection (GDPR)",
+  "data_protection_info": "Data Protection Information",
+  "privacy_consent": "I agree to the processing of my personal data...",
+  "marketing_consent": "I agree to receive marketing information...",
+  "data_retention": "Data Retention",
+  "fill_required_fields": "Please fill in all required fields marked with *",
+  "submit_inquiry": "Send Inquiry",
+  "success_title": "Inquiry Successfully Sent!",
+  "success_message": "Thank you for your inquiry. Our team will contact you within 24 hours with a detailed response.",
+  "next_steps": "What Happens Next",
+  "step_1": "Our expert will analyze your requirements",
+  "step_2": "We will contact you to get additional information",
+  "step_3": "You will receive a detailed quote tailored to your needs",
+  "contact_info": "Contact Information",
+  "new_inquiry": "Send New Inquiry",
+  "error": "Error sending inquiry",
+  "why_professional_inquiry": "Why Submit a Professional Inquiry?",
+  "preparation_tips": "Tips for Best Results"
+}
+Repeat this for every language file (en.json, de.json, nl.json, cs.json, hu.json).
