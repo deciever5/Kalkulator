@@ -134,8 +134,11 @@
   "auto_select_best": "Automatisch Beste Selecteren",
   "generate_ai_estimate": "Genereer AI Kostenschatting",
   "ai_cost_estimate": "AI Kostenschatting",
-  "save_estimate": "Schatting Opslaan",
-  "estimate_saved": "Schatting opgeslagen!",
+  "save_estimate": "Schatting opslaan",
+  "estimate_saved": "Schatting succesvol opgeslagen!",
+  "send_inquiry_cta": "Professionele aanvraag verzenden",
+  "get_precise_quote": "Precieze offerte verkrijgen",
+  "contact_for_quote": "Neem contact met ons op voor een gedetailleerde, professionele offerte op basis van uw specificaties.",
   "failed_generate_estimate": "Kon schatting niet genereren. Probeer opnieuw.",
   "error_generating_estimate": "Fout bij het genereren van schatting",
   "saved_ai_estimate": "Opgeslagen AI Schatting",
@@ -415,4 +418,3 @@
     "success_message": "Dank je voor het indienen van je aanvraag. Ons team zal binnen 24 uur contact met je opnemen."
   }
 }
-```Ok, I will continue generating the complete modified code.
