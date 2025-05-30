@@ -5,13 +5,17 @@ import plotly.graph_objects as go
 from utils.calculations import StructuralCalculations
 from utils.translations import t, render_language_selector, get_current_language, render_language_selector
 from utils.components import render_back_to_home
+from utils.shared_header import render_shared_header
 
-# Page configuration
+# Page configuration - MUST BE FIRST
 st.set_page_config(
     page_title="Technical Analysis - KAN-BUD",
     page_icon="🔧",
     layout="wide"
 )
+
+from utils.translations import t, init_language
+from utils.shared_header import render_shared_header
 
 # Initialize language if not set
 if 'language' not in st.session_state:

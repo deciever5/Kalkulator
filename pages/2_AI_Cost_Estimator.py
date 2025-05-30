@@ -19,7 +19,7 @@ if 'employee_logged_in' not in st.session_state:
 if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
-# Render shared header with language selector and login
+# Render shared header with unified navigation
 render_shared_header()
 
 def generate_cost_estimate(config, ai_model):

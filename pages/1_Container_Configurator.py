@@ -10,8 +10,18 @@ import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
 from utils.translations import t, init_language, get_current_language, set_language
+from utils.shared_header import render_shared_header
 
 init_language()
+
+# Initialize session state for login
+if 'employee_logged_in' not in st.session_state:
+    st.session_state.employee_logged_in = False
+if 'show_login' not in st.session_state:
+    st.session_state.show_login = False
+
+# Render shared header with unified navigation
+render_shared_header()
 
 # Initialize database
 if 'container_db' not in st.session_state:
@@ -69,7 +79,6 @@ st.markdown(f"""
 # Navigation
 col1, col2 = st.columns(2)
 with col1:
-    current_language = get_current_language()
     home_text = t('ui.back_to_home')
     if st.button(home_text, key="home_nav", use_container_width=True):
         st.switch_page("app.py")
