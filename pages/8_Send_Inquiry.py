@@ -139,7 +139,7 @@ additional_requirements = st.text_area(
 additional_message = st.text_area(
     t('send_inquiry.additional_message'), 
     placeholder=t('send_inquiry.additional_message_placeholder'),
-    height=60
+    height=80
 )
 
 # File Upload

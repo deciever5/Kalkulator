@@ -552,10 +552,13 @@
     "fill_required_fields": "Vul alle verplichte velden gemarkeerd met * in",
     "submit_inquiry": "Aanvraag Verzenden",
     "success_title": "Aanvraag Succesvol Verzonden!",
-    "success_message": "Dank je voor het indienen van je aanvraag. Ons team zal binnen 24 uur contact met je opnemen."
+    "success_message": "Dank je voor het indienen van je aanvraag. Ons team zal binnen 24 uur contact met je opnemen.",
+    "step_1": "Onze expert zal uw vereisten analyseren",
+    "step_2": "We nemen contact met u op voor aanvullende informatie",
+    "step_3": "U ontvangt een gedetailleerde offerte op maat"
   },
-  "back_to_home": "← Terug naar Home",
-  "go_to_configurator": "🔧 Naar Configurator",
+  "back_to_home": "← Terug naar startpagina",
+  "go_to_configurator": "🔧 Ga naar configurator",
   "send_inquiry": "Verstuur aanvraag",
   "get_detailed_quote_text": "Ontvang gedetailleerde offerte op maat"
 }
