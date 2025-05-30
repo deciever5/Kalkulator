@@ -373,7 +373,7 @@
     "project_name": "Project Name",
     "project_location": "Project Location",
     "expected_timeline": "Expected Timeline",
-    "budget_Range": "Budget Range",
+    "budget_range": "Budget Range",
     "timeline": {
       "asap": "As soon as possible",
       "within_month": "Within a month",

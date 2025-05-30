@@ -259,7 +259,16 @@
     "additional_message_placeholder": "Jakékoli další informace, které nám pomohou vytvořit lepší nabídku...",
     "attachments": "Přílohy",
     "upload_files": "Nahrát Soubory",
+    "file_formats_help": "Podporované formáty: PDF, DWG, JPG, PNG, DOC, DOCX",
+    "files_attached": "Přiložené soubory",
     "recommended_files": "Doporučené Dokumenty",
+    "contact_preferences": "Kontaktní Preference",
+    "preferred_contact": "Preferovaná Metoda Kontaktu",
+    "contact": {
+      "email": "Email",
+      "phone": "Telefon",
+      "both": "Email a Telefon"
+    },
     "best_time": "Nejlepší Čas pro Kontakt",
     "time": {
       "morning": "Ráno (8:00-12:00)",
@@ -283,10 +292,6 @@
     "contact_info": "Kontaktní Informace",
     "new_inquiry": "Odeslat Novou Poptávku",
     "error": "Chyba při odesílání poptávky",
-    "file_formats_help": "Podporované formáty: PDF, DWG, JPG, PNG, DOC, DOCX",
-    "files_attached": "Přiložené soubory",
-    "contact_preferences": "Kontaktní Preference",
-    "preferred_contact": "Preferovaná Metoda Kontaktu",
     "why_professional_inquiry": "Proč Podat Profesionální Poptávku?",
     "preparation_tips": "Tipy pro Nejlepší Výsledky"
   },
