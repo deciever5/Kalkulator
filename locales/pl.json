@@ -450,12 +450,12 @@
     "system_settings": "Ustawienia Systemu"
   },
   "advanced_modifications": "Zaawansowane modyfikacje",
-  "air_intakes": "Nawiewy i wentylacja",
-  "roof_modifications": "Modyfikacje dachu",
+  "air_intakes_label": "Nawiewy i wentylacja",
+  "roof_modifications_label": "Modyfikacje dachu",
   "security_features": "Zabezpieczenia",
   "exterior_cladding": "Okładzina zewnętrzna",
   "additional_openings": "Dodatkowe otwory",
-  "fire_safety": "Systemy przeciwpożarowe",
+  "fire_safety_label": "Systemy przeciwpożarowe",
   "accessibility_features": "Dostępność",
   "paint_finish": "Malowanie i wykończenie",
   "air_intakes": {

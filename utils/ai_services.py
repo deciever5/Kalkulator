@@ -519,8 +519,13 @@ class GeminiService:
         self.api_key = os.environ.get('GEMINI_API_KEY')
         
         if self.api_key:
-            genai.configure(api_key=self.api_key)
-            self.model = genai.GenerativeModel(self.model_name)
+            try:
+                genai.configure(api_key=self.api_key)
+                self.model = genai.GenerativeModel(self.model_name)
+                print("✅ Gemini API configured successfully")
+            except Exception as e:
+                print(f"⚠️ Gemini configuration failed: {e}")
+                self.model = None
         else:
             self.model = None
             print("⚠️ No GEMINI_API_KEY found")

@@ -222,7 +222,7 @@ with col1:
     
     # Air intakes and ventilation
     air_intakes = st.selectbox(
-        t('air_intakes'),
+        t('air_intakes_label'),
         [t('air_intakes.none'), t('air_intakes.standard'), t('air_intakes.industrial'), t('air_intakes.marine_grade')],
         key="air_intakes",
         help=t('help.air_intakes')
@@ -230,7 +230,7 @@ with col1:
     
     # Roof modifications
     roof_modifications = st.selectbox(
-        t('roof_modifications'),
+        t('roof_modifications_label'),
         [t('roof_modifications.none'), t('roof_modifications.skylight'), t('roof_modifications.roof_hatch'), t('roof_modifications.solar_ready')],
         key="roof_modifications",
         help=t('help.roof_modifications')
@@ -293,7 +293,7 @@ with col2:
     
     # Fire safety systems
     fire_safety = st.selectbox(
-        t('fire_safety'),
+        t('fire_safety_label'),
         [t('fire_safety.basic'), t('fire_safety.smoke_detection'), t('fire_safety.sprinkler'), t('fire_safety.full_system')],
         key="fire_safety",
         help=t('help.fire_safety')
