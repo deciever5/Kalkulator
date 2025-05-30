@@ -84,28 +84,125 @@ class OpenAIService:
             raise Exception(f"OpenAI technical analysis error: {str(e)}")
 
     def _build_cost_estimation_prompt(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> str:
-        """Build optimized prompt for cost estimation"""
+        """Build enhanced prompt for comprehensive cost estimation"""
         config = estimation_data.get("container_config", {})
+        language = estimation_data.get('response_language', 'en')
 
-        # Build compact configuration summary
-        config_summary = [
-            f"Type: {config.get('base_type', 'Unknown')}",
-            f"Use: {config.get('use_case', 'Unknown')}",
-            f"Occupancy: {config.get('occupancy', 1)}",
-            f"Environment: {config.get('environment', 'Unknown')}"
-        ]
+        # Enhanced configuration summary with technical details
+        config_summary = []
+        config_summary.append(f"Container Type: {config.get('base_type', 'Unknown')}")
+        config_summary.append(f"Primary Use Case: {config.get('use_case', 'Unknown')}")
+        config_summary.append(f"Expected Occupancy: {config.get('occupancy', 1)} people")
+        config_summary.append(f"Operating Environment: {config.get('environment', 'Unknown')}")
+        config_summary.append(f"Finish Quality Level: {config.get('finish_level', 'Standard')}")
+        config_summary.append(f"Climate Zone: {config.get('climate_zone', 'Temperate')}")
 
+        # Detailed modifications list
         modifications = config.get('modifications', {})
         if modifications:
-            mod_list = [f"{k}: {v}" for k, v in modifications.items() if v]
-            config_summary.append(f"Modifications: {', '.join(mod_list)}")
+            mod_details = []
+            for key, value in modifications.items():
+                if value:
+                    if key == 'windows' and isinstance(value, int):
+                        mod_details.append(f"Windows: {value} units")
+                    elif key == 'flooring':
+                        mod_details.append(f"Flooring: {value}")
+                    elif isinstance(value, bool):
+                        mod_details.append(f"{key.replace('_', ' ').title()}: Yes")
+                    else:
+                        mod_details.append(f"{key.replace('_', ' ').title()}: {value}")
+            if mod_details:
+                config_summary.append(f"Modifications: {'; '.join(mod_details)}")
 
-        return f"""Analyze container project. Config: {'; '.join(config_summary)}
-Location: {estimation_data.get('project_location', 'Europe')}
-Base costs: {json.dumps(base_costs, separators=(',', ':'))}
+        # Enhanced system message based on language
+        system_messages = {
+            'en': "You are a senior container modification specialist with 15+ years experience in European markets. Provide comprehensive cost analysis with market insights, technical recommendations, risk assessment, and optimization opportunities.",
+            'pl': "Jesteś starszym specjalistą od modyfikacji kontenerów z ponad 15-letnim doświadczeniem na rynkach europejskich. Zapewnij kompleksową analizę kosztów z wglądem w rynek, rekomendacjami technicznymi, oceną ryzyka i możliwościami optymalizacji.",
+            'de': "Sie sind ein erfahrener Containermodifikations-Spezialist mit über 15 Jahren Erfahrung auf europäischen Märkten. Bieten Sie umfassende Kostenanalyse mit Markteinblicken, technischen Empfehlungen, Risikobewertung und Optimierungsmöglichkeiten.",
+            'nl': "U bent een senior containermodificatie specialist met 15+ jaar ervaring op Europese markten. Bied uitgebreide kostenanalyse met marktinzichten, technische aanbevelingen, risicobeoordeling en optimalisatiemogelijkheden.",
+            'hu': "Ön egy vezető konténer-módosítási szakértő több mint 15 éves európai piaci tapasztalattal. Nyújtson átfogó költségelemzést piaci betekintéssel, műszaki ajánlásokkal, kockázatértékeléssel és optimalizálási lehetőségekkel.",
+            'cs': "Jste senior specialista na úpravy kontejnerů s více než 15letými zkušenostmi na evropských trzích. Poskytněte komplexní analýzu nákladů s tržními poznatky, technickými doporučeními, hodnocením rizik a možnostmi optimalizace."
+        }
 
-Respond in {estimation_data.get('response_language', 'en')} with JSON:
-{{"total_cost":0,"confidence":0.8,"estimated_timeline":"8-12 weeks","breakdown":{{"container_base":0,"structural_modifications":0,"systems_installation":0,"finishes_interior":0,"labor_costs":0,"permits_fees":0,"delivery_logistics":0,"contingency":0}},"analysis":{{"recommendations":[],"risk_factors":[],"cost_optimization":[]}}}}"""
+        return f"""{system_messages.get(language, system_messages['en'])}
+
+PROJECT ANALYSIS REQUEST:
+
+CONTAINER SPECIFICATIONS:
+{chr(10).join(config_summary)}
+
+LOCATION CONTEXT:
+- Project Location: {estimation_data.get('project_location', 'Central Europe')}
+- Timeline Requirements: {estimation_data.get('project_timeline', 'Standard')}
+- Quality Standards: {estimation_data.get('quality_level', 'European Standard')}
+
+BASE COST CALCULATIONS:
+{json.dumps(base_costs, indent=2)}
+
+REQUIRED COMPREHENSIVE ANALYSIS:
+1. Detailed cost breakdown with market trend analysis
+2. Material costs with supplier chain considerations
+3. Labor cost variations by region and season
+4. Technical feasibility assessment and structural requirements
+5. Building code compliance requirements by region
+6. Risk analysis and mitigation strategies
+7. Timeline optimization with critical path analysis
+8. Sustainability assessment and energy efficiency
+9. Alternative design suggestions with cost comparisons
+10. Long-term maintenance and lifecycle costs
+
+IMPORTANT: Respond entirely in {language} language. ALL content including technical terms, recommendations, and analysis must be in {language}.
+
+Provide detailed response in this JSON format:
+{{
+  "cost_analysis": {{
+    "total_cost": 0,
+    "confidence_level": 0.9,
+    "cost_breakdown": {{
+      "container_base": 0,
+      "structural_modifications": 0,
+      "systems_installation": 0,
+      "finishes_interior": 0,
+      "labor_costs": 0,
+      "permits_fees": 0,
+      "delivery_logistics": 0,
+      "contingency": 0
+    }},
+    "market_trends": {{
+      "material_cost_trend": "description",
+      "labor_availability": "description",
+      "seasonal_factors": "description"
+    }}
+  }},
+  "technical_assessment": {{
+    "structural_requirements": ["requirement1", "requirement2"],
+    "building_code_compliance": ["compliance1", "compliance2"],
+    "engineering_challenges": ["challenge1", "challenge2"]
+  }},
+  "project_management": {{
+    "estimated_timeline": "8-12 weeks",
+    "critical_path": ["phase1", "phase2", "phase3"],
+    "resource_requirements": {{
+      "specialized_labor": "description",
+      "equipment_needs": "description"
+    }}
+  }},
+  "risk_analysis": {{
+    "technical_risks": ["risk1", "risk2"],
+    "financial_risks": ["risk1", "risk2"],
+    "mitigation_strategies": ["strategy1", "strategy2"]
+  }},
+  "sustainability": {{
+    "environmental_impact": "assessment",
+    "energy_efficiency_rating": "rating",
+    "recyclable_materials_percentage": 0
+  }},
+  "recommendations": {{
+    "immediate_actions": ["action1", "action2"],
+    "optimization_opportunities": ["opportunity1", "opportunity2"],
+    "alternative_approaches": ["approach1", "approach2"]
+  }}
+}}"""
 
     def _build_technical_analysis_prompt(self, config: Dict[str, Any], analysis_params: Dict[str, Any], 
                                        structural_analysis: Dict[str, Any]) -> str:
@@ -237,54 +334,120 @@ class AnthropicService:
             raise Exception(f"Anthropic technical analysis error: {str(e)}")
 
     def _build_cost_estimation_prompt(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> str:
-        """Build prompt for cost estimation with Claude"""
+        """Build enhanced prompt for comprehensive cost estimation with Claude"""
 
         config = estimation_data.get("container_config", {})
+        language = estimation_data.get('response_language', 'en')
+
+        # Language-specific system message
+        system_messages = {
+            'en': "Expert container modification cost estimator with 15+ years European market experience. Specialist in structural engineering, building codes, sustainability, and project optimization.",
+            'pl': "Ekspert ds. wyceny modyfikacji kontenerów z ponad 15-letnim doświadczeniem na rynku europejskim. Specjalista w zakresie inżynierii konstrukcyjnej, przepisów budowlanych, zrównoważonego rozwoju i optymalizacji projektów.",
+            'de': "Experte für Containermodifikations-Kostenschätzung mit über 15 Jahren Erfahrung auf dem europäischen Markt. Spezialist für Bauingenieurwesen, Bauvorschriften, Nachhaltigkeit und Projektoptimierung.",
+            'nl': "Expert in kostenraming voor containermodificaties met 15+ jaar ervaring op de Europese markt. Specialist in constructie-engineering, bouwvoorschriften, duurzaamheid en projectoptimalisatie.",
+            'hu': "Konténer-módosítási költségbecslési szakértő több mint 15 éves európai piaci tapasztalattal. Szakértő az építőmérnökségben, építési előírásokban, fenntarthatóságban és projektoptimalizálásban.",
+            'cs': "Expert na odhady nákladů na úpravy kontejnerů s více než 15letými zkušenostmi na evropském trhu. Specialista na stavební inženýrství, stavební předpisy, udržitelnost a optimalizaci projektů."
+        }
 
         prompt = f"""
-        As an expert construction cost estimator specializing in steel container modifications, analyze the following project and provide a detailed cost estimate.
+        {system_messages.get(language, system_messages['en'])}
 
-        Container Configuration:
+        COMPREHENSIVE PROJECT ANALYSIS REQUEST:
+
+        CONTAINER SPECIFICATIONS:
         - Base Type: {config.get('base_type', 'Unknown')}
-        - Use Case: {config.get('use_case', 'Unknown')}
-        - Occupancy: {config.get('occupancy', 1)} people
-        - Environment: {config.get('environment', 'Unknown')}
-        - Modifications: {json.dumps(config.get('modifications', {}), indent=2)}
+        - Primary Use Case: {config.get('use_case', 'Unknown')}
+        - Expected Occupancy: {config.get('occupancy', 1)} people
+        - Operating Environment: {config.get('environment', 'Unknown')}
+        - Finish Quality Level: {config.get('finish_level', 'Standard')}
+        - Climate Zone: {config.get('climate_zone', 'Temperate')}
+        - Detailed Modifications: {json.dumps(config.get('modifications', {}), indent=2)}
 
-        Project Parameters:
-        - Location: {estimation_data.get('project_location', 'Unknown')}
-        - Timeline: {estimation_data.get('project_timeline', 'Unknown')}
-        - Quality Level: {estimation_data.get('quality_level', 'Standard')}
-        - Additional Notes: {estimation_data.get('additional_notes', 'None')}
+        PROJECT CONTEXT:
+        - Geographic Location: {estimation_data.get('project_location', 'Central Europe')}
+        - Project Timeline: {estimation_data.get('project_timeline', 'Standard')}
+        - Quality Standards: {estimation_data.get('quality_level', 'European Standard')}
+        - Special Requirements: {estimation_data.get('additional_notes', 'Standard build')}
 
-        Base Cost Calculations:
+        MARKET DATA & BASE COSTS:
         {json.dumps(base_costs, indent=2)}
 
-        **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
+        **CRITICAL: Respond entirely in {language} language. ALL text, technical terms, recommendations, and analysis must be in {language}.**
 
-        Provide your analysis in the following JSON format:
+        REQUIRED COMPREHENSIVE ANALYSIS:
+
+        1. **COST ANALYSIS** - Detailed breakdown with market insights
+        2. **TECHNICAL ASSESSMENT** - Structural and engineering requirements
+        3. **PROJECT MANAGEMENT** - Timeline, resources, critical path
+        4. **RISK ASSESSMENT** - Technical, financial, and operational risks
+        5. **SUSTAINABILITY ANALYSIS** - Environmental impact and efficiency
+        6. **OPTIMIZATION RECOMMENDATIONS** - Cost reduction and value engineering
+        7. **REGULATORY COMPLIANCE** - Building codes and permits
+        8. **MARKET INTELLIGENCE** - Pricing trends and supplier insights
+
+        Provide detailed analysis in this JSON format:
         {{
-            "total_cost": [total project cost in USD],
-            "confidence": [confidence level 0.0-1.0],
-            "estimated_timeline": "[project duration]",
-            "breakdown": {{
-                "container_base": [base container cost],
-                "structural_modifications": [structural work cost],
-                "systems_installation": [electrical/plumbing/HVAC cost],
-                "finishes_interior": [interior finishes cost],
-                "labor_costs": [total labor cost],
-                "permits_fees": [permits and fees],
-                "delivery_logistics": [delivery and logistics],
-                "contingency": [contingency amount]
+            "cost_analysis": {{
+                "total_cost": [total in EUR],
+                "confidence_level": [0.0-1.0],
+                "estimated_timeline": "[duration with phases]",
+                "breakdown": {{
+                    "container_base": [base cost],
+                    "structural_modifications": [structural work],
+                    "systems_installation": [electrical/plumbing/HVAC],
+                    "finishes_interior": [interior work],
+                    "labor_costs": [total labor],
+                    "permits_fees": [regulatory costs],
+                    "delivery_logistics": [transport/delivery],
+                    "contingency": [risk buffer]
+                }},
+                "market_insights": {{
+                    "material_trends": "[current market analysis]",
+                    "labor_availability": "[regional labor market]",
+                    "cost_drivers": ["key factor 1", "key factor 2"]
+                }}
             }},
-            "analysis": {{
-                "recommendations": ["specific recommendation 1", "specific recommendation 2"],
-                "risk_factors": ["potential risk 1", "potential risk 2"],
-                "cost_optimization": ["optimization opportunity 1", "optimization opportunity 2"]
+            "technical_assessment": {{
+                "structural_requirements": ["requirement 1", "requirement 2"],
+                "building_code_compliance": ["code 1", "code 2"],
+                "engineering_challenges": ["challenge 1", "challenge 2"],
+                "quality_standards": ["standard 1", "standard 2"]
+            }},
+            "project_management": {{
+                "critical_path": ["phase 1", "phase 2", "phase 3"],
+                "resource_requirements": {{
+                    "specialized_equipment": "[equipment needs]",
+                    "skilled_labor": "[labor requirements]",
+                    "material_procurement": "[procurement timeline]"
+                }},
+                "milestone_schedule": ["milestone 1", "milestone 2"]
+            }},
+            "risk_analysis": {{
+                "technical_risks": ["risk 1", "risk 2"],
+                "financial_risks": ["risk 1", "risk 2"],
+                "operational_risks": ["risk 1", "risk 2"],
+                "mitigation_strategies": ["strategy 1", "strategy 2"]
+            }},
+            "sustainability": {{
+                "environmental_impact_score": "[rating/description]",
+                "energy_efficiency_measures": ["measure 1", "measure 2"],
+                "recyclable_content_percentage": [percentage],
+                "carbon_footprint_estimate": "[CO2 equivalent]"
+            }},
+            "recommendations": {{
+                "immediate_priorities": ["priority 1", "priority 2"],
+                "cost_optimization": ["optimization 1", "optimization 2"],
+                "value_engineering": ["suggestion 1", "suggestion 2"],
+                "alternative_solutions": ["alternative 1", "alternative 2"]
+            }},
+            "regulatory_compliance": {{
+                "required_permits": ["permit 1", "permit 2"],
+                "building_codes": ["code requirement 1", "code requirement 2"],
+                "safety_standards": ["standard 1", "standard 2"]
             }}
         }}
 
-        Consider current market conditions, regional pricing variations, material costs, labor rates, and project complexity. Be specific and practical in your recommendations.
+        Focus on practical, actionable insights with current European market conditions. Consider regional variations, seasonal factors, and supply chain considerations.
         """
 
         return prompt
@@ -460,50 +623,115 @@ class GroqService:
         }
 
     def _build_cost_estimation_prompt(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> str:
-        """Build prompt for cost estimation"""
+        """Build enhanced prompt for comprehensive cost estimation with Groq"""
 
         config = estimation_data.get("container_config", {})
+        language = estimation_data.get('response_language', 'en')
+
+        # Language-specific expert personas
+        expert_descriptions = {
+            'en': "Senior container modification specialist with extensive European market experience, structural engineering expertise, and cost optimization knowledge.",
+            'pl': "Starszy specjalista ds. modyfikacji kontenerów z rozległym doświadczeniem na rynku europejskim, wiedzą z zakresu inżynierii konstrukcyjnej i optymalizacji kosztów.",
+            'de': "Senior Containermodifikations-Spezialist mit umfangreicher Erfahrung auf dem europäischen Markt, Expertise im Bauingenieurwesen und Kostenoptimierung.",
+            'nl': "Senior containermodificatie specialist met uitgebreide Europese marktervaring, structurele engineering expertise en kostenoptimalisatie kennis.",
+            'hu': "Vezető konténer-módosítási szakértő kiterjedt európai piaci tapasztalattal, építőmérnöki szakértelemmel és költségoptimalizálási tudással.",
+            'cs': "Senior specialista na úpravy kontejnerů s rozsáhlými zkušenostmi na evropském trhu, odborností v oboru stavebního inženýrství a optimalizace nákladů."
+        }
 
         prompt = f"""
-        Analyze this container modification project and provide a detailed cost estimate in JSON format.
+        {expert_descriptions.get(language, expert_descriptions['en'])}
 
-        Container Configuration:
-        - Base Type: {config.get('base_type', 'Unknown')}
-        - Use Case: {config.get('use_case', 'Unknown')}
-        - Occupancy: {config.get('occupancy', 1)} people
-        - Environment: {config.get('environment', 'Unknown')}
-        - Modifications: {json.dumps(config.get('modifications', {}), indent=2)}
+        COMPREHENSIVE CONTAINER PROJECT ANALYSIS:
 
-        Project Parameters:
-        - Location: {estimation_data.get('project_location', 'Unknown')}
-        - Timeline: {estimation_data.get('project_timeline', 'Unknown')}
-        - Quality Level: {estimation_data.get('quality_level', 'Standard')}
+        DETAILED PROJECT SPECIFICATIONS:
+        - Container Type: {config.get('base_type', 'Unknown')}
+        - Primary Application: {config.get('use_case', 'Unknown')}
+        - Occupancy Requirements: {config.get('occupancy', 1)} people
+        - Operating Environment: {config.get('environment', 'Unknown')}
+        - Quality Finish Level: {config.get('finish_level', 'Standard')}
+        - Climate Zone Considerations: {config.get('climate_zone', 'Temperate')}
+        
+        MODIFICATION SPECIFICATIONS:
+        {json.dumps(config.get('modifications', {}), indent=2)}
 
-        Base Costs: {json.dumps(base_costs, indent=2)}
+        PROJECT CONTEXT & REQUIREMENTS:
+        - Geographic Location: {estimation_data.get('project_location', 'Central Europe')}
+        - Project Timeline: {estimation_data.get('project_timeline', 'Standard delivery')}
+        - Quality Standards: {estimation_data.get('quality_level', 'European standards')}
+        - Special Considerations: {estimation_data.get('additional_notes', 'Standard requirements')}
 
-        **IMPORTANT: Respond in {estimation_data.get('response_language', 'en')} language for all text fields.**
+        MARKET DATA & BASE CALCULATIONS:
+        {json.dumps(base_costs, indent=2)}
 
-        Provide estimate in this exact JSON format:
+        **MANDATORY: ALL responses must be in {language} language. Technical terms, recommendations, analysis - everything in {language}.**
+
+        REQUIRED COMPREHENSIVE ANALYSIS DELIVERABLES:
+
+        1. **FINANCIAL ANALYSIS** - Complete cost breakdown with market intelligence
+        2. **TECHNICAL EVALUATION** - Engineering requirements and compliance
+        3. **PROJECT EXECUTION** - Timeline, resources, and critical dependencies
+        4. **RISK MANAGEMENT** - Comprehensive risk assessment and mitigation
+        5. **SUSTAINABILITY METRICS** - Environmental and efficiency analysis
+        6. **STRATEGIC RECOMMENDATIONS** - Optimization and value engineering
+
+        Deliver analysis in this enhanced JSON structure:
         {{
-            "total_cost": [number],
-            "confidence": [0.0-1.0],
-            "estimated_timeline": "[duration]",
-            "breakdown": {{
-                "container_base": [cost],
-                "structural_modifications": [cost],
-                "systems_installation": [cost],
-                "finishes_interior": [cost],
-                "labor_costs": [cost],
-                "permits_fees": [cost],
-                "delivery_logistics": [cost],
-                "contingency": [cost]
+            "cost_analysis": {{
+                "total_project_cost": [total EUR amount],
+                "confidence_rating": [0.85-0.95 range],
+                "project_duration": "[detailed timeline with phases]",
+                "detailed_breakdown": {{
+                    "container_acquisition": [base container cost],
+                    "structural_modifications": [structural engineering work],
+                    "building_systems": [electrical, plumbing, HVAC],
+                    "interior_finishes": [flooring, walls, fixtures],
+                    "professional_services": [design, engineering, permits],
+                    "labor_execution": [installation and construction],
+                    "logistics_delivery": [transport and site preparation],
+                    "project_contingency": [risk buffer percentage]
+                }},
+                "market_intelligence": {{
+                    "current_trends": "[market analysis in {language}]",
+                    "price_volatility": "[material cost trends in {language}]",
+                    "regional_factors": "[location-specific considerations in {language}]"
+                }}
             }},
-            "analysis": {{
-                "recommendations": ["rec1", "rec2", "rec3"],
-                "risk_factors": ["risk1", "risk2", "risk3"],
-                "cost_optimization": ["opt1", "opt2", "opt3"]
+            "technical_assessment": {{
+                "structural_engineering": ["[requirement in {language}]", "[requirement in {language}]"],
+                "building_compliance": ["[code requirement in {language}]", "[code requirement in {language}]"],
+                "technical_challenges": ["[challenge in {language}]", "[challenge in {language}]"],
+                "quality_specifications": ["[specification in {language}]", "[specification in {language}]"]
+            }},
+            "project_execution": {{
+                "critical_path_analysis": ["[phase in {language}]", "[phase in {language}]", "[phase in {language}]"],
+                "resource_planning": {{
+                    "specialized_equipment": "[equipment needs in {language}]",
+                    "skilled_trades": "[labor requirements in {language}]",
+                    "material_sourcing": "[procurement strategy in {language}]"
+                }},
+                "delivery_milestones": ["[milestone in {language}]", "[milestone in {language}]"]
+            }},
+            "risk_assessment": {{
+                "technical_risks": ["[risk in {language}]", "[risk in {language}]"],
+                "financial_risks": ["[risk in {language}]", "[risk in {language}]"],
+                "schedule_risks": ["[risk in {language}]", "[risk in {language}]"],
+                "mitigation_strategies": ["[strategy in {language}]", "[strategy in {language}]"]
+            }},
+            "sustainability_analysis": {{
+                "environmental_impact": "[impact assessment in {language}]",
+                "energy_performance": "[efficiency rating in {language}]",
+                "material_sustainability": [recyclable percentage],
+                "lifecycle_considerations": "[long-term analysis in {language}]"
+            }},
+            "strategic_recommendations": {{
+                "priority_actions": ["[action in {language}]", "[action in {language}]"],
+                "cost_optimization": ["[optimization in {language}]", "[optimization in {language}]"],
+                "value_additions": ["[value proposition in {language}]", "[value proposition in {language}]"],
+                "alternative_approaches": ["[alternative in {language}]", "[alternative in {language}]"]
             }}
         }}
+
+        Base analysis on current European construction market conditions, regulatory requirements, and industry best practices. Provide actionable, specific recommendations with practical implementation guidance.
         """
 
         return prompt
@@ -711,53 +939,109 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "Auto-Select B
         return f"Error generating AI estimate: {str(e)}"
 
 def format_cost_estimate(result: Dict[str, Any], ai_model: str) -> str:
-    """Format AI cost estimate result into readable string"""
-
-    breakdown = result.get('breakdown', {})
-    analysis = result.get('analysis', {})
-
+    """Format enhanced AI cost estimate result into comprehensive readable format"""
+    
+    # Handle both old and new response formats
+    cost_analysis = result.get('cost_analysis', result)
+    total_cost = cost_analysis.get('total_project_cost', cost_analysis.get('total_cost', 0))
+    confidence = cost_analysis.get('confidence_rating', cost_analysis.get('confidence_level', cost_analysis.get('confidence', 0.85)))
+    timeline = cost_analysis.get('project_duration', cost_analysis.get('estimated_timeline', '8-12 weeks'))
+    
+    # Cost breakdown - handle both formats
+    breakdown = cost_analysis.get('detailed_breakdown', cost_analysis.get('breakdown', {}))
+    
     estimate_text = f"""
-## 🤖 AI Cost Estimate (Generated by {ai_model})
+## 🤖 Enhanced AI Cost Analysis (Generated by {ai_model})
 
-### 💰 **Total Project Cost: €{result.get('total_cost', 0):,.2f}**
-*Confidence Level: {result.get('confidence', 0.8)*100:.0f}%*
-*Estimated Timeline: {result.get('estimated_timeline', '8-12 weeks')}*
-
----
-
-### 📊 **Cost Breakdown:**
-- **Container Base:** €{breakdown.get('container_base', 0):,.2f}
-- **Structural Modifications:** €{breakdown.get('structural_modifications', 0):,.2f}
-- **Systems Installation:** €{breakdown.get('systems_installation', 0):,.2f}
-- **Interior Finishes:** €{breakdown.get('finishes_interior', 0):,.2f}
-- **Labor Costs:** €{breakdown.get('labor_costs', 0):,.2f}
-- **Permits & Fees:** €{breakdown.get('permits_fees', 0):,.2f}
-- **Delivery & Logistics:** €{breakdown.get('delivery_logistics', 0):,.2f}
-- **Contingency (10%):** €{breakdown.get('contingency', 0):,.2f}
+### 💰 **Total Project Investment: €{total_cost:,.2f}**
+*Confidence Level: {confidence*100:.0f}%*
+*Project Timeline: {timeline}*
 
 ---
 
-### 💡 **AI Recommendations:**
+### 📊 **Detailed Cost Breakdown:**
 """
+    
+    # Enhanced breakdown display
+    cost_items = [
+        ('container_acquisition', 'container_base', 'Container Acquisition'),
+        ('structural_modifications', 'structural_modifications', 'Structural Modifications'),
+        ('building_systems', 'systems_installation', 'Building Systems'),
+        ('interior_finishes', 'finishes_interior', 'Interior Finishes'),
+        ('professional_services', 'permits_fees', 'Professional Services'),
+        ('labor_execution', 'labor_costs', 'Labor & Execution'),
+        ('logistics_delivery', 'delivery_logistics', 'Logistics & Delivery'),
+        ('project_contingency', 'contingency', 'Project Contingency')
+    ]
+    
+    for new_key, old_key, label in cost_items:
+        cost = breakdown.get(new_key, breakdown.get(old_key, 0))
+        if cost > 0:
+            estimate_text += f"- **{label}:** €{cost:,.2f}\n"
 
-    recommendations = analysis.get('recommendations', [])
-    for i, rec in enumerate(recommendations, 1):
-        estimate_text += f"{i}. {rec}\n"
+    # Market intelligence if available
+    market_insights = cost_analysis.get('market_intelligence', {})
+    if market_insights:
+        estimate_text += "\n### 📈 **Market Intelligence:**\n"
+        for key, value in market_insights.items():
+            if value:
+                estimate_text += f"- **{key.replace('_', ' ').title()}:** {value}\n"
 
-    estimate_text += "\n### ⚠️ **Risk Factors:**\n"
-    risk_factors = analysis.get('risk_factors', [])
-    for i, risk in enumerate(risk_factors, 1):
-        estimate_text += f"{i}. {risk}\n"
+    # Technical assessment
+    technical = result.get('technical_assessment', {})
+    if technical:
+        estimate_text += "\n### 🔧 **Technical Assessment:**\n"
+        for category, items in technical.items():
+            if items and isinstance(items, list):
+                estimate_text += f"**{category.replace('_', ' ').title()}:**\n"
+                for i, item in enumerate(items[:3], 1):  # Limit to 3 items
+                    estimate_text += f"{i}. {item}\n"
 
-    estimate_text += "\n### 🎯 **Cost Optimization Opportunities:**\n"
-    optimizations = analysis.get('cost_optimization', [])
-    for i, opt in enumerate(optimizations, 1):
-        estimate_text += f"{i}. {opt}\n"
+    # Risk analysis
+    risk_analysis = result.get('risk_assessment', result.get('risk_analysis', {}))
+    if risk_analysis:
+        estimate_text += "\n### ⚠️ **Risk Analysis:**\n"
+        for risk_type, risks in risk_analysis.items():
+            if risks and isinstance(risks, list) and 'risk' in risk_type:
+                estimate_text += f"**{risk_type.replace('_', ' ').title()}:**\n"
+                for i, risk in enumerate(risks[:2], 1):  # Limit to 2 items
+                    estimate_text += f"{i}. {risk}\n"
+
+    # Strategic recommendations
+    recommendations = result.get('strategic_recommendations', result.get('recommendations', {}))
+    if recommendations:
+        estimate_text += "\n### 💡 **Strategic Recommendations:**\n"
+        
+        # Handle both old and new format
+        if isinstance(recommendations, dict):
+            for category, items in recommendations.items():
+                if items and isinstance(items, list):
+                    estimate_text += f"**{category.replace('_', ' ').title()}:**\n"
+                    for i, item in enumerate(items[:3], 1):
+                        estimate_text += f"{i}. {item}\n"
+        else:
+            # Old format compatibility
+            analysis = result.get('analysis', {})
+            old_recommendations = analysis.get('recommendations', [])
+            for i, rec in enumerate(old_recommendations, 1):
+                estimate_text += f"{i}. {rec}\n"
+
+    # Sustainability metrics if available
+    sustainability = result.get('sustainability_analysis', result.get('sustainability', {}))
+    if sustainability:
+        estimate_text += "\n### 🌱 **Sustainability Analysis:**\n"
+        for key, value in sustainability.items():
+            if value:
+                label = key.replace('_', ' ').title()
+                if isinstance(value, (int, float)):
+                    estimate_text += f"- **{label}:** {value}%\n" if 'percentage' in key else f"- **{label}:** {value}\n"
+                else:
+                    estimate_text += f"- **{label}:** {value}\n"
 
     return estimate_text
 
 def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any], language: str = 'en') -> str:
-    """Generate fallback cost estimate when AI services are unavailable"""
+    """Generate comprehensive fallback cost estimate when AI services are unavailable"""
 
     # Import translations here to avoid circular imports
     try:
@@ -769,56 +1053,49 @@ def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any
 
     # Calculate total cost
     total_cost = sum(base_costs.values())
+    
+    # Calculate component costs
+    materials_base = base_costs.get('container_base', 0) + base_costs.get('structural_modifications', 0) + base_costs.get('finishes', 0)
+    labor_cost = total_cost * 0.4
+    permits_fees = total_cost * 0.1
+    delivery_cost = base_costs.get('delivery_cost', 800)
+    contingency = total_cost * 0.1
 
-    # Language-specific fallback content
-    if language == 'hu':
-        return f"""
-## 🤖 Tartalék Költségbecslés
+    # Generate comprehensive fallback estimate using translations
+    estimate = f"""
+## 🤖 {t('fallback_cost_estimate', language)}
 
-### 💰 **Teljes Projektköltség: €{total_cost:,.2f}**
-*Alapszámítás amikor az AI szolgáltatások nem elérhetők*
-
----
-
-### 📊 **Költséglebontás:**
-- **Anyagok és Alapköltségek:** €{base_costs.get('container_base', 0) + base_costs.get('structural_modifications', 0) + base_costs.get('finishes', 0):,.2f}
-- **Munkaerő Költségek (40%):** €{total_cost * 0.4:,.2f}
-- **Engedélyek és Díjak:** €{total_cost * 0.1:,.2f}
-- **Szállítás és Logisztika:** €{base_costs.get('windows', 0) * 50:,.2f}
-- **Tartalék (10%):** €{total_cost * 0.1:,.2f}
-"""
-    elif language == 'cs':
-        return f"""
-## 🤖 Náhradní Odhad Nákladů
-
-### 💰 **Celkové Náklady Projektu: €{total_cost:,.2f}**
-*Základní výpočet, když nejsou služby AI dostupné*
+### 💰 **{t('total_project_cost', language)}: €{total_cost:,.2f}**
+*{t('basic_calculation_ai_unavailable', language)}*
 
 ---
 
-### 📊 **Rozpis Nákladů:**
-- **Materiály a Základní Náklady:** €{base_costs.get('container_base', 0) + base_costs.get('structural_modifications', 0) + base_costs.get('finishes', 0):,.2f}
-- **Náklady na Práci (40%):** €{total_cost * 0.4:,.2f}
-- **Povolení a Poplatky:** €{total_cost * 0.1:,.2f}
-- **Doprava a Logistika:** €{base_costs.get('windows', 0) * 50:,.2f}
-- **Rezerva (10%):** €{total_cost * 0.1:,.2f}
-"""
-    else:  # English default
-        return f"""
-## 🤖 Fallback Cost Estimate
-
-### 💰 **Total Project Cost: €{total_cost:,.2f}**
-*Basic calculation when AI services are unavailable*
+### 📊 **{t('cost_breakdown', language)}:**
+- **{t('materials_base_cost', language)}:** €{materials_base:,.2f}
+- **{t('labor_costs_40', language)}:** €{labor_cost:,.2f}
+- **{t('contingency_10', language)}:** €{contingency:,.2f}
+- **{t('delivery_cost', language)}:** €{delivery_cost:,.2f}
 
 ---
 
-### 📊 **Cost Breakdown:**
-- **Materials & Base Costs:** €{base_costs.get('container_base', 0) + base_costs.get('structural_modifications', 0) + base_costs.get('finishes', 0):,.2f}
-- **Labor Costs (40%):** €{total_cost * 0.4:,.2f}
-- **Permits & Fees:** €{total_cost * 0.1:,.2f}
-- **Delivery & Logistics:** €{base_costs.get('windows', 0) * 50:,.2f}
-- **Contingency (10%):** €{total_cost * 0.1:,.2f}
+### 💡 **{t('standard_recommendations', language)}:**
+1. {t('plan_standard_delivery', language)}
+2. {t('consider_building_codes', language)}
+3. {t('budget_site_preparation', language)}
+4. {t('review_electrical_plumbing', language)}
+
+### ⚠️ **{t('standard_risk_factors', language)}:**
+1. {t('weather_delays', language)}
+2. {t('permit_timeline_variations', language)}
+3. {t('site_access_limitations', language)}
+4. {t('material_price_fluctuations', language)}
+
+---
+
+*{t('basic_estimate_note', language)}*
 """
+
+    return estimate
 
 class ContainerCostEstimator:
     """
