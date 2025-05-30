@@ -186,7 +186,9 @@ with col_lang:
         'pl': '🇵🇱 Polski',
         'en': '🇬🇧 English',
         'de': '🇩🇪 Deutsch',
-        'nl': '🇳🇱 Nederlands'
+        'nl': '🇳🇱 Nederlands',
+        'hu': '🇭🇺 Magyar',
+        'cs': '🇨🇿 Čeština'
     }
 
     selected_language = st.selectbox(
@@ -209,7 +211,9 @@ if st.session_state.get('prev_language') != get_current_language():
     st.rerun()
 
 # Check if it's the main page before rendering the login button
-is_main_page = st.source_file_path == "streamlit_app.py"
+import os
+current_file = os.path.basename(__file__)
+is_main_page = current_file == "app.py"
 
 with col_login:
     # Employee login button in top-right corner, only on main page
