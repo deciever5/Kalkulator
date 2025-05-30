@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from utils.translations import t, get_current_language, set_language
 
 def render_shared_header(show_login=False):
@@ -61,7 +62,9 @@ def render_shared_header(show_login=False):
                     col_login, col_cancel = st.columns(2)
                     with col_login:
                         if st.button(t('ui.login'), use_container_width=True):
-                            if password == "kan-bud-2024":
+                            # Get password from environment variable for security
+                            admin_password = os.getenv('ADMIN_PASSWORD', 'kan-bud-2024')
+                            if password == admin_password:
                                 st.session_state.employee_logged_in = True
                                 st.session_state.show_login = False
                                 st.success(t('ui.logged_in'))
