@@ -184,7 +184,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 
 /* Custom button styling */
 .stButton > button {
-    height: 360px !important;
+    height: 180px !important;
     white-space: pre-line !important;
     font-size: 16px !important;
     border: 2px solid #e8f4f8 !important;
@@ -204,7 +204,7 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 /* Special styling for primary action buttons */
 div[data-testid="column"]:nth-child(1) .stButton > button,
 div[data-testid="column"]:nth-child(2) .stButton > button {
-    height: 400px !important;
+    height: 200px !important;
     color: white !important;
     font-weight: bold !important;
 }
@@ -404,7 +404,37 @@ else:
         ):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
+# Customer services section - moved here after configuration/AI sections
+if not st.session_state.employee_logged_in:
+    st.markdown(f"""
+    <div style="margin: 3rem 0;">
+        <h2 style="text-align: center; color: #1e3c72; margin-bottom: 2rem;">
+            🛠️ {t('additional_services')}
+        </h2>
+    </div>
+    """, unsafe_allow_html=True)
 
+    col1, col2 = st.columns(2)
+
+    with col1:
+        # Create clickable card using Streamlit button
+        if st.button(
+            f"📐\n\n**{t('drawing_analysis_service')}**\n\n{t('upload_drawings_estimate')}",
+            key="customer_drawing_analysis_card",
+            use_container_width=True,
+            help=t('drawing_analysis_service')
+        ):
+            st.switch_page("pages/9_Customer_Drawing_Analysis.py")
+
+    with col2:
+        # Create clickable card using Streamlit button
+        if st.button(
+            f"📧\n\n**{t('send_inquiry_service')}**\n\n{t('get_detailed_quote_text')}",
+            key="customer_inquiry_card",
+            use_container_width=True,
+            help=t('send_inquiry_service')
+        ):
+            st.switch_page("pages/8_Send_Inquiry.py")
 
 # Enhanced client benefits section
 if not st.session_state.employee_logged_in:
