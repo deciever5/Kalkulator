@@ -181,6 +181,55 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
     color: #666;
     line-height: 1.6;
 }
+
+/* Custom button styling */
+.stButton > button {
+    height: 180px !important;
+    white-space: pre-line !important;
+    font-size: 16px !important;
+    border: 2px solid #e8f4f8 !important;
+    border-radius: 15px !important;
+    background: white !important;
+    color: #333 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12) !important;
+    border-color: #2E86AB !important;
+}
+
+/* Special styling for primary action buttons */
+div[data-testid="column"]:nth-child(1) .stButton > button,
+div[data-testid="column"]:nth-child(2) .stButton > button {
+    height: 200px !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+/* First column button (config) */
+div[data-testid="column"]:nth-child(1) .stButton > button {
+    background: linear-gradient(135deg, #2E86AB 0%, #1e3c72 100%) !important;
+    border: none !important;
+    box-shadow: 0 6px 20px rgba(46,134,171,0.3) !important;
+}
+
+div[data-testid="column"]:nth-child(1) .stButton > button:hover {
+    box-shadow: 0 10px 30px rgba(46,134,171,0.4) !important;
+}
+
+/* Second column button (AI) */
+div[data-testid="column"]:nth-child(2) .stButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    box-shadow: 0 6px 20px rgba(102,126,234,0.3) !important;
+}
+
+div[data-testid="column"]:nth-child(2) .stButton > button:hover {
+    box-shadow: 0 10px 30px rgba(102,126,234,0.4) !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -290,36 +339,14 @@ if st.session_state.employee_logged_in:
 
     for i, (icon, title, desc, page, key) in enumerate(tools):
         with [col1, col2, col3, col4][i]:
-            # Create clickable card using button with increased size
-            st.markdown(f"""
-            <div style="margin-bottom: 1rem;">
-                <button onclick="window.parent.postMessage({{type: 'streamlit:click', target: '{key}_card'}}, '*')" 
-                        style="width: 100%; 
-                               height: 180px; 
-                               background: white; 
-                               border: 2px solid #e8f4f8; 
-                               border-radius: 15px; 
-                               cursor: pointer; 
-                               transition: all 0.3s ease;
-                               box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-                               font-size: 16px;
-                               color: #333;
-                               padding: 1.5rem;"
-                        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)'; this.style.borderColor='#2E86AB';"
-                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'; this.style.borderColor='#e8f4f8';">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">{icon}</div>
-                    <div style="font-weight: bold; margin-bottom: 0.5rem; color: #1e3c72;">{title}</div>
-                    <div style="color: #666; font-size: 14px;">{desc}</div>
-                </button>
-            </div>
-            """, unsafe_allow_html=True)
-
-            # Hidden Streamlit button for functionality  
-            with st.container():
-                st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
-                if st.button(f"hidden_{key}", key=f"{key}_card"):
-                    st.switch_page(page)
-                st.markdown('</div>', unsafe_allow_html=True)
+            # Create clickable card using Streamlit button
+            if st.button(
+                f"{icon}\n\n**{title}**\n\n{desc}",
+                key=f"{key}_card",
+                use_container_width=True,
+                help=f"Click to open {title}"
+            ):
+                st.switch_page(page)
 
     # Secondary tools
     col5, col6, col7 = st.columns([1, 1, 1], gap="large")
@@ -332,36 +359,14 @@ if st.session_state.employee_logged_in:
 
     for i, (icon, title, desc, page, key) in enumerate(secondary_tools):
         with [col5, col6, col7][i]:
-            # Create clickable card using button with increased size
-            st.markdown(f"""
-            <div style="margin-bottom: 1rem;">
-                <button onclick="window.parent.postMessage({{type: 'streamlit:click', target: '{key}_card'}}, '*')" 
-                        style="width: 100%; 
-                               height: 160px; 
-                               background: white; 
-                               border: 2px solid #e8f4f8; 
-                               border-radius: 15px; 
-                               cursor: pointer; 
-                               transition: all 0.3s ease;
-                               box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-                               font-size: 15px;
-                               color: #333;
-                               padding: 1.5rem;"
-                        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)'; this.style.borderColor='#2E86AB';"
-                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'; this.style.borderColor='#e8f4f8';">
-                    <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">{icon}</div>
-                    <div style="font-weight: bold; margin-bottom: 0.5rem; color: #1e3c72;">{title}</div>
-                    <div style="color: #666; font-size: 13px;">{desc}</div>
-                </button>
-            </div>
-            """, unsafe_allow_html=True)
-
-            # Hidden Streamlit button for functionality  
-            with st.container():
-                st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
-                if st.button(f"hidden_{key}", key=f"{key}_card"):
-                    st.switch_page(page)
-                st.markdown('</div>', unsafe_allow_html=True)
+            # Create clickable card using Streamlit button
+            if st.button(
+                f"{icon}\n\n**{title}**\n\n{desc}",
+                key=f"{key}_card",
+                use_container_width=True,
+                help=f"Click to open {title}"
+            ):
+                st.switch_page(page)
 
 else:
     # Client view
@@ -380,68 +385,24 @@ else:
     col1, col2 = st.columns(2, gap="large")
 
     with col1:
-        # Create clickable card using custom HTML button
-        st.markdown(f"""
-        <div style="margin-bottom: 1rem;">
-            <button onclick="window.parent.postMessage({{type: 'streamlit:click', target: 'client_config_card'}}, '*')" 
-                    style="width: 100%; 
-                           height: 200px; 
-                           background: linear-gradient(135deg, #2E86AB 0%, #1e3c72 100%); 
-                           border: none; 
-                           border-radius: 15px; 
-                           cursor: pointer; 
-                           transition: all 0.3s ease;
-                           box-shadow: 0 6px 20px rgba(46,134,171,0.3);
-                           color: white;
-                           font-size: 17px;
-                           padding: 1.5rem;"
-                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(46,134,171,0.4)';"
-                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(46,134,171,0.3)';">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
-                <div style="font-weight: bold; margin-bottom: 0.8rem; font-size: 18px;">{t('step_1_configuration')}</div>
-                <div style="opacity: 0.9; font-size: 15px;">{t('choose_container_type')}</div>
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
-
-        # Hidden Streamlit button for functionality  
-        with st.container():
-            st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
-            if st.button("hidden_config", key="client_config_card"):
-                st.switch_page("pages/1_Container_Configurator.py")
-            st.markdown('</div>', unsafe_allow_html=True)
+        # Create clickable card using Streamlit button
+        if st.button(
+            f"📦\n\n**{t('step_1_configuration')}**\n\n{t('choose_container_type')}",
+            key="client_config_card",
+            use_container_width=True,
+            help=t('step_1_configuration')
+        ):
+            st.switch_page("pages/1_Container_Configurator.py")
 
     with col2:
-        # Create clickable card using custom HTML button
-        st.markdown(f"""
-        <div style="margin-bottom: 1rem;">
-            <button onclick="window.parent.postMessage({{type: 'streamlit:click', target: 'client_ai_card'}}, '*')" 
-                    style="width: 100%; 
-                           height: 200px; 
-                           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                           border: none; 
-                           border-radius: 15px; 
-                           cursor: pointer; 
-                           transition: all 0.3s ease;
-                           box-shadow: 0 6px 20px rgba(102,126,234,0.3);
-                           color: white;
-                           font-size: 17px;
-                           padding: 1.5rem;"
-                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(102,126,234,0.4)';"
-                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(102,126,234,0.3)';">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🤖</div>
-                <div style="font-weight: bold; margin-bottom: 0.8rem; font-size: 18px;">{t('step_2_ai_quote')}</div>
-                <div style="opacity: 0.9; font-size: 15px;">{t('get_instant_quote')}</div>
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
-
-        # Hidden Streamlit button for functionality  
-        with st.container():
-            st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
-            if st.button("hidden_ai", key="client_ai_card"):
-                st.switch_page("pages/2_AI_Cost_Estimator.py")
-            st.markdown('</div>', unsafe_allow_html=True)
+        # Create clickable card using Streamlit button
+        if st.button(
+            f"🤖\n\n**{t('step_2_ai_quote')}**\n\n{t('get_instant_quote')}",
+            key="client_ai_card",
+            use_container_width=True,
+            help=t('step_2_ai_quote')
+        ):
+            st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Customer services section - moved here after configuration/AI sections
 if not st.session_state.employee_logged_in:
@@ -456,68 +417,24 @@ if not st.session_state.employee_logged_in:
     col1, col2 = st.columns(2)
 
     with col1:
-        # Create clickable card using custom HTML button
-        st.markdown(f"""
-        <div style="margin-bottom: 1rem;">
-            <button onclick="window.parent.postMessage({{type: 'streamlit:click', target: 'customer_drawing_analysis_card'}}, '*')" 
-                    style="width: 100%; 
-                           height: 180px; 
-                           background: white; 
-                           border: 2px solid #e8f4f8; 
-                           border-radius: 15px; 
-                           cursor: pointer; 
-                           transition: all 0.3s ease;
-                           box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-                           font-size: 16px;
-                           color: #333;
-                           padding: 1.5rem;"
-                    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)'; this.style.borderColor='#2E86AB';"
-                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'; this.style.borderColor='#e8f4f8';">
-                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📐</div>
-                <div style="font-weight: bold; margin-bottom: 0.5rem; color: #1e3c72;">{t('drawing_analysis_service')}</div>
-                <div style="color: #666; font-size: 14px;">{t('upload_drawings_estimate')}</div>
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
-
-        # Hidden Streamlit button for functionality  
-        with st.container():
-            st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
-            if st.button("hidden_drawing", key="customer_drawing_analysis_card"):
-                st.switch_page("pages/9_Customer_Drawing_Analysis.py")
-            st.markdown('</div>', unsafe_allow_html=True)
+        # Create clickable card using Streamlit button
+        if st.button(
+            f"📐\n\n**{t('drawing_analysis_service')}**\n\n{t('upload_drawings_estimate')}",
+            key="customer_drawing_analysis_card",
+            use_container_width=True,
+            help=t('drawing_analysis_service')
+        ):
+            st.switch_page("pages/9_Customer_Drawing_Analysis.py")
 
     with col2:
-        # Create clickable card using custom HTML button
-        st.markdown(f"""
-        <div style="margin-bottom: 1rem;">
-            <button onclick="window.parent.postMessage({{type: 'streamlit:click', target: 'customer_inquiry_card'}}, '*')" 
-                    style="width: 100%; 
-                           height: 180px; 
-                           background: white; 
-                           border: 2px solid #e8f4f8; 
-                           border-radius: 15px; 
-                           cursor: pointer; 
-                           transition: all 0.3s ease;
-                           box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-                           font-size: 16px;
-                           color: #333;
-                           padding: 1.5rem;"
-                    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)'; this.style.borderColor='#2E86AB';"
-                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'; this.style.borderColor='#e8f4f8';">
-                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📧</div>
-                <div style="font-weight: bold; margin-bottom: 0.5rem; color: #1e3c72;">{t('send_inquiry_service')}</div>
-                <div style="color: #666; font-size: 14px;">{t('get_detailed_quote_text')}</div>
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
-
-        # Hidden Streamlit button for functionality  
-        with st.container():
-            st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
-            if st.button("hidden_inquiry", key="customer_inquiry_card"):
-                st.switch_page("pages/8_Send_Inquiry.py")
-            st.markdown('</div>', unsafe_allow_html=True)
+        # Create clickable card using Streamlit button
+        if st.button(
+            f"📧\n\n**{t('send_inquiry_service')}**\n\n{t('get_detailed_quote_text')}",
+            key="customer_inquiry_card",
+            use_container_width=True,
+            help=t('send_inquiry_service')
+        ):
+            st.switch_page("pages/8_Send_Inquiry.py")
 
 # Enhanced client benefits section
 if not st.session_state.employee_logged_in:
