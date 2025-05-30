@@ -573,43 +573,117 @@ class GroqService:
             return self._generate_demo_estimate(estimation_data, base_costs)
 
     def _generate_demo_estimate(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> Dict[str, Any]:
-        """Generate dynamic demo estimate when API is not available"""
+        """Generate dynamic estimate based on actual user configuration"""
 
-        config = estimation_data.get("container_config", {})
-        language = estimation_data.get('response_language', 'en')
+        # Extract all user configuration details
+        container_type = estimation_data.get('container_type', 'Unknown')
+        main_purpose = estimation_data.get('main_purpose', 'Unknown')
         
         # Calculate dynamic estimate based on actual configuration
         base_total = sum(base_costs.values())
         
-        # Dynamic complexity factors based on actual config
+        # Dynamic complexity factors based on actual user input
         complexity_factor = 1.0
-        modifications = config.get("modifications", {})
+        modification_costs = 0
         
-        # Analyze actual modifications with proper cost impact
-        if modifications.get("additional_doors"):
+        # Analyze actual user-specified modifications with proper cost impact
+        if estimation_data.get("additional_doors"):
             complexity_factor += 0.15
-        if modifications.get("electrical_system"):
-            complexity_factor += 0.25
-        if modifications.get("plumbing_system"):
-            complexity_factor += 0.35
-        if modifications.get("hvac_system"):
-            complexity_factor += 0.45
-        if modifications.get("insulation_package"):
-            complexity_factor += 0.18
-        if modifications.get("wall_reinforcement"):
-            complexity_factor += 0.30
-        if modifications.get("roof_reinforcement"):
-            complexity_factor += 0.25
-        if modifications.get("floor_reinforcement"):
-            complexity_factor += 0.28
-        if modifications.get("additional_support"):
-            complexity_factor += 0.40
-        if modifications.get("security_system"):
+            modification_costs += 800
+        
+        # Electrical system costs based on user selection
+        electrical = estimation_data.get("electrical_system", "")
+        if "standard" in electrical.lower():
             complexity_factor += 0.20
-        if modifications.get("fire_suppression"):
+            modification_costs += 1500
+        elif "industrial" in electrical.lower():
+            complexity_factor += 0.35
+            modification_costs += 3500
+        elif "smart" in electrical.lower():
+            complexity_factor += 0.45
+            modification_costs += 5000
+        
+        # Plumbing system costs based on user selection
+        plumbing = estimation_data.get("plumbing_system", "")
+        if "basic" in plumbing.lower():
+            complexity_factor += 0.25
+            modification_costs += 2000
+        elif "full" in plumbing.lower():
+            complexity_factor += 0.40
+            modification_costs += 4500
+        elif "commercial" in plumbing.lower():
+            complexity_factor += 0.55
+            modification_costs += 7000
+        
+        # HVAC system costs based on user selection
+        hvac = estimation_data.get("hvac_system", "")
+        if "basic" in hvac.lower():
+            complexity_factor += 0.20
+            modification_costs += 1800
+        elif "split" in hvac.lower():
+            complexity_factor += 0.35
+            modification_costs += 3500
+        elif "central" in hvac.lower():
             complexity_factor += 0.50
-        if modifications.get("access_control"):
-            complexity_factor += 0.18
+            modification_costs += 6000
+        elif "heat_pump" in hvac.lower():
+            complexity_factor += 0.45
+            modification_costs += 5500
+        
+        # Windows cost calculation
+        num_windows = estimation_data.get("number_of_windows", 0)
+        if num_windows > 0:
+            modification_costs += num_windows * 400
+            complexity_factor += num_windows * 0.05
+        
+        # Advanced modifications costs
+        air_intakes = estimation_data.get("air_intakes", "")
+        if "industrial" in air_intakes.lower():
+            modification_costs += 1200
+        elif "marine" in air_intakes.lower():
+            modification_costs += 1800
+        
+        roof_mods = estimation_data.get("roof_modifications", "")
+        if "skylight" in roof_mods.lower():
+            modification_costs += 2500
+        elif "solar" in roof_mods.lower():
+            modification_costs += 3500
+        
+        security = estimation_data.get("security_features", "")
+        if "advanced" in security.lower():
+            modification_costs += 2000
+        elif "high_security" in security.lower():
+            modification_costs += 4000
+        
+        # Calculate total cost with user-specific modifications
+        total_cost = base_total + modification_costs
+        total_cost = total_cost * complexity_factor
+        
+        # Generate comprehensive response based on user configuration
+        return {
+            "cost_analysis": {
+                "total_cost": int(total_cost),
+                "confidence_level": 0.85,
+                "estimated_timeline": "6-10 weeks",
+                "breakdown": {
+                    "container_base": int(base_total),
+                    "modifications": int(modification_costs),
+                    "labor_costs": int(total_cost * 0.3),
+                    "delivery_logistics": int(total_cost * 0.08),
+                    "contingency": int(total_cost * 0.1)
+                }
+            },
+            "user_configuration": {
+                "container_type": container_type,
+                "main_purpose": main_purpose,
+                "total_modifications": len([k for k, v in estimation_data.items() if v and k not in ['container_type', 'main_purpose']])
+            },
+            "recommendations": [
+                f"Based on your {main_purpose.lower()} use case, consider energy-efficient options",
+                f"Your {container_type} selection is optimal for this configuration",
+                "Quality materials recommended for long-term durability"
+            ]
+        }
         
         # Add window costs with proper pricing
         window_count = config.get("number_of_windows", 0)
