@@ -63,29 +63,30 @@ def render_shared_header(show_login=False, current_page="Home"):
     </div>
     """, unsafe_allow_html=True)
     
-    # Breadcrumb navigation
-    breadcrumb_map = {
-        "Home": "🏠 Home",
-        "Container_Configurator": "📦 Container Configurator", 
-        "AI_Cost_Estimator": "🤖 AI Cost Estimator",
-        "Technical_Analysis": "🔧 Technical Analysis",
-        "Quote_Generator": "📋 Quote Generator",
-        "Comparison_Tool": "⚖️ Comparison Tool",
-        "Drawing_Analysis": "📐 Drawing Analysis",
-        "3D_Visualization": "🎯 3D Visualization",
-        "Send_Inquiry": "📧 Send Inquiry",
-        "Customer_Drawing_Analysis": "📄 Customer Analysis",
-        "Bulk_Pricing": "📦 Bulk Pricing",
-        "Custom_Sizing": "📐 Custom Sizing",
-        "Admin_Panel": "⚙️ Admin Panel"
-    }
+    # Skip breadcrumb for pages that have their own gradient headers
+    pages_with_gradient_headers = ["Container_Configurator", "AI_Cost_Estimator", "Technical_Analysis"]
     
-    breadcrumb_text = breadcrumb_map.get(current_page, current_page)
-    st.markdown(f"""
-    <div style="margin-bottom: 16px; padding: 8px 16px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #3b82f6;">
-        <span style="font-size: 14px; color: #6b7280; font-weight: 500;">{breadcrumb_text}</span>
-    </div>
-    """, unsafe_allow_html=True)
+    if current_page not in pages_with_gradient_headers:
+        # Breadcrumb navigation for other pages
+        breadcrumb_map = {
+            "Home": "🏠 Home",
+            "Quote_Generator": "📋 Quote Generator",
+            "Comparison_Tool": "⚖️ Comparison Tool",
+            "Drawing_Analysis": "📐 Drawing Analysis",
+            "3D_Visualization": "🎯 3D Visualization",
+            "Send_Inquiry": "📧 Send Inquiry",
+            "Customer_Drawing_Analysis": "📄 Customer Analysis",
+            "Bulk_Pricing": "📦 Bulk Pricing",
+            "Custom_Sizing": "📐 Custom Sizing",
+            "Admin_Panel": "⚙️ Admin Panel"
+        }
+        
+        breadcrumb_text = breadcrumb_map.get(current_page, current_page)
+        st.markdown(f"""
+        <div style="margin-bottom: 16px; padding: 8px 16px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #3b82f6;">
+            <span style="font-size: 14px; color: #6b7280; font-weight: 500;">{breadcrumb_text}</span>
+        </div>
+        """, unsafe_allow_html=True)
 
     if show_login:
         with col_login:
