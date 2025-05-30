@@ -99,7 +99,11 @@ with col1:
         t('container.types.20ft_standard'): "20ft Standard",
         t('container.types.40ft_standard'): "40ft Standard", 
         t('container.types.40ft_high_cube'): "40ft High Cube",
-        t('container.types.20ft_refrigerated'): "20ft Refrigerated"
+        t('container.types.20ft_refrigerated'): "20ft Refrigerated",
+        t('container.types.20ft_double_door'): "20ft Double Door",
+        t('container.types.40ft_double_door'): "40ft Double Door",
+        t('container.types.40ft_hc_double_door'): "40ft HC Double Door",
+        t('container.types.custom_size'): "Custom Size"
     }
     container_type_display = st.selectbox(
         t('form.labels.container_type'),

@@ -74,7 +74,11 @@
       "20ft_standard": "20ft Standard",
       "40ft_standard": "40ft Standard",
       "40ft_high_cube": "40ft Wysokościowy",
-      "20ft_refrigerated": "20ft Chłodniczy"
+      "20ft_refrigerated": "20ft Chłodniczy",
+      "20ft_double_door": "20ft Podwójne Drzwi",
+      "40ft_double_door": "40ft Podwójne Drzwi",
+      "40ft_hc_double_door": "40ft HC Podwójne Drzwi",
+      "custom_size": "Rozmiar Niestandardowy"
     },
     "use_cases": {
       "office_space": "Przestrzeń Biurowa",
