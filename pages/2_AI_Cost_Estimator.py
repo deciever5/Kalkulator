@@ -194,6 +194,31 @@ else:
         st.write(f"**{t('climate_zone')}:** {climate_translated}")
         st.write(f"**{t('windows')}:** {config['number_of_windows']}")
         st.write(f"**{t('additional_doors')}:** {t('yes') if config['additional_doors'] else t('no')}")
+        
+        # Show detailed modifications
+        modifications = config.get('modifications', {})
+        if modifications:
+            st.markdown("**Modifications:**")
+            mod_count = 0
+            for key, value in modifications.items():
+                if value:
+                    if isinstance(value, bool):
+                        st.write(f"• {key.replace('_', ' ').title()}")
+                        mod_count += 1
+                    elif isinstance(value, (int, float)) and value > 0:
+                        st.write(f"• {key.replace('_', ' ').title()}: {value}")
+                        mod_count += 1
+            if mod_count == 0:
+                st.write("• No additional modifications")
+        
+        # Show cost-impacting factors
+        if config.get('user_comment', '').strip():
+            st.markdown(f"**User Requirements:** {config['user_comment'][:100]}{'...' if len(config['user_comment']) > 100 else ''}")
+        
+        special_reqs = config.get('special_requirements', {})
+        if any(special_reqs.values()):
+            active_reqs = [key.replace('_', ' ').title() for key, value in special_reqs.items() if value]
+            st.markdown(f"**Special Requirements:** {', '.join(active_reqs)}")
 
     st.markdown("---")
 

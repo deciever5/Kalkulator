@@ -585,23 +585,35 @@ class GroqService:
         complexity_factor = 1.0
         modifications = config.get("modifications", {})
         
-        # Analyze actual modifications
+        # Analyze actual modifications with proper cost impact
         if modifications.get("additional_doors"):
             complexity_factor += 0.15
         if modifications.get("electrical_system"):
-            complexity_factor += 0.20
-        if modifications.get("plumbing_system"):
             complexity_factor += 0.25
-        if modifications.get("hvac_system"):
-            complexity_factor += 0.30
-        if modifications.get("insulation_package"):
-            complexity_factor += 0.12
-        if modifications.get("structural_reinforcement"):
+        if modifications.get("plumbing_system"):
             complexity_factor += 0.35
+        if modifications.get("hvac_system"):
+            complexity_factor += 0.45
+        if modifications.get("insulation_package"):
+            complexity_factor += 0.18
+        if modifications.get("wall_reinforcement"):
+            complexity_factor += 0.30
+        if modifications.get("roof_reinforcement"):
+            complexity_factor += 0.25
+        if modifications.get("floor_reinforcement"):
+            complexity_factor += 0.28
+        if modifications.get("additional_support"):
+            complexity_factor += 0.40
+        if modifications.get("security_system"):
+            complexity_factor += 0.20
+        if modifications.get("fire_suppression"):
+            complexity_factor += 0.50
+        if modifications.get("access_control"):
+            complexity_factor += 0.18
         
-        # Add window costs
+        # Add window costs with proper pricing
         window_count = config.get("number_of_windows", 0)
-        window_cost = window_count * 350
+        window_cost = window_count * 600  # €600 per window
         
         # Calculate finish level impact
         finish_level = config.get("finish_level", "Standard")
@@ -612,12 +624,39 @@ class GroqService:
         environment = config.get("environment", "")
         env_factor = 1.0
         if "extreme" in environment.lower() or "harsh" in environment.lower():
-            env_factor = 1.25
+            env_factor = 1.3
         elif "marine" in environment.lower() or "coastal" in environment.lower():
-            env_factor = 1.15
+            env_factor = 1.2
         
-        # Final calculation
-        total_cost = (base_total + window_cost) * complexity_factor * finish_multiplier * env_factor
+        # User comment analysis for cost impact
+        user_comment = config.get('user_comment', '').lower()
+        comment_factor = 1.0
+        if any(word in user_comment for word in ['premium', 'high-end', 'luxury', 'top quality', 'best']):
+            comment_factor += 0.4
+        elif any(word in user_comment for word in ['custom', 'special', 'unique', 'complex', 'sophisticated']):
+            comment_factor += 0.3
+        elif any(word in user_comment for word in ['urgent', 'fast', 'quick', 'rush', 'asap']):
+            comment_factor += 0.2
+        
+        # Special requirements impact
+        special_requirements = config.get('special_requirements', {})
+        special_factor = 1.0
+        if special_requirements.get('urgent_timeline'):
+            special_factor += 0.2
+        if special_requirements.get('custom_modifications'):
+            special_factor += 0.3
+        if special_requirements.get('sustainability_focus'):
+            special_factor += 0.15
+        if special_requirements.get('regulatory_concerns'):
+            special_factor += 0.25
+        if special_requirements.get('special_location'):
+            special_factor += 0.15
+        if special_requirements.get('budget_constraints'):
+            special_factor += 0.05  # Slightly higher for budget planning
+        
+        # Calculate final cost with all factors
+        total_cost = ((base_total + window_cost) * complexity_factor * finish_multiplier * 
+                     env_factor * comment_factor * special_factor)
         
         # Get user comment for personalized response
         user_comment = config.get('user_comment', '').strip()
@@ -1001,54 +1040,133 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "auto") -> str
 
 
 def _calculate_base_costs(config: Dict[str, Any]) -> Dict[str, float]:
-    """Calculate base costs from configuration"""
+    """Calculate base costs from configuration with proper modification accounting"""
 
     # Base container costs - Polish market
     base_costs = {
         '20ft Standard': 3000,
         '40ft Standard': 4200,
         '40ft High Cube': 4500,
+        '45ft High Cube': 5000,
+        '48ft Standard': 5500,
+        '53ft Standard': 6000,
         '20ft Refrigerated': 6000
     }
 
-    container_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
+    container_cost = base_costs.get(config.get('container_type', '20ft Standard'), 4200)
 
-    # Calculate modification costs
-    modifications_cost = 0
+    # Get modifications from config
+    modifications = config.get('modifications', {})
+    
+    # Calculate detailed modification costs
+    total_modifications_cost = 0
+    electrical_cost = 0
+    plumbing_cost = 0
+    hvac_cost = 0
+    structural_cost = 0
 
     # Windows - Polish market pricing
-    modifications_cost += config.get('number_of_windows', 0) * 250
+    windows = config.get('number_of_windows', 0)
+    if windows > 0:
+        structural_cost += windows * 600  # €600 per window
 
     # Additional doors
-    if config.get('additional_doors', False):
-        modifications_cost += 600
+    if config.get('additional_doors', False) or modifications.get('additional_doors', False):
+        structural_cost += 900  # €900 per additional door
 
     # Electrical systems
-    if config.get('electrical_system', False):
-        modifications_cost += 1200
+    if config.get('electrical_system', False) or modifications.get('electrical_system', False):
+        electrical_cost = 1800  # €1800 basic package
 
     # Plumbing
-    if config.get('plumbing', False):
-        modifications_cost += 1500
+    if config.get('plumbing_system', False) or modifications.get('plumbing_system', False):
+        plumbing_cost = 2500  # €2500 basic package
 
     # HVAC
-    if config.get('hvac', False):
-        modifications_cost += 2000
+    if config.get('hvac_system', False) or modifications.get('hvac_system', False):
+        hvac_cost = 3000  # €3000 mini-split system
 
     # Insulation
-    if config.get('insulation', False):
-        modifications_cost += 900
+    if config.get('insulation', False) or modifications.get('insulation_package', False):
+        structural_cost += 1200  # €1200 insulation package
+
+    # Structural reinforcements
+    if modifications.get('wall_reinforcement', False):
+        structural_cost += 2000
+    if modifications.get('roof_reinforcement', False):
+        structural_cost += 1500
+    if modifications.get('floor_reinforcement', False):
+        structural_cost += 1800
+    if modifications.get('additional_support', False):
+        structural_cost += 2500
+
+    # Advanced systems
+    if modifications.get('security_system', False):
+        electrical_cost += 1500
+    if modifications.get('fire_suppression', False):
+        structural_cost += 3000
+    if modifications.get('access_control', False):
+        electrical_cost += 1200
+
+    # Finish level impact
+    finish_level = config.get('finish_level', 'Standard')
+    finish_multipliers = {'Basic': 1.0, 'Standard': 1.3, 'Premium': 1.8, 'Luxury': 2.5}
+    finish_multiplier = finish_multipliers.get(finish_level, 1.3)
+
+    # Apply finish multiplier to interior costs
+    electrical_cost = int(electrical_cost * finish_multiplier)
+    plumbing_cost = int(plumbing_cost * finish_multiplier)
+    hvac_cost = int(hvac_cost * finish_multiplier)
+
+    # Environment impact
+    environment = config.get('environment', '')
+    env_multiplier = 1.0
+    if 'extreme' in environment.lower() or 'harsh' in environment.lower():
+        env_multiplier = 1.25
+    elif 'marine' in environment.lower() or 'coastal' in environment.lower():
+        env_multiplier = 1.15
+
+    # Apply environment multiplier
+    structural_cost = int(structural_cost * env_multiplier)
+
+    # User comment impact - analyze for cost drivers
+    user_comment = config.get('user_comment', '').lower()
+    comment_multiplier = 1.0
+    if any(word in user_comment for word in ['premium', 'high-end', 'luxury', 'top quality']):
+        comment_multiplier += 0.3
+    elif any(word in user_comment for word in ['custom', 'special', 'unique', 'complex']):
+        comment_multiplier += 0.2
+    elif any(word in user_comment for word in ['urgent', 'fast', 'quick', 'rush']):
+        comment_multiplier += 0.15
+
+    # Special requirements impact
+    special_requirements = config.get('special_requirements', {})
+    if special_requirements.get('urgent_timeline'):
+        comment_multiplier += 0.15
+    if special_requirements.get('custom_modifications'):
+        comment_multiplier += 0.25
+    if special_requirements.get('sustainability_focus'):
+        comment_multiplier += 0.1
+    if special_requirements.get('regulatory_concerns'):
+        comment_multiplier += 0.2
+
+    # Apply comment multiplier to all modification costs
+    if comment_multiplier > 1.0:
+        structural_cost = int(structural_cost * comment_multiplier)
+        electrical_cost = int(electrical_cost * comment_multiplier)
+        plumbing_cost = int(plumbing_cost * comment_multiplier)
+        hvac_cost = int(hvac_cost * comment_multiplier)
 
     # Delivery cost - Polish market
-    delivery_cost = 500
+    delivery_cost = 800
 
     return {
         'container_base': container_cost,
-        'structural_modifications': modifications_cost * 0.4,
-        'electrical': modifications_cost * 0.25,
-        'plumbing': modifications_cost * 0.15,
-        'hvac': modifications_cost * 0.2,
-        'finishes': 1500,
+        'structural_modifications': structural_cost,
+        'electrical': electrical_cost,
+        'plumbing': plumbing_cost,
+        'hvac': hvac_cost,
+        'finishes': 2000 * finish_multiplier,
         'delivery': delivery_cost
     }
 
