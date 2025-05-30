@@ -13,12 +13,16 @@ from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
-from utils.translations import t, init_language, get_current_language, set_language
+from utils.complete_translations_fixed import get_translation
+from utils.global_language import get_current_language, set_language
 
-init_language()
+def t(key):
+    """Translation function"""
+    try:
+        return get_translation(key, get_current_language())
+    except:
+        return key
 
-# Use the language selector from translations.py
-from utils.translations import render_language_selector
 from utils.groq_service import GroqService
 
 # Initialize services with lazy loading
