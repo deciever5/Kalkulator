@@ -71,10 +71,6 @@ def init_session_state():
 try:
     init_session_state()
     
-    # Load professional card styling
-    from utils.card_components import load_card_css
-    load_card_css()
-    
     # Force reload translations when language changes
     if 'prev_language' not in st.session_state:
         st.session_state.prev_language = st.session_state.language
