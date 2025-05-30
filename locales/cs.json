@@ -327,7 +327,7 @@
   "generate_ai_estimate": "Generovat AI Odhad",
   "ai_cost_estimate": "AI Odhad Nákladů",
   "save_estimate": "Uložit odhad",
-  "preliminary_estimate_note": "Toto je předběžný odhad. Přesná cena se může lišit v závislosti na podrobných požadavcích projektu.",
+  "preliminary_estimate_note": "Toto je předběžný odhad. Přesná cena se může lišit v závislosti na podrobných požadavcích projektu, aktuálních nákladech na materiál a práci.",
   "delivery_cost": "Náklady na dopravu",
   "estimate_saved": "Odhad nákladů úspěšně uložen",
   "additional_project_details": "Další Podrobnosti Projektu",

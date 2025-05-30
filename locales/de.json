@@ -496,6 +496,8 @@
     "file_formats_help": "Unterstützte Formate: PDF, DWG, JPG, PNG, DOC, DOCX",
     "files_attached": "Dateien angehängt",
     "recommended_files": "Empfohlene Dokumente",
+    "attachments": "Anhänge",
+    "upload_files": "Dateien hochladen",
     "contact_preferences": "Kontaktpräferenzen",
     "preferred_contact": "Bevorzugte Kontaktmethode",
     "contact": {

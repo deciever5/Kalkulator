@@ -150,6 +150,30 @@
     }
   },
   "send_inquiry": {
+    "attachments": "Załączniki",
+    "upload_files": "Prześlij Pliki",
+    "file_formats_help": "Obsługiwane formaty: PDF, DWG, JPG, PNG, DOC, DOCX",
+    "contact_preferences": "Preferencje Kontaktu",
+    "preferred_contact": "Preferowany Sposób Kontaktu",
+    "contact": {
+      "email": "E-mail",
+      "phone": "Telefon", 
+      "both": "E-mail i Telefon"
+    },
+    "best_time": "Najlepszy Czas Kontaktu",
+    "time": {
+      "morning": "Rano (8:00-12:00)",
+      "afternoon": "Popołudnie (12:00-17:00)",
+      "evening": "Wieczór (17:00-20:00)",
+      "anytime": "Kiedykolwiek"
+    },
+    "privacy_section": "Ochrona Danych",
+    "data_protection_info": "Informacje o Ochronie Danych",
+    "data_retention": "Przechowywanie Danych",
+    "privacy_consent": "Wyrażam zgodę na przetwarzanie moich danych osobowych przez KAN-BUD Sp. z o.o. w celu obsługi tego zapytania zgodnie z przepisami RODO",
+    "marketing_consent": "Wyrażam zgodę na otrzymywanie informacji marketingowych o usługach i produktach KAN-BUD (opcjonalne)",
+    "submit_inquiry": "Wyślij Zapytanie",
+    "contact_info": "Informacje Kontaktowe",
     "title": "Formularz Zapytania",
     "description": "Otrzymaj szczegółową ofertę dostosowaną do Twoich potrzeb kontenerowych",
     "disclaimer_title": "Ważna Informacja",
