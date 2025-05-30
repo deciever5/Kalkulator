@@ -25,8 +25,8 @@ class ContainerDatabase:
                 "internal_length": 19.33,
                 "internal_width": 7.7,
                 "internal_height": 7.83,
-                "weight": 5000,  # lbs
-                "payload": 62000,  # lbs
+                "weight": 2300,  # kg (converted from lbs)
+                "payload": 28000,  # kg (converted from lbs)
                 "volume": 1172,  # cubic feet
                 "construction": "Corten steel",
                 "floor": "Marine plywood",
@@ -39,8 +39,8 @@ class ContainerDatabase:
                 "internal_length": 39.33,
                 "internal_width": 7.7,
                 "internal_height": 7.83,
-                "weight": 8000,  # lbs
-                "payload": 67000,  # lbs
+                "weight": 3600,  # kg (converted from lbs)
+                "payload": 30000,  # kg (converted from lbs)
                 "volume": 2372,  # cubic feet
                 "construction": "Corten steel",
                 "floor": "Marine plywood",

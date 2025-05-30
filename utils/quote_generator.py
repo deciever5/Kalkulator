@@ -239,14 +239,14 @@ class QuoteGenerator:
         base_type = config.get('base_type', '40ft Standard')
         modifications = config.get('modifications', {})
         
-        # Container base costs
+        # Container base costs - Polish market
         container_costs = {
-            "20ft Standard": 3500,
-            "40ft Standard": 5000,
-            "40ft High Cube": 5500,
-            "45ft High Cube": 6500,
-            "48ft Standard": 7000,
-            "53ft Standard": 7500
+            "20ft Standard": 3000,
+            "40ft Standard": 4200,
+            "40ft High Cube": 4500,
+            "45ft High Cube": 5000,
+            "48ft Standard": 5500,
+            "53ft Standard": 6000
         }
         
         costs = {

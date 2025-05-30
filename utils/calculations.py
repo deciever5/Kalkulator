@@ -38,16 +38,16 @@ def calculate_container_cost(config):
     """Calculate container cost based on configuration - optimized"""
     base_cost = BASE_COSTS.get(config.get('container_type', '20ft Standard'), 8000)
     multiplier = USE_CASE_MULTIPLIERS.get(config.get('main_purpose', 'Storage'), 1.0)
-    
+
     # Calculate modifications cost efficiently
     modifications_cost = 0
-    
+
     # Environment costs
     if config.get('environment') == 'Marine':
         modifications_cost += 2000
     elif config.get('environment') == 'Industrial':
         modifications_cost += 1500
-    
+
     # Finish level costs
     finish_costs = {
         'Basic': 0,
@@ -56,25 +56,25 @@ def calculate_container_cost(config):
         'Luxury': 15000
     }
     modifications_cost += finish_costs.get(config.get('finish_level', 'Basic'), 0)
-    
-    # Windows and doors
-    modifications_cost += config.get('number_of_windows', 0) * 800
+
+    # Windows and doors - Polish market pricing
+    modifications_cost += config.get('number_of_windows', 0) * 600  # Reduced from 800
     if config.get('additional_doors'):
-        modifications_cost += 1200
-    
-    # Systems
+        modifications_cost += 900  # Reduced from 1200
+
+    # Systems - Polish market pricing
     if config.get('electrical_system'):
-        modifications_cost += 2500
+        modifications_cost += 1800  # Reduced from 2500
     if config.get('plumbing_system'):
-        modifications_cost += 3500
+        modifications_cost += 2500  # Reduced from 3500
     if config.get('hvac_system'):
-        modifications_cost += 4000
-    
+        modifications_cost += 3000  # Reduced from 4000
+
     # Calculate delivery costs based on delivery zone
     delivery_cost = calculate_delivery_cost(config.get('delivery_zone', 'Local'), config.get('container_type', '20ft Standard'))
-    
+
     total_cost = (base_cost + modifications_cost) * multiplier + delivery_cost
-    
+
     return {
         'base_cost': base_cost,
         'modifications_cost': modifications_cost,
@@ -85,7 +85,7 @@ def calculate_container_cost(config):
 
 def calculate_delivery_cost(delivery_zone, container_type):
     """Calculate delivery cost based on zone and container type"""
-    
+
     # Base delivery costs by zone (in EUR)
     zone_costs = {
         'Local': 800,           # Poland local (do 100km)
@@ -98,9 +98,9 @@ def calculate_delivery_cost(delivery_zone, container_type):
         'UK_Ireland': 4500,     # United Kingdom, Ireland
         'International': 6500   # Outside Europe
     }
-    
+
     base_delivery = zone_costs.get(delivery_zone, 800)
-    
+
     # Container size multipliers
     size_multipliers = {
         "20ft Standard": 1.0,
@@ -108,14 +108,14 @@ def calculate_delivery_cost(delivery_zone, container_type):
         "40ft High Cube": 1.5,
         "20ft Refrigerated": 1.2
     }
-    
+
     multiplier = size_multipliers.get(container_type, 1.0)
-    
+
     return base_delivery * multiplier
 
 class StructuralCalculations:
     """Class for structural engineering calculations and analysis"""
-    
+
     def __init__(self):
         # Material properties (typical values)
         self.steel_properties = {
@@ -134,7 +134,7 @@ class StructuralCalculations:
                 "poisson_ratio": 0.3
             }
         }
-        
+
         # Load factors and safety factors
         self.load_factors = {
             "dead_load": 1.2,
@@ -143,7 +143,7 @@ class StructuralCalculations:
             "snow_load": 1.2,
             "seismic_load": 1.0
         }
-        
+
         # Standard loading values
         self.standard_loads = {
             "office_live_load": 50,  # psf
@@ -151,14 +151,14 @@ class StructuralCalculations:
             "workshop_live_load": 125,  # psf
             "storage_live_load": 125,  # psf
         }
-    
+
     def calculate_base_costs(self, config: Dict[str, Any]) -> Dict[str, Any]:
         """Calculate base costs for container modifications"""
-        
+
         base_type = config.get('base_type', '40ft Standard')
         use_case = config.get('use_case', 'Office Space')
         modifications = config.get('modifications', {})
-        
+
         # Base container costs
         container_costs = {
             "20ft Standard": 3500,
@@ -168,61 +168,61 @@ class StructuralCalculations:
             "48ft Standard": 7000,
             "53ft Standard": 7500
         }
-        
+
         base_cost = container_costs.get(base_type, 5000)
-        
+
         # Modification costs
         modification_costs = 0
-        
+
         # Windows
         windows = modifications.get('windows', 0)
         modification_costs += windows * 800  # $800 per window
-        
+
         # Additional doors
         doors = modifications.get('doors', 1)
         if doors > 1:
             modification_costs += (doors - 1) * 1200  # $1200 per additional door
-        
+
         # Skylights
         skylights = modifications.get('skylights', 0)
         modification_costs += skylights * 1500  # $1500 per skylight
-        
+
         # Ventilation
         vents = modifications.get('vents', 0)
         modification_costs += vents * 200  # $200 per vent
-        
+
         # Systems
         if modifications.get('electrical'):
             modification_costs += 3500  # Basic electrical package
-        
+
         if modifications.get('plumbing'):
             modification_costs += 4000  # Basic plumbing package
-        
+
         if modifications.get('hvac'):
             modification_costs += 2500  # Mini-split system
-        
+
         if modifications.get('insulation'):
             # Calculate based on container size
             container_areas = self._get_container_areas(base_type)
             insulation_area = container_areas['wall_area'] + container_areas['ceiling_area']
             modification_costs += insulation_area * 1.50  # $1.50 per sq ft
-        
+
         # Reinforcements
         if modifications.get('reinforcement_walls'):
             modification_costs += 2000
-        
+
         if modifications.get('reinforcement_roof'):
             modification_costs += 1500
-        
+
         if modifications.get('reinforcement_floor'):
             modification_costs += 1800
-        
+
         if modifications.get('additional_support'):
             modification_costs += 2500
-        
+
         # Labor costs (approximately 40% of material costs)
         labor_costs = (base_cost + modification_costs) * 0.4
-        
+
         return {
             "base_container": base_cost,
             "modifications": modification_costs,
@@ -238,31 +238,31 @@ class StructuralCalculations:
                 "other_materials": modification_costs * 0.3
             }
         }
-    
+
     def perform_structural_analysis(self, config: Dict[str, Any], 
                                   analysis_params: Dict[str, Any]) -> Dict[str, Any]:
         """Perform comprehensive structural analysis"""
-        
+
         base_type = config.get('base_type', '40ft Standard')
         use_case = config.get('use_case', 'Office Space')
         modifications = config.get('modifications', {})
-        
+
         # Get container dimensions
         container_specs = self._get_container_specs(base_type)
         safety_factor = analysis_params.get('safety_factor', 1.5)
-        
+
         # Calculate loads
         loads = self._calculate_loads(config, analysis_params)
-        
+
         # Perform structural calculations
         structural_results = self._analyze_structure(container_specs, loads, modifications, safety_factor)
-        
+
         # Check compliance
         compliance = self._check_compliance(config, analysis_params, structural_results)
-        
+
         # Calculate material requirements
         materials = self._calculate_material_requirements(config, structural_results)
-        
+
         return {
             "load_ratio": structural_results["load_ratio"],
             "max_deflection": structural_results["max_deflection"],
@@ -278,7 +278,7 @@ class StructuralCalculations:
             "required_drawings": self._get_required_drawings(config, structural_results),
             "professional_requirements": self._get_professional_requirements(config, structural_results)
         }
-    
+
     def _get_container_specs(self, base_type: str) -> Dict[str, float]:
         """Get container specifications"""
         specs = {
@@ -290,11 +290,11 @@ class StructuralCalculations:
             "53ft Standard": {"length": 53, "width": 8, "height": 8.5, "wall_thickness": 0.075}
         }
         return specs.get(base_type, specs["40ft Standard"])
-    
+
     def _get_container_areas(self, base_type: str) -> Dict[str, float]:
         """Calculate container surface areas"""
         specs = self._get_container_specs(base_type)
-        
+
         return {
             "floor_area": specs["length"] * specs["width"],
             "wall_area": 2 * (specs["length"] * specs["height"] + specs["width"] * specs["height"]),
@@ -302,13 +302,13 @@ class StructuralCalculations:
             "total_surface": 2 * (specs["length"] * specs["width"]) + 
                            2 * (specs["length"] * specs["height"] + specs["width"] * specs["height"])
         }
-    
+
     def _calculate_loads(self, config: Dict[str, Any], analysis_params: Dict[str, Any]) -> Dict[str, float]:
         """Calculate design loads according to European standards (EN 1991)"""
-        
+
         use_case = config.get('use_case', 'Office Space')
         occupancy = config.get('occupancy', 4)
-        
+
         # Live loads based on use case (EN 1991-1-1) - in kN/m²
         live_load_mapping = {
             "Office Space": 2.5,  # kN/m²
@@ -317,42 +317,42 @@ class StructuralCalculations:
             "Storage/Warehouse": 7.5,
             "Retail/Commercial": 4.0
         }
-        
+
         live_load = live_load_mapping.get(use_case, 2.5)
-        
+
         # Dead loads (structure + finishes) - in kN/m²
         dead_load = 1.0  # kN/m² (basic structure)
-        
+
         modifications = config.get('modifications', {})
         if modifications.get('insulation'):
             dead_load += 0.15  # Additional dead load for insulation
-        
+
         if modifications.get('hvac'):
             dead_load += 0.25  # Additional dead load for HVAC
-        
+
         # Environmental loads
         wind_load = analysis_params.get('wind_load', 120)  # km/h
         snow_load = analysis_params.get('snow_load', 1.5)  # kN/m²
         climate_zone = analysis_params.get('climate_zone', 'Umiarkowana (Europa Środkowa)')
         environmental_conditions = analysis_params.get('environmental_conditions', 'Standardowe')
-        
+
         # Import European climate standards
         from .european_climate_standards import EuropeanClimateStandards
         climate_std = EuropeanClimateStandards()
-        
+
         # Adjust loads based on European climate zones
         climate_factors = climate_std.get_climate_factors(climate_zone)
         env_factors = climate_std.get_environmental_factors(environmental_conditions)
-        
+
         # Adjusted snow load based on climate zone
         adjusted_snow_load = climate_std.calculate_snow_load(snow_load, climate_zone)
-        
+
         # Adjusted wind load based on climate zone  
         adjusted_wind_load = climate_std.calculate_wind_load(wind_load, climate_zone)
-        
+
         # Convert wind speed to pressure (EN 1991-1-4) - in kN/m²
         wind_pressure = (adjusted_wind_load / 3.6) ** 2 * 0.0006  # kN/m²
-        
+
         return {
             "dead_load": dead_load,
             "live_load": live_load,
@@ -365,73 +365,73 @@ class StructuralCalculations:
             "climate_factors": climate_factors,
             "environmental_factors": env_factors
         }
-    
+
     def _analyze_structure(self, container_specs: Dict[str, float], loads: Dict[str, float], 
                           modifications: Dict[str, Any], safety_factor: float) -> Dict[str, Any]:
         """Perform structural analysis calculations"""
-        
+
         length = container_specs["length"]
         width = container_specs["width"]
         height = container_specs["height"]
         wall_thickness = container_specs["wall_thickness"]
-        
+
         # Calculate section properties
         steel_props = self.steel_properties["corten_steel"]
-        
+
         # Simplified beam analysis for roof loading
         total_load = loads["total_vertical"]  # psf
         beam_load = total_load * width  # plf (load per linear foot)
-        
+
         # Maximum moment (simply supported beam)
         max_moment = beam_load * (length ** 2) / 8  # lb-ft
         max_moment *= 12  # Convert to lb-in
-        
+
         # Section modulus of container frame (simplified)
         # Assume effective section modulus based on container construction
         section_modulus = 10.0  # in³ (conservative estimate)
-        
+
         # Calculate stress
         max_stress = max_moment / section_modulus  # psi
         allowable_stress = steel_props["yield_strength"] / safety_factor
-        
+
         stress_ratio = max_stress / allowable_stress
-        
+
         # Deflection calculation
         moment_of_inertia = section_modulus * height / 2  # Approximate
         max_deflection = (5 * beam_load * (length * 12) ** 4) / (384 * steel_props["elastic_modulus"] * moment_of_inertia)
         max_deflection /= 12  # Convert to feet
-        
+
         # Deflection limit (L/240 for live load)
         deflection_limit = length / 240
-        
+
         # Load ratio (total load vs capacity)
         # Simplified capacity calculation
         area_capacity = steel_props["yield_strength"] * wall_thickness * width * 12  # Total capacity
         applied_load = total_load * length * width
         load_ratio = applied_load / area_capacity
-        
+
         # Foundation requirements
         foundation_type = self._determine_foundation_type(loads, length, width)
-        
+
         # Account for modifications that affect structural integrity
         modification_factor = 1.0
-        
+
         if modifications.get('windows', 0) > 0:
             modification_factor += 0.1 * modifications['windows']  # Each window increases stress
-        
+
         if modifications.get('doors', 0) > 1:
             modification_factor += 0.15 * (modifications['doors'] - 1)  # Additional doors
-        
+
         if modifications.get('reinforcement_walls'):
             modification_factor *= 0.8  # Wall reinforcement reduces stress
-        
+
         if modifications.get('reinforcement_roof'):
             modification_factor *= 0.85  # Roof reinforcement
-        
+
         # Apply modification factor
         stress_ratio *= modification_factor
         load_ratio *= modification_factor
-        
+
         return {
             "max_stress": max_stress,
             "allowable_stress": allowable_stress,
@@ -447,12 +447,12 @@ class StructuralCalculations:
                 "moment_of_inertia": moment_of_inertia
             }
         }
-    
+
     def _determine_foundation_type(self, loads: Dict[str, float], length: float, width: float) -> str:
         """Determine foundation requirements"""
-        
+
         total_load = loads["total_vertical"] * length * width
-        
+
         if total_load < 20000:
             return "Concrete Pads"
         elif total_load < 40000:
@@ -461,49 +461,49 @@ class StructuralCalculations:
             return "Slab Foundation"
         else:
             return "Engineered Foundation"
-    
+
     def _check_compliance(self, config: Dict[str, Any], analysis_params: Dict[str, Any], 
                          structural_results: Dict[str, Any]) -> Dict[str, Dict[str, str]]:
         """Check European building code compliance"""
-        
+
         building_code = analysis_params.get('building_code', 'EN (European Norms)')
         use_case = config.get('use_case', 'Office Space')
         climate_zone = analysis_params.get('climate_zone', 'Umiarkowana (Europa Środkowa)')
         environmental_conditions = analysis_params.get('environmental_conditions', 'Standardowe')
-        
+
         # Import European climate standards for compliance requirements
         from .european_climate_standards import EuropeanClimateStandards
         climate_std = EuropeanClimateStandards()
-        
+
         # Get specific compliance requirements for climate zone and use case
         compliance_reqs = climate_std.get_compliance_requirements(climate_zone, use_case)
-        
+
         compliance_results = {
             "european_standards": {},
             "climate_specific": {},
             "structural": {},
             "environmental": {}
         }
-        
+
         # Structural compliance
         if structural_results["stress_ratio"] < 1.0:
             compliance_results["structural"]["Stress Check"] = "Pass"
         else:
             compliance_results["structural"]["Stress Check"] = "Fail"
-        
+
         if structural_results["load_ratio"] < 1.0:
             compliance_results["structural"]["Load Check"] = "Pass"
         else:
             compliance_results["structural"]["Load Check"] = "Fail"
-        
+
         if structural_results["max_deflection"] < structural_results["deflection_limit"]:
             compliance_results["structural"]["Deflection Check"] = "Pass"
         else:
             compliance_results["structural"]["Deflection Check"] = "Fail"
-        
+
         # Safety requirements
         modifications = config.get('modifications', {})
-        
+
         # Exit requirements
         if use_case in ["Office Space", "Retail/Commercial"] and config.get('occupancy', 1) > 49:
             if modifications.get('doors', 1) >= 2:
@@ -512,44 +512,44 @@ class StructuralCalculations:
                 compliance_results["safety"]["Emergency Exits"] = "Fail"
         else:
             compliance_results["safety"]["Emergency Exits"] = "Pass"
-        
+
         # Ventilation
         if modifications.get('hvac') or modifications.get('vents', 0) > 0:
             compliance_results["safety"]["Ventilation"] = "Pass"
         else:
             compliance_results["safety"]["Ventilation"] = "Review Required"
-        
+
         # Electrical safety
         if modifications.get('electrical'):
             compliance_results["safety"]["Electrical Code"] = "Pass"
         else:
             compliance_results["safety"]["Electrical Code"] = "N/A"
-        
+
         # Building code specific checks
         if "IBC" in building_code:
             compliance_results["building_codes"]["IBC Structural"] = "Pass" if structural_results["stress_ratio"] < 1.0 else "Fail"
             compliance_results["building_codes"]["IBC Fire Safety"] = "Review Required"
             compliance_results["building_codes"]["IBC Accessibility"] = "Review Required" if use_case in ["Office Space", "Retail/Commercial"] else "N/A"
-        
+
         return compliance_results
-    
+
     def _calculate_material_requirements(self, config: Dict[str, Any], 
                                        structural_results: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
         """Calculate detailed material requirements"""
-        
+
         base_type = config.get('base_type', '40ft Standard')
         modifications = config.get('modifications', {})
         container_specs = self._get_container_specs(base_type)
-        
+
         materials = {}
-        
+
         # Base container
         materials["base_container"] = {
             "material": "Corten Steel Container",
             "quantity": "1 each",
             "specification": f"{base_type} ISO container"
         }
-        
+
         # Structural reinforcements
         if modifications.get('reinforcement_walls'):
             materials["wall_reinforcement"] = {
@@ -557,21 +557,21 @@ class StructuralCalculations:
                 "quantity": "200 lbs",
                 "specification": "A36 Steel, 3x3x1/4 angles"
             }
-        
+
         if modifications.get('reinforcement_roof'):
             materials["roof_reinforcement"] = {
                 "material": "Structural Steel Beams",
                 "quantity": "150 lbs",
                 "specification": "A36 Steel, W8x10 beams"
             }
-        
+
         if modifications.get('additional_support'):
             materials["support_beams"] = {
                 "material": "Steel Support Posts",
                 "quantity": "4 each",
                 "specification": "4x4 HSS posts, A500 Grade B"
             }
-        
+
         # Windows and doors
         if modifications.get('windows', 0) > 0:
             materials["windows"] = {
@@ -579,14 +579,14 @@ class StructuralCalculations:
                 "quantity": f"{modifications['windows']} each",
                 "specification": "Double-pane, thermally broken"
             }
-        
+
         if modifications.get('doors', 1) > 1:
             materials["additional_doors"] = {
                 "material": "Steel Personnel Doors",
                 "quantity": f"{modifications['doors'] - 1} each",
                 "specification": "3'x7', insulated, weather sealed"
             }
-        
+
         # Insulation
         if modifications.get('insulation'):
             container_areas = self._get_container_areas(base_type)
@@ -596,7 +596,7 @@ class StructuralCalculations:
                 "quantity": f"{insulation_area:.0f} sq ft",
                 "specification": "Closed-cell, R-6.5 per inch"
             }
-        
+
         # Foundation
         foundation_type = structural_results.get("foundation_type", "Concrete Pads")
         if foundation_type == "Concrete Pads":
@@ -611,25 +611,25 @@ class StructuralCalculations:
                 "quantity": f"{container_specs['length'] * 2 + container_specs['width'] * 2:.0f} lin ft",
                 "specification": "12\"x8\" concrete strip, 3000 psi"
             }
-        
+
         return materials
-    
+
     def _calculate_load_distribution(self, container_specs: Dict[str, float], 
                                    loads: Dict[str, float]) -> Dict[str, Dict[str, List[float]]]:
         """Calculate load distribution for visualization"""
-        
+
         length = container_specs["length"]
         width = container_specs["width"]
-        
+
         # Create coordinate arrays for visualization
         x_coords = [i * length / 10 for i in range(11)]  # 11 points along length
-        
+
         # Uniform load distribution
         uniform_load = [loads["total_vertical"]] * len(x_coords)
-        
+
         # Wind load distribution (varies along height)
         wind_load = [loads["wind_pressure"] * (1 + i * 0.1) for i in range(len(x_coords))]
-        
+
         return {
             "dead_load": {
                 "x_coords": x_coords,
@@ -648,128 +648,128 @@ class StructuralCalculations:
                 "y_coords": uniform_load
             }
         }
-    
+
     def _calculate_stress_points(self, container_specs: Dict[str, float], 
                                loads: Dict[str, float]) -> Dict[str, List[float]]:
         """Calculate stress distribution points for visualization"""
-        
+
         length = container_specs["length"]
         width = container_specs["width"]
-        
+
         # Create grid of stress points
         x_points = [i * length / 5 for i in range(6)]  # 6 points along length
         y_points = [i * width / 3 for i in range(4)]   # 4 points along width
-        
+
         x_coords = []
         y_coords = []
         stress_values = []
-        
+
         # Calculate stress at each point (simplified)
         max_stress = loads["total_vertical"] * 1.5  # Simplified stress calculation
-        
+
         for x in x_points:
             for y in y_points:
                 x_coords.append(x)
                 y_coords.append(y)
-                
+
                 # Stress varies based on location (higher at corners and mid-span)
                 distance_factor = abs(x - length/2) / (length/2)  # 0 at center, 1 at ends
                 stress = max_stress * (0.5 + 0.5 * distance_factor)
                 stress_values.append(stress)
-        
+
         return {
             "x_coords": x_coords,
             "y_coords": y_coords,
             "stress_values": stress_values
         }
-    
+
     def _get_required_drawings(self, config: Dict[str, Any], 
                              structural_results: Dict[str, Any]) -> List[str]:
         """Determine required engineering drawings"""
-        
+
         drawings = ["Site Plan", "Foundation Plan", "Floor Plan"]
-        
+
         modifications = config.get('modifications', {})
-        
+
         if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
             drawings.append("Structural Reinforcement Details")
-        
+
         if modifications.get('electrical'):
             drawings.append("Electrical Plan")
-        
+
         if modifications.get('plumbing'):
             drawings.append("Plumbing Plan")
-        
+
         if modifications.get('hvac'):
             drawings.append("HVAC Plan")
-        
+
         if structural_results.get("stress_ratio", 0) > 0.8:
             drawings.append("Structural Analysis Report")
-        
+
         drawings.extend(["Sections and Details", "Construction Specifications"])
-        
+
         return drawings
-    
+
     def _get_professional_requirements(self, config: Dict[str, Any], 
                                      structural_results: Dict[str, Any]) -> List[str]:
         """Determine professional requirements"""
-        
+
         requirements = []
-        
+
         use_case = config.get('use_case', 'Office Space')
-        
+
         # Structural engineer required for certain conditions
         if structural_results.get("stress_ratio", 0) > 0.7:
             requirements.append("Licensed Structural Engineer - Structural Analysis")
-        
+
         if config.get('modifications', {}).get('reinforcement_walls') or config.get('modifications', {}).get('reinforcement_roof'):
             requirements.append("Licensed Structural Engineer - Reinforcement Design")
-        
+
         # Other professionals
         if config.get('modifications', {}).get('electrical'):
             requirements.append("Licensed Electrician - Electrical Installation")
-        
+
         if config.get('modifications', {}).get('plumbing'):
             requirements.append("Licensed Plumber - Plumbing Installation")
-        
+
         if config.get('modifications', {}).get('hvac'):
             requirements.append("HVAC Contractor - System Installation")
-        
+
         # Permits and inspections
         if use_case in ["Office Space", "Retail/Commercial", "Residential Living"]:
             requirements.append("Building Permit Required")
             requirements.append("Municipal Inspections Required")
-        
+
         if structural_results.get("foundation_type") != "Concrete Pads":
             requirements.append("Foundation Engineering Review")
-        
+
         return requirements
-    
+
     def calculate_project_timeline(self, config: Dict[str, Any], 
                                  structural_results: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
         """Calculate project timeline based on scope - minimum 6-8 weeks"""
-        
+
         modifications = config.get('modifications', {})
         base_type = config.get('base_type', '40ft Standard')
         delivery_zone = config.get('delivery_zone', 'Local')
-        
+
         timeline = {}
-        
+
         # Phase 1: Design and Documentation (1-2 weeks minimum)
         design_weeks = 2  # Minimum 2 weeks for documentation
         if structural_results.get("stress_ratio", 0) > 0.7:
             design_weeks = 3  # Complex projects need more time
         if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
             design_weeks = 3  # Structural modifications need detailed engineering
-        
+
         timeline["Design_and_Documentation"] = {
             "duration": f"{design_weeks} weeks",
             "description": "Technical documentation, engineering calculations, permit applications"
         }
-        
+
         # Phase 2: Material Procurement and Delivery (3-4 weeks minimum)
         procurement_weeks = 3  # Minimum 3 weeks for materials
-        
+
         # Adjust based on delivery zone
         delivery_time_adjustments = {
             'Local': 0,
@@ -782,43 +782,43 @@ class StructuralCalculations:
             'UK_Ireland': 2.5,
             'International': 4
         }
-        
+
         procurement_weeks += delivery_time_adjustments.get(delivery_zone, 0)
-        
+
         # Additional time for complex modifications
         if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
             procurement_weeks += 1
         if modifications.get('hvac') or modifications.get('electrical'):
             procurement_weeks += 0.5
-        
+
         timeline["Material_Procurement"] = {
             "duration": f"{procurement_weeks:.1f} weeks",
             "description": f"Container procurement, material sourcing, delivery from {delivery_zone}"
         }
-        
+
         # Phase 3: Site Preparation  
         site_prep_weeks = 1
         foundation_type = structural_results.get("foundation_type", "Concrete Pads")
         if foundation_type != "Concrete Pads":
             site_prep_weeks += 1
-        
+
         timeline["Site_Preparation"] = {
             "duration": f"{site_prep_weeks} weeks", 
             "description": f"Site preparation, {foundation_type.lower()} installation"
         }
-        
+
         # Phase 4: Container Modifications
         mod_weeks = 2
         if modifications.get('windows', 0) > 2:
             mod_weeks += 1
         if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
             mod_weeks += 2
-        
+
         timeline["Container_Modifications"] = {
             "duration": f"{mod_weeks} weeks",
             "description": "Structural modifications, openings, reinforcements"
         }
-        
+
         # Phase 5: Systems Installation
         systems_weeks = 2
         if modifications.get('electrical'):
@@ -827,45 +827,45 @@ class StructuralCalculations:
             systems_weeks += 1
         if modifications.get('hvac'):
             systems_weeks += 1
-        
+
         timeline["Systems_Installation"] = {
             "duration": f"{systems_weeks} weeks", 
             "description": "Electrical, plumbing, HVAC installation"
         }
-        
+
         # Phase 6: Interior Finishes
         finish_weeks = 1
         if modifications.get('insulation'):
             finish_weeks += 1
-        
+
         finish_level = modifications.get('finish_level', 'Basic')
         if finish_level in ['Premium', 'Luxury']:
             finish_weeks += 2
-        
+
         timeline["Interior_Finishes"] = {
             "duration": f"{finish_weeks} weeks",
             "description": "Insulation, flooring, interior finishes"
         }
-        
+
         # Phase 7: Final Inspections and Commissioning
         timeline["Final_Inspections"] = {
             "duration": "1 week",
             "description": "Final inspections, testing, commissioning, handover"
         }
-        
+
         # Calculate total timeline and ensure minimum 6-8 weeks
         total_weeks = design_weeks + procurement_weeks + site_prep_weeks + mod_weeks + systems_weeks + finish_weeks + 1
-        
+
         if total_weeks < 6:
             # Adjust procurement time to meet minimum
             adjustment = 6 - total_weeks
             timeline["Material_Procurement"]["duration"] = f"{procurement_weeks + adjustment:.1f} weeks"
             timeline["Material_Procurement"]["description"] += f" (adjusted for minimum project timeline)"
             total_weeks = 6
-        
+
         timeline["Total_Project_Duration"] = {
             "duration": f"{total_weeks:.1f} weeks",
             "description": f"Complete project delivery (minimum 6-8 weeks for quality assurance)"
         }
-        
+
         return timeline

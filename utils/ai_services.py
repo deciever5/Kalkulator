@@ -1003,12 +1003,12 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "auto") -> str
 def _calculate_base_costs(config: Dict[str, Any]) -> Dict[str, float]:
     """Calculate base costs from configuration"""
 
-    # Base container costs
+    # Base container costs - Polish market
     base_costs = {
-        '20ft Standard': 8000,
-        '40ft Standard': 12000,
-        '40ft High Cube': 14000,
-        '20ft Refrigerated': 15000
+        '20ft Standard': 3000,
+        '40ft Standard': 4200,
+        '40ft High Cube': 4500,
+        '20ft Refrigerated': 6000
     }
 
     container_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
@@ -1016,31 +1016,31 @@ def _calculate_base_costs(config: Dict[str, Any]) -> Dict[str, float]:
     # Calculate modification costs
     modifications_cost = 0
 
-    # Windows
-    modifications_cost += config.get('number_of_windows', 0) * 300
+    # Windows - Polish market pricing
+    modifications_cost += config.get('number_of_windows', 0) * 250
 
     # Additional doors
     if config.get('additional_doors', False):
-        modifications_cost += 800
+        modifications_cost += 600
 
     # Electrical systems
     if config.get('electrical_system', False):
-        modifications_cost += 1500
+        modifications_cost += 1200
 
     # Plumbing
     if config.get('plumbing', False):
-        modifications_cost += 2000
+        modifications_cost += 1500
 
     # HVAC
     if config.get('hvac', False):
-        modifications_cost += 2500
+        modifications_cost += 2000
 
     # Insulation
     if config.get('insulation', False):
-        modifications_cost += 1200
+        modifications_cost += 900
 
-    # Delivery cost
-    delivery_cost = 800
+    # Delivery cost - Polish market
+    delivery_cost = 500
 
     return {
         'container_base': container_cost,
