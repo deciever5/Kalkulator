@@ -129,5 +129,35 @@ def get_available_languages():
     }
 
 def render_language_selector():
-    """Language selector is now handled in main app navigation - this function kept for compatibility"""
+    """Render language selector dropdown"""
+    current_lang = get_current_language()
+    language_options = {
+        'pl': '🇵🇱 Polski',
+        'en': '🇬🇧 English',
+        'de': '🇩🇪 Deutsch',
+        'nl': '🇳🇱 Nederlands',
+        'hu': '🇭🇺 Magyar',
+        'cs': '🇨🇿 Čeština'
+    }
+
+    # Create a unique key for each page
+    import os
+    page_name = os.path.basename(st._get_this_file_path()) if hasattr(st, '_get_this_file_path') else 'default'
+    key = f"lang_selector_{page_name}_{hash(page_name) % 1000}"
+
+    col1, col2, col3 = st.columns([4, 1.5, 0.5])
+    
+    with col2:
+        selected_language = st.selectbox(
+            "🌐 Language",
+            options=list(language_options.keys()),
+            format_func=lambda x: language_options[x],
+            index=list(language_options.keys()).index(current_lang),
+            key=key,
+            label_visibility="collapsed"
+        )
+
+        if selected_language != current_lang:
+            set_language(selected_language)
+            st.rerun()ion kept for compatibility"""
     pass
