@@ -7,7 +7,7 @@ import streamlit as st
 import time
 import random
 
-def show_loading_animation(text="Processing...", duration=2):
+def show_loading_animation(text="Processing...", duration=2.0):
     """Display a smooth loading animation with progress"""
     
     # Container for the loading animation
@@ -250,7 +250,7 @@ def add_hover_animations():
     </style>
     """, unsafe_allow_html=True)
 
-def show_success_animation(message="Success!", duration=2):
+def show_success_animation(message="Success!", duration=2.0):
     """Display animated success message"""
     
     success_container = st.empty()

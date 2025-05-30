@@ -140,7 +140,7 @@ if st.button("Add to Bulk Order", type="primary"):
     }
     
     # Show loading animation
-    show_loading_animation("Adding containers to bulk order...", 1.5)
+    show_loading_animation("Adding containers to bulk order...", 2)
     
     # Add multiple containers based on quantity
     for _ in range(quantity):
@@ -220,20 +220,22 @@ if st.session_state.bulk_containers:
     total_discount = volume_discount_amount + logistics_savings_amount
     final_total = total_base_cost - total_discount
     
-    # Display summary metrics
+    # Display summary metrics with animated counters
+    from utils.animations import create_animated_counter
+    
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
         st.metric("Total Containers", total_quantity)
     
     with col2:
-        st.metric("Base Cost", f"€{total_base_cost:,.0f}")
+        create_animated_counter(total_base_cost, "Base Cost", "€", "")
     
     with col3:
-        st.metric("Total Savings", f"€{total_discount:,.0f}")
+        create_animated_counter(total_discount, "Total Savings", "€", "")
     
     with col4:
-        st.metric("Final Total", f"€{final_total:,.0f}")
+        create_animated_counter(final_total, "Final Total", "€", "")
     
     # Savings highlight
     if total_discount > 0:

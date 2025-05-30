@@ -502,6 +502,58 @@ st.markdown(f"""
 
 # Services are now initialized lazily when needed
 
+# Dashboard metrics section for visual impact
+st.markdown("""
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 2rem; border-radius: 15px; margin: 2rem 0; text-align: center;">
+    <h2 style="margin: 0; font-size: 2.5rem;">📊 Platform Overview</h2>
+    <p style="margin: 0.5rem 0 0 0; opacity: 0.9; font-size: 1.2rem;">Real-time system performance and capabilities</p>
+</div>
+""", unsafe_allow_html=True)
+
+# Performance metrics with animated counters
+from utils.animations import create_animated_counter
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    create_animated_counter(15000, "Base Container Cost", "€", " avg")
+
+with col2:
+    create_animated_counter(847, "Projects Estimated", "", " total")
+
+with col3:
+    create_animated_counter(22, "Max Bulk Discount", "", "%")
+
+with col4:
+    create_animated_counter(6, "Languages Supported", "", " total")
+
+# Feature highlights
+st.markdown("""
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 1rem; margin: 2rem 0;">
+    <div style="background: linear-gradient(135deg, #2E86AB 0%, #1e3c72 100%); 
+                color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+        <h4 style="margin: 0 0 0.5rem 0;">🤖 AI-Powered Analysis</h4>
+        <p style="margin: 0; opacity: 0.9;">Advanced cost estimation using GPT-4, Claude, and Groq</p>
+    </div>
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+        <h4 style="margin: 0 0 0.5rem 0;">📐 3D Visualization</h4>
+        <p style="margin: 0; opacity: 0.9;">Interactive container modifications with real-time preview</p>
+    </div>
+    <div style="background: linear-gradient(135deg, #A23B72 0%, #2E86AB 100%); 
+                color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+        <h4 style="margin: 0 0 0.5rem 0;">💰 Bulk Pricing</h4>
+        <p style="margin: 0; opacity: 0.9;">Volume discounts up to 22% for multiple containers</p>
+    </div>
+    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
+                color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+        <h4 style="margin: 0 0 0.5rem 0;">🌐 Global Ready</h4>
+        <p style="margin: 0; opacity: 0.9;">Multi-language support with professional translations</p>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 # Main dashboard content
 if st.session_state.employee_logged_in:
     # Employee view
