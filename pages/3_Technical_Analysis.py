@@ -190,6 +190,9 @@ else:
         st.markdown(report)
         st.session_state.technical_report = report
 
+# Render shared header without login button
+render_shared_header(show_login=False)
+
 # Language selector already rendered at the top
 
 # Back to home button at the bottom

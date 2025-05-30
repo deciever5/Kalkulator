@@ -20,8 +20,8 @@ if 'employee_logged_in' not in st.session_state:
 if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
-# Render shared header with unified navigation
-render_shared_header()
+# Render shared header without login button
+render_shared_header(show_login=False)
 
 # Initialize database
 if 'container_db' not in st.session_state:
