@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from utils.calculations import StructuralCalculations
 from utils.translations import t, render_language_selector, get_current_language, render_language_selector
+from utils.components import render_back_to_home
 
 # Page configuration
 st.set_page_config(
@@ -184,3 +185,9 @@ else:
 
         st.markdown(report)
         st.session_state.technical_report = report
+
+# Language selector already rendered at the top
+
+# Back to home button at the bottom
+st.markdown("---")
+render_back_to_home()
