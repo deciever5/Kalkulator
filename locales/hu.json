@@ -1,0 +1,167 @@
+
+{
+  "app": {
+    "title": "Professzionális Konténer Megoldások",
+    "subtitle": "Professzionális Konténer Megoldások - Tervezés, Építés és Összeszerelés"
+  },
+  "ui": {
+    "employee_login": "Alkalmazotti Bejelentkezés",
+    "logout": "Kijelentkezés",
+    "password": "Jelszó:",
+    "login": "Bejelentkezés",
+    "logged_in": "Bejelentkezve!",
+    "wrong_password": "Helytelen jelszó",
+    "cancel": "Mégse",
+    "open": "Megnyitás",
+    "language_selector": "Nyelv / Language",
+    "back_to_home": "← Vissza a főoldalra",
+    "go_to_ai_estimate": "🤖 AI Becsléshez →",
+    "go_to_configurator": "🔧 Konfigurátor",
+    "access_denied": "Hozzáférés megtagadva"
+  },
+  "nav": {
+    "comparison_tool": "Összehasonlító\nEszköz",
+    "comparison_tool_desc": "Konfigurációk összehasonlítása",
+    "drawing_analysis": "Rajz\nElemzés",
+    "drawing_analysis_desc": "AI dokumentum elemzés",
+    "admin_panel": "Admin\nPanel",
+    "admin_panel_desc": "Rendszer kezelés",
+    "ai_cost_estimation": "AI Költségbecslés",
+    "container_configurator": "Konténer Konfigurátor",
+    "technical_analysis": "Műszaki Elemzés",
+    "quote_generator": "Árajánlat Generátor",
+    "send_inquiry": "Érdeklődés\nKüldése",
+    "send_inquiry_desc": "Árajánlat kérő űrlap",
+    "drawing_analysis_customer": "Rajz\nElemzés",
+    "drawing_analysis_customer_desc": "Ingyenes dokumentum elemzés"
+  },
+  "configure_container": "Konfigurálja Konténerét",
+  "simple_process_2_steps": "Egyszerű folyamat 2 lépésben",
+  "step_1_configuration": "1. lépés: Konfiguráció",
+  "choose_container_type": "Válassza ki a konténer típust és módosításokat",
+  "step_2_ai_quote": "2. lépés: AI Árajánlat",
+  "get_instant_quote": "Azonnali költségbecslés AI-val",
+  "start_configuration": "Konfiguráció Kezdése",
+  "get_quote": "Árajánlat Kérése",
+  "additional_services": "További Szolgáltatások",
+  "drawing_analysis_service": "Rajzelemzési Szolgáltatás",
+  "upload_drawings_estimate": "Töltse fel rajzait részletes becslésért",
+  "send_inquiry_service": "Érdeklődés Küldési Szolgáltatás",
+  "get_detailed_quote_text": "Részletes árajánlat összetett projektekhez",
+  "analyze_drawings": "Rajzok Elemzése",
+  "send_inquiry": "Érdeklődés Küldése",
+  "send_inquiry_button": "Érdeklődés Küldése",
+  "why_kan_bud": "Miért válassza a KAN-BUD-ot?",
+  "precise_quotes": "Pontos Árajánlatok",
+  "ai_historical_data": "AI elemzés történelmi adatokkal",
+  "european_climate_standards": "Európai klíma szabványok",
+  "transparent_calculations": "Átlátható számítások",
+  "fast_realization": "Gyors Megvalósítás",
+  "hundreds_of_projects": "Több száz befejezett projekt",
+  "own_machinery": "Saját gyártó géppark",
+  "poland_center": "Központi helyzet Lengyelországban",
+  "full_service": "Teljes Szolgáltatás",
+  "design_execution": "Tervezéstől a kivitelezésig",
+  "transport_assembly": "Szállítás és összeszerelés",
+  "after_sales_support": "Értékesítés utáni támogatás",
+  "contact_us": "Kapcsolat",
+  "address": "Cím",
+  "phone": "Telefon",
+  "email": "Email",
+  "working_hours": "Munkaidő",
+  "mon_fri": "Hét-Pén 8:00-17:00",
+  "container": {
+    "types": {
+      "20ft_standard": "20ft Szabványos",
+      "40ft_standard": "40ft Szabványos",
+      "40ft_high_cube": "40ft Magas Kocka",
+      "20ft_refrigerated": "20ft Hűtött"
+    },
+    "use_cases": {
+      "office_space": "Irodai Tér",
+      "residential": "Lakhatási",
+      "storage": "Raktározás",
+      "workshop": "Műhely",
+      "retail": "Kiskereskedelem",
+      "restaurant": "Étterem",
+      "medical": "Orvosi",
+      "laboratory": "Laboratórium"
+    },
+    "environment": {
+      "indoor": "Beltéri",
+      "outdoor": "Kültéri",
+      "marine": "Tengeri",
+      "industrial": "Ipari"
+    },
+    "climate_zones": {
+      "central_european": "Közép-európai",
+      "scandinavian": "Skandináv",
+      "mediterranean": "Mediterrán",
+      "atlantic_maritime": "Atlanti Tengeri",
+      "continental": "Kontinentális",
+      "alpine": "Alpesi",
+      "baltic": "Balti",
+      "temperate_oceanic": "Mérsékelt Óceáni"
+    },
+    "finish_levels": {
+      "basic": "Alap",
+      "standard": "Szabványos",
+      "premium": "Prémium",
+      "luxury": "Luxus"
+    },
+    "flooring": {
+      "plywood": "Rétegelt lemez",
+      "vinyl": "Vinyl",
+      "carpet": "Szőnyeg",
+      "hardwood": "Keményfa",
+      "polished_concrete": "Csiszolt beton"
+    }
+  },
+  "form": {
+    "labels": {
+      "container_type": "Konténer Típus",
+      "main_purpose": "Fő Cél",
+      "environment": "Környezet",
+      "finish_level": "Befejezési Szint",
+      "flooring": "Padló",
+      "climate_zone": "Klíma Zóna",
+      "number_of_windows": "Ablakok Száma",
+      "additional_doors": "További Ajtók",
+      "electrical_system": "Elektromos Rendszer",
+      "plumbing_system": "Vízvezeték Rendszer",
+      "hvac_system": "HVAC Rendszer",
+      "insulation_package": "Szigetelési Csomag",
+      "structural_reinforcement": "Szerkezeti Megerősítés",
+      "delivery_zone": "Szállítási Zóna"
+    }
+  },
+  "ai": {
+    "models": {
+      "openai_gpt4": "OpenAI GPT-4o",
+      "anthropic_claude": "Anthropic Claude",
+      "auto_select": "Automatikus Legjobb Kiválasztás"
+    },
+    "messages": {
+      "generating": "Az AI elemzi a konfigurációt és költségbecslést készít...",
+      "quota_exceeded": "OpenAI kvóta túllépve. Anthropic Claude használata helyette.",
+      "unavailable": "AI elemzés átmenetileg nem elérhető",
+      "estimate_generated": "AI költségbecslés sikeresen elkészült!",
+      "error_generating": "Hiba az AI becslés készítésében: {error}"
+    }
+  },
+  "yes": "Igen",
+  "no": "Nem",
+  "delivery": {
+    "zones": {
+      "local": "Helyi (100km-ig)",
+      "poland": "Lengyelország (országos)",
+      "central_europe": "Közép-Európa (DE, CZ, SK, AT)",
+      "western_europe": "Nyugat-Európa (FR, NL, BE, LU)",
+      "northern_europe": "Észak-Európa (DK, SE, NO, FI)",
+      "southern_europe": "Dél-Európa (IT, ES, PT, GR)",
+      "eastern_europe": "Kelet-Európa (HU, RO, BG, HR)",
+      "uk_ireland": "Egyesült Királyság és Írország",
+      "international": "Nemzetközi (Európán kívül)"
+    }
+  }
+}

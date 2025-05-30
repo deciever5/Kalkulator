@@ -1,4 +1,3 @@
-
 """
 The code is modified to use CDN flag images for language buttons.
 """
@@ -51,7 +50,7 @@ def set_language(lang_code):
     """Set current language"""
     print(f"Setting language to: {lang_code}")
     st.session_state.language = lang_code
-    
+
     # Verify the language change was successful
     current = get_current_language()
     print(f"Language successfully set to: {current}")
@@ -63,13 +62,13 @@ def t(key, language=None):
 
     # Always get fresh translations
     translations = get_translations()
-    
+
     print(f"Translating '{key}' for language '{language}'")
     print(f"Available languages: {list(translations.keys())}")
-    
+
     # Get translation data for requested language
     translation_data = translations.get(language)
-    
+
     if not translation_data:
         print(f"ERROR: Language '{language}' not found in translations!")
         # Use English as fallback, then Polish
@@ -89,13 +88,13 @@ def t(key, language=None):
         else:
             print(f"Key '{k}' not found at level {i} in {language} translations")
             print(f"Available keys at this level: {list(result.keys()) if isinstance(result, dict) else 'Not a dict'}")
-            
+
             # Try fallback languages
             for fallback_lang in ['en', 'pl']:
                 if fallback_lang != language and fallback_lang in translations:
                     fallback_data = translations[fallback_lang]
                     fallback_result = fallback_data
-                    
+
                     # Try to find the key in fallback language
                     fallback_found = True
                     for fk in keys:
@@ -104,11 +103,11 @@ def t(key, language=None):
                         else:
                             fallback_found = False
                             break
-                    
+
                     if fallback_found and isinstance(fallback_result, str):
                         print(f"Using fallback {fallback_lang} for '{key}': {fallback_result}")
                         return fallback_result
-            
+
             # If no fallback found, return the key itself
             print(f"Translation key not found: {key}")
             return key
@@ -124,7 +123,9 @@ def get_available_languages():
         'pl': '🇵🇱 Polski',
         'en': '🇬🇧 English', 
         'de': '🇩🇪 Deutsch',
-        'nl': '🇳🇱 Nederlands'
+        'nl': '🇳🇱 Nederlands',
+        'hu': '🇭🇺 Magyar',
+        'cs': '🇨🇿 Čeština'
     }
 
 def render_language_selector():

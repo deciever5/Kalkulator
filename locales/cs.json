@@ -1,0 +1,167 @@
+
+{
+  "app": {
+    "title": "Profesionální Kontejnerová Řešení",
+    "subtitle": "Profesionální Kontejnerová Řešení - Návrh, Stavba a Montáž"
+  },
+  "ui": {
+    "employee_login": "Přihlášení Zaměstnance",
+    "logout": "Odhlásit",
+    "password": "Heslo:",
+    "login": "Přihlásit",
+    "logged_in": "Přihlášeno!",
+    "wrong_password": "Nesprávné heslo",
+    "cancel": "Zrušit",
+    "open": "Otevřít",
+    "language_selector": "Jazyk / Language",
+    "back_to_home": "← Zpět na domovskou stránku",
+    "go_to_ai_estimate": "🤖 Jít na AI Odhad →",
+    "go_to_configurator": "🔧 Jít na Konfigurátor",
+    "access_denied": "Přístup odmítnut"
+  },
+  "nav": {
+    "comparison_tool": "Porovnávací\nNástroj",
+    "comparison_tool_desc": "Porovnání konfigurací",
+    "drawing_analysis": "Analýza\nVýkresů",
+    "drawing_analysis_desc": "AI analýza dokumentů",
+    "admin_panel": "Administrátorský\nPanel",
+    "admin_panel_desc": "Správa systému",
+    "ai_cost_estimation": "AI Odhad Nákladů",
+    "container_configurator": "Konfigurátor Kontejnerů",
+    "technical_analysis": "Technická Analýza",
+    "quote_generator": "Generátor Nabídek",
+    "send_inquiry": "Odeslat\nPoptávku",
+    "send_inquiry_desc": "Formulář žádosti o nabídku",
+    "drawing_analysis_customer": "Analýza\nVýkresů",
+    "drawing_analysis_customer_desc": "Bezplatná analýza dokumentů"
+  },
+  "configure_container": "Nakonfigurujte Svůj Kontejner",
+  "simple_process_2_steps": "Jednoduchý proces ve 2 krocích",
+  "step_1_configuration": "Krok 1: Konfigurace",
+  "choose_container_type": "Vyberte typ kontejneru a úpravy",
+  "step_2_ai_quote": "Krok 2: AI Nabídka",
+  "get_instant_quote": "Získejte okamžitý odhad nákladů s AI",
+  "start_configuration": "Začít Konfiguraci",
+  "get_quote": "Získat Nabídku",
+  "additional_services": "Další Služby",
+  "drawing_analysis_service": "Služba Analýzy Výkresů",
+  "upload_drawings_estimate": "Nahrajte své výkresy pro podrobný odhad",
+  "send_inquiry_service": "Služba Odeslání Poptávky",
+  "get_detailed_quote_text": "Získejte podrobnou nabídku pro složité projekty",
+  "analyze_drawings": "Analyzovat Výkresy",
+  "send_inquiry": "Odeslat Poptávku",
+  "send_inquiry_button": "Odeslat Poptávku",
+  "why_kan_bud": "Proč Zvolit KAN-BUD?",
+  "precise_quotes": "Přesné Nabídky",
+  "ai_historical_data": "AI analýza s historickými daty",
+  "european_climate_standards": "Evropské klimatické standardy",
+  "transparent_calculations": "Transparentní výpočty",
+  "fast_realization": "Rychlá Realizace",
+  "hundreds_of_projects": "Stovky dokončených projektů",
+  "own_machinery": "Vlastní výrobní strojový park",
+  "poland_center": "Centrální poloha v Polsku",
+  "full_service": "Kompletní Služba",
+  "design_execution": "Od návrhu po realizaci",
+  "transport_assembly": "Doprava a montáž",
+  "after_sales_support": "Poprodejní podpora",
+  "contact_us": "Kontaktujte Nás",
+  "address": "Adresa",
+  "phone": "Telefon",
+  "email": "Email",
+  "working_hours": "Pracovní Doba",
+  "mon_fri": "Po-Pá 8:00-17:00",
+  "container": {
+    "types": {
+      "20ft_standard": "20ft Standardní",
+      "40ft_standard": "40ft Standardní",
+      "40ft_high_cube": "40ft Vysoká Kostka",
+      "20ft_refrigerated": "20ft Chladicí"
+    },
+    "use_cases": {
+      "office_space": "Kancelářský Prostor",
+      "residential": "Obytné",
+      "storage": "Skladování",
+      "workshop": "Dílna",
+      "retail": "Maloobchod",
+      "restaurant": "Restaurace",
+      "medical": "Lékařské",
+      "laboratory": "Laboratoř"
+    },
+    "environment": {
+      "indoor": "Vnitřní",
+      "outdoor": "Venkovní",
+      "marine": "Mořské",
+      "industrial": "Průmyslové"
+    },
+    "climate_zones": {
+      "central_european": "Středoevropské",
+      "scandinavian": "Skandinávské",
+      "mediterranean": "Středomořské",
+      "atlantic_maritime": "Atlantické Námořní",
+      "continental": "Kontinentální",
+      "alpine": "Alpské",
+      "baltic": "Baltské",
+      "temperate_oceanic": "Mírné Oceánské"
+    },
+    "finish_levels": {
+      "basic": "Základní",
+      "standard": "Standardní",
+      "premium": "Premium",
+      "luxury": "Luxusní"
+    },
+    "flooring": {
+      "plywood": "Překližka",
+      "vinyl": "Vinyl",
+      "carpet": "Koberec",
+      "hardwood": "Tvrdé dřevo",
+      "polished_concrete": "Leštěný beton"
+    }
+  },
+  "form": {
+    "labels": {
+      "container_type": "Typ Kontejneru",
+      "main_purpose": "Hlavní Účel",
+      "environment": "Prostředí",
+      "finish_level": "Úroveň Dokončení",
+      "flooring": "Podlaha",
+      "climate_zone": "Klimatická Zóna",
+      "number_of_windows": "Počet Oken",
+      "additional_doors": "Další Dveře",
+      "electrical_system": "Elektrický Systém",
+      "plumbing_system": "Vodovodní Systém",
+      "hvac_system": "HVAC Systém",
+      "insulation_package": "Izolační Balíček",
+      "structural_reinforcement": "Konstrukční Posílení",
+      "delivery_zone": "Zóna Dodání"
+    }
+  },
+  "ai": {
+    "models": {
+      "openai_gpt4": "OpenAI GPT-4o",
+      "anthropic_claude": "Anthropic Claude",
+      "auto_select": "Automaticky Vybrat Nejlepší"
+    },
+    "messages": {
+      "generating": "AI analyzuje vaši konfiguraci a generuje odhady nákladů...",
+      "quota_exceeded": "Kvóta OpenAI překročena. Místo toho používáme Anthropic Claude.",
+      "unavailable": "AI analýza dočasně nedostupná",
+      "estimate_generated": "AI odhad nákladů úspěšně vygenerován!",
+      "error_generating": "Chyba při generování AI odhadu: {error}"
+    }
+  },
+  "yes": "Ano",
+  "no": "Ne",
+  "delivery": {
+    "zones": {
+      "local": "Místní (do 100km)",
+      "poland": "Polsko (celostátní)",
+      "central_europe": "Střední Evropa (DE, CZ, SK, AT)",
+      "western_europe": "Západní Evropa (FR, NL, BE, LU)",
+      "northern_europe": "Severní Evropa (DK, SE, NO, FI)",
+      "southern_europe": "Jižní Evropa (IT, ES, PT, GR)",
+      "eastern_europe": "Východní Evropa (HU, RO, BG, HR)",
+      "uk_ireland": "Spojené království a Irsko",
+      "international": "Mezinárodní (mimo Evropu)"
+    }
+  }
+}
