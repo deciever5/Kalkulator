@@ -69,11 +69,11 @@ class DocumentAnalyzer:
                     
                 # Use intelligent fallback based on filename and context
                 st.info("🧠 Using intelligent fallback analysis...")
-                return self._analyze_with_intelligent_fallback(uploaded_file.name, project_context)
+                return self._get_unified_fallback_analysis(project_context, uploaded_file.name, "intelligent")
 
         except Exception as e:
             st.error(f"Document analysis error: {str(e)}")
-            return self._get_fallback_analysis()
+            return self._get_unified_fallback_analysis(project_context, None, "basic")
 
     def analyze_dwg_metadata(self, uploaded_file) -> Dict[str, Any]:
         """
@@ -107,7 +107,7 @@ class DocumentAnalyzer:
 
         except Exception as e:
             st.error(f"Błąd podczas analizy pliku DWG: {str(e)}")
-            return self._get_fallback_analysis()
+            return self._get_unified_fallback_analysis(None, uploaded_file.name, "basic")
 
     def _build_drawing_analysis_prompt(self, project_context: Dict[str, Any]) -> str:
         """Build comprehensive prompt for drawing analysis"""
@@ -265,102 +265,7 @@ class DocumentAnalyzer:
         except Exception as e:
             raise Exception(f"Groq analysis failed: {str(e)}")
 
-    def _analyze_with_intelligent_fallback(self, filename: str, project_context: Dict[str, Any]) -> Dict[str, Any]:
-        """Intelligent fallback analysis based on filename and project context"""
-
-        # Analyze filename for clues
-        filename_lower = filename.lower()
-
-        # Initialize base structure
-        result = {
-            "structural_elements": {
-                "windows": {"count": 0, "types": [], "sizes": []},
-                "doors": {"count": 0, "types": [], "sizes": []},
-                "openings": {"count": 0, "purposes": [], "sizes": []},
-                "reinforcements": []
-            },
-            "installations": {
-                "electrical": {"complexity": "basic", "elements": []},
-                "plumbing": {"complexity": "basic", "elements": []},
-                "hvac": {"complexity": "basic", "elements": []}
-            },
-            "materials": {
-                "insulation": {"type": "standard", "thickness": "50mm"},
-                "flooring": {"type": "standard", "area": ""},
-                "wall_finish": {"type": "standard", "area": ""},
-                "external_finish": {"type": "standard", "area": ""}
-            },
-            "specifications": {
-                "dimensions": {},
-                "quality_requirements": [],
-                "special_requirements": []
-            },
-            "cost_impact_summary": {
-                "estimated_complexity": "medium",
-                "major_cost_drivers": [],
-                "estimated_additional_cost_percentage": 10
-            },
-            "recommendations": [
-                "Analiza oparta na kontekście projektu",
-                "Zalecana ręczna weryfikacja przez zespół techniczny"
-            ]
-        }
-
-        # Analyze project context
-        use_case = project_context.get('use_case', '').lower()
-        container_type = project_context.get('container_type', '').lower()
-
-        # Make intelligent estimates based on use case
-        if 'office' in use_case or 'biuro' in use_case:
-            result["structural_elements"]["windows"]["count"] = 4
-            result["structural_elements"]["doors"]["count"] = 2
-            result["installations"]["electrical"]["complexity"] = "standard"
-            result["installations"]["electrical"]["elements"] = ["oświetlenie LED", "gniazdka 230V", "internet"]
-            result["cost_impact_summary"]["major_cost_drivers"] = ["okna", "instalacja elektryczna", "wykończenia"]
-
-        elif 'residential' in use_case or 'mieszkal' in use_case:
-            result["structural_elements"]["windows"]["count"] = 6
-            result["structural_elements"]["doors"]["count"] = 2
-            result["installations"]["electrical"]["complexity"] = "advanced"
-            result["installations"]["plumbing"]["complexity"] = "standard"
-            result["installations"]["hvac"]["complexity"] = "standard"
-            result["cost_impact_summary"]["major_cost_drivers"] = ["instalacja hydrauliczna", "HVAC", "izolacja"]
-            result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 25
-
-        elif 'restaurant' in use_case or 'gastronomia' in use_case:
-            result["structural_elements"]["windows"]["count"] = 2
-            result["structural_elements"]["doors"]["count"] = 3
-            result["installations"]["electrical"]["complexity"] = "advanced"
-            result["installations"]["plumbing"]["complexity"] = "advanced"
-            result["installations"]["hvac"]["complexity"] = "advanced"
-            result["cost_impact_summary"]["major_cost_drivers"] = ["wentylacja przemysłowa", "instalacja gazowa", "wykończenia specjalne"]
-            result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 40
-
-        elif 'workshop' in use_case or 'warsztat' in use_case:
-            result["structural_elements"]["windows"]["count"] = 2
-            result["structural_elements"]["doors"]["count"] = 2
-            result["structural_elements"]["openings"]["count"] = 2
-            result["installations"]["electrical"]["complexity"] = "advanced"
-            result["cost_impact_summary"]["major_cost_drivers"] = ["wzmocnienia strukturalne", "instalacja 400V", "wentylacja"]
-            result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 20
-
-        # Analyze filename for additional clues
-        if any(word in filename_lower for word in ['plan', 'floor', 'plan_pietra']):
-            result["recommendations"].append("Plik zawiera plan piętra - możliwa szczegółowa analiza rozkładu")
-
-        if any(word in filename_lower for word in ['elewacja', 'facade', 'elevation']):
-            result["recommendations"].append("Plik zawiera elewację - analiza okien i drzwi")
-            result["structural_elements"]["windows"]["count"] += 2
-
-        if any(word in filename_lower for word in ['przekroj', 'section', 'cross']):
-            result["recommendations"].append("Plik zawiera przekrój - analiza strukturalna")
-            result["structural_elements"]["reinforcements"].append("wzmocnienia widoczne w przekroju")
-
-        result['analysis_confidence'] = 'medium'
-        result['analysis_method'] = 'intelligent_fallback'
-        result['status'] = 'context_based_analysis'
-
-        return result
+    
 
     def _analyze_with_anthropic(self, base64_file: str, prompt: str) -> Dict[str, Any]:
         """Analyze drawing using Anthropic Claude with vision"""
@@ -445,10 +350,20 @@ class DocumentAnalyzer:
             "raw_analysis": text
         }
 
-    def _get_fallback_analysis(self) -> Dict[str, Any]:
-        """Provide fallback analysis when AI fails"""
-
-        return {
+    def _get_unified_fallback_analysis(self, project_context: Optional[Dict[str, Any]] = None, 
+                                       filename: Optional[str] = None,
+                                       fallback_type: str = "intelligent") -> Dict[str, Any]:
+        """
+        Unified fallback analysis method that consolidates all fallback strategies
+        
+        Args:
+            project_context: Project configuration context for intelligent estimates
+            filename: File name for filename-based analysis hints
+            fallback_type: Type of fallback - "basic", "intelligent", or "context_based"
+        """
+        
+        # Base structure template
+        base_result = {
             "structural_elements": {
                 "windows": {"count": 0, "types": [], "sizes": []},
                 "doors": {"count": 0, "types": [], "sizes": []},
@@ -461,10 +376,10 @@ class DocumentAnalyzer:
                 "hvac": {"complexity": "basic", "elements": []}
             },
             "materials": {
-                "insulation": {"type": "", "thickness": ""},
-                "flooring": {"type": "", "area": ""},
-                "wall_finish": {"type": "", "area": ""},
-                "external_finish": {"type": "", "area": ""}
+                "insulation": {"type": "standard", "thickness": "50mm"},
+                "flooring": {"type": "standard", "area": ""},
+                "wall_finish": {"type": "standard", "area": ""},
+                "external_finish": {"type": "standard", "area": ""}
             },
             "specifications": {
                 "dimensions": {},
@@ -472,63 +387,110 @@ class DocumentAnalyzer:
                 "special_requirements": []
             },
             "cost_impact_summary": {
-                "estimated_complexity": "unknown",
-                "major_cost_drivers": ["Analiza niedostępna"],
+                "estimated_complexity": "medium",
+                "major_cost_drivers": [],
                 "estimated_additional_cost_percentage": 0
             },
-            "recommendations": [
-                "Prześlij rysunek ponownie",
-                "Skontaktuj się z działem technicznym",
-                "Sprawdź format pliku"
-            ],
+            "recommendations": [],
             "analysis_confidence": "low",
             "analysis_method": "fallback",
-            "status": "failed"
+            "status": "fallback_analysis"
         }
-
-    def _fallback_analysis(self, project_context: Dict[str, Any]) -> Dict[str, Any]:
-        """Provide fallback analysis when AI services fail - optimized"""
-
-        # Create result template once
-        return {
-            "structural_elements": {
-                "windows": {"count": 2, "types": ["standard"]},
-                "doors": {"count": 1, "types": ["main entrance"]},
-                "skylights": {"count": 0, "types": []},
-                "openings": {"total_area": "15 m²", "percentage": "8%"}
-            },
-            "installations": {
-                "electrical": {"complexity": "basic", "elements": ["podstawowe oświetlenie"]},
-                "plumbing": {"complexity": "none", "elements": []},
-                "hvac": {"complexity": "basic", "elements": ["wentylacja grawitacyjna"]}
-            },
-            "cost_impact_summary": {
-                "major_cost_drivers": self._get_cost_drivers(project_context),
-                "estimated_additional_cost_percentage": 10
-            },
-            "recommendations": self._get_recommendations(project_context)
-        }
-
-    def _get_cost_drivers(self, context: Dict[str, Any]) -> List[str]:
-        """Get cost drivers based on project context"""
-        use_case = context.get('use_case', '').lower()
-        drivers = []
-
-        if 'office' in use_case or 'biuro' in use_case:
-            drivers.extend(["okna", "instalacja elektryczna", "wykończenia"])
-        elif 'residential' in use_case or 'mieszkal' in use_case:
-            drivers.extend(["instalacja wodno-kanalizacyjna", "izolacja", "wykończenia"])
+        
+        if fallback_type == "basic" or not project_context:
+            # Basic fallback - minimal assumptions
+            base_result["cost_impact_summary"]["estimated_complexity"] = "unknown"
+            base_result["cost_impact_summary"]["major_cost_drivers"] = ["Analiza niedostępna"]
+            base_result["recommendations"] = [
+                "Prześlij rysunek ponownie",
+                "Skontaktuj się z działem technicznym", 
+                "Sprawdź format pliku"
+            ]
+            base_result["status"] = "failed"
+            return base_result
+            
+        # Intelligent fallback with project context
+        if project_context:
+            use_case = project_context.get('use_case', '').lower()
+            container_type = project_context.get('container_type', '').lower()
+            
+            # Apply intelligent estimates based on use case
+            if 'office' in use_case or 'biuro' in use_case:
+                base_result["structural_elements"]["windows"]["count"] = 4
+                base_result["structural_elements"]["doors"]["count"] = 2
+                base_result["installations"]["electrical"]["complexity"] = "standard"
+                base_result["installations"]["electrical"]["elements"] = ["oświetlenie LED", "gniazdka 230V", "internet"]
+                base_result["cost_impact_summary"]["major_cost_drivers"] = ["okna", "instalacja elektryczna", "wykończenia"]
+                base_result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 15
+                
+            elif 'residential' in use_case or 'mieszkal' in use_case:
+                base_result["structural_elements"]["windows"]["count"] = 6
+                base_result["structural_elements"]["doors"]["count"] = 2
+                base_result["installations"]["electrical"]["complexity"] = "advanced"
+                base_result["installations"]["plumbing"]["complexity"] = "standard"
+                base_result["installations"]["hvac"]["complexity"] = "standard"
+                base_result["cost_impact_summary"]["major_cost_drivers"] = ["instalacja hydrauliczna", "HVAC", "izolacja"]
+                base_result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 25
+                
+            elif 'restaurant' in use_case or 'gastronomia' in use_case:
+                base_result["structural_elements"]["windows"]["count"] = 2
+                base_result["structural_elements"]["doors"]["count"] = 3
+                base_result["installations"]["electrical"]["complexity"] = "advanced"
+                base_result["installations"]["plumbing"]["complexity"] = "advanced"
+                base_result["installations"]["hvac"]["complexity"] = "advanced"
+                base_result["cost_impact_summary"]["major_cost_drivers"] = ["wentylacja przemysłowa", "instalacja gazowa", "wykończenia specjalne"]
+                base_result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 40
+                
+            elif 'workshop' in use_case or 'warsztat' in use_case:
+                base_result["structural_elements"]["windows"]["count"] = 2
+                base_result["structural_elements"]["doors"]["count"] = 2
+                base_result["structural_elements"]["openings"]["count"] = 2
+                base_result["installations"]["electrical"]["complexity"] = "advanced"
+                base_result["cost_impact_summary"]["major_cost_drivers"] = ["wzmocnienia strukturalne", "instalacja 400V", "wentylacja"]
+                base_result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 20
+                
+            else:
+                # Default for unknown use cases
+                base_result["structural_elements"]["windows"]["count"] = 2
+                base_result["structural_elements"]["doors"]["count"] = 1
+                base_result["cost_impact_summary"]["major_cost_drivers"] = ["modyfikacje strukturalne", "podstawowe instalacje"]
+                base_result["cost_impact_summary"]["estimated_additional_cost_percentage"] = 10
+        
+        # Filename-based hints if provided
+        if filename:
+            filename_lower = filename.lower()
+            
+            if any(word in filename_lower for word in ['plan', 'floor', 'plan_pietra']):
+                base_result["recommendations"].append("Plik zawiera plan piętra - możliwa szczegółowa analiza rozkładu")
+                
+            if any(word in filename_lower for word in ['elewacja', 'facade', 'elevation']):
+                base_result["recommendations"].append("Plik zawiera elewację - analiza okien i drzwi")
+                base_result["structural_elements"]["windows"]["count"] += 2
+                
+            if any(word in filename_lower for word in ['przekroj', 'section', 'cross']):
+                base_result["recommendations"].append("Plik zawiera przekrój - analiza strukturalna")
+                base_result["structural_elements"]["reinforcements"].append("wzmocnienia widoczne w przekroju")
+        
+        # Set appropriate confidence and method based on available context
+        if project_context and filename:
+            base_result["analysis_confidence"] = "medium"
+            base_result["analysis_method"] = "intelligent_context_fallback"
+        elif project_context:
+            base_result["analysis_confidence"] = "medium"
+            base_result["analysis_method"] = "context_based_fallback"
         else:
-            drivers.extend(["modyfikacje strukturalne", "podstawowe instalacje"])
-
-        return drivers
-
-    def _get_recommendations(self, context: Dict[str, Any]) -> List[str]:
-        """Get recommendations based on project context"""
-        return [
+            base_result["analysis_confidence"] = "low"
+            base_result["analysis_method"] = "basic_fallback"
+            
+        # Add standard recommendations
+        base_result["recommendations"].extend([
             "Analiza oparta na kontekście projektu",
             "Zalecana ręczna weryfikacja przez zespół techniczny"
-        ]
+        ])
+        
+        return base_result
+
+    
 
     def calculate_cost_adjustments(self, analysis_result: Dict[str, Any], 
                                  base_estimate: float) -> Dict[str, Any]:
