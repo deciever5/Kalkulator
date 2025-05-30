@@ -169,8 +169,12 @@
     "types": {
       "20ft_standard": "20ft Standaard",
       "40ft_standard": "40ft Standaard",
-      "40ft_high_cube": "40ft Hoge Container",
-      "20ft_refrigerated": "20ft Gekoeld"
+      "40ft_high_cube": "40ft HC",
+      "20ft_refrigerated": "20ft Gekoeld",
+      "20ft_double_door": "20ft DD",
+      "40ft_double_door": "40ft DD",
+      "40ft_hc_double_door": "40ft HC DD",
+      "custom_size": "Aangepaste Maat"
     },
     "use_cases": {
       "office_space": "Kantoorruimte",

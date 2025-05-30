@@ -121,8 +121,12 @@
     "types": {
       "20ft_standard": "20ft Szabványos",
       "40ft_standard": "40ft Szabványos",
-      "40ft_high_cube": "40ft Magas Kocka",
-      "20ft_refrigerated": "20ft Hűtött"
+      "40ft_high_cube": "40ft HC",
+      "20ft_refrigerated": "20ft Hűtött",
+      "20ft_double_door": "20ft DD",
+      "40ft_double_door": "40ft DD",
+      "40ft_hc_double_door": "40ft HC DD",
+      "custom_size": "Egyedi Méret"
     },
     "use_cases": {
       "office_space": "Irodai Tér",

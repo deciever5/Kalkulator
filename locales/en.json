@@ -77,11 +77,11 @@
     "types": {
       "20ft_standard": "20ft Standard",
       "40ft_standard": "40ft Standard",
-      "40ft_high_cube": "40ft High Cube",
+      "40ft_high_cube": "40ft HC",
       "20ft_refrigerated": "20ft Refrigerated",
-      "20ft_double_door": "20ft Double Door",
-      "40ft_double_door": "40ft Double Door",
-      "40ft_hc_double_door": "40ft HC Double Door",
+      "20ft_double_door": "20ft DD",
+      "40ft_double_door": "40ft DD",
+      "40ft_hc_double_door": "40ft HC DD",
       "custom_size": "Custom Size"
     },
     "use_cases": {

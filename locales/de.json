@@ -74,8 +74,12 @@
     "types": {
       "20ft_standard": "20ft Standard",
       "40ft_standard": "40ft Standard",
-      "40ft_high_cube": "40ft Hochcontainer",
-      "20ft_refrigerated": "20ft Kühlcontainer"
+      "40ft_high_cube": "40ft HC",
+      "20ft_refrigerated": "20ft Kühlcontainer",
+      "20ft_double_door": "20ft DD",
+      "40ft_double_door": "40ft DD",
+      "40ft_hc_double_door": "40ft HC DD",
+      "custom_size": "Benutzerdefinierte Größe"
     },
     "use_cases": {
       "office_space": "Büroraum",

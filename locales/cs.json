@@ -121,8 +121,12 @@
     "types": {
       "20ft_standard": "20ft Standardní",
       "40ft_standard": "40ft Standardní",
-      "40ft_high_cube": "40ft Vysoká Kostka",
-      "20ft_refrigerated": "20ft Chlazenný"
+      "40ft_high_cube": "40ft HC",
+      "20ft_refrigerated": "20ft Chlazenný",
+      "20ft_double_door": "20ft DD",
+      "40ft_double_door": "40ft DD",
+      "40ft_hc_double_door": "40ft HC DD",
+      "custom_size": "Vlastní Velikost"
     },
     "use_cases": {
       "office_space": "Kancelářský Prostor",
