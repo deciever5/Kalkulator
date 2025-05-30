@@ -13,8 +13,7 @@ if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
 # Render shared header with language selector and login
-render_shared_header())
-            st.rerun()
+render_shared_header()
 
 def generate_cost_estimate(config, ai_model):
     """Generate a realistic cost estimate based on configuration"""
