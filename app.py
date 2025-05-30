@@ -156,10 +156,12 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
     border: 1px solid #e8f4f8;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
+    cursor: pointer;
 }
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-color: #2E86AB;
 }
 .feature-icon {
     font-size: 3rem;
@@ -287,15 +289,15 @@ if st.session_state.employee_logged_in:
 
     for i, (icon, title, desc, page, key) in enumerate(tools):
         with [col1, col2, col3, col4][i]:
+            if st.button("", key=key, use_container_width=True, type="primary"):
+                st.switch_page(page)
             st.markdown(f"""
-            <div class="feature-card">
+            <div class="feature-card" style="margin-top: -3rem; pointer-events: none;">
                 <div class="feature-icon">{icon}</div>
                 <div class="feature-title">{title}</div>
                 <div class="feature-description">{desc}</div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"{t('ui.open')} {title}", key=key, use_container_width=True, type="primary"):
-                st.switch_page(page)
 
     # Secondary tools
     col5, col6, col7 = st.columns([1, 1, 1], gap="large")
@@ -308,15 +310,15 @@ if st.session_state.employee_logged_in:
 
     for i, (icon, title, desc, page, key) in enumerate(secondary_tools):
         with [col5, col6, col7][i]:
+            if st.button("", key=key, use_container_width=True):
+                st.switch_page(page)
             st.markdown(f"""
-            <div class="feature-card">
+            <div class="feature-card" style="margin-top: -3rem; pointer-events: none;">
                 <div class="feature-icon">{icon}</div>
                 <div class="feature-title">{title}</div>
                 <div class="feature-description">{desc}</div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"{t('ui.open')} {title}", key=key, use_container_width=True):
-                st.switch_page(page)
 
 else:
     # Client view
@@ -353,8 +355,7 @@ else:
         </div>
         """, unsafe_allow_html=True)
 
-        st.markdown("<br>", unsafe_allow_html=True)
-        if st.button(t('start_configuration'), key="client_config", use_container_width=True, type="primary"):
+        if st.button("", key="client_config", use_container_width=True, type="primary"):
             st.switch_page("pages/1_Container_Configurator.py")
 
     with col2:
@@ -376,8 +377,7 @@ else:
         </div>
         """, unsafe_allow_html=True)
 
-        st.markdown("<br>", unsafe_allow_html=True)
-        if st.button(t('get_quote'), key="client_ai", use_container_width=True, type="secondary"):
+        if st.button("", key="client_ai", use_container_width=True, type="secondary"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Customer services section - moved here after configuration/AI sections
@@ -409,7 +409,7 @@ if not st.session_state.employee_logged_in:
         </div>
         """, unsafe_allow_html=True)
 
-        if st.button(t('analyze_drawings'), key="customer_drawing_analysis", use_container_width=True):
+        if st.button("", key="customer_drawing_analysis", use_container_width=True):
             st.switch_page("pages/9_Customer_Drawing_Analysis.py")
 
     with col2:
@@ -429,7 +429,7 @@ if not st.session_state.employee_logged_in:
         </div>
         """, unsafe_allow_html=True)
 
-        if st.button(t('send_inquiry.submit_inquiry'), key="customer_inquiry", use_container_width=True):
+        if st.button("", key="customer_inquiry", use_container_width=True):
             st.switch_page("pages/8_Send_Inquiry.py")
 
 # Enhanced client benefits section
