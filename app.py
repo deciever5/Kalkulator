@@ -78,41 +78,200 @@ except Exception as e:
     st.error(f"Initialization error: {e}")
     st.stop()
 
-# Modern header with enhanced styling and top navigation
+# Professional UX Design System
 st.markdown("""
 <style>
+/* KAN-BUD Design System - Professional UX Standards */
+:root {
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-700: #374151;
+  --gray-900: #111827;
+}
+
 /* Hide sidebar completely */
 section[data-testid="stSidebar"] {display: none !important;}
 .stSidebar {display: none !important;}
 button[kind="header"] {display: none !important;}
 button[data-testid="collapsedControl"] {display: none !important;}
-.css-1d391kg {display: none !important;}
-.css-1y4p8pa {margin-left: 0 !important;}
-.css-17eq0hr {display: none !important;}
-.css-164nlkn {margin-left: 0 !important;}
-div[data-testid="stSidebarNav"] {display: none !important;}
-button[data-testid="baseButton-header"] {display: none !important;}
-.css-1544g2n {display: none !important;}
-.css-18e3th9 {display: none !important;}
-[data-testid="stSidebarCollapseButton"] {display: none !important;}
-[data-testid="stSidebarUserContent"] {display: none !important;}
-[data-testid="stSidebarContent"] {display: none !important;}
-button[title="Open sidebar navigation"] {display: none !important;}
-button[aria-label="Open sidebar navigation"] {display: none !important;}
-.css-1vq4p4l {display: none !important;}
-.css-1d391kg {display: none !important;}
-.css-6qob1r {margin-left: 0 !important;}
-.css-1cypcdb {margin-left: 0 !important;}
-.css-18e3th9 {margin-left: 0 !important;}
-.css-1d391kg {margin-left: 0 !important;}
 .main .block-container {margin-left: 0 !important; max-width: 100% !important; padding-top: 0 !important;}
 .stApp > header {display: none !important;}
 .stApp [data-testid="stHeader"] {display: none !important;}
+
+/* Base Typography Improvements */
+.stApp {
+    font-family: var(--font-primary) !important;
+    font-size: var(--text-base) !important;
+    line-height: 1.6 !important;
+}
+
+/* Heading Hierarchy */
+h1, .stMarkdown h1 {
+    font-size: var(--text-3xl) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    margin-bottom: var(--space-3) !important;
+    color: var(--gray-900) !important;
+}
+
+h2, .stMarkdown h2 {
+    font-size: var(--text-2xl) !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    margin-bottom: var(--space-2) !important;
+    color: var(--gray-900) !important;
+}
+
+h3, .stMarkdown h3 {
+    font-size: var(--text-lg) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    margin-bottom: var(--space-2) !important;
+    color: var(--gray-700) !important;
+}
+
+/* Button System Improvements */
+.stButton > button {
+    min-height: 44px !important;
+    padding: var(--space-2) var(--space-3) !important;
+    border-radius: var(--radius-md) !important;
+    font-size: var(--text-base) !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+}
+
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600)) !important;
+    color: white !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.stButton > button[kind="secondary"] {
+    background: white !important;
+    border: 1px solid var(--gray-200) !important;
+    color: var(--gray-700) !important;
+}
+
+.stButton > button[kind="secondary"]:hover {
+    border-color: var(--primary-500) !important;
+    color: var(--primary-600) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Form Input Improvements */
+.stSelectbox > div > div {
+    min-height: 44px !important;
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--gray-200) !important;
+    font-size: var(--text-base) !important;
+}
+
+.stNumberInput > div > div > input {
+    min-height: 44px !important;
+    border-radius: var(--radius-md) !important;
+    font-size: var(--text-base) !important;
+}
+
+.stCheckbox {
+    margin: var(--space-2) 0 !important;
+}
+
+/* Metric Cards */
+.stMetric {
+    background: var(--gray-50) !important;
+    padding: var(--space-3) !important;
+    border-radius: var(--radius-lg) !important;
+    border: 1px solid var(--gray-200) !important;
+    text-align: center !important;
+    min-height: 100px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.stMetric > div {
+    margin: 0 !important;
+}
+
+.stMetric [data-testid="metric-value"] {
+    font-size: var(--text-xl) !important;
+    font-weight: 700 !important;
+    color: var(--gray-900) !important;
+}
+
+.stMetric [data-testid="metric-label"] {
+    font-size: var(--text-base) !important;
+    color: var(--gray-700) !important;
+    font-weight: 500 !important;
+}
+
+/* Table Improvements */
+.stDataFrame {
+    border: 1px solid var(--gray-200) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+}
+
+.stDataFrame table {
+    font-size: var(--text-base) !important;
+}
+
+.stDataFrame th {
+    background: var(--gray-50) !important;
+    font-weight: 600 !important;
+    padding: var(--space-2) !important;
+}
+
+.stDataFrame td {
+    padding: var(--space-2) !important;
+}
+
+/* Column Layout Improvements */
+.stColumns {
+    gap: var(--space-3) !important;
+}
+
+/* Spacing System */
+.stMarkdown {
+    margin-bottom: var(--space-2) !important;
+}
+
+.section-spacing {
+    margin-bottom: var(--space-6) !important;
+}
 
 /* Remove all top padding and margins */
 .block-container {
     padding-top: 0rem !important;
     margin-top: 0rem !important;
+    max-width: 1200px !important;
+    padding-left: var(--space-3) !important;
+    padding-right: var(--space-3) !important;
 }
 
 .top-nav {
