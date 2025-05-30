@@ -12,6 +12,7 @@ from typing import Dict, List, Any, Optional
 from openai import OpenAI
 import anthropic
 from anthropic import Anthropic
+import google.generativeai as genai
 import requests
 
 class OpenAIService:
@@ -508,6 +509,132 @@ class AnthropicService:
         """Process and validate cost estimate response from Claude"""
 
         # Always return the full response structure for comprehensive display
+        return response
+
+class GeminiService:
+    """Service for Google Gemini 2.5 integration"""
+
+    def __init__(self):
+        self.model_name = "gemini-2.0-flash-exp"
+        self.api_key = os.environ.get('GEMINI_API_KEY')
+        
+        if self.api_key:
+            genai.configure(api_key=self.api_key)
+            self.model = genai.GenerativeModel(self.model_name)
+        else:
+            self.model = None
+            print("⚠️ No GEMINI_API_KEY found")
+
+    def generate_cost_estimate(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> Dict[str, Any]:
+        """Generate intelligent cost estimate using Gemini 2.5"""
+
+        if not self.model:
+            raise Exception("Gemini API key not configured")
+
+        prompt = self._build_cost_estimation_prompt(estimation_data, base_costs)
+
+        try:
+            response = self.model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
+                    temperature=0.1,
+                    max_output_tokens=2048,
+                )
+            )
+
+            # Extract JSON from response
+            response_text = response.text
+            start = response_text.find('{')
+            end = response_text.rfind('}') + 1
+            
+            if start != -1 and end > start:
+                json_content = response_text[start:end]
+                result = json.loads(json_content)
+                return self._process_cost_estimate_response(result)
+            else:
+                raise Exception("No valid JSON found in Gemini response")
+
+        except Exception as e:
+            raise Exception(f"Gemini API error: {str(e)}")
+
+    def _build_cost_estimation_prompt(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> str:
+        """Build enhanced prompt for comprehensive cost estimation with Gemini 2.5"""
+        
+        # Extract all user configuration details
+        container_type = estimation_data.get('container_type', 'Unknown')
+        main_purpose = estimation_data.get('main_purpose', 'Unknown')
+        delivery_zone = estimation_data.get('delivery_zone', 'poland')
+        
+        # Collect all modifications and add-ons
+        modifications = []
+        if estimation_data.get('number_of_windows', 0) > 0:
+            modifications.append(f"Windows: {estimation_data.get('number_of_windows', 0)} units")
+        if estimation_data.get('additional_doors', False):
+            modifications.append("Additional Doors: Yes")
+        if estimation_data.get('electrical_system'):
+            modifications.append(f"Electrical: {estimation_data.get('electrical_system')}")
+        if estimation_data.get('plumbing_system'):
+            modifications.append(f"Plumbing: {estimation_data.get('plumbing_system')}")
+        if estimation_data.get('hvac_system'):
+            modifications.append(f"HVAC: {estimation_data.get('hvac_system')}")
+        if estimation_data.get('air_intakes'):
+            modifications.append(f"Air Intakes: {estimation_data.get('air_intakes')}")
+        if estimation_data.get('roof_modifications'):
+            modifications.append(f"Roof: {estimation_data.get('roof_modifications')}")
+        if estimation_data.get('security_features'):
+            modifications.append(f"Security: {estimation_data.get('security_features')}")
+        if estimation_data.get('exterior_cladding'):
+            modifications.append(f"Cladding: {estimation_data.get('exterior_cladding')}")
+        if estimation_data.get('paint_finish'):
+            modifications.append(f"Paint: {estimation_data.get('paint_finish')}")
+        
+        prompt = f"""
+        You are a professional container modification cost estimator with expertise in European construction markets. Analyze this specific container project based on user requirements.
+
+        **PROJECT SPECIFICATIONS:**
+        Container Type: {container_type}
+        Primary Use Case: {main_purpose}
+        Delivery Zone: {delivery_zone}
+        
+        **USER-SPECIFIED MODIFICATIONS:**
+        {chr(10).join('- ' + mod for mod in modifications) if modifications else '- No modifications specified'}
+        
+        **EUROPEAN MARKET BASE COSTS:**
+        {json.dumps(base_costs, indent=2)}
+
+        Provide detailed cost analysis in this exact JSON format:
+        {{
+            "cost_analysis": {{
+                "total_cost": [total in EUR],
+                "confidence_level": [0.0-1.0],
+                "estimated_timeline": "[duration with phases]",
+                "breakdown": {{
+                    "container_base": [base cost],
+                    "modifications": [all modifications total],
+                    "labor_costs": [30% of total],
+                    "delivery_logistics": [delivery cost],
+                    "contingency": [10% buffer]
+                }}
+            }},
+            "user_configuration": {{
+                "container_type": "{container_type}",
+                "main_purpose": "{main_purpose}",
+                "total_modifications": {len(modifications)}
+            }},
+            "recommendations": [
+                "Based on your configuration, specific recommendation 1",
+                "Technical suggestion for your use case",
+                "Cost optimization opportunity"
+            ]
+        }}
+        
+        Focus on accurate European pricing and practical implementation details.
+        """
+
+        return prompt
+
+    def _process_cost_estimate_response(self, response: Dict[str, Any]) -> Dict[str, Any]:
+        """Process and validate cost estimate response from Gemini"""
         return response
 
 class GroqService:
@@ -1076,36 +1203,50 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "auto") -> str
         # Always try to use actual AI services first
         result = None
         
-        # Try Groq first (free tier available)
+        # Try Gemini 2.5 first (latest and most capable)
         try:
-            groq_service = GroqService()
-            result = groq_service.generate_cost_estimate(estimation_data, base_costs)
+            gemini_service = GeminiService()
+            result = gemini_service.generate_cost_estimate(estimation_data, base_costs)
             # Validate result format
             if result and isinstance(result, dict):
-                print("✅ Using Groq AI service")
+                print("✅ Using Google Gemini 2.5 service")
             else:
-                print("⚠️ Groq returned invalid format, trying next service")
+                print("⚠️ Gemini returned invalid format, trying next service")
                 result = None
-        except Exception as groq_error:
-            print(f"Groq service failed: {groq_error}")
+        except Exception as gemini_error:
+            print(f"Gemini service failed: {gemini_error}")
             result = None
 
-            # Try Anthropic second
+            # Try Groq second
             try:
-                anthropic_service = AnthropicService()
-                result = anthropic_service.generate_cost_estimate(estimation_data, base_costs)
-                print("✅ Using Anthropic Claude service")
-            except Exception as anthropic_error:
-                print(f"Anthropic service failed: {anthropic_error}")
+                groq_service = GroqService()
+                result = groq_service.generate_cost_estimate(estimation_data, base_costs)
+                # Validate result format
+                if result and isinstance(result, dict):
+                    print("✅ Using Groq AI service")
+                else:
+                    print("⚠️ Groq returned invalid format, trying next service")
+                    result = None
+            except Exception as groq_error:
+                print(f"Groq service failed: {groq_error}")
+                result = None
 
-                # Try OpenAI last
+                # Try Anthropic third
                 try:
-                    openai_service = OpenAIService()
-                    result = openai_service.generate_cost_estimate(estimation_data, base_costs)
-                    print("✅ Using OpenAI GPT-4 service")
-                except Exception as openai_error:
-                    print(f"OpenAI service failed: {openai_error}")
-                    print("🔄 Using dynamic fallback estimation")
+                    anthropic_service = AnthropicService()
+                    result = anthropic_service.generate_cost_estimate(estimation_data, base_costs)
+                    print("✅ Using Anthropic Claude service")
+                except Exception as anthropic_error:
+                    print(f"Anthropic service failed: {anthropic_error}")
+
+                    # Try OpenAI last
+                    try:
+                        openai_service = OpenAIService()
+                        result = openai_service.generate_cost_estimate(estimation_data, base_costs)
+                        print("✅ Using OpenAI GPT-4 service")
+                    except Exception as openai_error:
+                        print(f"OpenAI service failed: {openai_error}")
+                        print("🔄 Using dynamic fallback estimation")
 
         # If we got a result from any AI service, format and return it
         if result:
