@@ -669,8 +669,8 @@ class GeminiService:
             "user_configuration": {{
                 "container_type": "{container_type}",
                 "main_purpose": "{main_purpose}",
-                "key_specifications": "{estimation_data.get('comprehensive_specifications', 'Standard configuration')[:200]}",
-                "user_requirements": "{estimation_data.get('all_requirements', 'None specified')[:200]}"
+                "key_specifications": "{{specs}}",
+                "user_requirements": "{{reqs}}"
             }},
             "recommendations": [
                 "Recommendations specific to the actual configuration provided",
@@ -682,7 +682,21 @@ class GeminiService:
         IMPORTANT: Base ALL costs on the actual configuration above. A basic office conversion should cost €15k-25k, while complex industrial setups might reach €60k+. Match the estimate to the complexity.
         """
 
-        return prompt
+        # Get safe values for formatting
+        specs = estimation_data.get('comprehensive_specifications', 'Standard configuration')[:200]
+        reqs = estimation_data.get('all_requirements', 'None specified')[:200]
+        
+        # Format the prompt with actual values
+        formatted_prompt = prompt.format(
+            container_type=container_type,
+            main_purpose=main_purpose
+        )
+        
+        # Replace the placeholder values
+        formatted_prompt = formatted_prompt.replace("{{specs}}", specs)
+        formatted_prompt = formatted_prompt.replace("{{reqs}}", reqs)
+        
+        return formatted_prompt
 
     def _process_cost_estimate_response(self, response: Dict[str, Any]) -> Dict[str, Any]:
         """Process and validate cost estimate response from Gemini"""
