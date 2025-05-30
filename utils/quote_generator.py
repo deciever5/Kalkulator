@@ -33,13 +33,14 @@ class QuoteGenerator:
             "labor_profit_margin": 0.17,     # 17% profit on manual labor
             "overhead_factor": 0.15,         # 15%
             "profit_factor": 0.20,          # 20%
-            "tax_rate": 0.23,               # 23% VAT in Poland
+            "tax_rate": 0.00,               # No VAT for B2B sales - VAT handled separately in invoicing
         }
         
         # Standard warranty and terms
         self.standard_terms = [
             "Payment terms: 50% deposit upon contract signing, 50% upon completion",
             "Prices valid for 30 days from quote date",
+            "All prices exclude VAT - VAT will be added according to applicable tax regulations",
             "Work to be completed in accordance with local building codes",
             "Customer responsible for obtaining necessary permits unless specified",
             "Final pricing subject to site inspection and permit requirements",
@@ -230,14 +231,14 @@ class QuoteGenerator:
             }
             subtotal_final -= discount_amount
         
-        # Calculate tax
-        tax_amount = subtotal_final * self.base_rates["tax_rate"]
+        # No tax calculation for B2B customers - VAT handled in invoicing
         
         return {
             "breakdown": breakdown,
             "subtotal": subtotal_final,
-            "tax": tax_amount,
-            "total": subtotal_final + tax_amount
+            "tax": 0.0,  # VAT not included in B2B pricing
+            "total": subtotal_final,
+            "vat_note": "VAT will be added according to applicable tax regulations at invoicing"
         }
     
     def _get_base_costs(self, config: Dict[str, Any]) -> Dict[str, float]:

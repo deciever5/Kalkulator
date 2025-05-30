@@ -164,7 +164,7 @@ class StructuralCalculations:
             "permanent_costs_markup": 0.45,  # 45% on parts + labor
             "labor_profit_margin": 0.17,     # 17% profit on manual labor
             "overhead_factor": 0.15,         # 15%
-            "tax_rate": 0.23,               # 23% VAT in Poland
+            "tax_rate": 0.00,               # No VAT for B2B sales (23% VAT applies only for B2C)
         }
 
     def calculate_base_costs(self, config: Dict[str, Any]) -> Dict[str, Any]:
@@ -672,6 +672,55 @@ class StructuralCalculations:
             }
 
         return materials
+
+    def get_all_pricing_rates(self) -> Dict[str, Any]:
+        """Get all pricing rates and factors used in calculations"""
+        
+        # Container base costs
+        container_costs = {
+            "20ft_standard": "€3,000 (2,500 + transport + 20% margin)",
+            "40ft_standard": "€4,200 (3,500 + transport + 20% margin)",
+            "40ft_high_cube": "€4,500 (3,750 + transport + 20% margin)",
+            "45ft_high_cube": "€5,000 (4,167 + transport + 20% margin)",
+            "48ft_standard": "€5,500 (4,583 + transport + 20% margin)",
+            "53ft_standard": "€6,000 (5,000 + transport + 20% margin)"
+        }
+        
+        # Modification costs
+        modification_costs = {
+            "window_per_unit": "€600 per window",
+            "additional_door": "€900 per door", 
+            "electrical_system": "€1,800 basic package",
+            "plumbing_system": "€2,500 basic package",
+            "hvac_system": "€3,000 mini-split system",
+            "wall_reinforcement": "€2,000",
+            "roof_reinforcement": "€1,500",
+            "floor_reinforcement": "€1,800",
+            "additional_support": "€2,500"
+        }
+        
+        return {
+            "labor_rates": {
+                f"{role.replace('_', ' ').title()}": f"€{rate}/hour" 
+                for role, rate in self.base_rates["labor_rates"].items()
+            },
+            "markup_rates": {
+                "Permanent costs markup": f"{self.base_rates['permanent_costs_markup']*100:.0f}% on parts + labor",
+                "Labor profit margin": f"{self.base_rates['labor_profit_margin']*100:.0f}% on manual labor",
+                "Overhead factor": f"{self.base_rates['overhead_factor']*100:.0f}%"
+            },
+            "container_base_costs": container_costs,
+            "modification_costs": modification_costs,
+            "tax_rate": "VAT excluded for B2B sales (added at invoicing per applicable regulations)",
+            "calculation_method": {
+                "step_1": "Base container cost + transport + 20% margin",
+                "step_2": "Add modification costs",
+                "step_3": "Calculate labor hours and apply mixed rates",
+                "step_4": "Add 17% profit margin on labor",
+                "step_5": "Apply 45% permanent costs markup on (parts + labor)",
+                "step_6": "Final price excluding VAT"
+            }
+        }
 
     def _calculate_load_distribution(self, container_specs: Dict[str, float], 
                                    loads: Dict[str, float]) -> Dict[str, Dict[str, List[float]]]:
