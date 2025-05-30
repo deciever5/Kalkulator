@@ -505,48 +505,45 @@ st.markdown(f"""
 # Interactive navigation cards with gradient styling
 st.markdown("""
 <style>
-.nav-gradient-card {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border: none;
-    width: 100%;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+
+/* Enhanced button styling for navigation cards */
+.stButton > button {
+    background: white !important;
+    border: 2px solid #e8f4f8 !important;
+    color: #333 !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    border-radius: 15px !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08) !important;
+    transition: all 0.3s ease !important;
+    min-height: 150px !important;
 }
 
-.nav-gradient-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+/* Gradient styling for specific navigation buttons */
+div[data-testid="column"]:nth-child(1) .stButton > button {
+    background: linear-gradient(135deg, #2E86AB 0%, #1e3c72 100%) !important;
+    color: white !important;
+    border: none !important;
 }
 
-.nav-gradient-card h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.5rem;
-    font-weight: 600;
+div[data-testid="column"]:nth-child(2) .stButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
 }
 
-.nav-gradient-card p {
-    margin: 0;
-    opacity: 0.9;
-    font-size: 1rem;
+/* Customer service buttons */
+div[data-testid="column"]:nth-child(3) .stButton > button {
+    background: linear-gradient(135deg, #A23B72 0%, #2E86AB 100%) !important;
+    color: white !important;
+    border: none !important;
 }
 
-.config-gradient { --gradient-start: #2E86AB; --gradient-end: #1e3c72; }
-.ai-gradient { --gradient-start: #667eea; --gradient-end: #764ba2; }
-.drawing-gradient { --gradient-start: #A23B72; --gradient-end: #2E86AB; }
-.inquiry-gradient { --gradient-start: #f093fb; --gradient-end: #f5576c; }
-
-/* Hide navigation helper buttons */
-button[data-testid="baseButton-secondary"] {
-    display: none !important;
+div[data-testid="column"]:nth-child(4) .stButton > button {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    color: white !important;
+    border: none !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -616,52 +613,28 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-    # Main navigation grid with gradient cards
+    # Main navigation grid with working buttons
     col1, col2 = st.columns(2, gap="large")
     
     with col1:
-        if st.button("", key="config_nav"):
+        if st.button(f"📦 {t('step_1_configuration')}\n\n{t('choose_container_type')}", key="config_nav", use_container_width=True):
             st.switch_page("pages/1_Container_Configurator.py")
-        st.markdown(f"""
-        <div class="nav-gradient-card config-gradient" onclick="document.querySelectorAll('[data-testid=\"baseButton-secondary\"]')[0].click()">
-            <h3>📦 {t('step_1_configuration')}</h3>
-            <p>{t('choose_container_type')}</p>
-        </div>
-        """, unsafe_allow_html=True)
     
     with col2:
-        if st.button("", key="ai_nav"):
+        if st.button(f"🤖 {t('step_2_ai_quote')}\n\n{t('get_instant_quote')}", key="ai_nav", use_container_width=True):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
-        st.markdown(f"""
-        <div class="nav-gradient-card ai-gradient" onclick="document.querySelectorAll('[data-testid=\"baseButton-secondary\"]')[1].click()">
-            <h3>🤖 {t('step_2_ai_quote')}</h3>
-            <p>{t('get_instant_quote')}</p>
-        </div>
-        """, unsafe_allow_html=True)
 
-# Customer services section with gradient cards
+# Customer services section with working buttons
 if not st.session_state.employee_logged_in:
     col3, col4 = st.columns(2, gap="large")
     
     with col3:
-        if st.button("", key="drawing_nav"):
+        if st.button(f"📐 {t('drawing_analysis_service')}\n\n{t('upload_drawings_estimate')}", key="drawing_nav", use_container_width=True):
             st.switch_page("pages/9_Customer_Drawing_Analysis.py")
-        st.markdown(f"""
-        <div class="nav-gradient-card drawing-gradient" onclick="document.querySelectorAll('[data-testid=\"baseButton-secondary\"]')[2].click()">
-            <h3>📐 {t('drawing_analysis_service')}</h3>
-            <p>{t('upload_drawings_estimate')}</p>
-        </div>
-        """, unsafe_allow_html=True)
     
     with col4:
-        if st.button("", key="inquiry_nav"):
+        if st.button(f"📧 {t('send_inquiry_service')}\n\n{t('get_detailed_quote_text')}", key="inquiry_nav", use_container_width=True):
             st.switch_page("pages/8_Send_Inquiry.py")
-        st.markdown(f"""
-        <div class="nav-gradient-card inquiry-gradient" onclick="document.querySelectorAll('[data-testid=\"baseButton-secondary\"]')[3].click()">
-            <h3>📧 {t('send_inquiry_service')}</h3>
-            <p>{t('get_detailed_quote_text')}</p>
-        </div>
-        """, unsafe_allow_html=True)
 
 # Enhanced client benefits section
 if not st.session_state.employee_logged_in:
