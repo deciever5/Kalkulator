@@ -23,62 +23,60 @@ if 'show_login' not in st.session_state:
 render_shared_header(show_login=False)
 
 def generate_cost_estimate(config, ai_model):
-    """Generate a realistic cost estimate based on configuration"""
-    base_costs = {
-        '20ft Standard': 8000,
-        '40ft Standard': 12000,
-        '40ft High Cube': 14000,
-        '20ft Refrigerated': 15000
-    }
+    """Generate AI-powered cost estimate using actual AI services"""
+    from utils.ai_services import estimate_cost_with_ai
     
-    container_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
-    
-    # Add costs based on modifications
-    modifications_cost = 0
-    modifications_cost += config.get('number_of_windows', 0) * 300
-    if config.get('additional_doors', False):
-        modifications_cost += 800
-    
-    # Finish level multiplier
-    finish_multipliers = {
-        'Basic': 1.0,
-        'Standard': 1.2,
-        'Premium': 1.5,
-        'Luxury': 2.0
-    }
-    finish_multiplier = finish_multipliers.get(config.get('finish_level', 'Standard'), 1.2)
-    
-    total_cost = (container_cost + modifications_cost) * finish_multiplier
-    
-    current_lang = get_current_language()
-    
-    if current_lang == 'pl':
+    try:
+        # Call the actual AI service with the configuration
+        ai_estimate = estimate_cost_with_ai(config, ai_model)
+        return ai_estimate
+    except Exception as e:
+        # Fallback to basic estimate if AI fails
+        current_lang = get_current_language()
+        
+        base_costs = {
+            '20ft Standard': 8000,
+            '40ft Standard': 12000,
+            '40ft High Cube': 14000,
+            '20ft Refrigerated': 15000
+        }
+        
+        container_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
+        
+        # Add costs based on modifications
+        modifications_cost = 0
+        modifications_cost += config.get('number_of_windows', 0) * 300
+        if config.get('additional_doors', False):
+            modifications_cost += 800
+        
+        # Finish level multiplier
+        finish_multipliers = {
+            'Basic': 1.0,
+            'Standard': 1.2,
+            'Premium': 1.5,
+            'Luxury': 2.0
+        }
+        finish_multiplier = finish_multipliers.get(config.get('finish_level', 'Standard'), 1.2)
+        
+        total_cost = (container_cost + modifications_cost) * finish_multiplier
+        
+        error_msg = t('ai_service_error', current_lang) if 'ai_service_error' in t.__dict__ else "AI service temporarily unavailable"
+        
         return f"""
-## Szacunek kosztów AI
+## ⚠️ {error_msg}
 
-**Typ kontenera:** {config.get('container_type', 'N/A')}
-**Koszt bazowy:** {container_cost:,} EUR
-**Modyfikacje:** {modifications_cost:,} EUR
-**Poziom wykończenia:** {config.get('finish_level', 'N/A')} (mnożnik: {finish_multiplier})
+{t('fallback_estimate_basic', current_lang) if 'fallback_estimate_basic' in t.__dict__ else 'Basic calculation fallback:'}
 
-### **CAŁKOWITY SZACOWANY KOSZT: {total_cost:,.0f} EUR**
+**{t('container_type', current_lang)}:** {config.get('container_type', 'N/A')}
+**{t('base_cost', current_lang)}:** €{container_cost:,}
+**{t('modifications', current_lang)}:** €{modifications_cost:,}
+**{t('finish_level', current_lang)}:** {config.get('finish_level', 'N/A')} ({t('multiplier', current_lang)}: {finish_multiplier})
 
-*Cena zawiera: projekt, materiały, wykonanie, transport (do 100km)*
-*Nie zawiera: pozwoleń, przyłączy, fundamentów*
-"""
-    else:
-        return f"""
-## AI Cost Estimate
+### **{t('total_cost', current_lang).upper()}: €{total_cost:,.0f}**
 
-**Container Type:** {config.get('container_type', 'N/A')}
-**Base Cost:** {container_cost:,} EUR
-**Modifications:** {modifications_cost:,} EUR
-**Finish Level:** {config.get('finish_level', 'N/A')} (multiplier: {finish_multiplier})
+*{t('ai_retry_later', current_lang) if 'ai_retry_later' in t.__dict__ else 'Please try again later for AI analysis'}*
 
-### **TOTAL ESTIMATED COST: {total_cost:,.0f} EUR**
-
-*Price includes: design, materials, execution, transport (up to 100km)*
-*Does not include: permits, utilities, foundations*
+**{t('error_details', current_lang) if 'error_details' in t.__dict__ else 'Error'}: {str(e)}**
 """
 
 st.markdown("""

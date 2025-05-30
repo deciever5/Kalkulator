@@ -883,9 +883,29 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "Auto-Select B
     except ImportError:
         current_language = 'en'
 
+    # Map the configuration format from the UI to the AI service format
+    mapped_config = {
+        'container_type': config.get('container_type', '20ft Standard'),
+        'base_type': config.get('container_type', '20ft Standard'),
+        'use_case': config.get('main_purpose', 'Office Space'),
+        'environment': config.get('environment', 'Indoor'),
+        'finish_level': config.get('finish_level', 'Basic'),
+        'climate_zone': config.get('climate_zone', 'Central European'),
+        'occupancy': 1,
+        'modifications': {
+            'flooring': config.get('flooring', 'Plywood'),
+            'windows': config.get('number_of_windows', 0),
+            'additional_doors': config.get('additional_doors', False),
+            'electrical_system': config.get('finish_level') in ['Premium', 'Luxury'],
+            'plumbing_system': config.get('main_purpose') in ['Office Space', 'Living Space'],
+            'hvac_system': config.get('climate_zone') in ['Continental', 'Northern European'],
+            'insulation_package': config.get('environment') == 'Outdoor'
+        }
+    }
+
     # Prepare estimation data
     estimation_data = {
-        "container_config": config,
+        "container_config": mapped_config,
         "project_location": "Central Europe",
         "project_timeline": "Standard",
         "quality_level": "Standard",
