@@ -330,6 +330,57 @@ TRANSLATIONS = {
         # Common navigation
         'back_to_home': 'Zurück zur Startseite',
         'go_to_configurator': 'Zum Konfigurator',
+        
+        # Send inquiry and services
+        'send_inquiry': 'Anfrage senden',
+        'send_inquiry_service': 'Anfrage-Service',
+        'get_detailed_quote_text': 'Erhalten Sie ein detailliertes Angebot für Ihr Projekt',
+        'analyze_drawings': 'Zeichnungen analysieren',
+        'drawing_analysis_service': 'Zeichnungsanalyse-Service',
+        'upload_drawings_estimate': 'Laden Sie Ihre technischen Zeichnungen für genaue Schätzungen hoch',
+        
+        # Additional UI elements
+        'configure_container': 'Container konfigurieren',
+        'simple_process_2_steps': 'Einfacher 2-Schritte-Prozess',
+        'step_1_configuration': 'Schritt 1: Konfiguration',
+        'choose_container_type': 'Container-Typ und Spezifikationen wählen',
+        'step_2_ai_quote': 'Schritt 2: KI-Angebot',
+        'get_instant_quote': 'Sofortiges Angebot mit KI erhalten',
+        'start_configuration': 'Konfiguration starten',
+        'get_quote': 'Angebot erhalten',
+        'additional_services': 'Zusätzliche Services',
+        'why_kan_bud': 'Warum KAN-BUD',
+        'precise_quotes': 'Präzise Angebote',
+        'fast_realization': 'Schnelle Umsetzung',
+        'full_service': 'Vollservice',
+        'ai_historical_data': 'KI + Historische Daten',
+        'european_climate_standards': 'Europäische Klimastandards',
+        'transparent_calculations': 'Transparente Berechnungen',
+        'hundreds_of_projects': 'Hunderte abgeschlossene Projekte',
+        'own_machinery': 'Eigener Maschinenpark',
+        'poland_center': 'Zentrale Lage in Polen',
+        'design_execution': 'Design und Ausführung',
+        'transport_assembly': 'Transport und Montage',
+        'after_sales_support': 'Kundendienst',
+        
+        # AI and cost estimation
+        'no_configuration_found': 'Keine Konfiguration gefunden',
+        'current_configuration': 'Aktuelle Konfiguration',
+        'generate_ai_estimate': 'KI-Schätzung generieren',
+        'ai.messages.generating': 'Schätzung wird generiert...',
+        'ai.messages.estimate_generated': 'Schätzung erfolgreich generiert',
+        'ai_cost_estimate': 'KI-Kostenschätzung',
+        'estimate_disclaimer_title': 'Wichtiger rechtlicher Hinweis',
+        'estimate_disclaimer_text': 'Diese Schätzung ist unverbindlich und stellt kein kommerzielles Angebot dar. Der endgültige Preis kann von der dargestellten Schätzung abweichen.',
+        'get_precise_quote': 'Präzises Angebot erhalten',
+        'contact_for_quote': 'Kontaktieren Sie uns für ein detailliertes kommerzielles Angebot, das auf Ihre Bedürfnisse zugeschnitten ist.',
+        'save_estimate': 'Schätzung speichern',
+        'estimate_saved': 'Schätzung gespeichert',
+        'failed_generate_estimate': 'Schätzung konnte nicht generiert werden',
+        'error_generating_estimate': 'Fehler beim Generieren der Schätzung',
+        
+        # UI elements
+        'ui.open': 'Öffnen',
     },
     
     'nl': {
@@ -406,6 +457,57 @@ TRANSLATIONS = {
         # Common navigation
         'back_to_home': 'Terug naar Home',
         'go_to_configurator': 'Ga naar Configurator',
+        
+        # Send inquiry and services
+        'send_inquiry': 'Verstuur aanvraag',
+        'send_inquiry_service': 'Aanvraag service',
+        'get_detailed_quote_text': 'Ontvang een gedetailleerde offerte voor uw project',
+        'analyze_drawings': 'Tekeningen analyseren',
+        'drawing_analysis_service': 'Tekening analyse service',
+        'upload_drawings_estimate': 'Upload uw technische tekeningen voor nauwkeurige schattingen',
+        
+        # Additional UI elements
+        'configure_container': 'Container configureren',
+        'simple_process_2_steps': 'Eenvoudig 2-stappen proces',
+        'step_1_configuration': 'Stap 1: Configuratie',
+        'choose_container_type': 'Kies container type en specificaties',
+        'step_2_ai_quote': 'Stap 2: AI Offerte',
+        'get_instant_quote': 'Ontvang directe offerte met AI',
+        'start_configuration': 'Start configuratie',
+        'get_quote': 'Ontvang offerte',
+        'additional_services': 'Aanvullende services',
+        'why_kan_bud': 'Waarom KAN-BUD',
+        'precise_quotes': 'Precieze offertes',
+        'fast_realization': 'Snelle realisatie',
+        'full_service': 'Volledige service',
+        'ai_historical_data': 'AI + Historische data',
+        'european_climate_standards': 'Europese klimaat standaarden',
+        'transparent_calculations': 'Transparante berekeningen',
+        'hundreds_of_projects': 'Honderden afgeronde projecten',
+        'own_machinery': 'Eigen machinepark',
+        'poland_center': 'Centrale locatie in Polen',
+        'design_execution': 'Ontwerp en uitvoering',
+        'transport_assembly': 'Transport en montage',
+        'after_sales_support': 'Klantenservice',
+        
+        # AI and cost estimation
+        'no_configuration_found': 'Geen configuratie gevonden',
+        'current_configuration': 'Huidige configuratie',
+        'generate_ai_estimate': 'AI schatting genereren',
+        'ai.messages.generating': 'Schatting wordt gegenereerd...',
+        'ai.messages.estimate_generated': 'Schatting succesvol gegenereerd',
+        'ai_cost_estimate': 'AI kostenschatting',
+        'estimate_disclaimer_title': 'Belangrijke juridische disclaimer',
+        'estimate_disclaimer_text': 'Deze schatting is indicatief en vormt geen commercieel aanbod. De uiteindelijke prijs kan afwijken van de gepresenteerde schatting.',
+        'get_precise_quote': 'Ontvang precieze offerte',
+        'contact_for_quote': 'Neem contact met ons op voor een gedetailleerde commerciële offerte op maat.',
+        'save_estimate': 'Schatting opslaan',
+        'estimate_saved': 'Schatting opgeslagen',
+        'failed_generate_estimate': 'Kon schatting niet genereren',
+        'error_generating_estimate': 'Fout bij genereren schatting',
+        
+        # UI elements
+        'ui.open': 'Openen',
     }
 }
 
