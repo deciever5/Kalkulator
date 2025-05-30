@@ -2,17 +2,9 @@ import streamlit as st
 import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
-from utils.complete_translations_fixed import get_translation
-from utils.global_language import get_current_language, set_language
-import streamlit as st
+from utils.translations import t, init_language, get_current_language, set_language
 
-def t(key):
-    return get_translation(key, get_current_language())
-
-def render_language_selector():
-    """Use centralized language selector"""
-    from utils.translations import render_language_selector as central_selector
-    central_selector()
+init_language()
 
 # Page configuration
 st.set_page_config(
@@ -20,9 +12,6 @@ st.set_page_config(
     page_icon="📦",
     layout="wide"
 )
-
-# Language selector at the top
-render_language_selector()
 
 # Initialize database
 if 'container_db' not in st.session_state:

@@ -1,15 +1,9 @@
-# Updated language selector to use a centralized function for consistency across the app.
 import streamlit as st
 import json
-from utils.groq_service import GroqService
 from utils.translations import t, init_language, get_current_language, set_language
+from utils.ai_services import estimate_cost_with_ai
 
 init_language()
-
-def render_language_selector():
-    """Use centralized language selector"""
-    from utils.translations import render_language_selector as central_selector
-    central_selector()
 
 # Page configuration
 st.set_page_config(
@@ -17,13 +11,6 @@ st.set_page_config(
     page_icon="🤖",
     layout="wide"
 )
-
-# Initialize language if not set
-if 'language' not in st.session_state:
-    st.session_state.language = 'pl'
-
-# Language selector
-render_language_selector()
 
 st.markdown("""
 <style>
@@ -194,4 +181,3 @@ else:
 
             except Exception as e:
                 st.error(f"{t('error_generating_estimate')}: {str(e)}")
-```
