@@ -28,7 +28,11 @@
     "send_inquiry": "Send\nInquiry",
     "send_inquiry_desc": "Quote request form",
     "drawing_analysis_customer": "Drawing\nAnalysis",
-    "drawing_analysis_customer_desc": "Free document analysis"
+    "drawing_analysis_customer_desc": "Free document analysis",
+    "bulk_pricing": "Bulk\nPricing",
+    "bulk_pricing_desc": "Volume discounts for multiple containers",
+    "custom_sizing": "Custom\nSizing", 
+    "custom_sizing_desc": "Design containers with exact specifications"
   },
   "app": {
     "title": "Professional Container Solutions",
@@ -74,7 +78,11 @@
       "20ft_standard": "20ft Standard",
       "40ft_standard": "40ft Standard",
       "40ft_high_cube": "40ft High Cube",
-      "20ft_refrigerated": "20ft Refrigerated"
+      "20ft_refrigerated": "20ft Refrigerated",
+      "20ft_double_door": "20ft Double Door",
+      "40ft_double_door": "40ft Double Door",
+      "40ft_hc_double_door": "40ft HC Double Door",
+      "custom_size": "Custom Size"
     },
     "use_cases": {
       "office_space": "Office Space",

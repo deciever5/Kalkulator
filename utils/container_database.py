@@ -101,6 +101,62 @@ class ContainerDatabase:
                 "construction": "Corten steel",
                 "floor": "Marine plywood",
                 "doors": "Double doors (rear)"
+            },
+            "20ft Double Door": {
+                "length": 20,
+                "width": 8,
+                "height": 8.5,
+                "internal_length": 19.33,
+                "internal_width": 7.7,
+                "internal_height": 7.83,
+                "weight": 5200,  # lbs
+                "payload": 61800,  # lbs
+                "volume": 1172,  # cubic feet
+                "construction": "Corten steel",
+                "floor": "Marine plywood",
+                "doors": "Double doors (both ends)"
+            },
+            "40ft Double Door": {
+                "length": 40,
+                "width": 8,
+                "height": 8.5,
+                "internal_length": 39.33,
+                "internal_width": 7.7,
+                "internal_height": 7.83,
+                "weight": 8400,  # lbs
+                "payload": 66600,  # lbs
+                "volume": 2372,  # cubic feet
+                "construction": "Corten steel",
+                "floor": "Marine plywood",
+                "doors": "Double doors (both ends)"
+            },
+            "40ft HC Double Door": {
+                "length": 40,
+                "width": 8,
+                "height": 9.5,
+                "internal_length": 39.33,
+                "internal_width": 7.7,
+                "internal_height": 8.83,
+                "weight": 8900,  # lbs
+                "payload": 66100,  # lbs
+                "volume": 2694,  # cubic feet
+                "construction": "Corten steel",
+                "floor": "Marine plywood",
+                "doors": "Double doors (both ends)"
+            },
+            "Custom Size": {
+                "length": 0,  # User defined
+                "width": 0,   # User defined
+                "height": 0,  # User defined
+                "internal_length": 0,
+                "internal_width": 0,
+                "internal_height": 0,
+                "weight": 0,
+                "payload": 0,
+                "volume": 0,
+                "construction": "Custom specification",
+                "floor": "Custom specification",
+                "doors": "Custom specification"
             }
         }
     
