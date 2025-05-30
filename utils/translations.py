@@ -50,7 +50,11 @@ def set_language(lang_code):
     """Set current language"""
     print(f"Setting language to: {lang_code}")
     st.session_state.language = lang_code
-
+    
+    # Clear the global translations to force reload
+    global TRANSLATIONS
+    TRANSLATIONS = load_translations()
+    
     # Verify the language change was successful
     current = get_current_language()
     print(f"Language successfully set to: {current}")
@@ -136,15 +140,23 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
     lang = st.session_state.get('language', 'en')
 
     try:
-        # Load translations if not already loaded
-
+        # Always use fresh translations
+        translations = get_translations()
+        
         # Get translation value
-        translation = get_nested_translation(TRANSLATIONS[lang], key)
+        if lang not in translations:
+            print(f"Language '{lang}' not found in translations")
+            if fallback:
+                return fallback
+            return key
+            
+        translation = get_nested_translation(translations[lang], key)
 
         # Use fallback if translation is missing
         if not translation and fallback:
             translation = fallback
         elif not translation:
+            print(f"Translation key '{key}' not found for language '{lang}'")
             translation = key
 
         # Format with kwargs if provided
