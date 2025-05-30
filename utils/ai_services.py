@@ -515,7 +515,7 @@ class GeminiService:
     """Service for Google Gemini 2.5 integration"""
 
     def __init__(self):
-        self.model_name = "gemini-2.0-flash-exp"
+        self.model_name = "gemini-1.5-flash"  # Use stable model instead of experimental
         self.api_key = os.environ.get('GEMINI_API_KEY')
         
         if self.api_key:
@@ -539,27 +539,38 @@ class GeminiService:
         prompt = self._build_cost_estimation_prompt(estimation_data, base_costs)
 
         try:
-            response = self.model.generate_content(
-                prompt,
-                generation_config=genai.types.GenerationConfig(
-                    temperature=0.1,
-                    max_output_tokens=2048,
-                )
-            )
+            response = self.model.generate_content(prompt)
 
             # Extract JSON from response
             response_text = response.text
+            print(f"Raw Gemini response: {response_text[:200]}...")
+            
             start = response_text.find('{')
             end = response_text.rfind('}') + 1
             
             if start != -1 and end > start:
                 json_content = response_text[start:end]
-                result = json.loads(json_content)
-                return self._process_cost_estimate_response(result)
+                try:
+                    result = json.loads(json_content)
+                    
+                    # Ensure result is a dictionary, not a list
+                    if isinstance(result, list):
+                        if len(result) > 0 and isinstance(result[0], dict):
+                            result = result[0]  # Take first dictionary from list
+                        else:
+                            raise Exception("Invalid response format from Gemini")
+                    
+                    return self._process_cost_estimate_response(result)
+                except json.JSONDecodeError as je:
+                    print(f"JSON parsing error: {je}")
+                    print(f"JSON content: {json_content}")
+                    raise Exception(f"Invalid JSON from Gemini: {je}")
             else:
+                print(f"No JSON found in response: {response_text}")
                 raise Exception("No valid JSON found in Gemini response")
 
         except Exception as e:
+            print(f"Gemini API detailed error: {str(e)}")
             raise Exception(f"Gemini API error: {str(e)}")
 
     def _build_cost_estimation_prompt(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> str:

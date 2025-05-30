@@ -206,9 +206,9 @@ else:
         st.write(f"**{t('hvac_system')}:** {config.get('hvac_system', 'N/A')}")
         
         if config.get('air_intakes'):
-            st.write(f"**{t('air_intakes')}:** {config.get('air_intakes', 'N/A')}")
+            st.write(f"**{t('air_intakes_label')}:** {config.get('air_intakes', 'N/A')}")
         if config.get('roof_modifications'):
-            st.write(f"**{t('roof_modifications')}:** {config.get('roof_modifications', 'N/A')}")
+            st.write(f"**{t('roof_modifications_label')}:** {config.get('roof_modifications', 'N/A')}")
         if config.get('security_features'):
             st.write(f"**{t('security_features')}:** {config.get('security_features', 'N/A')}")
         if config.get('paint_finish'):
