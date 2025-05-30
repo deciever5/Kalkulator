@@ -55,68 +55,6 @@ def set_language(lang_code):
     current = get_current_language()
     print(f"Language successfully set to: {current}")
 
-def t(key, language=None):
-    """Translate text key using nested key access (e.g., 'ui.back_to_home')"""
-    if language is None:
-        language = get_current_language()
-
-    # Always get fresh translations
-    translations = get_translations()
-
-    print(f"Translating '{key}' for language '{language}'")
-    print(f"Available languages: {list(translations.keys())}")
-
-    # Get translation data for requested language
-    translation_data = translations.get(language)
-
-    if not translation_data:
-        print(f"ERROR: Language '{language}' not found in translations!")
-        # Use English as fallback, then Polish
-        translation_data = translations.get('en', translations.get('pl', {}))
-        if not translation_data:
-            print(f"ERROR: No fallback translations found!")
-            return key
-
-    # Handle nested keys like 'ui.back_to_home'
-    keys = key.split('.')
-    result = translation_data
-
-    # Navigate through the nested structure
-    for i, k in enumerate(keys):
-        if isinstance(result, dict) and k in result:
-            result = result[k]
-        else:
-            print(f"Key '{k}' not found at level {i} in {language} translations")
-            print(f"Available keys at this level: {list(result.keys()) if isinstance(result, dict) else 'Not a dict'}")
-
-            # Try fallback languages
-            for fallback_lang in ['en', 'pl']:
-                if fallback_lang != language and fallback_lang in translations:
-                    fallback_data = translations[fallback_lang]
-                    fallback_result = fallback_data
-
-                    # Try to find the key in fallback language
-                    fallback_found = True
-                    for fk in keys:
-                        if isinstance(fallback_result, dict) and fk in fallback_result:
-                            fallback_result = fallback_result[fk]
-                        else:
-                            fallback_found = False
-                            break
-
-                    if fallback_found and isinstance(fallback_result, str):
-                        print(f"Using fallback {fallback_lang} for '{key}': {fallback_result}")
-                        return fallback_result
-
-            # If no fallback found, return the key itself
-            print(f"Translation key not found: {key}")
-            return key
-
-    # Return the result if it's a string
-    final_result = result if isinstance(result, str) else key
-    print(f"Translation result for '{key}': {final_result}")
-    return final_result
-
 def get_available_languages():
     """Get available languages"""
     return {
@@ -146,7 +84,7 @@ def render_language_selector():
     key = f"lang_selector_{page_name}_{hash(page_name) % 1000}"
 
     col1, col2, col3 = st.columns([4, 1.5, 0.5])
-    
+
     with col2:
         selected_language = st.selectbox(
             "🌐 Language",
@@ -164,3 +102,57 @@ def render_language_selector():
 def render_language_buttons():
     """Legacy function kept for compatibility"""
     pass
+
+def get_nested_translation(translation_data, key):
+    """
+    Get a translation from nested dictionary
+
+    Args:
+        translation_data: Translation dictionary
+        key: Translation key, e.g. 'form.labels.container_type'
+    """
+    keys = key.split('.')
+    result = translation_data
+
+    for k in keys:
+        if isinstance(result, dict) and k in result:
+            result = result[k]
+        else:
+            return None
+    return result if isinstance(result, str) else None
+
+TRANSLATIONS = load_translations()
+
+def t(key: str, fallback: str = None, **kwargs) -> str:
+    """
+    Get translation for given key in current language
+    Supports nested keys like 'form.labels.container_type'
+
+    Args:
+        key: Translation key
+        fallback: Fallback text if translation is missing
+        **kwargs: Format parameters
+    """
+    lang = st.session_state.get('language', 'en')
+
+    try:
+        # Load translations if not already loaded
+
+        # Get translation value
+        translation = get_nested_translation(TRANSLATIONS[lang], key)
+
+        # Use fallback if translation is missing
+        if not translation and fallback:
+            translation = fallback
+        elif not translation:
+            translation = key
+
+        # Format with kwargs if provided
+        if kwargs and translation:
+            return translation.format(**kwargs)
+
+        return translation
+
+    except Exception as e:
+        print(f"Translation error for key '{key}': {e}")
+        return fallback if fallback else key

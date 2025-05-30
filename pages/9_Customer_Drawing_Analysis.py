@@ -29,18 +29,29 @@ st.info(f"""
 
 # Check if basic configuration exists
 if 'container_config' not in st.session_state:
-    st.warning(f"⚠️ {t('drawing_analysis_customer.no_config')}")
+    st.warning(f"⚠️ {t('drawing_analysis_customer.no_config', 'Nie znaleziono konfiguracji kontenera. Najpierw skonfiguruj swój kontener.')}")
     
     col1, col2 = st.columns(2)
     with col1:
-        if st.button(f"🔧 {t('ui.go_to_configurator')}", use_container_width=True):
+        if st.button(f"🔧 {t('ui.go_to_configurator', 'Przejdź do Konfiguratora')}", use_container_width=True):
             st.switch_page("pages/1_Container_Configurator.py")
     
     with col2:
-        if st.button(f"🤖 {t('ui.get_ai_estimate')}", use_container_width=True):
+        if st.button(f"🤖 {t('ui.get_ai_estimate', 'Otrzymaj Wycenę AI')}", use_container_width=True):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
     
-    st.stop()
+    # Allow users to continue without configuration for drawing analysis
+    st.info("💡 Możesz również przeanalizować rysunki bez konfiguracji - analiza będzie bardziej ogólna.")
+    
+    if not st.button("📐 Kontynuuj bez konfiguracji", type="secondary"):
+        st.stop()
+    else:
+        # Create minimal config for drawing analysis
+        st.session_state.container_config = {
+            'container_type': 'Standard 20ft',
+            'main_purpose': 'General Purpose',
+            'environment': 'Temperate'
+        }
 
 # Show current configuration summary
 config = st.session_state.container_config
@@ -59,31 +70,31 @@ with st.expander(f"📋 {t('drawing_analysis_customer.current_config')}"):
             total_cost = st.session_state.cost_breakdown.get('total_cost', 0)
             st.write(f"**{t('total_cost')}:** €{total_cost:,.2f}")
 
-# Simple project context
-st.subheader(f"🏗️ {t('drawing_analysis_customer.project_context')}")
+# Simple project context - Always show with fallback translations
+st.subheader(f"🏗️ {t('drawing_analysis_customer.project_context', 'Kontekst Projektu')}")
 
 col1, col2 = st.columns(2)
 
 with col1:
     project_name = st.text_input(
-        t('drawing_analysis_customer.project_name'), 
-        placeholder=t('drawing_analysis_customer.project_name_placeholder')
+        t('drawing_analysis_customer.project_name', 'Nazwa Projektu'), 
+        placeholder=t('drawing_analysis_customer.project_name_placeholder', 'np. Biuro kontenerowe - Poznań')
     )
 
 with col2:
     location = st.text_input(
-        t('drawing_analysis_customer.project_location'), 
+        t('drawing_analysis_customer.project_location', 'Lokalizacja Projektu'), 
         value="Polska"
     )
 
-# File upload section
-st.subheader(f"📤 {t('drawing_analysis_customer.file_upload')}")
+# File upload section - Always show with fallback translations
+st.subheader(f"📤 {t('drawing_analysis_customer.file_upload', 'Przesyłanie Plików')}")
 
 uploaded_files = st.file_uploader(
-    t('drawing_analysis_customer.upload_drawings'),
+    t('drawing_analysis_customer.upload_drawings', 'Prześlij rysunki techniczne'),
     type=['pdf', 'jpg', 'jpeg', 'png'],
     accept_multiple_files=True,
-    help=t('drawing_analysis_customer.file_formats_help'),
+    help=t('drawing_analysis_customer.file_formats_help', 'Obsługujemy pliki PDF, JPG, PNG. Zalecamy format PDF dla najlepszej analizy.'),
     key="drawing_analysis_uploader"
 )
 
