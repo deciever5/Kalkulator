@@ -16,19 +16,19 @@ def render_language_selector():
     
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        if st.button("🇵🇱 Polski", key="lang_pl_config", help="Polski", use_container_width=True):
+        if st.button("🇵🇱 PL", key="lang_pl_config", help="Polski", use_container_width=True):
             set_language('pl')
             st.rerun()
     with col2:
-        if st.button("🇬🇧 English", key="lang_en_config", help="English", use_container_width=True):
+        if st.button("🇬🇧 EN", key="lang_en_config", help="English", use_container_width=True):
             set_language('en')
             st.rerun()
     with col3:
-        if st.button("🇩🇪 Deutsch", key="lang_de_config", help="Deutsch", use_container_width=True):
+        if st.button("🇩🇪 DE", key="lang_de_config", help="Deutsch", use_container_width=True):
             set_language('de')
             st.rerun()
     with col4:
-        if st.button("🇳🇱 Nederlands", key="lang_nl_config", help="Nederlands", use_container_width=True):
+        if st.button("🇳🇱 NL", key="lang_nl_config", help="Nederlands", use_container_width=True):
             set_language('nl')
             st.rerun()
     

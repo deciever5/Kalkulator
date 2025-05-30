@@ -126,25 +126,29 @@ def render_language_selector():
     col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
 
     with col1:
-        if st.button("🇵🇱 Polski", key="lang_pl", help="Polski"):
+        st.image("https://flagcdn.com/w40/pl.png", width=30)
+        if st.button("PL", key="lang_pl", help="Polski"):
             if current_lang != 'pl':
                 set_language('pl')
                 st.rerun()
 
     with col2:
-        if st.button("🇬🇧 English", key="lang_en", help="English"):
+        st.image("https://flagcdn.com/w40/gb.png", width=30)
+        if st.button("EN", key="lang_en", help="English"):
             if current_lang != 'en':
                 set_language('en')
                 st.rerun()
 
     with col3:
-        if st.button("🇩🇪 Deutsch", key="lang_de", help="Deutsch"):
+        st.image("https://flagcdn.com/w40/de.png", width=30)
+        if st.button("DE", key="lang_de", help="Deutsch"):
             if current_lang != 'de':
                 set_language('de')
                 st.rerun()
 
     with col4:
-        if st.button("🇳🇱 Nederlands", key="lang_nl", help="Nederlands"):
+        st.image("https://flagcdn.com/w40/nl.png", width=30)
+        if st.button("NL", key="lang_nl", help="Nederlands"):
             if current_lang != 'nl':
                 set_language('nl')
                 st.rerun()

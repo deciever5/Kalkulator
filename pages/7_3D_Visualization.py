@@ -29,19 +29,19 @@ st.markdown("""
 
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    if st.button("🇵🇱 Polski", help="Polski"):
+    if st.button("🇵🇱", help="Polski"):
         st.session_state.language = 'pl'
         st.rerun()
 with col2:
-    if st.button("🇬🇧 English", help="English"):
+    if st.button("🇬🇧", help="English"):
         st.session_state.language = 'en'
         st.rerun()
 with col3:
-    if st.button("🇩🇪 Deutsch", help="Deutsch"):
+    if st.button("🇩🇪", help="Deutsch"):
         st.session_state.language = 'de'
         st.rerun()
 with col4:
-    if st.button("🇳🇱 Nederlands", help="Nederlands"):
+    if st.button("🇳🇱", help="Nederlands"):
         st.session_state.language = 'nl'
         st.rerun()
 
