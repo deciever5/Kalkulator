@@ -23,29 +23,9 @@ if 'container_db' not in st.session_state:
     st.session_state.container_db = ContainerDatabase()
 
 # Language selection
-st.markdown("""
-<div style="position: fixed; top: 10px; right: 20px; z-index: 999; background: white; padding: 10px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-""", unsafe_allow_html=True)
-
-col1, col2, col3, col4 = st.columns(4)
-with col1:
-    if st.button("🇵🇱", help="Polski"):
-        st.session_state.language = 'pl'
-        st.rerun()
-with col2:
-    if st.button("🇬🇧", help="English"):
-        st.session_state.language = 'en'
-        st.rerun()
-with col3:
-    if st.button("🇩🇪", help="Deutsch"):
-        st.session_state.language = 'de'
-        st.rerun()
-with col4:
-    if st.button("🇳🇱", help="Nederlands"):
-        st.session_state.language = 'nl'
-        st.rerun()
-
-st.markdown("</div>", unsafe_allow_html=True)
+# Language selector
+from utils.translations import render_language_selector
+render_language_selector()
 
 # Navigation header
 st.markdown("""
@@ -78,35 +58,35 @@ col1, col2 = st.columns([1, 2])
 
 with col1:
     st.markdown("### ⚙️ Configuration")
-    
+
     # Container type selection
     container_types = ['20ft Standard', '40ft Standard', '40ft High Cube', '20ft Refrigerated']
     translated_types = translate_options(container_types, st.session_state.language)
-    
+
     selected_type_translated = st.selectbox(
         get_translation('container_type', st.session_state.language),
         translated_types,
         key="viz_container_type"
     )
     selected_type = container_types[translated_types.index(selected_type_translated)]
-    
+
     # Use case selection
     use_cases = ['Office Space', 'Residential', 'Storage', 'Workshop', 'Retail', 'Restaurant', 'Medical', 'Laboratory']
     translated_use_cases = translate_options(use_cases, st.session_state.language)
-    
+
     selected_use_case_translated = st.selectbox(
         get_translation('main_purpose', st.session_state.language),
         translated_use_cases,
         key="viz_use_case"
     )
     selected_use_case = use_cases[translated_use_cases.index(selected_use_case_translated)]
-    
+
     st.markdown("### 🔧 Modifications")
-    
+
     # Modification options
     num_windows = st.slider("Number of Windows", 0, 8, 2)
     num_doors = st.slider("Additional Doors", 0, 3, 1)
-    
+
     # Systems
     st.markdown("**Systems Installation:**")
     electrical = st.checkbox("Electrical System", value=True)
@@ -114,7 +94,7 @@ with col1:
     hvac = st.checkbox("HVAC System", value=True)
     insulation = st.checkbox("Insulation Package", value=True)
     reinforcement = st.checkbox("Structural Reinforcement", value=False)
-    
+
     # Build configuration
     config = {
         'base_type': selected_type,
@@ -132,7 +112,7 @@ with col1:
 
 with col2:
     st.markdown("### 🏗️ 3D Model Preview")
-    
+
     # Generate and display 3D model
     try:
         fig_3d = st.session_state.visualizer_3d.create_3d_model(config)
@@ -173,7 +153,7 @@ st.markdown("## 🔄 Before/After Comparison")
 
 if st.button("🔍 Generate Comparison View", use_container_width=True):
     st.markdown("### 📊 Standard vs Modified Container")
-    
+
     # Create base configuration (minimal modifications)
     base_config = {
         'base_type': selected_type,
@@ -188,39 +168,39 @@ if st.button("🔍 Generate Comparison View", use_container_width=True):
             'reinforcement': False
         }
     }
-    
+
     try:
         # Generate comparison
         comparison_fig = st.session_state.visualizer_3d.create_modification_comparison(base_config, config)
         st.plotly_chart(comparison_fig, use_container_width=True, height=600)
-        
+
         # Comparison summary
         col1, col2 = st.columns(2)
-        
+
         with col1:
             st.markdown("**📦 Standard Container**")
             st.write("• Basic storage configuration")
             st.write("• No additional windows")
             st.write("• Single entry door")
             st.write("• No systems installed")
-        
+
         with col2:
             st.markdown("**🏗️ Modified Container**")
             st.write(f"• {selected_use_case} configuration")
             st.write(f"• {num_windows} windows installed")
             st.write(f"• {num_doors + 1} doors total")
-            
+
             systems = []
             if electrical: systems.append("Electrical")
             if plumbing: systems.append("Plumbing") 
             if hvac: systems.append("HVAC")
             if insulation: systems.append("Insulation")
-            
+
             if systems:
                 st.write(f"• Systems: {', '.join(systems)}")
             else:
                 st.write("• No additional systems")
-    
+
     except Exception as e:
         st.error(f"Error generating comparison: {str(e)}")
 

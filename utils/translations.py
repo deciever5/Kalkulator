@@ -90,65 +90,36 @@ def get_available_languages():
     }
 
 def render_language_selector():
-    """Render language selector with flags only"""
+    """Render language selector with dropdown"""
     init_language()
 
     current_lang = get_current_language()
-
-    # Add CSS to force horizontal layout
-    st.markdown("""
-    <style>
-    .language-buttons {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 10px !important;
-        justify-content: flex-start !important;
-        align-items: center !important;
-        flex-wrap: nowrap !important;
+    
+    # Language options with flags
+    language_options = {
+        'pl': '🇵🇱 Polski',
+        'en': '🇬🇧 English',
+        'de': '🇩🇪 Deutsch',
+        'nl': '🇳🇱 Nederlands'
     }
-    .language-buttons .stButton {
-        flex: none !important;
-        width: auto !important;
-        min-width: 50px !important;
-    }
-    .language-buttons .stButton button {
-        width: 50px !important;
-        height: 40px !important;
-        padding: 5px !important;
-        font-size: 20px !important;
-        border-radius: 8px !important;
-        margin: 0 !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    # Create equal width columns for consistent horizontal layout
-    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
-
-    with col1:
-        st.image("https://flagcdn.com/w40/pl.png", width=30)
-        if st.button("PL", key="lang_pl", help="Polski"):
-            if current_lang != 'pl':
-                set_language('pl')
-                st.rerun()
-
+    
+    # Create columns to position the dropdown
+    col1, col2, col3 = st.columns([4, 2, 1])
+    
     with col2:
-        st.image("https://flagcdn.com/w40/gb.png", width=30)
-        if st.button("EN", key="lang_en", help="English"):
-            if current_lang != 'en':
-                set_language('en')
-                st.rerun()
-
-    with col3:
-        st.image("https://flagcdn.com/w40/de.png", width=30)
-        if st.button("DE", key="lang_de", help="Deutsch"):
-            if current_lang != 'de':
-                set_language('de')
-                st.rerun()
-
-    with col4:
-        st.image("https://flagcdn.com/w40/nl.png", width=30)
-        if st.button("NL", key="lang_nl", help="Nederlands"):
-            if current_lang != 'nl':
-                set_language('nl')
-                st.rerun()
+        # Get current language display text
+        current_display = language_options[current_lang]
+        
+        # Create selectbox with language options
+        selected_language = st.selectbox(
+            "🌐 Language",
+            options=list(language_options.keys()),
+            format_func=lambda x: language_options[x],
+            index=list(language_options.keys()).index(current_lang),
+            key="language_selector"
+        )
+        
+        # Update language if changed
+        if selected_language != current_lang:
+            set_language(selected_language)
+            st.rerun()

@@ -1,3 +1,4 @@
+# Updated language selector to use a centralized function for consistency across the app.
 import streamlit as st
 import json
 from utils.groq_service import GroqService
@@ -6,23 +7,9 @@ from utils.translations import t, init_language, get_current_language, set_langu
 init_language()
 
 def render_language_selector():
-    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
-    with col1:
-        if st.button("🇵🇱 PL", key="lang_pl_ai", help="Polski", use_container_width=True):
-            set_language('pl')
-            st.rerun()
-    with col2:
-        if st.button("🇬🇧 EN", key="lang_en_ai", help="English", use_container_width=True):
-            set_language('en')
-            st.rerun()
-    with col3:
-        if st.button("🇩🇪 DE", key="lang_de_ai", help="Deutsch", use_container_width=True):
-            set_language('de')
-            st.rerun()
-    with col4:
-        if st.button("🇳🇱 NL", key="lang_nl_ai", help="Nederlands", use_container_width=True):
-            set_language('nl')
-            st.rerun()
+    """Use centralized language selector"""
+    from utils.translations import render_language_selector as central_selector
+    central_selector()
 
 # Page configuration
 st.set_page_config(
@@ -106,25 +93,25 @@ else:
             container_type_translated = t('container.types.20ft_refrigerated')
         else:
             container_type_translated = config['container_type']
-        
+
         # Translate main purpose
         purpose_key = config['main_purpose'].lower().replace(' ', '_')
         purpose_translated = t(f'container.use_cases.{purpose_key}')
         if purpose_translated == f'container.use_cases.{purpose_key}':
             purpose_translated = config['main_purpose']
-        
+
         # Translate environment
         env_key = config['environment'].lower()
         env_translated = t(f'container.environment.{env_key}')
         if env_translated == f'container.environment.{env_key}':
             env_translated = config['environment']
-        
+
         # Translate finish level
         finish_key = config['finish_level'].lower()
         finish_translated = t(f'container.finish_levels.{finish_key}')
         if finish_translated == f'container.finish_levels.{finish_key}':
             finish_translated = config['finish_level']
-        
+
         st.write(f"**{t('container_type')}:** {container_type_translated}")
         st.write(f"**{t('purpose')}:** {purpose_translated}")
         st.write(f"**{t('environment')}:** {env_translated}")
@@ -136,13 +123,13 @@ else:
         flooring_translated = t(f'container.flooring.{flooring_key}')
         if flooring_translated == f'container.flooring.{flooring_key}':
             flooring_translated = config['flooring']
-        
+
         # Translate climate zone
         climate_key = config['climate_zone'].lower().replace(' ', '_')
         climate_translated = t(f'container.climate_zones.{climate_key}')
         if climate_translated == f'container.climate_zones.{climate_key}':
             climate_translated = config['climate_zone']
-        
+
         st.write(f"**{t('flooring')}:** {flooring_translated}")
         st.write(f"**{t('climate_zone')}:** {climate_translated}")
         st.write(f"**{t('windows')}:** {config['number_of_windows']}")
@@ -177,21 +164,21 @@ else:
                     # Display estimate
                     st.markdown(f"### 🤖 {t('ai_cost_estimate')}:")
                     st.markdown(estimate)
-                    
+
                     # Legal disclaimer
                     st.warning(f"""
                     ⚠️ **{t('estimate_disclaimer_title')}**
-                    
+
                     {t('estimate_disclaimer_text')}
                     """)
-                    
+
                     # Call to action
                     st.info(f"""
                     📧 **{t('get_precise_quote')}**
-                    
+
                     {t('contact_for_quote')}
                     """)
-                    
+
                     if st.button(f"📧 {t('send_inquiry_cta')}", key="inquiry_cta", use_container_width=True, type="primary"):
                         # Store the current estimate and config for inquiry
                         st.session_state.inquiry_source = "ai_estimator"
@@ -207,3 +194,4 @@ else:
 
             except Exception as e:
                 st.error(f"{t('error_generating_estimate')}: {str(e)}")
+```

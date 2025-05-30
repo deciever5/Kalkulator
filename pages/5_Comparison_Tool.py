@@ -12,7 +12,7 @@ if 'language' not in st.session_state:
     st.session_state.language = 'pl'
 
 # Language selector
-from utils.translations import t, render_language_selector
+from utils.translations import render_language_selector
 render_language_selector()
 
 # Employee access control
