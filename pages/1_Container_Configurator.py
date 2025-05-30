@@ -72,6 +72,14 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# Header
+st.markdown(f"""
+<div class="main-header">
+    <div class="header-title">📦 {t('nav.container_configurator')}</div>
+    <div class="header-subtitle">{t('container_configurator_desc')}</div>
+</div>
+""", unsafe_allow_html=True)
+
 # Navigation
 col1, col2 = st.columns(2)
 with col1:
