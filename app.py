@@ -502,56 +502,48 @@ st.markdown(f"""
 
 # Services are now initialized lazily when needed
 
-# Dashboard metrics section for visual impact
+# Interactive navigation cards with gradient styling
 st.markdown("""
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-            color: white; padding: 2rem; border-radius: 15px; margin: 2rem 0; text-align: center;">
-    <h2 style="margin: 0; font-size: 2.5rem;">📊 Platform Overview</h2>
-    <p style="margin: 0.5rem 0 0 0; opacity: 0.9; font-size: 1.2rem;">Real-time system performance and capabilities</p>
-</div>
-""", unsafe_allow_html=True)
+<style>
+.nav-gradient-card {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: none;
+    width: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-# Performance metrics with animated counters
-from utils.animations import create_animated_counter
-col1, col2, col3, col4 = st.columns(4)
+.nav-gradient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
 
-with col1:
-    create_animated_counter(15000, "Base Container Cost", "€", " avg")
+.nav-gradient-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
 
-with col2:
-    create_animated_counter(847, "Projects Estimated", "", " total")
+.nav-gradient-card p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1rem;
+}
 
-with col3:
-    create_animated_counter(22, "Max Bulk Discount", "", "%")
-
-with col4:
-    create_animated_counter(6, "Languages Supported", "", " total")
-
-# Feature highlights
-st.markdown("""
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 1rem; margin: 2rem 0;">
-    <div style="background: linear-gradient(135deg, #2E86AB 0%, #1e3c72 100%); 
-                color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
-        <h4 style="margin: 0 0 0.5rem 0;">🤖 AI-Powered Analysis</h4>
-        <p style="margin: 0; opacity: 0.9;">Advanced cost estimation using GPT-4, Claude, and Groq</p>
-    </div>
-    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
-        <h4 style="margin: 0 0 0.5rem 0;">📐 3D Visualization</h4>
-        <p style="margin: 0; opacity: 0.9;">Interactive container modifications with real-time preview</p>
-    </div>
-    <div style="background: linear-gradient(135deg, #A23B72 0%, #2E86AB 100%); 
-                color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
-        <h4 style="margin: 0 0 0.5rem 0;">💰 Bulk Pricing</h4>
-        <p style="margin: 0; opacity: 0.9;">Volume discounts up to 22% for multiple containers</p>
-    </div>
-    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
-                color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
-        <h4 style="margin: 0 0 0.5rem 0;">🌐 Global Ready</h4>
-        <p style="margin: 0; opacity: 0.9;">Multi-language support with professional translations</p>
-    </div>
-</div>
+.config-gradient { --gradient-start: #2E86AB; --gradient-end: #1e3c72; }
+.ai-gradient { --gradient-start: #667eea; --gradient-end: #764ba2; }
+.drawing-gradient { --gradient-start: #A23B72; --gradient-end: #2E86AB; }
+.inquiry-gradient { --gradient-start: #f093fb; --gradient-end: #f5576c; }
+</style>
 """, unsafe_allow_html=True)
 
 # Main dashboard content
@@ -619,52 +611,52 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-    # Client action cards
+    # Main navigation grid with gradient cards
     col1, col2 = st.columns(2, gap="large")
-
+    
     with col1:
-        # Create clickable card using Streamlit button
-        if st.button(
-            f"📦\n\n**{t('step_1_configuration')}**\n\n{t('choose_container_type')}",
-            key="client_config_card",
-            use_container_width=True,
-            help=t('step_1_configuration')
-        ):
+        if st.button(f"📦 {t('step_1_configuration')}", key="config_nav", use_container_width=True):
             st.switch_page("pages/1_Container_Configurator.py")
-
+        st.markdown(f"""
+        <div class="nav-gradient-card config-gradient" style="margin-top: -50px; pointer-events: none;">
+            <h3>📦 {t('step_1_configuration')}</h3>
+            <p>{t('choose_container_type')}</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
     with col2:
-        # Create clickable card using Streamlit button
-        if st.button(
-            f"🤖\n\n**{t('step_2_ai_quote')}**\n\n{t('get_instant_quote')}",
-            key="client_ai_card",
-            use_container_width=True,
-            help=t('step_2_ai_quote')
-        ):
+        if st.button(f"🤖 {t('step_2_ai_quote')}", key="ai_nav", use_container_width=True):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
+        st.markdown(f"""
+        <div class="nav-gradient-card ai-gradient" style="margin-top: -50px; pointer-events: none;">
+            <h3>🤖 {t('step_2_ai_quote')}</h3>
+            <p>{t('get_instant_quote')}</p>
+        </div>
+        """, unsafe_allow_html=True)
 
-# Customer services section - moved here after configuration/AI sections
+# Customer services section with gradient cards
 if not st.session_state.employee_logged_in:
-    col1, col2 = st.columns(2)
-
-    with col1:
-        # Create clickable card using Streamlit button
-        if st.button(
-            f"📐\n\n**{t('drawing_analysis_service')}**\n\n{t('upload_drawings_estimate')}",
-            key="customer_drawing_analysis_card",
-            use_container_width=True,
-            help=t('drawing_analysis_service')
-        ):
+    col3, col4 = st.columns(2, gap="large")
+    
+    with col3:
+        if st.button(f"📐 {t('drawing_analysis_service')}", key="drawing_nav", use_container_width=True):
             st.switch_page("pages/9_Customer_Drawing_Analysis.py")
-
-    with col2:
-        # Create clickable card using Streamlit button
-        if st.button(
-            f"📧\n\n**{t('send_inquiry_service')}**\n\n{t('get_detailed_quote_text')}",
-            key="customer_inquiry_card",
-            use_container_width=True,
-            help=t('send_inquiry_service')
-        ):
+        st.markdown(f"""
+        <div class="nav-gradient-card drawing-gradient" style="margin-top: -50px; pointer-events: none;">
+            <h3>📐 {t('drawing_analysis_service')}</h3>
+            <p>{t('upload_drawings_estimate')}</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col4:
+        if st.button(f"📧 {t('send_inquiry_service')}", key="inquiry_nav", use_container_width=True):
             st.switch_page("pages/8_Send_Inquiry.py")
+        st.markdown(f"""
+        <div class="nav-gradient-card inquiry-gradient" style="margin-top: -50px; pointer-events: none;">
+            <h3>📧 {t('send_inquiry_service')}</h3>
+            <p>{t('get_detailed_quote_text')}</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 # Enhanced client benefits section
 if not st.session_state.employee_logged_in:
