@@ -584,6 +584,7 @@ class GeminiService:
         container_type = estimation_data.get('container_type', 'Unknown')
         main_purpose = estimation_data.get('main_purpose', 'Unknown')
         delivery_zone = estimation_data.get('delivery_zone', 'poland')
+        user_prompt = estimation_data.get('user_prompt', '') or estimation_data.get('user_comment', '')
         
         # Collect all modifications and add-ons
         modifications = []
@@ -609,29 +610,59 @@ class GeminiService:
             modifications.append(f"Paint: {estimation_data.get('paint_finish')}")
         
         prompt = f"""
-        You are a professional container modification cost estimator with expertise in European construction markets. Analyze this specific container project based on user requirements.
+        You are a professional container modification cost estimator with expertise in European construction markets. Analyze this specific container project based on ALL user requirements.
 
         **PROJECT SPECIFICATIONS:**
         Container Type: {container_type}
         Primary Use Case: {main_purpose}
         Delivery Zone: {delivery_zone}
         
-        **USER-SPECIFIED MODIFICATIONS:**
+        **STANDARD MODIFICATIONS FROM CONFIGURATOR:**
         {chr(10).join('- ' + mod for mod in modifications) if modifications else '- No modifications specified'}
+        
+        **CRITICAL - ADDITIONAL USER REQUIREMENTS:**
+        {user_prompt if user_prompt else 'No additional requirements specified'}
+        
+        **IMPORTANT:** You MUST account for ALL specifications in the user requirements section above. This includes:
+        - Structural reinforcements for heavy loads
+        - Soundproofing and acoustic treatments  
+        - Fire safety partitions and barriers
+        - Multiple large air intakes and ventilation systems
+        - Additional gates, doors, and access points
+        - Custom holes and openings in cladding
+        - Any other specific technical requirements mentioned
         
         **EUROPEAN MARKET BASE COSTS:**
         {json.dumps(base_costs, indent=2)}
 
+        **CRITICAL PRICING GUIDELINES:**
+        - For 40ft HC containers with workshop use: base cost €5,000-7,000
+        - Structural reinforcement for heavy loads: €8,000-15,000
+        - Soundproofing walls: €3,000-6,000 per container
+        - Fire barrier partitions: €2,000-4,000
+        - Large air intakes (3x including gate-wide): €4,000-8,000
+        - Additional gates (2x) and doors (2x): €6,000-12,000
+        - Custom holes and openings: €1,000-3,000
+        - Premium finish and industrial environment: 20-30% markup
+        - Labor costs for complex modifications: 40-50% of material costs
+        
+        The final total should realistically range €40,000-60,000 for this specification level.
+
         Provide detailed cost analysis in this exact JSON format:
         {{
             "cost_analysis": {{
-                "total_cost": [total in EUR],
-                "confidence_level": [0.0-1.0],
+                "total_cost": [total in EUR - must be realistic €40k-60k range],
+                "confidence_level": [0.7-0.9 for detailed specs],
                 "estimated_timeline": "[duration with phases]",
                 "breakdown": {{
-                    "container_base": [base cost],
-                    "modifications": [all modifications total],
-                    "labor_costs": [30% of total],
+                    "container_base": [base cost €5k-7k],
+                    "structural_reinforcement": [€8k-15k for heavy load support],
+                    "soundproofing": [€3k-6k for acoustic treatment],
+                    "fire_safety": [€2k-4k for fire barriers],
+                    "ventilation_intakes": [€4k-8k for 3 large intakes],
+                    "additional_access": [€6k-12k for gates and doors],
+                    "custom_openings": [€1k-3k for holes],
+                    "labor_costs": [40-50% of material total],
                     "delivery_logistics": [delivery cost],
                     "contingency": [10% buffer]
                 }}
@@ -639,16 +670,16 @@ class GeminiService:
             "user_configuration": {{
                 "container_type": "{container_type}",
                 "main_purpose": "{main_purpose}",
-                "total_modifications": {len(modifications)}
+                "additional_requirements": "{user_prompt[:100] if user_prompt else 'Standard'}"
             }},
             "recommendations": [
-                "Based on your configuration, specific recommendation 1",
-                "Technical suggestion for your use case",
-                "Cost optimization opportunity"
+                "Specific recommendation based on heavy-duty workshop requirements",
+                "Technical optimization for soundproofing and fire safety",
+                "Cost-effective approach for complex ventilation needs"
             ]
         }}
         
-        Focus on accurate European pricing and practical implementation details.
+        Focus on accurate European pricing that reflects the complexity of these industrial modifications.
         """
 
         return prompt
