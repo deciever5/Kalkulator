@@ -208,17 +208,21 @@ if st.session_state.get('prev_language') != get_current_language():
     st.session_state.prev_language = get_current_language()
     st.rerun()
 
+# Check if it's the main page before rendering the login button
+is_main_page = st.source_file_path == "streamlit_app.py"
+
 with col_login:
-    # Employee login button in top-right corner
-    if not st.session_state.employee_logged_in:
-        if st.button("👤", key="login_toggle_btn", help=t('ui.employee_login'), use_container_width=True):
-            st.session_state.show_login = True
-            st.rerun()
-    else:
-        if st.button("🚪", key="emp_logout", help=t('ui.logout'), use_container_width=True):
-            st.session_state.employee_logged_in = False
-            st.session_state.show_login = False
-            st.rerun()
+    # Employee login button in top-right corner, only on main page
+    if is_main_page:
+        if not st.session_state.employee_logged_in:
+            if st.button("👤", key="login_toggle_btn", help=t('ui.employee_login'), use_container_width=True):
+                st.session_state.show_login = True
+                st.rerun()
+        else:
+            if st.button("🚪", key="emp_logout", help=t('ui.logout'), use_container_width=True):
+                st.session_state.employee_logged_in = False
+                st.session_state.show_login = False
+                st.rerun()
 
 # Employee login form
 if st.session_state.show_login and not st.session_state.employee_logged_in:

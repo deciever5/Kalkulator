@@ -17,7 +17,9 @@ def render_shared_header(show_login=False):
             'pl': '🇵🇱 Polski',
             'en': '🇬🇧 English',
             'de': '🇩🇪 Deutsch',
-            'nl': '🇳🇱 Nederlands'
+            'nl': '🇳🇱 Nederlands',
+            'hu': '🇭🇺 Magyar',
+            'cs': '🇨🇿 Čeština'
         }
 
         selected_language = st.selectbox(
