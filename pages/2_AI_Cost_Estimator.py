@@ -154,8 +154,8 @@ else:
 
         st.write(f"**{t('flooring')}:** {flooring_translated}")
         st.write(f"**{t('climate_zone')}:** {climate_translated}")
-        st.write(f"**{t('windows')}:** {config['number_of_windows']}")
-        st.write(f"**{t('additional_doors')}:** {t('yes') if config['additional_doors'] else t('no')}")
+        st.write(f"**{t('windows')}:** {config.get('num_windows', 'N/A')}")
+        st.write(f"**{t('additional_doors')}:** {config.get('additional_openings', 'N/A')}")
 
         # Show all advanced modifications from the enhanced configurator
         st.write(f"**{t('electrical_system')}:** {config.get('electrical_system', 'N/A')}")

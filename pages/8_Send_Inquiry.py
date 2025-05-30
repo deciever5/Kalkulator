@@ -60,7 +60,7 @@ if has_config or has_estimate:
             with col2:
                 st.write(f"**{t('form.labels.finish_level')}:** {config.get('finish_level', 'N/A')}")
                 st.write(f"**{t('form.labels.climate_zone')}:** {config.get('climate_zone', 'N/A')}")
-                st.write(f"**{t('form.labels.number_of_windows')}:** {config.get('number_of_windows', 'N/A')}")
+                st.write(f"**{t('form.labels.number_of_windows')}:** {config.get('num_windows', 'N/A')}")
         
         if has_estimate:
             st.markdown(f"### {t('saved_ai_estimate')}:")
