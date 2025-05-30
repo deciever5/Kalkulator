@@ -314,9 +314,12 @@ if st.session_state.employee_logged_in:
             </div>
             """, unsafe_allow_html=True)
 
-            # Hidden Streamlit button for functionality
-            if st.button(f"hidden_{key}", key=f"{key}_card", disabled=False):
-                st.switch_page(page)
+            # Hidden Streamlit button for functionality  
+            with st.container():
+                st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
+                if st.button(f"hidden_{key}", key=f"{key}_card"):
+                    st.switch_page(page)
+                st.markdown('</div>', unsafe_allow_html=True)
 
     # Secondary tools
     col5, col6, col7 = st.columns([1, 1, 1], gap="large")
@@ -353,9 +356,12 @@ if st.session_state.employee_logged_in:
             </div>
             """, unsafe_allow_html=True)
 
-            # Hidden Streamlit button for functionality
-            if st.button(f"hidden_{key}", key=f"{key}_card", disabled=False):
-                st.switch_page(page)
+            # Hidden Streamlit button for functionality  
+            with st.container():
+                st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
+                if st.button(f"hidden_{key}", key=f"{key}_card"):
+                    st.switch_page(page)
+                st.markdown('</div>', unsafe_allow_html=True)
 
 else:
     # Client view
@@ -398,9 +404,12 @@ else:
         </div>
         """, unsafe_allow_html=True)
 
-        # Hidden Streamlit button for functionality
-        if st.button("hidden_config", key="client_config_card"):
-            st.switch_page("pages/1_Container_Configurator.py")
+        # Hidden Streamlit button for functionality  
+        with st.container():
+            st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
+            if st.button("hidden_config", key="client_config_card"):
+                st.switch_page("pages/1_Container_Configurator.py")
+            st.markdown('</div>', unsafe_allow_html=True)
 
     with col2:
         # Create clickable card using custom HTML button
@@ -427,9 +436,12 @@ else:
         </div>
         """, unsafe_allow_html=True)
 
-        # Hidden Streamlit button for functionality
-        if st.button("hidden_ai", key="client_ai_card"):
-            st.switch_page("pages/2_AI_Cost_Estimator.py")
+        # Hidden Streamlit button for functionality  
+        with st.container():
+            st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
+            if st.button("hidden_ai", key="client_ai_card"):
+                st.switch_page("pages/2_AI_Cost_Estimator.py")
+            st.markdown('</div>', unsafe_allow_html=True)
 
 # Customer services section - moved here after configuration/AI sections
 if not st.session_state.employee_logged_in:
@@ -468,9 +480,12 @@ if not st.session_state.employee_logged_in:
         </div>
         """, unsafe_allow_html=True)
 
-        # Hidden Streamlit button for functionality
-        if st.button("hidden_drawing", key="customer_drawing_analysis_card"):
-            st.switch_page("pages/9_Customer_Drawing_Analysis.py")
+        # Hidden Streamlit button for functionality  
+        with st.container():
+            st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
+            if st.button("hidden_drawing", key="customer_drawing_analysis_card"):
+                st.switch_page("pages/9_Customer_Drawing_Analysis.py")
+            st.markdown('</div>', unsafe_allow_html=True)
 
     with col2:
         # Create clickable card using custom HTML button
@@ -497,9 +512,12 @@ if not st.session_state.employee_logged_in:
         </div>
         """, unsafe_allow_html=True)
 
-        # Hidden Streamlit button for functionality
-        if st.button("hidden_inquiry", key="customer_inquiry_card"):
-            st.switch_page("pages/8_Send_Inquiry.py")
+        # Hidden Streamlit button for functionality  
+        with st.container():
+            st.markdown('<div style="display: none; visibility: hidden; position: absolute; left: -9999px;">', unsafe_allow_html=True)
+            if st.button("hidden_inquiry", key="customer_inquiry_card"):
+                st.switch_page("pages/8_Send_Inquiry.py")
+            st.markdown('</div>', unsafe_allow_html=True)
 
 # Enhanced client benefits section
 if not st.session_state.employee_logged_in:
