@@ -21,12 +21,19 @@ class QuoteGenerator:
             "license": "Contractor License #123456"
         }
         
-        # Base rates and factors
+        # Base rates and factors - Polish market
         self.base_rates = {
-            "labor_rate": 85,  # per hour
-            "overhead_factor": 0.15,  # 15%
-            "profit_factor": 0.20,  # 20%
-            "tax_rate": 0.0875,  # 8.75%
+            "labor_rates": {
+                "basic_worker": 12,      # EUR per hour - basic construction worker
+                "skilled_worker": 15,    # EUR per hour - skilled trades (electrical, plumbing)
+                "specialist": 18,        # EUR per hour - specialist (welding, technical)
+                "average_rate": 15       # EUR per hour - average rate for calculations
+            },
+            "permanent_costs_markup": 0.45,  # 45% on parts + labor
+            "labor_profit_margin": 0.17,     # 17% profit on manual labor
+            "overhead_factor": 0.15,         # 15%
+            "profit_factor": 0.20,          # 20%
+            "tax_rate": 0.23,               # 23% VAT in Poland
         }
         
         # Standard warranty and terms
@@ -239,14 +246,14 @@ class QuoteGenerator:
         base_type = config.get('base_type', '40ft Standard')
         modifications = config.get('modifications', {})
         
-        # Container base costs - Polish market
+        # Container base costs - Polish market (base + transport + 20% margin)
         container_costs = {
-            "20ft Standard": 3000,
-            "40ft Standard": 4200,
-            "40ft High Cube": 4500,
-            "45ft High Cube": 5000,
-            "48ft Standard": 5500,
-            "53ft Standard": 6000
+            "20ft Standard": 3000,    # 2500 + transport + 20% margin
+            "40ft Standard": 4200,    # 3500 + transport + 20% margin  
+            "40ft High Cube": 4500,   # 3750 + transport + 20% margin
+            "45ft High Cube": 5000,   # 4167 + transport + 20% margin
+            "48ft Standard": 5500,    # 4583 + transport + 20% margin
+            "53ft Standard": 6000     # 5000 + transport + 20% margin
         }
         
         costs = {

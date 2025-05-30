@@ -1,3 +1,4 @@
+"""Adjusted labor pricing and added permanent costs markup and labor profit margin to StructuralCalculations class."""
 """
 Structural Calculations Module
 Provides engineering calculations for container modifications and structural analysis
@@ -152,6 +153,20 @@ class StructuralCalculations:
             "storage_live_load": 125,  # psf
         }
 
+        # Base rates and factors - Polish market
+        self.base_rates = {
+            "labor_rates": {
+                "basic_worker": 12,      # EUR per hour - basic construction worker
+                "skilled_worker": 15,    # EUR per hour - skilled trades (electrical, plumbing)
+                "specialist": 18,        # EUR per hour - specialist (welding, technical)
+                "average_rate": 15       # EUR per hour - average rate for calculations
+            },
+            "permanent_costs_markup": 0.45,  # 45% on parts + labor
+            "labor_profit_margin": 0.17,     # 17% profit on manual labor
+            "overhead_factor": 0.15,         # 15%
+            "tax_rate": 0.23,               # 23% VAT in Poland
+        }
+
     def calculate_base_costs(self, config: Dict[str, Any]) -> Dict[str, Any]:
         """Calculate base costs for container modifications"""
 
@@ -220,14 +235,58 @@ class StructuralCalculations:
         if modifications.get('additional_support'):
             modification_costs += 2500
 
-        # Labor costs (approximately 40% of material costs)
-        labor_costs = (base_cost + modification_costs) * 0.4
+        # Total material cost
+        total_material_cost = base_cost + modification_costs
+        
+        # Labor costs calculation using Polish rates
+        # Estimate hours based on project complexity
+        base_hours = 40  # Base hours for container setup
+        mod_hours = 0
+
+        # Add hours for modifications
+        if modifications.get('windows', 0) > 0:
+            mod_hours += modifications['windows'] * 8  # 8 hours per window
+        if modifications.get('doors', 1) > 1:
+            mod_hours += (modifications['doors'] - 1) * 6  # 6 hours per door
+        if modifications.get('electrical'):
+            mod_hours += 24  # 3 days for electrical
+        if modifications.get('plumbing'):
+            mod_hours += 32  # 4 days for plumbing
+        if modifications.get('hvac'):
+            mod_hours += 16  # 2 days for HVAC
+        if modifications.get('insulation'):
+            container_areas = self._get_container_areas(base_type)
+            insulation_area = container_areas['wall_area'] + container_areas['ceiling_area']
+            mod_hours += insulation_area / 25  # 25 sq ft per hour
+
+        total_hours = base_hours + mod_hours
+
+        # Calculate labor cost with mixed rates
+        basic_hours = total_hours * 0.4      # 40% basic work
+        skilled_hours = total_hours * 0.4    # 40% skilled work  
+        specialist_hours = total_hours * 0.2 # 20% specialist work
+
+        labor_cost = (basic_hours * self.base_rates["labor_rates"]["basic_worker"] + 
+                     skilled_hours * self.base_rates["labor_rates"]["skilled_worker"] + 
+                     specialist_hours * self.base_rates["labor_rates"]["specialist"])
+
+        # Add 17% profit margin on labor
+        labor_cost_with_profit = labor_cost * (1 + self.base_rates["labor_profit_margin"])
+
+        # Calculate subtotal before permanent costs
+        subtotal_before_permanent = base_cost + modification_costs + labor_cost_with_profit
+
+        # Apply 45% permanent costs markup on parts + labor
+        permanent_costs = subtotal_before_permanent * self.base_rates["permanent_costs_markup"]
+
+        # Calculate subtotal
+        subtotal = subtotal_before_permanent + permanent_costs
 
         return {
             "base_container": base_cost,
             "modifications": modification_costs,
-            "labor": labor_costs,
-            "subtotal": base_cost + modification_costs + labor_costs,
+            "labor": labor_cost_with_profit,
+            "subtotal": subtotal,
             "materials_breakdown": {
                 "container_base": base_cost,
                 "structural_steel": modification_costs * 0.3,
@@ -682,190 +741,3 @@ class StructuralCalculations:
             "y_coords": y_coords,
             "stress_values": stress_values
         }
-
-    def _get_required_drawings(self, config: Dict[str, Any], 
-                             structural_results: Dict[str, Any]) -> List[str]:
-        """Determine required engineering drawings"""
-
-        drawings = ["Site Plan", "Foundation Plan", "Floor Plan"]
-
-        modifications = config.get('modifications', {})
-
-        if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
-            drawings.append("Structural Reinforcement Details")
-
-        if modifications.get('electrical'):
-            drawings.append("Electrical Plan")
-
-        if modifications.get('plumbing'):
-            drawings.append("Plumbing Plan")
-
-        if modifications.get('hvac'):
-            drawings.append("HVAC Plan")
-
-        if structural_results.get("stress_ratio", 0) > 0.8:
-            drawings.append("Structural Analysis Report")
-
-        drawings.extend(["Sections and Details", "Construction Specifications"])
-
-        return drawings
-
-    def _get_professional_requirements(self, config: Dict[str, Any], 
-                                     structural_results: Dict[str, Any]) -> List[str]:
-        """Determine professional requirements"""
-
-        requirements = []
-
-        use_case = config.get('use_case', 'Office Space')
-
-        # Structural engineer required for certain conditions
-        if structural_results.get("stress_ratio", 0) > 0.7:
-            requirements.append("Licensed Structural Engineer - Structural Analysis")
-
-        if config.get('modifications', {}).get('reinforcement_walls') or config.get('modifications', {}).get('reinforcement_roof'):
-            requirements.append("Licensed Structural Engineer - Reinforcement Design")
-
-        # Other professionals
-        if config.get('modifications', {}).get('electrical'):
-            requirements.append("Licensed Electrician - Electrical Installation")
-
-        if config.get('modifications', {}).get('plumbing'):
-            requirements.append("Licensed Plumber - Plumbing Installation")
-
-        if config.get('modifications', {}).get('hvac'):
-            requirements.append("HVAC Contractor - System Installation")
-
-        # Permits and inspections
-        if use_case in ["Office Space", "Retail/Commercial", "Residential Living"]:
-            requirements.append("Building Permit Required")
-            requirements.append("Municipal Inspections Required")
-
-        if structural_results.get("foundation_type") != "Concrete Pads":
-            requirements.append("Foundation Engineering Review")
-
-        return requirements
-
-    def calculate_project_timeline(self, config: Dict[str, Any], 
-                                 structural_results: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
-        """Calculate project timeline based on scope - minimum 6-8 weeks"""
-
-        modifications = config.get('modifications', {})
-        base_type = config.get('base_type', '40ft Standard')
-        delivery_zone = config.get('delivery_zone', 'Local')
-
-        timeline = {}
-
-        # Phase 1: Design and Documentation (1-2 weeks minimum)
-        design_weeks = 2  # Minimum 2 weeks for documentation
-        if structural_results.get("stress_ratio", 0) > 0.7:
-            design_weeks = 3  # Complex projects need more time
-        if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
-            design_weeks = 3  # Structural modifications need detailed engineering
-
-        timeline["Design_and_Documentation"] = {
-            "duration": f"{design_weeks} weeks",
-            "description": "Technical documentation, engineering calculations, permit applications"
-        }
-
-        # Phase 2: Material Procurement and Delivery (3-4 weeks minimum)
-        procurement_weeks = 3  # Minimum 3 weeks for materials
-
-        # Adjust based on delivery zone
-        delivery_time_adjustments = {
-            'Local': 0,
-            'Poland': 0.5,
-            'Central_Europe': 1,
-            'Western_Europe': 1.5,
-            'Northern_Europe': 2,
-            'Southern_Europe': 2,
-            'Eastern_Europe': 1.5,
-            'UK_Ireland': 2.5,
-            'International': 4
-        }
-
-        procurement_weeks += delivery_time_adjustments.get(delivery_zone, 0)
-
-        # Additional time for complex modifications
-        if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
-            procurement_weeks += 1
-        if modifications.get('hvac') or modifications.get('electrical'):
-            procurement_weeks += 0.5
-
-        timeline["Material_Procurement"] = {
-            "duration": f"{procurement_weeks:.1f} weeks",
-            "description": f"Container procurement, material sourcing, delivery from {delivery_zone}"
-        }
-
-        # Phase 3: Site Preparation  
-        site_prep_weeks = 1
-        foundation_type = structural_results.get("foundation_type", "Concrete Pads")
-        if foundation_type != "Concrete Pads":
-            site_prep_weeks += 1
-
-        timeline["Site_Preparation"] = {
-            "duration": f"{site_prep_weeks} weeks", 
-            "description": f"Site preparation, {foundation_type.lower()} installation"
-        }
-
-        # Phase 4: Container Modifications
-        mod_weeks = 2
-        if modifications.get('windows', 0) > 2:
-            mod_weeks += 1
-        if modifications.get('reinforcement_walls') or modifications.get('reinforcement_roof'):
-            mod_weeks += 2
-
-        timeline["Container_Modifications"] = {
-            "duration": f"{mod_weeks} weeks",
-            "description": "Structural modifications, openings, reinforcements"
-        }
-
-        # Phase 5: Systems Installation
-        systems_weeks = 2
-        if modifications.get('electrical'):
-            systems_weeks += 1
-        if modifications.get('plumbing'):
-            systems_weeks += 1
-        if modifications.get('hvac'):
-            systems_weeks += 1
-
-        timeline["Systems_Installation"] = {
-            "duration": f"{systems_weeks} weeks", 
-            "description": "Electrical, plumbing, HVAC installation"
-        }
-
-        # Phase 6: Interior Finishes
-        finish_weeks = 1
-        if modifications.get('insulation'):
-            finish_weeks += 1
-
-        finish_level = modifications.get('finish_level', 'Basic')
-        if finish_level in ['Premium', 'Luxury']:
-            finish_weeks += 2
-
-        timeline["Interior_Finishes"] = {
-            "duration": f"{finish_weeks} weeks",
-            "description": "Insulation, flooring, interior finishes"
-        }
-
-        # Phase 7: Final Inspections and Commissioning
-        timeline["Final_Inspections"] = {
-            "duration": "1 week",
-            "description": "Final inspections, testing, commissioning, handover"
-        }
-
-        # Calculate total timeline and ensure minimum 6-8 weeks
-        total_weeks = design_weeks + procurement_weeks + site_prep_weeks + mod_weeks + systems_weeks + finish_weeks + 1
-
-        if total_weeks < 6:
-            # Adjust procurement time to meet minimum
-            adjustment = 6 - total_weeks
-            timeline["Material_Procurement"]["duration"] = f"{procurement_weeks + adjustment:.1f} weeks"
-            timeline["Material_Procurement"]["description"] += f" (adjusted for minimum project timeline)"
-            total_weeks = 6
-
-        timeline["Total_Project_Duration"] = {
-            "duration": f"{total_weeks:.1f} weeks",
-            "description": f"Complete project delivery (minimum 6-8 weeks for quality assurance)"
-        }
-
-        return timeline

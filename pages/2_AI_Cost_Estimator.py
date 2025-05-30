@@ -224,7 +224,7 @@ else:
 
     st.markdown("---")
 
-    # Check if user is employee to show AI model selection
+    # Check if user is employee to show AI model selection and pricing rates
     if st.session_state.get('employee_logged_in', False):
         # AI model selection for employees only
         st.markdown(f"### {t('ai_model_selection')}:")
@@ -238,6 +238,38 @@ else:
             ],
             key="ai_model_select"
         )
+        
+        # Show pricing rates for employees
+        with st.expander("💰 View Current Pricing Rates"):
+            from utils.calculations import StructuralCalculations
+            calc = StructuralCalculations()
+            rates = calc.get_all_pricing_rates()
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("**Labor Rates:**")
+                for role, rate in rates["labor_rates"].items():
+                    st.write(f"• {role.replace('_', ' ').title()}: {rate}")
+                    
+                st.markdown("**Markup Rates:**")
+                for rate_type, rate in rates["markup_rates"].items():
+                    st.write(f"• {rate_type.replace('_', ' ').title()}: {rate}")
+            
+            with col2:
+                st.markdown("**Container Base Costs:**")
+                for container, cost in rates["container_base_costs"].items():
+                    st.write(f"• {container.replace('_', ' ').title()}: {cost}")
+                    
+                st.markdown("**Modification Costs:**")
+                for mod, cost in rates["modification_costs"].items():
+                    st.write(f"• {mod.replace('_', ' ').title()}: {cost}")
+            
+            st.markdown("**Tax Rate:** " + rates["tax_rate"])
+            
+            st.markdown("**Calculation Method:**")
+            for step, description in rates["calculation_method"].items():
+                st.write(f"{step.replace('_', ' ').title()}: {description}")
     else:
         # For customers, use default AI model without showing selection
         ai_model = t('auto_select_best')
