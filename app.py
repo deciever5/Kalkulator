@@ -275,8 +275,28 @@ h3, .stMarkdown h3 {
     padding-top: 0rem !important;
     margin-top: 0rem !important;
     max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     padding-left: var(--space-3) !important;
     padding-right: var(--space-3) !important;
+}
+
+/* Ensure main content respects max width */
+.stApp > .main {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Limit button widths on wide screens */
+.stButton > button {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+/* Center navigation cards */
+.main .block-container > div {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
 }
 
 .top-nav {
@@ -293,8 +313,8 @@ h3, .stMarkdown h3 {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     padding: 2rem;
     border-radius: 15px;
-    margin-top: 0rem;
-    margin-bottom: 1rem;
+    margin: 0rem auto 1rem auto;
+    max-width: 1200px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     position: relative;
 }
