@@ -700,6 +700,44 @@ class GroqService:
                 }}
             }},
             "technical_assessment": {{
-                "structural_engineering": ["[requirement in {language}]", "[requirement in {language}]"],
+                "                "structural_engineering": ["[requirement in {language}]", "[requirement in {language}]"],
                 "building_compliance": ["[code requirement in {language}]", "[code requirement in {language}]"],
-                "technical_challenges": ["[challenge in {language}]
+                "technical_challenges": ["[challenge in {language}]"]
+            }},
+            "project_execution": {{
+                "critical_path_analysis": ["[critical dependency in {language}]", "[critical dependency in {language}]"],
+                "resource_allocation": {{
+                    "specialized_equipment": "[equipment in {language}]",
+                    "skilled_labor_force": "[labor in {language}]",
+                    "material_sourcing": "[materials in {language}]"
+                }},
+                "project_timeline": "[project timeline in {language}]"
+            }},
+            "risk_management": {{
+                "identified_risks": ["[risk factor in {language}]", "[risk factor in {language}]"],
+                "financial_impact": ["[financial impact in {language}]", "[financial impact in {language}]"],
+                "mitigation_strategies": ["[strategy in {language}]", "[strategy in {language}]"]
+            }},
+            "sustainability_analysis": {{
+                "environmental_impact": "[environmental impact in {language}]",
+                "energy_efficiency_metrics": "[metrics in {language}]",
+                "waste_reduction_methods": "[methods in {language}]",
+                "sustainable_materials": "[materials in {language}]"
+            }},
+            "strategic_recommendations": {{
+                "cost_optimization": ["[strategy in {language}]", "[strategy in {language}]"],
+                "value_engineering": ["[suggestion in {language}]", "[suggestion in {language}]"],
+                "design_alternatives": ["[alternative in {language}]", "[alternative in {language}]"]
+            }}
+        }}
+
+        Focus on actionable insights and detailed data. Consider European market trends.
+        """
+
+        return prompt
+
+    def _process_cost_estimate_response(self, response: Dict[str, Any]) -> Dict[str, Any]:
+        """Process and validate cost estimate response"""
+
+        # Always return the full response structure for comprehensive display
+        return response
