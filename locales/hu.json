@@ -279,5 +279,25 @@
     "error": "Hiba az érdeklődés küldésekor",
     "why_professional_inquiry": "Miért Küldjön Szakmai Érdeklődést?",
     "preparation_tips": "Tippek a Legjobb Eredményekhez"
-  }
+  },
+  "environment": "Környezet",
+  "finish_level": "Befejezési Szint",
+  "flooring": "Padló",
+  "climate_zone": "Klíma Zóna",
+  "windows": "Ablakok",
+  "additional_doors": "További Ajtók",
+  "auto_select_best": "Automatikus Legjobb Kiválasztás",
+  "generate_ai_estimate": "AI Költségbecslés Generálása",
+  "ai_cost_estimate": "AI Költségbecslés",
+  "save_estimate": "Becslés Mentése",
+  "estimate_saved": "Becslés sikeresen mentve!",
+  "send_inquiry_cta": "Érdeklődés Küldése",
+  "get_precise_quote": "Pontos Árajánlat Kérése",
+  "contact_for_quote": "Vegye fel velünk a kapcsolatot részletes, személyre szabott árajánlatért.",
+  "failed_generate_estimate": "A becslés generálása sikertelen volt",
+  "error_generating_estimate": "Hiba a becslés generálása során",
+  "estimate_disclaimer_title": "Fontos - Jogi Nyilatkozat",
+  "estimate_disclaimer_text": "A fenti becslés tájékoztató jellegű, és nem minősül a Polgári Törvénykönyv értelmében vett ajánlatnak. A végső ár változhat a projekt részletes követelményei, az aktuális anyag- és munkaerőköltségek függvényében.",
+  "ai_model_selection": "AI Modell Kiválasztása",
+  "choose_ai_model": "AI Modell Választása"
 }

@@ -1,3 +1,4 @@
+"""Update fallback estimate to use proper translations and language-specific content for Hungarian and Czech."""
 """
 AI Services Module
 Integrates with OpenAI and Anthropic APIs for intelligent cost estimation and technical analysis
@@ -85,7 +86,7 @@ class OpenAIService:
     def _build_cost_estimation_prompt(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> str:
         """Build optimized prompt for cost estimation"""
         config = estimation_data.get("container_config", {})
-        
+
         # Build compact configuration summary
         config_summary = [
             f"Type: {config.get('base_type', 'Unknown')}",
@@ -93,7 +94,7 @@ class OpenAIService:
             f"Occupancy: {config.get('occupancy', 1)}",
             f"Environment: {config.get('environment', 'Unknown')}"
         ]
-        
+
         modifications = config.get('modifications', {})
         if modifications:
             mod_list = [f"{k}: {v}" for k, v in modifications.items() if v]
@@ -756,83 +757,32 @@ def format_cost_estimate(result: Dict[str, Any], ai_model: str) -> str:
     return estimate_text
 
 def generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, Any], language: str = 'en') -> str:
-    """Generate fallback estimate when AI services are unavailable"""
+    """Generate fallback cost estimate when AI services are unavailable"""
 
     # Import translations here to avoid circular imports
     try:
         from utils.translations import t
     except ImportError:
-        # Fallback to English if translations not available
-        language = 'en'
+        # Fallback if translations not available
         def t(key, lang=None):
             return key
 
-    container_type = config.get('container_type')
-    base_prices = {
-        '20ft Standard': 8000,
-        '40ft Standard': 12000
-    }
+    # Calculate total cost
+    total_cost = sum(base_costs.values())
 
-    # Use same calculation logic as configurator
-    from utils.calculations import calculate_container_cost
-    
-    # Create config in same format as configurator
-    config_for_calc = {
-        'container_type': container_type,
-        'main_purpose': config.get('main_purpose', 'Office Space'),
-        'environment': config.get('environment', 'Indoor'),
-        'finish_level': config.get('finish_level', 'Basic'),
-        'number_of_windows': config.get('number_of_windows', 0),
-        'additional_doors': config.get('additional_doors', False),
-        'electrical_system': config.get('electrical_system', True),
-        'plumbing_system': config.get('plumbing_system', False),
-        'hvac_system': config.get('hvac_system', False)
-    }
-    
-    # Get cost breakdown using same logic as configurator
-    cost_breakdown = calculate_container_cost(config_for_calc)
-    
-    base_cost = cost_breakdown['base_cost']
-    modifications_cost = cost_breakdown['modifications_cost'] 
-    total_cost = cost_breakdown['total_cost']
-    
-    # Calculate component costs for breakdown
-    labor_cost = total_cost * 0.3  # 30% labor
-    contingency = total_cost * 0.1  # 10% contingency
+    # Language-specific fallback content
+    if language == 'hu':
+        return f"""
+## 🤖 Tartalék Költségbecslés
 
-    cost_breakdown = f"""
-📊 {t('cost_breakdown', language)}:
-{t('base_cost', language)}: €{base_cost:,.2f}
-{t('modifications', language)}: €{modifications_cost:,.2f}
-{t('labor_costs_30', language)}: €{labor_cost:,.2f}
-{t('contingency_10', language)}: €{contingency:,.2f}
-"""
-
-    return f"""
-## 🤖 {t('fallback_cost_estimate', language)}
-
-### 💰 **{t('total_project_cost', language)}: €{total_cost:,.2f}**
-*{t('basic_calculation_ai_unavailable', language)}*
+### 💰 **Teljes Projektköltség: €{total_cost:,.2f}**
+*Alapszámítás amikor az AI szolgáltatások nem elérhetők*
 
 ---
 
-{cost_breakdown}
-
----
-
-### 💡 **{t('standard_recommendations', language)}:**
-1. {t('plan_standard_delivery', language)}
-2. {t('consider_building_codes', language)}
-3. {t('budget_site_preparation', language)}
-4. {t('review_electrical_plumbing', language)}
-
----
-
-### ⚠️ **{t('standard_risk_factors', language)}:**
-1. {t('weather_delays', language)}
-2. {t('permit_timeline_variations', language)}
-3. {t('site_access_limitations', language)}
-4. {t('material_price_fluctuations', language)}
-
-*{t('basic_estimate_note', language)}*
-"""
+### 📊 **Költséglebontás:**
+- **Anyagok és Alapköltségek:** €{base_costs.get('container_base', 0) + base_costs.get('structural_modifications', 0) + base_costs.get('finishes', 0):,.2f}
+- **Munkaerő Költségek (40%):** €{total_cost * 0.4:,.2f}
+- **Engedélyek és Díjak:** €{total_cost * 0.1:,.2f}
+- **Szállítás és Logisztika:** €{base_costs.get('windows', 0) * 50:,.2f}
+- **Tartalék (10%):** €{

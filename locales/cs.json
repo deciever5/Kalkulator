@@ -279,5 +279,25 @@
     "error": "Chyba při odesílání poptávky",
     "why_professional_inquiry": "Proč Podat Profesionální Poptávku?",
     "preparation_tips": "Tipy pro Nejlepší Výsledky"
-  }
+  },
+  "environment": "Prostředí",
+  "finish_level": "Úroveň Dokončení",
+  "flooring": "Podlaha",
+  "climate_zone": "Klimatická Zóna",
+  "windows": "Okna",
+  "additional_doors": "Další Dveře",
+  "auto_select_best": "Automatický Výběr Nejlepšího",
+  "generate_ai_estimate": "Generovat AI Odhad",
+  "ai_cost_estimate": "AI Odhad Nákladů",
+  "save_estimate": "Uložit Odhad",
+  "estimate_saved": "Odhad úspěšně uložen!",
+  "send_inquiry_cta": "Odeslat Poptávku",
+  "get_precise_quote": "Získat Přesnou Nabídku",
+  "contact_for_quote": "Kontaktujte nás pro podrobnou nabídku přizpůsobenou vašim potřebám.",
+  "failed_generate_estimate": "Generování odhadu se nezdařilo",
+  "error_generating_estimate": "Chyba při generování odhadu",
+  "estimate_disclaimer_title": "Důležité - Právní Upozornění",
+  "estimate_disclaimer_text": "Výše uvedený odhad je orientační a nepředstavuje nabídku ve smyslu Občanského zákoníku. Konečná cena se může změnit v závislosti na podrobných požadavcích projektu, aktuálních nákladech na materiál a práci.",
+  "ai_model_selection": "Výběr AI Modelu",
+  "choose_ai_model": "Vybrat AI Model"
 }
