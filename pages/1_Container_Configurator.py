@@ -11,8 +11,16 @@ from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
 from utils.translations import t, init_language, get_current_language, set_language
 from utils.shared_header import render_shared_header
+from utils.card_components import (
+    load_card_css, render_configuration_card, render_cost_breakdown_card, 
+    render_feature_card, render_quote_summary_card, create_specs_grid, 
+    create_upgrade_list, get_cost_icon
+)
 
 init_language()
+
+# Load professional card styling
+load_card_css()
 
 # Initialize session state for login
 if 'employee_logged_in' not in st.session_state:

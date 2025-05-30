@@ -1,0 +1,259 @@
+/* Professional Card Layout Styling for KAN-BUD Container Solutions */
+
+/* Configuration Cards */
+.config-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    margin: 16px 0;
+    border-left: 4px solid;
+    transition: all 0.3s ease;
+}
+
+.config-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.config-card.container-20ft {
+    border-left-color: #2E86AB;
+}
+
+.config-card.container-40ft {
+    border-left-color: #A23B72;
+}
+
+.config-card.container-40ft-hc {
+    border-left-color: #F18F01;
+}
+
+.config-card.container-45ft {
+    border-left-color: #C73E1D;
+}
+
+/* Cost Breakdown Cards */
+.cost-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    margin: 12px 0;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.cost-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.cost-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.cost-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    font-size: 20px;
+}
+
+.cost-card-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.cost-progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.cost-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
+    transition: width 0.8s ease;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    margin: 16px 0;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.feature-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    border-color: #667eea;
+}
+
+.feature-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.feature-card-subtitle {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.feature-card-expanded {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.feature-card:hover .feature-card-expanded {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.before-after-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.preview-item {
+    text-align: center;
+    padding: 12px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 2px dashed #cbd5e0;
+}
+
+/* Quote Summary Card */
+.quote-summary-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+    padding: 32px;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+}
+
+.quote-summary-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.quote-summary-subtitle {
+    opacity: 0.9;
+    margin-bottom: 24px;
+}
+
+.quote-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.quote-metric {
+    text-align: center;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.quote-metric-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.quote-metric-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Icon Styling */
+.icon-container {
+    background: #667eea;
+    color: white;
+}
+
+.icon-structural {
+    background: #e53e3e;
+    color: white;
+}
+
+.icon-electrical {
+    background: #f6ad55;
+    color: white;
+}
+
+.icon-plumbing {
+    background: #38b2ac;
+    color: white;
+}
+
+.icon-interior {
+    background: #9f7aea;
+    color: white;
+}
+
+.icon-delivery {
+    background: #48bb78;
+    color: white;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
