@@ -1,8 +1,6 @@
 """
-Clean i18n Translation System for KAN-BUD Container Calculator
-Uses JSON files in locales/ directory for translations
+The code is modified to use CDN flag images for language buttons.
 """
-
 import streamlit as st
 import json
 import os
@@ -19,10 +17,10 @@ def load_translations():
     for filename in os.listdir(locales_dir):
         if not filename.endswith('.json'):
             continue
-            
+
         lang_code = filename[:-5]  # Remove .json extension
         file_path = os.path.join(locales_dir, filename)
-        
+
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read().strip()
@@ -63,7 +61,7 @@ def t(key, language=None):
 
     # Get translation data for language
     translation_data = TRANSLATIONS.get(language, TRANSLATIONS.get('pl', {}))
-    
+
     if not translation_data:
         return key
 
@@ -126,27 +124,31 @@ def render_language_selector():
 
     # Create equal width columns for consistent horizontal layout
     col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
-    
+
     with col1:
-        if st.button("🇵🇱", key="lang_pl", help="Polski"):
+        st.image("https://flagcdn.com/w40/pl.png", width=30)
+        if st.button("PL", key="lang_pl", help="Polski"):
             if current_lang != 'pl':
                 set_language('pl')
                 st.rerun()
-    
+
     with col2:
-        if st.button("🇬🇧", key="lang_en", help="English"):
+        st.image("https://flagcdn.com/w40/gb.png", width=30)
+        if st.button("EN", key="lang_en", help="English"):
             if current_lang != 'en':
                 set_language('en')
                 st.rerun()
-    
+
     with col3:
-        if st.button("🇩🇪", key="lang_de", help="Deutsch"):
+        st.image("https://flagcdn.com/w40/de.png", width=30)
+        if st.button("DE", key="lang_de", help="Deutsch"):
             if current_lang != 'de':
                 set_language('de')
                 st.rerun()
-    
+
     with col4:
-        if st.button("🇳🇱", key="lang_nl", help="Nederlands"):
+        st.image("https://flagcdn.com/w40/nl.png", width=30)
+        if st.button("NL", key="lang_nl", help="Nederlands"):
             if current_lang != 'nl':
                 set_language('nl')
                 st.rerun()
