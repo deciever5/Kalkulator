@@ -1,3 +1,4 @@
+
 """
 The code is modified to use CDN flag images for language buttons.
 """
@@ -5,9 +6,8 @@ import streamlit as st
 import json
 import os
 
-@st.cache_data
 def load_translations():
-    """Load all translation files with caching"""
+    """Load all translation files without caching"""
     translations = {}
     locales_dir = "locales"
 
@@ -26,20 +26,17 @@ def load_translations():
                 content = f.read().strip()
                 if content:
                     translations[lang_code] = json.loads(content)
+                    print(f"Loaded {lang_code} translations with {len(translations[lang_code])} top-level keys")
         except (json.JSONDecodeError, FileNotFoundError, UnicodeDecodeError) as e:
             print(f"Error loading {filename}: {e}")
             continue
 
+    print(f"Total languages loaded: {list(translations.keys())}")
     return translations
 
-# Load translations with caching
 def get_translations():
-    """Get translations with lazy loading"""
+    """Get translations - always load fresh"""
     return load_translations()
-
-TRANSLATIONS = get_translations()
-
-# Translations loaded successfully
 
 def init_language():
     """Initialize language system"""
@@ -51,48 +48,34 @@ def get_current_language():
     return st.session_state.get('language', 'pl')
 
 def set_language(lang_code):
-    """Set current language and clear cache"""
+    """Set current language"""
     print(f"Setting language to: {lang_code}")
     st.session_state.language = lang_code
     
-    # Clear the translation cache completely
-    if hasattr(load_translations, 'clear'):
-        load_translations.clear()
-    
-    # Force complete reload of translations
-    global TRANSLATIONS
-    TRANSLATIONS = load_translations()
-    
-    print(f"Available languages after reload: {list(TRANSLATIONS.keys())}")
-    
-    # Verify the language data is loaded
-    if lang_code in TRANSLATIONS:
-        print(f"Successfully loaded {lang_code} translations with {len(TRANSLATIONS[lang_code])} top-level keys")
-        # Check for a common key to verify the translation is working
-        test_key = "ui.language_selector"
-        test_result = t(test_key, lang_code)
-        print(f"Test translation for '{test_key}': {test_result}")
-    else:
-        print(f"ERROR: {lang_code} translations not found!")
-        print(f"Translation files should be in locales/{lang_code}.json")
+    # Verify the language change was successful
+    current = get_current_language()
+    print(f"Language successfully set to: {current}")
 
 def t(key, language=None):
     """Translate text key using nested key access (e.g., 'ui.back_to_home')"""
     if language is None:
         language = get_current_language()
 
-    # Refresh translations to ensure we have the latest
+    # Always get fresh translations
     translations = get_translations()
     
-    # Get translation data for requested language - must exist
+    print(f"Translating '{key}' for language '{language}'")
+    print(f"Available languages: {list(translations.keys())}")
+    
+    # Get translation data for requested language
     translation_data = translations.get(language)
     
     if not translation_data:
         print(f"ERROR: Language '{language}' not found in translations!")
-        print(f"Available languages: {list(translations.keys())}")
-        # Only fallback if the language file doesn't exist at all
+        # Use English as fallback, then Polish
         translation_data = translations.get('en', translations.get('pl', {}))
         if not translation_data:
+            print(f"ERROR: No fallback translations found!")
             return key
 
     # Handle nested keys like 'ui.back_to_home'
@@ -100,12 +83,14 @@ def t(key, language=None):
     result = translation_data
 
     # Navigate through the nested structure
-    for k in keys:
+    for i, k in enumerate(keys):
         if isinstance(result, dict) and k in result:
             result = result[k]
         else:
-            # Only use fallback if key is completely missing from the language file
-            # This should rarely happen since translation files should be complete
+            print(f"Key '{k}' not found at level {i} in {language} translations")
+            print(f"Available keys at this level: {list(result.keys()) if isinstance(result, dict) else 'Not a dict'}")
+            
+            # Try fallback languages
             for fallback_lang in ['en', 'pl']:
                 if fallback_lang != language and fallback_lang in translations:
                     fallback_data = translations[fallback_lang]
@@ -121,7 +106,7 @@ def t(key, language=None):
                             break
                     
                     if fallback_found and isinstance(fallback_result, str):
-                        print(f"WARNING: Key '{key}' missing from {language}, using {fallback_lang}")
+                        print(f"Using fallback {fallback_lang} for '{key}': {fallback_result}")
                         return fallback_result
             
             # If no fallback found, return the key itself
@@ -129,7 +114,9 @@ def t(key, language=None):
             return key
 
     # Return the result if it's a string
-    return result if isinstance(result, str) else key
+    final_result = result if isinstance(result, str) else key
+    print(f"Translation result for '{key}': {final_result}")
+    return final_result
 
 def get_available_languages():
     """Get available languages"""
