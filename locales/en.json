@@ -403,7 +403,16 @@
     "additional_message_placeholder": "Any additional information that will help us create a better quote...",
     "attachments": "Attachments",
     "upload_files": "Upload Files",
+    "file_formats_help": "Supported formats: PDF, DWG, JPG, PNG, DOC, DOCX",
+    "files_attached": "Files attached",
     "recommended_files": "Recommended Documents",
+    "contact_preferences": "Contact Preferences",
+    "preferred_contact": "Preferred Contact Method",
+    "contact": {
+      "email": "Email",
+      "phone": "Phone",
+      "both": "Email and Phone"
+    },
     "best_time": "Best Time to Contact",
     "time": {
       "morning": "Morning (8:00-12:00)",
@@ -421,7 +430,10 @@
     "success_title": "Inquiry Successfully Sent!",
     "success_message": "Thank you for your inquiry. Our team will contact you within 24 hours with a detailed response.",
     "next_steps": "What Happens Next",
-    "contact_info": "Emergency Contact",
+    "step_1": "Our expert will analyze your requirements",
+    "step_2": "We will contact you to get additional information",
+    "step_3": "You will receive a detailed quote tailored to your needs",
+    "contact_info": "Contact Information",
     "new_inquiry": "Send New Inquiry",
     "error": "Error sending inquiry",
     "why_professional_inquiry": "Why Submit a Professional Inquiry?",

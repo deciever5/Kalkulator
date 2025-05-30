@@ -521,7 +521,14 @@
     "fill_required_fields": "Bitte füllen Sie alle mit * markierten Pflichtfelder aus",
     "submit_inquiry": "Anfrage senden",
     "success_title": "Anfrage erfolgreich gesendet!",
-    "success_message": "Vielen Dank für Ihre Anfrage. Unser Team wird Sie innerhalb von 24 Stunden kontaktieren."
+    "success_message": "Vielen Dank für Ihre Anfrage. Unser Team wird Sie innerhalb von 24 Stunden kontaktieren.",
+    "file_formats_help": "Unterstützte Formate: PDF, DWG, JPG, PNG, DOC, DOCX",
+    "files_attached": "Dateien angehängt",
+    "contact_preferences": "Kontaktpräferenzen",
+    "preferred_contact": "Bevorzugte Kontaktmethode",
+    "step_1": "Unser Experte wird Ihre Anforderungen analysieren",
+    "step_2": "Wir werden Sie kontaktieren, um zusätzliche Informationen zu erhalten",
+    "step_3": "Sie erhalten ein detailliertes Angebot, das auf Ihre Bedürfnisse zugeschnitten ist"
   },
   "back_to_home": "← Zurück zur Startseite",
   "go_to_configurator": "🔧 Zum Konfigurator",
