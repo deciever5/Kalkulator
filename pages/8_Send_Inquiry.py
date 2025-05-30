@@ -1,3 +1,4 @@
+
 """
 Customer Inquiry Form - Available for all users
 Allows customers to send inquiries after getting estimates
@@ -6,35 +7,17 @@ Allows customers to send inquiries after getting estimates
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-from utils.translations import t
+from utils.translations import t, render_language_selector
 from utils.global_language import get_current_language, set_language
 from utils.simple_storage import SimpleStorageManager
 
-def t(key):
-    return get_translation(key, get_current_language())
-
-def render_language_selector():
-    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
-    with col1:
-        if st.button("🇵🇱 PL", key="lang_pl_inquiry", help="Polski", use_container_width=True):
-            set_language('pl')
-            st.rerun()
-    with col2:
-        if st.button("🇬🇧 EN", key="lang_en_inquiry", help="English", use_container_width=True):
-            set_language('en')
-            st.rerun()
-    with col3:
-        if st.button("🇩🇪 DE", key="lang_de_inquiry", help="Deutsch", use_container_width=True):
-            set_language('de')
-            st.rerun()
-    with col4:
-        if st.button("🇳🇱 NL", key="lang_nl_inquiry", help="Nederlands", use_container_width=True):
-            set_language('nl')
-            st.rerun()
-
 st.set_page_config(page_title="Send Inquiry", page_icon="📧", layout="wide")
 
-# Language selector
+# Initialize language if not set
+if 'language' not in st.session_state:
+    st.session_state.language = 'pl'
+
+# Language selector - using the same dropdown style as other pages
 render_language_selector()
 
 st.title(f"📧 {t('send_inquiry')}")
@@ -43,20 +26,18 @@ st.markdown(f"*{t('get_detailed_quote_text')}*")
 # Navigation buttons
 col1, col2 = st.columns(2)
 with col1:
-    if st.button(t('back_to_home'), key="home_nav", use_container_width=True):
+    if st.button(t('back_to_home', 'Powrót do strony głównej'), key="home_nav", use_container_width=True):
         st.switch_page("app.py")
 
 with col2:
-    if st.button(t('go_to_configurator'), key="config_nav", use_container_width=True):
+    if st.button(t('go_to_configurator', 'Przejdź do konfiguratora'), key="config_nav", use_container_width=True):
         st.switch_page("pages/1_Container_Configurator.py")
 
 # Important disclaimer
-st.warning("""
-⚠️ **Ważne informacje / Important Information**
+st.warning(f"""
+⚠️ **{t('send_inquiry_form.disclaimer_title', 'Ważne informacje / Important Information')}**
 
-PL: Ten formularz służy do wysyłania zapytań o szczegółowe oferty. Szacunki z naszego kalkulatora nie stanowią ofert handlowych w rozumieniu prawa.
-
-EN: This form is for sending inquiry requests for detailed quotes. Estimates from our calculator are not commercial offers under applicable law.
+{t('send_inquiry_form.disclaimer_text', 'Ten formularz służy do wysyłania zapytań o szczegółowe oferty. Szacunki z naszego kalkulatora nie stanowią ofert handlowych w rozumieniu prawa.')}
 """)
 
 # Check if there's a saved configuration or estimate
@@ -64,108 +45,128 @@ has_config = 'container_config' in st.session_state and st.session_state.contain
 has_estimate = 'ai_estimate' in st.session_state
 
 if has_config or has_estimate:
-    st.success("✅ Wykryto konfigurację z kalkulatora / Configuration detected from calculator")
+    st.success(f"✅ {t('send_inquiry_form.config_detected', 'Wykryto konfigurację z kalkulatora')}")
     
-    with st.expander("📋 Aktualna konfiguracja / Current Configuration", expanded=False):
+    with st.expander(f"📋 {t('send_inquiry_form.current_config', 'Aktualna konfiguracja')}", expanded=False):
         if has_config:
             config = st.session_state.container_config
             col1, col2 = st.columns(2)
             
             with col1:
-                st.write(f"**Typ kontenera / Container Type:** {config.get('container_type', 'N/A')}")
-                st.write(f"**Przeznaczenie / Purpose:** {config.get('main_purpose', 'N/A')}")
-                st.write(f"**Środowisko / Environment:** {config.get('environment', 'N/A')}")
+                st.write(f"**{t('form.labels.container_type', 'Typ kontenera')}:** {config.get('container_type', 'N/A')}")
+                st.write(f"**{t('form.labels.main_purpose', 'Przeznaczenie')}:** {config.get('main_purpose', 'N/A')}")
+                st.write(f"**{t('form.labels.environment', 'Środowisko')}:** {config.get('environment', 'N/A')}")
             
             with col2:
-                st.write(f"**Poziom wykończenia / Finish Level:** {config.get('finish_level', 'N/A')}")
-                st.write(f"**Strefa klimatyczna / Climate Zone:** {config.get('climate_zone', 'N/A')}")
-                st.write(f"**Okna / Windows:** {config.get('number_of_windows', 'N/A')}")
+                st.write(f"**{t('form.labels.finish_level', 'Poziom wykończenia')}:** {config.get('finish_level', 'N/A')}")
+                st.write(f"**{t('form.labels.climate_zone', 'Strefa klimatyczna')}:** {config.get('climate_zone', 'N/A')}")
+                st.write(f"**{t('form.labels.number_of_windows', 'Okna')}:** {config.get('number_of_windows', 'N/A')}")
         
         if has_estimate:
-            st.markdown("### Szacunek AI / AI Estimate:")
+            st.markdown(f"### {t('saved_ai_estimate', 'Szacunek AI')}:")
             st.write(st.session_state.ai_estimate)
 
 st.markdown("---")
 
 # Customer Information Form
-st.markdown("### 👤 Informacje o kliencie / Customer Information")
+st.markdown(f"### 👤 {t('send_inquiry_form.customer_info', 'Informacje o kliencie')}")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    customer_name = st.text_input("Imię i nazwisko / Full Name *", key="cust_name")
-    company_name = st.text_input("Nazwa firmy / Company Name", key="comp_name")
-    email = st.text_input("Email *", key="cust_email")
+    customer_name = st.text_input(f"{t('send_inquiry_form.full_name', 'Imię i nazwisko')} *", key="cust_name")
+    company_name = st.text_input(t('send_inquiry_form.company_name', 'Nazwa firmy'), key="comp_name")
+    email = st.text_input(f"{t('send_inquiry_form.email', 'Email')} *", key="cust_email")
 
 with col2:
-    phone = st.text_input("Telefon / Phone *", key="cust_phone")
-    address = st.text_input("Adres / Address", key="cust_address")
-    city = st.text_input("Miasto / City", key="cust_city")
+    phone = st.text_input(f"{t('send_inquiry_form.phone', 'Telefon')} *", key="cust_phone")
+    address = st.text_input(t('form.labels.address', 'Adres'), key="cust_address")
+    city = st.text_input(t('send_inquiry_form.city', 'Miasto'), key="cust_city")
 
 # Project Information
-st.markdown("### 🏗️ Informacje o projekcie / Project Information")
+st.markdown(f"### 🏗️ {t('send_inquiry_form.project_details', 'Informacje o projekcie')}")
 
-project_name = st.text_input("Nazwa projektu / Project Name")
-project_description = st.text_area("Opis projektu / Project Description *", height=100)
-additional_requirements = st.text_area("Dodatkowe wymagania / Additional Requirements", height=80)
+project_name = st.text_input(t('send_inquiry_form.project_name', 'Nazwa projektu'))
+project_description = st.text_area(f"{t('form.labels.project_description', 'Opis projektu')} *", height=100)
+additional_requirements = st.text_area(t('send_inquiry_form.special_requirements', 'Dodatkowe wymagania'), height=80)
 
 # Timeline and Budget
 col1, col2 = st.columns(2)
 with col1:
     timeline = st.selectbox(
-        "Planowany termin realizacji / Timeline",
-        ["Jak najszybciej / ASAP", "1-2 miesiące / 1-2 months", "3-6 miesięcy / 3-6 months", "Powyżej 6 miesięcy / 6+ months"]
+        t('send_inquiry_form.expected_timeline', 'Planowany termin realizacji'),
+        [
+            t('send_inquiry_form.timeline.asap', 'Jak najszybciej'),
+            t('send_inquiry_form.timeline.within_month', '1-2 miesiące'),
+            t('send_inquiry_form.timeline.within_quarter', '3-6 miesięcy'), 
+            t('send_inquiry_form.timeline.within_half_year', 'Powyżej 6 miesięcy')
+        ]
     )
 
 with col2:
     budget_range = st.selectbox(
-        "Przybliżony budżet / Budget Range (EUR)",
-        ["< 10,000", "10,000 - 25,000", "25,000 - 50,000", "50,000 - 100,000", "> 100,000"]
+        f"{t('send_inquiry_form.budget_Range', 'Przybliżony budżet')} (EUR)",
+        [
+            t('send_inquiry_form.budget.not_specified', '< 10,000'),
+            t('send_inquiry_form.budget.up_to_50k', '10,000 - 25,000'),
+            t('send_inquiry_form.budget.50k_100k', '25,000 - 50,000'),
+            t('send_inquiry_form.budget.100k_200k', '50,000 - 100,000'),
+            t('send_inquiry_form.budget.over_200k', '> 100,000')
+        ]
     )
 
 # File Upload
-st.markdown("### 📎 Załączniki / Attachments")
+st.markdown(f"### 📎 {t('send_inquiry_form.attachments', 'Załączniki')}")
 uploaded_files = st.file_uploader(
-    "Prześlij dokumenty (PDF, DWG, JPG, PNG) / Upload documents",
+    t('send_inquiry_form.upload_files', 'Prześlij dokumenty (PDF, DWG, JPG, PNG)'),
     accept_multiple_files=True,
-    type=['pdf', 'dwg', 'jpg', 'jpeg', 'png']
+    type=['pdf', 'dwg', 'jpg', 'jpeg', 'png'],
+    help=t('send_inquiry_form.file_formats_help', 'Obsługiwane formaty: PDF, DWG, JPG, PNG, DOC, DOCX')
 )
 
 # Contact preferences
-st.markdown("### 📞 Preferencje kontaktu / Contact Preferences")
+st.markdown(f"### 📞 {t('send_inquiry_form.contact_preferences', 'Preferencje kontaktu')}")
 col1, col2 = st.columns(2)
 
 with col1:
     contact_method = st.selectbox(
-        "Preferowana metoda kontaktu / Preferred contact method",
-        ["Email", "Telefon / Phone", "Obie / Both"]
+        t('send_inquiry_form.preferred_contact', 'Preferowana metoda kontaktu'),
+        [
+            t('send_inquiry_form.contact.email', 'Email'),
+            t('send_inquiry_form.contact.phone', 'Telefon'),
+            t('send_inquiry_form.contact.both', 'Obie')
+        ]
     )
 
 with col2:
     contact_time = st.selectbox(
-        "Preferowany czas kontaktu / Preferred contact time",
-        ["Rano (8-12) / Morning", "Popołudnie (12-17) / Afternoon", "Dowolny / Any time"]
+        t('send_inquiry_form.best_time', 'Preferowany czas kontaktu'),
+        [
+            t('send_inquiry_form.time.morning', 'Rano (8-12)'),
+            t('send_inquiry_form.time.afternoon', 'Popołudnie (12-17)'),
+            t('send_inquiry_form.time.anytime', 'Dowolny')
+        ]
     )
 
 # RODO/GDPR Consent
-st.markdown("### 🔒 Zgody / Consent")
+st.markdown(f"### 🔒 {t('send_inquiry_form.privacy_section', 'Zgody')}")
 gdpr_consent = st.checkbox(
-    "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO / I consent to processing of my personal data according to GDPR *",
+    f"{t('send_inquiry_form.privacy_consent', 'Wyrażam zgodę na przetwarzanie moich danych osobowych')} *",
     key="gdpr_consent"
 )
 
 marketing_consent = st.checkbox(
-    "Wyrażam zgodę na otrzymywanie informacji marketingowych / I consent to receiving marketing information",
+    t('send_inquiry_form.marketing_consent', 'Wyrażam zgodę na otrzymywanie informacji marketingowych'),
     key="marketing_consent"
 )
 
 # Submit button
 st.markdown("---")
 
-if st.button("📧 Wyślij zapytanie / Send Inquiry", type="primary", use_container_width=True):
+if st.button(f"📧 {t('send_inquiry_form.submit_inquiry', 'Wyślij zapytanie')}", type="primary", use_container_width=True):
     # Validation
     if not customer_name or not email or not phone or not project_description or not gdpr_consent:
-        st.error("Proszę wypełnić wszystkie wymagane pola i wyrazić zgodę na przetwarzanie danych / Please fill all required fields and give consent for data processing")
+        st.error(t('send_inquiry_form.fill_required_fields', 'Proszę wypełnić wszystkie wymagane pola i wyrazić zgodę na przetwarzanie danych'))
     else:
         # Prepare inquiry data
         inquiry_data = {
@@ -195,12 +196,10 @@ if st.button("📧 Wyślij zapytanie / Send Inquiry", type="primary", use_contai
             storage = SimpleStorageManager()
             storage.save_inquiry(inquiry_data)
             
-            st.success("""
-            ✅ **Zapytanie zostało wysłane! / Inquiry sent successfully!**
+            st.success(f"""
+            ✅ **{t('send_inquiry_form.success_title', 'Zapytanie zostało wysłane!')}**
             
-            PL: Dziękujemy za przesłanie zapytania. Skontaktujemy się z Państwem w ciągu 24 godzin.
-            
-            EN: Thank you for your inquiry. We will contact you within 24 hours.
+            {t('send_inquiry_form.success_message', 'Dziękujemy za przesłanie zapytania. Skontaktujemy się z Państwem w ciągu 24 godzin.')}
             """)
             
             # Clear the form
@@ -209,15 +208,15 @@ if st.button("📧 Wyślij zapytanie / Send Inquiry", type="primary", use_contai
                     del st.session_state[key]
             
         except Exception as e:
-            st.error(f"Błąd podczas wysyłania zapytania / Error sending inquiry: {str(e)}")
+            st.error(f"{t('send_inquiry_form.error', 'Błąd podczas wysyłania zapytania')}: {str(e)}")
 
 # Contact information
 st.markdown("---")
-st.markdown("### 📞 Kontakt / Contact")
-st.markdown("""
+st.markdown(f"### 📞 {t('contact_us', 'Kontakt')}")
+st.markdown(f"""
 **KAN-BUD**  
 📍 Kąkolewo, Polska  
 📞 +48 XXX XXX XXX  
 ✉️ info@kan-bud.pl  
-🕒 Pon-Pt / Mon-Fri: 8:00-17:00
+🕒 {t('mon_fri', 'Pon-Pt')}: 8:00-17:00
 """)
