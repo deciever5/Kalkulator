@@ -124,18 +124,23 @@ else:
 
     st.markdown("---")
 
-    # AI model selection
-    st.markdown(f"### {t('ai_model_selection')}:")
-    ai_model = st.selectbox(
-        t('choose_ai_model'),
-        [
-            t('auto_select_best'),
-            "Groq Llama-3.1-70B",
-            "Groq Llama-3.1-8B", 
-            "Groq Mixtral-8x7B"
-        ],
-        key="ai_model_select"
-    )
+    # Check if user is employee to show AI model selection
+    if st.session_state.get('employee_logged_in', False):
+        # AI model selection for employees only
+        st.markdown(f"### {t('ai_model_selection')}:")
+        ai_model = st.selectbox(
+            t('choose_ai_model'),
+            [
+                t('auto_select_best'),
+                "Groq Llama-3.1-70B",
+                "Groq Llama-3.1-8B", 
+                "Groq Mixtral-8x7B"
+            ],
+            key="ai_model_select"
+        )
+    else:
+        # For customers, use default AI model without showing selection
+        ai_model = t('auto_select_best')
 
     # Generate estimate button
     if st.button(f"🚀 {t('generate_ai_estimate')}", use_container_width=True, type="primary"):

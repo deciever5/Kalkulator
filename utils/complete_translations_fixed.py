@@ -79,6 +79,45 @@ TRANSLATIONS = {
         # Common navigation
         'back_to_home': 'Powrót do strony głównej',
         'go_to_configurator': 'Przejdź do konfiguratora',
+        
+        # Send inquiry and services
+        'send_inquiry': 'Wyślij zapytanie',
+        'send_inquiry_service': 'Usługa zapytań',
+        'get_detailed_quote_text': 'Otrzymaj szczegółową ofertę dostosowaną do Twoich potrzeb',
+        'analyze_drawings': 'Analizuj rysunki',
+        'drawing_analysis_service': 'Analiza rysunków',
+        'upload_drawings_estimate': 'Prześlij swoje rysunki techniczne, aby uzyskać dokładne wyceny',
+        
+        # Additional UI elements
+        'configure_container': 'Skonfiguruj kontener',
+        'simple_process_2_steps': 'Prosty proces w 2 krokach',
+        'step_1_configuration': 'Krok 1: Konfiguracja',
+        'choose_container_type': 'Wybierz typ kontenera i specyfikacje',
+        'step_2_ai_quote': 'Krok 2: Oferta AI',
+        'get_instant_quote': 'Otrzymaj natychmiastową wycenę dzięki AI',
+        'start_configuration': 'Rozpocznij konfigurację',
+        'get_quote': 'Otrzymaj ofertę',
+        'additional_services': 'Dodatkowe usługi',
+        'why_kan_bud': 'Dlaczego KAN-BUD',
+        'precise_quotes': 'Precyzyjne wyceny',
+        'fast_realization': 'Szybka realizacja',
+        'full_service': 'Pełna obsługa',
+        'ai_historical_data': 'AI + dane historyczne',
+        'european_climate_standards': 'Europejskie standardy klimatyczne',
+        'transparent_calculations': 'Przejrzyste kalkulacje',
+        'hundreds_of_projects': 'Setki zrealizowanych projektów',
+        'own_machinery': 'Własny park maszynowy',
+        'poland_center': 'Centralna lokalizacja w Polsce',
+        'design_execution': 'Projekt i wykonanie',
+        'transport_assembly': 'Transport i montaż',
+        'after_sales_support': 'Wsparcie posprzedażowe',
+        
+        # AI and cost estimation
+        'no_configuration_found': 'Nie znaleziono konfiguracji',
+        'current_configuration': 'Aktualna konfiguracja',
+        'generate_ai_estimate': 'Wygeneruj szacunek AI',
+        'ai.messages.generating': 'Generowanie szacunku...',
+        'ai.messages.estimate_generated': 'Szacunek został wygenerowany',
     },
     
     'en': {
@@ -155,6 +194,48 @@ TRANSLATIONS = {
         # Common navigation
         'back_to_home': 'Back to Home',
         'go_to_configurator': 'Go to Configurator',
+        
+        # Send inquiry and services
+        'send_inquiry': 'Send Inquiry',
+        'send_inquiry_service': 'Inquiry Service',
+        'get_detailed_quote_text': 'Get a detailed quote tailored to your project needs',
+        'analyze_drawings': 'Analyze Drawings',
+        'drawing_analysis_service': 'Drawing Analysis Service',
+        'upload_drawings_estimate': 'Upload your technical drawings for accurate estimates',
+        
+        # Additional UI elements
+        'configure_container': 'Configure Container',
+        'simple_process_2_steps': 'Simple 2-step process',
+        'step_1_configuration': 'Step 1: Configuration',
+        'choose_container_type': 'Choose container type and specifications',
+        'step_2_ai_quote': 'Step 2: AI Quote',
+        'get_instant_quote': 'Get instant quote with AI',
+        'start_configuration': 'Start Configuration',
+        'get_quote': 'Get Quote',
+        'additional_services': 'Additional Services',
+        'why_kan_bud': 'Why KAN-BUD',
+        'precise_quotes': 'Precise Quotes',
+        'fast_realization': 'Fast Realization',
+        'full_service': 'Full Service',
+        'ai_historical_data': 'AI + Historical Data',
+        'european_climate_standards': 'European Climate Standards',
+        'transparent_calculations': 'Transparent Calculations',
+        'hundreds_of_projects': 'Hundreds of Completed Projects',
+        'own_machinery': 'Own Machine Fleet',
+        'poland_center': 'Central Location in Poland',
+        'design_execution': 'Design and Execution',
+        'transport_assembly': 'Transport and Assembly',
+        'after_sales_support': 'After-sales Support',
+        
+        # AI and cost estimation
+        'no_configuration_found': 'No configuration found',
+        'current_configuration': 'Current Configuration',
+        'generate_ai_estimate': 'Generate AI Estimate',
+        'ai.messages.generating': 'Generating estimate...',
+        'ai.messages.estimate_generated': 'Estimate generated successfully',
+        
+        # UI elements
+        'ui.open': 'Open',
     },
     
     'de': {

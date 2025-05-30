@@ -7,10 +7,31 @@ Includes contact data, project details, file uploads, and RODO compliance
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-from utils.translations import t, init_language
+from utils.complete_translations_fixed import get_translation
+from utils.global_language import get_current_language, set_language
 from utils.simple_storage import SimpleStorageManager
 
-init_language()
+def t(key):
+    return get_translation(key, get_current_language())
+
+def render_language_selector():
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+    with col1:
+        if st.button("🇵🇱 PL", key="lang_pl_inquiry", help="Polski", use_container_width=True):
+            set_language('pl')
+            st.rerun()
+    with col2:
+        if st.button("🇬🇧 EN", key="lang_en_inquiry", help="English", use_container_width=True):
+            set_language('en')
+            st.rerun()
+    with col3:
+        if st.button("🇩🇪 DE", key="lang_de_inquiry", help="Deutsch", use_container_width=True):
+            set_language('de')
+            st.rerun()
+    with col4:
+        if st.button("🇳🇱 NL", key="lang_nl_inquiry", help="Nederlands", use_container_width=True):
+            set_language('nl')
+            st.rerun()
 
 st.set_page_config(page_title="Send Inquiry", page_icon="📧", layout="wide")
 
