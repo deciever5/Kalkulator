@@ -1,4 +1,11 @@
+# Page configuration - MUST BE FIRST
 import streamlit as st
+st.set_page_config(
+    page_title="AI Cost Estimator - KAN-BUD",
+    page_icon="🤖",
+    layout="wide"
+)
+
 import json
 from utils.translations import t, init_language
 from utils.shared_header import render_shared_header, render_back_to_home
@@ -73,13 +80,6 @@ def generate_cost_estimate(config, ai_model):
 *Price includes: design, materials, execution, transport (up to 100km)*
 *Does not include: permits, utilities, foundations*
 """
-
-# Page configuration
-st.set_page_config(
-    page_title="AI Cost Estimator - KAN-BUD",
-    page_icon="🤖",
-    layout="wide"
-)
 
 st.markdown("""
 <style>
