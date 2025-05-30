@@ -374,6 +374,8 @@
     "new_inquiry": "Nowe Zapytanie",
     "error": "Błąd podczas wysyłania zapytania"
   },
+  "back_to_home": "← Powrót do Strony Głównej",
+  "go_to_configurator": "🔧 Przejdź do Konfiguratora"
   "quote_generator": {
     "employee_only": "Generator ofert jest dostępny tylko dla pracowników KAN-BUD.",
     "login_info": "Zaloguj się jako pracownik, aby uzyskać dostęp do tego narzędzia.",

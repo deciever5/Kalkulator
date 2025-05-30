@@ -250,11 +250,12 @@ else:
                     {t('contact_for_quote')}
                     """)
 
-                    if st.button(f"📧 {t('send_inquiry')}", key="inquiry_cta", use_container_width=True, type="primary"):
+                    if st.button(f"📧 {t('send_inquiry_cta')}", key="inquiry_cta", use_container_width=True, type="primary"):
                         # Store the current estimate and config for inquiry
                         st.session_state.inquiry_source = "ai_estimator"
                         st.session_state.inquiry_estimate = estimate
                         st.session_state.inquiry_config = config
+                        st.session_state.ai_estimate = estimate  # Preserve the estimate
                         st.switch_page("pages/8_Send_Inquiry.py")
 
                     # Save estimate

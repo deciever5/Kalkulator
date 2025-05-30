@@ -415,5 +415,7 @@
     "submit_inquiry": "Anfrage senden",
     "success_title": "Anfrage erfolgreich gesendet!",
     "success_message": "Vielen Dank für Ihre Anfrage. Unser Team wird Sie innerhalb von 24 Stunden kontaktieren."
-  }
+  },
+  "back_to_home": "← Zurück zur Startseite",
+  "go_to_configurator": "🔧 Zum Konfigurator"
 }

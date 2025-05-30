@@ -416,5 +416,7 @@
     "submit_inquiry": "Aanvraag Verzenden",
     "success_title": "Aanvraag Succesvol Verzonden!",
     "success_message": "Dank je voor het indienen van je aanvraag. Ons team zal binnen 24 uur contact met je opnemen."
-  }
+  },
+  "back_to_home": "← Terug naar Home",
+  "go_to_configurator": "🔧 Naar Configurator"
 }
