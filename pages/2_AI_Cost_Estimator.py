@@ -171,7 +171,7 @@ else:
                     {t('contact_for_quote')}
                     """)
 
-                    if st.button(f"📧 {t('send_inquiry_cta', 'Send Professional Inquiry')}", key="inquiry_cta", use_container_width=True, type="primary"):
+                    if st.button(f"📧 {t('send_inquiry')}", key="inquiry_cta", use_container_width=True, type="primary"):
                         # Store the current estimate and config for inquiry
                         st.session_state.inquiry_source = "ai_estimator"
                         st.session_state.inquiry_estimate = estimate

@@ -1,7 +1,6 @@
-
 """
-Customer Inquiry Form - Enhanced template for professional inquiries
-Includes contact data, project details, file uploads, and RODO compliance
+Customer Inquiry Form - Available for all users
+Allows customers to send inquiries after getting estimates
 """
 
 import streamlit as st
@@ -35,406 +34,190 @@ def render_language_selector():
 
 st.set_page_config(page_title="Send Inquiry", page_icon="📧", layout="wide")
 
-st.title(f"📧 {t('send_inquiry.title', 'Inquiry Form')}")
-st.markdown(f"*{t('send_inquiry.description', 'Get a detailed quote tailored to your container project needs')}*")
+# Language selector
+render_language_selector()
+
+st.title(f"📧 {t('send_inquiry')}")
+st.markdown(f"*{t('get_detailed_quote_text')}*")
+
+# Navigation buttons
+col1, col2 = st.columns(2)
+with col1:
+    if st.button(t('back_to_home'), key="home_nav", use_container_width=True):
+        st.switch_page("app.py")
+
+with col2:
+    if st.button(t('go_to_configurator'), key="config_nav", use_container_width=True):
+        st.switch_page("pages/1_Container_Configurator.py")
 
 # Important disclaimer
-st.warning(f"""
-⚠️ **{t('send_inquiry.disclaimer_title', 'Important Information')}**
+st.warning("""
+⚠️ **Ważne informacje / Important Information**
 
-{t('send_inquiry.disclaimer_text', 'This form is for sending inquiry requests for detailed quotes. Estimates from our calculator are not commercial offers under applicable law.')}
+PL: Ten formularz służy do wysyłania zapytań o szczegółowe oferty. Szacunki z naszego kalkulatora nie stanowią ofert handlowych w rozumieniu prawa.
+
+EN: This form is for sending inquiry requests for detailed quotes. Estimates from our calculator are not commercial offers under applicable law.
 """)
 
 # Check if there's a saved configuration or estimate
 has_config = 'container_config' in st.session_state and st.session_state.container_config
 has_estimate = 'ai_estimate' in st.session_state
-has_inquiry_data = 'inquiry_config' in st.session_state
 
-config_to_use = st.session_state.get('inquiry_config', st.session_state.get('container_config', {}))
-estimate_to_use = st.session_state.get('inquiry_estimate', st.session_state.get('ai_estimate', ''))
-
-if has_config or has_estimate or has_inquiry_data:
-    st.success(f"✅ {t('send_inquiry.config_detected', 'Configuration detected from calculator')}")
+if has_config or has_estimate:
+    st.success("✅ Wykryto konfigurację z kalkulatora / Configuration detected from calculator")
     
-    with st.expander(f"📋 {t('send_inquiry.current_config', 'Current Configuration')}", expanded=False):
-        if config_to_use:
+    with st.expander("📋 Aktualna konfiguracja / Current Configuration", expanded=False):
+        if has_config:
+            config = st.session_state.container_config
             col1, col2 = st.columns(2)
             
             with col1:
-                st.write(f"**{t('form.labels.container_type', 'Container Type')}:** {config_to_use.get('container_type', 'N/A')}")
-                st.write(f"**{t('form.labels.main_purpose', 'Main Purpose')}:** {config_to_use.get('main_purpose', 'N/A')}")
-                st.write(f"**{t('form.labels.environment', 'Environment')}:** {config_to_use.get('environment', 'N/A')}")
+                st.write(f"**Typ kontenera / Container Type:** {config.get('container_type', 'N/A')}")
+                st.write(f"**Przeznaczenie / Purpose:** {config.get('main_purpose', 'N/A')}")
+                st.write(f"**Środowisko / Environment:** {config.get('environment', 'N/A')}")
             
             with col2:
-                st.write(f"**{t('form.labels.finish_level', 'Finish Level')}:** {config_to_use.get('finish_level', 'N/A')}")
-                st.write(f"**{t('form.labels.delivery_zone', 'Delivery Zone')}:** {config_to_use.get('delivery_zone', 'N/A')}")
-                
-                if 'cost_breakdown' in st.session_state:
-                    total_cost = st.session_state.cost_breakdown.get('total_cost', 0)
-                    st.write(f"**{t('total_cost', 'Total Cost')}:** €{total_cost:,.2f}")
-
-# SECTION 1: Customer Contact Information
-st.header(f"👤 {t('send_inquiry.customer_info', 'Customer Contact Information')}")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    customer_name = st.text_input(
-        f"*{t('send_inquiry.full_name', 'Full Name')}",
-        placeholder="Jan Kowalski",
-        help="Required field"
-    )
-    
-    customer_company = st.text_input(
-        t('send_inquiry.company_name', 'Company Name'),
-        placeholder="Company Ltd. (optional)"
-    )
-    
-    customer_email = st.text_input(
-        f"*{t('send_inquiry.email', 'Email Address')}",
-        placeholder="jan@company.com",
-        help="Required for communication"
-    )
-
-with col2:
-    customer_phone = st.text_input(
-        f"*{t('send_inquiry.phone', 'Phone Number')}",
-        placeholder="+48 123 456 789",
-        help="Required for quick contact"
-    )
-    
-    customer_city = st.text_input(
-        f"*{t('send_inquiry.city', 'City')}",
-        placeholder="Warsaw"
-    )
-    
-    customer_country = st.selectbox(
-        f"*{t('send_inquiry.country', 'Country')}",
-        ["Poland", "Germany", "Czech Republic", "Slovakia", "Austria", "Netherlands", "Belgium", "Other"],
-        help="Select your country"
-    )
-
-# SECTION 2: Project Details
-st.header(f"🏗️ {t('send_inquiry.project_details', 'Project Information')}")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    project_name = st.text_input(
-        t('send_inquiry.project_name', 'Project Name'),
-        placeholder="Container Office Complex"
-    )
-    
-    project_location = st.text_input(
-        f"*{t('send_inquiry.project_location', 'Project Location')}",
-        placeholder="City, Region, Country"
-    )
-
-with col2:
-    expected_timeline = st.selectbox(
-        f"*{t('send_inquiry.expected_timeline', 'Expected Timeline')}",
-        [
-            t('send_inquiry.timeline.asap', 'As soon as possible'),
-            t('send_inquiry.timeline.within_month', 'Within 1 month'),
-            t('send_inquiry.timeline.within_quarter', 'Within 3 months'),
-            t('send_inquiry.timeline.within_half_year', 'Within 6 months'),
-            t('send_inquiry.timeline.planning_phase', 'Planning phase only')
-        ]
-    )
-    
-    budget_range = st.selectbox(
-        t('send_inquiry.budget_range', 'Budget Range (Optional)'),
-        [
-            t('send_inquiry.budget.not_specified', 'Not specified'),
-            "€20,000 - €50,000",
-            "€50,000 - €100,000",
-            "€100,000 - €200,000",
-            "€200,000 - €500,000",
-            "€500,000+"
-        ]
-    )
-
-# SECTION 3: Project Requirements
-st.header(f"📝 {t('send_inquiry.project_requirements', 'Project Requirements')}")
-
-inquiry_type = st.selectbox(
-    f"*{t('send_inquiry.inquiry_type', 'Type of Inquiry')}",
-    [
-        t('send_inquiry.types.detailed_quote', 'Detailed price quote'),
-        t('send_inquiry.types.technical_consultation', 'Technical consultation'),
-        t('send_inquiry.types.site_visit', 'Site visit request'),
-        t('send_inquiry.types.drawing_analysis', 'Drawing analysis service'),
-        t('send_inquiry.types.general_info', 'General information')
-    ]
-)
-
-col1, col2 = st.columns(2)
-
-with col1:
-    special_requirements = st.text_area(
-        t('send_inquiry.special_requirements', 'Special Requirements'),
-        placeholder=t('send_inquiry.special_requirements_placeholder', 'Describe specific technical requirements, certifications, special installations...'),
-        height=120,
-        help="Include any special technical specifications or requirements"
-    )
-
-with col2:
-    additional_message = st.text_area(
-        t('send_inquiry.additional_message', 'Additional Information'),
-        placeholder=t('send_inquiry.additional_message_placeholder', 'Any additional information that will help us prepare a better quote...'),
-        height=120,
-        help="Any other details about your project"
-    )
-
-# SECTION 4: File Attachments & Documentation
-st.header(f"📎 {t('send_inquiry.attachments', 'Project Documentation')}")
-
-st.info(f"""
-📋 **{t('send_inquiry.recommended_files', 'Recommended Documents')}:**
-• Technical drawings (PDF, DWG)
-• Site plans and layout drawings
-• Project specifications
-• Reference photos or sketches
-• Building permits or requirements
-• Any relevant documentation
-""")
-
-uploaded_files = st.file_uploader(
-    t('send_inquiry.upload_files', 'Upload Project Files'),
-    type=['pdf', 'dwg', 'jpg', 'jpeg', 'png', 'doc', 'docx', 'xlsx', 'txt'],
-    accept_multiple_files=True,
-    help=t('send_inquiry.file_formats_help', 'Supported formats: PDF, DWG, JPG, PNG, DOC, DOCX, XLSX, TXT. Max total size: 25MB')
-)
-
-# File validation
-files_valid = True
-total_size = 0
-max_total_size = 25 * 1024 * 1024  # 25MB
-
-if uploaded_files:
-    for file in uploaded_files:
-        total_size += file.size
-    
-    if total_size > max_total_size:
-        st.error(f"❌ Total file size ({total_size / (1024*1024):.1f} MB) exceeds 25MB limit. Please reduce file sizes or remove some files.")
-        files_valid = False
-    else:
-        st.success(f"✅ {len(uploaded_files)} files uploaded ({total_size / (1024*1024):.1f} MB / 25 MB)")
+                st.write(f"**Poziom wykończenia / Finish Level:** {config.get('finish_level', 'N/A')}")
+                st.write(f"**Strefa klimatyczna / Climate Zone:** {config.get('climate_zone', 'N/A')}")
+                st.write(f"**Okna / Windows:** {config.get('number_of_windows', 'N/A')}")
         
-        with st.expander("📄 Uploaded Files", expanded=False):
-            for file in uploaded_files:
-                file_size_mb = file.size / (1024*1024)
-                st.write(f"📄 **{file.name}** ({file_size_mb:.1f} MB)")
+        if has_estimate:
+            st.markdown("### Szacunek AI / AI Estimate:")
+            st.write(st.session_state.ai_estimate)
 
-# SECTION 5: Contact Preferences
-st.header(f"📞 {t('send_inquiry.contact_preferences', 'Contact Preferences')}")
+st.markdown("---")
+
+# Customer Information Form
+st.markdown("### 👤 Informacje o kliencie / Customer Information")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    preferred_contact = st.selectbox(
-        t('send_inquiry.preferred_contact', 'Preferred Contact Method'),
-        [
-            t('send_inquiry.contact.email', 'Email'),
-            t('send_inquiry.contact.phone', 'Phone call'),
-            t('send_inquiry.contact.both', 'Email and phone')
-        ]
+    customer_name = st.text_input("Imię i nazwisko / Full Name *", key="cust_name")
+    company_name = st.text_input("Nazwa firmy / Company Name", key="comp_name")
+    email = st.text_input("Email *", key="cust_email")
+
+with col2:
+    phone = st.text_input("Telefon / Phone *", key="cust_phone")
+    address = st.text_input("Adres / Address", key="cust_address")
+    city = st.text_input("Miasto / City", key="cust_city")
+
+# Project Information
+st.markdown("### 🏗️ Informacje o projekcie / Project Information")
+
+project_name = st.text_input("Nazwa projektu / Project Name")
+project_description = st.text_area("Opis projektu / Project Description *", height=100)
+additional_requirements = st.text_area("Dodatkowe wymagania / Additional Requirements", height=80)
+
+# Timeline and Budget
+col1, col2 = st.columns(2)
+with col1:
+    timeline = st.selectbox(
+        "Planowany termin realizacji / Timeline",
+        ["Jak najszybciej / ASAP", "1-2 miesiące / 1-2 months", "3-6 miesięcy / 3-6 months", "Powyżej 6 miesięcy / 6+ months"]
     )
 
 with col2:
-    best_time = st.selectbox(
-        t('send_inquiry.best_time', 'Best Time to Contact'),
-        [
-            t('send_inquiry.time.morning', 'Morning (8:00-12:00)'),
-            t('send_inquiry.time.afternoon', 'Afternoon (12:00-17:00)'),
-            t('send_inquiry.time.evening', 'Evening (17:00-20:00)'),
-            t('send_inquiry.time.anytime', 'Any time')
-        ]
+    budget_range = st.selectbox(
+        "Przybliżony budżet / Budget Range (EUR)",
+        ["< 10,000", "10,000 - 25,000", "25,000 - 50,000", "50,000 - 100,000", "> 100,000"]
     )
 
-# SECTION 6: RODO/GDPR Compliance
-st.header(f"🔒 {t('send_inquiry.privacy_section', 'Privacy & Data Protection (RODO/GDPR)')}")
-
-st.info(f"""
-🛡️ **{t('send_inquiry.data_protection_info', 'Data Protection Information')}:**
-
-• Your personal data will be processed by KAN-BUD Sp. z o.o. for the purpose of handling your inquiry
-• Data will be stored for the duration necessary to process your request (typically 2 years)
-• You have the right to access, rectify, delete, or port your data
-• You can withdraw consent at any time by contacting us at privacy@kan-bud.pl
-• Full privacy policy available at: www.kan-bud.pl/privacy-policy
-""")
-
-# Required privacy consent
-privacy_consent = st.checkbox(
-    f"*{t('send_inquiry.privacy_consent', 'I consent to the processing of my personal data by KAN-BUD Sp. z o.o. for the purpose of handling this inquiry, in accordance with RODO/GDPR regulations')}",
-    help="This consent is required to process your inquiry"
+# File Upload
+st.markdown("### 📎 Załączniki / Attachments")
+uploaded_files = st.file_uploader(
+    "Prześlij dokumenty (PDF, DWG, JPG, PNG) / Upload documents",
+    accept_multiple_files=True,
+    type=['pdf', 'dwg', 'jpg', 'jpeg', 'png']
 )
 
-# Optional marketing consent
+# Contact preferences
+st.markdown("### 📞 Preferencje kontaktu / Contact Preferences")
+col1, col2 = st.columns(2)
+
+with col1:
+    contact_method = st.selectbox(
+        "Preferowana metoda kontaktu / Preferred contact method",
+        ["Email", "Telefon / Phone", "Obie / Both"]
+    )
+
+with col2:
+    contact_time = st.selectbox(
+        "Preferowany czas kontaktu / Preferred contact time",
+        ["Rano (8-12) / Morning", "Popołudnie (12-17) / Afternoon", "Dowolny / Any time"]
+    )
+
+# RODO/GDPR Consent
+st.markdown("### 🔒 Zgody / Consent")
+gdpr_consent = st.checkbox(
+    "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO / I consent to processing of my personal data according to GDPR *",
+    key="gdpr_consent"
+)
+
 marketing_consent = st.checkbox(
-    t('send_inquiry.marketing_consent', 'I consent to receiving marketing information about KAN-BUD services and products (optional)'),
-    help="You can unsubscribe at any time"
+    "Wyrażam zgodę na otrzymywanie informacji marketingowych / I consent to receiving marketing information",
+    key="marketing_consent"
 )
-
-# Data retention notice
-st.caption(f"""
-📅 **{t('send_inquiry.data_retention', 'Data Retention')}:** Your data will be retained for up to 2 years or until you withdraw consent. 
-Contact privacy@kan-bud.pl for data deletion requests.
-""")
-
-# SECTION 7: Submit Inquiry
-st.divider()
-
-# Validation
-required_fields = [customer_name, customer_email, customer_phone, customer_city, project_location, expected_timeline, inquiry_type]
-all_required_filled = all(field.strip() if isinstance(field, str) else field for field in required_fields) and privacy_consent and files_valid
-
-if not all_required_filled:
-    if not files_valid:
-        st.warning("⚠️ Please fix file size issues before submitting.")
-    elif not privacy_consent:
-        st.warning("⚠️ Privacy consent is required to submit the inquiry.")
-    else:
-        st.warning(f"⚠️ {t('send_inquiry.fill_required_fields', 'Please fill in all required fields marked with *')}")
 
 # Submit button
-submit_col1, submit_col2, submit_col3 = st.columns([1, 2, 1])
+st.markdown("---")
 
-with submit_col2:
-    if st.button(
-        f"📧 {t('send_inquiry.submit_inquiry', 'Submit Professional Inquiry')}",
-        use_container_width=True,
-        type="primary",
-        disabled=not all_required_filled
-    ):
-        # Prepare comprehensive inquiry data
+if st.button("📧 Wyślij zapytanie / Send Inquiry", type="primary", use_container_width=True):
+    # Validation
+    if not customer_name or not email or not phone or not project_description or not gdpr_consent:
+        st.error("Proszę wypełnić wszystkie wymagane pola i wyrazić zgodę na przetwarzanie danych / Please fill all required fields and give consent for data processing")
+    else:
+        # Prepare inquiry data
         inquiry_data = {
-            'inquiry_id': f"INQ-{datetime.now().strftime('%Y%m%d-%H%M%S')}",
             'timestamp': datetime.now().isoformat(),
-            'customer': {
-                'name': customer_name,
-                'company': customer_company,
-                'email': customer_email,
-                'phone': customer_phone,
-                'city': customer_city,
-                'country': customer_country
-            },
-            'project': {
-                'name': project_name,
-                'location': project_location,
-                'timeline': expected_timeline,
-                'budget_range': budget_range,
-                'special_requirements': special_requirements,
-                'additional_message': additional_message
-            },
-            'inquiry': {
-                'type': inquiry_type,
-                'files_count': len(uploaded_files) if uploaded_files else 0,
-                'total_file_size_mb': round(total_size / (1024*1024), 2) if uploaded_files else 0
-            },
-            'contact_preferences': {
-                'preferred_method': preferred_contact,
-                'best_time': best_time
-            },
-            'consents': {
-                'privacy': privacy_consent,
-                'marketing': marketing_consent,
-                'consent_timestamp': datetime.now().isoformat()
-            }
+            'customer_name': customer_name,
+            'company_name': company_name,
+            'email': email,
+            'phone': phone,
+            'address': address,
+            'city': city,
+            'project_name': project_name,
+            'project_description': project_description,
+            'additional_requirements': additional_requirements,
+            'timeline': timeline,
+            'budget_range': budget_range,
+            'contact_method': contact_method,
+            'contact_time': contact_time,
+            'gdpr_consent': gdpr_consent,
+            'marketing_consent': marketing_consent,
+            'container_config': st.session_state.get('container_config', {}),
+            'ai_estimate': st.session_state.get('ai_estimate', ''),
+            'files_uploaded': len(uploaded_files) if uploaded_files else 0
         }
         
-        # Add configuration data if available
-        if config_to_use:
-            inquiry_data['container_config'] = config_to_use
-            
-        if estimate_to_use:
-            inquiry_data['ai_estimate'] = estimate_to_use
-            
-        if 'cost_breakdown' in st.session_state:
-            inquiry_data['cost_breakdown'] = st.session_state.cost_breakdown
-        
-        # Save inquiry
+        # Save to storage
         try:
             storage = SimpleStorageManager()
-            storage.save_user_project(
-                user_id=st.session_state.get('user_id', 'guest'),
-                project_name=f"Inquiry: {customer_name} - {datetime.now().strftime('%Y-%m-%d')}",
-                config=inquiry_data
-            )
+            storage.save_inquiry(inquiry_data)
             
-            st.success(f"""
-            ✅ **{t('send_inquiry.success_title', 'Inquiry Submitted Successfully!')}**
+            st.success("""
+            ✅ **Zapytanie zostało wysłane! / Inquiry sent successfully!**
             
-            **Inquiry ID:** {inquiry_data['inquiry_id']}
+            PL: Dziękujemy za przesłanie zapytania. Skontaktujemy się z Państwem w ciągu 24 godzin.
             
-            {t('send_inquiry.success_message', 'Thank you for your inquiry. Our team will contact you within 24 hours with a detailed response.')}
+            EN: Thank you for your inquiry. We will contact you within 24 hours.
             """)
             
-            # Show next steps
-            st.info(f"""
-            **{t('send_inquiry.next_steps', 'What Happens Next')}:**
-            
-            1. 📋 **Analysis** - Our experts will review your requirements and uploaded files
-            2. 📞 **Contact** - We'll reach out within 24 hours for any clarifications
-            3. 💰 **Quote** - You'll receive a detailed, professional quote tailored to your needs
-            4. 🤝 **Follow-up** - We'll schedule a consultation to discuss your project
-            
-            **{t('send_inquiry.contact_info', 'Emergency Contact')}:**
-            📞 +48 XXX XXX XXX | ✉️ office@kan-bud.pl
-            """)
-            
-            st.balloons()
-            
-            # Clear inquiry transfer data
-            for key in ['inquiry_source', 'inquiry_config', 'inquiry_estimate']:
-                if key in st.session_state:
+            # Clear the form
+            for key in st.session_state.keys():
+                if key.startswith(('cust_', 'comp_', 'gdpr_', 'marketing_')):
                     del st.session_state[key]
             
-            # Option to create new inquiry
-            if st.button(f"📝 {t('send_inquiry.new_inquiry', 'Submit Another Inquiry')}", use_container_width=True):
-                st.rerun()
-                
         except Exception as e:
-            st.error(f"{t('send_inquiry.error', 'Error submitting inquiry')}: {str(e)}")
+            st.error(f"Błąd podczas wysyłania zapytania / Error sending inquiry: {str(e)}")
 
-# Additional information section
-st.divider()
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.info(f"""
-    📋 **{t('send_inquiry.why_professional_inquiry', 'Why Submit a Professional Inquiry?')}**
-    
-    • Get accurate pricing based on your specific requirements
-    • Receive expert technical consultation
-    • Access to our full range of services and options
-    • Professional project management support
-    • Compliance with local building codes and regulations
-    """)
-
-with col2:
-    st.success(f"""
-    💡 **{t('send_inquiry.preparation_tips', 'Tips for Best Results')}**
-    
-    • Include detailed project drawings or sketches
-    • Specify all technical requirements clearly
-    • Mention any special certifications needed
-    • Provide accurate timeline and budget information
-    • Include site access and logistics considerations
-    """)
-
-# Contact information footer
-st.divider()
-
-st.markdown(f"""
-### 📞 {t('contact_us', 'Contact Information')}
-
-**KAN-BUD Sp. z o.o.**  
-📍 **{t('address', 'Address')}:** [Company Address]  
-📞 **{t('phone', 'Phone')}:** +48 XXX XXX XXX  
-✉️ **{t('email', 'Email')}:** office@kan-bud.pl  
-🌐 **Website:** www.kan-bud.pl  
-🕒 **{t('working_hours', 'Working Hours')}:** {t('mon_fri', 'Mon-Fri 8:00-17:00')}  
+# Contact information
+st.markdown("---")
+st.markdown("### 📞 Kontakt / Contact")
+st.markdown("""
+**KAN-BUD**  
+📍 Kąkolewo, Polska  
+📞 +48 XXX XXX XXX  
+✉️ info@kan-bud.pl  
+🕒 Pon-Pt / Mon-Fri: 8:00-17:00
 """)
