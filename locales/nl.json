@@ -304,15 +304,15 @@
     "analysis_failed": "Analyse mislukt",
     "error": "Analyse fout",
     "next_steps": "Volgende Stappen",
-    "get_detailed_quote": "Krijg Gedetailleerde Offerte",
-    "refine_config": "Verfijn Configuratie",
-    "disclaimer_title": "Belangrijk - Disclaimer",
-    "disclaimer_text": "Tekening analyse is indicatief. Finale offerte kan verschillen op basis van gedetailleerde projectvereisten.",
+    "get_detailed_quote": "Gedetailleerde Offerte Krijgen",
+    "refine_config": "Configuratie Verfijnen",
+    "disclaimer_title": "Belangrijke Disclaimer",
+    "disclaimer_text": "Dit is een geautomatiseerde analyse voor schattingsdoeleinden. Definitieve prijsstelling vereist handmatige verificatie door ons technische team.",
     "tips_title": "Tips voor Betere Analyse",
-    "tips_text": "Om de meest nauwkeurige analyse te krijgen, volg deze richtlijnen:",
-    "tip_1": "Gebruik hoge-resolutie PDF bestanden",
-    "tip_2": "Zorg ervoor dat alle afmetingen leesbaar zijn",
-    "tip_3": "Voeg weergaven van verschillende kanten en details toe"
+    "tips_text": "Voor de meest nauwkeurige analyse, zorg ervoor dat uw tekeningen bevatten:",
+    "tip_1": "Duidelijke afmetingen en specificaties",
+    "tip_2": "Alle technische details zichtbaar",
+    "tip_3": "Hoge resolutie (minimaal 300 DPI)"
   },
   "admin": {
     "access_required": "Administrator Toegang Vereist",

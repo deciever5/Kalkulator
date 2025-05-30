@@ -33,6 +33,14 @@ class DocumentAnalyzer:
             
             # Reset file pointer for potential future use
             uploaded_file.seek(0)
+            
+            # Validate file size (max 20MB)
+            if len(file_bytes) > 20 * 1024 * 1024:
+                return {
+                    'status': 'failed',
+                    'error': 'File too large (max 20MB)',
+                    'recommendations': ['Please reduce file size', 'Try compressing the PDF']
+                }
 
             analysis_prompt = self._build_drawing_analysis_prompt(project_context)
 
