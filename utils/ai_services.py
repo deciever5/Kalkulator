@@ -1080,9 +1080,15 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "auto") -> str
         try:
             groq_service = GroqService()
             result = groq_service.generate_cost_estimate(estimation_data, base_costs)
-            print("✅ Using Groq AI service")
+            # Validate result format
+            if result and isinstance(result, dict):
+                print("✅ Using Groq AI service")
+            else:
+                print("⚠️ Groq returned invalid format, trying next service")
+                result = None
         except Exception as groq_error:
             print(f"Groq service failed: {groq_error}")
+            result = None
 
             # Try Anthropic second
             try:
@@ -1103,6 +1109,10 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "auto") -> str
 
         # If we got a result from any AI service, format and return it
         if result:
+            # Ensure result is a dictionary, not a list
+            if isinstance(result, list):
+                print("⚠️ AI service returned list instead of dict, using fallback")
+                return _generate_enhanced_fallback_estimate(config, base_costs, current_language)
             return _format_ai_response(result, current_language)
         
         # If all AI services failed, use enhanced fallback

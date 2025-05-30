@@ -42,9 +42,9 @@ def generate_cost_estimate(config, ai_model):
         calc = StructuralCalculations()
         
         try:
-            # Use the same calculation method as the configurator
-            cost_breakdown = calc.calculate_total_cost(config)
-            total_cost = cost_breakdown.get('total_cost', 0)
+            # Use the base cost calculation method that exists
+            cost_breakdown = calc.calculate_base_costs(config)
+            total_cost = cost_breakdown.get('subtotal', 0)
             
             return f"""
 ## ⚠️ {t('ai_service_error')}
@@ -52,10 +52,9 @@ def generate_cost_estimate(config, ai_model):
 {t('fallback_estimate_basic')}
 
 **{t('container_type')}:** {config.get('container_type', 'N/A')}
-**{t('base_cost')}:** €{cost_breakdown.get('container_cost', 0):,.2f}
-**{t('modifications')}:** €{cost_breakdown.get('modification_cost', 0):,.2f}
-**{t('delivery_cost')}:** €{cost_breakdown.get('delivery_cost', 0):,.2f}
-**{t('labor_costs_30')}:** €{cost_breakdown.get('labor_cost', 0):,.2f}
+**{t('base_cost')}:** €{cost_breakdown.get('base_container', 0):,.2f}
+**{t('modifications')}:** €{cost_breakdown.get('modifications', 0):,.2f}
+**{t('labor_costs_30')}:** €{cost_breakdown.get('labor', 0):,.2f}
 
 ### **{t('total_cost').upper()}: €{total_cost:,.2f}**
 
