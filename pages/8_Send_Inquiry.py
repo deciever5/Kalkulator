@@ -6,7 +6,7 @@ Allows customers to send inquiries after getting estimates
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-from utils.complete_translations_fixed import get_translation
+from utils.translations import t
 from utils.global_language import get_current_language, set_language
 from utils.simple_storage import SimpleStorageManager
 
