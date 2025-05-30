@@ -13,15 +13,7 @@ from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
-from utils.complete_translations_fixed import get_translation
-from utils.global_language import get_current_language, set_language
-
-def t(key):
-    """Translation function"""
-    try:
-        return get_translation(key, get_current_language())
-    except:
-        return key
+from utils.translations import t, get_current_language, set_language
 
 from utils.groq_service import GroqService
 

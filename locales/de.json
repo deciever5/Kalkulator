@@ -1,4 +1,8 @@
 {
+  "app": {
+    "title": "Professionelle Container-Lösungen",
+    "subtitle": "Professionelle Container-Lösungen - Design, Bau und Montage"
+  },
   "ui": {
     "employee_login": "Mitarbeiter-Login",
     "logout": "Abmelden",

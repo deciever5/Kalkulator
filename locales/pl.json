@@ -1,4 +1,8 @@
 {
+  "app": {
+    "title": "Profesjonalne Rozwiązania Kontenerowe",
+    "subtitle": "Profesjonalne Rozwiązania Kontenerowe - Projektowanie, Budowa i Montaż"
+  },
   "ui": {
     "employee_login": "Login Pracownika",
     "logout": "Wyloguj",

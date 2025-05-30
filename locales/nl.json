@@ -1,4 +1,8 @@
 {
+  "app": {
+    "title": "Professionele Container Oplossingen",
+    "subtitle": "Professionele Container Oplossingen - Ontwerp, Constructie en Montage"
+  },
   "ui": {
     "employee_login": "Medewerker Login",
     "logout": "Uitloggen",
