@@ -229,7 +229,7 @@
     "project_name": "Projekt Neve",
     "project_location": "Projekt Helyszíne",
     "expected_timeline": "Várt Időkeret",
-    "budget_range": "Költségvetési Tartomány",
+    "budget_Range": "Költségvetési Tartomány",
     "timeline": {
       "asap": "Amilyen hamar csak lehet",
       "within_month": "Egy hónapon belül",

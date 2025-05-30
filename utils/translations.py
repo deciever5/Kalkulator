@@ -159,5 +159,8 @@ def render_language_selector():
 
         if selected_language != current_lang:
             set_language(selected_language)
-            st.rerun()ion kept for compatibility"""
+            st.rerun()
+
+def render_language_buttons():
+    """Legacy function kept for compatibility"""
     pass

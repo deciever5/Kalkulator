@@ -525,5 +525,7 @@
     "success_message": "Dank je voor het indienen van je aanvraag. Ons team zal binnen 24 uur contact met je opnemen."
   },
   "back_to_home": "← Terug naar Home",
-  "go_to_configurator": "🔧 Naar Configurator"
+  "go_to_configurator": "🔧 Naar Configurator",
+  "send_inquiry": "Verstuur aanvraag",
+  "get_detailed_quote_text": "Ontvang gedetailleerde offerte op maat"
 }

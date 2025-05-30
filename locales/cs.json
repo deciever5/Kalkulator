@@ -381,5 +381,9 @@
   "site_access_limitations": "Omezení přístupu na místo pro dodávku",
   "material_price_fluctuations": "Kolísání cen materiálů",
   "basic_estimate_note": "Poznámka: Toto je základní odhad. Pro přesnější ceny se prosím obraťte přímo na náš tým.",
-  "labor_costs_30": "Náklady na Práci (30%)"
+  "labor_costs_30": "Náklady na Práci (30%)",
+  "back_to_home": "← Zpět domů",
+  "go_to_configurator": "🔧 Jít ke konfigurátoru",
+  "send_inquiry": "Odeslat dotaz",
+  "get_detailed_quote_text": "Získejte podrobnou nabídku šitou na míru"
 }
