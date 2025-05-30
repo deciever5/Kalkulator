@@ -73,6 +73,109 @@ def init_session_state():
 
 init_session_state()
 
+# Modern header with enhanced styling and top navigation
+st.markdown("""
+<style>
+/* Hide sidebar completely */
+section[data-testid="stSidebar"] {display: none !important;}
+.stSidebar {display: none !important;}
+button[kind="header"] {display: none !important;}
+button[data-testid="collapsedControl"] {display: none !important;}
+.css-1d391kg {display: none !important;}
+.css-1y4p8pa {margin-left: 0 !important;}
+.css-17eq0hr {display: none !important;}
+.css-164nlkn {margin-left: 0 !important;}
+div[data-testid="stSidebarNav"] {display: none !important;}
+button[data-testid="baseButton-header"] {display: none !important;}
+.css-1544g2n {display: none !important;}
+.css-18e3th9 {display: none !important;}
+[data-testid="stSidebarCollapseButton"] {display: none !important;}
+[data-testid="stSidebarUserContent"] {display: none !important;}
+[data-testid="stSidebarContent"] {display: none !important;}
+button[title="Open sidebar navigation"] {display: none !important;}
+button[aria-label="Open sidebar navigation"] {display: none !important;}
+.css-1vq4p4l {display: none !important;}
+.css-1d391kg {display: none !important;}
+.css-6qob1r {margin-left: 0 !important;}
+.css-1cypcdb {margin-left: 0 !important;}
+.css-18e3th9 {margin-left: 0 !important;}
+.css-1d391kg {margin-left: 0 !important;}
+.main .block-container {margin-left: 0 !important; max-width: 100% !important; padding-top: 0 !important;}
+.stApp > header {display: none !important;}
+.stApp [data-testid="stHeader"] {display: none !important;}
+
+/* Remove all top padding and margins */
+.block-container {
+    padding-top: 0rem !important;
+    margin-top: 0rem !important;
+}
+
+.top-nav {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.main-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.company-name {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.company-subtitle {
+    color: #e8f4f8;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8f4f8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+.feature-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #1e3c72;
+}
+.feature-description {
+    text-align: center;
+    color: #666;
+    line-height: 1.6;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Top navigation bar with language selector and login in top-right corner
 col_spacer, col_lang, col_login = st.columns([4, 1.5, 0.5])
 
@@ -131,90 +234,8 @@ if st.session_state.show_login and not st.session_state.employee_logged_in:
                 st.session_state.show_login = False
                 st.rerun()
 
-# Modern header with enhanced styling
-st.markdown("""
-<style>
-/* Hide sidebar completely */
-section[data-testid="stSidebar"] {display: none !important;}
-.stSidebar {display: none !important;}
-button[kind="header"] {display: none !important;}
-button[data-testid="collapsedControl"] {display: none !important;}
-.css-1d391kg {display: none !important;}
-.css-1y4p8pa {margin-left: 0 !important;}
-.css-17eq0hr {display: none !important;}
-.css-164nlkn {margin-left: 0 !important;}
-div[data-testid="stSidebarNav"] {display: none !important;}
-button[data-testid="baseButton-header"] {display: none !important;}
-.css-1544g2n {display: none !important;}
-.css-18e3th9 {display: none !important;}
-[data-testid="stSidebarCollapseButton"] {display: none !important;}
-[data-testid="stSidebarUserContent"] {display: none !important;}
-[data-testid="stSidebarContent"] {display: none !important;}
-button[title="Open sidebar navigation"] {display: none !important;}
-button[aria-label="Open sidebar navigation"] {display: none !important;}
-.css-1vq4p4l {display: none !important;}
-.css-1d391kg {display: none !important;}
-.css-6qob1r {margin-left: 0 !important;}
-.css-1cypcdb {margin-left: 0 !important;}
-.css-18e3th9 {margin-left: 0 !important;}
-.css-1d391kg {margin-left: 0 !important;}
-.main .block-container {margin-left: 0 !important; max-width: 100% !important;}
-.stApp > header {display: none !important;}
-.stApp [data-testid="stHeader"] {display: none !important;}
-
-.main-header {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-.company-name {
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-.company-subtitle {
-    color: #e8f4f8;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-.feature-card {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e8f4f8;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-}
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-}
-.feature-icon {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-.feature-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #1e3c72;
-}
-.feature-description {
-    text-align: center;
-    color: #666;
-    line-height: 1.6;
-}
-</style>
-""" + f"""
+# Header without separator line
+st.markdown(f"""
 <div class="main-header">
     <div class="company-name">🏗️ KAN-BUD</div>
     <div class="company-subtitle">{t('app.subtitle')}</div>
@@ -222,8 +243,6 @@ button[aria-label="Open sidebar navigation"] {display: none !important;}
 """, unsafe_allow_html=True)
 
 # Services are now initialized lazily when needed
-
-st.markdown("---")
 
 # Main dashboard content
 if st.session_state.employee_logged_in:
