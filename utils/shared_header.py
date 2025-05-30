@@ -1,10 +1,9 @@
-
 import streamlit as st
 from utils.translations import t, get_current_language, set_language
 
 def render_shared_header():
     """Render the shared header with language selector and login button matching main page style"""
-    
+
     # Custom CSS for unified header style
     st.markdown("""
     <style>
@@ -53,7 +52,7 @@ def render_shared_header():
     }
     </style>
     """, unsafe_allow_html=True)
-    
+
     # Top navigation bar with language selector and login in top-right corner
     col_spacer, col_lang, col_login = st.columns([4, 1.5, 0.5])
 

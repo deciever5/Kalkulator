@@ -52,12 +52,20 @@ def get_current_language():
 
 def set_language(lang_code):
     """Set current language and clear cache"""
+    print(f"Setting language to: {lang_code}")
     st.session_state.language = lang_code
     # Clear the translation cache to force reload
     load_translations.clear()
     # Force reload of translations
     global TRANSLATIONS
     TRANSLATIONS = load_translations()
+    print(f"Available languages after reload: {list(TRANSLATIONS.keys())}")
+    
+    # Verify the language data is loaded
+    if lang_code in TRANSLATIONS:
+        print(f"Successfully loaded {lang_code} translations")
+    else:
+        print(f"Warning: {lang_code} translations not found!")
 
 def t(key, language=None):
     """Translate text key using nested key access (e.g., 'ui.back_to_home')"""
@@ -67,48 +75,64 @@ def t(key, language=None):
     # Refresh translations to ensure we have the latest
     translations = get_translations()
     
-    # Get translation data for language - try exact match first
+    # Debug: Print available languages
+    print(f"Available languages: {list(translations.keys())}")
+    print(f"Requested language: {language}")
+    
+    # Get translation data for requested language
     translation_data = translations.get(language)
     
-    # If no exact match, try fallback chain: requested -> en -> pl
     if not translation_data:
-        print(f"No translation data found for language: {language}, trying fallbacks")
+        print(f"No translation data found for language: {language}")
+        # Only fallback if the requested language truly doesn't exist
         translation_data = translations.get('en', translations.get('pl', {}))
-
-    if not translation_data:
-        print(f"No translation data found for any language")
-        return key
+        if not translation_data:
+            print(f"No fallback translation data found")
+            return key
 
     # Handle nested keys like 'ui.back_to_home'
     keys = key.split('.')
     result = translation_data
 
+    # First try to get the key from the requested language
     try:
         for k in keys:
             if isinstance(result, dict) and k in result:
                 result = result[k]
             else:
-                # Try fallback languages for missing keys
+                # Key not found in requested language, try fallbacks
+                print(f"Key '{k}' not found in {language} for path: {key}")
+                
+                # Try fallback languages only for missing specific keys
                 for fallback_lang in ['en', 'pl']:
                     if fallback_lang != language and fallback_lang in translations:
                         fallback_data = translations[fallback_lang]
                         fallback_result = fallback_data
-                        try:
-                            for fk in keys:
-                                if isinstance(fallback_result, dict) and fk in fallback_result:
-                                    fallback_result = fallback_result[fk]
-                                else:
-                                    fallback_result = None
-                                    break
-                            if fallback_result and isinstance(fallback_result, str):
-                                print(f"Translation key {key} not found in {language}, using {fallback_lang}: {fallback_result}")
-                                return fallback_result
-                        except:
-                            continue
-                print(f"Translation key not found: {key} (missing: {k}) in any language")
+                        
+                        # Navigate to the same key path in fallback language
+                        key_found = True
+                        for fk in keys:
+                            if isinstance(fallback_result, dict) and fk in fallback_result:
+                                fallback_result = fallback_result[fk]
+                            else:
+                                key_found = False
+                                break
+                        
+                        if key_found and isinstance(fallback_result, str):
+                            print(f"Using fallback {fallback_lang} for key: {key}")
+                            return fallback_result
+                
+                print(f"Translation key not found: {key} in any language")
                 return key
 
-        return result if isinstance(result, str) else key
+        # Return the result if it's a string
+        if isinstance(result, str):
+            print(f"Found translation for {key} in {language}: {result[:50]}...")
+            return result
+        else:
+            print(f"Translation result is not a string for key: {key}")
+            return key
+            
     except (KeyError, TypeError, AttributeError) as e:
         print(f"Translation error for key {key}: {e}")
         return key
