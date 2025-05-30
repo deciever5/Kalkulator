@@ -1,3 +1,4 @@
+"""The code change adds a function to estimate costs using AI services, including fallback options and base cost calculations."""
 """Update fallback estimate to use proper translations and language-specific content for Hungarian and Czech."""
 """
 AI Services Module
@@ -701,7 +702,7 @@ class GroqService:
             }},
             "technical_assessment": {{
                 "                "structural_engineering": ["[requirement in {language}]", "[requirement in {language}]"],
-                "building_compliance": ["[code requirement in {language}]", "[code requirement in {language}]"],
+                "building_compliance": ["[code requirement inlanguage}]", "[code requirement in {language}]"],
                 "technical_challenges": ["[challenge in {language}]"]
             }},
             "project_execution": {{
@@ -741,3 +742,245 @@ class GroqService:
 
         # Always return the full response structure for comprehensive display
         return response
+
+
+def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "auto") -> str:
+    """
+    Main function to estimate costs using AI services
+
+    Args:
+        config: Container configuration dictionary
+        ai_model: AI model selection ("auto", "Groq Llama-3.1-70B", etc.)
+
+    Returns:
+        Formatted cost estimate string
+    """
+    from utils.translations import get_current_language
+
+    try:
+        # Get current language for response
+        current_language = get_current_language()
+
+        # Calculate base costs first
+        base_costs = _calculate_base_costs(config)
+
+        # Prepare estimation data
+        estimation_data = {
+            "container_config": config,
+            "response_language": current_language,
+            "project_location": "Central Europe",
+            "project_timeline": "Standard",
+            "quality_level": "European Standard"
+        }
+
+        # Try different AI services based on model selection
+        if ai_model == "auto" or "Groq" in ai_model:
+            try:
+                groq_service = GroqService()
+                result = groq_service.generate_cost_estimate(estimation_data, base_costs)
+                return _format_ai_response(result, current_language)
+            except Exception as groq_error:
+                print(f"Groq service failed: {groq_error}")
+
+                # Fallback to Anthropic
+                try:
+                    anthropic_service = AnthropicService()
+                    result = anthropic_service.generate_cost_estimate(estimation_data, base_costs)
+                    return _format_ai_response(result, current_language)
+                except Exception as anthropic_error:
+                    print(f"Anthropic service failed: {anthropic_error}")
+
+                    # Final fallback to OpenAI
+                    try:
+                        openai_service = OpenAIService()
+                        result = openai_service.generate_cost_estimate(estimation_data, base_costs)
+                        return _format_ai_response(result, current_language)
+                    except Exception as openai_error:
+                        print(f"OpenAI service failed: {openai_error}")
+                        return _generate_fallback_estimate(config, base_costs, current_language)
+
+        else:
+            # Specific model requested, try that service
+            return _generate_fallback_estimate(config, base_costs, current_language)
+
+    except Exception as e:
+        print(f"AI estimation error: {str(e)}")
+        return _generate_fallback_estimate(config, base_costs, current_language)
+
+
+def _calculate_base_costs(config: Dict[str, Any]) -> Dict[str, float]:
+    """Calculate base costs from configuration"""
+
+    # Base container costs
+    base_costs = {
+        '20ft Standard': 8000,
+        '40ft Standard': 12000,
+        '40ft High Cube': 14000,
+        '20ft Refrigerated': 15000
+    }
+
+    container_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
+
+    # Calculate modification costs
+    modifications_cost = 0
+
+    # Windows
+    modifications_cost += config.get('number_of_windows', 0) * 300
+
+    # Additional doors
+    if config.get('additional_doors', False):
+        modifications_cost += 800
+
+    # Electrical systems
+    if config.get('electrical_system', False):
+        modifications_cost += 1500
+
+    # Plumbing
+    if config.get('plumbing', False):
+        modifications_cost += 2000
+
+    # HVAC
+    if config.get('hvac', False):
+        modifications_cost += 2500
+
+    # Insulation
+    if config.get('insulation', False):
+        modifications_cost += 1200
+
+    # Delivery cost
+    delivery_cost = 800
+
+    return {
+        'container_base': container_cost,
+        'structural_modifications': modifications_cost * 0.4,
+        'electrical': modifications_cost * 0.25,
+        'plumbing': modifications_cost * 0.15,
+        'hvac': modifications_cost * 0.2,
+        'finishes': 1500,
+        'delivery': delivery_cost
+    }
+
+
+def _format_ai_response(ai_result: Dict[str, Any], language: str) -> str:
+    """Format AI response into readable string"""
+
+    if isinstance(ai_result, dict):
+        # Extract cost analysis if available
+        cost_analysis = ai_result.get('cost_analysis', {})
+        total_cost = cost_analysis.get('total_cost', 0) or cost_analysis.get('total_project_cost', 0)
+
+        if not total_cost and 'total_cost' in ai_result:
+            total_cost = ai_result['total_cost']
+
+        # Build formatted response
+        response_parts = []
+
+        # Title and total cost
+        response_parts.append(f"## 🤖 {'AI Wycena Kosztów' if language == 'pl' else 'AI Cost Estimate'}")
+        response_parts.append(f"### 💰 {'Całkowite Koszty Projektu' if language == 'pl' else 'Total Project Cost'}: €{total_cost:,.0f}")
+
+        # Cost breakdown if available
+        breakdown = cost_analysis.get('breakdown', {}) or cost_analysis.get('detailed_breakdown', {})
+        if breakdown:
+            response_parts.append(f"\n📊 {'Podział Kosztów' if language == 'pl' else 'Cost Breakdown'}:")
+            for key, value in breakdown.items():
+                if value and value > 0:
+                    label = key.replace('_', ' ').title()
+                    response_parts.append(f"• {label}: €{value:,.0f}")
+
+        # Timeline if available
+        timeline = cost_analysis.get('estimated_timeline', '') or cost_analysis.get('project_duration', '')
+        if timeline:
+            response_parts.append(f"\n⏱️ {'Szacowany Czas' if language == 'pl' else 'Estimated Timeline'}: {timeline}")
+
+        # Recommendations if available
+        recommendations = ai_result.get('recommendations', {})
+        if recommendations:
+            immediate_actions = recommendations.get('immediate_actions', []) or recommendations.get('immediate_priorities', [])
+            if immediate_actions:
+                response_parts.append(f"\n💡 {'Kluczowe Rekomendacje' if language == 'pl' else 'Key Recommendations'}:")
+                for action in immediate_actions[:3]:  # Limit to 3 items
+                    response_parts.append(f"• {action}")
+
+        # Risk factors if available
+        risk_analysis = ai_result.get('risk_analysis', {})
+        if risk_analysis:
+            risks = risk_analysis.get('identified_risks', []) or risk_analysis.get('technical_risks', [])
+            if risks:
+                response_parts.append(f"\n⚠️ {'Czynniki Ryzyka' if language == 'pl' else 'Risk Factors'}:")
+                for risk in risks[:2]:  # Limit to 2 items
+                    response_parts.append(f"• {risk}")
+
+        return "\n".join(response_parts)
+
+    elif isinstance(ai_result, str):
+        return ai_result
+    else:
+        return str(ai_result)
+
+
+def _generate_fallback_estimate(config: Dict[str, Any], base_costs: Dict[str, float], language: str) -> str:
+    """Generate fallback estimate when AI services are unavailable"""
+
+    # Calculate total
+    total_cost = sum(base_costs.values())
+
+    # Apply finish level multiplier
+    finish_multipliers = {
+        'Basic': 1.0,
+        'Standard': 1.2,
+        'Premium': 1.5,
+        'Luxury': 2.0
+    }
+    finish_multiplier = finish_multipliers.get(config.get('finish_level', 'Standard'), 1.2)
+    total_cost *= finish_multiplier
+
+    # Add labor costs
+    labor_cost = total_cost * 0.4
+    contingency = total_cost * 0.1
+    final_total = total_cost + labor_cost + contingency
+
+    if language == 'pl':
+        return f"""## ⚠️ Zapasowa Wycena Kosztów
+💰 **Całkowite Koszty Projektu: €{final_total:,.0f}**
+*Podstawowe obliczenie gdy usługi AI są niedostępne*
+
+📊 **Podział Kosztów:**
+• Materiały i Koszty Podstawowe: €{total_cost:,.0f}
+• Koszty Pracy (40%): €{labor_cost:,.0f}
+• Rezerwa (10%): €{contingency:,.0f}
+• Koszt transportu: €{base_costs.get('delivery', 800):,.0f}
+
+💡 **Standardowe Rekomendacje:**
+• Zaplanuj standardową dostawę i harmonogram instalacji
+• Rozważ lokalne przepisy budowlane
+• Przewidź budżet na potencjalne przygotowanie placu
+• Przejrzyj wymagania elektryczne i hydrauliczne wcześnie
+
+⚠️ **Standardowe Czynniki Ryzyka:**
+• Opóźnienia pogodowe podczas budowy
+• Różnice w harmonogramie pozwoleń
+• Ograniczenia dostępu do placu dla dostawy
+• Wahania cen materiałów"""
+    else:
+        return f"""## ⚠️ Fallback Cost Estimate
+💰 **Total Project Cost: €{final_total:,.0f}**
+*Basic calculation when AI services are unavailable*
+
+📊 **Cost Breakdown:**
+• Materials and Base Costs: €{total_cost:,.0f}
+• Labor Costs (40%): €{labor_cost:,.0f}
+• Contingency (10%): €{contingency:,.0f}
+• Delivery cost: €{base_costs.get('delivery', 800):,.0f}
+
+💡 **Standard Recommendations:**
+• Plan standard delivery and installation schedule
+• Consider local building regulations
+• Budget for potential site preparation
+• Review electrical and plumbing requirements early
+
+⚠️ **Standard Risk Factors:**
+• Weather delays during construction
+• Permit schedule variations
+• Site access limitations for delivery
+• Material price fluctuations"""
