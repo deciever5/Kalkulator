@@ -51,18 +51,24 @@ def get_current_language():
     return st.session_state.get('language', 'pl')
 
 def set_language(lang_code):
-    """Set current language"""
+    """Set current language and clear cache"""
     st.session_state.language = lang_code
+    # Clear the translation cache to force reload
+    load_translations.clear()
 
 def t(key, language=None):
     """Translate text key using nested key access (e.g., 'ui.back_to_home')"""
     if language is None:
         language = get_current_language()
 
+    # Refresh translations to ensure we have the latest
+    translations = get_translations()
+    
     # Get translation data for language
-    translation_data = TRANSLATIONS.get(language, TRANSLATIONS.get('pl', {}))
+    translation_data = translations.get(language, translations.get('pl', {}))
 
     if not translation_data:
+        print(f"No translation data found for language: {language}")
         return key
 
     # Handle nested keys like 'ui.back_to_home'
@@ -74,10 +80,12 @@ def t(key, language=None):
             if isinstance(result, dict) and k in result:
                 result = result[k]
             else:
+                print(f"Translation key not found: {key} (missing: {k})")
                 return key
 
         return result if isinstance(result, str) else key
-    except (KeyError, TypeError, AttributeError):
+    except (KeyError, TypeError, AttributeError) as e:
+        print(f"Translation error for key {key}: {e}")
         return key
 
 def get_available_languages():

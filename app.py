@@ -73,6 +73,10 @@ def init_session_state():
 
 init_session_state()
 
+# Force reload translations when language changes
+if 'prev_language' not in st.session_state:
+    st.session_state.prev_language = st.session_state.language
+
 # Modern header with enhanced styling and top navigation
 st.markdown("""
 <style>
@@ -200,7 +204,13 @@ with col_lang:
     
     if selected_language != current_lang:
         set_language(selected_language)
+        st.session_state.prev_language = selected_language
         st.rerun()
+
+# Check if language changed and force refresh translations
+if st.session_state.get('prev_language') != get_current_language():
+    st.session_state.prev_language = get_current_language()
+    st.rerun()
 
 with col_login:
     # Employee login button in top-right corner
