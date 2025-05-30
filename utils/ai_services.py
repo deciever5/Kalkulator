@@ -1493,23 +1493,29 @@ def _format_ai_response(ai_result: Dict[str, Any], language: str) -> str:
         if recommendations:
             response_parts.append(f"\n💡 **{'Rekomendacje Strategiczne' if language == 'pl' else 'Strategic Recommendations'}:**")
             
-            immediate_actions = recommendations.get('immediate_actions', []) or recommendations.get('immediate_priorities', [])
+            # Handle both list and dict formats for recommendations
+            if isinstance(recommendations, list):
+                immediate_actions = recommendations[:3]  # Take first 3 items if it's a list
+            else:
+                immediate_actions = recommendations.get('immediate_actions', []) or recommendations.get('immediate_priorities', [])
             if immediate_actions:
                 response_parts.append(f"• **{'Działania Priorytetowe' if language == 'pl' else 'Priority Actions'}:**")
                 for action in immediate_actions[:3]:
                     response_parts.append(f"  - {action}")
             
-            cost_optimization = recommendations.get('cost_optimization', [])
-            if cost_optimization:
-                response_parts.append(f"• **{'Optymalizacja Kosztów' if language == 'pl' else 'Cost Optimization'}:**")
-                for opt in cost_optimization[:3]:
-                    response_parts.append(f"  - {opt}")
-            
-            value_engineering = recommendations.get('value_engineering', [])
-            if value_engineering:
-                response_parts.append(f"• **{'Inżynieria Wartości' if language == 'pl' else 'Value Engineering'}:**")
-                for val in value_engineering[:2]:
-                    response_parts.append(f"  - {val}")
+            # Only process additional categories if recommendations is a dictionary
+            if isinstance(recommendations, dict):
+                cost_optimization = recommendations.get('cost_optimization', [])
+                if cost_optimization:
+                    response_parts.append(f"• **{'Optymalizacja Kosztów' if language == 'pl' else 'Cost Optimization'}:**")
+                    for opt in cost_optimization[:3]:
+                        response_parts.append(f"  - {opt}")
+                
+                value_engineering = recommendations.get('value_engineering', [])
+                if value_engineering:
+                    response_parts.append(f"• **{'Inżynieria Wartości' if language == 'pl' else 'Value Engineering'}:**")
+                    for val in value_engineering[:2]:
+                        response_parts.append(f"  - {val}")
 
         # Risk management
         risk_management = ai_result.get('risk_management', {})
