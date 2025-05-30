@@ -1,4 +1,3 @@
-
 {
   "app": {
     "title": "Professzionális Konténer Megoldások",
@@ -290,6 +289,8 @@
   "generate_ai_estimate": "AI Költségbecslés Generálása",
   "ai_cost_estimate": "AI Költségbecslés",
   "save_estimate": "Becslés Mentése",
+  "preliminary_estimate_note": "Ez egy előzetes becslés. A pontos ár változhat a projekt részletes követelményei függvényében.",
+  "delivery_cost": "Szállítási költség",
   "estimate_saved": "Becslés sikeresen mentve!",
   "send_inquiry_cta": "Érdeklődés Küldése",
   "get_precise_quote": "Pontos Árajánlat Kérése",
