@@ -345,6 +345,10 @@
   "site_access_limitations": "Ograniczenia dostępu do placu dla dostawy",
   "material_price_fluctuations": "Wahania cen materiałów",
   "basic_estimate_note": "Uwaga: To jest podstawowa wycena. Aby uzyskać dokładniejszą wycenę, skontaktuj się bezpośrednio z naszym zespołem.",
+  "ai_service_error": "Usługa AI tymczasowo niedostępna",
+  "fallback_estimate_basic": "Podstawowa kalkulacja zapasowa:",
+  "ai_retry_later": "Spróbuj ponownie później dla analizy AI",
+  "basic_calculation_ai_unavailable": "Podstawowe obliczenie gdy usługi AI są niedostępne",
   "quote_generator": {
     "employee_only": "Generator ofert jest dostępny tylko dla pracowników KAN-BUD.",
     "login_info": "Zaloguj się jako pracownik, aby uzyskać dostęp do tego narzędzia.",
@@ -522,6 +526,18 @@
     "anti_corrosion": "Antykorozyjna (C4)",
     "marine_grade": "Klasa morska (C5M)"
   },
+  "insulation": {
+    "basic": "Podstawowa (50mm)",
+    "standard": "Standardowa (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Ekstremalna (200mm)"
+  },
+  "reinforcement": {
+    "none": "Bez wzmocnień",
+    "standard": "Standardowe wzmocnienie",
+    "seismic": "Wzmocnienie sejsmiczne",
+    "hurricane": "Wzmocnienie na huragany"
+  },
   "help": {
     "windows": "Okna dwuszybowe z mostkami termicznymi. Więcej okien zwiększa naturalne oświetlenie, ale wpływa na izolację.",
     "additional_doors": "Dodatkowe drzwi personalne lub ewakuacyjne poza standardowymi drzwiami kontenera.",
@@ -535,6 +551,8 @@
     "additional_openings": "Specjalistyczne punkty dostępu poza standardowymi drzwiami i oknami.",
     "fire_safety": "Systemy ochrony przeciwpożarowej. Systemy sprinklerowe zalecane do użytku komercyjnego.",
     "accessibility": "Zgodność z ADA zapewnia dostępność dla osób niepełnosprawnych.",
-    "paint_finish": "Jakość powłoki wpływa na trwałość. C5M zalecana dla środowisk morskich. C4 dla przemysłu."
+    "paint_finish": "Jakość powłoki wpływa na trwałość. C5M zalecana dla środowisk morskich. C4 dla przemysłu.",
+    "insulation_package": "Grubość izolacji wpływa na efektywność energetyczną. Ekstremalna zalecana dla klimatu arktycznego.",
+    "structural_reinforcement": "Dodatkowe wzmocnienie dla ekstremalnych warunków pogodowych lub sejsmicznych."
   }
 }

@@ -37,52 +37,58 @@ def generate_cost_estimate(config, ai_model):
         ai_estimate = estimate_cost_with_ai(config, ai_model)
         return ai_estimate
     except Exception as e:
-        # Fallback to basic estimate if AI fails
-        current_lang = get_current_language()
+        # Fallback to configurator pricing when AI fails
+        from utils.calculations import StructuralCalculations
+        calc = StructuralCalculations()
         
-        base_costs = {
-            '20ft Standard': 8000,
-            '40ft Standard': 12000,
-            '40ft High Cube': 14000,
-            '20ft Refrigerated': 15000
-        }
-        
-        container_cost = base_costs.get(config.get('container_type', '20ft Standard'), 8000)
-        
-        # Add costs based on modifications
-        modifications_cost = 0
-        modifications_cost += config.get('number_of_windows', 0) * 300
-        if config.get('additional_doors', False):
-            modifications_cost += 800
-        
-        # Finish level multiplier
-        finish_multipliers = {
-            'Basic': 1.0,
-            'Standard': 1.2,
-            'Premium': 1.5,
-            'Luxury': 2.0
-        }
-        finish_multiplier = finish_multipliers.get(config.get('finish_level', 'Standard'), 1.2)
-        
-        total_cost = (container_cost + modifications_cost) * finish_multiplier
-        
-        error_msg = t('ai_service_error', current_lang) if 'ai_service_error' in t.__dict__ else "AI service temporarily unavailable"
-        
-        return f"""
-## ⚠️ {error_msg}
+        try:
+            # Use the same calculation method as the configurator
+            cost_breakdown = calc.calculate_total_cost(config)
+            total_cost = cost_breakdown.get('total_cost', 0)
+            
+            return f"""
+## ⚠️ {t('ai_service_error')}
 
-{t('fallback_estimate_basic', current_lang) if 'fallback_estimate_basic' in t.__dict__ else 'Basic calculation fallback:'}
+{t('fallback_estimate_basic')}
 
-**{t('container_type', current_lang)}:** {config.get('container_type', 'N/A')}
-**{t('base_cost', current_lang)}:** €{container_cost:,}
-**{t('modifications', current_lang)}:** €{modifications_cost:,}
-**{t('finish_level', current_lang)}:** {config.get('finish_level', 'N/A')} ({t('multiplier', current_lang)}: {finish_multiplier})
+**{t('container_type')}:** {config.get('container_type', 'N/A')}
+**{t('base_cost')}:** €{cost_breakdown.get('container_cost', 0):,.2f}
+**{t('modifications')}:** €{cost_breakdown.get('modification_cost', 0):,.2f}
+**{t('delivery_cost')}:** €{cost_breakdown.get('delivery_cost', 0):,.2f}
+**{t('labor_costs_30')}:** €{cost_breakdown.get('labor_cost', 0):,.2f}
 
-### **{t('total_cost', current_lang).upper()}: €{total_cost:,.0f}**
+### **{t('total_cost').upper()}: €{total_cost:,.2f}**
 
-*{t('ai_retry_later', current_lang) if 'ai_retry_later' in t.__dict__ else 'Please try again later for AI analysis'}*
+*{t('ai_retry_later')}*
 
-**{t('error_details', current_lang) if 'error_details' in t.__dict__ else 'Error'}: {str(e)}**
+**{t('basic_estimate_note')}**
+
+---
+
+### {t('standard_recommendations')}
+- {t('plan_standard_delivery')}
+- {t('consider_building_codes')}
+- {t('budget_site_preparation')}
+- {t('review_electrical_plumbing')}
+
+### {t('standard_risk_factors')}
+- {t('weather_delays')}
+- {t('permit_timeline_variations')}
+- {t('site_access_limitations')}
+- {t('material_price_fluctuations')}
+"""
+        except Exception as calc_error:
+            # Ultimate fallback if even basic calculation fails
+            return f"""
+## ⚠️ {t('ai_service_error')}
+
+{t('basic_calculation_ai_unavailable')}
+
+**{t('container_type')}:** {config.get('container_type', 'N/A')}
+**{t('error_details')}:** {str(e)}
+**{t('error_details')} (calc):** {str(calc_error)}
+
+{t('basic_estimate_note')}
 """
 
 st.markdown("""

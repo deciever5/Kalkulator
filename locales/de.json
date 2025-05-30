@@ -51,6 +51,112 @@
   "analyze_drawings": "Zeichnungen Analysieren",
   "send_inquiry": "Anfrage Senden",
   "send_inquiry_button": "Anfrage Senden",
+  "advanced_modifications": "Erweiterte Modifikationen",
+  "air_intakes": "Luftzufuhr & Belüftung",
+  "roof_modifications": "Dachmodifikationen",
+  "security_features": "Sicherheitsmerkmale",
+  "exterior_cladding": "Außenverkleidung",
+  "additional_openings": "Zusätzliche Öffnungen",
+  "fire_safety": "Brandschutzsysteme",
+  "accessibility_features": "Barrierefreiheit",
+  "paint_finish": "Anstrich & Oberflächenbehandlung",
+  "air_intakes": {
+    "none": "Keine Luftzufuhr",
+    "standard": "Standard-Belüftung",
+    "industrial": "Industriequalität",
+    "marine_grade": "Meeresqualität (salzresistent)"
+  },
+  "roof_modifications": {
+    "none": "Keine Dachmodifikationen",
+    "skylight": "Dachfenster-Installation",
+    "roof_hatch": "Dachluke",
+    "solar_ready": "Solarpanel-Vorbereitung"
+  },
+  "electrical": {
+    "basic": "Grundausstattung (Beleuchtung + Steckdosen)",
+    "standard": "Standard (15A Stromkreis)",
+    "industrial": "Industriell (30A + Schaltschrank)",
+    "smart_system": "Smart System (IoT Automatisierung)"
+  },
+  "plumbing": {
+    "none": "Keine Sanitärinstallation",
+    "basic": "Grundausstattung (Spüle + Abfluss)",
+    "full": "Vollausstattung (Badezimmer-Vorbereitung)",
+    "commercial": "Gewerbliche Qualität"
+  },
+  "hvac": {
+    "none": "Keine Klimaanlage",
+    "basic": "Grundbelüftung",
+    "split_system": "Split-Klimaanlage",
+    "central": "Zentrale Klimaanlage",
+    "heat_pump": "Wärmepumpe"
+  },
+  "security": {
+    "basic": "Grundausstattung (verstärkte Schlösser)",
+    "standard": "Standard (alarmbereit)",
+    "advanced": "Erweitert (Kameras + Sensoren)",
+    "high_security": "Hochsicherheit (biometrisch)"
+  },
+  "cladding": {
+    "none": "Keine Außenverkleidung",
+    "metal": "Metallverkleidung",
+    "composite": "Verbundstoffpaneele",
+    "wood": "Holzverkleidung",
+    "brick_veneer": "Klinkerverblendung"
+  },
+  "openings": {
+    "none": "Keine zusätzlichen Öffnungen",
+    "service_hatch": "Wartungsluke",
+    "loading_door": "Ladetor",
+    "emergency_exit": "Notausgang"
+  },
+  "fire_safety": {
+    "basic": "Grundausstattung (Feuerlöscher)",
+    "smoke_detection": "Raucherkennung",
+    "sprinkler": "Sprinkleranlage",
+    "full_system": "Vollständige Brandlöschung"
+  },
+  "accessibility": {
+    "standard": "Standard-Zugang",
+    "ramp": "Rollstuhlrampe",
+    "full_ada": "Vollständige ADA-Konformität",
+    "disabled_friendly": "Vollständig barrierefrei"
+  },
+  "paint": {
+    "standard": "Standard-Beschichtung (C2)",
+    "premium": "Premium-Finish (C3)",
+    "anti_corrosion": "Korrosionsschutz (C4)",
+    "marine_grade": "Meeresqualität (C5M)"
+  },
+  "insulation": {
+    "basic": "Grundausstattung (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extrem (200mm)"
+  },
+  "reinforcement": {
+    "none": "Keine Verstärkung",
+    "standard": "Standard-Verstärkung",
+    "seismic": "Erdbeben-Verstärkung",
+    "hurricane": "Hurrikan-Verstärkung"
+  },
+  "help": {
+    "windows": "Doppelverglaste Fenster mit Wärmebrücken. Mehr Fenster erhöhen natürliches Licht, beeinflussen aber die Isolierung.",
+    "additional_doors": "Zusätzliche Personal- oder Notausgangstüren neben Standard-Containertüren.",
+    "air_intakes": "Belüftungssysteme für Luftzirkulation. Meeresqualität empfohlen für Küstengebiete.",
+    "roof_modifications": "Dachmodifikationen für Zugang, Beleuchtung oder Solarinstallationen.",
+    "electrical_system": "Standard: 15A Haushalt. Industriell: 30A mit Schaltschrank. Smart: IoT Automatisierung.",
+    "plumbing_system": "Grundausstattung: Spüle und Abfluss. Vollausstattung: komplette Badezimmerausstattung. Gewerblich: Industriearmaturen.",
+    "hvac_system": "Klimakontrolloptionen. Wärmepumpen sind energieeffizient für ganzjährigen Gebrauch.",
+    "security_features": "Sicherheitsstufen von Grundschlössern bis zu biometrischen Zugangskontrollsystemen.",
+    "exterior_cladding": "Wetterschutz und ästhetische Verbesserung. Metallverkleidung bietet beste Haltbarkeit.",
+    "additional_openings": "Spezialisierte Zugangspunkte neben Standard-Türen und Fenstern.",
+    "fire_safety": "Brandschutzsysteme. Sprinkleranlagen empfohlen für gewerbliche Nutzung.",
+    "accessibility": "ADA-Konformität gewährleistet Zugänglichkeit für Behinderte.",
+    "paint_finish": "Beschichtungsqualität beeinflusst Haltbarkeit. C5M empfohlen für Meeresumgebungen. C4 für Industrie.",
+    "insulation_package": "Isolierungsdicke beeinflusst Energieeffizienz. Extrem empfohlen für arktische Klimazonen.",
+    "structural_reinforcement": "Zusätzliche Verstärkung für extreme Wetter- oder seismische Bedingungen."
+  },
   "why_kan_bud": "Warum KAN-BUD?",
   "precise_quotes": "Präzise Angebote",
   "ai_historical_data": "KI + historische Daten",
@@ -358,6 +464,10 @@
   "site_access_limitations": "Standortzugangsbeschränkungen für Lieferung",
   "material_price_fluctuations": "Materialpreisschwankungen",
   "basic_estimate_note": "Hinweis: Dies ist eine grundlegende Schätzung. Für eine genauere Preisgestaltung wenden Sie sich bitte direkt an unser Team.",
+  "ai_service_error": "AI-Service Vorübergehend Nicht Verfügbar",
+  "fallback_estimate_basic": "Grundlegende Berechnung Fallback:",
+  "ai_retry_later": "Bitte versuchen Sie es später für AI-Analyse",
+  "basic_calculation_ai_unavailable": "Grundberechnung wenn AI-Dienste nicht verfügbar sind",
   "estimate_disclaimer_title": "Wichtig - Rechtlicher Hinweis",
   "estimate_disclaimer_text": "Die obige Schätzung ist unverbindlich und stellt kein Angebot im Sinne des Bürgerlichen Gesetzbuchs dar. Der endgültige Preis kann sich je nach detaillierten Projektanforderungen, aktuellen Material- und Arbeitskosten ändern.",
   "send_inquiry": {

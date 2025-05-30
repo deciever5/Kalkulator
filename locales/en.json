@@ -82,6 +82,103 @@
   "fire_safety": "Fire Safety Systems",
   "accessibility_features": "Accessibility Features",
   "paint_finish": "Paint & Finish",
+  "air_intakes": {
+    "none": "No air intakes",
+    "standard": "Standard ventilation",
+    "industrial": "Industrial grade",
+    "marine_grade": "Marine grade (salt resistance)"
+  },
+  "roof_modifications": {
+    "none": "No roof modifications",
+    "skylight": "Skylight installation",
+    "roof_hatch": "Roof hatch",
+    "solar_ready": "Solar panel preparation"
+  },
+  "electrical": {
+    "basic": "Basic (lighting + outlets)",
+    "standard": "Standard (15A circuit)",
+    "industrial": "Industrial (30A + panel)",
+    "smart_system": "Smart system (IoT automation)"
+  },
+  "plumbing": {
+    "none": "No plumbing",
+    "basic": "Basic (sink + drain)",
+    "full": "Full (bathroom preparation)",
+    "commercial": "Commercial grade"
+  },
+  "hvac": {
+    "none": "No HVAC",
+    "basic": "Basic ventilation",
+    "split_system": "Split system AC",
+    "central": "Central air conditioning",
+    "heat_pump": "Heat pump"
+  },
+  "security": {
+    "basic": "Basic (reinforced locks)",
+    "standard": "Standard (alarm ready)",
+    "advanced": "Advanced (cameras + sensors)",
+    "high_security": "High security (biometric)"
+  },
+  "cladding": {
+    "none": "No exterior cladding",
+    "metal": "Metal siding",
+    "composite": "Composite panels",
+    "wood": "Wood cladding",
+    "brick_veneer": "Brick veneer"
+  },
+  "openings": {
+    "none": "No additional openings",
+    "service_hatch": "Service hatch",
+    "loading_door": "Loading door",
+    "emergency_exit": "Emergency exit"
+  },
+  "fire_safety": {
+    "basic": "Basic (fire extinguisher)",
+    "smoke_detection": "Smoke detection",
+    "sprinkler": "Sprinkler system",
+    "full_system": "Full fire suppression"
+  },
+  "accessibility": {
+    "standard": "Standard access",
+    "ramp": "Wheelchair ramp",
+    "full_ada": "Full ADA compliance",
+    "disabled_friendly": "Fully accessible"
+  },
+  "paint": {
+    "standard": "Standard coating (C2)",
+    "premium": "Premium finish (C3)",
+    "anti_corrosion": "Anti-corrosion (C4)",
+    "marine_grade": "Marine grade (C5M)"
+  },
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm)"
+  },
+  "reinforcement": {
+    "none": "No reinforcement",
+    "standard": "Standard reinforcement",
+    "seismic": "Seismic reinforcement",
+    "hurricane": "Hurricane reinforcement"
+  },
+  "help": {
+    "windows": "Double-glazed windows with thermal bridges. More windows increase natural light but affect insulation.",
+    "additional_doors": "Additional personnel or emergency doors beyond standard container doors.",
+    "air_intakes": "Ventilation systems for air circulation. Marine grade recommended for coastal areas.",
+    "roof_modifications": "Roof modifications for access, lighting, or solar installations.",
+    "electrical_system": "Standard: 15A household. Industrial: 30A with panel. Smart: IoT automation.",
+    "plumbing_system": "Basic: sink and drain. Full: complete bathroom fixtures. Commercial: industrial grade fixtures.",
+    "hvac_system": "Climate control options. Heat pumps are energy efficient for year-round use.",
+    "security_features": "Security levels from basic locks to biometric access control systems.",
+    "exterior_cladding": "Weather protection and aesthetic improvement. Metal siding offers best durability.",
+    "additional_openings": "Specialized access points beyond standard doors and windows.",
+    "fire_safety": "Fire protection systems. Sprinkler systems recommended for commercial use.",
+    "accessibility": "ADA compliance ensures accessibility for disabled persons.",
+    "paint_finish": "Coating quality affects durability. C5M recommended for marine environments. C4 for industrial.",
+    "insulation_package": "Insulation thickness affects energy efficiency. Extreme recommended for arctic climates.",
+    "structural_reinforcement": "Additional reinforcement for extreme weather or seismic conditions."
+  },
   "container": {
     "types": {
       "20ft_standard": "20ft Standard",
@@ -369,6 +466,10 @@
   "site_access_limitations": "Site access limitations for delivery",
   "material_price_fluctuations": "Material price fluctuations",
   "basic_estimate_note": "Note: This is a basic estimate. For more accurate pricing, please contact our team directly.",
+  "ai_service_error": "AI Service Temporarily Unavailable",
+  "fallback_estimate_basic": "Basic calculation fallback:",
+  "ai_retry_later": "Please try again later for AI analysis",
+  "basic_calculation_ai_unavailable": "Basic calculation when AI services are unavailable",
   "estimate_disclaimer_title": "Important - Legal Notice",
   "estimate_disclaimer_text": "The above estimate is indicative and does not constitute an offer within the meaning of the Civil Code. The final price may change depending on detailed project requirements, current material and labor costs.",
   "technical_analysis": "Technical\nAnalysis",

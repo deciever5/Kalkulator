@@ -341,6 +341,10 @@
   "site_access_limitations": "Omezení přístupu na místo pro dodávku",
   "material_price_fluctuations": "Kolísání cen materiálů",
   "basic_estimate_note": "Poznámka: Toto je základní odhad. Pro přesnější ocenění se obraťte přímo na náš tým.",
+  "ai_service_error": "AI Služba Dočasně Nedostupná",
+  "fallback_estimate_basic": "Základní výpočet záložní:",
+  "ai_retry_later": "Zkuste to později pro AI analýzu",
+  "basic_calculation_ai_unavailable": "Základní výpočet když AI služby nejsou dostupné",
   "quote_generator": {
     "employee_only": "Generátor nabídek je dostupný pouze pro zaměstnance KAN-BUD.",
     "login_info": "Přihlaste se jako zaměstnanec pro přístup k tomuto nástroji.",
@@ -442,5 +446,111 @@
     "system_settings": "Nastavení Systému"
   },
   "estimate_disclaimer_title": "Důležité - Právní Oznámení",
-  "estimate_disclaimer_text": "Výše uvedený odhad je orientační a nepředstavuje nabídku ve smyslu Občanského zákoníku. Konečná cena se může změnit v závislosti na detailních požadavcích projektu, aktuálních nákladech na materiál a práci."
+  "estimate_disclaimer_text": "Výše uvedený odhad je orientační a nepředstavuje nabídku ve smyslu Občanského zákoníku. Konečná cena se může změnit v závislosti na detailních požadavcích projektu, aktuálních nákladech na materiál a práci.",
+  "advanced_modifications": "Pokročilé Modifikace",
+  "air_intakes": "Přívod Vzduchu & Větrání",
+  "roof_modifications": "Úpravy Střechy",
+  "security_features": "Bezpečnostní Prvky",
+  "exterior_cladding": "Vnější Obklad",
+  "additional_openings": "Další Otvory",
+  "fire_safety": "Požární Bezpečnostní Systémy",
+  "accessibility_features": "Bezbariérovost",
+  "paint_finish": "Nátěr & Povrchová Úprava",
+  "air_intakes": {
+    "none": "Žádný přívod vzduchu",
+    "standard": "Standardní větrání",
+    "industrial": "Průmyslová kvalita",
+    "marine_grade": "Námořní kvalita (odolnost proti soli)"
+  },
+  "roof_modifications": {
+    "none": "Žádné úpravy střechy",
+    "skylight": "Instalace střešního okna",
+    "roof_hatch": "Střešní poklop",
+    "solar_ready": "Příprava na solární panely"
+  },
+  "electrical": {
+    "basic": "Základní (osvětlení + zásuvky)",
+    "standard": "Standardní (15A obvod)",
+    "industrial": "Průmyslový (30A + rozvodnice)",
+    "smart_system": "Chytrý systém (IoT automatizace)"
+  },
+  "plumbing": {
+    "none": "Bez instalatérských prací",
+    "basic": "Základní (dřez + odtok)",
+    "full": "Plný (příprava koupelny)",
+    "commercial": "Komerční kvalita"
+  },
+  "hvac": {
+    "none": "Bez HVAC",
+    "basic": "Základní větrání",
+    "split_system": "Split klimatizace",
+    "central": "Centrální klimatizace",
+    "heat_pump": "Tepelné čerpadlo"
+  },
+  "security": {
+    "basic": "Základní (posílené zámky)",
+    "standard": "Standardní (připraveno na alarm)",
+    "advanced": "Pokročilý (kamery + senzory)",
+    "high_security": "Vysoká bezpečnost (biometrické)"
+  },
+  "cladding": {
+    "none": "Bez vnějšího obkladu",
+    "metal": "Kovový obklad",
+    "composite": "Kompozitní panely",
+    "wood": "Dřevěný obklad",
+    "brick_veneer": "Cihlový obklad"
+  },
+  "openings": {
+    "none": "Žádné další otvory",
+    "service_hatch": "Servisní poklop",
+    "loading_door": "Nakládací dveře",
+    "emergency_exit": "Nouzový východ"
+  },
+  "fire_safety": {
+    "basic": "Základní (hasicí přístroj)",
+    "smoke_detection": "Detekce kouře",
+    "sprinkler": "Sprinklerový systém",
+    "full_system": "Úplný hasicí systém"
+  },
+  "accessibility": {
+    "standard": "Standardní přístup",
+    "ramp": "Rampa pro vozíčkáře",
+    "full_ada": "Plná ADA shoda",
+    "disabled_friendly": "Plně přístupný"
+  },
+  "paint": {
+    "standard": "Standardní nátěr (C2)",
+    "premium": "Prémiový nátěr (C3)",
+    "anti_corrosion": "Antikorozní (C4)",
+    "marine_grade": "Námořní kvalita (C5M)"
+  },
+  "insulation": {
+    "basic": "Základní (50mm)",
+    "standard": "Standardní (100mm)",
+    "premium": "Prémiový (150mm)",
+    "extreme": "Extrémní (200mm)"
+  },
+  "reinforcement": {
+    "none": "Bez zpevnění",
+    "standard": "Standardní zpevnění",
+    "seismic": "Seismické zpevnění",
+    "hurricane": "Zpevnění proti hurikánu"
+  },
+  "help": {
+    "windows": "Dvojskla okna s tepelnými mosty. Více oken zvyšuje přirozené světlo, ale ovlivňuje izolaci.",
+    "additional_doors": "Další personální nebo nouzové dveře kromě standardních kontejnerových dveří.",
+    "air_intakes": "Ventilační systémy pro cirkulaci vzduchu. Námořní kvalita doporučena pro pobřežní oblasti.",
+    "roof_modifications": "Úpravy střechy pro přístup, osvětlení nebo solární instalace.",
+    "electrical_system": "Standardní: 15A domácí. Průmyslový: 30A s rozvodnicí. Chytrý: IoT automatizace.",
+    "plumbing_system": "Základní: dřez a odtok. Plný: kompletní koupelnové vybavení. Komerční: průmyslové armatury.",
+    "hvac_system": "Možnosti klimatizace. Tepelná čerpadla jsou energeticky účinná pro celoroční použití.",
+    "security_features": "Úrovně bezpečnosti od základních zámků po biometrické systémy řízení přístupu.",
+    "exterior_cladding": "Ochrana před počasím a estetické zlepšení. Kovový obklad nabízí nejlepší trvanlivost.",
+    "additional_openings": "Specializované přístupové body kromě standardních dveří a oken.",
+    "fire_safety": "Požární ochranné systémy. Sprinklerové systémy doporučeny pro komerční použití.",
+    "accessibility": "ADA shoda zajišťuje přístupnost pro zdravotně postižené.",
+    "paint_finish": "Kvalita nátěru ovlivňuje trvanlivost. C5M doporučeno pro námořní prostředí. C4 pro průmysl.",
+    "insulation_package": "Tloušťka izolace ovlivňuje energetickou účinnost. Extrémní doporučeno pro arktické klimaty.",
+    "structural_reinforcement": "Dodatečné zpevnění pro extrémní počasí nebo seismické podmínky."
+  }
 }

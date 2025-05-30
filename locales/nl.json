@@ -163,6 +163,10 @@
   "site_access_limitations": "Plaats toegang beperkingen voor levering",
   "material_price_fluctuations": "Materiaal prijs fluctuaties",
   "basic_estimate_note": "Opmerking: Dit is een basis schatting. Voor nauwkeurigere prijzen, neem direct contact op met ons team.",
+  "ai_service_error": "AI Service Tijdelijk Niet Beschikbaar",
+  "fallback_estimate_basic": "Basis berekening fallback:",
+  "ai_retry_later": "Probeer later opnieuw voor AI analyse",
+  "basic_calculation_ai_unavailable": "Basis berekening wanneer AI services niet beschikbaar zijn",
   "estimate_disclaimer_title": "Belangrijk - Juridische Kennisgeving",
   "estimate_disclaimer_text": "Bovenstaande schatting is indicatief en vormt geen aanbod in de zin van het Burgerlijk Wetboek. De definitieve prijs kan wijzigen afhankelijk van gedetailleerde project vereisten, huidige materiaal- en arbeidskosten.",
   "container": {
@@ -447,6 +451,112 @@
   },
   "back_to_home": "← Terug naar Home",
   "go_to_configurator": "🔧 Ga naar Configurator",
+  "advanced_modifications": "Geavanceerde Modificaties",
+  "air_intakes": "Luchtinlaten & Ventilatie",
+  "roof_modifications": "Dakmodificaties",
+  "security_features": "Beveiligingsvoorzieningen",
+  "exterior_cladding": "Buitenbekleding",
+  "additional_openings": "Extra Openingen",
+  "fire_safety": "Brandveiligheidssystemen",
+  "accessibility_features": "Toegankelijkheidsvoorzieningen",
+  "paint_finish": "Verf & Afwerking",
+  "air_intakes": {
+    "none": "Geen luchtinlaten",
+    "standard": "Standaard ventilatie",
+    "industrial": "Industriële kwaliteit",
+    "marine_grade": "Maritieme kwaliteit (zoutbestendig)"
+  },
+  "roof_modifications": {
+    "none": "Geen dakmodificaties",
+    "skylight": "Dakraam installatie",
+    "roof_hatch": "Dakluik",
+    "solar_ready": "Zonnepaneel voorbereiding"
+  },
+  "electrical": {
+    "basic": "Basis (verlichting + stopcontacten)",
+    "standard": "Standaard (15A circuit)",
+    "industrial": "Industrieel (30A + schakelkast)",
+    "smart_system": "Smart systeem (IoT automatisering)"
+  },
+  "plumbing": {
+    "none": "Geen leidingwerk",
+    "basic": "Basis (gootsteen + afvoer)",
+    "full": "Volledig (badkamer voorbereiding)",
+    "commercial": "Commerciële kwaliteit"
+  },
+  "hvac": {
+    "none": "Geen HVAC",
+    "basic": "Basis ventilatie",
+    "split_system": "Split airco systeem",
+    "central": "Centrale airconditioning",
+    "heat_pump": "Warmtepomp"
+  },
+  "security": {
+    "basic": "Basis (versterkte sloten)",
+    "standard": "Standaard (alarm gereed)",
+    "advanced": "Geavanceerd (camera's + sensoren)",
+    "high_security": "Hoge beveiliging (biometrisch)"
+  },
+  "cladding": {
+    "none": "Geen buitenbekleding",
+    "metal": "Metalen gevelbekleding",
+    "composite": "Composiet panelen",
+    "wood": "Houten bekleding",
+    "brick_veneer": "Bakstenen fineer"
+  },
+  "openings": {
+    "none": "Geen extra openingen",
+    "service_hatch": "Onderhoudsluik",
+    "loading_door": "Laaddeur",
+    "emergency_exit": "Nooduitgang"
+  },
+  "fire_safety": {
+    "basic": "Basis (brandblusser)",
+    "smoke_detection": "Rookdetectie",
+    "sprinkler": "Sprinkler systeem",
+    "full_system": "Volledig blussysteem"
+  },
+  "accessibility": {
+    "standard": "Standaard toegang",
+    "ramp": "Rolstoelhelling",
+    "full_ada": "Volledige ADA naleving",
+    "disabled_friendly": "Volledig toegankelijk"
+  },
+  "paint": {
+    "standard": "Standaard coating (C2)",
+    "premium": "Premium afwerking (C3)",
+    "anti_corrosion": "Anti-corrosie (C4)",
+    "marine_grade": "Maritieme kwaliteit (C5M)"
+  },
+  "insulation": {
+    "basic": "Basis (50mm)",
+    "standard": "Standaard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreem (200mm)"
+  },
+  "reinforcement": {
+    "none": "Geen versterking",
+    "standard": "Standaard versterking",
+    "seismic": "Seismische versterking",
+    "hurricane": "Orkaan versterking"
+  },
+  "help": {
+    "windows": "Dubbelglas ramen met thermische bruggen. Meer ramen verhogen natuurlijk licht maar beïnvloeden isolatie.",
+    "additional_doors": "Extra personeel of nooduitgang deuren naast standaard container deuren.",
+    "air_intakes": "Ventilatiesystemen voor luchtcirculatie. Maritieme kwaliteit aanbevolen voor kustgebieden.",
+    "roof_modifications": "Dakmodificaties voor toegang, verlichting of zonne-installaties.",
+    "electrical_system": "Standaard: 15A huishoudelijk. Industrieel: 30A met schakelkast. Smart: IoT automatisering.",
+    "plumbing_system": "Basis: gootsteen en afvoer. Volledig: complete badkamer uitrusting. Commercieel: industriële armaturen.",
+    "hvac_system": "Klimaatregeling opties. Warmtepompen zijn energie-efficiënt voor jaarrond gebruik.",
+    "security_features": "Beveiligingsniveaus van basis sloten tot biometrische toegangscontrolesystemen.",
+    "exterior_cladding": "Weerbescherming en esthetische verbetering. Metalen gevelbekleding biedt beste duurzaamheid.",
+    "additional_openings": "Gespecialiseerde toegangspunten naast standaard deuren en ramen.",
+    "fire_safety": "Brandbeveiligingssystemen. Sprinkler systemen aanbevolen voor commercieel gebruik.",
+    "accessibility": "ADA naleving zorgt voor toegankelijkheid voor gehandicapten.",
+    "paint_finish": "Coating kwaliteit beïnvloedt duurzaamheid. C5M aanbevolen voor maritieme omgevingen. C4 voor industrieel.",
+    "insulation_package": "Isolatiedikte beïnvloedt energie-efficiëntie. Extreem aanbevolen voor arctische klimaten.",
+    "structural_reinforcement": "Extra versterking voor extreme weer of seismische omstandigheden."
+  },
   "send_inquiry": "Aanvraag Verzenden",
   "send_inquiry_button": "Aanvraag Verzenden",
   "send_inquiry": {

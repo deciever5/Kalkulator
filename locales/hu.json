@@ -398,6 +398,10 @@
   "site_access_limitations": "Helyszín hozzáférés korlátozások szállításnál",
   "material_price_fluctuations": "Anyagár ingadozások",
   "basic_estimate_note": "Megjegyzés: Ez egy alapbecslés. Pontosabb árazásért kérjük, vegye fel közvetlenül a kapcsolatot csapatunkkal.",
+  "ai_service_error": "AI Szolgáltatás Ideiglenesen Nem Elérhető",
+  "fallback_estimate_basic": "Alapvető számítás tartalék:",
+  "ai_retry_later": "Kérjük, próbálja újra később az AI elemzéshez",
+  "basic_calculation_ai_unavailable": "Alapszámítás amikor az AI szolgáltatások nem elérhetők",
   "labor_costs_30": "Munkaerőköltségek (30%)",
   "estimate_disclaimer_title": "Fontos - Jogi Nyilatkozat",
   "estimate_disclaimer_text": "A fenti becslés tájékoztató jellegű, és nem minősül a Polgári Törvénykönyv értelmében vett ajánlatnak. A végső ár változhat a projekt részletes követelményei, az aktuális anyag- és munkaerőköltségek függvényében.",
@@ -493,6 +497,112 @@
     "error": "Hiba a kérdés küldésekor",
     "why_professional_inquiry": "Miért Küldjön Professzionális Kérdést?",
     "preparation_tips": "Előkészítési Tippek"
+  },
+  "advanced_modifications": "Haladó Módosítások",
+  "air_intakes": "Légbevitel és Szellőzés",
+  "roof_modifications": "Tetőmódosítások",
+  "security_features": "Biztonsági Jellemzők",
+  "exterior_cladding": "Külső Burkolat",
+  "additional_openings": "További Nyílások",
+  "fire_safety": "Tűzvédelmi Rendszerek",
+  "accessibility_features": "Akadálymentesítés",
+  "paint_finish": "Festés és Felületkezelés",
+  "air_intakes": {
+    "none": "Nincs légbevitel",
+    "standard": "Szabványos szellőzés",
+    "industrial": "Ipari minőség",
+    "marine_grade": "Tengerparti minőség (sóálló)"
+  },
+  "roof_modifications": {
+    "none": "Nincs tetőmódosítás",
+    "skylight": "Tetőablak telepítés",
+    "roof_hatch": "Tetőnyílás",
+    "solar_ready": "Napelem felkészítés"
+  },
+  "electrical": {
+    "basic": "Alapvető (világítás + konnektorok)",
+    "standard": "Szabványos (15A áramkör)",
+    "industrial": "Ipari (30A + elosztótábla)",
+    "smart_system": "Okos rendszer (IoT automatizálás)"
+  },
+  "plumbing": {
+    "none": "Nincs vízvezeték",
+    "basic": "Alapvető (mosogató + lefolyó)",
+    "full": "Teljes (fürdőszoba felkészítés)",
+    "commercial": "Kereskedelmi minőség"
+  },
+  "hvac": {
+    "none": "Nincs HVAC",
+    "basic": "Alapvető szellőzés",
+    "split_system": "Split klímarendszer",
+    "central": "Központi légkondicionálás",
+    "heat_pump": "Hőszivattyú"
+  },
+  "security": {
+    "basic": "Alapvető (megerősített zárak)",
+    "standard": "Szabványos (riasztóra kész)",
+    "advanced": "Haladó (kamerák + érzékelők)",
+    "high_security": "Magas biztonság (biometrikus)"
+  },
+  "cladding": {
+    "none": "Nincs külső burkolat",
+    "metal": "Fém homlokzatburkolat",
+    "composite": "Kompozit panelek",
+    "wood": "Fa burkolat",
+    "brick_veneer": "Téglafurnér"
+  },
+  "openings": {
+    "none": "Nincs további nyílás",
+    "service_hatch": "Szerviznyílás",
+    "loading_door": "Rakodóajtó",
+    "emergency_exit": "Vészkijárat"
+  },
+  "fire_safety": {
+    "basic": "Alapvető (tűzoltó készülék)",
+    "smoke_detection": "Füstérzékelés",
+    "sprinkler": "Sprinkler rendszer",
+    "full_system": "Teljes tűzoltó rendszer"
+  },
+  "accessibility": {
+    "standard": "Szabványos hozzáférés",
+    "ramp": "Kerekesszék rámpa",
+    "full_ada": "Teljes ADA megfelelőség",
+    "disabled_friendly": "Teljesen akadálymentes"
+  },
+  "paint": {
+    "standard": "Szabványos bevonat (C2)",
+    "premium": "Prémium felületkezelés (C3)",
+    "anti_corrosion": "Korróziógátló (C4)",
+    "marine_grade": "Tengerparti minőség (C5M)"
+  },
+  "insulation": {
+    "basic": "Alapvető (50mm)",
+    "standard": "Szabványos (100mm)",
+    "premium": "Prémium (150mm)",
+    "extreme": "Szélsőséges (200mm)"
+  },
+  "reinforcement": {
+    "none": "Nincs megerősítés",
+    "standard": "Szabványos megerősítés",
+    "seismic": "Szeizmikus megerősítés",
+    "hurricane": "Hurrikán megerősítés"
+  },
+  "help": {
+    "windows": "Dupla üvegezésű ablakok hőhidakkal. Több ablak növeli a természetes fényt, de befolyásolja a szigetelést.",
+    "additional_doors": "További személyzeti vagy vészkijárati ajtók a szabványos konténerajtókon túl.",
+    "air_intakes": "Szellőzőrendszerek levegőcirkulációhoz. Tengerparti minőség ajánlott parti területekhez.",
+    "roof_modifications": "Tetőmódosítások hozzáféréshez, világításhoz vagy napelem telepítéshez.",
+    "electrical_system": "Szabványos: 15A háztartási. Ipari: 30A elosztótáblával. Okos: IoT automatizálás.",
+    "plumbing_system": "Alapvető: mosogató és lefolyó. Teljes: komplett fürdőszoba felszerelés. Kereskedelmi: ipari szerelvények.",
+    "hvac_system": "Klímavezérlési lehetőségek. Hőszivattyúk energiatakarékosak egész éves használatra.",
+    "security_features": "Biztonsági szintek az alapzároktól a biometrikus hozzáférés-vezérlő rendszerekig.",
+    "exterior_cladding": "Időjárási védelem és esztétikai javítás. Fém homlokzatburkolat kínálja a legjobb tartósságot.",
+    "additional_openings": "Speciális hozzáférési pontok a szabványos ajtókon és ablakokon túl.",
+    "fire_safety": "Tűzvédelmi rendszerek. Sprinkler rendszerek ajánlottak kereskedelmi használatra.",
+    "accessibility": "ADA megfelelőség biztosítja a hozzáférhetőséget fogyatékos személyek számára.",
+    "paint_finish": "Bevonat minősége befolyásolja a tartósságot. C5M ajánlott tengeri környezethez. C4 ipari használatra.",
+    "insulation_package": "Szigetelés vastagsága befolyásolja az energiahatékonyságot. Szélsőséges ajánlott sarkvidéki éghajlathoz.",
+    "structural_reinforcement": "További megerősítés szélsőséges időjárási vagy szeizmikus körülményekhez."
   },
   "drawing_analysis_customer": {
     "description": "Ingyenes műszaki rajz elemzés ügyfelek számára az árajánlati folyamat részeként",
