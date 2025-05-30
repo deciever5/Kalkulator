@@ -192,7 +192,7 @@ with col_lang:
         'de': '🇩🇪 Deutsch',
         'nl': '🇳🇱 Nederlands'
     }
-    
+
     selected_language = st.selectbox(
         "🌐",
         options=list(language_options.keys()),
@@ -201,7 +201,7 @@ with col_lang:
         key="top_language_selector",
         label_visibility="collapsed"
     )
-    
+
     if selected_language != current_lang:
         set_language(selected_language)
         st.session_state.prev_language = selected_language
