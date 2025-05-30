@@ -20,7 +20,7 @@ if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
 # Render shared header without login button
-render_shared_header(show_login=False)
+render_shared_header(show_login=False, current_page="AI_Cost_Estimator")
 
 def generate_cost_estimate(config, ai_model):
     """Generate AI-powered cost estimate with animated loading"""
