@@ -33,6 +33,26 @@ if 'container_db' not in st.session_state:
 
 st.markdown("""
 <style>
+.main-header {
+    background: linear-gradient(135deg, #2E86AB 0%, #A23B72 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.header-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.header-subtitle {
+    color: #e8f4f8;
+    font-size: 1.2rem;
+    text-align: center;
+}
 .config-section {
     background: white;
     border-radius: 15px;
@@ -50,6 +70,14 @@ st.markdown("""
     border-bottom: 2px solid #e8f4f8;
 }
 </style>
+""", unsafe_allow_html=True)
+
+# Header
+st.markdown(f"""
+<div class="main-header">
+    <div class="header-title">📦 {t('nav.container_configurator')}</div>
+    <div class="header-subtitle">{t('container_configurator_desc')}</div>
+</div>
 """, unsafe_allow_html=True)
 
 # Navigation
