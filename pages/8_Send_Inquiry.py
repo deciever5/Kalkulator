@@ -14,7 +14,7 @@ init_language()
 
 st.set_page_config(page_title="Send Inquiry", page_icon="📧", layout="wide")
 
-st.title(f"📧 {t('send_inquiry.title', 'Professional Inquiry Form')}")
+st.title(f"📧 {t('send_inquiry.title', 'Inquiry Form')}")
 st.markdown(f"*{t('send_inquiry.description', 'Get a detailed quote tailored to your container project needs')}*")
 
 # Important disclaimer

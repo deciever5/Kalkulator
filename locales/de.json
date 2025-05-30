@@ -339,7 +339,7 @@
   "send_inquiry_form": {
     "success": "Anfrage erfolgreich gesendet!",
     "error": "Fehler beim Senden der Anfrage",
-    "title": "Professionelles Anfrageformular",
+    "title": "Anfrageformular",
     "project_requirements": "Projektanforderungen",
     "recommended_files": "Empfohlene Dokumente",
     "privacy_section": "Datenschutz & Datenschutz (RODO/GDPR)",
