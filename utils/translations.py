@@ -33,9 +33,7 @@ def load_translations():
     print(f"Total languages loaded: {list(translations.keys())}")
     return translations
 
-def get_translations():
-    """Get translations - always load fresh"""
-    return load_translations()
+
 
 def init_language():
     """Initialize language system"""
@@ -50,10 +48,6 @@ def set_language(lang_code):
     """Set current language"""
     print(f"Setting language to: {lang_code}")
     st.session_state.language = lang_code
-    
-    # Clear the global translations to force reload
-    global TRANSLATIONS
-    TRANSLATIONS = load_translations()
     
     # Verify the language change was successful
     current = get_current_language()
@@ -125,8 +119,6 @@ def get_nested_translation(translation_data, key):
             return None
     return result if isinstance(result, str) else None
 
-TRANSLATIONS = load_translations()
-
 def t(key: str, fallback: str = None, **kwargs) -> str:
     """
     Get translation for given key in current language
@@ -137,11 +129,11 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
         fallback: Fallback text if translation is missing
         **kwargs: Format parameters
     """
-    lang = st.session_state.get('language', 'en')
+    lang = st.session_state.get('language', 'pl')
 
     try:
-        # Always use fresh translations
-        translations = get_translations()
+        # Always load fresh translations to avoid caching issues
+        translations = load_translations()
         
         # Get translation value
         if lang not in translations:
