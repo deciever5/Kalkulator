@@ -181,39 +181,3 @@ else:
 
             except Exception as e:
                 st.error(f"{t('error_generating_estimate')}: {str(e)}")
-
-# Send Inquiry button section
-st.divider()
-st.markdown(f"### 📧 {t('get_professional_quote', 'Get Professional Quote')}")
-
-col1, col2 = st.columns([2, 1])
-
-with col1:
-    st.markdown(f"""
-    {t('inquiry_benefits', 'Ready for a detailed quote? Send your configuration to our experts for:')}
-    
-    • {t('precise_pricing', 'Precise pricing based on current market rates')}
-    • {t('technical_consultation', 'Technical consultation and recommendations')}
-    • {t('custom_modifications', 'Custom modifications and specifications')}
-    • {t('professional_support', 'Professional project support')}
-    """)
-
-with col2:
-    if st.button(
-        f"📧 {t('send_inquiry_button', 'Send Inquiry')}",
-        use_container_width=True,
-        type="primary",
-        help=t('send_inquiry_help', 'Transfer your configuration to the inquiry form')
-    ):
-        # Store current configuration and estimate for the inquiry
-        if 'container_config' in st.session_state:
-            st.session_state.inquiry_config = st.session_state.container_config.copy()
-        
-        if 'ai_estimate' in st.session_state:
-            st.session_state.inquiry_estimate = st.session_state.ai_estimate
-            
-        if 'cost_breakdown' in st.session_state:
-            st.session_state.inquiry_cost_breakdown = st.session_state.cost_breakdown.copy()
-        
-        st.session_state.inquiry_source = 'ai_estimator'
-        st.switch_page("pages/8_Send_Inquiry.py")
