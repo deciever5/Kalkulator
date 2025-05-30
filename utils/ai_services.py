@@ -97,6 +97,31 @@ class OpenAIService:
         config_summary.append(f"Finish Quality Level: {config.get('finish_level', 'Standard')}")
         config_summary.append(f"Climate Zone: {config.get('climate_zone', 'Temperate')}")
 
+        # User-specific requirements and comments
+        user_comment = config.get('user_comment', '').strip()
+        special_requirements = config.get('special_requirements', {})
+        
+        if user_comment:
+            config_summary.append(f"CLIENT SPECIFIC REQUIREMENTS: {user_comment}")
+        
+        # Special considerations
+        special_considerations = []
+        if special_requirements.get('special_location'):
+            special_considerations.append("Special location requirements")
+        if special_requirements.get('urgent_timeline'):
+            special_considerations.append("Urgent timeline needed")
+        if special_requirements.get('custom_modifications'):
+            special_considerations.append("Custom modifications required")
+        if special_requirements.get('sustainability_focus'):
+            special_considerations.append("Sustainability priority")
+        if special_requirements.get('budget_constraints'):
+            special_considerations.append("Budget constraints")
+        if special_requirements.get('regulatory_concerns'):
+            special_considerations.append("Regulatory compliance focus")
+        
+        if special_considerations:
+            config_summary.append(f"SPECIAL CONSIDERATIONS: {'; '.join(special_considerations)}")
+
         # Detailed modifications list
         modifications = config.get('modifications', {})
         if modifications:
@@ -116,12 +141,12 @@ class OpenAIService:
 
         # Enhanced system message based on language
         system_messages = {
-            'en': "You are a senior container modification specialist with 15+ years experience in European markets. Provide comprehensive cost analysis with market insights, technical recommendations, risk assessment, and optimization opportunities.",
-            'pl': "Jesteś starszym specjalistą od modyfikacji kontenerów z ponad 15-letnim doświadczeniem na rynkach europejskich. Zapewnij kompleksową analizę kosztów z wglądem w rynek, rekomendacjami technicznymi, oceną ryzyka i możliwościami optymalizacji.",
-            'de': "Sie sind ein erfahrener Containermodifikations-Spezialist mit über 15 Jahren Erfahrung auf europäischen Märkten. Bieten Sie umfassende Kostenanalyse mit Markteinblicken, technischen Empfehlungen, Risikobewertung und Optimierungsmöglichkeiten.",
-            'nl': "U bent een senior containermodificatie specialist met 15+ jaar ervaring op Europese markten. Bied uitgebreide kostenanalyse met marktinzichten, technische aanbevelingen, risicobeoordeling en optimalisatiemogelijkheden.",
-            'hu': "Ön egy vezető konténer-módosítási szakértő több mint 15 éves európai piaci tapasztalattal. Nyújtson átfogó költségelemzést piaci betekintéssel, műszaki ajánlásokkal, kockázatértékeléssel és optimalizálási lehetőségekkel.",
-            'cs': "Jste senior specialista na úpravy kontejnerů s více než 15letými zkušenostmi na evropských trzích. Poskytněte komplexní analýzu nákladů s tržními poznatky, technickými doporučeními, hodnocením rizik a možnostmi optimalizace."
+            'en': "You are a senior container modification specialist with 15+ years experience in European markets. Provide comprehensive cost analysis with market insights, technical recommendations, risk assessment, and optimization opportunities. Pay special attention to any client-specific requirements or comments and address them thoroughly in your analysis.",
+            'pl': "Jesteś starszym specjalistą od modyfikacji kontenerów z ponad 15-letnim doświadczeniem na rynkach europejskich. Zapewnij kompleksową analizę kosztów z wglądem w rynek, rekomendacjami technicznymi, oceną ryzyka i możliwościami optymalizacji. Zwróć szczególną uwagę na wszelkie specyficzne wymagania lub komentarze klienta i odnieś się do nich dokładnie w swojej analizie.",
+            'de': "Sie sind ein erfahrener Containermodifikations-Spezialist mit über 15 Jahren Erfahrung auf europäischen Märkten. Bieten Sie umfassende Kostenanalyse mit Markteinblicken, technischen Empfehlungen, Risikobewertung und Optimierungsmöglichkeiten. Achten Sie besonders auf kundenspezifische Anforderungen oder Kommentare und gehen Sie in Ihrer Analyse gründlich darauf ein.",
+            'nl': "U bent een senior containermodificatie specialist met 15+ jaar ervaring op Europese markten. Bied uitgebreide kostenanalyse met marktinzichten, technische aanbevelingen, risicobeoordeling en optimalisatiemogelijkheden. Besteed speciale aandacht aan eventuele klantspecifieke vereisten of opmerkingen en behandel deze grondig in uw analyse.",
+            'hu': "Ön egy vezető konténer-módosítási szakértő több mint 15 éves európai piaci tapasztalattal. Nyújtson átfogó költségelemzést piaci betekintéssel, műszaki ajánlásokkal, kockázatértékeléssel és optimalizálási lehetőségekkel. Fordítson különös figyelmet minden ügyfél-specifikus követelményre vagy megjegyzésre, és foglalkozzon velük alaposan az elemzésében.",
+            'cs': "Jste senior specialista na úpravy kontejnerů s více než 15letými zkušenostmi na evropských trzích. Poskytněte komplexní analýzu nákladů s tržními poznatky, technickými doporučeními, hodnocením rizik a možnostmi optimalizace. Věnujte zvláštní pozornost jakýmkoli specifickým požadavkům nebo komentářům klienta a důkladně se k nim vyjádřete ve své analýze."
         }
 
         return f"""{system_messages.get(language, system_messages['en'])}
@@ -140,18 +165,24 @@ BASE COST CALCULATIONS:
 {json.dumps(base_costs, indent=2)}
 
 REQUIRED COMPREHENSIVE ANALYSIS:
-1. Detailed cost breakdown with market trend analysis
-2. Material costs with supplier chain considerations
-3. Labor cost variations by region and season
-4. Technical feasibility assessment and structural requirements
-5. Building code compliance requirements by region
-6. Risk analysis and mitigation strategies
-7. Timeline optimization with critical path analysis
-8. Sustainability assessment and energy efficiency
-9. Alternative design suggestions with cost comparisons
-10. Long-term maintenance and lifecycle costs
+1. **CLIENT-SPECIFIC RESPONSE**: Address all client comments and special requirements directly
+2. **Detailed cost breakdown** with market trend analysis and regional variations
+3. **Technical feasibility assessment** with structural and engineering considerations
+4. **Material and labor analysis** including supplier chain considerations and seasonal factors
+5. **Timeline optimization** with critical path analysis and potential acceleration options
+6. **Risk assessment and mitigation** strategies for identified challenges
+7. **Sustainability evaluation** including environmental impact and energy efficiency
+8. **Alternative design suggestions** with detailed cost-benefit comparisons
+9. **Regulatory compliance guidance** including permits and building codes
+10. **Long-term value analysis** including maintenance costs and ROI considerations
+11. **Implementation roadmap** with practical next steps and recommendations
 
-IMPORTANT: Respond entirely in {language} language. ALL content including technical terms, recommendations, and analysis must be in {language}.
+CRITICAL INSTRUCTIONS:
+- Respond entirely in {language} language. ALL content must be in {language}.
+- Address ANY client-specific requirements or comments mentioned above with detailed solutions
+- Provide actionable, specific recommendations based on the client's stated needs
+- Include practical implementation advice and potential challenges
+- Offer multiple options where applicable to give the client choices
 
 Provide detailed response in this JSON format:
 {{

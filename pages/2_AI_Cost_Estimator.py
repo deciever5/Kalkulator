@@ -191,6 +191,33 @@ else:
 
     st.markdown("---")
 
+    # User input section for additional details
+    st.markdown(f"### 💬 {t('additional_project_details')}:")
+    
+    user_comment = st.text_area(
+        t('project_specific_requirements'),
+        placeholder=t('project_comment_placeholder'),
+        height=120,
+        help=t('project_comment_help'),
+        key="user_project_comment"
+    )
+    
+    # Specific requirement checkboxes
+    st.markdown(f"**{t('specific_considerations')}:**")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        special_location = st.checkbox(t('special_location_requirements'), key="special_location")
+        urgent_timeline = st.checkbox(t('urgent_timeline_needed'), key="urgent_timeline")
+        custom_modifications = st.checkbox(t('custom_modifications_needed'), key="custom_mods")
+    
+    with col2:
+        sustainability_focus = st.checkbox(t('sustainability_priority'), key="sustainability")
+        budget_constraints = st.checkbox(t('budget_constraints'), key="budget_limit")
+        regulatory_concerns = st.checkbox(t('regulatory_compliance_focus'), key="regulatory")
+
+    st.markdown("---")
+
     # Check if user is employee to show AI model selection
     if st.session_state.get('employee_logged_in', False):
         # AI model selection for employees only
@@ -213,8 +240,20 @@ else:
     if st.button(f"🚀 {t('generate_ai_estimate')}", use_container_width=True, type="primary"):
         with st.spinner(t('ai.messages.generating')):
             try:
+                # Prepare enhanced config with user input
+                enhanced_config = config.copy()
+                enhanced_config['user_comment'] = user_comment
+                enhanced_config['special_requirements'] = {
+                    'special_location': special_location,
+                    'urgent_timeline': urgent_timeline,
+                    'custom_modifications': custom_modifications,
+                    'sustainability_focus': sustainability_focus,
+                    'budget_constraints': budget_constraints,
+                    'regulatory_concerns': regulatory_concerns
+                }
+                
                 # Generate cost estimate
-                estimate = generate_cost_estimate(config, ai_model)
+                estimate = generate_cost_estimate(enhanced_config, ai_model)
 
                 if estimate:
                     st.session_state.ai_estimate = estimate
