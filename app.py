@@ -70,7 +70,7 @@ def init_session_state():
 
 try:
     init_session_state()
-    
+
     # Force reload translations when language changes
     if 'prev_language' not in st.session_state:
         st.session_state.prev_language = st.session_state.language
@@ -313,9 +313,9 @@ if st.session_state.employee_logged_in:
                 </button>
             </div>
             """, unsafe_allow_html=True)
-            
+
             # Hidden Streamlit button for functionality
-            if st.button(f"hidden_{key}", key=f"{key}_card", label_visibility="hidden", disabled=False):
+            if st.button(f"hidden_{key}", key=f"{key}_card", disabled=False):
                 st.switch_page(page)
 
     # Secondary tools
@@ -352,9 +352,9 @@ if st.session_state.employee_logged_in:
                 </button>
             </div>
             """, unsafe_allow_html=True)
-            
+
             # Hidden Streamlit button for functionality
-            if st.button(f"hidden_{key}", key=f"{key}_card", label_visibility="hidden", disabled=False):
+            if st.button(f"hidden_{key}", key=f"{key}_card", disabled=False):
                 st.switch_page(page)
 
 else:
@@ -397,9 +397,9 @@ else:
             </button>
         </div>
         """, unsafe_allow_html=True)
-        
+
         # Hidden Streamlit button for functionality
-        if st.button("hidden_config", key="client_config_card", label_visibility="hidden"):
+        if st.button("hidden_config", key="client_config_card"):
             st.switch_page("pages/1_Container_Configurator.py")
 
     with col2:
@@ -426,9 +426,9 @@ else:
             </button>
         </div>
         """, unsafe_allow_html=True)
-        
+
         # Hidden Streamlit button for functionality
-        if st.button("hidden_ai", key="client_ai_card", label_visibility="hidden"):
+        if st.button("hidden_ai", key="client_ai_card"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
 
 # Customer services section - moved here after configuration/AI sections
@@ -467,9 +467,9 @@ if not st.session_state.employee_logged_in:
             </button>
         </div>
         """, unsafe_allow_html=True)
-        
+
         # Hidden Streamlit button for functionality
-        if st.button("hidden_drawing", key="customer_drawing_analysis_card", label_visibility="hidden"):
+        if st.button("hidden_drawing", key="customer_drawing_analysis_card"):
             st.switch_page("pages/9_Customer_Drawing_Analysis.py")
 
     with col2:
@@ -496,9 +496,9 @@ if not st.session_state.employee_logged_in:
             </button>
         </div>
         """, unsafe_allow_html=True)
-        
+
         # Hidden Streamlit button for functionality
-        if st.button("hidden_inquiry", key="customer_inquiry_card", label_visibility="hidden"):
+        if st.button("hidden_inquiry", key="customer_inquiry_card"):
             st.switch_page("pages/8_Send_Inquiry.py")
 
 # Enhanced client benefits section
