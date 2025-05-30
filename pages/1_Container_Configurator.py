@@ -311,7 +311,7 @@ with col3:
     # Custom paint finish
     paint_finish = st.selectbox(
         t('paint_finish'),
-        [t('paint.standard'), t('paint.premium'), t('paint.anti_corrosion'), t('paint.custom_color')],
+        [t('paint.standard'), t('paint.premium'), t('paint.anti_corrosion'), t('paint.marine_grade')],
         key="paint_finish",
         help=t('help.paint_finish')
     )

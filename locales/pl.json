@@ -444,5 +444,97 @@
     "historical_data": "Dane Historyczne",
     "user_management": "Zarządzanie Użytkownikami",
     "system_settings": "Ustawienia Systemu"
+  },
+  "advanced_modifications": "Zaawansowane modyfikacje",
+  "air_intakes": "Nawiewy i wentylacja",
+  "roof_modifications": "Modyfikacje dachu",
+  "security_features": "Zabezpieczenia",
+  "exterior_cladding": "Okładzina zewnętrzna",
+  "additional_openings": "Dodatkowe otwory",
+  "fire_safety": "Systemy przeciwpożarowe",
+  "accessibility_features": "Dostępność",
+  "paint_finish": "Malowanie i wykończenie",
+  "air_intakes": {
+    "none": "Bez nawiewów",
+    "standard": "Wentylacja standardowa",
+    "industrial": "Klasa przemysłowa",
+    "marine_grade": "Klasa morska (odporność na sól)"
+  },
+  "roof_modifications": {
+    "none": "Bez modyfikacji dachu",
+    "skylight": "Montaż świetlika",
+    "roof_hatch": "Właz dachowy",
+    "solar_ready": "Przygotowanie pod panele słoneczne"
+  },
+  "electrical": {
+    "basic": "Podstawowa (oświetlenie + gniazdka)",
+    "standard": "Standardowa (obwód 15A)",
+    "industrial": "Przemysłowa (30A + rozdzielnia)",
+    "smart_system": "System inteligentny (automatyka)"
+  },
+  "plumbing": {
+    "none": "Bez instalacji",
+    "basic": "Podstawowa (zlewozmywak + odpływ)",
+    "full": "Pełna (przygotowanie łazienki)",
+    "commercial": "Klasa komercyjna"
+  },
+  "hvac": {
+    "none": "Bez HVAC",
+    "basic": "Wentylacja podstawowa",
+    "split_system": "Klimatyzacja split",
+    "central": "Centralna klimatyzacja",
+    "heat_pump": "Pompa ciepła"
+  },
+  "security": {
+    "basic": "Podstawowa (wzmocnione zamki)",
+    "standard": "Standardowa (przygotowanie alarmu)",
+    "advanced": "Zaawansowana (kamery + czujniki)",
+    "high_security": "Wysokie bezpieczeństwo (biometryka)"
+  },
+  "cladding": {
+    "none": "Bez okładziny zewnętrznej",
+    "metal": "Blacha elewacyjna",
+    "composite": "Panele kompozytowe",
+    "wood": "Okładzina drewniana",
+    "brick_veneer": "Licówka ceglana"
+  },
+  "openings": {
+    "none": "Bez dodatkowych otworów",
+    "service_hatch": "Właz serwisowy",
+    "loading_door": "Drzwi załadunkowe",
+    "emergency_exit": "Wyjście ewakuacyjne"
+  },
+  "fire_safety": {
+    "basic": "Podstawowa (gaśnica)",
+    "smoke_detection": "Wykrywanie dymu",
+    "sprinkler": "System sprinklerowy",
+    "full_system": "Pełne gaszenie pożaru"
+  },
+  "accessibility": {
+    "standard": "Dostęp standardowy",
+    "ramp": "Podjazd dla wózków",
+    "full_ada": "Pełna zgodność ADA",
+    "disabled_friendly": "W pełni dostępny"
+  },
+  "paint": {
+    "standard": "Powłoka standardowa (C2)",
+    "premium": "Wykończenie premium (C3)",
+    "anti_corrosion": "Antykorozyjna (C4)",
+    "marine_grade": "Klasa morska (C5M)"
+  },
+  "help": {
+    "windows": "Okna dwuszybowe z mostkami termicznymi. Więcej okien zwiększa naturalne oświetlenie, ale wpływa na izolację.",
+    "additional_doors": "Dodatkowe drzwi personalne lub ewakuacyjne poza standardowymi drzwiami kontenera.",
+    "air_intakes": "Systemy wentylacyjne do cyrkulacji powietrza. Klasa morska zalecana dla obszarów nadmorskich.",
+    "roof_modifications": "Modyfikacje dachu dla dostępu, oświetlenia lub instalacji solarnych.",
+    "electrical_system": "Standardowa: 15A domowa. Przemysłowa: 30A z rozdzielnicą. Inteligentna: automatyka IoT.",
+    "plumbing_system": "Podstawowa: zlewozmywak i odpływ. Pełna: kompletne wyposażenie łazienki. Komercyjna: armatura przemysłowa.",
+    "hvac_system": "Opcje kontroli klimatu. Pompy ciepła są energooszczędne do użytku całorocznego.",
+    "security_features": "Poziomy bezpieczeństwa od podstawowych zamków do biometrycznych systemów kontroli dostępu.",
+    "exterior_cladding": "Ochrona przed warunkami atmosferycznymi i poprawa estetyki. Blacha elewacyjna oferuje najlepszą trwałość.",
+    "additional_openings": "Specjalistyczne punkty dostępu poza standardowymi drzwiami i oknami.",
+    "fire_safety": "Systemy ochrony przeciwpożarowej. Systemy sprinklerowe zalecane do użytku komercyjnego.",
+    "accessibility": "Zgodność z ADA zapewnia dostępność dla osób niepełnosprawnych.",
+    "paint_finish": "Jakość powłoki wpływa na trwałość. C5M zalecana dla środowisk morskich. C4 dla przemysłu."
   }
 }

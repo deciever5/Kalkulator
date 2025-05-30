@@ -195,6 +195,20 @@ else:
         st.write(f"**{t('windows')}:** {config['number_of_windows']}")
         st.write(f"**{t('additional_doors')}:** {t('yes') if config['additional_doors'] else t('no')}")
         
+        # Show all advanced modifications from the enhanced configurator
+        st.write(f"**{t('electrical_system')}:** {config.get('electrical_system', 'N/A')}")
+        st.write(f"**{t('plumbing_system')}:** {config.get('plumbing_system', 'N/A')}")
+        st.write(f"**{t('hvac_system')}:** {config.get('hvac_system', 'N/A')}")
+        
+        if config.get('air_intakes'):
+            st.write(f"**{t('air_intakes')}:** {config.get('air_intakes', 'N/A')}")
+        if config.get('roof_modifications'):
+            st.write(f"**{t('roof_modifications')}:** {config.get('roof_modifications', 'N/A')}")
+        if config.get('security_features'):
+            st.write(f"**{t('security_features')}:** {config.get('security_features', 'N/A')}")
+        if config.get('paint_finish'):
+            st.write(f"**{t('paint_finish')}:** {config.get('paint_finish', 'N/A')}")
+        
         # Show detailed modifications
         modifications = config.get('modifications', {})
         if modifications:
