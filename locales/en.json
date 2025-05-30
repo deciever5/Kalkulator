@@ -292,11 +292,7 @@
     "analysis_results": "Analysis Results",
     "analysis_complete": "Analysis completed",
     "analysis_failed": "Analysis failed",
-    "config_required": "Configuration Required",
-    "config_required_text": "For accurate technical drawing analysis, basic container configuration is required. Without configuration, analysis will be limited to basic estimates.",
     "analysis_failed_reasons": "Possible reasons for analysis failure",
-    "config_tip": "Tip",
-    "config_tip_text": "Configure your container before analyzing drawings to get more accurate results and tailored quotes.",
     "error": "Error",
     "windows": "Windows",
     "doors": "Doors",
@@ -319,6 +315,8 @@
     "tip_3": "High resolution (minimum 300 DPI)",
     "config_required": "Configuration Required",
     "config_required_text": "For accurate technical drawing analysis, basic container configuration is required. Without configuration, analysis will be limited to basic estimates.",
+    "config_tip": "Tip",
+    "config_tip_text": "Configure your container before analyzing drawings to get more accurate results and tailored quotes.",
     "analysis_failed_reasons": "Possible reasons for analysis failure"
   },
   "admin": {
