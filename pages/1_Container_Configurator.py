@@ -366,19 +366,20 @@ with st.form("container_configuration_form"):
         )
 
         # HVAC System
+        hvac_system_options = [
+            t('hvac_system.none'),
+            t('hvac_system.electric_heaters'),
+            t('hvac_system.electric_heating'),
+            t('hvac_system.heat_pump'),
+            t('hvac_system.gas_heating'),
+            t('hvac_system.split_ac'),
+            t('hvac_system.vrv_vrf'),
+            t('hvac_system.underfloor_heating'),
+            t('hvac_system.central_ac')
+        ]
         hvac_system = st.selectbox(
-            "System HVAC (Ogrzewanie/Chłodzenie)",
-            options=[
-                "Bez HVAC (bez ogrzewania i chłodzenia)",
-                "Grzejniki elektryczne (1-3kW, konwektory)",
-                "Ogrzewanie elektryczne (promienniki IR)",
-                "Pompa ciepła (split, wydajność 2-12kW)",
-                "Ogrzewanie gazowe (piec kondensacyjny)",
-                "Klimatyzacja split (chłodzenie + grzanie)",
-                "System VRV/VRF (multi-split, sterowanie strefowe)",
-                "Ogrzewanie podłogowe (elektryczne/wodne)",
-                "Centrala klimatyzacyjna (z filtracją, nawilżaniem)"
-            ],
+            t('hvac_system'),
+            options=hvac_system_options,
             index=5
         )
 
