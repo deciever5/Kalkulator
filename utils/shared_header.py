@@ -142,7 +142,7 @@ def render_shared_header(show_login=False, current_page="Home"):
             with col_y:
                 if st.button(t('ui.cancel'), key=f"cancel_login_{current_page}", use_container_width=True):
                     st.session_state.show_login = False
-                    st.rerun()t.rerun()
+                    st.rerun()
 
     # Professional navigation header
     st.markdown("""
