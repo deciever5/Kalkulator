@@ -44,6 +44,11 @@ def init_language():
     """Initialize language system"""
     if 'language' not in st.session_state:
         st.session_state.language = 'pl'
+    # Store language in URL params to persist across page loads
+    if 'language' in st.query_params:
+        query_lang = st.query_params['language']
+        if query_lang in get_available_languages():
+            st.session_state.language = query_lang
 
 def get_current_language():
     """Get current language"""
@@ -53,7 +58,9 @@ def set_language(lang_code):
     """Set current language"""
     print(f"Setting language to: {lang_code}")
     st.session_state.language = lang_code
-
+    # Also set in URL params for persistence
+    st.query_params['language'] = lang_code
+    
     # Verify the language change was successful
     current = get_current_language()
     print(f"Language successfully set to: {current}")
@@ -78,6 +85,8 @@ def get_available_languages():
 
 def render_language_selector():
     """Render language selector dropdown with full visibility and alphabetical order"""
+    # Initialize language if not set
+    init_language()
     current_lang = get_current_language()
     language_options = get_available_languages()
 
@@ -114,30 +123,26 @@ def render_language_selector():
     </style>
     """, unsafe_allow_html=True)
 
-    # Create a unique key for each page
-    import time
-    key = f"lang_selector_{int(time.time()) % 10000}"
-
     col1, col2, col3 = st.columns([4, 1.5, 0.5])
 
     with col2:
         # Ensure current language is in available options
         if current_lang not in language_options:
-            current_lang = 'en'  # Default to English if current language not available
+            current_lang = 'pl'  # Default to Polish
             set_language(current_lang)
 
+        # Use a stable key based on page
+        page_name = st.session_state.get('current_page', 'main')
+        
         selected_language = st.selectbox(
             "🌐 Language",
             options=list(language_options.keys()),
             format_func=lambda x: language_options[x],
             index=list(language_options.keys()).index(current_lang),
-            key=key,
-            label_visibility="collapsed"
+            key=f"main_lang_selector_{page_name}",
+            label_visibility="collapsed",
+            on_change=lambda: set_language(st.session_state[f"main_lang_selector_{page_name}"])
         )
-
-        if selected_language != current_lang:
-            set_language(selected_language)
-            st.rerun()
 
 def render_language_buttons():
     """Legacy function kept for compatibility"""

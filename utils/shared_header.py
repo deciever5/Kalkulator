@@ -64,12 +64,9 @@ def render_shared_header(show_login=False, current_page="Home"):
             format_func=lambda x: language_options[x],
             index=list(language_options.keys()).index(current_lang),
             key=key,
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            on_change=lambda: set_language(st.session_state[key])
         )
-
-        if selected_language != current_lang:
-            set_language(selected_language)
-            st.rerun()
 
     if show_login:
         with col_login:

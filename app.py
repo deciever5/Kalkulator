@@ -462,6 +462,9 @@ with col_lang:
         'uk': '🇺🇦 Українська'
     }
 
+    # Initialize language system first
+    init_language()
+    
     # Custom CSS to make selectbox show all options without scrolling
     st.markdown("""
     <style>
