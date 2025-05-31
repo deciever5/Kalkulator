@@ -3,6 +3,12 @@ import json
 import os
 from typing import Dict, List, Any, Optional, Tuple
 from groq import Groq
+try:
+    from googletrans import Translator
+    GOOGLETRANS_AVAILABLE = True
+except ImportError:
+    GOOGLETRANS_AVAILABLE = False
+    print("⚠️ googletrans not installed. Install with: pip install googletrans==4.0.0rc1")
 
 class AITranslationService:
     """AI-powered translation service for technical container terminology using Groq"""
@@ -235,27 +241,34 @@ class AITranslationService:
         current[keys[-1]] = value
 
     def translate_missing_keys(self, source_lang: str, target_lang: str, missing_keys: Dict[str, str]) -> Dict[str, str]:
-        """Translate missing translation keys using Groq AI service"""
+        """Translate missing translation keys using AI services with fallbacks"""
 
         if not missing_keys:
             return {}
 
-        if not self.client:
-            print("⚠️ Groq API not available, using fallback translation")
-            return self._fallback_translation(target_lang, missing_keys)
+        # Try Groq first if available
+        if self.client:
+            prompt = self._build_translation_prompt(source_lang, target_lang, missing_keys)
+            
+            try:
+                result = self._translate_with_groq(prompt)
+                if result and isinstance(result, dict) and len(result) > 0:
+                    print("✅ Using Groq AI translation")
+                    return result
+                else:
+                    print("⚠️ Groq failed or rate limited, trying Google Translate...")
+                    
+            except Exception as e:
+                print(f"⚠️ Groq error: {e}, trying Google Translate...")
 
-        # Build context-aware translation prompt
-        prompt = self._build_translation_prompt(source_lang, target_lang, missing_keys)
+        # Try Google Translate as fallback
+        google_result = self._translate_with_google(missing_keys, target_lang)
+        if google_result and len(google_result) > 0:
+            print("✅ Using Google Translate")
+            return google_result
 
-        try:
-            result = self._translate_with_groq(prompt)
-
-            if result and isinstance(result, dict):
-                return result
-
-        except Exception as e:
-            print(f"❌ Groq translation failed: {e}")
-
+        # Final fallback
+        print("⚠️ All translation services failed, using placeholder translations")
         return self._fallback_translation(target_lang, missing_keys)
 
     def _build_translation_prompt(self, source_lang: str, target_lang: str, missing_keys: Dict[str, str]) -> str:
@@ -314,7 +327,7 @@ Return the translations as a JSON object with the same keys but translated value
         return prompt
 
     def _translate_with_groq(self, prompt: str) -> Dict[str, str]:
-        """Translate using Groq service"""
+        """Translate using Groq service with rate limit handling"""
         try:
             response = self.client.chat.completions.create(
                 model="llama-3.1-8b-instant",
@@ -393,7 +406,69 @@ Return the translations as a JSON object with the same keys but translated value
             return {}
 
         except Exception as e:
+            error_str = str(e)
+            if "rate_limit_exceeded" in error_str or "429" in error_str:
+                print(f"⚠️ Groq rate limit exceeded, switching to Google Translate")
+                return {}
             print(f"Groq translation error: {e}")
+            return {}
+
+    def _translate_with_google(self, missing_keys: Dict[str, str], target_lang: str) -> Dict[str, str]:
+        """Translate using Google Translate (free alternative)"""
+        if not GOOGLETRANS_AVAILABLE:
+            print("❌ Google Translate not available. Install with: pip install googletrans==4.0.0rc1")
+            return {}
+        
+        try:
+            translator = Translator()
+            results = {}
+            
+            # Map language codes
+            lang_map = {
+                'fi': 'fi', 'uk': 'uk', 'sk': 'sk', 'fr': 'fr',
+                'de': 'de', 'en': 'en', 'pl': 'pl', 'es': 'es',
+                'it': 'it', 'nl': 'nl', 'cs': 'cs', 'hu': 'hu', 'sv': 'sv'
+            }
+            
+            google_lang = lang_map.get(target_lang, target_lang)
+            
+            print(f"🌐 Using Google Translate for {len(missing_keys)} keys...")
+            
+            # Translate in small batches to avoid issues
+            batch_size = 10
+            processed = 0
+            
+            for i in range(0, len(missing_keys), batch_size):
+                batch = dict(list(missing_keys.items())[i:i+batch_size])
+                
+                for key, text in batch.items():
+                    try:
+                        # Skip very short or special texts
+                        if len(text.strip()) < 2 or text.startswith(('http', 'www', '@')):
+                            results[key] = text
+                            continue
+                            
+                        # Translate
+                        translated = translator.translate(text, src='pl', dest=google_lang)
+                        results[key] = translated.text
+                        processed += 1
+                        
+                        if processed % 5 == 0:
+                            print(f"   Translated {processed}/{len(missing_keys)} keys...")
+                            
+                    except Exception as e:
+                        print(f"   Error translating '{key}': {e}")
+                        results[key] = f"[AUTO] {text}"
+                
+                # Small delay between batches
+                import time
+                time.sleep(0.1)
+            
+            print(f"✅ Google Translate completed {len(results)} translations")
+            return results
+            
+        except Exception as e:
+            print(f"❌ Google Translate error: {e}")
             return {}
 
     def _fallback_translation(self, target_lang: str, missing_keys: Dict[str, str]) -> Dict[str, str]:
