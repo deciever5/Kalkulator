@@ -16,6 +16,7 @@
     "back_to_home": "← Zurück zur Startseite",
     "go_to_ai_estimate": "🤖 Zur KI-Schätzung →",
     "go_to_configurator": "🔧 Zum Konfigurator",
+    "get_ai_estimate": "🤖 KI-Schätzung Erhalten",
     "access_denied": "Zugang Verweigert"
   },
   "nav": {
@@ -596,5 +597,8 @@
   "it_systems_basic": "Basic Network",
   "fire_systems": "Fire Safety Systems",
   "additional_openings_door": "Additional Door",
-  "construction_material_composite": "Composite"
+  "construction_material_composite": "Composite",
+  "air_intakes_label": "Luftzufuhr und Belüftung",
+  "fire_safety_label": "Brandschutzsysteme",
+  "roof_modifications_label": "Dachmodifikationen"
 }
