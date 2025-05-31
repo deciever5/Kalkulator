@@ -211,4 +211,3 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
     except Exception as e:
         print(f"Translation error for key '{key}': {e}")
         return fallback if fallback else key
-```
