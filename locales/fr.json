@@ -1,8 +1,7 @@
-
 {
   "app": {
     "title": "Solutions de conteneurs professionnelles",
-    "subtitle": "Solutions de conteneurs professionnelles - Conception, construction et montage"
+    "subtitle": "[AUTO] Professional Container Solutions"
   },
   "ui": {
     "employee_login": "Connexion employé",
@@ -15,28 +14,29 @@
     "open": "Ouvrir",
     "language_selector": "Langue / Language",
     "back_to_home": "← Retour à l'accueil",
-    "go_to_ai_estimate": "🤖 Vers estimation IA →",
-    "go_to_configurator": "🔧 Vers configurateur",
+    "go_to_ai_estimate": "🤖 Aller à l'estimation IA →",
+    "go_to_configurator": "🔧 Aller au configurateur",
     "access_denied": "Accès refusé"
   },
   "nav": {
     "comparison_tool": "Outil de\ncomparaison",
     "comparison_tool_desc": "Comparer les configurations",
     "drawing_analysis": "Analyse de\ndessins",
-    "drawing_analysis_desc": "Analyse de documents IA",
-    "admin_panel": "Panneau\nad'administration",
+    "drawing_analysis_desc": "Analyse IA des documents",
+    "admin_panel": "Panneau\nd'administration",
     "admin_panel_desc": "Gestion du système",
     "ai_cost_estimation": "Estimation des coûts IA",
     "container_configurator": "Configurateur de conteneurs",
     "technical_analysis": "Analyse technique",
     "quote_generator": "Générateur de devis",
-    "send_inquiry": "Envoyer\ndemande",
+    "send_inquiry": "Envoyer une\ndemande",
     "send_inquiry_desc": "Formulaire de demande de devis",
     "drawing_analysis_customer": "Analyse de\ndessins",
-    "drawing_analysis_customer_desc": "Analyse gratuite de documents",
-    "bulk_pricing": "Prix\nen gros",
+    "drawing_analysis_customer_desc": "Analyse gratuite des documents",
+    "bulk_pricing": "Tarifs en\ngros",
     "bulk_pricing_desc": "Remises sur volume pour plusieurs conteneurs",
-    "custom_sizing": "Taille\npersonnalisée"
+    "custom_sizing": "Dimensions\npersonnalisées",
+    "custom_sizing_desc": "Tailles et configurations spéciales"
   },
   "options": {
     "container_types": {
@@ -107,7 +107,55 @@
       "hvac_system": "Système CVC",
       "insulation_package": "Package d'isolation",
       "structural_reinforcement": "Renforcement structurel",
-      "delivery_zone": "Zone de livraison"
+      "delivery_zone": "Zone de livraison",
+      "building_type": "Type de bâtiment",
+      "dimensions": "Dimensions",
+      "width": "Largeur (m)",
+      "length": "Longueur (m)",
+      "height": "Hauteur (m)",
+      "wall_thickness": "Épaisseur des murs (mm)",
+      "insulation": "Isolation",
+      "insulation_thickness": "Épaisseur d'isolation (mm)",
+      "entrance": "Entrée",
+      "entrance_type": "Type d'entrée",
+      "windows": "Fenêtres",
+      "window_count": "Nombre de fenêtres",
+      "window_size": "Taille de fenêtre",
+      "electrical": "Électricité",
+      "plumbing": "Plomberie",
+      "heating": "Chauffage",
+      "ventilation": "Ventilation",
+      "flooring": "Sol",
+      "ceiling": "Plafond",
+      "finish": "Finition",
+      "exterior_finish": "Finition extérieure",
+      "interior_finish": "Finition intérieure",
+      "additional_features": "Fonctionnalités supplémentaires",
+      "quantity": "Quantité",
+      "location": "Emplacement",
+      "project_timeline": "Calendrier du projet"
+    },
+    "placeholders": {
+      "enter_width": "Entrez la largeur",
+      "enter_length": "Entrez la longueur",
+      "enter_height": "Entrez la hauteur",
+      "select_option": "Sélectionnez une option",
+      "enter_quantity": "Entrez la quantité",
+      "enter_location": "Entrez l'emplacement"
+    },
+    "options": {
+      "container_types": {
+        "office": "Conteneur de bureau",
+        "residential": "Conteneur résidentiel",
+        "storage": "Conteneur de stockage",
+        "workshop": "Atelier",
+        "restaurant": "Restaurant/café",
+        "medical": "Cabinet médical",
+        "educational": "Salle de classe",
+        "retail": "Point de vente",
+        "industrial": "Industriel",
+        "agricultural": "Agricole"
+      }
     }
   },
   "ai": {
@@ -210,6 +258,35 @@
     }
   },
   "labor_costs_30": "Coûts de main-d'œuvre (30%)",
+    "configure_container": "[AUTO] Configure Your Container",
+  "simple_process_2_steps": "[AUTO] Simple Process - Just 2 Steps",
+  "step_1_configuration": "[AUTO] Step 1: Configuration",
+  "choose_container_type": "[AUTO] Choose container type and specifications",
+  "step_2_ai_quote": "[AUTO] Step 2: AI Quote",
+  "get_instant_quote": "[AUTO] Get instant pricing with AI analysis",
+  "drawing_analysis_service": "[AUTO] Drawing Analysis",
+  "upload_drawings_estimate": "[AUTO] Upload your drawings for analysis",
+  "send_inquiry_service": "[AUTO] Send Inquiry",
+  "get_detailed_quote_text": "[AUTO] Get detailed quote via form",
+  "why_kan_bud": "[AUTO] Why Choose KAN-BUD?",
+  "precise_quotes": "[AUTO] Precise Quotes",
+  "ai_historical_data": "[AUTO] AI analysis based on historical data",
+  "european_climate_standards": "[AUTO] European climate standards compliance",
+  "transparent_calculations": "[AUTO] Transparent calculations",
+  "fast_realization": "[AUTO] Fast Realization",
+  "hundreds_of_projects": "[AUTO] Hundreds of completed projects",
+  "own_machinery": "[AUTO] Own machinery and equipment",
+  "poland_center": "[AUTO] Central location in Poland",
+  "full_service": "[AUTO] Full Service",
+  "design_execution": "[AUTO] From design to execution",
+  "transport_assembly": "[AUTO] Transport and assembly included",
+  "after_sales_support": "[AUTO] After-sales support",
+  "contact_us": "[AUTO] Contact Us",
+  "address": "[AUTO] Address",
+  "phone": "[AUTO] Phone",
+  "email": "[AUTO] Email",
+  "working_hours": "[AUTO] Working Hours",
+  "mon_fri": "[AUTO] Mon-Fri 8:00-17:00",
   "comparison_tool": {
     "employee_only": "L'outil de comparaison est disponible uniquement pour les employés KAN-BUD.",
     "login_info": "Connectez-vous en tant qu'employé pour accéder à cette fonctionnalité."
