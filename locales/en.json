@@ -599,5 +599,14 @@
   "estimate_disclaimer_title": "Important - Legal Notice",
   "estimate_disclaimer_text": "The above estimate is indicative and does not constitute an offer within the meaning of the Civil Code. The final price may change depending on detailed project requirements, current material and labor costs.",
   "back_to_home": "← Return to Home Page",
+  "basic_configuration": "BASIC CONFIGURATION",
+  "construction_material": "Construction Material", 
+  "main_purpose": "Main Purpose",
+  "usage_environment": "Usage Environment",
+  "number_of_windows": "Number of Windows",
+  "window_types": "Window Types",
+  "advanced_modifications": "ADVANCED MODIFICATIONS",
+  "transport_logistics": "TRANSPORT & LOGISTICS",
+  "equipment_extras": "EQUIPMENT & EXTRAS",
   "go_to_configurator": "🔧 Go to Configurator"
 }

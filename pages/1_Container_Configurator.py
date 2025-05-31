@@ -113,7 +113,7 @@ with st.form("container_configuration_form"):
     # SECTION 1: BASIC CONFIGURATION
     st.markdown(f"""
     <div class="section-header">
-        <div class="section-title">🏗️ PODSTAWOWA KONFIGURACJA</div>
+        <div class="section-title">🏗️ {t('basic_configuration', 'PODSTAWOWA KONFIGURACJA')}</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -122,7 +122,7 @@ with st.form("container_configuration_form"):
     with col1:
         # Container Type
         container_type = st.selectbox(
-            "Typ Kontenera",
+            t('container_type', 'Typ Kontenera'),
             options=[
                 "10ft Compact (3m x 2.4m)",
                 "20ft Standard (6m x 2.4m)", 
@@ -138,7 +138,7 @@ with st.form("container_configuration_form"):
 
         # Construction Material
         construction_material = st.selectbox(
-            "Materiał Konstrukcyjny",
+            t('construction_material', 'Materiał Konstrukcyjny'),
             options=[
                 "Stal (standardowa konstrukcja)",
                 "Aluminium (lekka konstrukcja)", 
@@ -148,7 +148,7 @@ with st.form("container_configuration_form"):
 
         # Insulation
         insulation = st.selectbox(
-            "Izolacja",
+            t('insulation', 'Izolacja'),
             options=[
                 "Brak izolacji",
                 "Podstawowa (pianka PUR 5-8cm)",
@@ -160,7 +160,7 @@ with st.form("container_configuration_form"):
 
         # Main Purpose
         main_purpose = st.selectbox(
-            "Główne Przeznaczenie",
+            t('main_purpose', 'Główne Przeznaczenie'),
             options=[
                 "Przestrzeń Biurowa",
                 "Kontenery Sanitarne", 
@@ -176,7 +176,7 @@ with st.form("container_configuration_form"):
     with col2:
         # Usage Environment
         environment = st.selectbox(
-            "Środowisko Użytkowania",
+            t('usage_environment', 'Środowisko Użytkowania'),
             options=[
                 "Wewnętrzne (hale, magazyny)",
                 "Zewnętrzne standardowe (klimat umiarkowany)",
@@ -191,7 +191,7 @@ with st.form("container_configuration_form"):
 
         # Finish Level
         finish_level = st.selectbox(
-            "Poziom Wykończenia",
+            t('finish_level', 'Poziom Wykończenia'),
             options=[
                 "Bez wykończenia (kontener techniczny, szkielet)",
                 "Shell (izolacja + płyta OSB)",
@@ -206,7 +206,7 @@ with st.form("container_configuration_form"):
 
         # Flooring
         flooring = st.selectbox(
-            "Podłogi",
+            t('flooring', 'Podłogi'),
             options=[
                 "Bez podłogi (blacha falistowana)",
                 "Sklejka wodoodporna 18mm (standard)",
@@ -225,7 +225,7 @@ with st.form("container_configuration_form"):
 
         # Climate Zone
         climate_zone = st.selectbox(
-            "Strefa Klimatyczna",
+            t('climate_zone', 'Strefa Klimatyczna'),
             options=[
                 "Europa Północna (Skandynawia, -30°C do +25°C)",
                 "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
@@ -241,7 +241,7 @@ with st.form("container_configuration_form"):
     # SECTION 2: SYSTEMS AND INSTALLATIONS
     st.markdown(f"""
     <div class="section-header">
-        <div class="section-title">⚙️ SYSTEMY I INSTALACJE</div>
+        <div class="section-title">⚙️ {t('systems_installations', 'SYSTEMY I INSTALACJE')}</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -250,7 +250,7 @@ with st.form("container_configuration_form"):
     with col1:
         # Windows
         num_windows = st.selectbox(
-            "Liczba Okien",
+            t('number_of_windows', 'Liczba Okien'),
             options=[
                 "Bez okien (kontener zamknięty)",
                 "1 okno",
@@ -262,7 +262,7 @@ with st.form("container_configuration_form"):
         )
 
         window_types = st.multiselect(
-            "Typ Okien",
+            t('window_types', 'Typ Okien'),
             options=[
                 "Standardowe (100x80cm)",
                 "Panoramiczne (150x120cm)",
@@ -276,7 +276,7 @@ with st.form("container_configuration_form"):
 
         # Lighting
         lighting = st.selectbox(
-            "Oświetlenie",
+            t('lighting', 'Oświetlenie'),
             options=[
                 "Brak oświetlenia",
                 "Standardowe LED (podstawowe)",
@@ -382,7 +382,7 @@ with st.form("container_configuration_form"):
     # SECTION 3: ADVANCED MODIFICATIONS
     st.markdown(f"""
     <div class="section-header">
-        <div class="section-title">🔧 ZAAWANSOWANE MODYFIKACJE</div>
+        <div class="section-title">🔧 {t('advanced_modifications', 'ZAAWANSOWANE MODYFIKACJE')}</div>
     </div>
     """, unsafe_allow_html=True)
 
