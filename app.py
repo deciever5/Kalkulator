@@ -445,21 +445,40 @@ col_spacer, col_lang, col_login = st.columns([4, 1.5, 0.5])
 with col_lang:
     # Language selector in top-right area
     current_lang = get_current_language()
+    # Language options in alphabetical order by country name
     language_options = {
-        'pl': '🇵🇱 Polski',
-        'en': '🇬🇧 English',
-        'de': '🇩🇪 Deutsch',
-        'nl': '🇳🇱 Nederlands',
-        'hu': '🇭🇺 Magyar',
         'cs': '🇨🇿 Čeština',
+        'de': '🇩🇪 Deutsch', 
+        'en': '🇬🇧 English',
         'es': '🇪🇸 Español',
-        'it': '🇮🇹 Italiano',
-        'sv': '🇸🇪 Svenska',
         'fi': '🇫🇮 Suomi',
-        'uk': '🇺🇦 Українська',
+        'fr': '🇫🇷 Français',
+        'hu': '🇭🇺 Magyar',
+        'it': '🇮🇹 Italiano',
+        'nl': '🇳🇱 Nederlands',
+        'pl': '🇵🇱 Polski',
         'sk': '🇸🇰 Slovenčina',
-        'fr': '🇫🇷 Français'
+        'sv': '🇸🇪 Svenska',
+        'uk': '🇺🇦 Українська'
     }
+
+    # Custom CSS to make selectbox show all options without scrolling
+    st.markdown("""
+    <style>
+    /* Make language selector dropdown show all options */
+    div[data-baseweb="select"] > div {
+        max-height: none !important;
+    }
+    div[data-baseweb="popover"] > div > div {
+        max-height: 500px !important;
+        overflow-y: auto !important;
+    }
+    /* Ensure all language options are visible */
+    .stSelectbox > div > div > div {
+        max-height: 500px !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
     selected_language = st.selectbox(
         "🌐",

@@ -14,14 +14,26 @@ def render_shared_header(show_login=False, current_page="Home"):
     with col_lang:
         # Language selector in top-right area (matching main page)
         current_lang = get_current_language()
-        language_options = {
-            'pl': '🇵🇱 Polski',
-            'en': '🇬🇧 English',
-            'de': '🇩🇪 Deutsch',
-            'nl': '🇳🇱 Nederlands',
-            'hu': '🇭🇺 Magyar',
-            'cs': '🇨🇿 Čeština'
+        from utils.translations import get_available_languages
+        language_options = get_available_languages()
+
+        # Custom CSS to make selectbox show all options without scrolling
+        st.markdown("""
+        <style>
+        /* Make language selector dropdown show all options */
+        div[data-baseweb="select"] > div {
+            max-height: none !important;
         }
+        div[data-baseweb="popover"] > div > div {
+            max-height: 500px !important;
+            overflow-y: auto !important;
+        }
+        /* Ensure all language options are visible */
+        .stSelectbox > div > div > div {
+            max-height: 500px !important;
+        }
+        </style>
+        """, unsafe_allow_html=True)
 
         selected_language = st.selectbox(
             "🌐",
