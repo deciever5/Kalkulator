@@ -294,6 +294,10 @@
   "paint_finish_standard": "Standard",
   "paint_finish_premium": "Premium",
   "paint_finish_custom": "Custom Color",
+  "additional_doors": "Additional Doors",
+  "air_intakes_label": "Air Intakes and Ventilation",
+  "fire_safety_label": "Fire Safety Systems",
+  "roof_modifications_label": "Roof Modifications",
   "insulation": {
     "basic": "Basic (50mm)",
     "standard": "Standard (100mm)",

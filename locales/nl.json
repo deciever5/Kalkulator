@@ -596,5 +596,8 @@
   "it_systems_basic": "Basic Network",
   "fire_systems": "Fire Safety Systems",
   "additional_openings_door": "Additional Door",
-  "construction_material_composite": "Composite"
+  "construction_material_composite": "Composite",
+  "air_intakes_label": "Luchtinlaat en ventilatie",
+  "fire_safety_label": "Brandveiligheidssystemen",
+  "roof_modifications_label": "Dakmodificaties"
 }
