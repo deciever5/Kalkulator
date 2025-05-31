@@ -6,26 +6,32 @@ import json
 import os
 
 def load_translations():
-    """Load all translation files without caching"""
+    """Load only complete translation files"""
     translations = {}
     locales_dir = "locales"
+    
+    # Only load languages with complete translations (220+ keys)
+    complete_languages = ['de', 'nl', 'cs', 'hu', 'pl', 'en']
 
     if not os.path.exists(locales_dir):
         return translations
 
-    for filename in os.listdir(locales_dir):
-        if not filename.endswith('.json'):
-            continue
-
-        lang_code = filename[:-5]  # Remove .json extension
+    for lang_code in complete_languages:
+        filename = f"{lang_code}.json"
         file_path = os.path.join(locales_dir, filename)
+        
+        if not os.path.exists(file_path):
+            continue
 
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read().strip()
                 if content:
-                    translations[lang_code] = json.loads(content)
-                    print(f"Loaded {lang_code} translations with {len(translations[lang_code])} top-level keys")
+                    translation_data = json.loads(content)
+                    # Only include if it has enough keys (complete translation)
+                    if len(translation_data) >= 150:
+                        translations[lang_code] = translation_data
+                        print(f"Loaded {lang_code} translations with {len(translation_data)} top-level keys")
         except (json.JSONDecodeError, FileNotFoundError, UnicodeDecodeError) as e:
             print(f"Error loading {filename}: {e}")
             continue
@@ -147,7 +153,7 @@ def get_nested_translation(translation_data, key):
         if isinstance(result, dict) and k in result:
             result = result[k]
         else:
-            return None
+            return ""
     return result if isinstance(result, str) else ""
 
 @st.cache_data
@@ -184,7 +190,7 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
         # Fallback to English if key not found in current language
         if lang != 'en' and 'en' in translations:
             english_translation = get_nested_translation(translations['en'], key)
-            if english_translation:
+            if english_translation and english_translation.strip():
                 if kwargs and english_translation:
                     return english_translation.format(**kwargs)
                 return english_translation
