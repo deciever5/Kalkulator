@@ -4,7 +4,7 @@ from utils.translations import t, get_current_language, set_language, get_availa
 
 def render_shared_header(show_login=False, current_page="Home"):
     """Render shared header with consistent top navigation matching main page"""
-    
+
     # Initialize language system
     init_language()
 
@@ -51,10 +51,10 @@ def render_shared_header(show_login=False, current_page="Home"):
         # Language selector in top-right area (matching main page)
         current_lang = get_current_language()
         language_options = get_available_languages()
-        
+
         # Create unique key for this page's language selector
         key = f"lang_selector_{current_page}"
-        
+
         selected_language = st.selectbox(
             "🌐",
             options=list(language_options.keys()),
@@ -110,7 +110,7 @@ def render_shared_header(show_login=False, current_page="Home"):
             current_lang = 'en'  # Default to English if current language not available
             set_language(current_lang)
 
-        if show_login:
+    if show_login:
         with col_login:
             # Employee login button
             if st.session_state.get('employee_logged_in', False):
@@ -157,10 +157,10 @@ def render_shared_header(show_login=False, current_page="Home"):
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
+
     # Skip breadcrumb for pages that have their own gradient headers
     pages_with_gradient_headers = ["Container_Configurator", "AI_Cost_Estimator", "Technical_Analysis"]
-    
+
     if current_page not in pages_with_gradient_headers:
         # Breadcrumb navigation for other pages
         breadcrumb_map = {
@@ -175,7 +175,7 @@ def render_shared_header(show_login=False, current_page="Home"):
             "Custom_Sizing": "📐 Custom Sizing",
             "Admin_Panel": "⚙️ Admin Panel"
         }
-        
+
         breadcrumb_text = breadcrumb_map.get(current_page, current_page)
         st.markdown(f"""
         <div style="margin-bottom: 16px; padding: 8px 16px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #3b82f6;">
