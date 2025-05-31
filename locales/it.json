@@ -597,5 +597,7 @@
   "material_price_fluctuations": "Fluttuazioni prezzi materiali",
   "basic_estimate_note": "Nota: Questa è una stima base. Per prezzi più accurati, contatta direttamente il nostro team.",
   "estimate_disclaimer_title": "Importante - Avviso Legale",
-  "estimate_disclaimer_text": "La stima sopra è indicativa e non costituisce offerta nel senso del Codice Civile. Il prezzo finale può cambiare a seconda dei requisiti dettagliati progetto, costi attuali materiali e manodopera."
+  "estimate_disclaimer_text": "La stima sopra è indicativa e non costituisce offerta nel senso del Codice Civile. Il prezzo finale può cambiare a seconda dei requisiti dettagliati progetto, costi attuali materiali e manodopera.",
+  "back_to_home": "← Torna a casa",
+  "go_to_configurator": "🔧 Vai al configuratore"
 }
