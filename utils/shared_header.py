@@ -1,9 +1,45 @@
 import streamlit as st
 import os
-from utils.translations import t, get_current_language, set_language, get_available_languages, render_language_selector
+from utils.translations import t, get_current_language, set_language, get_available_languages, init_language
 
 def render_shared_header(show_login=False, current_page="Home"):
     """Render shared header with consistent top navigation matching main page"""
+    
+    # Initialize language system
+    init_language()
+
+    # Custom CSS to make selectbox show all options without scrolling
+    st.markdown("""
+    <style>
+    /* Force language dropdown to show all 13 options */
+    div[data-baseweb="select"] > div[role="listbox"] {
+        max-height: 650px !important;
+        height: auto !important;
+    }
+    div[data-baseweb="popover"] {
+        max-height: 700px !important;
+    }
+    div[data-baseweb="popover"] > div {
+        max-height: 650px !important;
+    }
+    div[data-baseweb="popover"] > div > div {
+        max-height: 650px !important;
+        overflow-y: visible !important;
+    }
+    /* Target all selectbox dropdowns */
+    .stSelectbox [data-baseweb="popover"] {
+        max-height: 700px !important;
+    }
+    .stSelectbox [data-baseweb="popover"] > div {
+        max-height: 650px !important;
+    }
+    /* Ensure enough space for all 13 languages */
+    div[role="listbox"] {
+        max-height: 650px !important;
+        min-height: 400px !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
     # Top navigation bar with language selector and optional login (same as main page)
     if show_login:
@@ -15,6 +51,22 @@ def render_shared_header(show_login=False, current_page="Home"):
         # Language selector in top-right area (matching main page)
         current_lang = get_current_language()
         language_options = get_available_languages()
+        
+        # Create unique key for this page's language selector
+        key = f"lang_selector_{current_page}"
+        
+        selected_language = st.selectbox(
+            "🌐",
+            options=list(language_options.keys()),
+            format_func=lambda x: language_options[x],
+            index=list(language_options.keys()).index(current_lang),
+            key=key,
+            label_visibility="collapsed"
+        )
+
+        if selected_language != current_lang:
+            set_language(selected_language)
+            st.rerun()
 
         # Custom CSS to make selectbox show all options without scrolling
         st.markdown("""
@@ -58,28 +110,39 @@ def render_shared_header(show_login=False, current_page="Home"):
             current_lang = 'en'  # Default to English if current language not available
             set_language(current_lang)
 
-        selected_language = st.selectbox(
-            "🌐",
-            options=list(language_options.keys()),
-            format_func=lambda x: language_options[x],
-            index=list(language_options.keys()).index(current_lang),
-            key=key,
-            label_visibility="collapsed",
-            on_change=lambda: set_language(st.session_state[key])
-        )
-
-    if show_login:
+        if show_login:
         with col_login:
             # Employee login button
             if st.session_state.get('employee_logged_in', False):
-                if st.button("🚪", key="logout_btn", help=t('ui.logout'), use_container_width=True):
+                if st.button("🚪", key=f"logout_btn_{current_page}", help=t('ui.logout'), use_container_width=True):
                     st.session_state.employee_logged_in = False
-                    st.session_state.show_login = False
+                    if 'show_login' in st.session_state:
+                        del st.session_state.show_login
                     st.rerun()
             else:
-                if st.button("👤", key="login_btn", help=t('ui.employee_login'), use_container_width=True):
+                if st.button("👤", key=f"login_btn_{current_page}", help=t('ui.employee_login'), use_container_width=True):
                     st.session_state.show_login = not st.session_state.get('show_login', False)
                     st.rerun()
+
+    # Employee login form (if requested and not logged in)
+    if show_login and st.session_state.get('show_login', False) and not st.session_state.get('employee_logged_in', False):
+        col_a, col_b, col_c = st.columns([2, 2, 2])
+        with col_b:
+            employee_password = st.text_input(t('ui.password'), type="password", key=f"emp_pwd_{current_page}")
+            col_x, col_y = st.columns(2)
+            with col_x:
+                if st.button(t('ui.login'), key=f"emp_login_{current_page}", use_container_width=True):
+                    if employee_password == "kan-bud-employee-2024":
+                        st.session_state.employee_logged_in = True
+                        st.session_state.show_login = False
+                        st.success(t('ui.logged_in'))
+                        st.rerun()
+                    else:
+                        st.error(t('ui.wrong_password'))
+            with col_y:
+                if st.button(t('ui.cancel'), key=f"cancel_login_{current_page}", use_container_width=True):
+                    st.session_state.show_login = False
+                    st.rerun()t.rerun()
 
     # Professional navigation header
     st.markdown("""
