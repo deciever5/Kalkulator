@@ -398,6 +398,7 @@ class TranslationQualityChecker:
             "ru": "Russian",
             "zh": "Chinese",
             "ja": "Japanese",
+            "pl": "Polish",
             # Add more languages as needed
         }
 
@@ -433,14 +434,16 @@ class TranslationQualityChecker:
          
          for attempt in range(max_retries):
              try:
-                 prompt = f"""Translate the following text to {self.languages[target_language]}: '{text}'"""
+                 # Get language name, fallback to the code itself if not found
+                 target_language_name = self.languages.get(target_language, target_language)
+                 prompt = f"""Translate the following text to {target_language_name}: '{text}'"""
 
                  response = self.client.chat.completions.create(
                      model="llama-3.1-8b-instant",
                      messages=[
                          {
                              "role": "system",
-                             "content": f"You are a professional translator. Translate accurately to {self.languages[target_language]}."
+                             "content": f"You are a professional translator. Translate accurately to {target_language_name}."
                          },
                          {
                              "role": "user",
