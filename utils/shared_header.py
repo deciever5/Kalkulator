@@ -20,17 +20,32 @@ def render_shared_header(show_login=False, current_page="Home"):
         # Custom CSS to make selectbox show all options without scrolling
         st.markdown("""
         <style>
-        /* Make language selector dropdown show all options */
-        div[data-baseweb="select"] > div {
-            max-height: none !important;
+        /* Force language dropdown to show all 13 options */
+        div[data-baseweb="select"] > div[role="listbox"] {
+            max-height: 650px !important;
+            height: auto !important;
+        }
+        div[data-baseweb="popover"] {
+            max-height: 700px !important;
+        }
+        div[data-baseweb="popover"] > div {
+            max-height: 650px !important;
         }
         div[data-baseweb="popover"] > div > div {
-            max-height: 500px !important;
-            overflow-y: auto !important;
+            max-height: 650px !important;
+            overflow-y: visible !important;
         }
-        /* Ensure all language options are visible */
-        .stSelectbox > div > div > div {
-            max-height: 500px !important;
+        /* Target all selectbox dropdowns */
+        .stSelectbox [data-baseweb="popover"] {
+            max-height: 700px !important;
+        }
+        .stSelectbox [data-baseweb="popover"] > div {
+            max-height: 650px !important;
+        }
+        /* Ensure enough space for all 13 languages */
+        div[role="listbox"] {
+            max-height: 650px !important;
+            min-height: 400px !important;
         }
         </style>
         """, unsafe_allow_html=True)
