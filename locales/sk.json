@@ -1,5 +1,6 @@
 {
   "app": {
+    "title": "KAN-BUD - Profesionálne kontajnerové riešenia",
     "subtitle": "Professional Container Solutions"
   },
   "ui": {
@@ -242,5 +243,22 @@
   "comparison_tool": {
     "employee_only": "Nástroj porovnania je dostupný len pre zamestnancov KAN-BUD.",
     "login_info": "Prihláste sa ako zamestnanec pre prístup k tejto funkcii."
+  },
+  "additional_doors": "Dodatočné dvere",
+  "air_intakes_label": "Prívod vzduchu a vetranie",
+  "fire_safety_label": "Požiarne bezpečnostné systémy",
+  "roof_modifications_label": "Úpravy strechy",
+  "window_types": "Typy okien",
+  "window_types_standard": "Štandardné",
+  "window_types_double": "Dvojité zasklenie",
+  "window_types_security": "Bezpečnostné okná",
+  "paint_finish_standard": "Štandardné",
+  "paint_finish_premium": "Prémiové",
+  "paint_finish_custom": "Vlastná farba",
+  "insulation": {
+    "basic": "Základné (50mm)",
+    "standard": "Štandardné (100mm)",
+    "premium": "Prémiové (150mm)",
+    "extreme": "Extrémne (200mm)"
   }
 }

@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "KAN-BUD - Ammattimaiset konttiratkaisut",
+    "subtitle": "Professional Container Solutions"
+  },
+  "ui": {
+    "employee_login": "Työntekijän kirjautuminen",
+    "logout": "Kirjaudu ulos",
+    "password": "Salasana:",
+    "login": "Kirjaudu",
+    "logged_in": "Kirjautunut!",
+    "wrong_password": "Väärä salasana",
+    "cancel": "Peruuta",
+    "open": "Avaa",
+    "language_selector": "Kieli / Language",
+    "back_to_home": "← Takaisin kotiin",
+    "go_to_ai_estimate": "🤖 AI-arvioon →",
+    "go_to_configurator": "🔧 Konfigurointiin",
+    "get_ai_estimate": "🤖 Hanki AI-arvio",
+    "access_denied": "Pääsy estetty"
+  },
+  "nav": {
+    "comparison_tool": "Vertailu\ntyökalu",
+    "comparison_tool_desc": "Vertaile konfiguraatioita",
+    "drawing_analysis": "Piirustus\nanalyysi",
+    "drawing_analysis_desc": "AI-dokumenttianalyysi",
+    "admin_panel": "Ylläpito\npaneeli",
+    "admin_panel_desc": "Järjestelmän hallinta",
+    "ai_cost_estimation": "AI-kustannusarvio",
+    "container_configurator": "Konttikonfiguraattori",
+    "technical_analysis": "Tekninen analyysi",
+    "quote_generator": "Tarjousgeneraattori",
+    "send_inquiry": "Lähetä\nkysely",
+    "send_inquiry_desc": "Tarjouspyyntölomake",
+    "drawing_analysis_customer": "Piirustus\nanalyysi",
+    "drawing_analysis_customer_desc": "Ilmainen dokumenttianalyysi",
+    "bulk_pricing": "Tukkuhinnat",
+    "bulk_pricing_desc": "Volyymialennukset useille konteille",
+    "custom_sizing": "Erikois\nkoot",
+    "custom_sizing_desc": "Erikoiskoot ja -konfiguraatiot"
+  },
+  "additional_doors": "Lisäovet",
+  "air_intakes_label": "Ilmanotto ja tuuletus",
+  "fire_safety_label": "Paloturvallisuusjärjestelmät",
+  "roof_modifications_label": "Kattomukautukset",
+  "window_types": "Ikkunatyypit",
+  "window_types_standard": "Vakio",
+  "window_types_double": "Kaksinkertainen lasi",
+  "window_types_security": "Turvallisuusikkunat",
+  "paint_finish_standard": "Vakio",
+  "paint_finish_premium": "Premium",
+  "paint_finish_custom": "Mukautettu väri",
+  "insulation": {
+    "basic": "Perus (50mm)",
+    "standard": "Vakio (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Äärimmäinen (200mm)"
+  }
+}
