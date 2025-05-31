@@ -378,7 +378,6 @@ class TranslationQualityChecker:
                          "role": "system",
                          "content": f"You are a professional translator. Translate accurately to {self.languages[target_language]}."
                      },
-```python
                      {
                          "role": "user",
                          "content": prompt
