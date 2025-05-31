@@ -378,6 +378,7 @@ class TranslationQualityChecker:
                          "role": "system",
                          "content": f"You are a professional translator. Translate accurately to {self.languages[target_language]}."
                      },
+```python
                      {
                          "role": "user",
                          "content": prompt
@@ -437,41 +438,3 @@ if __name__ == '__main__':
         print(json.dumps(results, indent=2))
 
     asyncio.run(main())
-```json' in response:
-                json_str = response.split('```json')[1].split('```')[0].strip()
-            elif '{' in response and '}' in response:
-                start = response.find('{')
-                end = response.rfind('}') + 1
-                json_str = response[start:end]
-            else:
-                raise ValueError("No valid JSON found in response")
-
-            result = json.loads(json_str)
-
-            # Validate required fields
-            required_fields = ['total_cost', 'material_costs', 'labor_costs', 'timeline_weeks']
-            for field in required_fields:
-                if field not in result:
-                    result[field] = 0
-
-            # Ensure confidence score is between 0 and 1
-            result['confidence_score'] = max(0, min(1, result.get('confidence_score', 0.7)))
-
-            # Add metadata
-            result['ai_model'] = 'Groq Llama3-8B'
-            result['generated_at'] = str(st.session_state.get('current_time', 'Unknown'))
-
-            return result
-
-        except Exception as e:
-            if st.session_state.get('employee_logged_in', False):
-                st.error(f"Error processing Groq response: {str(e)}")
-            return self._fallback_cost_estimate({}, {})
-
-    def _process_technical_analysis_response(self, response: str) -> Dict[str, Any]:
-        """Process and validate technical analysis response from Groq"""
-
-        try:
-            # Extract JSON from response
-            if '```json' in response:
-                json_str = response.split('```json')[1].split('
