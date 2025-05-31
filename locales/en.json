@@ -331,6 +331,41 @@
     "mountain": "Mountain climate (high UV, snow)",
     "tropical": "Tropical climate (high temperatures, humidity)"
   },
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows", 
+    "five_plus": "5+ windows (custom configuration)"
+  },
+  "window_types": {
+    "standard": "Standard (100x80cm)",
+    "panoramic": "Panoramic (150x120cm)",
+    "sliding": "Sliding",
+    "tilt": "Tilt",
+    "security": "Security (class P4-P8)",
+    "energy_efficient": "Energy efficient (3-pane)",
+    "skylight": "Roof skylights (additional)"
+  },
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Standard LED (basic)",
+    "energy_efficient": "Energy efficient LED with sensors",
+    "exterior": "Exterior lighting (spotlights)",
+    "emergency": "Emergency lighting (battery)",
+    "smart": "Smart system (smart lighting)"
+  },
+  "ventilation": {
+    "none": "No ventilation (natural or mechanical)",
+    "gravity": "Gravity ventilation (2-4 units, adjustable)",
+    "wall_fans": "Wall fans (extraction 100-150mm)",
+    "mechanical": "Mechanical ventilation (intake + extraction)",
+    "heat_recovery": "Heat recovery (80-95% efficiency)",
+    "split_ac": "Split air conditioning (1-3 units)",
+    "central_ac": "Central air conditioning (VRV/VRF)",
+    "industrial": "Industrial ventilation (ATEX, chemical resistant)"
+  },
   "reinforcement": {
     "none": "No reinforcement",
     "standard": "Standard reinforcement",

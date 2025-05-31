@@ -333,6 +333,41 @@
     "mountain": "Clima montañoso (UV alto, nieve)",
     "tropical": "Clima tropical (altas temperaturas, humedad)"
   },
+  "windows": {
+    "none": "Sin ventanas (contenedor cerrado)",
+    "one": "1 ventana",
+    "two": "2 ventanas",
+    "three": "3 ventanas", 
+    "four": "4 ventanas",
+    "five_plus": "5+ ventanas (configuración personalizada)"
+  },
+  "window_types": {
+    "standard": "Estándar (100x80cm)",
+    "panoramic": "Panorámicas (150x120cm)", 
+    "sliding": "Deslizantes",
+    "tilt": "Abatibles",
+    "security": "Antirrobo (clase P4-P8)",
+    "energy_efficient": "Eficiencia energética (3 cristales)",
+    "skylight": "Claraboyas de techo (adicional)"
+  },
+  "lighting": {
+    "none": "Sin iluminación",
+    "basic_led": "LED estándar (básico)",
+    "energy_efficient": "LED eficiente con sensores",
+    "exterior": "Iluminación exterior (focos)",
+    "emergency": "Iluminación de emergencia (batería)",
+    "smart": "Sistema inteligente (iluminación inteligente)"
+  },
+  "ventilation": {
+    "none": "Sin ventilación (natural ni mecánica)",
+    "gravity": "Ventilación por gravedad (2-4 unidades, regulables)",
+    "wall_fans": "Ventiladores de pared (extracción 100-150mm)",
+    "mechanical": "Ventilación mecánica (entrada + extracción)",
+    "heat_recovery": "Recuperación de calor (80-95% eficiencia)",
+    "split_ac": "Aire acondicionado split (1-3 unidades)",
+    "central_ac": "Aire acondicionado central (VRV/VRF)",
+    "industrial": "Ventilación industrial (ATEX, resistente químicos)"
+  },
   "reinforcement": {
     "none": "Sin refuerzo",
     "standard": "Refuerzo estándar",

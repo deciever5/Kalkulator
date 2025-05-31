@@ -253,59 +253,63 @@ with st.form("container_configuration_form"):
 
     with col1:
         # Windows
+        num_windows_options = [
+            t('windows.none'),
+            t('windows.one'),
+            t('windows.two'), 
+            t('windows.three'),
+            t('windows.four'),
+            t('windows.five_plus')
+        ]
         num_windows = st.selectbox(
-            t('number_of_windows', 'Liczba Okien'),
-            options=[
-                "Bez okien (kontener zamknięty)",
-                "1 okno",
-                "2 okna", 
-                "3 okna",
-                "4 okna",
-                "5+ okien (konfiguracja custom)"
-            ]
+            t('number_of_windows'),
+            options=num_windows_options
         )
 
+        window_types_options = [
+            t('window_types.standard'),
+            t('window_types.panoramic'),
+            t('window_types.sliding'),
+            t('window_types.tilt'),
+            t('window_types.security'),
+            t('window_types.energy_efficient'),
+            t('window_types.skylight')
+        ]
         window_types = st.multiselect(
-            t('window_types', 'Typ Okien'),
-            options=[
-                "Standardowe (100x80cm)",
-                "Panoramiczne (150x120cm)",
-                "Przesuwne",
-                "Uchylne",
-                "Antywłamaniowe (klasa P4-P8)",
-                "Energooszczędne (3-szybowe)",
-                "Świetliki dachowe (dodatkowo)"
-            ]
+            t('window_types'),
+            options=window_types_options
         )
 
         # Lighting
+        lighting_options = [
+            t('lighting.none'),
+            t('lighting.basic_led'),
+            t('lighting.energy_efficient'),
+            t('lighting.exterior'),
+            t('lighting.emergency'),
+            t('lighting.smart')
+        ]
         lighting = st.selectbox(
-            t('lighting', 'Oświetlenie'),
-            options=[
-                "Brak oświetlenia",
-                "Standardowe LED (podstawowe)",
-                "Energooszczędne LED z czujnikami",
-                "Oświetlenie zewnętrzne (reflektory)",
-                "Oświetlenie awaryjne (akumulatorowe)",
-                "System inteligentny (smart lighting)"
-            ],
+            t('lighting'),
+            options=lighting_options,
             index=1
         )
 
     with col2:
         # Ventilation
+        ventilation_options = [
+            t('ventilation.none'),
+            t('ventilation.gravity'),
+            t('ventilation.wall_fans'),
+            t('ventilation.mechanical'),
+            t('ventilation.heat_recovery'),
+            t('ventilation.split_ac'),
+            t('ventilation.central_ac'),
+            t('ventilation.industrial')
+        ]
         ventilation = st.selectbox(
-            "Nawiewy i Wentylacja",
-            options=[
-                "Bez nawiewów (naturalnych i mechanicznych)",
-                "Nawiewy grawitacyjne (2-4 szt., regulowane)",
-                "Wentylatory ściennie (wyciąg 100-150mm)",
-                "Wentylacja mechaniczna (nawiew + wyciąg)",
-                "Rekuperacja (odzysk ciepła 80-95%)",
-                "Klimatyzacja split (1-3 jednostki)",
-                "Klimatyzacja centralna (VRV/VRF)",
-                "Wentylacja przemysłowa (ATEX, chemoodporna)"
-            ],
+            t('air_intakes_label'),
+            options=ventilation_options,
             index=1
         )
 
