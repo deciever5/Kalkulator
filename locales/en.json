@@ -386,6 +386,36 @@
       "polished_concrete": "Polished Concrete"
     }
   },
+  "materials": {
+    "steel_standard": "Steel (standard construction)",
+    "aluminum_light": "Aluminum (lightweight construction)",
+    "composite_specialist": "Composite material (specialist)"
+  },
+  "insulation": {
+    "none": "No insulation",
+    "basic": "Basic (PUR foam 5-8cm)",
+    "advanced": "Advanced (mineral wool 10-15cm)",
+    "premium": "Premium (sandwich panels 15-20cm)"
+  },
+  "purposes": {
+    "office_space": "Office Space",
+    "sanitary_containers": "Sanitary Containers",
+    "residential_containers": "Residential Containers",
+    "commercial_containers": "Commercial Containers",
+    "storage_containers": "Storage Containers",
+    "technical_containers": "Technical Containers",
+    "changing_rooms": "Changing Rooms",
+    "guard_booths": "Guard Booths"
+  },
+  "environments": {
+    "indoor": "Indoor (halls, warehouses)",
+    "outdoor_standard": "Outdoor standard (temperate climate)",
+    "outdoor_extreme": "Outdoor extreme (coastal, mountains)",
+    "industrial": "Industrial (plants, refineries, mines)",
+    "construction": "Construction (building sites, infrastructure)",
+    "agricultural": "Agricultural (farms, facilities)",
+    "marine": "Marine/shipyard (corrosive environment)"
+  },
   "form": {
     "labels": {
       "container_type": "Container Type",

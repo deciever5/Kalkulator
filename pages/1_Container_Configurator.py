@@ -121,71 +121,76 @@ with st.form("container_configuration_form"):
 
     with col1:
         # Container Type
+        container_type_options = [
+            t('container.types.10ft_compact', '10ft Compact (3m x 2.4m)'),
+            t('container.types.20ft_standard', '20ft Standard (6m x 2.4m)'), 
+            t('container.types.20ft_high_cube', '20ft High Cube (6m x 2.7m)'),
+            t('container.types.40ft_standard', '40ft Standard (12m x 2.4m)'),
+            t('container.types.40ft_hc', '40ft High Cube (12m x 2.7m)'),
+            t('container.types.multi_unit', 'Multi-unit Container'),
+            t('container.types.custom_size', 'Custom Size Container'),
+            t('container.types.refurbished', 'Refurbished Container')
+        ]
         container_type = st.selectbox(
-            t('container_type', 'Typ Kontenera'),
-            options=[
-                "10ft Compact (3m x 2.4m)",
-                "20ft Standard (6m x 2.4m)", 
-                "20ft High Cube (6m x 2.7m)",
-                "40ft Standard (12m x 2.4m)",
-                "40ft High Cube (12m x 2.7m)",
-                "Kontener łączony (multi-unit)",
-                "Kontener specjalny (wymiary custom)",
-                "Kontener używany (refurbished)"
-            ],
+            t('container_type', 'Container Type'),
+            options=container_type_options,
             index=3
         )
 
         # Construction Material
+        construction_material_options = [
+            t('materials.steel_standard', 'Steel (standard construction)'),
+            t('materials.aluminum_light', 'Aluminum (lightweight construction)'), 
+            t('materials.composite_specialist', 'Composite material (specialist)')
+        ]
         construction_material = st.selectbox(
-            t('construction_material', 'Materiał Konstrukcyjny'),
-            options=[
-                "Stal (standardowa konstrukcja)",
-                "Aluminium (lekka konstrukcja)", 
-                "Materiał kompozytowy (specjalistyczny)"
-            ]
+            t('construction_material', 'Construction Material'),
+            options=construction_material_options
         )
 
         # Insulation
+        insulation_options = [
+            t('insulation.none', 'No insulation'),
+            t('insulation.basic', 'Basic (PUR foam 5-8cm)'),
+            t('insulation.advanced', 'Advanced (mineral wool 10-15cm)'),
+            t('insulation.premium', 'Premium (sandwich panels 15-20cm)')
+        ]
         insulation = st.selectbox(
-            t('insulation', 'Izolacja'),
-            options=[
-                "Brak izolacji",
-                "Podstawowa (pianka PUR 5-8cm)",
-                "Zaawansowana (wełna mineralna 10-15cm)",
-                "Premium (płyty warstwowe 15-20cm)"
-            ],
+            t('insulation', 'Insulation'),
+            options=insulation_options,
             index=1
         )
 
         # Main Purpose
+        main_purpose_options = [
+            t('purposes.office_space', 'Office Space'),
+            t('purposes.sanitary_containers', 'Sanitary Containers'), 
+            t('purposes.residential_containers', 'Residential Containers'),
+            t('purposes.commercial_containers', 'Commercial Containers'),
+            t('purposes.storage_containers', 'Storage Containers'),
+            t('purposes.technical_containers', 'Technical Containers'),
+            t('purposes.changing_rooms', 'Changing Rooms'),
+            t('purposes.guard_booths', 'Guard Booths')
+        ]
         main_purpose = st.selectbox(
-            t('main_purpose', 'Główne Przeznaczenie'),
-            options=[
-                "Przestrzeń Biurowa",
-                "Kontenery Sanitarne", 
-                "Kontenery Mieszkalne",
-                "Kontenery Komercyjne",
-                "Kontenery Magazynowe",
-                "Kontenery Techniczne",
-                "Szatnie",
-                "Budki Strażnicze"
-            ]
+            t('main_purpose', 'Main Purpose'),
+            options=main_purpose_options
         )
 
     with col2:
         # Usage Environment
+        environment_options = [
+            t('environments.indoor', 'Indoor (halls, warehouses)'),
+            t('environments.outdoor_standard', 'Outdoor standard (temperate climate)'),
+            t('environments.outdoor_extreme', 'Outdoor extreme (coastal, mountains)'),
+            t('environments.industrial', 'Industrial (plants, refineries, mines)'),
+            t('environments.construction', 'Construction (building sites, infrastructure)'),
+            t('environments.agricultural', 'Agricultural (farms, facilities)'),
+            t('environments.marine', 'Marine/shipyard (corrosive environment)')
+        ]
         environment = st.selectbox(
-            t('usage_environment', 'Środowisko Użytkowania'),
-            options=[
-                "Wewnętrzne (hale, magazyny)",
-                "Zewnętrzne standardowe (klimat umiarkowany)",
-                "Zewnętrzne ekstremalne (wybrzeże morskie, góry)",
-                "Przemysłowe (zakłady, rafinerie, kopalnie)",
-                "Budowlane (place budowy, infrastruktura)",
-                "Rolnicze (gospodarstwa, fermy)",
-                "Portowe/stoczniowe (środowisko korozyjne)"
-            ],
+            t('usage_environment', 'Usage Environment'),
+            options=environment_options,
             index=1
         )
 
