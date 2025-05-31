@@ -105,7 +105,7 @@ Return the translations as a JSON object with the same keys but translated value
         """Translate using Groq service"""
         try:
             response = self.client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="llama-3.1-8b-instant",
                 messages=[
                     {
                         "role": "system",
