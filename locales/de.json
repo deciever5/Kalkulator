@@ -665,5 +665,40 @@
     "maritime": "Seeklima (hohe Luftfeuchtigkeit)",
     "mountain": "Gebirgsklima (hohe UV-Strahlung, Schnee)",
     "tropical": "Tropisches Klima (hohe Temperaturen, Luftfeuchtigkeit)"
+  },
+  "windows": {
+    "none": "Keine Fenster (geschlossener Container)",
+    "one": "1 Fenster",
+    "two": "2 Fenster",
+    "three": "3 Fenster",
+    "four": "4 Fenster",
+    "five_plus": "5+ Fenster (individuelle Konfiguration)"
+  },
+  "window_types": {
+    "standard": "Standard (100x80cm)",
+    "panoramic": "Panorama (150x120cm)",
+    "sliding": "Schiebefenster",
+    "tilt": "Kippfenster",
+    "security": "Sicherheitsfenster (Klasse P4-P8)",
+    "energy_efficient": "Energieeffizient (3-fach verglast)",
+    "skylight": "Dachfenster (zusätzlich)"
+  },
+  "lighting": {
+    "none": "Keine Beleuchtung",
+    "basic_led": "Standard LED (grundlegend)",
+    "energy_efficient": "Energieeffiziente LED mit Sensoren",
+    "exterior": "Außenbeleuchtung (Strahler)",
+    "emergency": "Notbeleuchtung (Batterie)",
+    "smart": "Intelligentes System (Smart Lighting)"
+  },
+  "ventilation": {
+    "none": "Keine Lüftung (natürlich oder mechanisch)",
+    "gravity": "Schwerkraftlüftung (2-4 Einheiten, regelbar)",
+    "wall_fans": "Wandventilatoren (Abluft 100-150mm)",
+    "mechanical": "Mechanische Lüftung (Zu- + Abluft)",
+    "heat_recovery": "Wärmerückgewinnung (80-95% Effizienz)",
+    "split_ac": "Split-Klimaanlage (1-3 Einheiten)",
+    "central_ac": "Zentrale Klimaanlage (VRV/VRF)",
+    "industrial": "Industrielle Lüftung (ATEX, chemiebeständig)"
   }
 }

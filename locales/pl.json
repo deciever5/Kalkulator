@@ -613,5 +613,67 @@
   "usage_environment": "Usage Environment",
   "number_of_windows": "Number of Windows",
   "transport_logistics": "TRANSPORT & LOGISTICS",
-  "equipment_extras": "EQUIPMENT & EXTRAS"
+  "equipment_extras": "EQUIPMENT & EXTRAS",
+  "finish_levels": {
+    "basic": "Bez wykończenia (kontener techniczny, szkielet)",
+    "shell": "Shell (izolacja + płyta OSB)",
+    "standard": "Podstawowy (izolacja + wykończenie techniczne)",
+    "comfort": "Komfortowy (izolacja premium + wykończenie biurowe)",
+    "luxury": "Luksusowy (najwyższa klasa + wykończenie hotelowe)",
+    "specialist": "Specjalistyczny (normy medyczne/laboratoryjne)"
+  },
+  "flooring": {
+    "none": "Bez podłogi (blacha falistowana)",
+    "plywood": "Sklejka wodoodporna 18mm (standard)",
+    "anti_slip": "Sklejka antypoślizgowa 21mm",
+    "laminate": "Panele laminowane AC4/AC5",
+    "vinyl": "Panele winylowe (LVT) wodoodporne",
+    "carpet": "Wykładzina PVC 2-4mm",
+    "epoxy": "Posadzka epoksydowa przemysłowa",
+    "concrete": "Podłoga podwyższona (serwerownie)"
+  },
+  "climate_zones": {
+    "northern_europe": "Europa Północna (Skandynawia, -30°C do +25°C)",
+    "central_europe": "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
+    "southern_europe": "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
+    "continental": "Klimat kontynentalny (ekstremalne wahania)",
+    "maritime": "Klimat morski (wysoka wilgotność)",
+    "mountain": "Klimat górski (wysokie UV, śnieg)",
+    "tropical": "Klimat tropikalny (wysokie temperatury, wilgotność)"
+  },
+  "windows": {
+    "none": "Bez okien (kontener zamknięty)",
+    "one": "1 okno",
+    "two": "2 okna",
+    "three": "3 okna",
+    "four": "4 okna",
+    "five_plus": "5+ okien (konfiguracja custom)"
+  },
+  "window_types": {
+    "standard": "Standardowe (100x80cm)",
+    "panoramic": "Panoramiczne (150x120cm)",
+    "sliding": "Przesuwne",
+    "tilt": "Uchylne",
+    "security": "Antywłamaniowe (klasa P4-P8)",
+    "energy_efficient": "Energooszczędne (3-szybowe)",
+    "skylight": "Świetliki dachowe (dodatkowo)"
+  },
+  "lighting": {
+    "none": "Brak oświetlenia",
+    "basic_led": "Standardowe LED (podstawowe)",
+    "energy_efficient": "Energooszczędne LED z czujnikami",
+    "exterior": "Oświetlenie zewnętrzne (reflektory)",
+    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "smart": "System inteligentny (smart lighting)"
+  },
+  "ventilation": {
+    "none": "Bez nawiewów (naturalnych i mechanicznych)",
+    "gravity": "Nawiewy grawitacyjne (2-4 szt., regulowane)",
+    "wall_fans": "Wentylatory ścienne (wyciąg 100-150mm)",
+    "mechanical": "Wentylacja mechaniczna (nawiew + wyciąg)",
+    "heat_recovery": "Rekuperacja (odzysk ciepła 80-95%)",
+    "split_ac": "Klimatyzacja split (1-3 jednostki)",
+    "central_ac": "Klimatyzacja centralna (VRV/VRF)",
+    "industrial": "Wentylacja przemysłowa (ATEX, chemoodporna)"
+  }
 }
