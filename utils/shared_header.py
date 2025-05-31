@@ -1,10 +1,10 @@
 import streamlit as st
 import os
-from utils.translations import t, get_current_language, set_language
+from utils.translations import t, get_current_language, set_language, get_available_languages, render_language_selector
 
 def render_shared_header(show_login=False, current_page="Home"):
     """Render shared header with consistent top navigation matching main page"""
-    
+
     # Top navigation bar with language selector and optional login (same as main page)
     if show_login:
         col_spacer, col_lang, col_login = st.columns([4, 1.5, 0.5])
@@ -14,7 +14,6 @@ def render_shared_header(show_login=False, current_page="Home"):
     with col_lang:
         # Language selector in top-right area (matching main page)
         current_lang = get_current_language()
-        from utils.translations import get_available_languages
         language_options = get_available_languages()
 
         # Custom CSS to make selectbox show all options without scrolling
@@ -50,12 +49,21 @@ def render_shared_header(show_login=False, current_page="Home"):
         </style>
         """, unsafe_allow_html=True)
 
+        # Create a unique key for each page
+        import time
+        key = f"shared_lang_selector_{current_page}_{int(time.time()) % 10000}"
+
+        # Ensure current language is in available options
+        if current_lang not in language_options:
+            current_lang = 'en'  # Default to English if current language not available
+            set_language(current_lang)
+
         selected_language = st.selectbox(
             "🌐",
             options=list(language_options.keys()),
             format_func=lambda x: language_options[x],
             index=list(language_options.keys()).index(current_lang),
-            key=f"top_language_selector_{current_page}",
+            key=key,
             label_visibility="collapsed"
         )
 
@@ -132,10 +140,10 @@ def render_shared_header(show_login=False, current_page="Home"):
     if st.session_state.get('show_login', False) and not st.session_state.get('employee_logged_in', False):
         col_a, col_b, col_c = st.columns([2, 2, 2])
         with col_b:
-            employee_password = st.text_input(t('ui.password'), type="password", key="emp_pwd")
+            employee_password = st.text_input(t('ui.password'), type="password", key="shared_emp_pwd")
             col_x, col_y = st.columns(2)
             with col_x:
-                if st.button(t('ui.login'), key="emp_login", use_container_width=True):
+                if st.button(t('ui.login'), key="shared_emp_login", use_container_width=True):
                     if employee_password == "kan-bud-employee-2024":
                         st.session_state.employee_logged_in = True
                         st.session_state.show_login = False
@@ -144,7 +152,7 @@ def render_shared_header(show_login=False, current_page="Home"):
                     else:
                         st.error(t('ui.wrong_password'))
             with col_y:
-                if st.button(t('ui.cancel'), key="cancel_login", use_container_width=True):
+                if st.button(t('ui.cancel'), key="shared_cancel_login", use_container_width=True):
                     st.session_state.show_login = False
                     st.rerun()
 

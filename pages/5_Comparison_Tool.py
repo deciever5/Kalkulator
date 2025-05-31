@@ -11,9 +11,9 @@ st.set_page_config(page_title="Comparison Tool", page_icon="⚖️", layout="wid
 if 'language' not in st.session_state:
     st.session_state.language = 'pl'
 
-# Language selector
-from utils.translations import render_language_selector
-render_language_selector()
+# Language selector via shared header
+from utils.shared_header import render_shared_header
+render_shared_header(show_login=False, current_page="Comparison_Tool")
 
 # Employee access control
 if 'employee_logged_in' not in st.session_state:

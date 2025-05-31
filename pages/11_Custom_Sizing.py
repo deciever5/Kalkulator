@@ -17,8 +17,8 @@ init_language()
 if 'employee_logged_in' not in st.session_state:
     st.session_state.employee_logged_in = False
 
-# Render shared header
-render_shared_header(show_login=False)
+# Render shared header with language selector
+render_shared_header(show_login=False, current_page="Custom_Sizing")
 
 st.markdown("""
 <style>

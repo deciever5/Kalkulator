@@ -4,7 +4,8 @@ from datetime import datetime, timedelta
 import json
 from utils.quote_generator import QuoteGenerator
 from utils.calculations import StructuralCalculations
-from utils.translations import t, render_language_selector
+from utils.translations import t
+from utils.shared_header import render_shared_header
 
 st.set_page_config(page_title="Quote Generator", page_icon="📄", layout="wide")
 
@@ -12,8 +13,8 @@ st.set_page_config(page_title="Quote Generator", page_icon="📄", layout="wide"
 if 'language' not in st.session_state:
     st.session_state.language = 'pl'
 
-# Language selector
-render_language_selector()
+# Render shared header with language selector
+render_shared_header(show_login=False, current_page="Quote_Generator")
 
 # Employee access control
 if 'employee_logged_in' not in st.session_state:
