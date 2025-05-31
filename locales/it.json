@@ -12,6 +12,7 @@
     "back_to_home": "← Torna alla Home",
     "go_to_ai_estimate": "🤖 Vai alla Stima IA →",
     "go_to_configurator": "🔧 Vai al Configuratore",
+    "get_ai_estimate": "🤖 Ottieni Stima IA",
     "access_denied": "Accesso Negato"
   },
   "nav": {
@@ -293,6 +294,10 @@
   "paint_finish_standard": "Standard",
   "paint_finish_premium": "Premium",
   "paint_finish_custom": "Colore Personalizzato",
+  "additional_doors": "Porte Aggiuntive",
+  "air_intakes_label": "Prese d'Aria e Ventilazione",
+  "fire_safety_label": "Sistemi Antincendio",
+  "roof_modifications_label": "Modifiche del Tetto",
   "insulation": {
     "basic": "Base (50mm)",
     "standard": "Standard (100mm)",

@@ -16,6 +16,7 @@
     "back_to_home": "← Retour à l'accueil",
     "go_to_ai_estimate": "🤖 Aller à l'estimation IA →",
     "go_to_configurator": "🔧 Aller au configurateur",
+    "get_ai_estimate": "🤖 Obtenir une estimation IA",
     "access_denied": "Accès refusé"
   },
   "nav": {
@@ -289,5 +290,22 @@
   "comparison_tool": {
     "employee_only": "L'outil de comparaison est disponible uniquement pour les employés KAN-BUD.",
     "login_info": "Connectez-vous en tant qu'employé pour accéder à cette fonctionnalité."
+  },
+  "additional_doors": "Portes supplémentaires",
+  "air_intakes_label": "Prises d'air et ventilation",
+  "fire_safety_label": "Systèmes de sécurité incendie",
+  "roof_modifications_label": "Modifications de toiture",
+  "window_types": "Types de fenêtres",
+  "window_types_standard": "Standard",
+  "window_types_double": "Double vitrage",
+  "window_types_security": "Fenêtres de sécurité",
+  "paint_finish_standard": "Standard",
+  "paint_finish_premium": "Premium",
+  "paint_finish_custom": "Couleur personnalisée",
+  "insulation": {
+    "basic": "Basique (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extrême (200mm)"
   }
 }

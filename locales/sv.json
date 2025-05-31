@@ -12,6 +12,7 @@
     "back_to_home": "← Tillbaka till Start",
     "go_to_ai_estimate": "🤖 Gå till AI-Uppskattning →",
     "go_to_configurator": "🔧 Gå till Konfigurator",
+    "get_ai_estimate": "🤖 Få AI-Uppskattning",
     "access_denied": "Åtkomst Nekad"
   },
   "nav": {
@@ -293,6 +294,10 @@
   "paint_finish_standard": "Standard",
   "paint_finish_premium": "Premium",
   "paint_finish_custom": "Anpassad Färg",
+  "additional_doors": "Ytterligare Dörrar",
+  "air_intakes_label": "Luftintag och Ventilation",
+  "fire_safety_label": "Brandsäkerhetssystem",
+  "roof_modifications_label": "Takmodifieringar",
   "insulation": {
     "basic": "Grundläggande (50mm)",
     "standard": "Standard (100mm)",
