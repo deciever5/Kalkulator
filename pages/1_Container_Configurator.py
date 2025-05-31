@@ -163,68 +163,66 @@ with st.form("container_configuration_form"):
 
         # Main Purpose
         main_purpose_options = [
-            t('purposes.office_space', 'Office Space'),
-            t('purposes.sanitary_containers', 'Sanitary Containers'), 
-            t('purposes.residential_containers', 'Residential Containers'),
-            t('purposes.commercial_containers', 'Commercial Containers'),
-            t('purposes.storage_containers', 'Storage Containers'),
-            t('purposes.technical_containers', 'Technical Containers'),
-            t('purposes.changing_rooms', 'Changing Rooms'),
-            t('purposes.guard_booths', 'Guard Booths')
+            t('purposes.office_space'),
+            t('purposes.sanitary_containers'), 
+            t('purposes.residential_containers'),
+            t('purposes.commercial_containers'),
+            t('purposes.storage_containers'),
+            t('purposes.technical_containers'),
+            t('purposes.changing_rooms'),
+            t('purposes.guard_booths')
         ]
         main_purpose = st.selectbox(
-            t('main_purpose', 'Main Purpose'),
+            t('main_purpose'),
             options=main_purpose_options
         )
 
     with col2:
         # Usage Environment
         environment_options = [
-            t('environments.indoor', 'Indoor (halls, warehouses)'),
-            t('environments.outdoor_standard', 'Outdoor standard (temperate climate)'),
-            t('environments.outdoor_extreme', 'Outdoor extreme (coastal, mountains)'),
-            t('environments.industrial', 'Industrial (plants, refineries, mines)'),
-            t('environments.construction', 'Construction (building sites, infrastructure)'),
-            t('environments.agricultural', 'Agricultural (farms, facilities)'),
-            t('environments.marine', 'Marine/shipyard (corrosive environment)')
+            t('environments.indoor'),
+            t('environments.outdoor_standard'),
+            t('environments.outdoor_extreme'),
+            t('environments.industrial'),
+            t('environments.construction'),
+            t('environments.agricultural'),
+            t('environments.marine')
         ]
         environment = st.selectbox(
-            t('usage_environment', 'Usage Environment'),
+            t('environment'),
             options=environment_options,
             index=1
         )
 
         # Finish Level
+        finish_level_options = [
+            t('finish_levels.basic'),
+            t('finish_levels.shell'),
+            t('finish_levels.standard'),
+            t('finish_levels.comfort'),
+            t('finish_levels.luxury'),
+            t('finish_levels.specialist')
+        ]
         finish_level = st.selectbox(
-            t('finish_level', 'Poziom Wykończenia'),
-            options=[
-                "Bez wykończenia (kontener techniczny, szkielet)",
-                "Shell (izolacja + płyta OSB)",
-                "Podstawowy (izolacja + wykończenie techniczne)",
-                "Standardowy (pełna izolacja + wykończenie użytkowe)",
-                "Komfortowy (izolacja premium + wykończenie biurowe)",
-                "Luksusowy (najwyższa klasa + wykończenie hotelowe)",
-                "Specjalistyczny (normy medyczne/laboratoryjne)"
-            ],
-            index=3
+            t('finish_level'),
+            options=finish_level_options,
+            index=2
         )
 
         # Flooring
+        flooring_options = [
+            t('flooring.none'),
+            t('flooring.plywood'),
+            t('flooring.anti_slip'),
+            t('flooring.laminate'),
+            t('flooring.vinyl'),
+            t('flooring.carpet'),
+            t('flooring.epoxy'),
+            t('flooring.concrete')
+        ]
         flooring = st.selectbox(
-            t('flooring', 'Podłogi'),
-            options=[
-                "Bez podłogi (blacha falistowana)",
-                "Sklejka wodoodporna 18mm (standard)",
-                "Sklejka antypoślizgowa 21mm",
-                "Panele laminowane AC4/AC5",
-                "Panele winylowe (LVT) wodoodporne",
-                "Wykładzina PVC 2-4mm",
-                "Płytki ceramiczne antypoślizgowe",
-                "Posadzka epoksydowa przemysłowa",
-                "Parkiet 3-warstwowy",
-                "Gres techniczny R11/R12",
-                "Podłoga podwyższona (serwerownie)"
-            ],
+            t('flooring'),
+            options=flooring_options,
             index=1
         )
 

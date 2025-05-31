@@ -300,9 +300,36 @@
   "roof_modifications_label": "Roof Modifications",
   "insulation": {
     "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
+    "standard": "Standard (100mm)", 
     "premium": "Premium (150mm)",
     "extreme": "Extreme (200mm)"
+  },
+  "finish_levels": {
+    "basic": "No finish (technical container, frame)",
+    "shell": "Shell (insulation + OSB board)",
+    "standard": "Basic (insulation + technical finish)",
+    "comfort": "Standard (full insulation + office finish)",
+    "luxury": "Luxury (highest class + hotel finish)",
+    "specialist": "Specialist (medical/laboratory standards)"
+  },
+  "flooring": {
+    "none": "No flooring (corrugated sheet)",
+    "plywood": "Waterproof plywood 18mm (standard)",
+    "anti_slip": "Anti-slip plywood 21mm",
+    "laminate": "Laminate panels AC4/AC5",
+    "vinyl": "Vinyl panels (LVT) waterproof",
+    "carpet": "Carpet tiles commercial",
+    "epoxy": "Epoxy floor (industrial)",
+    "concrete": "Polished concrete"
+  },
+  "climate_zones": {
+    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
+    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
+    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "continental": "Continental climate (extreme variations)",
+    "maritime": "Maritime climate (high humidity)",
+    "mountain": "Mountain climate (high UV, snow)",
+    "tropical": "Tropical climate (high temperatures, humidity)"
   },
   "reinforcement": {
     "none": "No reinforcement",
