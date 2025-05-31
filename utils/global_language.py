@@ -17,4 +17,4 @@ def set_language(language_code):
 
 def get_available_languages():
     """Get list of available language codes"""
-    return ['pl', 'en', 'de', 'nl']
+    return ['pl', 'en', 'de', 'nl', 'hu', 'cs', 'es', 'it', 'sv', 'fi', 'uk', 'sk', 'fr']

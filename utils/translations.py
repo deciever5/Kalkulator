@@ -61,7 +61,14 @@ def get_available_languages():
         'de': '🇩🇪 Deutsch',
         'nl': '🇳🇱 Nederlands',
         'hu': '🇭🇺 Magyar',
-        'cs': '🇨🇿 Čeština'
+        'cs': '🇨🇿 Čeština',
+        'es': '🇪🇸 Español',
+        'it': '🇮🇹 Italiano',
+        'sv': '🇸🇪 Svenska',
+        'fi': '🇫🇮 Suomi',
+        'uk': '🇺🇦 Українська',
+        'sk': '🇸🇰 Slovenčina',
+        'fr': '🇫🇷 Français'
     }
 
 def render_language_selector():
@@ -73,7 +80,14 @@ def render_language_selector():
         'de': '🇩🇪 Deutsch',
         'nl': '🇳🇱 Nederlands',
         'hu': '🇭🇺 Magyar',
-        'cs': '🇨🇿 Čeština'
+        'cs': '🇨🇿 Čeština',
+        'es': '🇪🇸 Español',
+        'it': '🇮🇹 Italiano',
+        'sv': '🇸🇪 Svenska',
+        'fi': '🇫🇮 Suomi',
+        'uk': '🇺🇦 Українська',
+        'sk': '🇸🇰 Slovenčina',
+        'fr': '🇫🇷 Français'
     }
 
     # Create a unique key for each page

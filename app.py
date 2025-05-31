@@ -451,7 +451,14 @@ with col_lang:
         'de': '🇩🇪 Deutsch',
         'nl': '🇳🇱 Nederlands',
         'hu': '🇭🇺 Magyar',
-        'cs': '🇨🇿 Čeština'
+        'cs': '🇨🇿 Čeština',
+        'es': '🇪🇸 Español',
+        'it': '🇮🇹 Italiano',
+        'sv': '🇸🇪 Svenska',
+        'fi': '🇫🇮 Suomi',
+        'uk': '🇺🇦 Українська',
+        'sk': '🇸🇰 Slovenčina',
+        'fr': '🇫🇷 Français'
     }
 
     selected_language = st.selectbox(
