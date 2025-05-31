@@ -460,13 +460,13 @@
     "standard": "[TRANSLATE] Standard access",
     "ramp": "[TRANSLATE] Wheelchair ramp",
     "full_ada": "[TRANSLATE] Full ADA compliance",
-    "disabled_friendly": "[TRANSLATE] Fully accessible"
+    "disabled_friendly": "Plne prístupnosť"
   },
   "paint": {
-    "standard": "[TRANSLATE] Standard coating (C2)",
-    "premium": "[TRANSLATE] Premium finish (C3)",
-    "anti_corrosion": "[TRANSLATE] Anti-corrosion (C4)",
-    "marine_grade": "[TRANSLATE] Marine grade (C5M)"
+    "standard": "Štandardná farba (C2)",
+    "premium": "Štandardná farba (C3)",
+    "anti_corrosion": "Anti-korózná farba (C4)",
+    "marine_grade": "Morská farba (C5M)"
   },
   "construction_material": "[TRANSLATE] Construction Material",
   "construction_material_steel": "[TRANSLATE] Steel",
@@ -530,23 +530,23 @@
   "advanced_comments": "[TRANSLATE] Advanced Modifications Comments",
   "general_comments": "[TRANSLATE] General Comments",
   "reinforcement": {
-    "none": "[TRANSLATE] No reinforcement",
-    "standard": "[TRANSLATE] Standard reinforcement",
-    "seismic": "[TRANSLATE] Seismic reinforcement",
-    "hurricane": "[TRANSLATE] Hurricane reinforcement"
+    "none": "Žiadna posilnenie",
+    "standard": "Štandardné posilnenie",
+    "seismic": "Seismické posilnenie",
+    "hurricane": "Posilnenie proti hurikánom"
   },
   "help": {
-    "windows": "[TRANSLATE] Double-glazed windows with thermal bridges. More windows increase natural light but affect insulation.",
-    "additional_doors": "[TRANSLATE] Additional personnel or emergency doors beyond standard container doors.",
-    "air_intakes": "[TRANSLATE] Ventilation systems for air circulation. Marine grade recommended for coastal areas.",
-    "roof_modifications": "[TRANSLATE] Roof modifications for access, lighting, or solar installations.",
-    "electrical_system": "[TRANSLATE] Standard: 15A household. Industrial: 30A with panel. Smart: IoT automation.",
-    "plumbing_system": "[TRANSLATE] Basic: sink and drain. Full: complete bathroom fixtures. Commercial: industrial grade fixtures.",
-    "hvac_system": "[TRANSLATE] Climate control options. Heat pumps are energy efficient for year-round use.",
-    "security_features": "[TRANSLATE] Security levels from basic locks to biometric access control systems.",
-    "exterior_cladding": "[TRANSLATE] Weather protection and aesthetic improvement. Metal siding offers best durability.",
-    "additional_openings": "[TRANSLATE] Specialized access points beyond standard doors and windows.",
-    "fire_safety": "[TRANSLATE] Fire protection systems. Sprinkler systems recommended for commercial use.",
+    "windows": "Dvojité sklenené okná s tepelnými mostíkmi. Viac okien zvyšuje prirodzenú svetlo, ale ovplyvňuje izoláciu.",
+    "additional_doors": "Doplnkové osobné alebo záchranné dvere okrem štandardných kontajnerových dverí.",
+    "air_intakes": "Systémy pre ventiláciu vzduchu. Morská farba je odporúčaná pre pobrežné oblasti.",
+    "roof_modifications": "Modifikácie strechy pre prístup, osvetlenie alebo inštaláciu solárnych panelov.",
+    "electrical_system": "Štandard: 15A domáce. Průmyslové: 30A s panelom. Inteligentné: automatizácia IoT.",
+    "plumbing_system": "Základné: umyvadlo a odpad. Plné: kompletné hygienické zariadenie. Komerčné: prúmyslové zariadenie.",
+    "hvac_system": "Systémy pre reguláciu teploty. Teplomerne čerpadlá sú energeticky úsporné pre celoročné použitie.",
+    "security_features": "Úroveň bezpečnosti od základných zámkov až po biometrické systémy prístupu.",
+    "exterior_cladding": "Ochrana proti počasím a estetické zlepšenie. Metalová obkladová doska ponúka najlepšiu odolnosť.",
+    "additional_openings": "Špeciálne prístupové body okrem štandardných dverí a okien.",
+    "fire_safety": "Systémy pre ochranu proti požiarom. Systémy s príslušenstvom na hasenie požiarov sú odporúčané pre komerčné použitie.",
     "accessibility": "[TRANSLATE] ADA compliance ensures accessibility for disabled persons.",
     "paint_finish": "[TRANSLATE] Coating quality affects durability. C5M recommended for marine environments. C4 for industrial.",
     "insulation_package": "[TRANSLATE] Insulation thickness affects energy efficiency. Extreme recommended for arctic climates.",
@@ -698,5 +698,7 @@
   "material_price_fluctuations": "[TRANSLATE] Material price fluctuations",
   "basic_estimate_note": "[TRANSLATE] Note: This is a basic estimate. For more accurate pricing, please contact our team directly.",
   "estimate_disclaimer_title": "[TRANSLATE] Important - Legal Notice",
-  "estimate_disclaimer_text": "[TRANSLATE] The above estimate is indicative and does not constitute an offer within the meaning of the Civil Code. The final price may change depending on detailed project requirements, current material and labor costs."
+  "estimate_disclaimer_text": "[TRANSLATE] The above estimate is indicative and does not constitute an offer within the meaning of the Civil Code. The final price may change depending on detailed project requirements, current material and labor costs.",
+  "back_to_home": "[TRANSLATE] ← Powrót do strony głównej",
+  "go_to_configurator": "[TRANSLATE] 🔧 Przejdź do konfiguratora"
 }

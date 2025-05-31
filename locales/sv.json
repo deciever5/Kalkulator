@@ -597,5 +597,7 @@
   "material_price_fluctuations": "Materialprisschwankningar",
   "basic_estimate_note": "Obs: Detta är en grundläggande uppskattning. För mer exakt prissättning, kontakta vårt team direkt.",
   "estimate_disclaimer_title": "Viktigt - Rättsligt Meddelande",
-  "estimate_disclaimer_text": "Ovanstående uppskattning är indikativ och utgör inte ett erbjudande i civilrättens mening. Slutpris kan ändras beroende på detaljerade projektkrav, aktuella material- och arbetskostnader."
+  "estimate_disclaimer_text": "Ovanstående uppskattning är indikativ och utgör inte ett erbjudande i civilrättens mening. Slutpris kan ändras beroende på detaljerade projektkrav, aktuella material- och arbetskostnader.",
+  "back_to_home": "← Tillbaka till startsidan",
+  "go_to_configurator": "🔧 Gå till konfiguratorn"
 }
