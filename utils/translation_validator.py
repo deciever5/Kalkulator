@@ -9,7 +9,13 @@ from typing import Dict, List, Set
 def load_all_translations() -> Dict[str, Dict]:
     """Load all translation files"""
     translations = {}
-    locales_dir = "locales"
+    # Get the directory where this script is located and go up one level to find locales
+    script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    locales_dir = os.path.join(script_dir, "locales")
+    
+    if not os.path.exists(locales_dir):
+        print(f"Locales directory not found at: {locales_dir}")
+        return translations
     
     for filename in os.listdir(locales_dir):
         if filename.endswith('.json'):
