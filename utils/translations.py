@@ -9,7 +9,7 @@ def load_translations():
     """Load all available translation files"""
     translations = {}
     locales_dir = "locales"
-    
+
     # Load all available languages
     all_languages = ['de', 'nl', 'cs', 'hu', 'pl', 'en', 'es', 'it', 'sv', 'fi', 'uk', 'sk', 'fr']
 
@@ -19,7 +19,7 @@ def load_translations():
     for lang_code in all_languages:
         filename = f"{lang_code}.json"
         file_path = os.path.join(locales_dir, filename)
-        
+
         if not os.path.exists(file_path):
             continue
 
@@ -53,7 +53,7 @@ def set_language(lang_code):
     """Set current language"""
     print(f"Setting language to: {lang_code}")
     st.session_state.language = lang_code
-    
+
     # Verify the language change was successful
     current = get_current_language()
     print(f"Language successfully set to: {current}")
@@ -125,7 +125,7 @@ def render_language_selector():
         if current_lang not in language_options:
             current_lang = 'en'  # Default to English if current language not available
             set_language(current_lang)
-        
+
         selected_language = st.selectbox(
             "🌐 Language",
             options=list(language_options.keys()),
@@ -182,7 +182,7 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
     try:
         # Use cached translations
         translations = get_cached_translations()
-        
+
         # Get translation value from current language
         if lang in translations:
             translation = get_nested_translation(translations[lang], key)
@@ -191,7 +191,7 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
                 if kwargs and translation:
                     return translation.format(**kwargs)
                 return translation
-        
+
         # Fallback to English if key not found in current language
         if lang != 'en' and 'en' in translations:
             english_translation = get_nested_translation(translations['en'], key)
@@ -203,7 +203,7 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
         # Use provided fallback
         if fallback:
             return fallback
-            
+
         # Last resort: return the key itself
         print(f"Translation key '{key}' not found in language '{lang}' or English fallback")
         return key
@@ -211,3 +211,4 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
     except Exception as e:
         print(f"Translation error for key '{key}': {e}")
         return fallback if fallback else key
+```

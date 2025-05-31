@@ -101,8 +101,8 @@ def fix_missing_translations():
         for missing_key in missing_keys:
             english_value = en_keys[missing_key]
             
-            # Add a comment to indicate this is auto-translated
-            translated_value = f"[AUTO] {english_value}"
+            # Use English value directly without AUTO prefix
+            translated_value = english_value
             
             set_nested_value(lang_data, missing_key, translated_value)
             added += 1
