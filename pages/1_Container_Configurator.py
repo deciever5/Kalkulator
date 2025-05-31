@@ -227,17 +227,18 @@ with st.form("container_configuration_form"):
         )
 
         # Climate Zone
+        climate_zone_options = [
+            t('climate_zones.northern_europe'),
+            t('climate_zones.central_europe'),
+            t('climate_zones.southern_europe'),
+            t('climate_zones.continental'),
+            t('climate_zones.maritime'),
+            t('climate_zones.mountain'),
+            t('climate_zones.tropical')
+        ]
         climate_zone = st.selectbox(
-            t('climate_zone', 'Strefa Klimatyczna'),
-            options=[
-                "Europa Północna (Skandynawia, -30°C do +25°C)",
-                "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
-                "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
-                "Klimat kontynentalny (ekstremalne wahania)",
-                "Klimat morski (wysoka wilgotność)",
-                "Klimat górski (wysokie UV, śnieg)",
-                "Klimat tropikalny (wysokie temperatury, wilgotność)"
-            ],
+            t('climate_zone'),
+            options=climate_zone_options,
             index=1
         )
 

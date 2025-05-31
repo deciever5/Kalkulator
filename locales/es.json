@@ -306,6 +306,33 @@
     "none": "Sin aislamiento",
     "advanced": "Avanzado (lana mineral 10-15cm)"
   },
+  "finish_levels": {
+    "basic": "Sin acabado (contenedor técnico, estructura)",
+    "shell": "Carcasa (aislamiento + tablero OSB)",
+    "standard": "Básico (aislamiento + acabado técnico)",
+    "comfort": "Estándar (aislamiento completo + acabado de oficina)",
+    "luxury": "Lujo (clase más alta + acabado hotelero)",
+    "specialist": "Especialista (estándares médicos/laboratorio)"
+  },
+  "flooring": {
+    "none": "Sin suelo (chapa ondulada)",
+    "plywood": "Contrachapado impermeable 18mm (estándar)",
+    "anti_slip": "Contrachapado antideslizante 21mm",
+    "laminate": "Paneles laminados AC4/AC5",
+    "vinyl": "Paneles vinílicos (LVT) impermeables",
+    "carpet": "Baldosas de alfombra comerciales",
+    "epoxy": "Suelo epoxi (industrial)",
+    "concrete": "Hormigón pulido"
+  },
+  "climate_zones": {
+    "northern_europe": "Europa del Norte (Escandinavia, -30°C a +25°C)",
+    "central_europe": "Europa Central (Polonia, Alemania, -20°C a +35°C)",
+    "southern_europe": "Europa del Sur (España, Italia, -5°C a +45°C)",
+    "continental": "Clima continental (variaciones extremas)",
+    "maritime": "Clima marítimo (alta humedad)",
+    "mountain": "Clima montañoso (UV alto, nieve)",
+    "tropical": "Clima tropical (altas temperaturas, humedad)"
+  },
   "reinforcement": {
     "none": "Sin refuerzo",
     "standard": "Refuerzo estándar",

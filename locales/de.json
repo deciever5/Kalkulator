@@ -638,5 +638,32 @@
     "construction": "Bau (Baustellen, Infrastruktur)",
     "agricultural": "Landwirtschaftliche (Farmen, Einrichtungen)",
     "marine": "Marine/Werft (ätzende Umgebung)"
+  },
+  "finish_levels": {
+    "basic": "Ohne Ausbau (Technikcontainer, Rahmen)",
+    "shell": "Rohbau (Dämmung + OSB-Platte)",
+    "standard": "Basis (Dämmung + technischer Ausbau)",
+    "comfort": "Standard (vollständige Dämmung + Büroausbau)",
+    "luxury": "Luxus (höchste Klasse + Hotelausbau)",
+    "specialist": "Spezialist (medizinische/Labor-Standards)"
+  },
+  "flooring": {
+    "none": "Kein Bodenbelag (Wellblech)",
+    "plywood": "Wasserfestes Sperrholz 18mm (Standard)",
+    "anti_slip": "Rutschfestes Sperrholz 21mm",
+    "laminate": "Laminatpaneele AC4/AC5",
+    "vinyl": "Vinylpaneele (LVT) wasserdicht",
+    "carpet": "Teppichfliesen gewerblich",
+    "epoxy": "Epoxidboden (industriell)",
+    "concrete": "Polierter Beton"
+  },
+  "climate_zones": {
+    "northern_europe": "Nordeuropa (Skandinavien, -30°C bis +25°C)",
+    "central_europe": "Mitteleuropa (Polen, Deutschland, -20°C bis +35°C)",
+    "southern_europe": "Südeuropa (Spanien, Italien, -5°C bis +45°C)",
+    "continental": "Kontinentalklima (extreme Schwankungen)",
+    "maritime": "Seeklima (hohe Luftfeuchtigkeit)",
+    "mountain": "Gebirgsklima (hohe UV-Strahlung, Schnee)",
+    "tropical": "Tropisches Klima (hohe Temperaturen, Luftfeuchtigkeit)"
   }
 }

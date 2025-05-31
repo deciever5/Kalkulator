@@ -639,5 +639,32 @@
     "construction": "Építés (építési helyek, infrastruktúra)",
     "agricultural": "Mezőgazdasági (gazdaságok, létesítmények)",
     "marine": "Tengeri/hajógyár (korrozív környezet)"
+  },
+  "finish_levels": {
+    "basic": "Nincs befejezés (műszaki konténer, váz)",
+    "shell": "Héj (szigetelés + OSB lap)",
+    "standard": "Alapvető (szigetelés + műszaki befejezés)",
+    "comfort": "Szabványos (teljes szigetelés + irodai befejezés)",
+    "luxury": "Luxus (legmagasabb osztály + szállodai befejezés)",
+    "specialist": "Szakmai (orvosi/laboratóriumi szabványok)"
+  },
+  "flooring": {
+    "none": "Nincs padló (hullámos lemez)",
+    "plywood": "Vízálló rétegelt lemez 18mm (szabványos)",
+    "anti_slip": "Csúszásgátló rétegelt lemez 21mm",
+    "laminate": "Laminált panelek AC4/AC5",
+    "vinyl": "Vinil panelek (LVT) vízálló",
+    "carpet": "Szőnyeglapok kereskedelmi",
+    "epoxy": "Epoxy padló (ipari)",
+    "concrete": "Polírozott beton"
+  },
+  "climate_zones": {
+    "northern_europe": "Észak-Európa (Skandinávia, -30°C-tól +25°C-ig)",
+    "central_europe": "Közép-Európa (Lengyelország, Németország, -20°C-tól +35°C-ig)",
+    "southern_europe": "Dél-Európa (Spanyolország, Olaszország, -5°C-tól +45°C-ig)",
+    "continental": "Kontinentális éghajlat (extrém változások)",
+    "maritime": "Tengeri éghajlat (magas páratartalom)",
+    "mountain": "Hegyi éghajlat (magas UV, hó)",
+    "tropical": "Trópusi éghajlat (magas hőmérséklet, páratartalom)"
   }
 }
