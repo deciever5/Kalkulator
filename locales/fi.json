@@ -1,8 +1,7 @@
-
 {
   "app": {
     "title": "KAN-BUD - Ammattimaiset konttiratkaisut",
-    "subtitle": "Professional Container Solutions"
+    "subtitle": "Ammattimaiset Konttiratkaisut - Suunnittelu, Rakentaminen ja Asennus"
   },
   "ui": {
     "employee_login": "Työntekijän kirjautuminen",

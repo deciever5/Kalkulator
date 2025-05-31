@@ -1,8 +1,7 @@
-
 {
   "app": {
     "title": "KAN-BUD - Solutions de conteneurs professionnelles",
-    "subtitle": "Professional Container Solutions"
+    "subtitle": "Solutions de Conteneurs Professionnelles - Conception, Construction et Assemblage"
   },
   "ui": {
     "employee_login": "Connexion employé",
@@ -65,7 +64,7 @@
   "after_sales_support": "Support après-vente",
   "contact_us": "Contactez-nous",
   "address": "Adresse",
-  "phone": "Téléphone",
+    "phone": "Téléphone",
   "email": "Email",
   "working_hours": "Heures de travail",
   "mon_fri": "Lun-Ven 8:00-17:00",
