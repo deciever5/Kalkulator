@@ -321,7 +321,7 @@ Return the translations as a JSON object with the same keys but translated value
                 messages=[
                     {
                         "role": "system",
-                        "content": "You are a professional technical translator. Return only valid JSON with translated key-value pairs."
+                        "content": "You are a professional technical translator. Return only valid JSON with translated key-value pairs. Do not include any explanatory text before or after the JSON."
                     },
                     {
                         "role": "user", 
@@ -333,13 +333,64 @@ Return the translations as a JSON object with the same keys but translated value
             )
 
             result_text = response.choices[0].message.content.strip()
-            # Clean up response to ensure valid JSON
-            if result_text.startswith('```json'):
-                result_text = result_text[7:-3]
-            elif result_text.startswith('```'):
-                result_text = result_text[3:-3]
-
-            return json.loads(result_text)
+            
+            # Multiple attempts to extract valid JSON
+            json_candidates = []
+            
+            # Method 1: Direct parsing
+            json_candidates.append(result_text)
+            
+            # Method 2: Remove markdown code blocks
+            if '```json' in result_text:
+                try:
+                    start = result_text.find('```json') + 7
+                    end = result_text.find('```', start)
+                    if end != -1:
+                        json_candidates.append(result_text[start:end].strip())
+                except:
+                    pass
+            
+            # Method 3: Extract first JSON object
+            try:
+                import re
+                json_match = re.search(r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', result_text, re.DOTALL)
+                if json_match:
+                    json_candidates.append(json_match.group())
+            except:
+                pass
+            
+            # Method 4: Find content between first { and last }
+            try:
+                start_idx = result_text.find('{')
+                end_idx = result_text.rfind('}')
+                if start_idx != -1 and end_idx != -1 and end_idx > start_idx:
+                    json_candidates.append(result_text[start_idx:end_idx+1])
+            except:
+                pass
+            
+            # Try to parse each candidate
+            for candidate in json_candidates:
+                if not candidate:
+                    continue
+                    
+                try:
+                    # Clean up common JSON issues
+                    cleaned = candidate.strip()
+                    # Remove trailing commas
+                    cleaned = re.sub(r',\s*}', '}', cleaned)
+                    cleaned = re.sub(r',\s*]', ']', cleaned)
+                    
+                    result = json.loads(cleaned)
+                    if isinstance(result, dict):
+                        return result
+                except json.JSONDecodeError as je:
+                    print(f"JSON parse attempt failed: {je}")
+                    continue
+                except Exception:
+                    continue
+            
+            print(f"All JSON parsing attempts failed for response: {result_text[:200]}...")
+            return {}
 
         except Exception as e:
             print(f"Groq translation error: {e}")

@@ -1,3 +1,4 @@
+"""Fixed unterminated string literal in json extraction."""
 """Groq AI service updated to use supported model llama-3.1-8b-instant."""
 """
 Groq AI Service Module
@@ -303,88 +304,6 @@ class GroqService:
             "ai_model": 'Fallback',
             "generated_at": str(st.session_state.get('current_time', 'Unknown'))
         }
-```')[0].strip()
-            elif '{' in response and '}' in response:
-                start = response.find('{')
-                end = response.rfind('}') + 1
-                json_str = response[start:end]
-            else:
-                raise ValueError("No valid JSON found in response")
-
-            result = json.loads(json_str)
-
-            # Validate required fields
-            required_fields = ['structural_integrity', 'building_code_compliance', 'environmental_considerations']
-            for field in required_fields:
-                if field not in result:
-                    result[field] = {}
-
-            # Ensure technical score is between 0 and 10
-            result['technical_score'] = max(0, min(10, result.get('technical_score', 7)))
-
-            # Add metadata
-            result['ai_model'] = 'Groq Llama3-8B'
-            result['generated_at'] = str(st.session_state.get('current_time', 'Unknown'))
-
-            return result
-
-        except Exception as e:
-            if st.session_state.get('employee_logged_in', False):
-                st.error(f"Error processing Groq technical analysis response: {str(e)}")
-            return self._fallback_technical_analysis({}, {})
-
-    def _fallback_cost_estimate(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> Dict[str, Any]:
-        """Fallback cost estimation method"""
-
-        return {
-            "total_cost": 5000,
-            "material_costs": 2000,
-            "labor_costs": 2500,
-            "equipment_costs": 300,
-            "permit_costs": 200,
-            "margin": 500,
-            "timeline_weeks": 4,
-            "cost_breakdown": {
-                "structural": 1500,
-                "electrical": 800,
-                "plumbing": 700,
-                "hvac": 600,
-                "insulation": 400,
-                "finishing": 1000
-            },
-            "risk_factors": ["Supply chain delays", "Unexpected permit issues"],
-            "recommendations": ["Order materials in advance", "Consult with local authorities"],
-            "confidence_score": 0.6,
-            "ai_model": 'Fallback',
-            "generated_at": str(st.session_state.get('current_time', 'Unknown'))
-        }
-
-    def _fallback_technical_analysis(self, config: Dict[str, Any], analysis_params: Dict[str, Any]) -> Dict[str, Any]:
-        """Fallback technical analysis method"""
-
-        return {
-            "structural_integrity": {
-                "safety_factor": 2.5,
-                "load_capacity": 5000,
-                "stress_analysis": "Meets minimum safety standards"
-            },
-            "building_code_compliance": {
-                "european_standards": ["EN 1991", "EN 1993"],
-                "compliance_status": "compliant",
-                "required_permits": ["Building permit", "Electrical permit"]
-            },
-            "environmental_considerations": {
-                "climate_suitability": "Suitable for temperate climates",
-                "insulation_requirements": "R-13 insulation recommended",
-                "weatherproofing": "Requires sealant and weather-resistant paint"
-            },
-            "safety_recommendations": ["Install smoke detectors", "Ensure proper ventilation"],
-            "potential_issues": ["Corrosion", "Moisture buildup"],
-            "technical_score": 7.5,
-            "feasibility": "high",
-            "ai_model": 'Fallback',
-            "generated_at": str(st.session_state.get('current_time', 'Unknown'))
-        }
 
 import asyncio
 import aiohttp
@@ -518,3 +437,41 @@ if __name__ == '__main__':
         print(json.dumps(results, indent=2))
 
     asyncio.run(main())
+```json' in response:
+                json_str = response.split('```json')[1].split('```')[0].strip()
+            elif '{' in response and '}' in response:
+                start = response.find('{')
+                end = response.rfind('}') + 1
+                json_str = response[start:end]
+            else:
+                raise ValueError("No valid JSON found in response")
+
+            result = json.loads(json_str)
+
+            # Validate required fields
+            required_fields = ['total_cost', 'material_costs', 'labor_costs', 'timeline_weeks']
+            for field in required_fields:
+                if field not in result:
+                    result[field] = 0
+
+            # Ensure confidence score is between 0 and 1
+            result['confidence_score'] = max(0, min(1, result.get('confidence_score', 0.7)))
+
+            # Add metadata
+            result['ai_model'] = 'Groq Llama3-8B'
+            result['generated_at'] = str(st.session_state.get('current_time', 'Unknown'))
+
+            return result
+
+        except Exception as e:
+            if st.session_state.get('employee_logged_in', False):
+                st.error(f"Error processing Groq response: {str(e)}")
+            return self._fallback_cost_estimate({}, {})
+
+    def _process_technical_analysis_response(self, response: str) -> Dict[str, Any]:
+        """Process and validate technical analysis response from Groq"""
+
+        try:
+            # Extract JSON from response
+            if '```json' in response:
+                json_str = response.split('```json')[1].split('
