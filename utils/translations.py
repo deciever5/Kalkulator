@@ -6,17 +6,17 @@ import json
 import os
 
 def load_translations():
-    """Load only complete translation files"""
+    """Load all available translation files"""
     translations = {}
     locales_dir = "locales"
     
-    # Only load languages with complete translations (220+ keys)
-    complete_languages = ['de', 'nl', 'cs', 'hu', 'pl', 'en']
+    # Load all available languages
+    all_languages = ['de', 'nl', 'cs', 'hu', 'pl', 'en', 'es', 'it', 'sv', 'fi', 'uk', 'sk', 'fr']
 
     if not os.path.exists(locales_dir):
         return translations
 
-    for lang_code in complete_languages:
+    for lang_code in all_languages:
         filename = f"{lang_code}.json"
         file_path = os.path.join(locales_dir, filename)
         
@@ -28,10 +28,9 @@ def load_translations():
                 content = f.read().strip()
                 if content:
                     translation_data = json.loads(content)
-                    # Only include if it has enough keys (complete translation)
-                    if len(translation_data) >= 150:
-                        translations[lang_code] = translation_data
-                        print(f"Loaded {lang_code} translations with {len(translation_data)} top-level keys")
+                    # Load all languages regardless of completeness
+                    translations[lang_code] = translation_data
+                    print(f"Loaded {lang_code} translations with {len(translation_data)} top-level keys")
         except (json.JSONDecodeError, FileNotFoundError, UnicodeDecodeError) as e:
             print(f"Error loading {filename}: {e}")
             continue
@@ -60,15 +59,21 @@ def set_language(lang_code):
     print(f"Language successfully set to: {current}")
 
 def get_available_languages():
-    """Get available languages with complete translations only"""
-    # Only show languages with complete translation coverage (220+ keys)
+    """Get all available languages"""
     return {
         'cs': '🇨🇿 Čeština',
         'de': '🇩🇪 Deutsch', 
         'en': '🇬🇧 English',
+        'es': '🇪🇸 Español',
+        'fi': '🇫🇮 Suomi',
+        'fr': '🇫🇷 Français',
         'hu': '🇭🇺 Magyar',
+        'it': '🇮🇹 Italiano',
         'nl': '🇳🇱 Nederlands',
-        'pl': '🇵🇱 Polski'
+        'pl': '🇵🇱 Polski',
+        'sk': '🇸🇰 Slovenčina',
+        'sv': '🇸🇪 Svenska',
+        'uk': '🇺🇦 Українська'
     }
 
 def render_language_selector():
@@ -79,32 +84,32 @@ def render_language_selector():
     # Custom CSS to make selectbox show all language options without scrolling
     st.markdown("""
     <style>
-    /* Force language dropdown to show all 6 language options */
+    /* Force language dropdown to show all 13 language options */
     div[data-baseweb="select"] > div[role="listbox"] {
-        max-height: 400px !important;
+        max-height: 650px !important;
         height: auto !important;
     }
     div[data-baseweb="popover"] {
-        max-height: 450px !important;
+        max-height: 700px !important;
     }
     div[data-baseweb="popover"] > div {
-        max-height: 400px !important;
+        max-height: 650px !important;
     }
     div[data-baseweb="popover"] > div > div {
-        max-height: 400px !important;
+        max-height: 650px !important;
         overflow-y: visible !important;
     }
     /* Target all selectbox dropdowns */
     .stSelectbox [data-baseweb="popover"] {
-        max-height: 450px !important;
+        max-height: 700px !important;
     }
     .stSelectbox [data-baseweb="popover"] > div {
-        max-height: 400px !important;
+        max-height: 650px !important;
     }
-    /* Ensure enough space for all 6 languages */
+    /* Ensure enough space for all 13 languages */
     div[role="listbox"] {
-        max-height: 400px !important;
-        min-height: 250px !important;
+        max-height: 650px !important;
+        min-height: 400px !important;
     }
     </style>
     """, unsafe_allow_html=True)
