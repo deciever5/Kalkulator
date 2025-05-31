@@ -15,85 +15,156 @@ class GroqService:
     """Service for Groq AI integration"""
 
     def __init__(self):
-        self.api_key = os.environ.get('GROQ_API_KEY')
-        if not self.api_key:
+        # Support multiple API keys for failover
+        self.api_keys = []
+        
+        # Primary API key
+        primary_key = os.environ.get('GROQ_API_KEY')
+        if primary_key:
+            self.api_keys.append(primary_key)
+            
+        # Reserve API keys
+        reserve_key = os.environ.get('GROQ_RESERVE_API_KEY')
+        if reserve_key:
+            self.api_keys.append(reserve_key)
+            
+        # Additional reserve keys (can add more)
+        reserve_key_2 = os.environ.get('GROQ_RESERVE_API_KEY_2')
+        if reserve_key_2:
+            self.api_keys.append(reserve_key_2)
+        
+        self.current_key_index = 0
+        self.client = None
+        
+        if not self.api_keys:
             if st.session_state.get('employee_logged_in', False):
-                st.error("GROQ_API_KEY not found in environment variables")
-            self.client = None
+                st.error("No GROQ API keys found in environment variables")
         else:
+            self._initialize_client()
+    
+    def _initialize_client(self):
+        """Initialize Groq client with current API key"""
+        if self.current_key_index < len(self.api_keys):
             try:
-                self.client = Groq(api_key=self.api_key)
+                self.client = Groq(api_key=self.api_keys[self.current_key_index])
+                return True
             except Exception as e:
                 if st.session_state.get('employee_logged_in', False):
-                    st.error(f"Failed to initialize Groq client: {str(e)}")
-                self.client = None
+                    st.warning(f"Failed to initialize Groq client with key {self.current_key_index + 1}: {str(e)}")
+                return False
+        return False
+    
+    def _try_next_key(self):
+        """Switch to next available API key"""
+        self.current_key_index += 1
+        if self.current_key_index < len(self.api_keys):
+            if st.session_state.get('employee_logged_in', False):
+                st.info(f"Switching to reserve API key {self.current_key_index}")
+            return self._initialize_client()
+        return False
 
     def generate_cost_estimate(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> Dict[str, Any]:
-        """Generate intelligent cost estimate using Groq"""
+        """Generate intelligent cost estimate using Groq with failover"""
 
         if not self.client:
             return self._fallback_cost_estimate(estimation_data, base_costs)
 
-        try:
-            prompt = self._build_cost_estimation_prompt(estimation_data, base_costs)
+        max_retries = len(self.api_keys)
+        
+        for attempt in range(max_retries):
+            try:
+                prompt = self._build_cost_estimation_prompt(estimation_data, base_costs)
 
-            response = self.client.chat.completions.create(
-                model="llama-3.1-8b-instant",
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are an expert container modification cost estimator. Provide accurate cost estimates in JSON format with detailed breakdowns."
-                    },
-                    {
-                        "role": "user", 
-                        "content": prompt
-                    }
-                ],
-                temperature=0.1,
-                max_tokens=2000
-            )
+                response = self.client.chat.completions.create(
+                    model="llama-3.1-8b-instant",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": "You are an expert container modification cost estimator. Provide accurate cost estimates in JSON format with detailed breakdowns."
+                        },
+                        {
+                            "role": "user", 
+                            "content": prompt
+                        }
+                    ],
+                    temperature=0.1,
+                    max_tokens=2000
+                )
 
-            result = response.choices[0].message.content
-            return self._process_cost_estimate_response(result)
+                result = response.choices[0].message.content
+                return self._process_cost_estimate_response(result)
 
-        except Exception as e:
-            if st.session_state.get('employee_logged_in', False):
-                st.error(f"Groq API error: {str(e)}")
-            return self._fallback_cost_estimate(estimation_data, base_costs)
+            except Exception as e:
+                error_msg = str(e).lower()
+                if "rate limit" in error_msg or "429" in error_msg:
+                    if st.session_state.get('employee_logged_in', False):
+                        st.warning(f"Rate limit hit on API key {self.current_key_index + 1}: {str(e)}")
+                    
+                    # Try next API key
+                    if self._try_next_key():
+                        continue
+                    else:
+                        if st.session_state.get('employee_logged_in', False):
+                            st.error("All API keys exhausted or rate limited")
+                        break
+                else:
+                    if st.session_state.get('employee_logged_in', False):
+                        st.error(f"Groq API error: {str(e)}")
+                    break
+
+        return self._fallback_cost_estimate(estimation_data, base_costs)
 
     def generate_technical_analysis(self, config: Dict[str, Any], analysis_params: Dict[str, Any], 
                                   structural_analysis: Dict[str, Any]) -> Dict[str, Any]:
-        """Generate technical analysis using Groq"""
+        """Generate technical analysis using Groq with failover"""
 
         if not self.client:
             return self._fallback_technical_analysis(config, analysis_params)
 
-        try:
-            prompt = self._build_technical_analysis_prompt(config, analysis_params, structural_analysis)
+        max_retries = len(self.api_keys)
+        
+        for attempt in range(max_retries):
+            try:
+                prompt = self._build_technical_analysis_prompt(config, analysis_params, structural_analysis)
 
-            response = self.client.chat.completions.create(
-                model="llama-3.1-8b-instant",
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are a structural engineer specializing in container modifications. Provide technical analysis in JSON format with safety recommendations."
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                temperature=0.1,
-                max_tokens=3000
-            )
+                response = self.client.chat.completions.create(
+                    model="llama-3.1-8b-instant",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": "You are a structural engineer specializing in container modifications. Provide technical analysis in JSON format with safety recommendations."
+                        },
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+                    temperature=0.1,
+                    max_tokens=3000
+                )
 
-            result = response.choices[0].message.content
-            return self._process_technical_analysis_response(result)
+                result = response.choices[0].message.content
+                return self._process_technical_analysis_response(result)
 
-        except Exception as e:
-            if st.session_state.get('employee_logged_in', False):
-                st.error(f"Groq technical analysis error: {str(e)}")
-            return self._fallback_technical_analysis(config, analysis_params)
+            except Exception as e:
+                error_msg = str(e).lower()
+                if "rate limit" in error_msg or "429" in error_msg:
+                    if st.session_state.get('employee_logged_in', False):
+                        st.warning(f"Rate limit hit on API key {self.current_key_index + 1}: {str(e)}")
+                    
+                    # Try next API key
+                    if self._try_next_key():
+                        continue
+                    else:
+                        if st.session_state.get('employee_logged_in', False):
+                            st.error("All API keys exhausted or rate limited")
+                        break
+                else:
+                    if st.session_state.get('employee_logged_in', False):
+                        st.error(f"Groq technical analysis error: {str(e)}")
+                    break
+
+        return self._fallback_technical_analysis(config, analysis_params)
 
     def _build_cost_estimation_prompt(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> str:
         """Build prompt for cost estimation with Groq"""
@@ -362,36 +433,53 @@ class TranslationQualityChecker:
 
     async def _translate_text(self, text: str, target_language: str) -> str:
          """
-         Translate text to target language using Groq.
+         Translate text to target language using Groq with failover.
          """
          if not self.client:
              st.error("Groq client is not initialized.")
              return ""
 
-         try:
-             prompt = f"""Translate the following text to {self.languages[target_language]}: '{text}'"""
+         max_retries = len(self.api_keys)
+         
+         for attempt in range(max_retries):
+             try:
+                 prompt = f"""Translate the following text to {self.languages[target_language]}: '{text}'"""
 
-             response = self.client.chat.completions.create(
-                 model="llama-3.1-8b-instant",
-                 messages=[
-                     {
-                         "role": "system",
-                         "content": f"You are a professional translator. Translate accurately to {self.languages[target_language]}."
-                     },
-                     {
-                         "role": "user",
-                         "content": prompt
-                     }
-                 ],
-                 temperature=0.2,
-                 max_tokens=1000
-             )
-             translation = response.choices[0].message.content.strip()
-             return translation
+                 response = self.client.chat.completions.create(
+                     model="llama-3.1-8b-instant",
+                     messages=[
+                         {
+                             "role": "system",
+                             "content": f"You are a professional translator. Translate accurately to {self.languages[target_language]}."
+                         },
+                         {
+                             "role": "user",
+                             "content": prompt
+                         }
+                     ],
+                     temperature=0.2,
+                     max_tokens=1000
+                 )
+                 translation = response.choices[0].message.content.strip()
+                 return translation
 
-         except Exception as e:
-             st.error(f"Translation error to {target_language}: {e}")
-             return None
+             except Exception as e:
+                 error_msg = str(e).lower()
+                 if "rate limit" in error_msg or "429" in error_msg:
+                     if st.session_state.get('employee_logged_in', False):
+                         st.warning(f"Translation rate limit hit on API key {self.current_key_index + 1}")
+                     
+                     # Try next API key
+                     if self._try_next_key():
+                         continue
+                     else:
+                         st.error("All translation API keys exhausted or rate limited")
+                         break
+                 else:
+                     st.error(f"Translation error to {target_language}: {e}")
+                     break
+         
+         return None
 
     async def _evaluate_translation(self, session: aiohttp.ClientSession, original_text: str, target_language: str, polish_base: str) -> tuple[str, Dict[str, Any]]:
         """
