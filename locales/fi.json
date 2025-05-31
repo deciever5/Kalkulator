@@ -197,7 +197,7 @@
   "ai": {
     "models": {
       "openai_gpt4": "OpenAI GPT-4o",
-      "anthropic_claude": "Anthropic Claude",
+      "anthropic_claude": "Antropinen Claude",
       "auto_select": "Automaattinen paras valinta"
     },
     "messages": {
@@ -457,7 +457,7 @@
     "emergency_exit": "Pakotie"
   },
   "accessibility": {
-    "standard": "Standards (käytävä)",
+    "standard": "Pääsy",
     "ramp": "Pyöräkäytävä",
     "full_ada": "Kokonaisuus ADA:n mukaan",
     "disabled_friendly": "Täysin käytännöllinen"
@@ -545,7 +545,7 @@
     "hvac_system": "Ilmastointiohjelmat. Lämmityspumput ovat energiatehokkaita koko vuoden käytölle.",
     "security_features": "Turvatasot alkaen peruslukosta biometrisiin pääsyohjelmiin.",
     "exterior_cladding": "Säänkestävyys ja ulkonäkö. Metallinen ulkokatotus tarjoaa parhaan kestävyyden.",
-    "additional_openings": "Erityisesti suunnitellut pääsykohteet standardeista ovesta ja ikkunasta poiketen.",
+    "additional_openings": "Erikoistuneet tukiasemat vakio -ovien ja ikkunoiden ulkopuolella.",
     "fire_safety": "Palosuojelusysteemit. Tulipaloturvalaitteet suositeltavat kaupalliseen käyttöön.",
     "accessibility": "ADA-kelpoisuus varmistaa vammaisten henkilöiden pääsyn.",
     "paint_finish": "Pintakäsittelyn laatu vaikuttaa kestävyyteen. C5M suositellaan merellisille ympäristöille. C4 teollisuusympäristöille.",
@@ -554,8 +554,8 @@
   },
   "container": {
     "types": {
-      "20ft_standard": "20ft Standard",
-      "40ft_standard": "40ft Standard",
+      "20ft_standard": "20ft standardi",
+      "40ft_standard": "40ft standardi",
       "40ft_high_cube": "40ft HC",
       "20ft_refrigerated": "20ft Jääkäyttö",
       "20ft_double_door": "20ft Kaksiovinen",
@@ -691,7 +691,7 @@
   "consider_building_codes": "Kohtaa Paikalliset Rakennuslainsäädäntövaatimukset",
   "budget_site_preparation": "Varaudu Sijaintiin Liittyviin Tarpeisiin",
   "review_electrical_plumbing": "Tarkista Sähkö- ja Vesijärjestelmät Varhain",
-  "standard_risk_factors": "Standardeja Vaara Tekijät",
+  "standard_risk_factors": "Tavalliset riskitekijät",
   "weather_delays": "Sääolosuhteiden Viiveet Rakennustyössä",
   "permit_timeline_variations": "Lupien hyväksyntäaikataulujen muutokset",
   "site_access_limitations": "Tontin pääsyrajoitukset toimitukselle",

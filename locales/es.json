@@ -179,7 +179,7 @@
   "electrical": {
     "basic": "Básico (iluminación + enchufes)",
     "standard": "Estándar (circuito 15A)",
-    "industrial": "Industrial (30A + panel)",
+    "industrial": "Industrial (30a + panel)",
     "smart_system": "Sistema inteligente (automatización IoT)"
   },
   "plumbing": {
@@ -264,10 +264,10 @@
   "delivery_zone_regional": "Regional (200 km)",
   "delivery_zone_national": "Nacional",
   "delivery_zone_international": "Internacional",
-  "transport_type": "Tipo de Transporte",
+  "transport_type": "Transporte tipo",
   "transport_type_standard": "Estándar",
   "transport_type_crane": "Con Grúa",
-  "transport_type_special": "Transporte Especial",
+  "transport_type_special": "Transporte especial",
   "installation": "Instalación",
   "installation_none": "Autoinstalación",
   "installation_basic": "Configuración Básica",

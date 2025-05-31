@@ -33,13 +33,13 @@
     "bulk_pricing": "Volym\nPriser",
     "bulk_pricing_desc": "Volymrabatter för flera containers",
     "custom_sizing": "Anpassade\nMått",
-    "custom_sizing_desc": "Designa containers med exakta specifikationer"
+    "custom_sizing_desc": "Designbehållare med exakta specifikationer"
   },
   "app": {
-    "title": "Professionella Containerlösningar",
+    "title": "Professionella containerlösningar",
     "subtitle": "Professionella Containerlösningar - Design, Konstruktion och Montering"
   },
-  "configure_container": "Konfigurera Din Container",
+  "configure_container": "Konfigurera din behållare",
   "simple_process_2_steps": "Enkel process i 2 enkla steg",
   "step_1_configuration": "Steg 1: Konfiguration",
   "choose_container_type": "Välj containertyp och modifieringar",
@@ -55,7 +55,7 @@
   "analyze_drawings": "Analysera Ritningar",
   "send_inquiry": {
     "title": "Förfråganformulär",
-    "description": "Få en detaljerad offert anpassad till ditt containerprojekt",
+    "description": "Få en detaljerad offert som är anpassad till ditt containerprojekt",
     "disclaimer_title": "Viktig Information",
     "disclaimer_text": "Detta formulär är för att skicka förfrågningar om detaljerade offerter. Uppskattningar från vår kalkylator är inte kommersiella erbjudanden enligt gällande lag.",
     "config_detected": "Konfiguration upptäckt från kalkylator",
@@ -172,13 +172,13 @@
     "basic": "Grundläggande (brandsläckare)",
     "smoke_detection": "Rökdetektering",
     "sprinkler": "Sprinklersystem",
-    "full_system": "Fullständigt brandsläckningssystem"
+    "full_system": "Full brandsuppression"
   },
   "accessibility_features": "Tillgänglighetsfunktioner",
   "paint_finish": "Färgfinish",
   "electrical": {
     "basic": "Grundläggande (belysning + uttag)",
-    "standard": "Standard (15A krets)",
+    "standard": "Standard (15A -krets)",
     "industrial": "Industriell (30A + panel)",
     "smart_system": "Smart system (IoT-automation)"
   },
@@ -215,7 +215,7 @@
     "emergency_exit": "Nödutgång"
   },
   "accessibility": {
-    "standard": "Standard åtkomst",
+    "standard": "Åtkomststandard",
     "ramp": "Rullstolsramp",
     "full_ada": "Fullständig ADA-efterlevnad",
     "disabled_friendly": "Helt tillgänglig"
@@ -264,13 +264,13 @@
   "delivery_zone_regional": "Regional (200km)",
   "delivery_zone_national": "Nationell",
   "delivery_zone_international": "Internationell",
-  "transport_type": "Transporttyp",
+  "transport_type": "Typtransporter",
   "transport_type_standard": "Standard",
   "transport_type_crane": "Med Kran",
-  "transport_type_special": "Specialtransport",
+  "transport_type_special": "Specialtransporter",
   "installation": "Installation",
   "installation_none": "Självinstallation",
-  "installation_basic": "Grundläggande Installation",
+  "installation_basic": "Grundläggande inställning",
   "installation_full": "Fullständig Installation",
   "office_equipment": "Kontorsutrustning",
   "office_equipment_none": "Ingen",
@@ -329,8 +329,8 @@
   },
   "container": {
     "types": {
-      "20ft_standard": "20ft Standard",
-      "40ft_standard": "40ft Standard",
+      "20ft_standard": "20ft standard",
+      "40ft_standard": "40ft standard",
       "40ft_high_cube": "40ft HC",
       "20ft_refrigerated": "20ft Kyld",
       "20ft_double_door": "20ft DD",
@@ -380,7 +380,7 @@
   },
   "form": {
     "labels": {
-      "container_type": "Containertyp",
+      "container_type": "Behållartyp",
       "main_purpose": "Huvudsyfte",
       "environment": "Miljö",
       "finish_level": "Finishnivå",
@@ -399,7 +399,7 @@
   "ai": {
     "models": {
       "openai_gpt4": "OpenAI GPT-4o",
-      "anthropic_claude": "Anthropic Claude",
+      "anthropic_claude": "Antropisk claude",
       "auto_select": "Auto-Välj Bästa"
     },
     "messages": {
@@ -413,9 +413,9 @@
   "employee_tools": "Personalverktyg",
   "ai_cost_estimation": "AI-Kostnadsuppskattning",
   "ai_powered_estimation": "AI-driven kostnadsuppskattning för containermodifieringar",
-  "no_configuration_found": "Ingen containerkonfiguration hittad. Konfigurera din container först.",
+  "no_configuration_found": "Ingen behållarkonfiguration hittades. Konfigurera din behållare först.",
   "current_configuration": "Aktuell Konfiguration",
-  "container_type": "Containertyp",
+  "container_type": "Behållartyp",
   "purpose": "Syfte",
   "environment": "Miljö",
   "finish_level": "Finishnivå",
@@ -450,7 +450,7 @@
   "error_generating_estimate": "Fel vid generering av uppskattning",
   "saved_ai_estimate": "Sparad AI-Uppskattning",
   "full_system_access": "Fullständig systemåtkomst och avancerade funktioner",
-  "container_configurator_title": "Container\nKonfigurator",
+  "container_configurator_title": "Behållare\nKonfigurator",
   "container_configurator_desc": "Professionell containerkonfiguration",
   "ai_cost_estimator_title": "AI-Kostnads\nUppskattare",
   "ai_cost_estimator_desc": "Artificiell intelligens kostnadsuppskattning",
@@ -458,7 +458,7 @@
   "quote_generator": "Offert\nGenerator",
   "open_tool": "Öppna",
   "configuration_summary": "Konfigurationssammanfattning",
-  "base_container": "Bascontainer",
+  "base_container": "Basbehållare",
   "type": "Typ",
   "use_case": "Användningsfall",
   "key_modifications": "Nyckelmodifieringar",
@@ -510,7 +510,7 @@
     "project_context": "Projektkontext",
     "project_location": "Projektplats",
     "project_name": "Projektnamn",
-    "project_name_placeholder": "t.ex. Containerkontor - Stockholm",
+    "project_name_placeholder": "TILL EXEMPEL. Containerkontor - Poznań",
     "file_upload": "Filuppladdning",
     "upload_drawings": "Ladda upp tekniska ritningar",
     "file_formats_help": "Vi stöder PDF, DWG, JPG och PNG-filer. Vi rekommenderar PDF-format för bästa analys.",
@@ -520,12 +520,12 @@
     "description": "Gratis teknisk ritningsanalys för kunder som del av uppskattningsprocessen",
     "info_title": "Hur det fungerar",
     "info_text": "Ladda upp dina tekniska ritningar och vårt AI-system kommer att analysera dem och justera offerten till faktiska projektkrav. Detta är en gratis tjänst för alla kunder.",
-    "no_config": "Ingen containerkonfiguration hittad. Konfigurera din container först.",
+    "no_config": "Ingen behållarkonfiguration hittades. Konfigurera din behållare först.",
     "config_found": "Sparad konfiguration hittad",
     "current_config": "Aktuell Konfiguration",
     "project_context": "Projektkontext",
     "project_name": "Projektnamn",
-    "project_name_placeholder": "t.ex. Containerkontor - Stockholm",
+    "project_name_placeholder": "TILL EXEMPEL. Containerkontor - Poznań",
     "project_location": "Projektplats",
     "file_upload": "Filuppladdning",
     "upload_drawings": "Ladda upp tekniska ritningar",
