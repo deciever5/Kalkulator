@@ -63,6 +63,9 @@ def get_all_keys_flat(data: Dict, prefix: str = "") -> Dict[str, str]:
 
 def fix_missing_translations():
     """Add missing translations to all language files using AI translation services"""
+    import sys
+    import os
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from utils.ai_translation_service import AITranslationService
     
     locales_dir = "locales"
