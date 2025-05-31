@@ -128,6 +128,7 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
     """
     Get translation for given key in current language
     Supports nested keys like 'form.labels.container_type'
+    Includes automatic fallback to English if key missing in current language
 
     Args:
         key: Translation key
@@ -140,27 +141,31 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
         # Use cached translations
         translations = get_cached_translations()
         
-        # Get translation value
-        if lang not in translations:
-            print(f"Language '{lang}' not found in translations")
-            if fallback:
-                return fallback
-            return key
+        # Get translation value from current language
+        if lang in translations:
+            translation = get_nested_translation(translations[lang], key)
+            if translation:
+                # Format with kwargs if provided
+                if kwargs and translation:
+                    return translation.format(**kwargs)
+                return translation
+        
+        # Fallback to English if key not found in current language
+        if lang != 'en' and 'en' in translations:
+            english_translation = get_nested_translation(translations['en'], key)
+            if english_translation:
+                print(f"Using English fallback for key '{key}' in language '{lang}'")
+                if kwargs and english_translation:
+                    return english_translation.format(**kwargs)
+                return english_translation
+
+        # Use provided fallback
+        if fallback:
+            return fallback
             
-        translation = get_nested_translation(translations[lang], key)
-
-        # Use fallback if translation is missing
-        if not translation and fallback:
-            translation = fallback
-        elif not translation:
-            print(f"Translation key '{key}' not found for language '{lang}'")
-            translation = key
-
-        # Format with kwargs if provided
-        if kwargs and translation:
-            return translation.format(**kwargs)
-
-        return translation
+        # Last resort: return the key itself
+        print(f"Translation key '{key}' not found in language '{lang}' or English fallback")
+        return key
 
     except Exception as e:
         print(f"Translation error for key '{key}': {e}")
