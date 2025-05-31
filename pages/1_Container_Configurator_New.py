@@ -122,27 +122,27 @@ with st.form("container_configuration_form"):
     with col1:
         # Container Type
         container_type = st.selectbox(
-            "Typ Kontenera",
+            t('form.labels.container_type'),
             options=[
-                "10ft Compact (3m x 2.4m)",
-                "20ft Standard (6m x 2.4m)", 
-                "20ft High Cube (6m x 2.7m)",
-                "40ft Standard (12m x 2.4m)",
-                "40ft High Cube (12m x 2.7m)",
-                "Kontener łączony (multi-unit)",
-                "Kontener specjalny (wymiary custom)",
-                "Kontener używany (refurbished)"
+                t('container.types.10ft_compact'),
+                t('container.types.20ft_standard'), 
+                t('container.types.20ft_high_cube'),
+                t('container.types.40ft_standard'),
+                t('container.types.40ft_high_cube'),
+                t('container.types.multi_unit'),
+                t('container.types.custom_dimensions'),
+                t('container.types.refurbished')
             ],
             index=3
         )
         
         # Construction Material
         construction_material = st.selectbox(
-            "Materiał Konstrukcyjny",
+            t('form.labels.construction_material'),
             options=[
-                "Stal (standardowa konstrukcja)",
-                "Aluminium (lekka konstrukcja)", 
-                "Materiał kompozytowy (specjalistyczny)"
+                t('construction_material.steel'),
+                t('construction_material.aluminum'), 
+                t('construction_material.composite')
             ]
         )
         

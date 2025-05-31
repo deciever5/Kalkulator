@@ -329,14 +329,22 @@
   },
   "container": {
     "types": {
-      "20ft_standard": "20FT standard",
-      "40ft_standard": "40FT standard",
-      "40ft_high_cube": "40ft HC",
+      "10ft_compact": "10ft Compact (3m x 2.4m)",
+      "20ft_standard": "20ft Standard (6m x 2.4m)",
+      "20ft_high_cube": "20ft High Cube (6m x 2.7m)",
+      "40ft_standard": "40ft Standard (12m x 2.4m)",
+      "40ft_high_cube": "40ft High Cube (12m x 2.7m)",
+      "40ft_hc": "40ft HC",
       "20ft_refrigerated": "20ft Refrigerated",
-      "20ft_double_door": "20FT DD",
+      "20ft_double_door": "20ft DD",
       "40ft_double_door": "40ft DD",
       "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Custom Size"
+      "45ft_standard": "45ft Standard",
+      "custom": "Custom",
+      "custom_size": "Custom Size",
+      "multi_unit": "Multi-unit Container",
+      "custom_dimensions": "Custom Dimensions Container",
+      "refurbished": "Refurbished Container"
     },
     "use_cases": {
       "office_space": "Office Space",

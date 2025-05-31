@@ -85,13 +85,13 @@ with col1:
         "40ft Double Door": "40ft Double Door",
         "40ft HC Double Door": "40ft HC Double Door"
     }
-    
+
     container_type = st.selectbox(
-        "Container Type",
+        t('form.labels.container_type'),
         list(container_types.keys()),
         key="bulk_container_type"
     )
-    
+
     main_purposes = {
         "Office Space": "Office Space",
         "Residential": "Residential",
@@ -102,9 +102,9 @@ with col1:
         "Medical": "Medical",
         "Laboratory": "Laboratory"
     }
-    
+
     main_purpose = st.selectbox(
-        "Main Purpose",
+        t('form.labels.main_purpose'),
         list(main_purposes.keys()),
         key="bulk_main_purpose"
     )
@@ -115,7 +115,7 @@ with col2:
         min_value=1, max_value=100, value=1,
         key="bulk_quantity"
     )
-    
+
     # Modifications
     st.markdown("**Modifications:**")
     num_windows = st.number_input("Windows", min_value=0, max_value=10, value=0, key="bulk_windows")
@@ -126,7 +126,7 @@ with col2:
 # Add to bulk order
 if st.button("Add to Bulk Order", type="primary"):
     from utils.animations import show_loading_animation, show_success_animation
-    
+
     container_config = {
         "container_type": container_type,
         "main_purpose": main_purpose,
@@ -138,14 +138,14 @@ if st.button("Add to Bulk Order", type="primary"):
         "insulation": False,
         "delivery_zone": "poland"
     }
-    
+
     # Show loading animation
     show_loading_animation("Adding containers to bulk order...", 2)
-    
+
     # Add multiple containers based on quantity
     for _ in range(quantity):
         st.session_state.bulk_containers.append(container_config.copy())
-    
+
     # Show success animation
     show_success_animation(f"Added {quantity} containers successfully!", 1)
     st.rerun()
@@ -153,35 +153,35 @@ if st.button("Add to Bulk Order", type="primary"):
 # Display current bulk order
 if st.session_state.bulk_containers:
     st.markdown("## Current Bulk Order")
-    
+
     total_quantity = len(st.session_state.bulk_containers)
-    
+
     # Calculate volume discounts
     volume_discounts = {
         2: 0.05, 5: 0.08, 10: 0.12, 20: 0.15, 50: 0.18, 100: 0.22
     }
-    
+
     logistics_savings = {
         2: 0.03, 5: 0.06, 10: 0.10, 20: 0.12, 50: 0.15, 100: 0.18
     }
-    
+
     volume_discount_rate = 0.0
     logistics_savings_rate = 0.0
-    
+
     for min_qty, disc in sorted(volume_discounts.items(), reverse=True):
         if total_quantity >= min_qty:
             volume_discount_rate = disc
             break
-    
+
     for min_qty, save in sorted(logistics_savings.items(), reverse=True):
         if total_quantity >= min_qty:
             logistics_savings_rate = save
             break
-    
+
     # Calculate total costs
     total_base_cost = 0
     individual_costs = []
-    
+
     for i, container in enumerate(st.session_state.bulk_containers):
         try:
             cost = calculate_container_cost(container)
@@ -213,30 +213,30 @@ if st.session_state.bulk_containers:
                 "Cost (€)": f"{estimated_cost:,.0f}"
             })
             total_base_cost += estimated_cost
-    
+
     # Apply discounts
     volume_discount_amount = total_base_cost * volume_discount_rate
     logistics_savings_amount = total_base_cost * logistics_savings_rate
     total_discount = volume_discount_amount + logistics_savings_amount
     final_total = total_base_cost - total_discount
-    
+
     # Display summary metrics with animated counters
     from utils.animations import create_animated_counter
-    
+
     col1, col2, col3, col4 = st.columns(4)
-    
+
     with col1:
         st.metric("Total Containers", total_quantity)
-    
+
     with col2:
         create_animated_counter(total_base_cost, "Base Cost", "€", "")
-    
+
     with col3:
         create_animated_counter(total_discount, "Total Savings", "€", "")
-    
+
     with col4:
         create_animated_counter(final_total, "Final Total", "€", "")
-    
+
     # Savings highlight
     if total_discount > 0:
         savings_percentage = (total_discount / total_base_cost * 100)
@@ -246,10 +246,10 @@ if st.session_state.bulk_containers:
             <p>Volume Discount: {volume_discount_rate*100:.0f}% + Logistics Savings: {logistics_savings_rate*100:.0f}%</p>
         </div>
         """, unsafe_allow_html=True)
-    
+
     # Detailed breakdown
     st.markdown("### Cost Breakdown")
-    
+
     breakdown_data = {
         "Item": [
             "Base Cost (All Containers)",
@@ -264,16 +264,16 @@ if st.session_state.bulk_containers:
             f"{final_total:,.0f}"
         ]
     }
-    
+
     st.table(pd.DataFrame(breakdown_data))
-    
+
     # Individual containers
     with st.expander("Individual Container Details"):
         st.dataframe(pd.DataFrame(individual_costs), use_container_width=True)
-    
+
     # Bulk benefits
     st.markdown("### Bulk Order Benefits")
-    
+
     benefits = []
     if total_quantity >= 2:
         benefits.extend(["✅ Volume pricing discounts", "✅ Reduced per-unit logistics costs"])
@@ -283,31 +283,31 @@ if st.session_state.bulk_containers:
         benefits.extend(["✅ Parallel production capabilities", "✅ Batch delivery coordination"])
     if total_quantity >= 20:
         benefits.extend(["✅ Custom design consultation", "✅ On-site installation support"])
-    
+
     for benefit in benefits:
         st.markdown(benefit)
-    
+
     # Project timeline
     st.markdown("### Project Timeline")
     base_weeks = 8 + (total_quantity // 10) * 2
     if total_quantity >= 10:
         base_weeks *= 0.9  # Parallel processing benefits
-    
+
     timeline_data = {
         "Phase": ["Design & Permits", "Material Procurement", "Production", "Quality Control", "Delivery"],
         "Duration": ["2-3 weeks", "1-2 weeks", f"{int(base_weeks - 4)} weeks", "1 week", "1-2 weeks"]
     }
-    
+
     st.table(pd.DataFrame(timeline_data))
-    
+
     # Action buttons
     col1, col2 = st.columns(2)
-    
+
     with col1:
         if st.button("Clear Bulk Order", type="secondary"):
             st.session_state.bulk_containers = []
             st.rerun()
-    
+
     with col2:
         if st.button("Generate Quote", type="primary"):
             st.success("Quote request submitted! Our team will contact you within 24 hours.")

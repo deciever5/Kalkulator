@@ -386,11 +386,11 @@ def admin_panel():
         with col1:
             st.subheader("Application Settings")
             
-            st.selectbox("Default Language", 
+            st.selectbox(t('admin.default_language'), 
                         options=['en', 'pl', 'de', 'nl'],
                         format_func=lambda x: {'en': 'English', 'pl': 'Polish', 'de': 'German', 'nl': 'Dutch'}[x])
             
-            st.selectbox("Default Currency", options=['EUR', 'PLN', 'USD'], index=0)
+            st.selectbox(t('admin.default_currency'), options=['EUR', 'PLN', 'USD'], index=0)
             
             st.number_input("Quote Validity (days)", value=30, min_value=1, max_value=365)
             

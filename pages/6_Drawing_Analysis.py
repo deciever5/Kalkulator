@@ -50,7 +50,7 @@ with col1:
     container_type = st.selectbox(
         t('form.labels.container_type'),
         [t('container.types.20ft_standard'), t('container.types.40ft_standard'), 
-         t('container.types.40ft_high_cube'), "45ft Standard", "Custom"]
+         t('container.types.40ft_high_cube'), t('container.types.45ft_standard'), t('container.types.custom')]
     )
     
     use_case = st.selectbox(
