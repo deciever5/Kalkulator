@@ -9,20 +9,15 @@ import time
 import streamlit as st
 from typing import Dict, Any, List, Optional
 from deep_translator import GoogleTranslator, MyMemoryTranslator
-from groq import Groq
+from .groq_service import GroqService
 
 class AITranslationService:
     """Enhanced translation service with free alternatives"""
 
     def __init__(self):
-        self.groq_api_key = os.environ.get('GROQ_API_KEY')
-        self.groq_client = None
-
-        if self.groq_api_key:
-            try:
-                self.groq_client = Groq(api_key=self.groq_api_key)
-            except Exception as e:
-                print(f"Failed to initialize Groq client: {str(e)}")
+        # Use GroqService which has built-in failover support
+        self.groq_service = GroqService()
+        self.groq_client = self.groq_service.client if self.groq_service.client else None
 
         # Language code mapping
         self.languages = {
@@ -114,9 +109,9 @@ class AITranslationService:
             print(f"MyMemory Translator error: {e}")
 
         # Use Groq AI as final fallback if available
-        if self.groq_client:
+        if self.groq_service and self.groq_service.api_keys:
             try:
-                return self._groq_translate(text, target_lang)
+                return self._groq_translate_with_failover(text, target_lang)
             except Exception as e:
                 print(f"Groq translation error: {e}")
 
@@ -124,33 +119,60 @@ class AITranslationService:
         print(f"⚠️ Translation failed for: {text[:50]}...")
         return text
 
-    def _groq_translate(self, text: str, target_lang: str) -> Optional[str]:
-        """Translate using Groq AI"""
+    def _groq_translate_with_failover(self, text: str, target_lang: str) -> Optional[str]:
+        """Translate using Groq AI with failover support"""
 
         target_language_name = self.languages.get(target_lang, target_lang)
+        max_retries = len(self.groq_service.api_keys)
+        
+        for attempt in range(max_retries):
+            try:
+                prompt = f"""Translate the following Polish text to {target_language_name}. 
+                Provide only the translation, no explanations:
 
-        prompt = f"""Translate the following Polish text to {target_language_name}. 
-        Provide only the translation, no explanations:
+                Text: {text}"""
 
-        Text: {text}"""
+                response = self.groq_service.client.chat.completions.create(
+                    model="llama-3.1-8b-instant",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": f"You are a professional translator. Translate accurately from Polish to {target_language_name}. Respond only with the translation."
+                        },
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+                    temperature=0.2,
+                    max_tokens=500
+                )
 
-        response = self.groq_client.chat.completions.create(
-            model="llama-3.1-8b-instant",
-            messages=[
-                {
-                    "role": "system",
-                    "content": f"You are a professional translator. Translate accurately from Polish to {target_language_name}. Respond only with the translation."
-                },
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ],
-            temperature=0.2,
-            max_tokens=500
-        )
+                return response.choices[0].message.content.strip()
 
-        return response.choices[0].message.content.strip()
+            except Exception as e:
+                error_msg = str(e).lower()
+                if "rate limit" in error_msg or "429" in error_msg:
+                    print(f"Rate limit hit on API key {self.groq_service.current_key_index + 1}: {str(e)}")
+                    
+                    # Try next API key
+                    if self.groq_service._try_next_key():
+                        print(f"Switched to reserve API key {self.groq_service.current_key_index}")
+                        continue
+                    else:
+                        print("All Groq API keys exhausted or rate limited")
+                        # Wait for rate limit reset before giving up
+                        print("Waiting 11 seconds for rate limit reset...")
+                        time.sleep(11)
+                        # Reset to first key and try once more
+                        self.groq_service.current_key_index = 0
+                        self.groq_service._initialize_client()
+                        break
+                else:
+                    print(f"Groq translation error: {e}")
+                    break
+        
+        return None
 
     def _find_missing_translations(self, source_data: Dict, target_data: Dict, prefix: str = "") -> Dict[str, str]:
         """Recursively find missing translation keys"""
