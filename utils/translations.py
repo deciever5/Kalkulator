@@ -54,21 +54,15 @@ def set_language(lang_code):
     print(f"Language successfully set to: {current}")
 
 def get_available_languages():
-    """Get available languages in alphabetical order"""
+    """Get available languages with complete translations only"""
+    # Only show languages with complete translation coverage (220+ keys)
     return {
         'cs': '🇨🇿 Čeština',
         'de': '🇩🇪 Deutsch', 
         'en': '🇬🇧 English',
-        'es': '🇪🇸 Español',
-        'fi': '🇫🇮 Suomi',
-        'fr': '🇫🇷 Français',
         'hu': '🇭🇺 Magyar',
-        'it': '🇮🇹 Italiano',
         'nl': '🇳🇱 Nederlands',
-        'pl': '🇵🇱 Polski',
-        'sk': '🇸🇰 Slovenčina',
-        'sv': '🇸🇪 Svenska',
-        'uk': '🇺🇦 Українська'
+        'pl': '🇵🇱 Polski'
     }
 
 def render_language_selector():
@@ -76,47 +70,51 @@ def render_language_selector():
     current_lang = get_current_language()
     language_options = get_available_languages()
 
-    # Custom CSS to make selectbox show all options without scrolling
+    # Custom CSS to make selectbox show all language options without scrolling
     st.markdown("""
     <style>
-    /* Force language dropdown to show all 13 options */
+    /* Force language dropdown to show all 6 language options */
     div[data-baseweb="select"] > div[role="listbox"] {
-        max-height: 650px !important;
+        max-height: 400px !important;
         height: auto !important;
     }
     div[data-baseweb="popover"] {
-        max-height: 700px !important;
+        max-height: 450px !important;
     }
     div[data-baseweb="popover"] > div {
-        max-height: 650px !important;
+        max-height: 400px !important;
     }
     div[data-baseweb="popover"] > div > div {
-        max-height: 650px !important;
+        max-height: 400px !important;
         overflow-y: visible !important;
     }
     /* Target all selectbox dropdowns */
     .stSelectbox [data-baseweb="popover"] {
-        max-height: 700px !important;
+        max-height: 450px !important;
     }
     .stSelectbox [data-baseweb="popover"] > div {
-        max-height: 650px !important;
+        max-height: 400px !important;
     }
-    /* Ensure enough space for all 13 languages */
+    /* Ensure enough space for all 6 languages */
     div[role="listbox"] {
-        max-height: 650px !important;
-        min-height: 400px !important;
+        max-height: 400px !important;
+        min-height: 250px !important;
     }
     </style>
     """, unsafe_allow_html=True)
 
     # Create a unique key for each page
-    import os
-    page_name = os.path.basename(st._get_this_file_path()) if hasattr(st, '_get_this_file_path') else 'default'
-    key = f"lang_selector_{page_name}_{hash(page_name) % 1000}"
+    import time
+    key = f"lang_selector_{int(time.time()) % 10000}"
 
     col1, col2, col3 = st.columns([4, 1.5, 0.5])
 
     with col2:
+        # Ensure current language is in available options
+        if current_lang not in language_options:
+            current_lang = 'en'  # Default to English if current language not available
+            set_language(current_lang)
+        
         selected_language = st.selectbox(
             "🌐 Language",
             options=list(language_options.keys()),
@@ -150,7 +148,7 @@ def get_nested_translation(translation_data, key):
             result = result[k]
         else:
             return None
-    return result if isinstance(result, str) else None
+    return result if isinstance(result, str) else ""
 
 @st.cache_data
 def get_cached_translations():
@@ -187,7 +185,6 @@ def t(key: str, fallback: str = None, **kwargs) -> str:
         if lang != 'en' and 'en' in translations:
             english_translation = get_nested_translation(translations['en'], key)
             if english_translation:
-                print(f"Using English fallback for key '{key}' in language '{lang}'")
                 if kwargs and english_translation:
                     return english_translation.format(**kwargs)
                 return english_translation
