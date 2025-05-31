@@ -314,52 +314,55 @@ with st.form("container_configuration_form"):
         )
 
         # Roof Modifications
+        roof_modifications_options = [
+            t('roof_modifications.none'),
+            t('roof_modifications.insulation'),
+            t('roof_modifications.skylight'),
+            t('roof_modifications.fans'),
+            t('roof_modifications.solar'),
+            t('roof_modifications.antennas'),
+            t('roof_modifications.sloped'),
+            t('roof_modifications.terrace'),
+            t('roof_modifications.snow_removal')
+        ]
         roof_modifications = st.selectbox(
-            "Modyfikacje Dachu",
-            options=[
-                "Bez modyfikacji (dach standardowy płaski)",
-                "Izolacja dachu dodatkowo (10-20cm)",
-                "Świetlik dachowy (60x60, 90x90, 120x120cm)",
-                "Wentylatory dachowe (przemysłowe, ciche)",
-                "Instalacja fotowoltaiczna (2-10kW)",
-                "Anteny/maszty (GSM, radio, satelitarne)",
-                "Dach skośny (jednostronny, dwuspadowy)",
-                "Taras dachowy (z balustradą)",
-                "Systemy odśnieżania (grzałki, rynny)"
-            ]
+            t('roof_modifications_label'),
+            options=roof_modifications_options
         )
 
         # Electrical System
+        electrical_system_options = [
+            t('electrical_system.none'),
+            t('electrical_system.preparation'),
+            t('electrical_system.basic'),
+            t('electrical_system.standard'),
+            t('electrical_system.extended'),
+            t('electrical_system.industrial'),
+            t('electrical_system.it_server'),
+            t('electrical_system.smart')
+        ]
         electrical_system = st.selectbox(
-            "System Elektryczny",
-            options=[
-                "Bez instalacji elektrycznej",
-                "Przygotowanie elektryczne (tylko przepusty)",
-                "Podstawowy (15A, LED, 4 gniazdka)",
-                "Standardowy (25A, oświetlenie, 8 gniazdków)",
-                "Rozszerzony (40A, siła, UPS, emergency)",
-                "Przemysłowy (63A, 3-fazowy, rozdzielnica)",
-                "IT/Serwerownia (UPS, stabilizatory, monitoring)",
-                "Inteligentny (smart home, KNX, automatyka)"
-            ],
+            t('electrical_system'),
+            options=electrical_system_options,
             index=3
         )
 
     with col3:
         # Plumbing System
+        plumbing_system_options = [
+            t('plumbing_system.none'),
+            t('plumbing_system.preparation'),
+            t('plumbing_system.cold_water'),
+            t('plumbing_system.hot_cold_water'),
+            t('plumbing_system.basic_sanitary'),
+            t('plumbing_system.standard_sanitary'),
+            t('plumbing_system.comfort_sanitary'),
+            t('plumbing_system.premium_sanitary'),
+            t('plumbing_system.industrial')
+        ]
         plumbing_system = st.selectbox(
-            "System Hydrauliczny",
-            options=[
-                "Bez instalacji wodnej",
-                "Przygotowanie hydrauliczne (tylko przepusty)",
-                "Instalacja zimna woda (umywalka)",
-                "Zimna + ciepła woda (umywalka, zlewozmywak)",
-                "Podstawowy węzeł sanitarny (WC + umywalka)",
-                "Standardowy węzeł (WC + umywalka + prysznic)",
-                "Komfortowy węzeł (WC + umywalka + kabina)",
-                "Premium węzeł (jacuzzi, bidé, 2 umywalki)",
-                "Instalacja przemysłowa (ciśnieniowa, filtracja)"
-            ]
+            t('plumbing_system'),
+            options=plumbing_system_options
         )
 
         # HVAC System
