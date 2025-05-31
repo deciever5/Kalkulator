@@ -62,7 +62,9 @@ def get_all_keys_flat(data: Dict, prefix: str = "") -> Dict[str, str]:
     return result
 
 def fix_missing_translations():
-    """Add missing translations to all language files using English as reference"""
+    """Add missing translations to all language files using AI translation services"""
+    from utils.ai_translation_service import AITranslationService
+    
     locales_dir = "locales"
     
     # Load English as reference
@@ -77,10 +79,11 @@ def fix_missing_translations():
     en_keys = get_all_keys_flat(en_data)
     print(f"Found {len(en_keys)} keys in English reference")
     
-    # Process each language file
-    languages = ['de', 'nl', 'cs', 'hu', 'pl']
+    # Process incomplete languages with AI translation
+    incomplete_languages = ['fi', 'uk', 'sk', 'fr']
+    ai_translator = AITranslationService()
     
-    for lang in languages:
+    for lang in incomplete_languages:
         lang_path = os.path.join(locales_dir, f"{lang}.json")
         lang_data = load_json_file(lang_path)
         
@@ -91,30 +94,42 @@ def fix_missing_translations():
         # Get existing keys
         existing_keys = get_all_keys_flat(lang_data)
         
-        # Find missing keys
-        missing_keys = set(en_keys.keys()) - set(existing_keys.keys())
+        # Find missing keys and their English values
+        missing_keys = {}
+        for key, value in en_keys.items():
+            if key not in existing_keys:
+                missing_keys[key] = value
         
-        print(f"\n{lang.upper()}: Adding {len(missing_keys)} missing translations")
+        print(f"\n🤖 {lang.upper()}: AI translating {len(missing_keys)} missing keys...")
         
-        # Add missing translations
-        added = 0
-        for missing_key in missing_keys:
-            english_value = en_keys[missing_key]
+        if missing_keys:
+            # Use AI translation service
+            batch_size = 50  # Process in batches to avoid token limits
+            translated_count = 0
             
-            # Use English value directly without AUTO prefix
-            translated_value = english_value
+            for i in range(0, len(missing_keys), batch_size):
+                batch_keys = dict(list(missing_keys.items())[i:i+batch_size])
+                print(f"   Translating batch {i//batch_size + 1} ({len(batch_keys)} keys)...")
+                
+                # Get AI translations
+                translations = ai_translator.translate_missing_keys('en', lang, batch_keys)
+                
+                # Add translations to language data
+                for key, translated_value in translations.items():
+                    set_nested_value(lang_data, key, translated_value)
+                    translated_count += 1
             
-            set_nested_value(lang_data, missing_key, translated_value)
-            added += 1
-        
-        # Save updated file
-        if save_json_file(lang_path, lang_data):
-            print(f"✅ {lang.upper()}: Successfully added {added} translations")
+            # Save updated file
+            if save_json_file(lang_path, lang_data):
+                print(f"✅ {lang.upper()}: Successfully added {translated_count} AI translations")
+            else:
+                print(f"❌ {lang.upper()}: Failed to save translations")
         else:
-            print(f"❌ {lang.upper()}: Failed to save translations")
+            print(f"✅ {lang.upper()}: No missing translations found")
     
-    print(f"\n🎉 Translation fixing complete!")
-    print("All translations are now equal in count. You can now manually translate the [AUTO] prefixed items.")
+    print(f"\n🎉 AI translation fixing complete!")
+    print("All incomplete languages now have AI-generated technical translations.")
+    print("📝 Note: Review the AI translations for accuracy and business context.")
 
 if __name__ == "__main__":
     fix_missing_translations()
