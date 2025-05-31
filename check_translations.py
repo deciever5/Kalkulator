@@ -1,19 +1,23 @@
 
 #!/usr/bin/env python3
 """
-Translation Quality Checker
-Uses Polish as base language to check quality of all other translations
+Translation Checker Script
+Checks for missing translations and optionally fixes them using AI
 """
 
-from utils.ai_translation_service import check_translation_quality_all_languages
+import sys
+from utils.ai_translation_service import AITranslationService
+
+def main():
+    service = AITranslationService()
+    
+    if len(sys.argv) > 1 and sys.argv[1] == "fix":
+        print("🔧 Fixing missing translations...")
+        service.translate_all_languages()
+    else:
+        print("🔍 Checking translation completeness...")
+        service.check_translation_quality()
+        print("\nTo fix missing translations, run: python check_translations.py fix")
 
 if __name__ == "__main__":
-    print("🚀 Starting comprehensive translation quality check...")
-    print("📚 Using Polish (pl) as base reference language")
-    print("=" * 70)
-    
-    results = check_translation_quality_all_languages()
-    
-    print("\n" + "=" * 70)
-    print("✅ Translation quality check completed!")
-    print("💡 Review the results above and run fixes as needed.")
+    main()

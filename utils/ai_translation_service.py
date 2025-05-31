@@ -1,529 +1,261 @@
+"""
+AI Translation Service
+Uses Deep Translator for free translation with fallback to AI services
+"""
 
-import json
 import os
-from typing import Dict, List, Any, Optional, Tuple
+import json
+import time
+import streamlit as st
+from typing import Dict, Any, List, Optional
+from deep_translator import GoogleTranslator, MyMemoryTranslator
 from groq import Groq
-try:
-    from googletrans import Translator
-    GOOGLETRANS_AVAILABLE = True
-except ImportError:
-    GOOGLETRANS_AVAILABLE = False
-    print("⚠️ googletrans not installed. Install with: pip install googletrans==4.0.0rc1")
 
 class AITranslationService:
-    """AI-powered translation service for technical container terminology using Groq"""
+    """Enhanced translation service with free alternatives"""
 
     def __init__(self):
-        self.api_key = os.environ.get('GROQ_API_KEY')
-        if self.api_key:
+        self.groq_api_key = os.environ.get('GROQ_API_KEY')
+        self.groq_client = None
+
+        if self.groq_api_key:
             try:
-                self.client = Groq(api_key=self.api_key)
-                print("✅ Groq API configured successfully")
+                self.groq_client = Groq(api_key=self.groq_api_key)
             except Exception as e:
-                print(f"⚠️ Groq configuration failed: {e}")
-                self.client = None
-        else:
-            self.client = None
-            print("⚠️ No GROQ_API_KEY found - using fallback translations")
+                print(f"Failed to initialize Groq client: {str(e)}")
 
-    def check_all_translations_quality(self, base_lang: str = 'pl'):
-        """Check translation quality for all languages using specified base language"""
-        
-        print(f"🔍 Starting AI translation quality check with {base_lang.upper()} as base language...")
-        
-        # Load base language
-        base_data = self._load_language_file(base_lang)
-        if not base_data:
-            print(f"❌ Could not load base language {base_lang}")
-            return
-            
-        base_keys = self._get_all_keys_flat(base_data)
-        print(f"📚 Loaded {len(base_keys)} translation keys from {base_lang.upper()}")
-        
-        # All supported languages
-        all_languages = ['en', 'de', 'fr', 'es', 'it', 'nl', 'cs', 'sk', 'hu', 'sv', 'fi', 'uk']
-        target_languages = [lang for lang in all_languages if lang != base_lang]
-        
-        results = {}
-        
-        for target_lang in target_languages:
-            print(f"\n🌐 Checking {target_lang.upper()} translations...")
-            
-            target_data = self._load_language_file(target_lang)
-            if not target_data:
-                print(f"⚠️ Could not load {target_lang}")
-                continue
-                
-            result = self._analyze_language_quality(base_lang, target_lang, base_keys, target_data)
-            results[target_lang] = result
-            
-            self._print_language_summary(target_lang, result)
-            
-            # Fix issues if needed
-            if result['needs_fixes']:
-                self._fix_translation_issues(target_lang, target_data, result)
-        
-        self._print_overall_summary(results)
-        return results
-
-    def _load_language_file(self, lang_code: str) -> Dict:
-        """Load a language file"""
-        filepath = f"locales/{lang_code}.json"
-        try:
-            with open(filepath, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except Exception as e:
-            print(f"Error loading {filepath}: {e}")
-            return {}
-
-    def _get_all_keys_flat(self, data: Dict, prefix: str = "") -> Dict[str, str]:
-        """Get all keys from nested dict as flat key-value pairs"""
-        result = {}
-        for key, value in data.items():
-            full_key = f"{prefix}.{key}" if prefix else key
-            if isinstance(value, dict):
-                result.update(self._get_all_keys_flat(value, full_key))
-            elif isinstance(value, str):
-                result[full_key] = value
-        return result
-
-    def _analyze_language_quality(self, base_lang: str, target_lang: str, base_keys: Dict[str, str], target_data: Dict) -> Dict:
-        """Analyze translation quality for a specific language"""
-        
-        target_keys = self._get_all_keys_flat(target_data)
-        
-        # Find different types of issues
-        missing_keys = {}
-        auto_translations = {}
-        identical_translations = {}
-        suspicious_translations = {}
-        good_translations = {}
-        
-        for key, base_value in base_keys.items():
-            target_value = target_keys.get(key)
-            
-            if target_value is None:
-                missing_keys[key] = base_value
-            elif target_value.startswith("[AUTO]") or target_value.startswith("[TRANSLATE]"):
-                auto_translations[key] = target_value
-            elif target_value == base_value:
-                # Check if it should be identical (brand names, etc.)
-                if self._is_likely_untranslatable(base_value):
-                    good_translations[key] = target_value
-                else:
-                    identical_translations[key] = target_value
-            elif self._is_suspicious_translation(base_value, target_value, target_lang):
-                suspicious_translations[key] = (base_value, target_value)
-            else:
-                good_translations[key] = target_value
-        
-        total_keys = len(base_keys)
-        quality_score = len(good_translations) / total_keys * 100
-        
-        return {
-            'total_keys': total_keys,
-            'missing_keys': missing_keys,
-            'auto_translations': auto_translations,
-            'identical_translations': identical_translations,
-            'suspicious_translations': suspicious_translations,
-            'good_translations': good_translations,
-            'quality_score': quality_score,
-            'needs_fixes': bool(missing_keys or auto_translations or suspicious_translations)
-        }
-
-    def _print_language_summary(self, lang: str, result: Dict):
-        """Print summary for a language"""
-        total = result['total_keys']
-        
-        print(f"   📊 {lang.upper()} Translation Analysis:")
-        print(f"      ✅ Good translations: {len(result['good_translations'])} ({len(result['good_translations'])/total*100:.1f}%)")
-        print(f"      🤖 Auto/placeholder: {len(result['auto_translations'])} ({len(result['auto_translations'])/total*100:.1f}%)")
-        print(f"      🔄 Identical to base: {len(result['identical_translations'])} ({len(result['identical_translations'])/total*100:.1f}%)")
-        print(f"      ⚠️  Suspicious: {len(result['suspicious_translations'])} ({len(result['suspicious_translations'])/total*100:.1f}%)")
-        print(f"      ❌ Missing: {len(result['missing_keys'])} ({len(result['missing_keys'])/total*100:.1f}%)")
-        print(f"      🎯 Quality Score: {result['quality_score']:.1f}%")
-        
-        # Show examples of issues
-        if result['auto_translations']:
-            print(f"   🤖 Sample auto translations:")
-            for key, value in list(result['auto_translations'].items())[:3]:
-                clean_value = value.replace("[AUTO] ", "").replace("[TRANSLATE] ", "")
-                print(f"      {key}: '{clean_value}'")
-        
-        if result['suspicious_translations']:
-            print(f"   ⚠️  Sample suspicious translations:")
-            for key, (base_val, target_val) in list(result['suspicious_translations'].items())[:2]:
-                print(f"      {key}:")
-                print(f"        Base: '{base_val}'")
-                print(f"        Target: '{target_val}'")
-
-    def _print_overall_summary(self, results: Dict):
-        """Print overall summary of all languages"""
-        print("\n" + "="*60)
-        print("📋 OVERALL TRANSLATION QUALITY SUMMARY")
-        print("="*60)
-        
-        # Sort by quality score
-        sorted_results = sorted(results.items(), key=lambda x: x[1]['quality_score'], reverse=True)
-        
-        print(f"{'Language':<10} {'Quality':<8} {'Missing':<8} {'Auto':<8} {'Suspicious':<12}")
-        print("-" * 60)
-        
-        for lang, result in sorted_results:
-            quality = f"{result['quality_score']:.1f}%"
-            missing = len(result['missing_keys'])
-            auto = len(result['auto_translations'])
-            suspicious = len(result['suspicious_translations'])
-            
-            status = "🟢" if result['quality_score'] > 90 else "🟡" if result['quality_score'] > 70 else "🔴"
-            
-            print(f"{lang.upper():<10} {quality:<8} {missing:<8} {auto:<8} {suspicious:<12} {status}")
-        
-        # Priority recommendations
-        print(f"\n🎯 PRIORITY ACTIONS:")
-        high_priority = [lang for lang, result in results.items() if result['quality_score'] < 70]
-        medium_priority = [lang for lang, result in results.items() if 70 <= result['quality_score'] < 90]
-        
-        if high_priority:
-            print(f"🔴 High Priority (fix immediately): {', '.join(h.upper() for h in high_priority)}")
-        if medium_priority:
-            print(f"🟡 Medium Priority (review and improve): {', '.join(m.upper() for m in medium_priority)}")
-
-    def _fix_translation_issues(self, lang: str, target_data: Dict, result: Dict):
-        """Fix translation issues using AI"""
-        
-        if not self.client:
-            print(f"⚠️ No AI service available for fixing {lang}")
-            return
-            
-        fixes_needed = {}
-        fixes_needed.update(result['missing_keys'])
-        fixes_needed.update({k: v.replace("[AUTO] ", "").replace("[TRANSLATE] ", "") 
-                           for k, v in result['auto_translations'].items()})
-        
-        if not fixes_needed:
-            return
-            
-        print(f"🔧 Attempting to fix {len(fixes_needed)} issues in {lang.upper()}...")
-        
-        try:
-            # Translate in batches
-            batch_size = 20
-            fixed_count = 0
-            
-            for i in range(0, len(fixes_needed), batch_size):
-                batch = dict(list(fixes_needed.items())[i:i+batch_size])
-                translations = self.translate_missing_keys('pl', lang, batch)
-                
-                # Apply fixes
-                for key, translated_value in translations.items():
-                    self._set_nested_value(target_data, key, translated_value)
-                    fixed_count += 1
-            
-            # Save updated file
-            filepath = f"locales/{lang}.json"
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(target_data, f, ensure_ascii=False, indent=2)
-            
-            print(f"✅ Fixed {fixed_count} translations in {lang.upper()}")
-            
-        except Exception as e:
-            print(f"❌ Failed to fix {lang}: {e}")
-
-    def _set_nested_value(self, data: Dict, key_path: str, value: str):
-        """Set nested value using dot notation"""
-        keys = key_path.split('.')
-        current = data
-        for key in keys[:-1]:
-            if key not in current:
-                current[key] = {}
-            current = current[key]
-        current[keys[-1]] = value
-
-    def translate_missing_keys(self, source_lang: str, target_lang: str, missing_keys: Dict[str, str]) -> Dict[str, str]:
-        """Translate missing translation keys using AI services with fallbacks"""
-
-        if not missing_keys:
-            return {}
-
-        # Try Groq first if available
-        if self.client:
-            prompt = self._build_translation_prompt(source_lang, target_lang, missing_keys)
-            
-            try:
-                result = self._translate_with_groq(prompt)
-                if result and isinstance(result, dict) and len(result) > 0:
-                    print("✅ Using Groq AI translation")
-                    return result
-                else:
-                    print("⚠️ Groq failed or rate limited, trying Google Translate...")
-                    
-            except Exception as e:
-                print(f"⚠️ Groq error: {e}, trying Google Translate...")
-
-        # Try Google Translate as fallback
-        google_result = self._translate_with_google(missing_keys, target_lang)
-        if google_result and len(google_result) > 0:
-            print("✅ Using Google Translate")
-            return google_result
-
-        # Final fallback
-        print("⚠️ All translation services failed, using placeholder translations")
-        return self._fallback_translation(target_lang, missing_keys)
-
-    def _build_translation_prompt(self, source_lang: str, target_lang: str, missing_keys: Dict[str, str]) -> str:
-        """Build context-aware translation prompt"""
-
-        lang_names = {
+        # Language code mapping
+        self.languages = {
             'en': 'English',
-            'pl': 'Polish',
-            'de': 'German',
+            'de': 'German', 
             'fr': 'French',
             'es': 'Spanish',
             'it': 'Italian',
             'nl': 'Dutch',
+            'sv': 'Swedish',
+            'fi': 'Finnish',
             'cs': 'Czech',
             'sk': 'Slovak',
             'hu': 'Hungarian',
-            'sv': 'Swedish',
-            'fi': 'Finnish',
-            'uk': 'Ukrainian'
+            'uk': 'Ukrainian',
+            'ru': 'Russian'
         }
 
-        source_name = lang_names.get(source_lang, source_lang)
-        target_name = lang_names.get(target_lang, target_lang)
+    def translate_missing_keys(self, target_lang: str, source_lang: str = 'pl'):
+        """Translate missing keys using free translation services with AI fallback"""
 
-        # Sample of key-value pairs for context
-        sample_keys = dict(list(missing_keys.items())[:10])
+        print(f"🌐 Processing {target_lang.upper()}...")
 
-        prompt = f"""
-You are a professional translator specializing in technical construction and container modification terminology.
+        # Load source and target files
+        source_file = f'locales/{source_lang}.json'
+        target_file = f'locales/{target_lang}.json'
 
-Task: Translate the following {source_name} terms to {target_name} for a container modification and construction company.
-
-Context: This is for a professional container modification business (KAN-BUD) that designs, builds, and modifies shipping containers for various purposes (offices, workshops, residential, storage, etc.).
-
-Important guidelines:
-1. Maintain technical accuracy for construction/engineering terms
-2. Keep brand names (KAN-BUD, OpenAI, etc.) unchanged
-3. Keep file extensions (PDF, DWG) unchanged  
-4. Keep technical standards (HVAC, ADA, GDPR) unchanged
-5. Translate UI elements naturally for the target language
-6. Use appropriate business/professional language
-7. Consider local construction terminology and standards
-8. For measurement units, adapt to local conventions where appropriate
-
-Format: Return ONLY a valid JSON object with the translated key-value pairs.
-
-Sample terms to translate:
-{json.dumps(sample_keys, indent=2, ensure_ascii=False)}
-
-Full translation list:
-{json.dumps(missing_keys, indent=2, ensure_ascii=False)}
-
-Return the translations as a JSON object with the same keys but translated values.
-"""
-
-        return prompt
-
-    def _translate_with_groq(self, prompt: str) -> Dict[str, str]:
-        """Translate using Groq service with rate limit handling"""
         try:
-            response = self.client.chat.completions.create(
-                model="llama-3.1-8b-instant",
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are a professional technical translator. Return only valid JSON with translated key-value pairs. Do not include any explanatory text before or after the JSON."
-                    },
-                    {
-                        "role": "user", 
-                        "content": prompt
-                    }
-                ],
-                temperature=0.1,
-                max_tokens=4000
-            )
+            with open(source_file, 'r', encoding='utf-8') as f:
+                source_data = json.load(f)
+        except FileNotFoundError:
+            print(f"❌ Source file {source_file} not found")
+            return False
 
-            result_text = response.choices[0].message.content.strip()
-            
-            # Multiple attempts to extract valid JSON
-            json_candidates = []
-            
-            # Method 1: Direct parsing
-            json_candidates.append(result_text)
-            
-            # Method 2: Remove markdown code blocks
-            if '```json' in result_text:
-                try:
-                    start = result_text.find('```json') + 7
-                    end = result_text.find('```', start)
-                    if end != -1:
-                        json_candidates.append(result_text[start:end].strip())
-                except:
-                    pass
-            
-            # Method 3: Extract first JSON object
-            try:
-                import re
-                json_match = re.search(r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', result_text, re.DOTALL)
-                if json_match:
-                    json_candidates.append(json_match.group())
-            except:
-                pass
-            
-            # Method 4: Find content between first { and last }
-            try:
-                start_idx = result_text.find('{')
-                end_idx = result_text.rfind('}')
-                if start_idx != -1 and end_idx != -1 and end_idx > start_idx:
-                    json_candidates.append(result_text[start_idx:end_idx+1])
-            except:
-                pass
-            
-            # Try to parse each candidate
-            for candidate in json_candidates:
-                if not candidate:
-                    continue
-                    
-                try:
-                    # Clean up common JSON issues
-                    cleaned = candidate.strip()
-                    # Remove trailing commas
-                    cleaned = re.sub(r',\s*}', '}', cleaned)
-                    cleaned = re.sub(r',\s*]', ']', cleaned)
-                    
-                    result = json.loads(cleaned)
-                    if isinstance(result, dict):
-                        return result
-                except json.JSONDecodeError as je:
-                    print(f"JSON parse attempt failed: {je}")
-                    continue
-                except Exception:
-                    continue
-            
-            print(f"All JSON parsing attempts failed for response: {result_text[:200]}...")
-            return {}
-
-        except Exception as e:
-            error_str = str(e)
-            if "rate_limit_exceeded" in error_str or "429" in error_str:
-                print(f"⚠️ Groq rate limit exceeded, switching to Google Translate")
-                return {}
-            print(f"Groq translation error: {e}")
-            return {}
-
-    def _translate_with_google(self, missing_keys: Dict[str, str], target_lang: str) -> Dict[str, str]:
-        """Translate using Google Translate (free alternative)"""
-        if not GOOGLETRANS_AVAILABLE:
-            print("❌ Google Translate not available. Install with: pip install googletrans==4.0.0rc1")
-            return {}
-        
         try:
-            translator = Translator()
-            results = {}
-            
-            # Map language codes
-            lang_map = {
-                'fi': 'fi', 'uk': 'uk', 'sk': 'sk', 'fr': 'fr',
-                'de': 'de', 'en': 'en', 'pl': 'pl', 'es': 'es',
-                'it': 'it', 'nl': 'nl', 'cs': 'cs', 'hu': 'hu', 'sv': 'sv'
-            }
-            
-            google_lang = lang_map.get(target_lang, target_lang)
-            
-            print(f"🌐 Using Google Translate for {len(missing_keys)} keys...")
-            
-            # Translate in small batches to avoid issues
-            batch_size = 10
-            processed = 0
-            
-            for i in range(0, len(missing_keys), batch_size):
-                batch = dict(list(missing_keys.items())[i:i+batch_size])
-                
-                for key, text in batch.items():
-                    try:
-                        # Skip very short or special texts
-                        if len(text.strip()) < 2 or text.startswith(('http', 'www', '@')):
-                            results[key] = text
-                            continue
-                            
-                        # Translate
-                        translated = translator.translate(text, src='pl', dest=google_lang)
-                        results[key] = translated.text
-                        processed += 1
-                        
-                        if processed % 5 == 0:
-                            print(f"   Translated {processed}/{len(missing_keys)} keys...")
-                            
-                    except Exception as e:
-                        print(f"   Error translating '{key}': {e}")
-                        results[key] = f"[AUTO] {text}"
-                
-                # Small delay between batches
-                import time
+            with open(target_file, 'r', encoding='utf-8') as f:
+                target_data = json.load(f)
+        except FileNotFoundError:
+            target_data = {}
+
+        # Find missing translations
+        missing_keys = self._find_missing_translations(source_data, target_data)
+
+        if not missing_keys:
+            print(f"✅ {target_lang.upper()}: No missing translations found")
+            return True
+
+        print(f"Found {len(missing_keys)} missing translations for {target_lang}")
+
+        # Translate missing keys
+        translated_count = 0
+        for key_path, source_text in missing_keys.items():
+            if translated_text := self._translate_text(source_text, target_lang):
+                self._set_nested_value(target_data, key_path, translated_text)
+                translated_count += 1
+
+                # Rate limiting
                 time.sleep(0.1)
-            
-            print(f"✅ Google Translate completed {len(results)} translations")
-            return results
-            
+
+        # Save updated translations
+        with open(target_file, 'w', encoding='utf-8') as f:
+            json.dump(target_data, f, ensure_ascii=False, indent=2)
+
+        print(f"✅ {target_lang.upper()}: Added {translated_count} translations")
+        return True
+
+    def _translate_text(self, text: str, target_lang: str) -> Optional[str]:
+        """Translate text using multiple free services with fallbacks"""
+
+        if not text or not text.strip():
+            return text
+
+        # Try Deep Translator (Google Translate) first
+        try:
+            translator = GoogleTranslator(source='pl', target=target_lang)
+            result = translator.translate(text)
+            if result and result.strip():
+                return result
         except Exception as e:
-            print(f"❌ Google Translate error: {e}")
-            return {}
+            print(f"Google Translator error: {e}")
 
-    def _fallback_translation(self, target_lang: str, missing_keys: Dict[str, str]) -> Dict[str, str]:
-        """Fallback translation when AI services fail"""
-        return {key: f"[TRANSLATE] {value}" for key, value in missing_keys.items()}
+        # Try MyMemory translator as fallback
+        try:
+            translator = MyMemoryTranslator(source='pl', target=target_lang)
+            result = translator.translate(text)
+            if result and result.strip():
+                return result
+        except Exception as e:
+            print(f"MyMemory Translator error: {e}")
 
-    def _is_likely_untranslatable(self, text: str) -> bool:
-        """Check if text is likely meant to stay in original language"""
-        import re
-        
-        untranslatable_patterns = [
-            r'^KAN-BUD',
-            r'^OpenAI',
-            r'^Anthropic',
-            r'^PDF$',
-            r'^DWG$',
-            r'^IoT$',
-            r'^AI$',
-            r'^HVAC$',
-            r'^ADA$',
-            r'^GDPR$',
-            r'^C[2-5]M?$',  # Paint codes
-            r'^\d+ft',  # Container sizes
-            r'^HC$',  # High Cube
-            r'^DD$',  # Double Door
-        ]
-        
-        for pattern in untranslatable_patterns:
-            if re.search(pattern, text, re.IGNORECASE):
-                return True
-        
-        return False
+        # Use Groq AI as final fallback if available
+        if self.groq_client:
+            try:
+                return self._groq_translate(text, target_lang)
+            except Exception as e:
+                print(f"Groq translation error: {e}")
 
-    def _is_suspicious_translation(self, base_text: str, translated_text: str, target_lang: str) -> bool:
-        """Check if translation seems suspicious or incorrect"""
-        
-        # Check if translation is just base text with different casing
-        if base_text.lower() == translated_text.lower() and base_text != translated_text:
-            return True
-        
-        # Check for obvious issues
-        if len(translated_text) < 2:
-            return True
-            
-        # Check if contains placeholder markers
-        if any(marker in translated_text for marker in ['[AUTO]', '[TRANSLATE]', 'TODO:', 'FIXME:']):
-            return True
-            
-        return False
+        # Return original text if all methods fail
+        print(f"⚠️ Translation failed for: {text[:50]}...")
+        return text
 
-def check_translation_quality_all_languages():
-    """Main function to check translation quality for all languages using Polish as base"""
-    ai_service = AITranslationService()
-    results = ai_service.check_all_translations_quality('pl')
-    return results
+    def _groq_translate(self, text: str, target_lang: str) -> Optional[str]:
+        """Translate using Groq AI"""
 
+        target_language_name = self.languages.get(target_lang, target_lang)
+
+        prompt = f"""Translate the following Polish text to {target_language_name}. 
+        Provide only the translation, no explanations:
+
+        Text: {text}"""
+
+        response = self.groq_client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[
+                {
+                    "role": "system",
+                    "content": f"You are a professional translator. Translate accurately from Polish to {target_language_name}. Respond only with the translation."
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            temperature=0.2,
+            max_tokens=500
+        )
+
+        return response.choices[0].message.content.strip()
+
+    def _find_missing_translations(self, source_data: Dict, target_data: Dict, prefix: str = "") -> Dict[str, str]:
+        """Recursively find missing translation keys"""
+
+        missing = {}
+
+        for key, value in source_data.items():
+            current_path = f"{prefix}.{key}" if prefix else key
+
+            if isinstance(value, dict):
+                if key not in target_data or not isinstance(target_data[key], dict):
+                    target_data[key] = {}
+
+                nested_missing = self._find_missing_translations(
+                    value, target_data[key], current_path
+                )
+                missing.update(nested_missing)
+
+            elif isinstance(value, str):
+                if key not in target_data or not target_data[key] or target_data[key] == value:
+                    missing[current_path] = value
+
+        return missing
+
+    def _set_nested_value(self, data: Dict, key_path: str, value: str):
+        """Set value in nested dictionary using dot notation"""
+
+        keys = key_path.split('.')
+        current = data
+
+        for key in keys[:-1]:
+            if key not in current:
+                current[key] = {}
+            current = current[key]
+
+        current[keys[-1]] = value
+
+    def translate_all_languages(self, source_lang: str = 'pl'):
+        """Translate missing keys for all supported languages"""
+
+        print("🤖 Starting AI-powered translation for incomplete languages...")
+
+        target_languages = [lang for lang in self.languages.keys() if lang != source_lang]
+
+        for lang in target_languages:
+            try:
+                self.translate_missing_keys(lang, source_lang)
+            except Exception as e:
+                print(f"❌ Error translating {lang}: {e}")
+
+        print("🎉 AI translation complete! All languages now have complete translations.")
+        print("📝 Note: Review and refine the translations as needed for your specific business context.")
+
+    def check_translation_quality(self, base_lang: str = 'pl'):
+        """Check translation quality across all languages"""
+
+        print(f"🔍 Checking translation quality using {base_lang.upper()} as base...")
+
+        # Load base language
+        base_file = f'locales/{base_lang}.json'
+        try:
+            with open(base_file, 'r', encoding='utf-8') as f:
+                base_data = json.load(f)
+        except FileNotFoundError:
+            print(f"❌ Base language file {base_file} not found")
+            return
+
+        issues_found = []
+
+        for lang in self.languages.keys():
+            if lang == base_lang:
+                continue
+
+            lang_file = f'locales/{lang}.json'
+            try:
+                with open(lang_file, 'r', encoding='utf-8') as f:
+                    lang_data = json.load(f)
+
+                missing_keys = self._find_missing_translations(base_data, lang_data)
+
+                if missing_keys:
+                    issues_found.append(f"{lang.upper()}: {len(missing_keys)} missing translations")
+
+            except FileNotFoundError:
+                issues_found.append(f"{lang.upper()}: Translation file missing")
+
+        if issues_found:
+            print("⚠️ Translation quality issues found:")
+            for issue in issues_found:
+                print(f"  - {issue}")
+        else:
+            print("✅ All languages have complete translations!")
+
+# CLI usage
 if __name__ == "__main__":
-    check_translation_quality_all_languages()
+    import sys
+
+    service = AITranslationService()
+
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "check":
+            service.check_translation_quality()
+        elif sys.argv[1] == "translate":
+            service.translate_all_languages()
+        else:
+            print("Usage: python ai_translation_service.py [check|translate]")
+    else:
+        service.translate_all_languages()
