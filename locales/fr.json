@@ -65,7 +65,7 @@
   "contact_us": "Contactez-nous",
   "address": "Adresse",
   "phone": "Téléphone",
-  "email": "Email",
+  "email": "E-mail",
   "working_hours": "Heures de travail",
   "mon_fri": "Lun-Ven 8:00-17:00",
   "container_configurator_desc": "Configuration professionnelle de conteneurs",
@@ -196,8 +196,8 @@
   },
   "ai": {
     "models": {
-      "openai_gpt4": "OpenAI GPT-4o",
-      "anthropic_claude": "Anthropic Claude",
+      "openai_gpt4": "Openai GPT-4O",
+      "anthropic_claude": "Claude anthropique",
       "auto_select": "Sélection automatique du meilleur"
     },
     "messages": {
@@ -302,12 +302,12 @@
   "window_types_double": "Double vitrage",
   "window_types_security": "Fenêtres de sécurité",
   "paint_finish_standard": "Standard",
-  "paint_finish_premium": "Premium",
+  "paint_finish_premium": "Prime",
   "paint_finish_custom": "Couleur personnalisée",
   "insulation": {
     "basic": "Basique (50mm)",
     "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extrême (200mm)"
   },
   "start_configuration": "Démarrer la configuration",
@@ -502,7 +502,7 @@
   "fire_systems_basic": "Bascule",
   "fire_systems_full": "Système complet",
   "delivery_zone": "Zone de livraison",
-  "delivery_zone_local": "Local (50km)",
+  "delivery_zone_local": "Local (50 km)",
   "delivery_zone_regional": "[TRANSLATE] Regional (200km)",
   "delivery_zone_national": "Zone de livraison nationale",
   "delivery_zone_international": "Zone de livraison internationale",
@@ -554,11 +554,11 @@
   },
   "container": {
     "types": {
-      "20ft_standard": "20ft Standard",
-      "40ft_standard": "40ft Standard",
-      "40ft_high_cube": "40ft HC",
+      "20ft_standard": "Standard de 20 pieds",
+      "40ft_standard": "Standard de 40 pieds",
+      "40ft_high_cube": "40 pieds HC",
       "20ft_refrigerated": "20ft Réfrigéré",
-      "20ft_double_door": "20ft DD",
+      "20ft_double_door": "20 pieds DD",
       "40ft_double_door": "[TRANSLATE] 40ft DD",
       "40ft_hc_double_door": "[TRANSLATE] 40ft HC DD",
       "custom_size": "[TRANSLATE] Custom Size"

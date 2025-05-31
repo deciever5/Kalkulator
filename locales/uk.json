@@ -698,5 +698,7 @@
   "material_price_fluctuations": "[TRANSLATE] Material price fluctuations",
   "basic_estimate_note": "[TRANSLATE] Note: This is a basic estimate. For more accurate pricing, please contact our team directly.",
   "estimate_disclaimer_title": "[TRANSLATE] Important - Legal Notice",
-  "estimate_disclaimer_text": "[TRANSLATE] The above estimate is indicative and does not constitute an offer within the meaning of the Civil Code. The final price may change depending on detailed project requirements, current material and labor costs."
+  "estimate_disclaimer_text": "[TRANSLATE] The above estimate is indicative and does not constitute an offer within the meaning of the Civil Code. The final price may change depending on detailed project requirements, current material and labor costs.",
+  "back_to_home": "[TRANSLATE] ← Powrót do strony głównej",
+  "go_to_configurator": "[TRANSLATE] 🔧 Przejdź do konfiguratora"
 }

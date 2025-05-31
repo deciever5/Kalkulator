@@ -82,8 +82,8 @@
     "budget": {
       "not_specified": "No especificado",
       "up_to_50k": "Hasta €50,000",
-      "50k_100k": "€50,000 - €100,000",
-      "100k_200k": "€100,000 - €200,000",
+      "50k_100k": "€ 50,000 - € 100,000",
+      "100k_200k": "€ 100,000 - € 200,000",
       "over_200k": "Más de €200,000"
     },
     "additional_requirements": "Requisitos Adicionales",
@@ -260,8 +260,8 @@
   "fire_systems_basic": "Básico",
   "fire_systems_full": "Sistema Completo",
   "delivery_zone": "Zona de Entrega",
-  "delivery_zone_local": "Local (50km)",
-  "delivery_zone_regional": "Regional (200km)",
+  "delivery_zone_local": "Local (50 km)",
+  "delivery_zone_regional": "Regional (200 km)",
   "delivery_zone_national": "Nacional",
   "delivery_zone_international": "Internacional",
   "transport_type": "Tipo de Transporte",
@@ -292,7 +292,7 @@
   "window_types_double": "Doble Acristalamiento",
   "window_types_security": "Ventanas de Seguridad",
   "paint_finish_standard": "Estándar",
-  "paint_finish_premium": "Premium",
+  "paint_finish_premium": "De primera calidad",
   "paint_finish_custom": "Color Personalizado",
   "additional_doors": "Puertas Adicionales",
   "air_intakes_label": "Entradas de Aire y Ventilación",
@@ -301,7 +301,7 @@
   "insulation": {
     "basic": "Básico (50mm)",
     "standard": "Estándar (100mm)",
-    "premium": "Premium (150mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extremo (200mm)"
   },
   "reinforcement": {
@@ -331,11 +331,11 @@
     "types": {
       "20ft_standard": "20ft Estándar",
       "40ft_standard": "40ft Estándar",
-      "40ft_high_cube": "40ft HC",
+      "40ft_high_cube": "HC de 40 pies",
       "20ft_refrigerated": "20ft Refrigerado",
-      "20ft_double_door": "20ft DD",
-      "40ft_double_door": "40ft DD",
-      "40ft_hc_double_door": "40ft HC DD",
+      "20ft_double_door": "DD de 20 pies",
+      "40ft_double_door": "DD de 40 pies",
+      "40ft_hc_double_door": "HC DD de 40 pies",
       "custom_size": "Tamaño Personalizado"
     },
     "use_cases": {
@@ -367,7 +367,7 @@
     "finish_levels": {
       "basic": "Básico",
       "standard": "Estándar",
-      "premium": "Premium",
+      "premium": "De primera calidad",
       "luxury": "Lujo"
     },
     "flooring": {
@@ -398,8 +398,8 @@
   },
   "ai": {
     "models": {
-      "openai_gpt4": "OpenAI GPT-4o",
-      "anthropic_claude": "Anthropic Claude",
+      "openai_gpt4": "OPERAI GPT-4O",
+      "anthropic_claude": "Antrópico Claude",
       "auto_select": "Selección Automática del Mejor"
     },
     "messages": {
