@@ -302,7 +302,9 @@
     "basic": "Grundläggande (50mm)",
     "standard": "Standard (100mm)",
     "premium": "Premium (150mm)",
-    "extreme": "Extrem (200mm)"
+    "extreme": "Extrem (200mm)",
+    "none": "Ingen isolering",
+    "advanced": "Avancerad (mineralull 10-15 cm)"
   },
   "reinforcement": {
     "none": "Ingen förstärkning",
@@ -612,5 +614,29 @@
   "usage_environment": "Användningsmiljö",
   "number_of_windows": "Windows",
   "transport_logistics": "Transport och logistik",
-  "equipment_extras": "Utrustning och extrafunktioner"
+  "equipment_extras": "Utrustning och extrafunktioner",
+  "materials": {
+    "steel_standard": "Stål (standardkonstruktion)",
+    "aluminum_light": "Aluminium (lätt konstruktion)",
+    "composite_specialist": "Kompositmaterial (specialist)"
+  },
+  "purposes": {
+    "office_space": "Kontorslokaler",
+    "sanitary_containers": "Sanitära containrar",
+    "residential_containers": "Bostadsbehållare",
+    "commercial_containers": "Handelsbehållare",
+    "storage_containers": "Lagringsbehållare",
+    "technical_containers": "Tekniska behållare",
+    "changing_rooms": "Omklädningsrum",
+    "guard_booths": "Vaktbås"
+  },
+  "environments": {
+    "indoor": "Inomhus (hallar, lager)",
+    "outdoor_standard": "Utomhusstandard (temperaturklimat)",
+    "outdoor_extreme": "Utomhus extrem (kust, berg)",
+    "industrial": "Industrial (växter, raffinaderier, gruvor)",
+    "construction": "Konstruktion (byggnadsplatser, infrastruktur)",
+    "agricultural": "Jordbruk (gårdar, faciliteter)",
+    "marine": "Marin/varv (frätande miljö)"
+  }
 }

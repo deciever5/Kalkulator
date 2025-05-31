@@ -509,7 +509,9 @@
     "basic": "Základní (50mm)",
     "standard": "Standardní (100mm)",
     "premium": "Prémiový (150mm)",
-    "extreme": "Extrémní (200mm)"
+    "extreme": "Extrémní (200mm)",
+    "none": "Žádná izolace",
+    "advanced": "Advanced (Mineral Wool 10-15cm)"
   },
   "reinforcement": {
     "none": "Bez zpevnění",
@@ -613,5 +615,29 @@
   "usage_environment": "Prostředí použití",
   "number_of_windows": "Počet oken",
   "transport_logistics": "Transport & Logistics",
-  "equipment_extras": "Vybavení a doplňky"
+  "equipment_extras": "Vybavení a doplňky",
+  "materials": {
+    "steel_standard": "Ocel (standardní konstrukce)",
+    "aluminum_light": "Hliník (lehká konstrukce)",
+    "composite_specialist": "Kompozitní materiál (specialista)"
+  },
+  "purposes": {
+    "office_space": "Kancelářské prostory",
+    "sanitary_containers": "Sanitární kontejnery",
+    "residential_containers": "Rezidenční kontejnery",
+    "commercial_containers": "Komerční kontejnery",
+    "storage_containers": "Skladovací kontejnery",
+    "technical_containers": "Technické kontejnery",
+    "changing_rooms": "Šatny",
+    "guard_booths": "Strážní stánky"
+  },
+  "environments": {
+    "indoor": "Indoor (haly, skladby)",
+    "outdoor_standard": "Venkovní standard (teplotní klima)",
+    "outdoor_extreme": "Outdoor Extreme (pobřežní, hory)",
+    "industrial": "Průmyslové (rostliny, rafinerie, doly)",
+    "construction": "Stavba (staveniště, infrastruktura)",
+    "agricultural": "Zemědělské (farmy, zařízení)",
+    "marine": "Marine/Shipyard (korozivní prostředí)"
+  }
 }

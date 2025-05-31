@@ -308,7 +308,9 @@
     "basic": "Perus (50mm)",
     "standard": "Vakio (100mm)",
     "premium": "Premium (150mm)",
-    "extreme": "Äärimmäinen (200mm)"
+    "extreme": "Äärimmäinen (200mm)",
+    "none": "Ei eristystä",
+    "advanced": "Edistynyt (mineraalivilla 10-15 cm)"
   },
   "start_configuration": "Aloita konfigurointi",
   "get_quote": "Hae tarjous",
@@ -713,5 +715,29 @@
   "usage_environment": "Käyttöympäristö",
   "number_of_windows": "Ikkunoiden lukumäärä",
   "transport_logistics": "Kuljetus- ja logistiikka",
-  "equipment_extras": "Laitteet ja ekstrat"
+  "equipment_extras": "Laitteet ja ekstrat",
+  "materials": {
+    "steel_standard": "Teräs (vakiorakenne)",
+    "aluminum_light": "Alumiini (kevyt rakenne)",
+    "composite_specialist": "Komposiittimateriaali (asiantuntija)"
+  },
+  "purposes": {
+    "office_space": "Toimistotila",
+    "sanitary_containers": "Terveysastia",
+    "residential_containers": "Asuntoastiat",
+    "commercial_containers": "Kaupalliset astiat",
+    "storage_containers": "Säilytysastiat",
+    "technical_containers": "Tekniset astiat",
+    "changing_rooms": "Pukuhuoneet",
+    "guard_booths": "Vartijakopit"
+  },
+  "environments": {
+    "indoor": "Sisätiloissa (hallit, varastot)",
+    "outdoor_standard": "Ulkoilma -standardi (lämpötila ilmasto)",
+    "outdoor_extreme": "Ulkoilma (rannikko, vuoret)",
+    "industrial": "Teollisuus (kasvit, jalostamot, kaivokset)",
+    "construction": "Rakentaminen (rakennuspaikat, infrastruktuuri)",
+    "agricultural": "Maatalouden (tilat, tilat)",
+    "marine": "Marine/Telyard (syövyttävä ympäristö)"
+  }
 }

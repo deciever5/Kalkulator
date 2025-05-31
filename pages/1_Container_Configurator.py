@@ -122,41 +122,41 @@ with st.form("container_configuration_form"):
     with col1:
         # Container Type
         container_type_options = [
-            t('container.types.10ft_compact', '10ft Compact (3m x 2.4m)'),
-            t('container.types.20ft_standard', '20ft Standard (6m x 2.4m)'), 
-            t('container.types.20ft_high_cube', '20ft High Cube (6m x 2.7m)'),
-            t('container.types.40ft_standard', '40ft Standard (12m x 2.4m)'),
-            t('container.types.40ft_hc', '40ft High Cube (12m x 2.7m)'),
-            t('container.types.multi_unit', 'Multi-unit Container'),
-            t('container.types.custom_size', 'Custom Size Container'),
-            t('container.types.refurbished', 'Refurbished Container')
+            "10ft Compact (3m x 2.4m)",
+            "20ft Standard (6m x 2.4m)", 
+            "20ft High Cube (6m x 2.7m)",
+            "40ft Standard (12m x 2.4m)",
+            "40ft High Cube (12m x 2.7m)",
+            "Multi-unit Container",
+            "Custom Size Container",
+            "Refurbished Container"
         ]
         container_type = st.selectbox(
-            t('container_type', 'Container Type'),
+            t('container_type'),
             options=container_type_options,
             index=3
         )
 
         # Construction Material
         construction_material_options = [
-            t('materials.steel_standard', 'Steel (standard construction)'),
-            t('materials.aluminum_light', 'Aluminum (lightweight construction)'), 
-            t('materials.composite_specialist', 'Composite material (specialist)')
+            t('construction_material_steel'),
+            t('construction_material_aluminum'),
+            t('construction_material_composite')
         ]
         construction_material = st.selectbox(
-            t('construction_material', 'Construction Material'),
+            t('construction_material'),
             options=construction_material_options
         )
 
         # Insulation
         insulation_options = [
-            t('insulation.none', 'No insulation'),
-            t('insulation.basic', 'Basic (PUR foam 5-8cm)'),
-            t('insulation.advanced', 'Advanced (mineral wool 10-15cm)'),
-            t('insulation.premium', 'Premium (sandwich panels 15-20cm)')
+            t('insulation.basic'),
+            t('insulation.standard'),
+            t('insulation.premium'),
+            t('insulation.extreme')
         ]
         insulation = st.selectbox(
-            t('insulation', 'Insulation'),
+            t('insulation'),
             options=insulation_options,
             index=1
         )

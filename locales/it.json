@@ -302,7 +302,9 @@
     "basic": "Base (50mm)",
     "standard": "Standard (100mm)",
     "premium": "Premium (150mm)",
-    "extreme": "Estremo (200mm)"
+    "extreme": "Estremo (200mm)",
+    "none": "Nessun isolamento",
+    "advanced": "Avanzato (lana minerale 10-15 cm)"
   },
   "reinforcement": {
     "none": "Nessun rinforzo",
@@ -612,5 +614,29 @@
   "usage_environment": "Ambiente di utilizzo",
   "number_of_windows": "Numero di finestre",
   "transport_logistics": "Trasporto e logistica",
-  "equipment_extras": "Attrezzatura ed extra"
+  "equipment_extras": "Attrezzatura ed extra",
+  "materials": {
+    "steel_standard": "Acciaio (costruzione standard)",
+    "aluminum_light": "Alluminio (costruzione leggera)",
+    "composite_specialist": "Materiale composito (specialista)"
+  },
+  "purposes": {
+    "office_space": "Spazio d'ufficio",
+    "sanitary_containers": "Contenitori sanitari",
+    "residential_containers": "Contenitori residenziali",
+    "commercial_containers": "Contenitori commerciali",
+    "storage_containers": "Contenitori di stoccaggio",
+    "technical_containers": "Contenitori tecnici",
+    "changing_rooms": "Spogliatoi",
+    "guard_booths": "Cabine di guardia"
+  },
+  "environments": {
+    "indoor": "Indoor (sale, magazzini)",
+    "outdoor_standard": "Standard esterno (clima di temperatura)",
+    "outdoor_extreme": "Outdoor Extreme (costiero, montagne)",
+    "industrial": "Industrial (piante, raffinerie, miniere)",
+    "construction": "Costruzione (cantieri, infrastrutture)",
+    "agricultural": "Agricultural (fattoria, strutture)",
+    "marine": "Marine/cantiere navale (ambiente corrosivo)"
+  }
 }

@@ -212,7 +212,9 @@
     "basic": "Grundausstattung (50mm)",
     "standard": "Standard (100mm)",
     "premium": "Premium (150 mm)",
-    "extreme": "Extrem (200mm)"
+    "extreme": "Extrem (200mm)",
+    "none": "Keine Isolierung",
+    "advanced": "Fortgeschrittene (Mineralwolle 10-15 cm)"
   },
   "reinforcement": {
     "none": "Keine Verstärkung",
@@ -612,5 +614,29 @@
   "usage_environment": "Nutzungsumgebung",
   "number_of_windows": "Anzahl der Fenster",
   "transport_logistics": "Transport & Logistik",
-  "equipment_extras": "Ausrüstung & Extras"
+  "equipment_extras": "Ausrüstung & Extras",
+  "materials": {
+    "steel_standard": "Stahl (Standardkonstruktion)",
+    "aluminum_light": "Aluminium (Leichte Konstruktion)",
+    "composite_specialist": "Verbundmaterial (Spezialist)"
+  },
+  "purposes": {
+    "office_space": "Büroflächen",
+    "sanitary_containers": "Sanitärbehälter",
+    "residential_containers": "Wohncontainer",
+    "commercial_containers": "Handelsbehälter",
+    "storage_containers": "Speicherbehälter",
+    "technical_containers": "Technische Behälter",
+    "changing_rooms": "Umkleidekabinen",
+    "guard_booths": "Wachkabinen"
+  },
+  "environments": {
+    "indoor": "Innenräume (Hallen, Lagerhäuser)",
+    "outdoor_standard": "Außenstandard (Temperaturklima)",
+    "outdoor_extreme": "Outdoor Extreme (Coastal, Berge)",
+    "industrial": "Industrie (Pflanzen, Raffinerien, Minen)",
+    "construction": "Bau (Baustellen, Infrastruktur)",
+    "agricultural": "Landwirtschaftliche (Farmen, Einrichtungen)",
+    "marine": "Marine/Werft (ätzende Umgebung)"
+  }
 }

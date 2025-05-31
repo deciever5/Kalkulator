@@ -308,7 +308,9 @@
     "basic": "Basique (50mm)",
     "standard": "Standard (100mm)",
     "premium": "Premium (150 mm)",
-    "extreme": "Extrême (200mm)"
+    "extreme": "Extrême (200mm)",
+    "none": "Aucune isolation",
+    "advanced": "Avancé (laine minérale 10-15cm)"
   },
   "start_configuration": "Démarrer la configuration",
   "get_quote": "Obtenir un devis",
@@ -714,5 +716,29 @@
   "usage_environment": "Environnement d'utilisation",
   "number_of_windows": "Nombre de fenêtres",
   "transport_logistics": "Transport et logistique",
-  "equipment_extras": "Équipement et extras"
+  "equipment_extras": "Équipement et extras",
+  "materials": {
+    "steel_standard": "Acier (construction standard)",
+    "aluminum_light": "Aluminium (construction légère)",
+    "composite_specialist": "Matériau composite (spécialiste)"
+  },
+  "purposes": {
+    "office_space": "Espace de bureau",
+    "sanitary_containers": "Conteneurs sanitaires",
+    "residential_containers": "Conteneurs résidentiels",
+    "commercial_containers": "Conteneurs commerciaux",
+    "storage_containers": "Conteneurs de stockage",
+    "technical_containers": "Conteneurs techniques",
+    "changing_rooms": "Vestiaires",
+    "guard_booths": "Stands de garde"
+  },
+  "environments": {
+    "indoor": "Intérieur (salles, entrepôts)",
+    "outdoor_standard": "Norme extérieure (climat de température)",
+    "outdoor_extreme": "Extreme extérieur (côte, montagnes)",
+    "industrial": "Industriel (plantes, raffineries, mines)",
+    "construction": "Construction (sites de construction, infrastructure)",
+    "agricultural": "Agricole (fermes, installations)",
+    "marine": "Marine / chantier naval (environnement corrosif)"
+  }
 }

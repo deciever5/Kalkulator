@@ -466,7 +466,9 @@
     "basic": "Alapvető (50mm)",
     "standard": "Szabványos (100mm)",
     "premium": "Prémium (150mm)",
-    "extreme": "Szélsőséges (200mm)"
+    "extreme": "Szélsőséges (200mm)",
+    "none": "Nincs szigetelés",
+    "advanced": "Fejlett (ásványgyapot 10-15 cm)"
   },
   "reinforcement": {
     "none": "Nincs megerősítés",
@@ -613,5 +615,29 @@
   "usage_environment": "Felhasználási környezet",
   "number_of_windows": "Ablakok száma",
   "transport_logistics": "Közlekedési és logisztika",
-  "equipment_extras": "Felszerelések és extrák"
+  "equipment_extras": "Felszerelések és extrák",
+  "materials": {
+    "steel_standard": "Acél (standard konstrukció)",
+    "aluminum_light": "Alumínium (könnyű konstrukció)",
+    "composite_specialist": "Kompozit anyag (szakember)"
+  },
+  "purposes": {
+    "office_space": "Irodaterület",
+    "sanitary_containers": "Egészségügyi konténerek",
+    "residential_containers": "Lakóállító tartályok",
+    "commercial_containers": "Kereskedelmi konténerek",
+    "storage_containers": "Tárolóedények",
+    "technical_containers": "Műszaki konténerek",
+    "changing_rooms": "Öltöző",
+    "guard_booths": "Őrfülkék"
+  },
+  "environments": {
+    "indoor": "Beltéri (csarnokok, raktárak)",
+    "outdoor_standard": "Kültéri standard (hőmérsékleti éghajlat)",
+    "outdoor_extreme": "Kültéri szélsőséges (tengerparti, hegyek)",
+    "industrial": "Ipari (növények, finomítók, bányák)",
+    "construction": "Építés (építési helyek, infrastruktúra)",
+    "agricultural": "Mezőgazdasági (gazdaságok, létesítmények)",
+    "marine": "Tengeri/hajógyár (korrozív környezet)"
+  }
 }

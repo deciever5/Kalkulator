@@ -511,7 +511,9 @@
     "basic": "Basis (50mm)",
     "standard": "Standaard (100mm)",
     "premium": "Premium (150mm)",
-    "extreme": "Extreem (200mm)"
+    "extreme": "Extreem (200mm)",
+    "none": "Geen isolatie",
+    "advanced": "Geavanceerd (minerale wol 10-15 cm)"
   },
   "reinforcement": {
     "none": "Geen versterking",
@@ -612,5 +614,29 @@
   "usage_environment": "Gebruiksomgeving",
   "number_of_windows": "Aantal ramen",
   "transport_logistics": "Transport en logistiek",
-  "equipment_extras": "Apparatuur en extra's"
+  "equipment_extras": "Apparatuur en extra's",
+  "materials": {
+    "steel_standard": "Staal (standaardconstructie)",
+    "aluminum_light": "Aluminium (lichtgewicht constructie)",
+    "composite_specialist": "Composiet materiaal (specialist)"
+  },
+  "purposes": {
+    "office_space": "Kantoorruimte",
+    "sanitary_containers": "Sanitaire containers",
+    "residential_containers": "Residentiële containers",
+    "commercial_containers": "Commerciële containers",
+    "storage_containers": "Opslagcontainers",
+    "technical_containers": "Technische containers",
+    "changing_rooms": "Kleedkamers",
+    "guard_booths": "Guardcabines"
+  },
+  "environments": {
+    "indoor": "Binnen (zalen, magazijnen)",
+    "outdoor_standard": "Buitenstandaard (temperatuurklimaat)",
+    "outdoor_extreme": "Buiten extreme (kust, bergen)",
+    "industrial": "Industrieel (planten, raffinaderijen, mijnen)",
+    "construction": "Bouw (bouwplaatsen, infrastructuur)",
+    "agricultural": "Landbouw (boerderijen, faciliteiten)",
+    "marine": "Marine/Shipyard (corrosieve omgeving)"
+  }
 }

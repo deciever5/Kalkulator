@@ -308,7 +308,9 @@
     "basic": "Základné (50mm)",
     "standard": "Štandardné (100mm)",
     "premium": "Prémiové (150mm)",
-    "extreme": "Extrémne (200mm)"
+    "extreme": "Extrémne (200mm)",
+    "none": "Žiadna izolácia",
+    "advanced": "Advanced (minerálna vlna 10-15 cm)"
   },
   "start_configuration": "Spustite konfiguráciu",
   "get_quote": "Získať ponuku",
@@ -714,5 +716,29 @@
   "usage_environment": "Využitie",
   "number_of_windows": "Počet okien",
   "transport_logistics": "Doprava a logistika",
-  "equipment_extras": "Vybavenie a doplnky"
+  "equipment_extras": "Vybavenie a doplnky",
+  "materials": {
+    "steel_standard": "Oceľ (štandardná konštrukcia)",
+    "aluminum_light": "Hliník (ľahká konštrukcia)",
+    "composite_specialist": "Kompozitný materiál (špecialista)"
+  },
+  "purposes": {
+    "office_space": "Kancelárske priestory",
+    "sanitary_containers": "Sanitárna kontajnery",
+    "residential_containers": "Obytné kontajnery",
+    "commercial_containers": "Komerčné kontajnery",
+    "storage_containers": "Úložné kontajnery",
+    "technical_containers": "Technické kontajnery",
+    "changing_rooms": "Šatňa",
+    "guard_booths": "Strážne stánky"
+  },
+  "environments": {
+    "indoor": "Vnútorné (haly, sklady)",
+    "outdoor_standard": "Vonkajší štandard (teplotné podnebie)",
+    "outdoor_extreme": "Vonkajší extrém (pobrežné, hory)",
+    "industrial": "Priemyselné (rastliny, rafinérie, bane)",
+    "construction": "Výstavba (výstavby, infraštruktúra)",
+    "agricultural": "Poľnohospodárstvo (farmy, zariadenia)",
+    "marine": "Námorník/lodenica (korozívne prostredie)"
+  }
 }
