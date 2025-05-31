@@ -387,18 +387,8 @@ class TranslationQualityChecker:
 
     def __init__(self, groq_service: GroqService):
         self.groq_service = groq_service
-        self.api_key = os.environ.get('GROQ_API_KEY')
-        if not self.api_key:
-            if st.session_state.get('employee_logged_in', False):
-                st.error("GROQ_API_KEY not found in environment variables")
-            self.client = None
-        else:
-            try:
-                self.client = Groq(api_key=self.api_key)
-            except Exception as e:
-                if st.session_state.get('employee_logged_in', False):
-                    st.error(f"Failed to initialize Groq client: {str(e)}")
-                self.client = None
+        # Use the GroqService's client instead of creating our own
+        self.client = groq_service.client
         self.languages = {
             "en": "English",
             "de": "German",
@@ -436,10 +426,10 @@ class TranslationQualityChecker:
          Translate text to target language using Groq with failover.
          """
          if not self.client:
-             st.error("Groq client is not initialized.")
+             print("Groq client is not initialized.")
              return ""
 
-         max_retries = len(self.api_keys)
+         max_retries = len(self.groq_service.api_keys)
          
          for attempt in range(max_retries):
              try:
@@ -466,17 +456,18 @@ class TranslationQualityChecker:
              except Exception as e:
                  error_msg = str(e).lower()
                  if "rate limit" in error_msg or "429" in error_msg:
-                     if st.session_state.get('employee_logged_in', False):
-                         st.warning(f"Translation rate limit hit on API key {self.current_key_index + 1}")
+                     print(f"Translation rate limit hit on API key {self.groq_service.current_key_index + 1}")
                      
-                     # Try next API key
-                     if self._try_next_key():
+                     # Try next API key using GroqService method
+                     if self.groq_service._try_next_key():
+                         # Update our client to use the new key
+                         self.client = self.groq_service.client
                          continue
                      else:
-                         st.error("All translation API keys exhausted or rate limited")
+                         print("All translation API keys exhausted or rate limited")
                          break
                  else:
-                     st.error(f"Translation error to {target_language}: {e}")
+                     print(f"Translation error to {target_language}: {e}")
                      break
          
          return None
