@@ -260,7 +260,14 @@
       "20ft_double_door": "20ft DD",
       "40ft_double_door": "40ft DD",
       "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Aangepaste Maat"
+      "custom_size": "Aangepaste Maat",
+      "10ft_compact": "10ft compact (3m x 2,4 m)",
+      "20ft_high_cube": "20ft hoge kubus (6m x 2,7 m)",
+      "45ft_standard": "45ft standaard",
+      "custom": "Aangepast",
+      "multi_unit": "Multi-unit container",
+      "custom_dimensions": "Aangepaste dimensies container",
+      "refurbished": "Gerenoveerde container"
     },
     "use_cases": {
       "office_space": "Kantoorruimte",
@@ -599,5 +606,11 @@
   "construction_material_composite": "Composite",
   "air_intakes_label": "Luchtinlaat en ventilatie",
   "fire_safety_label": "Brandveiligheidssystemen",
-  "roof_modifications_label": "Dakmodificaties"
+  "roof_modifications_label": "Dakmodificaties",
+  "basic_configuration": "Basisconfiguratie",
+  "main_purpose": "Hoofdpaars",
+  "usage_environment": "Gebruiksomgeving",
+  "number_of_windows": "Aantal ramen",
+  "transport_logistics": "Transport en logistiek",
+  "equipment_extras": "Apparatuur en extra's"
 }

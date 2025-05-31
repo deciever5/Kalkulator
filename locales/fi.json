@@ -561,7 +561,14 @@
       "20ft_double_door": "20ft Kaksiovinen",
       "40ft_double_door": "40ft kaksoisovet",
       "40ft_hc_double_door": "40ft HC kaksoisovet",
-      "custom_size": "Mukautettu koko"
+      "custom_size": "Mukautettu koko",
+      "10ft_compact": "10ft Compact (3m x 2,4 m)",
+      "20ft_high_cube": "20 jalkaa korkea kuutio (6m x 2,7m)",
+      "45ft_standard": "45ft standardi",
+      "custom": "Räätälöity",
+      "multi_unit": "Moniyksikkö",
+      "custom_dimensions": "Mukautetut mitat säiliö",
+      "refurbished": "Kunnostettu astia"
     },
     "use_cases": {
       "office_space": "Toimistotilat",
@@ -700,5 +707,11 @@
   "estimate_disclaimer_title": "Tärkeää - Oikeudellinen Ilmoitus",
   "estimate_disclaimer_text": "Yllä oleva arvio on indikaatiivinen ja ei muodosta tarjousta oikeuskaaren mukaan. Lopullinen hinta voi muuttua yksityiskohtaisempien projektin vaatimusten, nykyisten materiaalien ja työn hintojen mukaan.",
   "back_to_home": "← Takaisin etusivulle",
-  "go_to_configurator": "🔧 Siirry konfiguroijaan"
+  "go_to_configurator": "🔧 Siirry konfiguroijaan",
+  "basic_configuration": "Peruskokoonpano",
+  "main_purpose": "Purppura",
+  "usage_environment": "Käyttöympäristö",
+  "number_of_windows": "Ikkunoiden lukumäärä",
+  "transport_logistics": "Kuljetus- ja logistiikka",
+  "equipment_extras": "Laitteet ja ekstrat"
 }

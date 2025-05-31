@@ -561,7 +561,15 @@
       "20ft_double_door": "20 stôp DD",
       "40ft_double_door": "40 stôp DD",
       "40ft_hc_double_door": "40 stôp HC DD",
-      "custom_size": "Vlastná veľkosť"
+      "custom_size": "Vlastná veľkosť",
+      "10ft_compact": "10 stôp kompaktné (3 m x 2,4 m)",
+      "20ft_high_cube": "20 stôp vysoká kocka (6 m x 2,7 m)",
+      "40ft_hc": "40 stôp HC",
+      "45ft_standard": "Štandard 45 stôp",
+      "custom": "Zvyk",
+      "multi_unit": "Nádoba na viacerých jednotiek",
+      "custom_dimensions": "Vlastný rozmer kontajner",
+      "refurbished": "Renovovaný kontajner"
     },
     "use_cases": {
       "office_space": "Kancelárske priestory",
@@ -700,5 +708,11 @@
   "estimate_disclaimer_title": "Dôležité - Legálna Poznámka",
   "estimate_disclaimer_text": "Nasledujúca odhady je indikatívna a nekonštituuje ponuku v zmysle Občianskeho zákonníka. Finálna cena môže sa meniť v závislosti od podrobností projektu, aktuálnych materiálových a pracovných nákladov.",
   "back_to_home": "← Vráťte sa na hlavnú stránku",
-  "go_to_configurator": "🔧 Prejdite na konfigurátor"
+  "go_to_configurator": "🔧 Prejdite na konfigurátor",
+  "basic_configuration": "Základná konfigurácia",
+  "main_purpose": "Hlavný fial",
+  "usage_environment": "Využitie",
+  "number_of_windows": "Počet okien",
+  "transport_logistics": "Doprava a logistika",
+  "equipment_extras": "Vybavenie a doplnky"
 }

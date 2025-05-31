@@ -265,7 +265,13 @@
       "20ft_double_door": "20ft dd",
       "40ft_double_door": "40ft dd",
       "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Benutzerdefinierte Größe"
+      "custom_size": "Benutzerdefinierte Größe",
+      "10ft_compact": "10ft kompakt (3m x 2,4 m)",
+      "20ft_high_cube": "20 Fuß hoher Würfel (6 m x 2,7 m)",
+      "custom": "Brauch",
+      "multi_unit": "Multi-Unit-Behälter",
+      "custom_dimensions": "Custom -Abmessungen Container",
+      "refurbished": "Renovierter Behälter"
     },
     "use_cases": {
       "office_space": "Büroraum",
@@ -600,5 +606,11 @@
   "construction_material_composite": "Zusammengesetzt",
   "air_intakes_label": "Luftzufuhr und Belüftung",
   "fire_safety_label": "Brandschutzsysteme",
-  "roof_modifications_label": "Dachmodifikationen"
+  "roof_modifications_label": "Dachmodifikationen",
+  "basic_configuration": "Grundkonfiguration",
+  "main_purpose": "Hauptpila",
+  "usage_environment": "Nutzungsumgebung",
+  "number_of_windows": "Anzahl der Fenster",
+  "transport_logistics": "Transport & Logistik",
+  "equipment_extras": "Ausrüstung & Extras"
 }

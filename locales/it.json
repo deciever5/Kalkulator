@@ -336,7 +336,14 @@
       "20ft_double_door": "20ft dd",
       "40ft_double_door": "40ft dd",
       "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Dimensione Personalizzata"
+      "custom_size": "Dimensione Personalizzata",
+      "10ft_compact": "10ft compact (3m x 2,4m)",
+      "20ft_high_cube": "Cubo alto 20 piedi (6m x 2,7 m)",
+      "45ft_standard": "Standard da 45ft",
+      "custom": "Costume",
+      "multi_unit": "Contenitore multi-unità",
+      "custom_dimensions": "Contenitore di dimensioni personalizzate",
+      "refurbished": "Contenitore rinnovato"
     },
     "use_cases": {
       "office_space": "Spazio Ufficio",
@@ -599,5 +606,11 @@
   "estimate_disclaimer_title": "Importante - Avviso Legale",
   "estimate_disclaimer_text": "La stima sopra è indicativa e non costituisce offerta nel senso del Codice Civile. Il prezzo finale può cambiare a seconda dei requisiti dettagliati progetto, costi attuali materiali e manodopera.",
   "back_to_home": "← Torna a casa",
-  "go_to_configurator": "🔧 Vai al configuratore"
+  "go_to_configurator": "🔧 Vai al configuratore",
+  "basic_configuration": "Configurazione di base",
+  "main_purpose": "Purple principale",
+  "usage_environment": "Ambiente di utilizzo",
+  "number_of_windows": "Numero di finestre",
+  "transport_logistics": "Trasporto e logistica",
+  "equipment_extras": "Attrezzatura ed extra"
 }

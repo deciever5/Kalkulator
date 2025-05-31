@@ -336,7 +336,14 @@
       "20ft_double_door": "20ft DD",
       "40ft_double_door": "40ft DD",
       "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Anpassad Storlek"
+      "custom_size": "Anpassad Storlek",
+      "10ft_compact": "10ft kompakt (3 m x 2,4 m)",
+      "20ft_high_cube": "20ft högkub (6 m x 2,7 m)",
+      "45ft_standard": "45ft standard",
+      "custom": "Beställnings",
+      "multi_unit": "Multi-enhetsbehållare",
+      "custom_dimensions": "Anpassade dimensioner behållare",
+      "refurbished": "Renoverad behållare"
     },
     "use_cases": {
       "office_space": "Kontorsutrymme",
@@ -599,5 +606,11 @@
   "estimate_disclaimer_title": "Viktigt - Rättsligt Meddelande",
   "estimate_disclaimer_text": "Ovanstående uppskattning är indikativ och utgör inte ett erbjudande i civilrättens mening. Slutpris kan ändras beroende på detaljerade projektkrav, aktuella material- och arbetskostnader.",
   "back_to_home": "← Tillbaka till startsidan",
-  "go_to_configurator": "🔧 Gå till konfiguratorn"
+  "go_to_configurator": "🔧 Gå till konfiguratorn",
+  "basic_configuration": "Grundläggande konfiguration",
+  "main_purpose": "Huvudlila",
+  "usage_environment": "Användningsmiljö",
+  "number_of_windows": "Windows",
+  "transport_logistics": "Transport och logistik",
+  "equipment_extras": "Utrustning och extrafunktioner"
 }

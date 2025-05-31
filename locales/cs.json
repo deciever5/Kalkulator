@@ -214,7 +214,15 @@
       "20ft_double_door": "20 stop DD",
       "40ft_double_door": "40 stop DD",
       "40ft_hc_double_door": "40 stop HC DD",
-      "custom_size": "Vlastní Velikost"
+      "custom_size": "Vlastní Velikost",
+      "10ft_compact": "Kompaktní 10 stop (3 m x 2,4 m)",
+      "20ft_high_cube": "20 stop vysoká kostka (6 m x 2,7 m)",
+      "40ft_hc": "40 stop HC",
+      "45ft_standard": "Standard 45 stop",
+      "custom": "Zvyk",
+      "multi_unit": "Kontejner s více jednotkami",
+      "custom_dimensions": "Vlastní rozměry kontejneru",
+      "refurbished": "Renovovaný kontejner"
     },
     "use_cases": {
       "office_space": "Kancelářský Prostor",
@@ -599,5 +607,11 @@
   "additional_doors": "Dodatečné dveře",
   "air_intakes_label": "Přívody vzduchu a ventilace",
   "fire_safety_label": "Protipožární systémy",
-  "roof_modifications_label": "Úpravy střechy"
+  "roof_modifications_label": "Úpravy střechy",
+  "basic_configuration": "Základní konfigurace",
+  "main_purpose": "Hlavní fialová",
+  "usage_environment": "Prostředí použití",
+  "number_of_windows": "Počet oken",
+  "transport_logistics": "Transport & Logistics",
+  "equipment_extras": "Vybavení a doplňky"
 }

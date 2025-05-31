@@ -82,7 +82,15 @@
       "20ft_double_door": "20ft DD",
       "40ft_double_door": "40ft DD",
       "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Rozmiar Niestandardowy"
+      "custom_size": "Rozmiar Niestandardowy",
+      "10ft_compact": "10ft Compact (3m x 2.4m)",
+      "20ft_high_cube": "20ft High Cube (6m x 2.7m)",
+      "40ft_hc": "40ft HC",
+      "45ft_standard": "45ft Standard",
+      "custom": "Custom",
+      "multi_unit": "Multi-unit Container",
+      "custom_dimensions": "Custom Dimensions Container",
+      "refurbished": "Refurbished Container"
     },
     "use_cases": {
       "office_space": "Przestrzeń Biurowa",
@@ -599,5 +607,11 @@
   "it_systems_basic": "Basic Network",
   "fire_systems": "Fire Safety Systems",
   "additional_openings_door": "Additional Door",
-  "construction_material_composite": "Composite"
+  "construction_material_composite": "Composite",
+  "basic_configuration": "BASIC CONFIGURATION",
+  "main_purpose": "Main Purpose",
+  "usage_environment": "Usage Environment",
+  "number_of_windows": "Number of Windows",
+  "transport_logistics": "TRANSPORT & LOGISTICS",
+  "equipment_extras": "EQUIPMENT & EXTRAS"
 }

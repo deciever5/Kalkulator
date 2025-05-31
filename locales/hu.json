@@ -214,7 +214,14 @@
       "20ft_double_door": "20ft DD",
       "40ft_double_door": "40ft DD",
       "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Egyedi Méret"
+      "custom_size": "Egyedi Méret",
+      "10ft_compact": "10ft kompakt (3m x 2,4m)",
+      "20ft_high_cube": "20 láb magas kocka (6m x 2,7m)",
+      "45ft_standard": "45 láb hosszúság",
+      "custom": "Szokás",
+      "multi_unit": "Több egységnyi tartály",
+      "custom_dimensions": "Egyedi méretű tartály",
+      "refurbished": "Felújított konténer"
     },
     "use_cases": {
       "office_space": "Irodai Tér",
@@ -600,5 +607,11 @@
   "construction_material_composite": "Composite",
   "air_intakes_label": "Légbevitel és szellőzés",
   "fire_safety_label": "Tűzbiztonsági rendszerek",
-  "roof_modifications_label": "Tetőmódosítások"
+  "roof_modifications_label": "Tetőmódosítások",
+  "basic_configuration": "Alapkonfiguráció",
+  "main_purpose": "Lila lila",
+  "usage_environment": "Felhasználási környezet",
+  "number_of_windows": "Ablakok száma",
+  "transport_logistics": "Közlekedési és logisztika",
+  "equipment_extras": "Felszerelések és extrák"
 }
