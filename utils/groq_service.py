@@ -395,11 +395,15 @@ class TranslationQualityChecker:
             "fr": "French",
             "es": "Spanish",
             "it": "Italian",
-            "ru": "Russian",
-            "zh": "Chinese",
-            "ja": "Japanese",
             "pl": "Polish",
-            # Add more languages as needed
+            "cs": "Czech",
+            "hu": "Hungarian",
+            "nl": "Dutch",
+            "fi": "Finnish",
+            "uk": "Ukrainian",
+            "sk": "Slovak",
+            "sv": "Swedish",
+            # Only languages that exist in locales directory
         }
 
     async def check_translation_quality(self, text_to_translate: str) -> Dict[str, Dict[str, Any]]:
