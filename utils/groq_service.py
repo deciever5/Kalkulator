@@ -221,4 +221,300 @@ class GroqService:
         try:
             # Extract JSON from response
             if '```json' in response:
-                json_str = response.split('```json')[1].split('
+                json_str = response.split('```json')[1].split('```')[0].strip()
+            elif '{' in response and '}' in response:
+                start = response.find('{')
+                end = response.rfind('}') + 1
+                json_str = response[start:end]
+            else:
+                raise ValueError("No valid JSON found in response")
+
+            result = json.loads(json_str)
+
+            # Validate required fields
+            required_fields = ['structural_integrity', 'building_code_compliance', 'environmental_considerations']
+            for field in required_fields:
+                if field not in result:
+                    result[field] = {}
+
+            # Ensure technical score is between 0 and 10
+            result['technical_score'] = max(0, min(10, result.get('technical_score', 7)))
+
+            # Add metadata
+            result['ai_model'] = 'Groq Llama3-8B'
+            result['generated_at'] = str(st.session_state.get('current_time', 'Unknown'))
+
+            return result
+
+        except Exception as e:
+            if st.session_state.get('employee_logged_in', False):
+                st.error(f"Error processing Groq technical analysis response: {str(e)}")
+            return self._fallback_technical_analysis({}, {})
+
+    def _fallback_cost_estimate(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> Dict[str, Any]:
+        """Fallback cost estimation method"""
+
+        return {
+            "total_cost": 5000,
+            "material_costs": 2000,
+            "labor_costs": 2500,
+            "equipment_costs": 300,
+            "permit_costs": 200,
+            "margin": 500,
+            "timeline_weeks": 4,
+            "cost_breakdown": {
+                "structural": 1500,
+                "electrical": 800,
+                "plumbing": 700,
+                "hvac": 600,
+                "insulation": 400,
+                "finishing": 1000
+            },
+            "risk_factors": ["Supply chain delays", "Unexpected permit issues"],
+            "recommendations": ["Order materials in advance", "Consult with local authorities"],
+            "confidence_score": 0.6,
+            "ai_model": 'Fallback',
+            "generated_at": str(st.session_state.get('current_time', 'Unknown'))
+        }
+
+    def _fallback_technical_analysis(self, config: Dict[str, Any], analysis_params: Dict[str, Any]) -> Dict[str, Any]:
+        """Fallback technical analysis method"""
+
+        return {
+            "structural_integrity": {
+                "safety_factor": 2.5,
+                "load_capacity": 5000,
+                "stress_analysis": "Meets minimum safety standards"
+            },
+            "building_code_compliance": {
+                "european_standards": ["EN 1991", "EN 1993"],
+                "compliance_status": "compliant",
+                "required_permits": ["Building permit", "Electrical permit"]
+            },
+            "environmental_considerations": {
+                "climate_suitability": "Suitable for temperate climates",
+                "insulation_requirements": "R-13 insulation recommended",
+                "weatherproofing": "Requires sealant and weather-resistant paint"
+            },
+            "safety_recommendations": ["Install smoke detectors", "Ensure proper ventilation"],
+            "potential_issues": ["Corrosion", "Moisture buildup"],
+            "technical_score": 7.5,
+            "feasibility": "high",
+            "ai_model": 'Fallback',
+            "generated_at": str(st.session_state.get('current_time', 'Unknown'))
+        }
+```')[0].strip()
+            elif '{' in response and '}' in response:
+                start = response.find('{')
+                end = response.rfind('}') + 1
+                json_str = response[start:end]
+            else:
+                raise ValueError("No valid JSON found in response")
+
+            result = json.loads(json_str)
+
+            # Validate required fields
+            required_fields = ['structural_integrity', 'building_code_compliance', 'environmental_considerations']
+            for field in required_fields:
+                if field not in result:
+                    result[field] = {}
+
+            # Ensure technical score is between 0 and 10
+            result['technical_score'] = max(0, min(10, result.get('technical_score', 7)))
+
+            # Add metadata
+            result['ai_model'] = 'Groq Llama3-8B'
+            result['generated_at'] = str(st.session_state.get('current_time', 'Unknown'))
+
+            return result
+
+        except Exception as e:
+            if st.session_state.get('employee_logged_in', False):
+                st.error(f"Error processing Groq technical analysis response: {str(e)}")
+            return self._fallback_technical_analysis({}, {})
+
+    def _fallback_cost_estimate(self, estimation_data: Dict[str, Any], base_costs: Dict[str, Any]) -> Dict[str, Any]:
+        """Fallback cost estimation method"""
+
+        return {
+            "total_cost": 5000,
+            "material_costs": 2000,
+            "labor_costs": 2500,
+            "equipment_costs": 300,
+            "permit_costs": 200,
+            "margin": 500,
+            "timeline_weeks": 4,
+            "cost_breakdown": {
+                "structural": 1500,
+                "electrical": 800,
+                "plumbing": 700,
+                "hvac": 600,
+                "insulation": 400,
+                "finishing": 1000
+            },
+            "risk_factors": ["Supply chain delays", "Unexpected permit issues"],
+            "recommendations": ["Order materials in advance", "Consult with local authorities"],
+            "confidence_score": 0.6,
+            "ai_model": 'Fallback',
+            "generated_at": str(st.session_state.get('current_time', 'Unknown'))
+        }
+
+    def _fallback_technical_analysis(self, config: Dict[str, Any], analysis_params: Dict[str, Any]) -> Dict[str, Any]:
+        """Fallback technical analysis method"""
+
+        return {
+            "structural_integrity": {
+                "safety_factor": 2.5,
+                "load_capacity": 5000,
+                "stress_analysis": "Meets minimum safety standards"
+            },
+            "building_code_compliance": {
+                "european_standards": ["EN 1991", "EN 1993"],
+                "compliance_status": "compliant",
+                "required_permits": ["Building permit", "Electrical permit"]
+            },
+            "environmental_considerations": {
+                "climate_suitability": "Suitable for temperate climates",
+                "insulation_requirements": "R-13 insulation recommended",
+                "weatherproofing": "Requires sealant and weather-resistant paint"
+            },
+            "safety_recommendations": ["Install smoke detectors", "Ensure proper ventilation"],
+            "potential_issues": ["Corrosion", "Moisture buildup"],
+            "technical_score": 7.5,
+            "feasibility": "high",
+            "ai_model": 'Fallback',
+            "generated_at": str(st.session_state.get('current_time', 'Unknown'))
+        }
+
+import asyncio
+import aiohttp
+
+class TranslationQualityChecker:
+    """
+    A service to check the quality of translations across multiple languages,
+    using Polish as the base for comparison.
+    """
+
+    def __init__(self, groq_service: GroqService):
+        self.groq_service = groq_service
+        self.api_key = os.environ.get('GROQ_API_KEY')
+        if not self.api_key:
+            if st.session_state.get('employee_logged_in', False):
+                st.error("GROQ_API_KEY not found in environment variables")
+            self.client = None
+        else:
+            try:
+                self.client = Groq(api_key=self.api_key)
+            except Exception as e:
+                if st.session_state.get('employee_logged_in', False):
+                    st.error(f"Failed to initialize Groq client: {str(e)}")
+                self.client = None
+        self.languages = {
+            "en": "English",
+            "de": "German",
+            "fr": "French",
+            "es": "Spanish",
+            "it": "Italian",
+            "ru": "Russian",
+            "zh": "Chinese",
+            "ja": "Japanese",
+            # Add more languages as needed
+        }
+
+    async def check_translation_quality(self, text_to_translate: str) -> Dict[str, Dict[str, Any]]:
+        """
+        Orchestrates the translation and quality check process for all languages.
+        """
+        results = {}
+        polish_translation = await self._translate_text(text_to_translate, "pl")
+        if not polish_translation:
+            return {"error": "Failed to translate to Polish"}
+        results["pl"] = {"translation": polish_translation, "quality_score": 1.0}  # Polish is the base
+
+        async with aiohttp.ClientSession() as session:
+            tasks = [self._evaluate_translation(session, text_to_translate, language, polish_translation)
+                     for language in self.languages if language != "pl"]
+            evaluations = await asyncio.gather(*tasks)
+
+        for language, evaluation in evaluations:
+            results[language] = evaluation
+
+        return results
+
+    async def _translate_text(self, text: str, target_language: str) -> str:
+         """
+         Translate text to target language using Groq.
+         """
+         if not self.client:
+             st.error("Groq client is not initialized.")
+             return ""
+
+         try:
+             prompt = f"""Translate the following text to {self.languages[target_language]}: '{text}'"""
+
+             response = self.client.chat.completions.create(
+                 model="llama-3.1-8b-instant",
+                 messages=[
+                     {
+                         "role": "system",
+                         "content": f"You are a professional translator. Translate accurately to {self.languages[target_language]}."
+                     },
+                     {
+                         "role": "user",
+                         "content": prompt
+                     }
+                 ],
+                 temperature=0.2,
+                 max_tokens=1000
+             )
+             translation = response.choices[0].message.content.strip()
+             return translation
+
+         except Exception as e:
+             st.error(f"Translation error to {target_language}: {e}")
+             return None
+
+    async def _evaluate_translation(self, session: aiohttp.ClientSession, original_text: str, target_language: str, polish_base: str) -> tuple[str, Dict[str, Any]]:
+        """
+        Evaluate translation quality by comparing the translation back to Polish and then to the original Polish.
+        """
+        translated_text = await self._translate_text(original_text, target_language)
+        if not translated_text:
+            return target_language, {"error": f"Failed to translate to {target_language}"}
+
+        # Translate the translated text back to Polish
+        back_translated_text = await self._translate_text(translated_text, "pl")
+        if not back_translated_text:
+            return target_language, {"error": f"Failed to back-translate from {target_language} to Polish"}
+
+        # Score the similarity between the back-translated text and the original Polish base
+        similarity_score = self._calculate_similarity(polish_base, back_translated_text)
+
+        return target_language, {
+            "translation": translated_text,
+            "back_translation": back_translated_text,
+            "quality_score": similarity_score
+        }
+
+    def _calculate_similarity(self, text1: str, text2: str) -> float:
+        """
+        Calculate the similarity between two texts using a simple approach.
+        """
+        # This is a placeholder; replace with a more sophisticated method like cosine similarity
+        # using embeddings for better accuracy.
+        words1 = text1.lower().split()
+        words2 = text2.lower().split()
+        common_words = set(words1) & set(words2)
+        similarity = len(common_words) / max(len(words1), len(words2), 1)
+        return similarity
+
+# Example Usage (This will not run directly in this environment)
+if __name__ == '__main__':
+    async def main():
+        groq_service = GroqService()
+        checker = TranslationQualityChecker(groq_service)
+        text_to_translate = "This is a test sentence to check translation quality."
+        results = await checker.check_translation_quality(text_to_translate)
+        print(json.dumps(results, indent=2))
+
+    asyncio.run(main())
