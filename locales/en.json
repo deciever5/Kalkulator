@@ -8,7 +8,7 @@
     "wrong_password": "Wrong password",
     "cancel": "Cancel",
     "open": "Open",
-    "language_selector": "Tongue",
+    "language_selector": "Language",
     "back_to_home": "← Back to Home",
     "go_to_ai_estimate": "🤖 Go to AI Estimate →",
     "go_to_configurator": "🔧 Go to Configurator",
@@ -32,7 +32,7 @@
     "drawing_analysis_customer_desc": "Free document analysis",
     "bulk_pricing": "Bulk\nPricing",
     "bulk_pricing_desc": "Volume Discounts for Multiple Containers",
-    "custom_sizing": "Custom\nSick",
+    "custom_sizing": "Custom\nSizing",
     "custom_sizing_desc": "Design Containers with Exact Specifications"
   },
   "app": {
@@ -240,7 +240,7 @@
   "construction_material": "Construction Material",
   "construction_material_steel": "Steel",
   "construction_material_aluminum": "Aluminum",
-  "construction_material_composite": "Composite",
+  "construction_material_composite": "Composite Material",
   "lighting": {
     "none": "No lighting",
     "basic_led": "Standard LED (basic)",
@@ -273,12 +273,12 @@
   "interior_layout_partitioned": "Partitioned",
   "interior_layout_custom": "Custom layout",
   "security_systems": "Safety systems",
-  "security_systems_basic": "Basic",
-  "security_systems_advanced": "Advanced",
+  "security_systems_basic": "Basic Security Systems",
+  "security_systems_advanced": "Advanced Security Systems",
   "security_systems_none": "None",
   "exterior_cladding_none": "None",
   "exterior_cladding_wood": "Wood",
-  "exterior_cladding_composite": "Composite",
+  "exterior_cladding_composite": "Composite Material (Specialist Use)",
   "additional_openings_none": "None",
   "additional_openings_door": "Additional Door",
   "additional_openings_emergency": "Emergency exit",
@@ -290,7 +290,7 @@
   "delivery_zone_local": "Local (50km)",
   "delivery_zone_regional": "Regional (200km)",
   "delivery_zone_national": "National",
-  "delivery_zone_international": "International",
+  "delivery_zone_international": "International (Outside Europe)",
   "transport_type": "Type of transport",
   "transport_type_standard": "Standard",
   "transport_type_crane": "With crane",
@@ -330,8 +330,8 @@
   "paint_finish_premium": "Premium",
   "paint_finish_custom": "Custom color",
   "additional_doors": "Additional Doors",
-  "air_intakes_label": "Air Intakes and Ventilation",
-  "fire_safety_label": "Fire systems",
+  "air_intakes_label": "Air Intakes And Ventilation",
+  "fire_safety_label": "Fire Systems",
   "roof_modifications_label": "Roof Modifications",
   "insulation": {
     "none": "No insulation",
@@ -455,7 +455,8 @@
       "vinyl": "Vinyl",
       "carpet": "Carpet",
       "hardwood": "Hardwood",
-      "polished_concrete": "Polished Concrete"
+      "polished_concrete": "Polished Concrete",
+      "none": "No Flooring"
     }
   },
   "materials": {
@@ -554,9 +555,9 @@
   "full_system_access": "Full access to the system and advanced functions",
   "container_configurator_title": "Container\nConfigurator",
   "container_configurator_desc": "Professional container configuration",
-  "ai_cost_estimator_title": "AI Cost\nEstimator",
+  "ai_cost_estimator_title": "Ai Cost\nEstimator",
   "ai_cost_estimator_desc": "Artificial intelligence cost estimation",
-  "technical_analysis": "Analysis\nTechnical",
+  "technical_analysis": "Technical\nAnalysis",
   "quote_generator": "Quote\nGenerator",
   "open_tool": "Open",
   "configuration_summary": "Summary of configuration",
@@ -623,7 +624,7 @@
       "southern_europe": "Southern Europe (IT, ES, PT, GR)",
       "eastern_europe": "Eastern Europe (HU, RO, BG, HR)",
       "uk_ireland": "United Kingdom & Ireland",
-      "international": "International (outside Europe)"
+      "international": "International (Outside Europe)"
     }
   },
   "labor_costs_30": "Labor Costs (30%)",
@@ -649,7 +650,7 @@
   },
   "drawing_analysis_customer": {
     "description": "Free technical drawing analysis for customers as part of the estimation process",
-    "info_title": "How it works",
+    "info_title": "How It Works",
     "info_text": "Upload your technical drawings and our AI system will analyze them and adjust the quote to actual project requirements. This is a free service for all customers.",
     "no_config": "No container configuration found. Please configure your container first.",
     "config_found": "Saved configuration found",
@@ -683,7 +684,7 @@
     "refine_config": "Clarify the configuration",
     "disclaimer_title": "Important Disclaimer",
     "disclaimer_text": "This is an automated analysis for estimation purposes. Final pricing requires manual verification by our technical team.",
-    "tips_title": "Tips for better analysis",
+    "tips_title": "Tips For Better Analysis",
     "tips_text": "For the most accurate analysis, make sure your drawings contain:",
     "tip_1": "Clear dimensions and specifications",
     "tip_2": "All technical details visible",
@@ -700,7 +701,7 @@
     "access_granted": "Admin access granted!",
     "invalid_password": "Invalid password",
     "contact_it": "Contact KAN-BUD IT administrator for access credentials",
-    "panel_title": "KAN-BUD Admin Panel",
+    "panel_title": "Kan-Bud Admin Panel",
     "panel_subtitle": "Business configuration & data management",
     "logout": "Admin Logout",
     "cost_settings": "Cost Settings",
