@@ -878,6 +878,21 @@
     "platform": "Platforma wyrównawcza",
     "full": "Pełne dostosowanie (EN/PN normy)"
   },
+  "form": {
+    "labels": {
+      "construction_material": "Materiał Konstrukcyjny"
+    }
+  },
+  "construction_material": {
+    "steel": "Stal",
+    "aluminum": "Aluminium", 
+    "composite": "Kompozyt"
+  },
+  "quote_generator": {
+    "employee_only": "Dostęp tylko dla pracowników",
+    "login_info": "Zaloguj się aby uzyskać dostęp",
+    "employee_password": "Hasło pracownika"
+  },
   "environments": {
     "indoor": "Wewnętrzne",
     "outdoor_standard": "Zewnętrzne Standardowe",

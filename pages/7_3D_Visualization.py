@@ -10,6 +10,13 @@ from utils.container_database import ContainerDatabase
 from utils.translations import t, init_language
 from utils.container_loading_spinner import ContainerLoadingSpinner
 
+# Initialize translation function aliases for compatibility
+def get_translation(key, language):
+    return t(key)
+
+def translate_options(options, language):
+    return [t(option) for option in options]
+
 st.set_page_config(page_title="3D Visualization", page_icon="🏗️", layout="wide", initial_sidebar_state="collapsed")
 
 # Initialize language
