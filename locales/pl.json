@@ -621,7 +621,13 @@
   "construction_material_steel": "Stal",
   "construction_material_aluminum": "Aluminium", 
   "construction_material_composite": "Kompozyt",
-  "insulation": "Izolacja",
+  "insulation": {
+    "basic": "Podstawowa (5-10cm, styropian/wełna)",
+    "standard": "Standardowa (15cm, PIR/PUR)",
+    "premium": "Premium (20cm, wełna mineralna)",
+    "extreme": "Ekstremalna (30cm, aerogel/vakuum)"
+  },
+  "insulation_label": "Izolacja",
   "lighting": "Oświetlenie",
   "roof_modifications_label": "Modyfikacje Dachu",
   "electrical_system": "System Elektryczny",

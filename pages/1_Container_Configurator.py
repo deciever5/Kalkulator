@@ -156,7 +156,7 @@ with st.form("container_configuration_form"):
             t('insulation.extreme')
         ]
         insulation = st.selectbox(
-            t('insulation'),
+            t('insulation_label'),
             options=insulation_options,
             index=1
         )
