@@ -415,65 +415,69 @@ with st.form("container_configuration_form"):
         )
 
         # Security Systems
+        security_systems_options = [
+            t('security_systems.none'),
+            t('security_systems.basic'),
+            t('security_systems.standard'),
+            t('security_systems.extended'),
+            t('security_systems.high'),
+            t('security_systems.maximum'),
+            t('security_systems.industrial')
+        ]
         security_systems = st.selectbox(
-            "Zabezpieczenia i Systemy Alarmowe",
-            options=[
-                "Bez dodatkowych zabezpieczeń (zamki standardowe)",
-                "Podstawowe (wzmocnione zamki, kraty okienne)",
-                "Standardowe (alarm, czujniki, syrena)",
-                "Rozszerzone (monitoring, czujniki ruchu/wibracji)",
-                "Wysokie (CCTV IP, kontrola dostępu, domofon)",
-                "Maksymalne (sejf, biometria, central monitoring)",
-                "Przemysłowe (ATEX, systemy gazowe, panic room)"
-            ],
+            t('security_systems'),
+            options=security_systems_options,
             index=1
         )
 
         # Exterior Cladding
+        exterior_cladding_options = [
+            t('exterior_cladding.none'),
+            t('exterior_cladding.trapezoidal_sheet'),
+            t('exterior_cladding.cassette_sheet'),
+            t('exterior_cladding.vinyl_siding'),
+            t('exterior_cladding.structural_plaster'),
+            t('exterior_cladding.wood_cladding'),
+            t('exterior_cladding.composite_panels'),
+            t('exterior_cladding.clinker_brick'),
+            t('exterior_cladding.stone')
+        ]
         exterior_cladding = st.selectbox(
-            "Okładzina Zewnętrzna",
-            options=[
-                "Bez okładziny (blacha kontenerowa standardowa)",
-                "Blacha trapezoidalna (T18, T35, T55)",
-                "Blacha kasetowa (płaska, przetłaczana)",
-                "Siding winylowy (imitacja drewna, nowoczesny)",
-                "Tynk strukturalny (silikonowy, akrylowy)",
-                "Okładzina drewniana (termo, egzotyczna)",
-                "Płyty kompozytowe (HPL, dibond)",
-                "Cegła klinkierowa (lica, elewacyjna)",
-                "Kamień naturalny/sztuczny"
-            ]
+            t('exterior_cladding'),
+            options=exterior_cladding_options
         )
 
         # Additional Openings
+        additional_openings_options = [
+            t('additional_openings.none'),
+            t('additional_openings.single_door'),
+            t('additional_openings.double_door'),
+            t('additional_openings.sliding_door'),
+            t('additional_openings.sectional_gate'),
+            t('additional_openings.roller_gate'),
+            t('additional_openings.additional_windows'),
+            t('additional_openings.technical_openings'),
+            t('additional_openings.loading_ramp')
+        ]
         additional_openings = st.selectbox(
-            "Dodatkowe Otwory i Modyfikacje",
-            options=[
-                "Bez dodatkowych otworów (standardowe drzwi)",
-                "Drzwi dodatkowe pojedyncze (80-90cm)",
-                "Drzwi dwuskrzydłowe (160-180cm)",
-                "Drzwi przesuwne (do 300cm)",
-                "Bramy segmentowe (240-360cm)",
-                "Bramy rolowane (do 400cm)",
-                "Okna dodatkowe (różne wymiary)",
-                "Otwory techniczne (wentylacja, kable)",
-                "Rampa załadunkowa (hydrauliczna, mechaniczna)"
-            ]
+            t('additional_openings'),
+            options=additional_openings_options
         )
 
     with col2:
         # Fire Safety Systems
+        fire_systems_options = [
+            t('fire_systems.none'),
+            t('fire_systems.basic'),
+            t('fire_systems.extended'),
+            t('fire_systems.automatic'),
+            t('fire_systems.specialized'),
+            t('fire_systems.industrial'),
+            t('fire_systems.certified')
+        ]
         fire_systems = st.selectbox(
-            "Systemy Przeciwpożarowe",
-            options=[
-                "Bez systemów przeciwpożarowych",
-                "Podstawowe (gaśnica 6kg, czujka dymu)",
-                "Rozszerzone (gaśnice CO2, czujki temp.)",
-                "Automatyczne (tryskacze, centrala pożarowa)",
-                "Specjalistyczne (FM200, inergen, pianowe)",
-                "Przemysłowe (deluge, monitor, oddymianie)",
-                "Certyfikowane (zgodne z normami krajowymi)"
-            ]
+            t('fire_systems'),
+            options=fire_systems_options
         )
 
         # Accessibility

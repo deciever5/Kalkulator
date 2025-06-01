@@ -637,6 +637,10 @@
   "system_requirements_description": "Opisz dodatkowe wymagania dotyczące systemów...",
   "system_requirements_placeholder": "np. Specjalne wymagania dla wentylacji, dodatkowe gniazdka, specjalistyczne instalacje",
   "interior_layout": "Układ Wewnętrzny",
+  "security_systems": "Zabezpieczenia i Systemy Alarmowe",
+  "exterior_cladding": "Okładzina Zewnętrzna",
+  "additional_openings": "Dodatkowe Otwory i Modyfikacje",
+  "fire_systems": "Systemy Przeciwpożarowe",
   "container_types": {
     "10ft_compact": "10ft Kompaktowy (3m x 2.4m)",
     "20ft_standard": "20ft Standardowy (6m x 2.4m)",
@@ -751,6 +755,33 @@
     "vrv_vrf": "System VRV/VRF (wielojednostkowy, sterowanie strefowe)",
     "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)",
     "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)"
+  },
+  "interior_layout": {
+    "open_space": "Przestrzeń otwarta (bez podziałów)",
+    "partitioned": "Z przegrodami (1-3 pomieszczenia)",
+    "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
+    "custom_design": "Układ niestandardowy (projekt custom)",
+    "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
+  },
+  "security_systems": {
+    "none": "Bez dodatkowych zabezpieczeń (zamki standardowe)",
+    "basic": "Podstawowe (wzmocnione zamki, kraty okienne)",
+    "standard": "Standardowe (alarm, czujniki, syrena)",
+    "extended": "Rozszerzone (monitoring, czujniki ruchu/wibracji)",
+    "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
+    "maximum": "Maksymalne (sejf, biometria, central monitoring)",
+    "industrial": "Przemysłowe (ATEX, systemy gazowe, panic room)"
+  },
+  "exterior_cladding": {
+    "none": "Bez okładziny (blacha kontenerowa standardowa)",
+    "trapezoidal_sheet": "Blacha trapezoidalna (T18, T35, T55)",
+    "cassette_sheet": "Blacha kasetowa (płaska, przetłaczana)",
+    "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
+    "structural_plaster": "Tynk strukturalny (silikonowy, akrylowy)",
+    "wood_cladding": "Okładzina drewniana (termo, egzotyczna)",
+    "composite_panels": "Płyty kompozytowe (HPL, dibond)",
+    "clinker_brick": "Cegła klinkierowa (lica, elewacyjna)",
+    "stone": "Kamień naturalny/sztuczny"
   },
   "environments": {
     "indoor": "Wewnętrzne",
