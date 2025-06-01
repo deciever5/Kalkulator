@@ -902,6 +902,37 @@
   "additional_openings": "Dodatkowe Otwory",
   "home": "Strona Główna",
   "back_to_home": "Powrót do Strony Głównej",
+  "fire_systems": {
+    "none": "Bez systemów przeciwpożarowych",
+    "basic": "Podstawowy (gaśnica, czujki dymu)",
+    "extended": "Rozszerzony (hydranty, alarmy)",
+    "automatic": "Automatyczny (tryskacze, CO2)",
+    "specialized": "Specjalistyczny (FM200, argon)",
+    "industrial": "Przemysłowy (pianka, proszek)",
+    "certified": "Certyfikowany (pełna ochrona)"
+  },
+  "flooring": "Podłogi",
+  "window_types": {
+    "standard": "Standardowe",
+    "panoramic": "Panoramiczne",
+    "sliding": "Przesuwne",
+    "tilt": "Uchylne",
+    "security": "Antywłamaniowe",
+    "energy_efficient": "Energooszczędne",
+    "skylight": "Świetliki dachowe"
+  },
+  "lighting": {
+    "none": "Bez oświetlenia",
+    "basic_led": "Podstawowe LED",
+    "energy_efficient": "Energooszczędne LED z czujnikami",
+    "exterior": "Oświetlenie zewnętrzne (reflektory)",
+    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "smart": "System inteligentny (oświetlenie sterowane)"
+  },
+  "electrical_system": "System Elektryczny",
+  "plumbing_system": "Instalacja Wodno-Kanalizacyjna",
+  "hvac_system": "System HVAC",
+  "accessibility": "Dostępność",
   "environments": {
     "indoor": "Wewnętrzne",
     "outdoor_standard": "Zewnętrzne Standardowe",

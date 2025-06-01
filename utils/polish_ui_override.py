@@ -12,20 +12,10 @@ def apply_polish_ui_css():
     <style>
     /* Override Streamlit's default English placeholders */
     
-    /* Selectbox placeholder override */
-    div[data-baseweb="select"] div[data-baseweb="input"] input::placeholder {
-        content: "Wybierz opcję" !important;
-    }
-    
-    /* Replace "Choose an option" text */
-    div[data-baseweb="select"] [data-baseweb="input"] > div:first-child::before {
-        content: "Wybierz opcję";
-        color: #a0a0a0;
-    }
-    
-    /* Hide original English placeholder */
-    div[data-baseweb="select"] [data-baseweb="input"] > div:first-child {
-        color: transparent;
+    /* Clean selectbox styling without duplicate placeholders */
+    div[data-baseweb="select"] {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
     }
     
     /* File uploader Polish text */
@@ -79,10 +69,10 @@ def apply_polish_ui_css():
         color: #262730;
     }
     
-    /* Multi-select placeholders */
-    .stMultiSelect div[data-baseweb="select"] div::before {
-        content: "Wybierz opcje";
-        color: #a0a0a0;
+    /* Multi-select styling */
+    .stMultiSelect div[data-baseweb="select"] {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
     }
     
     /* Button styling for consistency */
