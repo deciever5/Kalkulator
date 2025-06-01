@@ -523,7 +523,7 @@
     "seismic": "Wzmocnienie sejsmiczne",
     "hurricane": "Wzmocnienie na huragany"
   },
-  "help": {
+  "help":{
     "windows": "Okna dwuszybowe z mostkami termicznymi. Więcej okien zwiększa naturalne oświetlenie, ale wpływa na izolację.",
     "additional_doors": "Dodatkowe drzwi personalne lub ewakuacyjne poza standardowymi drzwiami kontenera.",
     "air_intakes": "Systemy wentylacyjne do cyrkulacji powietrza. Klasa morska zalecana dla obszarów nadmorskich.",
@@ -755,5 +755,20 @@
     "security": "Antywłamaniowe",
     "energy_efficient": "Energooszczędne",
     "skylight": "Świetliki dachowe"
+  },
+  "materials": {
+    "steel_standard": "Stal (konstrukcja standardowa)",
+    "aluminum_light": "Aluminium (konstrukcja lekka)",
+    "composite_specialist": "Materiał kompozytowy (specjalistyczny)"
+  },
+  "purposes": {
+    "office_space": "Przestrzeń Biurowa",
+    "sanitary_containers": "Kontenery Sanitarne",
+    "residential_containers": "Kontenery Mieszkalne",
+    "commercial_containers": "Kontenery Komercyjne",
+    "storage_containers": "Kontenery Magazynowe",
+    "technical_containers": "Kontenery Techniczne",
+    "changing_rooms": "Szatnie",
+    "guard_booths": "Budki Strażnicze"
   }
 }
