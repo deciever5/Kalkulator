@@ -530,45 +530,48 @@ with st.form("container_configuration_form"):
     col1, col2, col3 = st.columns(3)
 
     with col1:
+        delivery_zone_options = [
+            t('delivery_zone.local'),
+            t('delivery_zone.regional'),
+            t('delivery_zone.national'),
+            t('delivery_zone.international_eu'),
+            t('delivery_zone.intercontinental'),
+            t('delivery_zone.customer_pickup')
+        ]
         delivery_zone = st.selectbox(
-            "Strefa Dostawy",
-            options=[
-                "Lokalny (do 50km od producenta)",
-                "Regionalny (50-200km)",
-                "Krajowy (200-800km)",
-                "Międzynarodowy EU (Europa)",
-                "Intercontinental (transport morski/lotniczy)",
-                "Transport własny klienta (odbiór z fabryki)"
-            ],
+            t('delivery_zone'),
+            options=delivery_zone_options,
             index=1
         )
 
     with col2:
+        transport_type_options = [
+            t('transport_type.standard'),
+            t('transport_type.low_loader'),
+            t('transport_type.container'),
+            t('transport_type.rail'),
+            t('transport_type.maritime'),
+            t('transport_type.air'),
+            t('transport_type.multimodal')
+        ]
         transport_type = st.selectbox(
-            "Rodzaj Transportu",
-            options=[
-                "Transport standardowy (naczep 13.6m)",
-                "Transport niskopodwoziowy (gabaryty specjalne)",
-                "Transport kontenerowy (40ft HC, morski)",
-                "Transport kolejowy (wagon platform)",
-                "Transport morski (kontenerowiec)",
-                "Transport lotniczy (cargo, części)",
-                "Transport multimodalny (kombinowany)"
-            ]
+            t('transport_type'),
+            options=transport_type_options
         )
 
     with col3:
+        installation_options = [
+            t('installation.none'),
+            t('installation.delivery_positioning'),
+            t('installation.basic'),
+            t('installation.standard'),
+            t('installation.comprehensive'),
+            t('installation.modular'),
+            t('installation.full_service')
+        ]
         installation = st.selectbox(
-            "Montaż i Instalacja",
-            options=[
-                "Bez montażu (tylko transport i rozładunek)",
-                "Dostawa + pozycjonowanie (dźwig/wózek)",
-                "Montaż podstawowy (ustawienie, poziomowanie)",
-                "Montaż standardowy (podłączenia, testy)",
-                "Montaż kompleksowy (pod klucz, odbiory)",
-                "Instalacja modułowa (łączenie kontenerów)",
-                "Serwis pełny (konserwacja, części)"
-            ],
+            t('installation'),
+            options=installation_options,
             index=3
         )
 

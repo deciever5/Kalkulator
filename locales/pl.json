@@ -646,6 +646,9 @@
   "special_comments_modifications": "Uwagi Specjalne - Modyfikacje",
   "modification_requirements_description": "Opisz dodatkowe wymagania dotyczące modyfikacji...",
   "modification_requirements_placeholder": "np. Specjalne kolory RAL, nietypowe rozmiary otworów, dodatkowe wzmocnienia konstrukcyjne",
+  "delivery_zone": "Strefa Dostawy",
+  "transport_type": "Rodzaj Transportu",
+  "installation": "Montaż i Instalacja",
   "container_types": {
     "10ft_compact": "10ft Kompaktowy (3m x 2.4m)",
     "20ft_standard": "20ft Standardowy (6m x 2.4m)",
@@ -816,6 +819,42 @@
     "emergency_lighting": "Oświetlenie awaryjne (LED, akumulatorowe)",
     "warning_systems": "Systemy ostrzegawcze (dla niedosłyszących)",
     "work_ergonomics": "Ergonomia pracy (wysokość blatów, oświetlenie)"
+  },
+  "paint_finish": {
+    "none": "Bez malowania (blacha surowa, cynkowana)",
+    "primer": "Primer antykorozyjny (zabezpieczenie podstawowe)",
+    "standard_c2": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
+    "improved_c3": "Powłoka ulepszona C3 (kolory RAL, satynowa)",
+    "premium_c4": "Powłoka premium C4 (kolory specjalne, metalic)",
+    "anticorrosive_c5m": "Powłoka antykorozyjna C5-M (środowiska agresywne)",
+    "textured": "Wykończenie teksturowane (struktura, efekty)",
+    "graffiti_protection": "Graffiti protection (powłoki antywandalizm)"
+  },
+  "delivery_zone": {
+    "local": "Lokalny (do 50km od producenta)",
+    "regional": "Regionalny (50-200km)",
+    "national": "Krajowy (200-800km)",
+    "international_eu": "Międzynarodowy EU (Europa)",
+    "intercontinental": "Intercontinental (transport morski/lotniczy)",
+    "customer_pickup": "Transport własny klienta (odbiór z fabryki)"
+  },
+  "transport_type": {
+    "standard": "Transport standardowy (naczep 13.6m)",
+    "low_loader": "Transport niskopodwoziowy (gabaryty specjalne)",
+    "container": "Transport kontenerowy (40ft HC, morski)",
+    "rail": "Transport kolejowy (wagon platform)",
+    "maritime": "Transport morski (kontenerowiec)",
+    "air": "Transport lotniczy (cargo, części)",
+    "multimodal": "Transport multimodalny (kombinowany)"
+  },
+  "installation": {
+    "none": "Bez montażu (tylko transport i rozładunek)",
+    "delivery_positioning": "Dostawa + pozycjonowanie (dźwig/wózek)",
+    "basic": "Montaż podstawowy (ustawienie, poziomowanie)",
+    "standard": "Montaż standardowy (podłączenia, testy)",
+    "comprehensive": "Montaż kompleksowy (pod klucz, odbiory)",
+    "modular": "Instalacja modułowa (łączenie kontenerów)",
+    "full_service": "Serwis pełny (konserwacja, części)"
   },
   "environments": {
     "indoor": "Wewnętrzne",
