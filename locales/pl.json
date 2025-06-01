@@ -632,5 +632,67 @@
   "system_requirements_placeholder": "Np. specjalne wymagania elektryczne, automatyka...",
   "special_comments_modifications": "Komentarze dotyczące modyfikacji",
   "modification_requirements_description": "Opisz dodatkowe modyfikacje",
-  "modification_requirements_placeholder": "Np. specjalne otwory, konstrukcje stalowe..."
+  "modification_requirements_placeholder": "Np. specjalne otwory, konstrukcje stalowe...",
+  "fire_systems": {
+    "none": "Bez systemów przeciwpożarowych",
+    "basic": "Podstawowy (gaśnica, czujki dymu)",
+    "extended": "Rozszerzony (hydranty, alarmy)",
+    "automatic": "Automatyczny (tryskacze, CO2)",
+    "specialized": "Specjalistyczny (FM200, argon)",
+    "industrial": "Przemysłowy (pianka, proszek)",
+    "certified": "Certyfikowany (pełna ochrona)"
+  },
+  "accessibility": {
+    "standard": "Standardowa (bez specjalnych udogodnień)",
+    "ramp": "Podjazd dla niepełnosprawnych",
+    "elevator": "Winda/podnośnik",
+    "automatic_doors": "Automatyczne drzwi",
+    "emergency_lighting": "Oświetlenie awaryjne",
+    "warning_systems": "Systemy ostrzegawcze",
+    "work_ergonomics": "Ergonomia pracy"
+  },
+  "paint_finish": {
+    "none": "Bez malowania (stal surowa)",
+    "primer": "Podkład antykorozyjny",
+    "standard_c2": "Standardowy C2 (wewnętrzny)",
+    "improved_c3": "Poprawiony C3 (zewnętrzny)",
+    "premium_c4": "Premium C4 (przemysłowy)",
+    "anticorrosive_c5m": "Antykorozyjny C5M (morski)",
+    "textured": "Teksturowany (anti-slip)",
+    "graffiti_protection": "Ochrona antygraffiti"
+  },
+  "delivery_zone": {
+    "local": "Lokalny (do 50km)",
+    "regional": "Regionalny (50-200km)",
+    "national": "Krajowy (cała Polska)",
+    "international_eu": "Międzynarodowy UE",
+    "intercontinental": "Międzykontynentalny",
+    "customer_pickup": "Odbiór własny"
+  },
+  "installation": {
+    "none": "Bez instalacji (tylko dostawa)",
+    "delivery_positioning": "Dostawa i ustawienie",
+    "basic": "Podstawowa (podłączenia)",
+    "standard": "Standardowa (montaż, testy)",
+    "comprehensive": "Kompleksowa (pełny serwis)",
+    "modular": "Modułowa (etapami)",
+    "full_service": "Pełna obsługa (pod klucz)"
+  },
+  "office_equipment": {
+    "none": "Bez wyposażenia (pusty kontener)",
+    "basic": "Podstawowe (biurko, krzesło)",
+    "standard": "Standardowe (kompletne stanowisko)",
+    "office": "Biurowe (profesjonalne)",
+    "comfort": "Komfortowe (ergonomiczne)",
+    "premium": "Premium (luksusowe)",
+    "specialized": "Specjalistyczne (dedykowane)"
+  },
+  "appliances": {
+    "none": "Bez sprzętu AGD",
+    "basic": "Podstawowy (lodówka, mikrofala)",
+    "standard": "Standardowy (kuchnia kompletna)",
+    "comfort": "Komfortowy (premium AGD)",
+    "premium": "Premium (wysokiej klasy)",
+    "smart": "Inteligentny (smart home)"
+  }
 }
