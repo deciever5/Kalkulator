@@ -898,7 +898,6 @@
   "safety_systems": "Systemy Bezpieczeństwa",
   "security_systems": "Systemy Zabezpieczeń",
   "exterior_cladding": "Okładzina Zewnętrzna",
-  "paint_finish": "Wykończenie Malarskie",
   "additional_openings": "Dodatkowe Otwory",
   "home": "Strona Główna",
   "back_to_home": "Powrót do Strony Głównej",
@@ -952,6 +951,54 @@
   "delivery_zone": "Strefa Dostawy",
   "type_of_transport": "Typ Transportu",
   "installation": "Instalacja",
+  "flooring": "Podłogi",
+  "window_types": "Typy Okien", 
+  "lighting": "Oświetlenie",
+  "construction_material": "Materiał Konstrukcyjny",
+  "fire_systems": "Systemy Przeciwpożarowe",
+  "paint_finish": "Wykończenie Malarskie",
+  "delivery_zone": {
+    "local": "Lokalny (do 50km)",
+    "regional": "Regionalny (50-200km)", 
+    "national": "Krajowy (cała Polska)",
+    "international_eu": "Międzynarodowy UE",
+    "intercontinental": "Międzykontynentalny",
+    "customer_pickup": "Odbiór własny"
+  },
+  "installation": {
+    "none": "Bez instalacji (tylko dostawa)",
+    "delivery_positioning": "Dostawa i ustawienie",
+    "basic": "Podstawowa (podłączenia)",
+    "standard": "Standardowa (montaż, testy)",
+    "comprehensive": "Kompleksowa (pełny serwis)",
+    "modular": "Modułowa (etapami)",
+    "full_service": "Pełna obsługa (pod klucz)"
+  },
+  "office_equipment": {
+    "none": "Bez wyposażenia (pusty kontener)",
+    "basic": "Podstawowe (biurko, krzesło)",
+    "standard": "Standardowe (kompletne stanowisko)",
+    "office": "Biurowe (profesjonalne)",
+    "comfort": "Komfortowe (ergonomiczne)",
+    "premium": "Premium (luksusowe)",
+    "specialized": "Specjalistyczne (dedykowane)"
+  },
+  "appliances": {
+    "none": "Bez sprzętu AGD",
+    "basic": "Podstawowy (lodówka, mikrofala)",
+    "standard": "Standardowy (kuchnia kompletna)",
+    "comfort": "Komfortowy (premium AGD)",
+    "premium": "Premium (wysokiej klasy)",
+    "smart": "Inteligentny (smart home)"
+  },
+  "it_systems": {
+    "none": "Bez systemów IT",
+    "basic": "Podstawowy (internet, Wi-Fi)",
+    "standard": "Standardowy (sieć, serwer)",
+    "advanced": "Zaawansowany (infrastruktura IT)",
+    "professional": "Profesjonalny (data center)",
+    "smart": "Inteligentny (IoT, automatyka)"
+  },
   "environments": {
     "indoor": "Wewnętrzne",
     "outdoor_standard": "Zewnętrzne Standardowe",
