@@ -470,8 +470,8 @@
   "hvac": {
     "none": "Bez HVAC",
     "basic": "Wentylacja podstawowa",
-    "split_system": "Klimatyzacja split",
-    "central": "Centralna klimatyzacja",
+    "split_system": "System klimatyzacji rozdzielnej",
+    "central": "Centralna klimatyzacja", 
     "heat_pump": "Pompa ciepła"
   },
   "security": {
@@ -514,7 +514,7 @@
   "insulation": {
     "basic": "Podstawowa (50mm)",
     "standard": "Standardowa (100mm)",
-    "premium": "Premium (150mm)",
+    "premium": "Izolacja Premium (150mm)",
     "extreme": "Ekstremalna (200mm)"
   },
   "reinforcement": {
@@ -545,7 +545,7 @@
   "delivery_zone_local": "Lokalna (50km)",
   "security_systems_advanced": "Zaawansowane",
   "fire_systems_full": "Pełny System",
-  "paint_finish_premium": "Premium",
+  "paint_finish_premium": "Wykończenie Premium",
   "construction_material_steel": "Stal",
   "security_systems_none": "Brak",
   "fire_systems_basic": "Podstawowy",
@@ -727,8 +727,8 @@
     "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
     "heat_pump": "Pompa ciepła (typu split, wydajność 2-12kW)",
     "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja typu split (chłodzenie + grzanie)",
-    "vrv_vrf": "System VRV/VRF (multi-split, sterowanie strefowe)",
+    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
+    "vrv_vrf": "System VRV/VRF (wielojednostkowy, sterowanie strefowe)",
     "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)",
     "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)"
   }
