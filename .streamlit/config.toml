@@ -18,4 +18,3 @@ gatherUsageStats = false
 
 [ui]
 hideTopBar = false
-hideSidebarNav = false
