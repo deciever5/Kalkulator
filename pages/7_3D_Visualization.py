@@ -51,13 +51,13 @@ with col2:
 st.markdown("---")
 
 # Main content
-st.markdown("## 🎛️ Interactive 3D Container Designer")
+st.markdown(f"## 🎛️ {get_translation('interactive_3d_designer', st.session_state.language)}")
 
 # Configuration section
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.markdown("### ⚙️ Configuration")
+    st.markdown(f"### ⚙️ {get_translation('configuration', st.session_state.language)}")
 
     # Container type selection
     container_types = ['20ft Standard', '40ft Standard', '40ft High Cube', '20ft Refrigerated']

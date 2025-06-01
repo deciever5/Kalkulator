@@ -649,6 +649,23 @@
   "delivery_zone": "Strefa Dostawy",
   "transport_type": "Rodzaj Transportu",
   "installation": "Montaż i Instalacja",
+  "interactive_3d_designer": "Interaktywny Projektant Kontenerów 3D",
+  "configuration": "Konfiguracja",
+  "modifications": "Modyfikacje",
+  "number_of_windows": "Liczba Okien",
+  "additional_doors": "Dodatkowe Drzwi",
+  "systems_installation": "Instalacja Systemów",
+  "electrical_system": "System Elektryczny",
+  "plumbing_system": "System Hydrauliczny",
+  "hvac_system": "System HVAC",
+  "insulation_package": "Pakiet Izolacji",
+  "structural_reinforcement": "Wzmocnienie Konstrukcyjne",
+  "3d_model_preview": "Podgląd Modelu 3D",
+  "visualization_controls": "Sterowanie Wizualizacją",
+  "view_options": "Opcje Widoku",
+  "office_equipment": "Wyposażenie Biurowe/Wnętrzarskie",
+  "appliances": "Sprzęt AGD (dla kontenerów mieszkalnych)",
+  "it_systems": "Systemy IT i Multimedia",
   "container_types": {
     "10ft_compact": "10ft Kompaktowy (3m x 2.4m)",
     "20ft_standard": "20ft Standardowy (6m x 2.4m)",
@@ -855,6 +872,23 @@
     "comprehensive": "Montaż kompleksowy (pod klucz, odbiory)",
     "modular": "Instalacja modułowa (łączenie kontenerów)",
     "full_service": "Serwis pełny (konserwacja, części)"
+  },
+  "office_equipment": {
+    "none": "Bez wyposażenia (pusty kontener)",
+    "basic": "Meble podstawowe (biurko, 2 krzesła)",
+    "standard": "Meble standardowe (+ szafy, półki, stolik)",
+    "office": "Wyposażenie biurowe (+ komputer, drukarka)",
+    "comfort": "Wyposażenie komfortowe (+ lodówka, ekspres)",
+    "premium": "Wyposażenie premium (designerskie, smart)",
+    "specialized": "Wyposażenie specjalistyczne (medical/lab)"
+  },
+  "appliances": {
+    "none": "Bez sprzętu AGD",
+    "basic": "Podstawowy (lodówka, kuchenka 2-palnikowa)",
+    "standard": "Standardowy (+ pralka, mikrofala, czajnik)",
+    "comfort": "Komfortowy (+ zmywarka, piekarnik, wyciąg)",
+    "premium": "Premium (sprzęt w zabudowie, indukcja)",
+    "smart": "Smart AGD (WiFi, aplikacje, programowanie)"
   },
   "environments": {
     "indoor": "Wewnętrzne",

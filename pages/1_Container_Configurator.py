@@ -585,30 +585,32 @@ with st.form("container_configuration_form"):
     col1, col2, col3 = st.columns(3)
 
     with col1:
+        office_equipment_options = [
+            t('office_equipment.none'),
+            t('office_equipment.basic'),
+            t('office_equipment.standard'),
+            t('office_equipment.office'),
+            t('office_equipment.comfort'),
+            t('office_equipment.premium'),
+            t('office_equipment.specialized')
+        ]
         office_equipment = st.selectbox(
-            "Wyposażenie Biurowe/Wnętrzarskie",
-            options=[
-                "Bez wyposażenia (pusty kontener)",
-                "Meble podstawowe (biurko, 2 krzesła)",
-                "Meble standardowe (+ szafy, półki, stolik)",
-                "Wyposażenie biurowe (+ komputer, drukarka)",
-                "Wyposażenie komfortowe (+ lodówka, ekspres)",
-                "Wyposażenie premium (designerskie, smart)",
-                "Wyposażenie specjalistyczne (medical/lab)"
-            ]
+            t('office_equipment'),
+            options=office_equipment_options
         )
 
     with col2:
+        appliances_options = [
+            t('appliances.none'),
+            t('appliances.basic'),
+            t('appliances.standard'),
+            t('appliances.comfort'),
+            t('appliances.premium'),
+            t('appliances.smart')
+        ]
         appliances = st.selectbox(
-            "Sprzęt AGD (dla kontenerów mieszkalnych)",
-            options=[
-                "Bez sprzętu AGD",
-                "Podstawowy (lodówka, kuchenka 2-palnikowa)",
-                "Standardowy (+ pralka, mikrofala, czajnik)",
-                "Komfortowy (+ zmywarka, piekarnik, wyciąg)",
-                "Premium (sprzęt w zabudowie, indukcja)",
-                "Smart AGD (WiFi, aplikacje, programowanie)"
-            ]
+            t('appliances'),
+            options=appliances_options
         )
 
     with col3:
