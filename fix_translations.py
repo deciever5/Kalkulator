@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 Translation Repair Script
@@ -14,12 +13,12 @@ from utils.translation_quality_analyzer import TranslationQualityAnalyzer
 
 class TranslationRepairer:
     """Repairs translation issues automatically"""
-    
+
     def __init__(self):
         self.ai_service = AITranslationService()
         self.analyzer = TranslationQualityAnalyzer()
         self.locales_dir = "locales"
-        
+
     def load_json_file(self, filepath: str) -> Dict:
         """Load a JSON file"""
         try:
@@ -65,13 +64,13 @@ class TranslationRepairer:
     def repair_language_translations(self, language: str) -> bool:
         """Repair translations for a specific language"""
         print(f"🔧 Repairing {language.upper()} translations...")
-        
+
         # Load base English translations
         en_data = self.load_json_file(os.path.join(self.locales_dir, "en.json"))
         if not en_data:
             print(f"❌ Could not load English base translations")
             return False
-            
+
         # Load target language
         lang_file = os.path.join(self.locales_dir, f"{language}.json")
         lang_data = self.load_json_file(lang_file)
@@ -81,7 +80,7 @@ class TranslationRepairer:
 
         # Get flat key-value pairs
         en_translations = self.analyzer.get_all_keys_flat(en_data)
-        
+
         # Analyze current quality
         analysis = self.analyzer.analyze_language_quality(language, en_translations)
         if "error" in analysis:
@@ -89,7 +88,7 @@ class TranslationRepairer:
             return False
 
         repairs_made = 0
-        
+
         # Fix missing translations
         if analysis['missing']:
             print(f"   📝 Fixing {len(analysis['missing'])} missing translations...")
@@ -130,10 +129,10 @@ class TranslationRepairer:
         if analysis['suspicious']:
             print(f"   ⚠️  Reviewing {len(analysis['suspicious'])} suspicious translations...")
             for key, suspicious_value in analysis['suspicious']:
-                en_value = en_translations.get(key)
-                if en_value and self._should_translate(en_value):
-                    translated = self.ai_service._translate_text(en_value, language)
-                    if translated and translated != en_value and translated != suspicious_value:
+                base_value = en_translations.get(key)
+                if base_value and self._should_translate(base_value):
+                    translated = self.ai_service._translate_text(base_value, language)
+                    if translated and translated != base_value and translated != suspicious_value:
                         self.set_nested_value(lang_data, key, translated)
                         repairs_made += 1
                         time.sleep(0.1)
@@ -154,34 +153,34 @@ class TranslationRepairer:
         """Check if text should be translated (not a brand name or technical term)"""
         if not text:
             return False
-            
+
         # Don't translate these terms
         keep_unchanged = [
             'KAN-BUD', 'OpenAI', 'GPT', 'API', 'PDF', 'DWG', 'HVAC', 'ADA', 
             'GDPR', 'ISO', 'EN', 'DIN', 'C2', 'C3', 'mm', 'cm', 'm', 'kg',
             'EUR', 'PLN', 'USD', 'HTML', 'CSS', 'JavaScript', 'Python'
         ]
-        
+
         text_upper = text.upper()
         for term in keep_unchanged:
             if term.upper() in text_upper:
                 return False
-                
+
         # Don't translate very short text that might be codes
         if len(text) <= 3:
             return False
-            
+
         return True
 
     def repair_all_languages(self) -> None:
         """Repair translations for all languages"""
         print("🔧 Starting comprehensive translation repair...\n")
-        
+
         # Get languages that need repair based on quality analysis
         target_languages = ['cs', 'de', 'es', 'fi', 'fr', 'hu', 'it', 'nl', 'pl', 'sk', 'sv', 'uk']
-        
+
         success_count = 0
-        
+
         for language in target_languages:
             try:
                 if self.repair_language_translations(language):
@@ -189,7 +188,7 @@ class TranslationRepairer:
                 print()  # Add spacing between languages
             except Exception as e:
                 print(f"❌ Error repairing {language}: {e}\n")
-        
+
         print(f"🎉 Translation repair complete!")
         print(f"✅ Successfully repaired {success_count}/{len(target_languages)} languages")
         print("\n📋 Next steps:")
