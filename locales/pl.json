@@ -666,6 +666,11 @@
   "office_equipment": "Wyposażenie Biurowe/Wnętrzarskie",
   "appliances": "Sprzęt AGD (dla kontenerów mieszkalnych)",
   "it_systems": "Systemy IT i Multimedia",
+  "generating_ai_estimate": "Generowanie oszacowania AI",
+  "ai_analyzing_requirements": "AI analizuje Twoje wymagania...",
+  "ai_calculating_costs": "Obliczanie kosztów materiałów...",
+  "ai_optimizing_design": "Optymalizacja projektu...",
+  "ai_finalizing_estimate": "Finalizowanie oszacowania...",
   "container_types": {
     "10ft_compact": "10ft Kompaktowy (3m x 2.4m)",
     "20ft_standard": "20ft Standardowy (6m x 2.4m)",

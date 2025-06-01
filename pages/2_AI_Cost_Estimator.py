@@ -25,16 +25,42 @@ render_shared_header(show_login=False, current_page="AI_Cost_Estimator")
 def generate_cost_estimate(config, ai_model):
     """Generate AI-powered cost estimate with animated loading"""
     from utils.ai_services import estimate_cost_with_ai
-    from utils.animations import show_calculation_animation, create_animated_counter
-
-    # Show animated calculation process
-    calculation_container = st.container()
-    with calculation_container:
-        show_calculation_animation(config)
+    from utils.container_loading_spinner import ContainerLoadingSpinner
+    
+    # Initialize container-themed loading spinner
+    loader = ContainerLoadingSpinner()
+    
+    # Show container-themed loading animation during AI processing
+    with st.container():
+        st.markdown(f"### 🤖 {t('generating_ai_estimate')}")
+        
+        # Show progress animation while AI processes
+        loader.show_interactive_progress(
+            total_steps=5,
+            current_step=1, 
+            message=t('ai_analyzing_requirements')
+        )
+        
+        # Brief pause for animation effect
+        import time
+        time.sleep(1)
 
     try:
+        # Show progressive loading steps
+        loader.show_interactive_progress(2, 1, t('ai_calculating_costs'))
+        time.sleep(0.5)
+        
+        loader.show_interactive_progress(3, 2, t('ai_optimizing_design'))
+        time.sleep(0.5)
+        
         # Call the actual AI service with the configuration
         ai_estimate = estimate_cost_with_ai(config, ai_model)
+        
+        # Show completion
+        loader.show_interactive_progress(5, 5, t('ai_finalizing_estimate'))
+        time.sleep(0.3)
+        loader.success_animation("Oszacowanie AI zostało wygenerowane!")
+        
         return ai_estimate
     except Exception as e:
         # Fallback to configurator pricing when AI fails
