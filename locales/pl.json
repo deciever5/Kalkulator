@@ -694,5 +694,34 @@
     "comfort": "Komfortowy (premium AGD)",
     "premium": "Premium (wysokiej klasy)",
     "smart": "Inteligentny (smart home)"
+  },
+  "interior_layout": {
+    "open_space": "Przestrzeń otwarta (bez podziałów)",
+    "partitioned": "Podzielona (ściany działowe)",
+    "built_in_furniture": "Wbudowane meble",
+    "custom_design": "Projekt niestandardowy",
+    "mezzanine": "Antresola (podwójna wysokość)"
+  },
+  "exterior_cladding": {
+    "none": "Bez okładziny (blacha kontenerowa standardowa)",
+    "trapezoidal_sheet": "Blacha trapezowa",
+    "cassette_sheet": "Blacha kasetowa",
+    "vinyl_siding": "Siding winylowy",
+    "structural_plaster": "Tynk strukturalny",
+    "wood_cladding": "Okładzina drewniana",
+    "composite_panels": "Panele kompozytowe",
+    "clinker_brick": "Cegła klinkierowa",
+    "stone": "Kamień naturalny"
+  },
+  "additional_openings": {
+    "none": "Bez dodatkowych otworów (standardowe drzwi)",
+    "single_door": "Pojedyncze drzwi (890x2100mm)",
+    "double_door": "Podwójne drzwi (1800x2100mm)",
+    "sliding_door": "Drzwi przesuwne",
+    "sectional_gate": "Brama segmentowa",
+    "roller_gate": "Brama rolowana",
+    "additional_windows": "Dodatkowe okna",
+    "technical_openings": "Otwory techniczne",
+    "loading_ramp": "Rampa załadunkowa"
   }
 }
