@@ -1,11 +1,12 @@
 ================================================================================
 🇵🇱 POLISH PAGE LANGUAGE VERIFICATION REPORT
 ================================================================================
-📅 Checked at: 2025-06-01 23:22:19
+📅 Checked at: 2025-06-01 23:24:32
 🌐 URL: http://0.0.0.0:5000/Container_Configurator?language=pl
 
 📊 SUMMARY STATISTICS
 ----------------------------------------
+Total content length: 56 characters
 Total words analyzed: 10
 English words found: 0
 Suspicious phrases: 0

@@ -6,8 +6,9 @@
     "total_words_found": 10,
     "english_words_count": 0,
     "suspicious_phrases_count": 0,
-    "sections_with_issues": 0
+    "sections_with_issues": 0,
+    "total_content_length": 56
   },
-  "timestamp": "2025-06-01 23:22:19",
+  "timestamp": "2025-06-01 23:24:32",
   "url": "http://0.0.0.0:5000/Container_Configurator?language=pl"
 }
