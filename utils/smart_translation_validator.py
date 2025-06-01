@@ -68,28 +68,28 @@ class SmartTranslationValidator:
         text_upper = text.upper()
         text_clean = text.strip()
 
-        # Check universal terms
+        # Check universal terms (exact matches only)
         for term in self.universal_terms:
-            if term.upper() in text_upper:
+            if text_clean == term or text_upper == term.upper():
                 return True
 
-        # Check units
+        # Check units (exact matches or with numbers)
         for unit in self.units:
-            if unit in text_clean:
+            if text_clean == unit or re.match(f'^\\d+\\s*{re.escape(unit)}$', text_clean):
                 return True
 
-        # Check technical terms
+        # Check technical terms (exact matches only)
         for category, terms in self.technical_terms.items():
             for term in terms:
-                if term in text_upper:
+                if text_clean == term or text_upper == term.upper():
                     return True
 
-        # Check if it's a number with units
-        if re.match(r'^\d+\s*(mm|cm|m|kg|EUR|PLN|USD)$', text_clean):
+        # Check if it's a model number or code (more specific pattern)
+        if re.match(r'^[A-Z]{2,4}[0-9]{2,4}[A-Z]?$', text_clean):
             return True
 
-        # Check if it's a model number or code
-        if re.match(r'^[A-Z0-9-]+$', text_clean) and len(text_clean) <= 10:
+        # Check for standalone brand names or acronyms
+        if len(text_clean.split()) == 1 and text_clean.isupper() and len(text_clean) <= 6:
             return True
 
         return False
@@ -105,25 +105,36 @@ class SmartTranslationValidator:
                 issues.append("Contains placeholder text")
             return len(issues) == 0, issues
 
-        # Check if text should remain unchanged
-        if self.should_remain_unchanged(source_text):
-            if source_text == target_text:
-                return True, []  # Correctly unchanged
-            else:
-                issues.append(f"Technical term unnecessarily translated")
-
-        # Check for placeholder text
+        # Check for placeholder text first
         if target_text.startswith('[AUTO]') or target_text.startswith('[TRANSLATE]'):
             issues.append("Contains placeholder text")
+            return False, issues
 
-        # Check if identical to source when it should be translated
-        if source_text == target_text and not self.should_remain_unchanged(source_text):
-            # Only flag as issue if it's a translatable term
-            if len(source_text.split()) > 1 or source_text.lower() in [
-                'container', 'basic', 'standard', 'premium', 'configuration',
-                'installation', 'delivery', 'office', 'equipment'
-            ]:
-                issues.append("Identical to source (may need translation)")
+        # Check if text should remain unchanged (only for exact technical terms)
+        if self.should_remain_unchanged(source_text):
+            if source_text != target_text:
+                issues.append("Technical term unnecessarily translated")
+            return len(issues) == 0, issues
+
+        # For regular business/UI text, a translation is good if:
+        # 1. It's not identical to source (unless it's meant to be)
+        # 2. It doesn't contain obvious English words inappropriately
+        # 3. It follows target language patterns
+
+        # Only flag identical translations for obvious translatable content
+        if source_text == target_text:
+            # Allow identical for short technical terms, numbers, etc.
+            if (len(source_text) <= 3 or 
+                source_text.isdigit() or 
+                re.match(r'^[A-Z0-9-]+$', source_text) or
+                source_text in ['OK', 'ID', 'GPS', 'USB']):
+                return True, []
+            
+            # Flag if it looks like it should be translated
+            if (len(source_text.split()) > 1 and 
+                any(word.lower() in ['container', 'professional', 'solutions', 'login', 'employee'] 
+                    for word in source_text.split())):
+                issues.append("May need translation")
 
         return len(issues) == 0, issues
 
