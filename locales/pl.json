@@ -893,6 +893,15 @@
     "login_info": "Zaloguj się aby uzyskać dostęp",
     "employee_password": "Hasło pracownika"
   },
+  "interior_layout": "Układ Wewnętrzny",
+  "fire_systems": "Systemy Przeciwpożarowe", 
+  "safety_systems": "Systemy Bezpieczeństwa",
+  "security_systems": "Systemy Zabezpieczeń",
+  "exterior_cladding": "Okładzina Zewnętrzna",
+  "paint_finish": "Wykończenie Malarskie",
+  "additional_openings": "Dodatkowe Otwory",
+  "home": "Strona Główna",
+  "back_to_home": "Powrót do Strony Głównej",
   "environments": {
     "indoor": "Wewnętrzne",
     "outdoor_standard": "Zewnętrzne Standardowe",

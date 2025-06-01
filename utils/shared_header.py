@@ -8,9 +8,28 @@ def render_shared_header(show_login=False, current_page="Home"):
     # Initialize language system
     init_language()
 
-    # Custom CSS to make selectbox show all options without scrolling
+    # Hide sidebar completely on all pages
     st.markdown("""
     <style>
+    /* Hide sidebar completely */
+    [data-testid="stSidebar"] {
+        display: none !important;
+    }
+    [data-testid="stSidebarNav"] {
+        display: none !important;
+    }
+    .css-1d391kg {
+        display: none !important;
+    }
+    .css-1y4p8pa {
+        max-width: 100% !important;
+    }
+    section[data-testid="stSidebar"] {
+        display: none !important;
+    }
+    .st-emotion-cache-1d391kg {
+        display: none !important;
+    }
     /* Force language dropdown to show all 13 options */
     div[data-baseweb="select"] > div[role="listbox"] {
         max-height: 650px !important;
@@ -41,11 +60,16 @@ def render_shared_header(show_login=False, current_page="Home"):
     </style>
     """, unsafe_allow_html=True)
 
-    # Top navigation bar with language selector and optional login (same as main page)
+    # Top navigation bar with home button, language selector and optional login
     if show_login:
-        col_spacer, col_lang, col_login = st.columns([4, 1.5, 0.5])
+        col_home, col_spacer, col_lang, col_login = st.columns([0.8, 3.2, 1.5, 0.5])
     else:
-        col_spacer, col_lang = st.columns([5, 1])
+        col_home, col_spacer, col_lang = st.columns([0.8, 4.2, 1])
+    
+    # Home button
+    with col_home:
+        if st.button(f"🏠 {t('home')}", key="nav_home_btn", use_container_width=True):
+            st.switch_page("app.py")
 
     with col_lang:
         # Language selector in top-right area (matching main page)
