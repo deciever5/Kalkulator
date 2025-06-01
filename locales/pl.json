@@ -901,6 +901,7 @@
   "additional_openings": "Dodatkowe Otwory",
   "home": "Strona Główna",
   "back_to_home": "Powrót do Strony Głównej",
+  "fire_systems": "Systemy Przeciwpożarowe",
   "fire_systems": {
     "none": "Bez systemów przeciwpożarowych",
     "basic": "Podstawowy (gaśnica, czujki dymu)",
@@ -910,6 +911,7 @@
     "industrial": "Przemysłowy (pianka, proszek)",
     "certified": "Certyfikowany (pełna ochrona)"
   },
+  "flooring": "Podłogi",
   "flooring": {
     "none": "Bez podłogi (blacha kontenera)",
     "plywood": "Sklejka (12-18mm, antypoślizgowa)",
@@ -920,6 +922,7 @@
     "epoxy": "Żywica epoksydowa (przemysłowa)",
     "concrete": "Wylewka betonowa (wzmocniona)"
   },
+  "window_types": "Typy Okien",
   "window_types": {
     "standard": "Standardowe",
     "panoramic": "Panoramiczne",
@@ -929,6 +932,7 @@
     "energy_efficient": "Energooszczędne",
     "skylight": "Świetliki dachowe"
   },
+  "lighting": "Oświetlenie",
   "lighting": {
     "none": "Bez oświetlenia",
     "basic_led": "Podstawowe LED",
