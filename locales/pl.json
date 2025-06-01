@@ -138,7 +138,7 @@
       "main_purpose": "Główne Przeznaczenie",
       "environment": "Środowisko",
       "finish_level": "Poziom Wykończenia",
-      "flooring": "Podłogi",
+
       "climate_zone": "Strefa Klimatyczna",
       "number_of_windows": "Liczba Okien",
       "additional_doors": "Dodatkowe Drzwi",
@@ -912,6 +912,16 @@
     "certified": "Certyfikowany (pełna ochrona)"
   },
   "flooring": "Podłogi",
+  "flooring": {
+    "none": "Bez podłogi (blacha kontenera)",
+    "plywood": "Sklejka (12-18mm, antypoślizgowa)",
+    "anti_slip": "Podłoga antypoślizgowa (blacha ryflowana)",
+    "laminate": "Panele laminowane (klasa przemysłowa)",
+    "vinyl": "Podłoga winylowa (PCV, odporna)",
+    "carpet": "Wykładzina dywanowa (biurowa)",
+    "epoxy": "Żywica epoksydowa (przemysłowa)",
+    "concrete": "Wylewka betonowa (wzmocniona)"
+  },
   "window_types": {
     "standard": "Standardowe",
     "panoramic": "Panoramiczne",
@@ -930,9 +940,19 @@
     "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "electrical_system": "System Elektryczny",
-  "plumbing_system": "Instalacja Wodno-Kanalizacyjna",
+  "plumbing_system": "Instalacja Wodno-Kanalizacyjna", 
   "hvac_system": "System HVAC",
   "accessibility": "Dostępność",
+  "interior_layout": "Układ Wewnętrzny",
+  "safety_systems": "Systemy Bezpieczeństwa",
+  "exterior_cladding": "Okładzina Zewnętrzna",
+  "additional_openings": "Dodatkowe Otwory",
+  "office_equipment": "Wyposażenie Biurowe",
+  "appliances": "Sprzęt AGD",
+  "it_systems": "Systemy IT i Multimedia",
+  "delivery_zone": "Strefa Dostawy",
+  "type_of_transport": "Typ Transportu",
+  "installation": "Instalacja",
   "environments": {
     "indoor": "Wewnętrzne",
     "outdoor_standard": "Zewnętrzne Standardowe",
