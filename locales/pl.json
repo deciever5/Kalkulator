@@ -633,6 +633,20 @@
   "electrical_system": "System Elektryczny",
   "plumbing_system": "System Hydrauliczny",
   "hvac_system": "System HVAC (Ogrzewanie/Chłodzenie)",
+  "special_comments_systems": "Uwagi Specjalne - Systemy",
+  "system_requirements_description": "Opisz dodatkowe wymagania dotyczące systemów...",
+  "system_requirements_placeholder": "np. Specjalne wymagania dla wentylacji, dodatkowe gniazdka, specjalistyczne instalacje",
+  "interior_layout": "Układ Wewnętrzny",
+  "container_types": {
+    "10ft_compact": "10ft Kompaktowy (3m x 2.4m)",
+    "20ft_standard": "20ft Standardowy (6m x 2.4m)",
+    "20ft_high_cube": "20ft High Cube (6m x 2.7m)",
+    "40ft_standard": "40ft Standardowy (12m x 2.4m)",
+    "40ft_high_cube": "40ft High Cube (12m x 2.7m)",
+    "multi_unit": "Kontener Wielosekcyjny",
+    "custom_size": "Kontener Niestandardowy",
+    "refurbished": "Kontener Odnowiony"
+  },
   "finish_levels": {
     "basic": "Bez wykończenia (kontener techniczny, szkielet)",
     "shell": "Surowy Stan (izolacja + płyta OSB)",

@@ -122,14 +122,14 @@ with st.form("container_configuration_form"):
     with col1:
         # Container Type
         container_type_options = [
-            "10ft Compact (3m x 2.4m)",
-            "20ft Standard (6m x 2.4m)", 
-            "20ft High Cube (6m x 2.7m)",
-            "40ft Standard (12m x 2.4m)",
-            "40ft High Cube (12m x 2.7m)",
-            "Multi-unit Container",
-            "Custom Size Container",
-            "Refurbished Container"
+            t('container_types.10ft_compact'),
+            t('container_types.20ft_standard'),
+            t('container_types.20ft_high_cube'),
+            t('container_types.40ft_standard'),
+            t('container_types.40ft_high_cube'),
+            t('container_types.multi_unit'),
+            t('container_types.custom_size'),
+            t('container_types.refurbished')
         ]
         container_type = st.selectbox(
             t('container_type'),
@@ -384,10 +384,10 @@ with st.form("container_configuration_form"):
         )
 
     # Special Comments for Systems
-    st.markdown("### Uwagi Specjalne - Systemy")
+    st.markdown(f"### {t('special_comments_systems')}")
     system_comments = st.text_area(
-        "Opisz dodatkowe wymagania dotyczące systemów...",
-        placeholder="np. Specjalne wymagania dla wentylacji, dodatkowe gniazdka, specjalistyczne instalacje",
+        t('system_requirements_description'),
+        placeholder=t('system_requirements_placeholder'),
         key="system_comments"
     )
 
@@ -402,15 +402,16 @@ with st.form("container_configuration_form"):
 
     with col1:
         # Interior Layout
+        interior_layout_options = [
+            t('interior_layout.open_space'),
+            t('interior_layout.partitioned'),
+            t('interior_layout.built_in_furniture'),
+            t('interior_layout.custom_design'),
+            t('interior_layout.mezzanine')
+        ]
         interior_layout = st.selectbox(
-            "Układ Wewnętrzny",
-            options=[
-                "Przestrzeń otwarta (bez podziałów)",
-                "Z przegrodami (1-3 pomieszczenia)",
-                "Meble wbudowane (zabudowa na wymiar)",
-                "Układ niestandardowy (projekt custom)",
-                "Antresola/piętro (zwiększenie powierzchni)"
-            ]
+            t('interior_layout'),
+            options=interior_layout_options
         )
 
         # Security Systems
