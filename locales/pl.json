@@ -901,6 +901,10 @@
   "additional_openings": "Dodatkowe Otwory",
   "home": "Strona Główna",
   "back_to_home": "Powrót do Strony Głównej",
+  "flooring": "Podłogi",
+  "window_types": "Typy Okien",
+  "lighting": "Oświetlenie", 
+  "fire_systems": "Systemy Przeciwpożarowe",
   "fire_systems": {
     "none": "Bez systemów przeciwpożarowych",
     "basic": "Podstawowy (gaśnica, czujki dymu)",
