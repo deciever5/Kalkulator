@@ -135,7 +135,8 @@
     "new_inquiry": "Nieuwe Aanvraag Verzenden",
     "error": "Fout bij het verzenden van aanvraag",
     "why_professional_inquiry": "Waarom een Professionele Aanvraag Indienen?",
-    "preparation_tips": "Tips voor Beste Resultaten"
+    "preparation_tips": "Tips voor Beste Resultaten",
+    "budget_Range": "Budgetomvang"
   },
   "send_inquiry_button": "Aanvraag Verzenden",
   "why_kan_bud": "Waarom KAN-BUD Kiezen?",
@@ -161,9 +162,23 @@
   "purpose": "Doel",
   "environment": "Omgeving",
   "finish_level": "Afwerkingsniveau",
-  "flooring": "Vloerbedekking",
+  "flooring": {
+    "none": "Zonder een vloer (gegolfd vel)",
+    "plywood": "Waterdicht multiplex 18 mm (standaard)",
+    "anti_slip": "21 mm niet -slip multiplex",
+    "laminate": "AC4/AC5 gelamineerde panelen",
+    "vinyl": "Waterdichte vinylpanelen (LVT)",
+    "carpet": "2-4 mm PVC vloerbedekking",
+    "epoxy": "Industriële epoxyvloer",
+    "concrete": "Verhoogde vloer (serverkamers)"
+  },
   "climate_zone": "Klimaatzone",
-  "windows": "Ramen",
+  "windows": {
+    "one": "1 raam",
+    "two": "2 ramen",
+    "three": "3 ramen",
+    "four": "4 ramen"
+  },
   "additional_doors": "Extra Deuren",
   "yes": "Ja",
   "no": "Nee",
@@ -223,10 +238,30 @@
   "save_configuration": "💾 Configuratie Opslaan",
   "configuration_saved": "Configuratie succesvol opgeslagen!",
   "get_ai_analysis": "Krijg AI Analyse",
-  "systems_installations": "Systemen & Installaties",
-  "electrical_system": "Elektrisch Systeem",
-  "plumbing_system": "Leidingsysteem",
-  "hvac_system": "HVAC Systeem",
+  "systems_installations": "Systemen en installaties",
+  "electrical_system": {
+    "none": "Zonder elektrische installatie",
+    "preparation": "Elektrische voorbereiding (alleen duikers)",
+    "basic": "Basis (15a, LED, 4 Sockets)",
+    "industrial": "Industrieel (63a, 3-fase, Switchgear)",
+    "it_server": "IT/Server Room (UPS, Stabilizers, Monitoring)"
+  },
+  "plumbing_system": {
+    "none": "Zonder waterinstallatie",
+    "preparation": "Hydraulische preparaat (alleen duikers)",
+    "cold_water": "Installatie van koud water (gootsteen)",
+    "hot_cold_water": "Koud + warm water (wastafel, gootsteen)",
+    "basic_sanitary": "Basic sanitair knooppunt (wc + gootsteen)",
+    "standard_sanitary": "Standaardknooppunt (wc + gootsteen + douche)",
+    "comfort_sanitary": "Comfortabele knooppunt (wc + gootsteen + cabine)",
+    "premium_sanitary": "Premium Node (Jacuzzi, Bidé, 2 Sinks)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Elektrische kachels (1-3 kW, convectors)",
+    "heat_pump": "Warmtepomp (gesplitst type, 2-12 kW prestaties)",
+    "vrv_vrf": "VRV/VRF -systeem (Multi -Record, Zone Control)",
+    "underfloor_heating": "Ondervloerverwarming (elektrisch/water)"
+  },
   "insulation_package": "Isolatiepakket",
   "structural_reinforcement": "Structurele Versterking",
   "delivery_logistics": "Levering & Logistiek",
@@ -298,7 +333,7 @@
     "finish_levels": {
       "basic": "Basis",
       "standard": "Standaard",
-      "premium": "Premium",
+      "premium": "Premium (hoogste kwaliteit)",
       "luxury": "Luxe"
     },
     "flooring": {
@@ -445,7 +480,15 @@
     "industrial": "Industriële kwaliteit",
     "marine_grade": "Maritieme kwaliteit (zoutbestendig)"
   },
-  "roof_modifications": "Roof Modifications",
+  "roof_modifications": {
+    "none": "Zonder aanpassing (standaard plat dak)",
+    "insulation": "Dakisolatie bovendien (10-20 cm)",
+    "skylight": "Dakslyight (60x60, 90x90, 120x120cm)",
+    "solar": "Zonne-installatie (2-10 kW)",
+    "sloped": "Een schuin dak (eenzijdige, gevel)",
+    "terrace": "Dakterras (met balustrade)",
+    "snow_removal": "Sneeuwverwijderingssystemen (kachels, goten)"
+  },
   "security_features": "Beveiligingsvoorzieningen",
   "exterior_cladding": "Buitenbekleding",
   "additional_openings": "Extra Openingen",
@@ -510,7 +553,7 @@
   "insulation": {
     "basic": "Basis (50mm)",
     "standard": "Standaard (100mm)",
-    "premium": "Premium (150mm)",
+    "premium": "Premium (20 cm, minerale wol)",
     "extreme": "Extreem (200mm)",
     "none": "Geen isolatie",
     "advanced": "Geavanceerd (minerale wol 10-15 cm)"
@@ -529,10 +572,10 @@
     "electrical_system": "Standaard: 15A huishoudelijk. Industrieel: 30A met schakelkast. Smart: IoT automatisering.",
     "plumbing_system": "Basis: gootsteen en afvoer. Volledig: complete badkamer uitrusting. Commercieel: industriële armaturen.",
     "hvac_system": "Klimaatregeling opties. Warmtepompen zijn energie-efficiënt voor jaarrond gebruik.",
-    "security_features": "Beveiligingsniveaus van basis sloten tot biometrische toegangscontrolesystemen.",
+    "security_features": "Veiligheidsniveaus van basissloten tot biometrische toegangssystemen.",
     "exterior_cladding": "Weerbescherming en esthetische verbetering. Metalen gevelbekleding biedt beste duurzaamheid.",
     "additional_openings": "Gespecialiseerde toegangspunten naast standaard deuren en ramen.",
-    "fire_safety": "Brandbeveiligingssystemen. Sprinkler systemen aanbevolen voor commercieel gebruik.",
+    "fire_safety": "Brandbeveiligingssystemen. Sprinklersystemen aanbevolen voor commercieel gebruik.",
     "accessibility": "ADA naleving zorgt voor toegankelijkheid voor gehandicapten.",
     "paint_finish": "Coating kwaliteit beïnvloedt duurzaamheid. C5M aanbevolen voor maritieme omgevingen. C4 voor industrieel.",
     "insulation_package": "Isolatiedikte beïnvloedt energie-efficiëntie. Extreem aanbevolen voor arctische klimaten.",
@@ -542,7 +585,7 @@
   "interior_layout_partitioned": "Verdeeld",
   "delivery_zone_local": "Local (50km)",
   "security_systems_advanced": "Geavanceerd",
-  "fire_systems_full": "Full System",
+  "fire_systems_full": "Volledig systeem",
   "paint_finish_standard": "Standaard",
   "construction_material_steel": "Staal",
   "paint_finish_premium": "Premium",
@@ -567,13 +610,13 @@
   "installation_basic": "Basisopstelling",
   "delivery_zone_international": "Internationale",
   "paint_finish_custom": "Custom Color",
-  "security_systems": "Security Systems",
+  "security_systems": "Veiligheidssystemen",
   "construction_material_aluminum": "Aluminum",
   "construction_material": "Construction Material",
   "transport_type_special": "Speciaal transport",
   "security_systems_basic": "Fundamenteel",
   "transport_type_crane": "Met kraan",
-  "transport_type": "Transport Type",
+  "transport_type": "Type transport",
   "delivery_zone_national": "Nationaal",
   "interior_layout": "Interieurindeling",
   "appliances_none": "Geen",
@@ -581,13 +624,25 @@
   "lighting_basic": "Basic LED",
   "additional_openings_emergency": "Emergency Exit",
   "office_equipment_none": "Geen",
-  "window_types": "Raamtypen",
+  "window_types": {
+    "standard": "Standaard",
+    "panoramic": "Panoramisch",
+    "sliding": "Glijdend",
+    "tilt": "Scharnierend",
+    "security": "Anti -warrglary",
+    "skylight": "Daklijgen"
+  },
   "it_systems_none": "Geen",
   "transport_type_standard": "Standaard",
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dubbel geglazuurd",
-  "ventilation": "Ventilation",
+  "ventilation": {
+    "none": "Zonder luchtopeningen (natuurlijk en mechanisch)",
+    "gravity": "Gravitationele ventilatieopeningen (2-4 pc's, verstelbaar)",
+    "heat_recovery": "Recuperatie (warmteverstel 80-95%)",
+    "split_ac": "Split airconditioning (1-3 eenheden)"
+  },
   "it_systems": "IT Systems",
   "lighting_professional": "Professioneel",
   "interior_layout_open": "Open Space",
@@ -596,18 +651,20 @@
   "office_equipment": "Office Equipment",
   "installation": "Installatie",
   "system_comments": "System Requirements Comments",
-  "office_equipment_full": "Complete Office",
+  "office_equipment_full": "Volledig ambt",
   "appliances": "Apparaten",
   "it_systems_advanced": "Heeft het geavanceerd",
   "window_types_security": "Beveiligingsvensters",
   "roof_modifications_skylight": "Dakraam",
-  "lighting": "Verlichting",
+  "lighting": {
+    "basic_led": "Standaard LED (Basic)"
+  },
   "it_systems_basic": "Basisnetwerk",
-  "fire_systems": "Fire Safety Systems",
+  "fire_systems": "Brandweersystemen",
   "additional_openings_door": "Extra deur",
   "construction_material_composite": "Composite",
   "air_intakes_label": "Luchtinlaat en ventilatie",
-  "fire_safety_label": "Brandveiligheidssystemen",
+  "fire_safety_label": "Brandweersystemen",
   "roof_modifications_label": "Dakmodificaties",
   "basic_configuration": "Basisconfiguratie",
   "main_purpose": "Hoofdpaars",
@@ -638,5 +695,15 @@
     "construction": "Bouw (bouwplaatsen, infrastructuur)",
     "agricultural": "Landbouw (boerderijen, faciliteiten)",
     "marine": "Marine/Shipyard (corrosieve omgeving)"
+  },
+  "insulation_label": "Isolatie",
+  "finish_levels": {
+    "shell": "Raw State (isolatie + OSB -plaat)",
+    "specialist": "Specialist (medische/laboratoriumstandaarden)"
+  },
+  "climate_zones": {
+    "maritime": "Zeeklimaat (hoge luchtvochtigheid)",
+    "mountain": "Bergklimaat (hoge UV, sneeuw)",
+    "tropical": "Tropisch klimaat (hoge temperaturen, vochtigheid)"
   }
 }

@@ -25,7 +25,7 @@
     "drawing_analysis": "Zeichnungs\nanalyse",
     "drawing_analysis_desc": "KI-Dokumentenanalyse",
     "admin_panel": "Admin\nPanel",
-    "admin_panel_desc": "Systemverwaltung",
+    "admin_panel_desc": "Systemmanagement",
     "ai_cost_estimation": "KI-Kostenschätzung",
     "container_configurator": "Containerkonfigurator",
     "technical_analysis": "Technische Analyse",
@@ -136,7 +136,8 @@
     "new_inquiry": "Neue Anfrage senden",
     "error": "Fehler beim Senden der Anfrage",
     "why_professional_inquiry": "Warum eine professionelle Anfrage stellen?",
-    "preparation_tips": "Tipps für beste Ergebnisse"
+    "preparation_tips": "Tipps für beste Ergebnisse",
+    "budget_Range": "Haushaltsumfang"
   },
   "send_inquiry_button": "Anfrage Senden",
   "advanced_modifications": "Erweiterte Modifikationen",
@@ -146,7 +147,15 @@
     "industrial": "Industriequalität",
     "marine_grade": "Meeresqualität (salzresistent)"
   },
-  "roof_modifications": "Dachänderungen",
+  "roof_modifications": {
+    "none": "Ohne Änderung (Standard -Flachdach)",
+    "insulation": "Dachisolierung zusätzlich (10-20 cm)",
+    "skylight": "Dachoberlicht (60x60, 90x90, 120x120 cm)",
+    "solar": "Solarinstallation (2-10 kW)",
+    "sloped": "Ein schräge Dach (eins, Giebel)",
+    "terrace": "Dachterrasse (mit Balustrade)",
+    "snow_removal": "Schneeentfernungssysteme (Heizungen, Dachrinnen)"
+  },
   "security_features": "Sicherheitsmerkmale",
   "exterior_cladding": "Außenverkleidung",
   "additional_openings": "Zusätzliche Öffnungen",
@@ -160,12 +169,12 @@
   "paint_finish": "Anstrich & Oberflächenbehandlung",
   "electrical": {
     "basic": "Grundausstattung (Beleuchtung + Steckdosen)",
-    "standard": "Standard (15A -Schaltung)",
+    "standard": "Standard (Schaltung 15a)",
     "industrial": "Industriell (30A + Schaltschrank)",
     "smart_system": "Smart System (IoT Automatisierung)"
   },
   "plumbing": {
-    "none": "Keine Sanitärinstallation",
+    "none": "Keine Installation",
     "basic": "Grundausstattung (Spüle + Abfluss)",
     "full": "Vollausstattung (Badezimmer-Vorbereitung)",
     "commercial": "Gewerbliche Qualität"
@@ -179,7 +188,7 @@
   },
   "security": {
     "basic": "Grundausstattung (verstärkte Schlösser)",
-    "standard": "Standard (alarmbereit)",
+    "standard": "Standard (Alarmvorbereitung)",
     "advanced": "Erweitert (Kameras + Sensoren)",
     "high_security": "Hochsicherheit (biometrisch)"
   },
@@ -197,21 +206,21 @@
     "emergency_exit": "Notausgang"
   },
   "accessibility": {
-    "standard": "Zugangsstandard",
+    "standard": "Standardzugriff",
     "ramp": "Rollstuhlrampe",
     "full_ada": "Vollständige ADA-Konformität",
     "disabled_friendly": "Vollständig barrierefrei"
   },
   "paint": {
-    "standard": "Standard-Beschichtung (C2)",
+    "standard": "Standardbeschichtung (C2)",
     "premium": "Premium-Finish (C3)",
     "anti_corrosion": "Korrosionsschutz (C4)",
     "marine_grade": "Meeresqualität (C5M)"
   },
   "insulation": {
     "basic": "Grundausstattung (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150 mm)",
+    "standard": "Standard (15 cm, pir/pur)",
+    "premium": "Premium (20 cm, Mineralwolle)",
     "extreme": "Extrem (200mm)",
     "none": "Keine Isolierung",
     "advanced": "Fortgeschrittene (Mineralwolle 10-15 cm)"
@@ -230,10 +239,10 @@
     "electrical_system": "Standard: 15A Haushalt. Industriell: 30A mit Schaltschrank. Smart: IoT Automatisierung.",
     "plumbing_system": "Grundausstattung: Spüle und Abfluss. Vollausstattung: komplette Badezimmerausstattung. Gewerblich: Industriearmaturen.",
     "hvac_system": "Klimakontrolloptionen. Wärmepumpen sind energieeffizient für ganzjährigen Gebrauch.",
-    "security_features": "Sicherheitsstufen von Grundschlössern bis zu biometrischen Zugangskontrollsystemen.",
+    "security_features": "Sicherheitsniveaus von grundlegenden Schlössern bis hin zu biometrischen Zugangssystemen.",
     "exterior_cladding": "Wetterschutz und ästhetische Verbesserung. Metallverkleidung bietet beste Haltbarkeit.",
-    "additional_openings": "Spezialisierte Zugangspunkte über Standardtüren und Fenster.",
-    "fire_safety": "Brandschutzsysteme. Sprinkleranlagen empfohlen für gewerbliche Nutzung.",
+    "additional_openings": "Spezialisierte Zugangspunkte außerhalb von Standardtüren und Fenstern.",
+    "fire_safety": "Brandschutzsysteme. Sprinklersysteme für den kommerziellen Gebrauch empfohlen.",
     "accessibility": "ADA-Konformität gewährleistet Zugänglichkeit für Behinderte.",
     "paint_finish": "Beschichtungsqualität beeinflusst Haltbarkeit. C5M empfohlen für Meeresumgebungen. C4 für Industrie.",
     "insulation_package": "Isolierungsdicke beeinflusst Energieeffizienz. Extrem empfohlen für arktische Klimazonen.",
@@ -326,7 +335,7 @@
       "number_of_windows": "Anzahl Fenster",
       "additional_doors": "Zusätzliche Türen",
       "electrical_system": "Elektrisches System",
-      "plumbing_system": "Sanitärsystem",
+      "plumbing_system": "Hydrauliksystem",
       "hvac_system": "HVAC-System",
       "insulation_package": "Isolierungspaket",
       "structural_reinforcement": "Strukturelle Verstärkung",
@@ -356,9 +365,23 @@
   "purpose": "Zweck",
   "environment": "Umgebung",
   "finish_level": "Ausstattungsgrad",
-  "flooring": "Bodenbelag",
+  "flooring": {
+    "none": "Ohne Boden (Wellblech)",
+    "plywood": "Wasserdichtes Sperrholz 18mm (Standard)",
+    "anti_slip": "21mm Nicht -Slip -Sperrholz",
+    "laminate": "AC4/AC5 Laminierte Paneele",
+    "vinyl": "Wasserdichte Vinylplatten (LVT)",
+    "carpet": "2-4 mm PVC-Bodenbedeckung",
+    "epoxy": "Industrial Epoxy Floor",
+    "concrete": "Erhöhter Boden (Serverräume)"
+  },
   "climate_zone": "Klimazone",
-  "windows": "Fenster",
+  "windows": {
+    "one": "1 Fenster",
+    "two": "2 Fenster",
+    "three": "3 Fenster",
+    "four": "4 Fenster"
+  },
   "additional_doors": "Zusätzliche Türen",
   "yes": "Ja",
   "no": "Nein",
@@ -386,7 +409,7 @@
   "failed_generate_estimate": "Schätzung konnte nicht generiert werden. Bitte versuchen Sie es erneut.",
   "error_generating_estimate": "Fehler beim Generieren der Schätzung",
   "saved_ai_estimate": "Gespeicherte KI-Schätzung",
-  "full_system_access": "Vollzugriff auf das System und erweiterte Funktionen",
+  "full_system_access": "Voller Zugriff auf das System und fortschrittliche Funktionen",
   "container_configurator_title": "Container\nKonfigurator",
   "container_configurator_desc": "Professionelle Containerkonfiguration",
   "ai_cost_estimator_title": "KI-Kosten\nSchätzer",
@@ -412,10 +435,30 @@
   "save_configuration": "💾 Konfiguration Speichern",
   "configuration_saved": "Konfiguration erfolgreich gespeichert!",
   "get_ai_analysis": "AI-Analyse erhalten",
-  "systems_installations": "Systeme & Installationen",
-  "electrical_system": "Elektrisches System",
-  "plumbing_system": "Sanitärsystem",
-  "hvac_system": "HLK-System",
+  "systems_installations": "Systeme und Installationen",
+  "electrical_system": {
+    "none": "Ohne elektrische Installation",
+    "preparation": "Elektrische Vorbereitung (nur Durchlässigkeit)",
+    "basic": "Basic (15a, LED, 4 Sockets)",
+    "industrial": "Industrie (63A, 3-Phasen, Schaltanlage)",
+    "it_server": "IT/Server Room (UPS, Stabilisatoren, Überwachung)"
+  },
+  "plumbing_system": {
+    "none": "Ohne Wasserinstallation",
+    "preparation": "Hydraulikvorbereitung (nur Durchlässe)",
+    "cold_water": "Installation von kaltem Wasser (Waschbecken)",
+    "hot_cold_water": "Kalt + heißes Wasser (Waschbecken)",
+    "basic_sanitary": "Grundlegender Sanitärknoten (WC + Sink)",
+    "standard_sanitary": "Standardknoten (WC + Waschbecken + Dusche)",
+    "comfort_sanitary": "Bequemer Knoten (WC + Waschbecken + Kabine)",
+    "premium_sanitary": "Premiumknoten (Jacuzzi, Bidé, 2 Waschbecken)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Elektrische Heizungen (1-3 kW, Konvektoren)",
+    "heat_pump": "Wärmepumpe (Split-Typ, 2-12 kW Leistung)",
+    "vrv_vrf": "VRV/VRF -System (Multi -Record, Zonensteuerung)",
+    "underfloor_heating": "Unterbodenheizung (elektrisches/Wasser)"
+  },
   "insulation_package": "Isolierungspaket",
   "structural_reinforcement": "Strukturelle Verstärkung",
   "delivery_logistics": "Lieferung & Logistik",
@@ -524,7 +567,7 @@
   "contingency_10": "Eventualkosten (10%)",
   "complexity_multiplier": "Komplexitätsmultiplikator",
   "standard_recommendations": "Standard-Empfehlungen",
-  "plan_standard_delivery": "Planung für Standard-Lieferung und Installationszeitleiste",
+  "plan_standard_delivery": "Planen Sie den Standardplan für Lieferung und Installation",
   "consider_building_codes": "Lokale Bauvorschriften berücksichtigen",
   "budget_site_preparation": "Budget für potenzielle Standortvorbereitung",
   "review_electrical_plumbing": "Elektrische und Sanitärarbeiten frühzeitig prüfen",
@@ -555,8 +598,8 @@
   "delivery_zone": "Lieferzone",
   "exterior_cladding_composite": "Zusammengesetzt",
   "window_types_standard": "Standard",
-  "installation_none": "Selbstinstallation",
-  "installation_full": "Vollständige Installation",
+  "installation_none": "Self -Assembly",
+  "installation_full": "Vollständige Baugruppe",
   "lighting_none": "Keiner",
   "ventilation_natural": "Natürlich",
   "ventilation_forced": "Erzwungene Luft",
@@ -564,7 +607,7 @@
   "additional_openings_none": "Keiner",
   "appliances_laundry": "Wäschesausrüstung",
   "office_equipment_basic": "Grundmöbel",
-  "installation_basic": "Basic Setup",
+  "installation_basic": "Grundversammlung",
   "delivery_zone_international": "International",
   "paint_finish_custom": "Benutzerdefinierte Farbe",
   "security_systems": "Sicherheitssysteme",
@@ -573,7 +616,7 @@
   "transport_type_special": "Besonderer Transport",
   "security_systems_basic": "Basic",
   "transport_type_crane": "Mit Kran",
-  "transport_type": "Typtransport",
+  "transport_type": "Art des Transports",
   "delivery_zone_national": "National",
   "interior_layout": "Innenraumlayout",
   "appliances_none": "Keiner",
@@ -581,7 +624,14 @@
   "lighting_basic": "Basic LED",
   "additional_openings_emergency": "Notausgang",
   "office_equipment_none": "Keiner",
-  "window_types": "Fenstertypen",
+  "window_types": {
+    "standard": "Standard",
+    "panoramic": "Panorama",
+    "sliding": "Gleiten",
+    "tilt": "Geschwächt",
+    "security": "Anti -Burgylary",
+    "skylight": "Dach -Oberlichter"
+  },
   "it_systems_none": "Keiner",
   "transport_type_standard": "Standard",
   "advanced_comments": "Erweiterte Modifikationen Kommentare",
@@ -612,24 +662,24 @@
   "roof_modifications_skylight": "Dachfenster",
   "lighting": {
     "none": "Keine Beleuchtung",
-    "basic_led": "LED Standard (Basic)",
+    "basic_led": "Standard -LED (Basic)",
     "energy_efficient": "Energieeffiziente LED mit Sensoren",
     "exterior": "Außenbeleuchtung (Strahler)",
     "emergency": "Notbeleuchtung (Batterie)",
     "smart": "Intelligentes System (Smart Lighting)"
   },
   "it_systems_basic": "Grundnetzwerk",
-  "fire_systems": "Brandschutzsysteme",
+  "fire_systems": "Feuersysteme",
   "additional_openings_door": "Zusätzliche Tür",
   "construction_material_composite": "Zusammengesetzt",
   "air_intakes_label": "Luftzufuhr und Belüftung",
-  "fire_safety_label": "Brandschutzsysteme",
+  "fire_safety_label": "Feuersysteme",
   "roof_modifications_label": "Dachmodifikationen",
   "basic_configuration": "Grundkonfiguration",
   "main_purpose": "Hauptpila",
   "usage_environment": "Nutzungsumgebung",
   "number_of_windows": "Anzahl der Fenster",
-  "transport_logistics": "Transport & Logistik",
+  "transport_logistics": "Transport und Logistik",
   "equipment_extras": "Ausrüstung & Extras",
   "materials": {
     "steel_standard": "Stahl (Standardkonstruktion)",
@@ -648,7 +698,7 @@
   },
   "environments": {
     "indoor": "Innenräume (Hallen, Lagerhäuser)",
-    "outdoor_standard": "Außenstandard (Temperaturklima)",
+    "outdoor_standard": "Standard extern",
     "outdoor_extreme": "Outdoor Extreme (Coastal, Berge)",
     "industrial": "Industrie (Pflanzen, Raffinerien, Minen)",
     "construction": "Bau (Baustellen, Infrastruktur)",
@@ -661,7 +711,7 @@
     "standard": "Basis (Dämmung + technischer Ausbau)",
     "comfort": "Standard (vollständige Isolierung + Bürofinish)",
     "luxury": "Luxus (höchste Klasse + Hotelausbau)",
-    "specialist": "Spezialist (medizinische/Labor-Standards)"
+    "specialist": "Spezialist (medizinische/Laborstandard)"
   },
   "climate_zones": {
     "northern_europe": "Nordeuropa (Skandinavien, -30°C bis +25°C)",
@@ -671,5 +721,6 @@
     "maritime": "Seeklima (hohe Luftfeuchtigkeit)",
     "mountain": "Gebirgsklima (hohe UV-Strahlung, Schnee)",
     "tropical": "Tropisches Klima (hohe Temperaturen, Luftfeuchtigkeit)"
-  }
+  },
+  "insulation_label": "Isolierung"
 }

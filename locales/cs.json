@@ -54,7 +54,16 @@
   "environment": "Prostředí",
   "key_modifications": "Klíčové Úpravy",
   "finish_level": "Úroveň Dokončení",
-  "flooring": "Podlaha",
+  "flooring": {
+    "none": "Bez podlahy (vlnitý list)",
+    "plywood": "Vodotěsná překližka 18 mm (standard)",
+    "anti_slip": "21 mm ne -chřipko",
+    "laminate": "AC4/AC5 laminované panely",
+    "vinyl": "Vodotěsné vinylové panely (LVT)",
+    "carpet": "2-4mm PVC podlahová krytina",
+    "epoxy": "Průmyslová epoxidová podlaha",
+    "concrete": "Vyvýšená podlaha (serverové pokoje)"
+  },
   "windows": "Okna",
   "additional_doors_included": "Další dveře zahrnuty",
   "cost_breakdown": "Rozpis Nákladů",
@@ -71,9 +80,29 @@
   "configuration_saved": "Konfigurace úspěšně uložena!",
   "get_ai_analysis": "Získat AI Analýzu",
   "systems_installations": "Systémy a Instalace",
-  "electrical_system": "Elektrický Systém",
-  "plumbing_system": "Instalatérský Systém",
-  "hvac_system": "HVAC Systém",
+  "electrical_system": {
+    "none": "Bez elektrické instalace",
+    "preparation": "Elektrická příprava (pouze propustky)",
+    "basic": "Basic (15A, LED, 4 zásuvky)",
+    "industrial": "Průmyslová (63a, 3-fáze, rozváděč)",
+    "it_server": "IT/Server Room (UPS, stabilizátory, monitorování)"
+  },
+  "plumbing_system": {
+    "none": "Bez instalace vody",
+    "preparation": "Hydraulická příprava (pouze propustky)",
+    "cold_water": "Instalace studené vody (dřez)",
+    "hot_cold_water": "Studená + horká voda (dřez, dřez)",
+    "basic_sanitary": "Základní sanitární uzel (WC + Sink)",
+    "standard_sanitary": "Standardní uzel (WC + Sink + sprcha)",
+    "comfort_sanitary": "Pohodlný uzel (WC + Sink + Cabin)",
+    "premium_sanitary": "Prémiový uzel (jacuzzi, bidé, 2 dřez)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Elektrické ohřívače (1-3kW, konvektory)",
+    "heat_pump": "Tepelné čerpadlo (typ rozdělení, výkon 2-12 kW)",
+    "vrv_vrf": "Systém VRV/VRF (multi -rekord, ovládání zóny)",
+    "underfloor_heating": "Podlahové vytápění (elektrická/voda)"
+  },
   "insulation_package": "Izolační Balíček",
   "structural_reinforcement": "Strukturální Posílení",
   "delivery_logistics": "Doprava a Logistika",
@@ -165,7 +194,8 @@
     "new_inquiry": "Odeslat nový dotaz",
     "error": "Chyba při odesílání dotazu",
     "why_professional_inquiry": "Proč podat profesionální dotaz?",
-    "preparation_tips": "Tipy pro nejlepší výsledky"
+    "preparation_tips": "Tipy pro nejlepší výsledky",
+    "budget_Range": "Rozsah rozpočtu"
   },
   "send_inquiry_button": "Odeslat Poptávku",
   "why_kan_bud": "Proč zvolit KAN-BUD?",
@@ -252,7 +282,7 @@
     },
     "finish_levels": {
       "basic": "Základní",
-      "standard": "Standardní",
+      "standard": "Norma",
       "premium": "Prémiový",
       "luxury": "Luxusní"
     },
@@ -341,7 +371,7 @@
   "ai_cost_estimator_title": "AI Odhad\nNákladů",
   "ai_cost_estimator_desc": "Umělá inteligence odhadu nákladů",
   "standard_recommendations": "Standardní Doporučení",
-  "plan_standard_delivery": "Naplánujte standardní dodávku a harmonogram instalace",
+  "plan_standard_delivery": "Naplánujte standardní plán doručení a instalace",
   "consider_building_codes": "Zvažte místní stavební předpisy",
   "budget_site_preparation": "Rozpočet na potenciální přípravu místa",
   "review_electrical_plumbing": "Zkontrolujte elektrické a instalatérské požadavky předem",
@@ -443,7 +473,15 @@
     "industrial": "Průmyslová kvalita",
     "marine_grade": "Námořní kvalita (odolnost proti soli)"
   },
-  "roof_modifications": "Roof Modifications",
+  "roof_modifications": {
+    "none": "Bez úpravy (standardní plochá střecha)",
+    "insulation": "Navíc izolace střechy (10-20 cm)",
+    "skylight": "Střešní světlík (60x60, 90x90, 120x120cm)",
+    "solar": "Solární instalace (2-10kW)",
+    "sloped": "Šikmá střecha (jednorázová, štít)",
+    "terrace": "Střešní terasa (s balustrádou)",
+    "snow_removal": "Systémy odstraňování sněhu (topení, okapy)"
+  },
   "security_features": "Bezpečnostní Prvky",
   "exterior_cladding": "Vnější Obklad",
   "additional_openings": "Další Otvory",
@@ -457,7 +495,7 @@
   "paint_finish": "Nátěr & Povrchová Úprava",
   "electrical": {
     "basic": "Základní (osvětlení + zásuvky)",
-    "standard": "Standard (obvod 15A)",
+    "standard": "Standard (obvod 15a)",
     "industrial": "Průmyslový (30A + rozvodnice)",
     "smart_system": "Chytrý systém (IoT automatizace)"
   },
@@ -476,7 +514,7 @@
   },
   "security": {
     "basic": "Základní (posílené zámky)",
-    "standard": "Standardní (připraveno na alarm)",
+    "standard": "Standard (příprava alarmu)",
     "advanced": "Pokročilý (kamery + senzory)",
     "high_security": "Vysoká bezpečnost (biometrické)"
   },
@@ -494,20 +532,20 @@
     "emergency_exit": "Nouzový východ"
   },
   "accessibility": {
-    "standard": "Přístupový standard",
+    "standard": "Standardní přístup",
     "ramp": "Rampa pro vozíčkáře",
     "full_ada": "Plná ADA shoda",
     "disabled_friendly": "Plně přístupný"
   },
   "paint": {
-    "standard": "Standardní nátěr (C2)",
+    "standard": "Standardní povlak (C2)",
     "premium": "Prémiový nátěr (C3)",
     "anti_corrosion": "Antikorozní (C4)",
     "marine_grade": "Námořní kvalita (C5M)"
   },
   "insulation": {
     "basic": "Základní (50mm)",
-    "standard": "Standardní (100mm)",
+    "standard": "Standard (15 cm, PIR/pur)",
     "premium": "Prémiový (150mm)",
     "extreme": "Extrémní (200mm)",
     "none": "Žádná izolace",
@@ -529,7 +567,7 @@
     "hvac_system": "Možnosti klimatizace. Tepelná čerpadla jsou energeticky účinná pro celoroční použití.",
     "security_features": "Úrovně bezpečnosti od základních zámků po biometrické systémy řízení přístupu.",
     "exterior_cladding": "Ochrana před počasím a estetické zlepšení. Kovový obklad nabízí nejlepší trvanlivost.",
-    "additional_openings": "Specializované přístupové body za standardní dveře a okna.",
+    "additional_openings": "Specializované přístupové body mimo standardní dveře a okna.",
     "fire_safety": "Požární ochranné systémy. Sprinklerové systémy doporučeny pro komerční použití.",
     "accessibility": "ADA shoda zajišťuje přístupnost pro zdravotně postižené.",
     "paint_finish": "Kvalita nátěru ovlivňuje trvanlivost. C5M doporučeno pro námořní prostředí. C4 pro průmysl.",
@@ -541,7 +579,7 @@
   "interior_layout_partitioned": "Rozděleno",
   "delivery_zone_local": "Local (50km)",
   "security_systems_advanced": "Moderní",
-  "fire_systems_full": "Full System",
+  "fire_systems_full": "Plný systém",
   "paint_finish_standard": "Norma",
   "construction_material_steel": "Ocel",
   "paint_finish_premium": "Premium",
@@ -566,13 +604,13 @@
   "installation_basic": "Základní nastavení",
   "delivery_zone_international": "Mezinárodní",
   "paint_finish_custom": "Custom Color",
-  "security_systems": "Security Systems",
+  "security_systems": "Bezpečnostní systémy",
   "construction_material_aluminum": "Aluminum",
   "construction_material": "Construction Material",
   "transport_type_special": "Speciální doprava",
   "security_systems_basic": "Základní",
   "transport_type_crane": "S jeřábem",
-  "transport_type": "Typ transport",
+  "transport_type": "Typ dopravy",
   "delivery_zone_national": "Národní",
   "interior_layout": "Rozložení interiéru",
   "appliances_none": "Žádný",
@@ -581,14 +619,26 @@
   "technical_analysis": "Technický\nANALSIS",
   "additional_openings_emergency": "Emergency Exit",
   "office_equipment_none": "Žádný",
-  "window_types": "Typy oken",
+  "window_types": {
+    "standard": "Norma",
+    "panoramic": "Panoramatický",
+    "sliding": "Klouzání",
+    "tilt": "Závěs",
+    "security": "Anti -Burglary",
+    "skylight": "Střešní světlíky"
+  },
   "it_systems_none": "Žádný",
   "transport_type_standard": "Norma",
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Double Glazed",
-  "ventilation": "Ventilation",
-  "it_systems": "IT Systems",
+  "ventilation": {
+    "none": "Bez větracích otvorů (přírodní a mechanické)",
+    "gravity": "Gravitační otvory (2-4 ks, nastavitelné)",
+    "heat_recovery": "Rekuperace (obnovení tepla 80-95%)",
+    "split_ac": "Rozdělená klimatizace (1-3 jednotky)"
+  },
+  "it_systems": "IT systémy",
   "lighting_professional": "Profesionální",
   "interior_layout_open": "Open Space",
   "appliances_kitchen": "Kitchen Equipment",
@@ -596,14 +646,16 @@
   "office_equipment": "Office Equipment",
   "installation": "Instalace",
   "system_comments": "System Requirements Comments",
-  "office_equipment_full": "Complete Office",
+  "office_equipment_full": "Kompletní kancelář",
   "appliances": "Spotřebiče",
   "it_systems_advanced": "Pokročilé to",
   "window_types_security": "Okna zabezpečení",
   "roof_modifications_skylight": "Svěť",
-  "lighting": "Osvětlení",
+  "lighting": {
+    "basic_led": "Standard LED (Basic)"
+  },
   "it_systems_basic": "Základní síť",
-  "fire_systems": "Fire Safety Systems",
+  "fire_systems": "Požární systémy",
   "additional_openings_door": "Další dveře",
   "construction_material_composite": "Composite",
   "additional_doors": "Dodatečné dveře",
@@ -614,7 +666,7 @@
   "main_purpose": "Hlavní fialová",
   "usage_environment": "Prostředí použití",
   "number_of_windows": "Počet oken",
-  "transport_logistics": "Transport & Logistics",
+  "transport_logistics": "Doprava a logistika",
   "equipment_extras": "Vybavení a doplňky",
   "materials": {
     "steel_standard": "Ocel (standardní konstrukce)",
@@ -633,11 +685,21 @@
   },
   "environments": {
     "indoor": "Indoor (haly, skladby)",
-    "outdoor_standard": "Venkovní standard (teplotní klima)",
+    "outdoor_standard": "Standardní externí",
     "outdoor_extreme": "Outdoor Extreme (pobřežní, hory)",
     "industrial": "Průmyslové (rostliny, rafinerie, doly)",
     "construction": "Stavba (staveniště, infrastruktura)",
     "agricultural": "Zemědělské (farmy, zařízení)",
     "marine": "Marine/Shipyard (korozivní prostředí)"
+  },
+  "insulation_label": "Izolace",
+  "finish_levels": {
+    "shell": "Surový stav (izolace + deska OSB)",
+    "specialist": "Specialista (lékařské/laboratorní standardy)"
+  },
+  "climate_zones": {
+    "maritime": "Mořské klima (vysoká vlhkost)",
+    "mountain": "Mountain Climate (vysoký UV, sníh)",
+    "tropical": "Tropické klima (vysoké teploty, vlhkost)"
   }
 }

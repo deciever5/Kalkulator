@@ -217,9 +217,23 @@
   "purpose": "Tarkoitus",
   "environment": "Ympäristö",
   "finish_level": "Viimeistelyaste",
-  "flooring": "Lattia",
+  "flooring": {
+    "none": "Ilman lattiaa (aallotettu arkki)",
+    "plywood": "Vedenpitävä vaneri 18 mm (vakio)",
+    "anti_slip": "21 mm: n liukuvan vaneri",
+    "laminate": "AC4/AC5 -laminoidut paneelit",
+    "vinyl": "Vedenpitävä vinyylipaneelit (LVT)",
+    "carpet": "2-4 mm PVC-lattiapäällyste",
+    "epoxy": "Teollisuuden epoksilattia",
+    "concrete": "Korotettu lattia (palvelinhuoneet)"
+  },
   "climate_zone": "Ilmastovyöhyke",
-  "windows": "Ikkunat",
+  "windows": {
+    "one": "1 ikkuna",
+    "two": "2 ikkunaa",
+    "three": "3 ikkunaa",
+    "four": "4 ikkunaa"
+  },
   "additional_doors_included": "Lisäovet mukana",
   "yes": "Kyllä",
   "no": "Ei",
@@ -272,9 +286,29 @@
   "configuration_saved": "Konfiguraatio tallennettu onnistuneesti!",
   "get_ai_analysis": "Hanki AI-analyysi",
   "systems_installations": "Järjestelmät ja asennukset",
-  "electrical_system": "Sähköjärjestelmä",
-  "plumbing_system": "Putkijärjestelmä",
-  "hvac_system": "HVAC-järjestelmä",
+  "electrical_system": {
+    "none": "Ilman sähköasennusta",
+    "preparation": "Sähköinen valmistus (vain rummut)",
+    "basic": "Perus (15A, LED, 4 pistorasiaa)",
+    "industrial": "Teollisuus (63A, 3-vaiheinen, kytkentälaite)",
+    "it_server": "IT/palvelinhuone (UPS, Stabilisaattorit, seuranta)"
+  },
+  "plumbing_system": {
+    "none": "Ilman veden asennusta",
+    "preparation": "Hydraulinen valmistus (vain rummut)",
+    "cold_water": "Kylmän veden asennus (pesuallas)",
+    "hot_cold_water": "Kylmä + kuuma vesi (pesuallas, pesuallas)",
+    "basic_sanitary": "Perussanitesolmu (WC + -altaan)",
+    "standard_sanitary": "Vakiosolmu (WC + -altaan + suihku)",
+    "comfort_sanitary": "Mukava solmu (WC + pesuallas + hytti)",
+    "premium_sanitary": "Premium -solmu (poreallas, Bidé, 2 nieluja)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Sähkölämmittimet (1-3 kW, konvektorit)",
+    "heat_pump": "Lämpöpumppu (jaettu tyyppi, 2-12 kW: n suorituskyky)",
+    "vrv_vrf": "VRV/VRF -järjestelmä (Multi -Record, vyöhykkeen ohjaus)",
+    "underfloor_heating": "Lattialämmitys (sähkö/vesi)"
+  },
   "insulation_package": "Eristyspaketti",
   "structural_reinforcement": "Rakenteellinen vahvistus",
   "delivery_logistics": "Toimitus ja logistiikka",
@@ -297,7 +331,14 @@
   "air_intakes_label": "Ilmanotto ja tuuletus",
   "fire_safety_label": "Paloturvallisuusjärjestelmät",
   "roof_modifications_label": "Kattomukautukset",
-  "window_types": "Ikkunatyypit",
+  "window_types": {
+    "standard": "Standardi",
+    "panoramic": "Panoraama-",
+    "sliding": "Liukuva",
+    "tilt": "Saranoitu",
+    "security": "Anti -antipalkinto",
+    "skylight": "Kattokattoikkunat"
+  },
   "window_types_standard": "Vakio",
   "window_types_double": "Kaksinkertainen lasi",
   "window_types_security": "Turvallisuusikkunat",
@@ -307,7 +348,7 @@
   "insulation": {
     "basic": "Perus (50mm)",
     "standard": "Vakio (100mm)",
-    "premium": "Premium (150mm)",
+    "premium": "Premium (20cm, mineraalivilla)",
     "extreme": "Äärimmäinen (200mm)",
     "none": "Ei eristystä",
     "advanced": "Edistynyt (mineraalivilla 10-15 cm)"
@@ -398,7 +439,8 @@
     "new_inquiry": "Lähetä Uusi Pyyntö",
     "error": "Virhe lähettäessä pyyntöä",
     "why_professional_inquiry": "Miksi Lähetetään Ammattitaitoinen Pyyntö?",
-    "preparation_tips": "Paras Tulos Saavutamiseksi"
+    "preparation_tips": "Paras Tulos Saavutamiseksi",
+    "budget_Range": "Budjetin laajuus"
   },
   "send_inquiry_button": "Lähetä hakemus",
   "advanced_modifications": "Edistyneet muutokset",
@@ -408,7 +450,15 @@
     "industrial": "Teollisuuslaatu",
     "marine_grade": "Merilaatu (suojaa suolaa)"
   },
-  "roof_modifications": "Katon muutokset",
+  "roof_modifications": {
+    "none": "Ilman muutosta (vakio litteä katto)",
+    "insulation": "Katon eristys lisäksi (10-20 cm)",
+    "skylight": "Katon kattoikkuna (60x60, 90x90, 120x120cm)",
+    "solar": "Aurinkoenergian asennus (2-10 kW)",
+    "sloped": "Vino katto (yksi -puolinen, päällikkö)",
+    "terrace": "Kattoterassi (kaalella)",
+    "snow_removal": "Lumenpoistojärjestelmät (lämmittimet, kourut)"
+  },
   "security_features": "Turvallisuusominaisuudet",
   "exterior_cladding": "Ulkoasu",
   "additional_openings": "Lisäaukot",
@@ -441,7 +491,7 @@
   },
   "security": {
     "basic": "Perus (vahvistetut lukot)",
-    "standard": "Standards (varoitusvalmis)",
+    "standard": "Vakio (hälytyksen valmistelu)",
     "advanced": "Edistynyt (kamerat + sensoirit)",
     "high_security": "Korkean turvallisuuden (biometriset)"
   },
@@ -465,7 +515,7 @@
     "disabled_friendly": "Täysin käytännöllinen"
   },
   "paint": {
-    "standard": "Standardeja maalauksia (C2)",
+    "standard": "Vakiopäällyste (C2)",
     "premium": "Premium-maalaus (C3)",
     "anti_corrosion": "Korroosionesto (C4)",
     "marine_grade": "Merimääräinen luokka (C5M)"
@@ -474,11 +524,18 @@
   "construction_material_steel": "Teräs",
   "construction_material_aluminum": "Alumiini",
   "construction_material_composite": "Komposiittimateriaali",
-  "lighting": "Valaistus",
+  "lighting": {
+    "basic_led": "Vakio LED (Basic)"
+  },
   "lighting_basic": "Perus LED",
   "lighting_professional": "Ammattitason",
   "lighting_none": "Ei valoa",
-  "ventilation": "Ilmanvaihto",
+  "ventilation": {
+    "none": "Ilman tuuletusaukkoja (luonnollinen ja mekaaninen)",
+    "gravity": "Gravitaatioaukot (2-4 kpl, säädettävä)",
+    "heat_recovery": "Palautus (lämmön talteenotto 80-95%)",
+    "split_ac": "Jaettu ilmastointi (1-3 yksikköä)"
+  },
   "ventilation_natural": "Luonnollinen",
   "ventilation_forced": "Paineilmainen",
   "ventilation_hvac": "Koko HVAC",
@@ -600,8 +657,8 @@
     },
     "finish_levels": {
       "basic": "Perus",
-      "standard": "Standardsi",
-      "premium": "Premium",
+      "standard": "Standardi",
+      "premium": "Premium (korkein laatu)",
       "luxury": "Luxus"
     },
     "flooring": {
@@ -696,7 +753,7 @@
   "contingency_10": "Varaudu (10%)",
   "complexity_multiplier": "Monimutkaisuuden Kertoimena",
   "standard_recommendations": "Standardeja Suosittelemassa",
-  "plan_standard_delivery": "Suunnittele Standardeille Perustuva Toimitus ja Asennus Aikataulu",
+  "plan_standard_delivery": "Suunnittele tavallinen toimitus- ja asennusohjelma",
   "consider_building_codes": "Kohtaa Paikalliset Rakennuslainsäädäntövaatimukset",
   "budget_site_preparation": "Varaudu Sijaintiin Liittyviin Tarpeisiin",
   "review_electrical_plumbing": "Tarkista Sähkö- ja Vesijärjestelmät Varhain",
@@ -733,11 +790,21 @@
   },
   "environments": {
     "indoor": "Sisätiloissa (hallit, varastot)",
-    "outdoor_standard": "Ulkoilma -standardi (lämpötila ilmasto)",
+    "outdoor_standard": "Vakio-",
     "outdoor_extreme": "Ulkoilma (rannikko, vuoret)",
     "industrial": "Teollisuus (kasvit, jalostamot, kaivokset)",
     "construction": "Rakentaminen (rakennuspaikat, infrastruktuuri)",
     "agricultural": "Maatalouden (tilat, tilat)",
     "marine": "Marine/Telyard (syövyttävä ympäristö)"
+  },
+  "insulation_label": "Eristys",
+  "finish_levels": {
+    "shell": "Raaka tila (eristys + OSB -levy)",
+    "specialist": "Asiantuntija (lääketieteelliset/laboratoriostandardit)"
+  },
+  "climate_zones": {
+    "maritime": "Meri ilmasto (korkea kosteus)",
+    "mountain": "Vuoristoilmasto (korkea UV, lumi)",
+    "tropical": "Trooppinen ilmasto (korkeat lämpötilat, kosteus)"
   }
 }

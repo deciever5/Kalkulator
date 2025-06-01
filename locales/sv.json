@@ -135,7 +135,8 @@
     "new_inquiry": "Skicka Ny Förfrågan",
     "error": "Fel vid sändning av förfrågan",
     "why_professional_inquiry": "Varför Skicka Professionell Förfrågan?",
-    "preparation_tips": "Tips för Bästa Resultat"
+    "preparation_tips": "Tips för Bästa Resultat",
+    "budget_Range": "Budgetområde"
   },
   "send_inquiry_button": "Skicka Förfrågan",
   "why_kan_bud": "Varför Välja KAN-BUD?",
@@ -164,7 +165,15 @@
     "industrial": "Industriell kvalitet",
     "marine_grade": "Marin kvalitet (saltresistens)"
   },
-  "roof_modifications": "Takmodifieringar",
+  "roof_modifications": {
+    "none": "Utan modifiering (standard platt tak)",
+    "insulation": "Takisolering dessutom (10-20 cm)",
+    "skylight": "Takskål (60x60, 90x90, 120x120cm)",
+    "solar": "Solinstallation (2-10 kW)",
+    "sloped": "Ett snett tak (en -sidosid, gavel)",
+    "terrace": "Takterrass (med balustrad)",
+    "snow_removal": "Snöborttagningssystem (värmare, rännor)"
+  },
   "security_features": "Säkerhetsfunktioner",
   "exterior_cladding": "Yttre Beklädnad",
   "additional_openings": "Ytterligare Öppningar",
@@ -178,7 +187,7 @@
   "paint_finish": "Färgfinish",
   "electrical": {
     "basic": "Grundläggande (belysning + uttag)",
-    "standard": "Standard (15A -krets)",
+    "standard": "Standard (krets 15A)",
     "industrial": "Industriell (30A + panel)",
     "smart_system": "Smart system (IoT-automation)"
   },
@@ -191,13 +200,13 @@
   "hvac": {
     "none": "Ingen HVAC",
     "basic": "Grundläggande ventilation",
-    "split_system": "Delat AC-system",
+    "split_system": "Separat luftkonditioneringssystem",
     "central": "Central luftkonditionering",
     "heat_pump": "Värmepump"
   },
   "security": {
     "basic": "Grundläggande (förstärkta lås)",
-    "standard": "Standard (larmförbered)",
+    "standard": "Standard (Alarm Preparation)",
     "advanced": "Avancerad (kameror + sensorer)",
     "high_security": "Hög säkerhet (biometrisk)"
   },
@@ -215,13 +224,13 @@
     "emergency_exit": "Nödutgång"
   },
   "accessibility": {
-    "standard": "Åtkomststandard",
+    "standard": "Standardåtkomst",
     "ramp": "Rullstolsramp",
     "full_ada": "Fullständig ADA-efterlevnad",
     "disabled_friendly": "Helt tillgänglig"
   },
   "paint": {
-    "standard": "Standard beläggning (C2)",
+    "standard": "Standardbeläggning (C2)",
     "premium": "Premium finish (C3)",
     "anti_corrosion": "Antikorrosion (C4)",
     "marine_grade": "Marin kvalitet (C5M)"
@@ -230,11 +239,18 @@
   "construction_material_steel": "Stål",
   "construction_material_aluminum": "Aluminium",
   "construction_material_composite": "Komposit",
-  "lighting": "Belysning",
+  "lighting": {
+    "basic_led": "Standard LED (Basic)"
+  },
   "lighting_basic": "Grundläggande LED",
   "lighting_professional": "Professionell",
   "lighting_none": "Ingen",
-  "ventilation": "Ventilation",
+  "ventilation": {
+    "none": "Utan luftventiler (naturligt och mekaniskt)",
+    "gravity": "Gravitationsventiler (2-4 st, justerbar)",
+    "heat_recovery": "Återvinning (värmeåtervinning 80-95%)",
+    "split_ac": "Dela luftkonditionering (1-3 enheter)"
+  },
   "ventilation_natural": "Naturlig",
   "ventilation_forced": "Tvångsluft",
   "ventilation_hvac": "Fullständig HVAC",
@@ -255,23 +271,23 @@
   "additional_openings_none": "Ingen",
   "additional_openings_door": "Ytterligare Dörr",
   "additional_openings_emergency": "Nödutgång",
-  "fire_systems": "Brandsäkerhetssystem",
+  "fire_systems": "Brandsystem",
   "fire_systems_none": "Ingen",
   "fire_systems_basic": "Grundläggande",
-  "fire_systems_full": "Fullständigt System",
+  "fire_systems_full": "Fullsystem",
   "delivery_zone": "Leveranszon",
   "delivery_zone_local": "Lokal (50km)",
   "delivery_zone_regional": "Regional (200km)",
   "delivery_zone_national": "Nationell",
   "delivery_zone_international": "Internationell",
-  "transport_type": "Typtransporter",
+  "transport_type": "Typ av transport",
   "transport_type_standard": "Standard",
   "transport_type_crane": "Med Kran",
   "transport_type_special": "Specialtransporter",
   "installation": "Installation",
-  "installation_none": "Självinstallation",
+  "installation_none": "Självmontering",
   "installation_basic": "Grundläggande inställning",
-  "installation_full": "Fullständig Installation",
+  "installation_full": "Fullmontering",
   "office_equipment": "Kontorsutrustning",
   "office_equipment_none": "Ingen",
   "office_equipment_basic": "Grundläggande Möbler",
@@ -280,14 +296,21 @@
   "appliances_none": "Ingen",
   "appliances_kitchen": "Köksutrustning",
   "appliances_laundry": "Tvättutrustning",
-  "it_systems": "IT-system",
+  "it_systems": "Det system",
   "it_systems_none": "Ingen",
   "it_systems_basic": "Grundläggande Nätverk",
   "it_systems_advanced": "Avancerad IT",
   "system_comments": "Systemkrav Kommentarer",
   "advanced_comments": "Avancerade Modifieringar Kommentarer",
   "general_comments": "Allmänna Kommentarer",
-  "window_types": "Fönstertyper",
+  "window_types": {
+    "standard": "Standard",
+    "panoramic": "Panorama",
+    "sliding": "Glidande",
+    "tilt": "Gångjärn",
+    "security": "Anti -burglarge",
+    "skylight": "Taktakfönster"
+  },
   "window_types_standard": "Standard",
   "window_types_double": "Dubbelglas",
   "window_types_security": "Säkerhetsfönster",
@@ -296,12 +319,12 @@
   "paint_finish_custom": "Anpassad Färg",
   "additional_doors": "Ytterligare Dörrar",
   "air_intakes_label": "Luftintag och Ventilation",
-  "fire_safety_label": "Brandsäkerhetssystem",
+  "fire_safety_label": "Brandsystem",
   "roof_modifications_label": "Takmodifieringar",
   "insulation": {
     "basic": "Grundläggande (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "standard": "Standard (15 cm, pir/pur)",
+    "premium": "Premium (20 cm, mineralull)",
     "extreme": "Extrem (200mm)",
     "none": "Ingen isolering",
     "advanced": "Avancerad (mineralull 10-15 cm)"
@@ -320,10 +343,10 @@
     "electrical_system": "Standard: 15A hushåll. Industriell: 30A med panel. Smart: IoT-automation.",
     "plumbing_system": "Grundläggande: diskho och avlopp. Fullständig: kompletta badrumsinredningar. Kommersiell: industriell kvalitet.",
     "hvac_system": "Klimatkontrollalternativ. Värmepumpar är energieffektiva för helårsanvändning.",
-    "security_features": "Säkerhetsnivåer från grundläggande lås till biometriska åtkomstkontrollsystem.",
+    "security_features": "Säkerhetsnivåer från grundlås till biometriska åtkomstsystem.",
     "exterior_cladding": "Väderskydd och estetisk förbättring. Metallbeklädnad erbjuder bästa hållbarheten.",
-    "additional_openings": "Specialiserade åtkomstpunkter utöver standarddörrar och fönster.",
-    "fire_safety": "Brandskyddssystem. Sprinklersystem rekommenderas för kommersiell användning.",
+    "additional_openings": "Specialiserade åtkomstpunkter utanför standarddörrar och fönster.",
+    "fire_safety": "Brandskyddssystem. Sprinklersystem som rekommenderas för kommersiellt bruk.",
     "accessibility": "ADA-efterlevnad säkerställer tillgänglighet för funktionshindrade personer.",
     "paint_finish": "Beläggningskvalitet påverkar hållbarheten. C5M rekommenderas för marina miljöer. C4 för industriell.",
     "insulation_package": "Isoleringstjocklek påverkar energieffektivitet. Extrem rekommenderas för arktiska klimat.",
@@ -376,7 +399,7 @@
     "finish_levels": {
       "basic": "Grundläggande",
       "standard": "Standard",
-      "premium": "Premium",
+      "premium": "Premium (högsta kvalitet)",
       "luxury": "Lyx"
     },
     "flooring": {
@@ -397,8 +420,8 @@
       "climate_zone": "Klimatzon",
       "number_of_windows": "Antal Fönster",
       "additional_doors": "Ytterligare Dörrar",
-      "electrical_system": "Elsystem",
-      "plumbing_system": "Rörsystem",
+      "electrical_system": "Elektriskt system",
+      "plumbing_system": "Hydraulsystem",
       "hvac_system": "HVAC-system",
       "insulation_package": "Isoleringspaket",
       "structural_reinforcement": "Strukturell Förstärkning",
@@ -428,9 +451,23 @@
   "purpose": "Syfte",
   "environment": "Miljö",
   "finish_level": "Finishnivå",
-  "flooring": "Golv",
+  "flooring": {
+    "none": "Utan golv (korrugerat ark)",
+    "plywood": "Vattentät plywood 18mm (standard)",
+    "anti_slip": "21 mm icke -slip plywood",
+    "laminate": "AC4/AC5 -laminerade paneler",
+    "vinyl": "Vattentät vinylpaneler (LVT)",
+    "carpet": "2-4 mm PVC golvbeläggning",
+    "epoxy": "Industriellt epoxigolv",
+    "concrete": "Förhöjd golv (serverrum)"
+  },
   "climate_zone": "Klimatzon",
-  "windows": "Fönster",
+  "windows": {
+    "one": "1 fönster",
+    "two": "2 Windows",
+    "three": "3 Windows",
+    "four": "4 Windows"
+  },
   "additional_doors_included": "Ytterligare dörrar inkluderade",
   "yes": "Ja",
   "no": "Nej",
@@ -458,7 +495,7 @@
   "failed_generate_estimate": "Misslyckades generera uppskattning. Försök igen.",
   "error_generating_estimate": "Fel vid generering av uppskattning",
   "saved_ai_estimate": "Sparad AI-Uppskattning",
-  "full_system_access": "Fullständig systemåtkomst och avancerade funktioner",
+  "full_system_access": "Full åtkomst till systemet och avancerade funktioner",
   "container_configurator_title": "Behållare\nKonfigurator",
   "container_configurator_desc": "Professionell containerkonfiguration",
   "ai_cost_estimator_title": "AI-Kostnads\nUppskattare",
@@ -483,10 +520,30 @@
   "save_configuration": "💾 Spara Konfiguration",
   "configuration_saved": "Konfiguration sparad framgångsrikt!",
   "get_ai_analysis": "Få AI-Analys",
-  "systems_installations": "System och Installationer",
-  "electrical_system": "Elsystem",
-  "plumbing_system": "Rörsystem",
-  "hvac_system": "HVAC-system",
+  "systems_installations": "System och installationer",
+  "electrical_system": {
+    "none": "Utan elektrisk installation",
+    "preparation": "Elektrisk beredning (endast kulverter)",
+    "basic": "Basic (15a, LED, 4 Sockets)",
+    "industrial": "Industrial (63A, 3-fas, switchgear)",
+    "it_server": "IT/serverrum (UPS, stabilisatorer, övervakning)"
+  },
+  "plumbing_system": {
+    "none": "Utan vatteninstallation",
+    "preparation": "Hydraulisk beredning (endast kulverter)",
+    "cold_water": "Installation av kallt vatten (handfat)",
+    "hot_cold_water": "Kall + varmt vatten (handfat, handfat)",
+    "basic_sanitary": "Basic Sanitary Node (WC + Sink)",
+    "standard_sanitary": "Standard Node (WC + Sink + Dusch)",
+    "comfort_sanitary": "Bekväm nod (WC + Sink + Cabin)",
+    "premium_sanitary": "Premium Node (Jacuzzi, Bidé, 2 Sinks)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Elektriska värmare (1-3kW, konvektorer)",
+    "heat_pump": "Värmepump (delad typ, 2-12 kW prestanda)",
+    "vrv_vrf": "VRV/VRF -system (Multi -Record, Zone Control)",
+    "underfloor_heating": "Golvvärme (elektrisk/vatten)"
+  },
   "insulation_package": "Isoleringspaket",
   "structural_reinforcement": "Strukturell Förstärkning",
   "delivery_logistics": "Leverans och Logistik",
@@ -549,8 +606,8 @@
     "error": "Fel",
     "windows": "Fönster",
     "doors": "Dörrar",
-    "electrical": "Elsystem",
-    "plumbing": "Rörsystem",
+    "electrical": "Elektriskt system",
+    "plumbing": "Hydraulsystem",
     "complexity": "Komplexitet",
     "cost_adjustment": "Kostnadsjustering",
     "updated_estimate": "Uppdaterad Uppskattning",
@@ -595,7 +652,7 @@
   "contingency_10": "Beredskap (10%)",
   "complexity_multiplier": "Komplexitetsmultiplikator",
   "standard_recommendations": "Standardrekommendationer",
-  "plan_standard_delivery": "Planera för standard leverans- och installationstidslinje",
+  "plan_standard_delivery": "Planera standardleverans- och installationsschemat",
   "consider_building_codes": "Överväg lokala byggkodkrav",
   "budget_site_preparation": "Budgetera för potentiella platsförberedelsebehov",
   "review_electrical_plumbing": "Granska el- och rörkrav tidigt",
@@ -632,11 +689,21 @@
   },
   "environments": {
     "indoor": "Inomhus (hallar, lager)",
-    "outdoor_standard": "Utomhusstandard (temperaturklimat)",
+    "outdoor_standard": "Standard Extern",
     "outdoor_extreme": "Utomhus extrem (kust, berg)",
     "industrial": "Industrial (växter, raffinaderier, gruvor)",
     "construction": "Konstruktion (byggnadsplatser, infrastruktur)",
     "agricultural": "Jordbruk (gårdar, faciliteter)",
     "marine": "Marin/varv (frätande miljö)"
+  },
+  "insulation_label": "Isolering",
+  "finish_levels": {
+    "shell": "Rå tillstånd (isolering + OSB -platta)",
+    "specialist": "Specialist (medicinska/laboratoriestandarder)"
+  },
+  "climate_zones": {
+    "maritime": "Havsklimat (hög luftfuktighet)",
+    "mountain": "Mountain Climate (High UV, Snow)",
+    "tropical": "Tropiskt klimat (höga temperaturer, luftfuktighet)"
   }
 }

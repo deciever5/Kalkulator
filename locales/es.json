@@ -135,7 +135,8 @@
     "new_inquiry": "Enviar Nueva Consulta",
     "error": "Error enviando consulta",
     "why_professional_inquiry": "¿Por Qué Enviar una Consulta Profesional?",
-    "preparation_tips": "Consejos para Mejores Resultados"
+    "preparation_tips": "Consejos para Mejores Resultados",
+    "budget_Range": "Alcance del presupuesto"
   },
   "send_inquiry_button": "Enviar Consulta",
   "why_kan_bud": "¿Por Qué Elegir KAN-BUD?",
@@ -164,7 +165,15 @@
     "industrial": "Grado industrial",
     "marine_grade": "Grado marino (resistencia a la sal)"
   },
-  "roof_modifications": "Modificaciones del Techo",
+  "roof_modifications": {
+    "none": "Sin modificación (techo plano estándar)",
+    "insulation": "Aislamiento del techo adicionalmente (10-20 cm)",
+    "skylight": "Skylight de techo (60x60, 90x90, 120x120 cm)",
+    "solar": "Instalación solar (2-10kW)",
+    "sloped": "Un techo oblicuo (un lado, aficionado)",
+    "terrace": "Terraza del techo (con balaustrada)",
+    "snow_removal": "Sistemas de eliminación de nieve (calentadores, canaletas)"
+  },
   "security_features": "Características de Seguridad",
   "exterior_cladding": "Revestimiento Exterior",
   "additional_openings": "Aberturas Adicionales",
@@ -280,7 +289,7 @@
   "delivery_zone_regional": "Regional (200 km)",
   "delivery_zone_national": "Nacional",
   "delivery_zone_international": "Internacional",
-  "transport_type": "Transporte tipo",
+  "transport_type": "Tipo de transporte",
   "transport_type_standard": "Estándar",
   "transport_type_crane": "Con Grúa",
   "transport_type_special": "Transporte especial",
@@ -303,7 +312,14 @@
   "system_comments": "Comentarios de Requisitos del Sistema",
   "advanced_comments": "Comentarios de Modificaciones Avanzadas",
   "general_comments": "Comentarios Generales",
-  "window_types": "Tipos de ventanas",
+  "window_types": {
+    "standard": "Estándar",
+    "panoramic": "Panorámico",
+    "sliding": "Corredizo",
+    "tilt": "Bisagra",
+    "security": "Anti -arglar",
+    "skylight": "Tragaluces para el techo"
+  },
   "window_types_standard": "Estándar",
   "window_types_double": "Doble Acristalamiento",
   "window_types_security": "Ventanas de Seguridad",
@@ -317,7 +333,7 @@
   "insulation": {
     "basic": "Básico (50mm)",
     "standard": "Estándar (100mm)",
-    "premium": "Premium (150 mm)",
+    "premium": "Premium (20 cm, lana mineral)",
     "extreme": "Extremo (200mm)",
     "none": "Sin aislamiento",
     "advanced": "Avanzado (lana mineral 10-15cm)"
@@ -330,7 +346,16 @@
     "luxury": "Lujo (clase más alta + acabado hotelero)",
     "specialist": "Especialista (estándares médicos/laboratorio)"
   },
-  "flooring": "Suelo",
+  "flooring": {
+    "none": "Sin piso (hoja corrugada)",
+    "plywood": "Madera contrachapada impermeable 18 mm (estándar)",
+    "anti_slip": "Madera contrachapada sin cañón de 21 mm",
+    "laminate": "Paneles laminados de AC4/AC5",
+    "vinyl": "Paneles de vinilo impermeables (LVT)",
+    "carpet": "Cubierta de piso de PVC de 2-4 mm",
+    "epoxy": "Piso epoxi industrial",
+    "concrete": "Piso elevado (salas de servidores)"
+  },
   "climate_zones": {
     "northern_europe": "Europa del Norte (Escandinavia, -30°C a +25°C)",
     "central_europe": "Europa Central (Polonia, Alemania, -20°C a +35°C)",
@@ -340,7 +365,12 @@
     "mountain": "Clima montañoso (UV alto, nieve)",
     "tropical": "Clima tropical (altas temperaturas, humedad)"
   },
-  "windows": "Ventanas",
+  "windows": {
+    "one": "1 ventana",
+    "two": "2 ventanas",
+    "three": "3 ventanas",
+    "four": "4 ventanas"
+  },
   "reinforcement": {
     "none": "Sin refuerzo",
     "standard": "Refuerzo estándar",
@@ -518,9 +548,29 @@
   "configuration_saved": "¡Configuración guardada exitosamente!",
   "get_ai_analysis": "Obtener Análisis IA",
   "systems_installations": "Sistemas e Instalaciones",
-  "electrical_system": "Sistema Eléctrico",
-  "plumbing_system": "Sistema de Fontanería",
-  "hvac_system": "Sistema HVAC",
+  "electrical_system": {
+    "none": "Sin instalación eléctrica",
+    "preparation": "Preparación eléctrica (solo alcantarillas)",
+    "basic": "Básico (15a, LED, 4 enchufes)",
+    "industrial": "Industrial (63a, 3 fases, apartamento)",
+    "it_server": "Sala de TI/servidor (UPS, estabilizadores, monitoreo)"
+  },
+  "plumbing_system": {
+    "none": "Sin instalación de agua",
+    "preparation": "Preparación hidráulica (solo alcantarillas)",
+    "cold_water": "Instalación de agua fría (fregadero)",
+    "hot_cold_water": "Frío + agua caliente (fregadero, fregadero)",
+    "basic_sanitary": "Nodo sanitario básico (fregadero WC +)",
+    "standard_sanitary": "Nodo estándar (WC + fregadero + ducha)",
+    "comfort_sanitary": "Nodo cómodo (WC + Sink + Cabin)",
+    "premium_sanitary": "Nodo premium (jacuzzi, bidé, 2 sumideros)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Calentadores eléctricos (1-3kW, convectores)",
+    "heat_pump": "Bomba de calor (tipo dividido, rendimiento de 2-12kw)",
+    "vrv_vrf": "Sistema VRV/VRF (múltiple recordación, control de zona)",
+    "underfloor_heating": "Calefacción por suelo radiante (eléctrico/agua)"
+  },
   "insulation_package": "Paquete de Aislamiento",
   "structural_reinforcement": "Refuerzo Estructural",
   "delivery_logistics": "Entrega y Logística",
@@ -672,5 +722,6 @@
     "construction": "Construcción (sitios de construcción, infraestructura)",
     "agricultural": "Agricultura (granjas, instalaciones)",
     "marine": "Marine/astillero (entorno corrosivo)"
-  }
+  },
+  "insulation_label": "Aislamiento"
 }

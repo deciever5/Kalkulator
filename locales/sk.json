@@ -217,9 +217,22 @@
   "purpose": "Účel",
   "environment": "Prostredie",
   "finish_level": "Úroveň dokončenia",
-  "flooring": "Podlaha",
+  "flooring": {
+    "none": "Bez podlahy (vlnitá vrh)",
+    "plywood": "Nepremokavá preglejka 18 mm (štandard)",
+    "anti_slip": "21 mm non -slip preglejka",
+    "laminate": "Laminované panely AC4/AC5",
+    "vinyl": "Nepremokavé vinylové panely (LVT)",
+    "carpet": "2-4 mm pokrývka podlahy PVC",
+    "epoxy": "Priemyselná epoxidová podlaha",
+    "concrete": "Zvýšená podlaha (serverové miestnosti)"
+  },
   "climate_zone": "Klimatická zóna",
-  "windows": "Okná",
+  "windows": {
+    "two": "2 okná",
+    "three": "3 okná",
+    "four": "4 okná"
+  },
   "additional_doors_included": "Dodatočné dvere zahrnuté",
   "yes": "Áno",
   "no": "Nie",
@@ -272,9 +285,29 @@
   "configuration_saved": "Konfigurácia úspešne uložená!",
   "get_ai_analysis": "Získať AI analýzu",
   "systems_installations": "Systémy a inštalácie",
-  "electrical_system": "Elektrický systém",
-  "plumbing_system": "Inštalatérsky systém",
-  "hvac_system": "HVAC systém",
+  "electrical_system": {
+    "none": "Bez elektrickej inštalácie",
+    "preparation": "Elektrická príprava (iba priepusti)",
+    "basic": "Basic (15a, LED, 4 zásuvky)",
+    "industrial": "Industrial (63a, 3-fázové, rozvádzače)",
+    "it_server": "IT/Server Room (UPS, stabilizátory, monitorovanie)"
+  },
+  "plumbing_system": {
+    "none": "Bez inštalácie vody",
+    "preparation": "Hydraulický prípravok (iba priepusty)",
+    "cold_water": "Inštalácia studenej vody (umývadlo)",
+    "hot_cold_water": "Studená + horúca voda (umývadlo, umývadlo)",
+    "basic_sanitary": "Základný sanitárny uzol (WC + Sink)",
+    "standard_sanitary": "Štandardný uzol (WC + umývadlo + sprcha)",
+    "comfort_sanitary": "Pohodlný uzol (WC + umývadlo + kabína)",
+    "premium_sanitary": "Prémiový uzol (Jacuzzi, Bidé, 2 umývadlá)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Elektrické ohrievače (1-3 kW, konvektory)",
+    "heat_pump": "Tepelné čerpadlo (typ split, výkon 2-12 kW)",
+    "vrv_vrf": "Systém VRV/VRF (MULTI -RECORD, CONTROL)",
+    "underfloor_heating": "Podlahové vykurovanie (elektrická/voda)"
+  },
   "insulation_package": "Izolačný balík",
   "structural_reinforcement": "Štrukturálne zosilnenie",
   "delivery_logistics": "Dodávka a logistika",
@@ -297,7 +330,14 @@
   "air_intakes_label": "Prívod vzduchu a vetranie",
   "fire_safety_label": "Požiarne bezpečnostné systémy",
   "roof_modifications_label": "Úpravy strechy",
-  "window_types": "Typy okien",
+  "window_types": {
+    "standard": "Norma",
+    "panoramic": "Panoramatický",
+    "sliding": "Posuvný",
+    "tilt": "Zavesený",
+    "security": "Protivník",
+    "skylight": "Strešné svetlíky"
+  },
   "window_types_standard": "Štandardné",
   "window_types_double": "Dvojité zasklenie",
   "window_types_security": "Bezpečnostné okná",
@@ -398,7 +438,8 @@
     "new_inquiry": "Odoslať Novú Žiadosť",
     "error": "Chyba pri odosielaní žiadosť",
     "why_professional_inquiry": "Prečo Odoslať Profesionálnu Žiadosť?",
-    "preparation_tips": "Používajte Tips pre Najlepší Výsledok"
+    "preparation_tips": "Používajte Tips pre Najlepší Výsledok",
+    "budget_Range": "Rozsah rozpočtu"
   },
   "send_inquiry_button": "Pošlite dotaz",
   "advanced_modifications": "Pokročilé modifikácie",
@@ -408,7 +449,15 @@
     "industrial": "Priemyselná verzia",
     "marine_grade": "Morsky odolná verzia"
   },
-  "roof_modifications": "Modifikácie strechy",
+  "roof_modifications": {
+    "none": "Bez úpravy (štandardná plochá strecha)",
+    "insulation": "Izolácia strechy navyše (10-20 cm)",
+    "skylight": "Strešné svetlíky (60x60, 90x90, 120x120cm)",
+    "solar": "Solárna inštalácia (2-10 kW)",
+    "sloped": "Šikmá strecha (jedna -vedená, štítová)",
+    "terrace": "Strešná terasa (s balustrádou)",
+    "snow_removal": "Systémy odstraňovania snehu (ohrievače, odkvapy)"
+  },
   "security_features": "Bezpečnostné funkcie",
   "exterior_cladding": "Exteriérové obkladové prvky",
   "additional_openings": "Doplnkové otvory",
@@ -474,11 +523,18 @@
   "construction_material_steel": "Oceľ",
   "construction_material_aluminum": "Alumínium",
   "construction_material_composite": "Kombinovaný materiál",
-  "lighting": "Osvetlenie",
+  "lighting": {
+    "basic_led": "Štandardná LED (základné)"
+  },
   "lighting_basic": "Základné LED",
   "lighting_professional": "Profesionálne",
   "lighting_none": "Žiadne osvetlenie",
-  "ventilation": "Ventilácia",
+  "ventilation": {
+    "none": "Bez vzduchových prieduchov (prírodné a mechanické)",
+    "gravity": "Gravitačné otvory (2-4 ks, nastaviteľné)",
+    "heat_recovery": "Recuperation (obnovenie tepla 80-95%)",
+    "split_ac": "Split klimatizácia (1-3 jednotiek)"
+  },
   "ventilation_natural": "Prirodné odvetrenie",
   "ventilation_forced": "Nútený vzduch",
   "ventilation_hvac": "Full HVAC",
@@ -740,5 +796,15 @@
     "construction": "Výstavba (výstavby, infraštruktúra)",
     "agricultural": "Poľnohospodárstvo (farmy, zariadenia)",
     "marine": "Námorník/lodenica (korozívne prostredie)"
+  },
+  "insulation_label": "Izolácia",
+  "finish_levels": {
+    "shell": "Surový stav (izolácia + doska OSB)",
+    "specialist": "Špecialista (lekárske/laboratórne normy)"
+  },
+  "climate_zones": {
+    "maritime": "Morské podnebie (vysoká vlhkosť)",
+    "mountain": "Mountain Climate (High UV, sneh)",
+    "tropical": "Tropické podnebie (vysoké teploty, vlhkosť)"
   }
 }

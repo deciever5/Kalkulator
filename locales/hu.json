@@ -54,8 +54,22 @@
   "environment": "Környezet",
   "key_modifications": "Fő Módosítások",
   "finish_level": "Befejezési Szint",
-  "flooring": "Padló",
-  "windows": "Ablakok",
+  "flooring": {
+    "none": "Nincs padló (hullámos lemez)",
+    "plywood": "Vízálló rétegelt lemez 18mm (szabványos)",
+    "anti_slip": "Csúszásgátló rétegelt lemez 21mm",
+    "laminate": "Laminált panelek AC4/AC5",
+    "vinyl": "Vinil panelek (LVT) vízálló",
+    "carpet": "Szőnyeglapok kereskedelmi",
+    "epoxy": "Epoxy padló (ipari)",
+    "concrete": "Polírozott beton"
+  },
+  "windows": {
+    "one": "1 ablak",
+    "two": "2 Windows",
+    "three": "3 Windows",
+    "four": "4 ablak"
+  },
   "additional_doors_included": "További ajtók mellékelve",
   "cost_breakdown": "Költség Lebontás",
   "base_cost": "Alap Költség",
@@ -71,9 +85,29 @@
   "configuration_saved": "Konfiguráció sikeresen elmentve!",
   "get_ai_analysis": "AI Elemzés Kérése",
   "systems_installations": "Rendszerek és Telepítések",
-  "electrical_system": "Elektromos Rendszer",
-  "plumbing_system": "Vízvezeték Rendszer",
-  "hvac_system": "HVAC Rendszer",
+  "electrical_system": {
+    "none": "Elektromos telepítés nélkül",
+    "preparation": "Elektromos előkészítés (csak az átruházások)",
+    "basic": "Alap (15a, LED, 4 aljzat)",
+    "industrial": "Ipari (63a, 3 fázis, kapcsolóberendezés)",
+    "it_server": "IT/szerver szoba (UPS, stabilizátorok, megfigyelés)"
+  },
+  "plumbing_system": {
+    "none": "Víz telepítés nélkül",
+    "preparation": "Hidraulikus előkészítés (csak az átruházások)",
+    "cold_water": "Hideg víz felszerelése (mosogató)",
+    "hot_cold_water": "Hideg + forró víz (mosogató, mosogató)",
+    "basic_sanitary": "Alapvető egészségügyi csomópont (WC + mosogató)",
+    "standard_sanitary": "Standard csomópont (WC + Sink + zuhany)",
+    "comfort_sanitary": "Kényelmes csomópont (WC + Sink + Cabin)",
+    "premium_sanitary": "Prémium csomópont (Jacuzzi, Bidé, 2 mosogató)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Elektromos fűtőberendezések (1-3 kW, konvektorok)",
+    "heat_pump": "Hőszivattyú (osztott típus, 2-12 kW teljesítmény)",
+    "vrv_vrf": "VRV/VRF rendszer (multi -record, zónavezérlés)",
+    "underfloor_heating": "Padlófűtés (elektromos/víz)"
+  },
   "insulation_package": "Szigetelési Csomag",
   "structural_reinforcement": "Szerkezeti Megerősítés",
   "delivery_logistics": "Szállítás és Logisztika",
@@ -165,7 +199,8 @@
     "new_inquiry": "Új Kérdés Küldése",
     "error": "Hiba a kérdés küldésekor",
     "why_professional_inquiry": "Miért Küldjön Professzionális Kérdést?",
-    "preparation_tips": "Előkészítési Tippek"
+    "preparation_tips": "Előkészítési Tippek",
+    "budget_Range": "Költségvetési hatókör"
   },
   "send_inquiry_button": "Érdeklődés Küldése",
   "why_kan_bud": "Miért válassza a KAN-BUD-ot?",
@@ -400,7 +435,15 @@
     "industrial": "Ipari minőség",
     "marine_grade": "Tengerparti minőség (sóálló)"
   },
-  "roof_modifications": "Roof Modifications",
+  "roof_modifications": {
+    "none": "Módosítás nélkül (standard lapos tető)",
+    "insulation": "Tetőszigetelés emellett (10-20 cm)",
+    "skylight": "Tető tetőablak (60x60, 90x90, 120x120cm)",
+    "solar": "Napenergia-telepítés (2-10 kW)",
+    "sloped": "Egy ferde tető (egyoldalú, gable)",
+    "terrace": "Tetőterasz (balustráddal)",
+    "snow_removal": "Hó eltávolító rendszerek (melegítők, ereszcsatorna)"
+  },
   "security_features": "Biztonsági Jellemzők",
   "exterior_cladding": "Külső Burkolat",
   "additional_openings": "További Nyílások",
@@ -543,7 +586,7 @@
   "interior_layout_partitioned": "Particionált",
   "delivery_zone_local": "Local (50km)",
   "security_systems_advanced": "Fejlett",
-  "fire_systems_full": "Full System",
+  "fire_systems_full": "Teljes rendszer",
   "paint_finish_standard": "Standard",
   "construction_material_steel": "Acél",
   "paint_finish_premium": "Premium",
@@ -568,7 +611,7 @@
   "installation_basic": "Alapbeállítás",
   "delivery_zone_international": "Nemzetközi",
   "paint_finish_custom": "Custom Color",
-  "security_systems": "Security Systems",
+  "security_systems": "Biztonsági rendszerek",
   "construction_material_aluminum": "Aluminum",
   "construction_material": "Construction Material",
   "transport_type_special": "Speciális szállítás",
@@ -582,14 +625,26 @@
   "lighting_basic": "Alapvető LED",
   "additional_openings_emergency": "Emergency Exit",
   "office_equipment_none": "Egyik sem",
-  "window_types": "Ablaktípusok",
+  "window_types": {
+    "standard": "Standard",
+    "panoramic": "Panorámás",
+    "sliding": "Csúszó",
+    "tilt": "Csuklós",
+    "security": "Gurglary",
+    "skylight": "Tetőablakok"
+  },
   "it_systems_none": "Egyik sem",
   "transport_type_standard": "Standard",
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dupla mázas",
-  "ventilation": "Ventilation",
-  "it_systems": "IT Systems",
+  "ventilation": {
+    "none": "Légszellőzőnyílások nélkül (természetes és mechanikus)",
+    "gravity": "Gravitációs szellőzőnyílások (2-4 db, állítható)",
+    "heat_recovery": "Rekuperáció (hő-visszanyerés 80-95%)",
+    "split_ac": "Osztott légkondicionáló (1-3 egység)"
+  },
+  "it_systems": "IT rendszerek",
   "lighting_professional": "Szakmai",
   "interior_layout_open": "Open Space",
   "appliances_kitchen": "Kitchen Equipment",
@@ -597,14 +652,16 @@
   "office_equipment": "Office Equipment",
   "installation": "Telepítés",
   "system_comments": "System Requirements Comments",
-  "office_equipment_full": "Complete Office",
+  "office_equipment_full": "Teljes iroda",
   "appliances": "Készülékek",
   "it_systems_advanced": "Továbbfejlesztett",
   "window_types_security": "Biztonsági ablakok",
   "roof_modifications_skylight": "Tetőablak",
-  "lighting": "Világítás",
+  "lighting": {
+    "basic_led": "Standard LED (alap)"
+  },
   "it_systems_basic": "Alaphálózat",
-  "fire_systems": "Fire Safety Systems",
+  "fire_systems": "Tűzrendszer",
   "additional_openings_door": "Kiegészítő ajtó",
   "construction_material_composite": "Composite",
   "air_intakes_label": "Légbevitel és szellőzés",
@@ -633,7 +690,7 @@
   },
   "environments": {
     "indoor": "Beltéri (csarnokok, raktárak)",
-    "outdoor_standard": "Kültéri standard (hőmérsékleti éghajlat)",
+    "outdoor_standard": "Standard külső",
     "outdoor_extreme": "Kültéri szélsőséges (tengerparti, hegyek)",
     "industrial": "Ipari (növények, finomítók, bányák)",
     "construction": "Építés (építési helyek, infrastruktúra)",
@@ -648,16 +705,6 @@
     "luxury": "Luxus (legmagasabb osztály + szállodai befejezés)",
     "specialist": "Szakmai (orvosi/laboratóriumi szabványok)"
   },
-  "flooring": {
-    "none": "Nincs padló (hullámos lemez)",
-    "plywood": "Vízálló rétegelt lemez 18mm (szabványos)",
-    "anti_slip": "Csúszásgátló rétegelt lemez 21mm",
-    "laminate": "Laminált panelek AC4/AC5",
-    "vinyl": "Vinil panelek (LVT) vízálló",
-    "carpet": "Szőnyeglapok kereskedelmi",
-    "epoxy": "Epoxy padló (ipari)",
-    "concrete": "Polírozott beton"
-  },
   "climate_zones": {
     "northern_europe": "Észak-Európa (Skandinávia, -30°C-tól +25°C-ig)",
     "central_europe": "Közép-Európa (Lengyelország, Németország, -20°C-tól +35°C-ig)",
@@ -666,5 +713,6 @@
     "maritime": "Tengeri éghajlat (magas páratartalom)",
     "mountain": "Hegyi éghajlat (magas UV, hó)",
     "tropical": "Trópusi éghajlat (magas hőmérséklet, páratartalom)"
-  }
+  },
+  "insulation_label": "Szigetelés"
 }

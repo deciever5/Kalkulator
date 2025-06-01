@@ -60,7 +60,7 @@
   "poland_center": "Centre de la Pologne",
   "full_service": "Service complet",
   "design_execution": "Conception + exécution",
-  "transport_assembly": "Transport + assemblage",
+  "transport_assembly": "Transport et assemblage",
   "after_sales_support": "Support après-vente",
   "contact_us": "Contactez-nous",
   "address": "Adresse",
@@ -217,9 +217,23 @@
   "purpose": "Objectif",
   "environment": "Environnement",
   "finish_level": "Niveau de finition",
-  "flooring": "Revêtement de sol",
+  "flooring": {
+    "none": "Sans plancher (feuille ondulée)",
+    "plywood": "Contreplaqué imperméable 18 mm (standard)",
+    "anti_slip": "Contreplaqué non glissé de 21 mm",
+    "laminate": "Panneaux laminés AC4 / AC5",
+    "vinyl": "Panneaux en vinyle imperméables (LVT)",
+    "carpet": "Couvre-plancher en PVC de 2 à 4 mm",
+    "epoxy": "Plancher époxy industriel",
+    "concrete": "Plancher élevé (salles de serveurs)"
+  },
   "climate_zone": "Zone climatique",
-  "windows": "Fenêtres",
+  "windows": {
+    "one": "1 fenêtre",
+    "two": "2 fenêtres",
+    "three": "3 fenêtres",
+    "four": "4 fenêtres"
+  },
   "additional_doors_included": "Portes supplémentaires incluses",
   "yes": "Oui",
   "no": "Non",
@@ -272,9 +286,29 @@
   "configuration_saved": "Configuration enregistrée avec succès!",
   "get_ai_analysis": "Obtenir l'analyse IA",
   "systems_installations": "Systèmes et installations",
-  "electrical_system": "Système électrique",
-  "plumbing_system": "Système de plomberie",
-  "hvac_system": "Système CVC",
+  "electrical_system": {
+    "none": "Sans installation électrique",
+    "preparation": "Préparation électrique (seulement ponceaux)",
+    "basic": "Basique (15A, LED, 4 sockets)",
+    "industrial": "Industriel (63a, 3 phases, d'appareil à commutation)",
+    "it_server": "Salle informatique / serveur (UPS, stabilisateurs, surveillance)"
+  },
+  "plumbing_system": {
+    "none": "Sans installation d'eau",
+    "preparation": "Préparation hydraulique (seulement ponceaux)",
+    "cold_water": "Installation de l'eau froide (évier)",
+    "hot_cold_water": "Cold + eau chaude (évier, évier)",
+    "basic_sanitary": "Node sanitaire de base (puits WC +)",
+    "standard_sanitary": "Node standard (WC + Sink + Shower)",
+    "comfort_sanitary": "Node confortable (WC + Sink + Cabin)",
+    "premium_sanitary": "Node premium (Jacuzzi, Bidé, 2 puits)"
+  },
+  "hvac_system": {
+    "electric_heaters": "Ricolateurs électriques (1-3 kW, convecteurs)",
+    "heat_pump": "Pompe à chaleur (type divisé, performance de 2-12 kW)",
+    "vrv_vrf": "Système VRV / VRF (Multi-Record, Contrôle de zone)",
+    "underfloor_heating": "Chauffage sous le plancher (électrique / eau)"
+  },
   "insulation_package": "Package d'isolation",
   "structural_reinforcement": "Renforcement structurel",
   "delivery_logistics": "Livraison et logistique",
@@ -297,7 +331,14 @@
   "air_intakes_label": "Prises d'air et ventilation",
   "fire_safety_label": "Systèmes de sécurité incendie",
   "roof_modifications_label": "Modifications de toiture",
-  "window_types": "Types de fenêtres",
+  "window_types": {
+    "standard": "Standard",
+    "panoramic": "Panoramique",
+    "sliding": "Glissement",
+    "tilt": "Articulé",
+    "security": "Anti-tournage",
+    "skylight": "Puits de lumière du toit"
+  },
   "window_types_standard": "Standard",
   "window_types_double": "Double vitrage",
   "window_types_security": "Fenêtres de sécurité",
@@ -306,8 +347,8 @@
   "paint_finish_custom": "Couleur personnalisée",
   "insulation": {
     "basic": "Basique (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150 mm)",
+    "standard": "Standard (15 cm, pir / pur)",
+    "premium": "Premium (20 cm, laine minérale)",
     "extreme": "Extrême (200mm)",
     "none": "Aucune isolation",
     "advanced": "Avancé (laine minérale 10-15cm)"
@@ -321,7 +362,7 @@
     "description": "Obtenez un devis détaillé adapté à votre projet de conteneur",
     "disclaimer_title": "Informations importantes",
     "disclaimer_text": "Ce formulaire est destiné à la soumission de demandes d'information pour obtenir des devis détaillés. Les estimations de notre calculatrice ne constituent pas des offres commerciales conformément à la loi applicable.",
-    "config_detected": "Configuration détectée à partir du calculateur",
+    "config_detected": "La configuration de la calculatrice a été détectée",
     "current_config": "Configuration actuelle",
     "customer_info": "Informations de contact du client",
     "full_name": "Nom complet",
@@ -398,7 +439,8 @@
     "new_inquiry": "Envoyer une nouvelle demande",
     "error": "Erreur lors de l'envoi de la demande",
     "why_professional_inquiry": "Pourquoi soumettre une demande professionnelle ?",
-    "preparation_tips": "Conseils pour les meilleurs résultats"
+    "preparation_tips": "Conseils pour les meilleurs résultats",
+    "budget_Range": "Portée du budget"
   },
   "send_inquiry_button": "Envoyer une demande d'information",
   "advanced_modifications": "Modifications avancées",
@@ -408,7 +450,15 @@
     "industrial": "Grade industriel",
     "marine_grade": "Grade marin (résistance au sel)"
   },
-  "roof_modifications": "Modifications de toit",
+  "roof_modifications": {
+    "none": "Sans modification (toit plat standard)",
+    "insulation": "Isolation du toit en plus (10-20 cm)",
+    "skylight": "Skylight de toit (60x60, 90x90, 120x120cm)",
+    "solar": "Installation solaire (2-10 kW)",
+    "sloped": "Un toit oblique (un acteur, pignon)",
+    "terrace": "Terrasse du toit (avec balustrade)",
+    "snow_removal": "Systèmes d'élimination de la neige (radiateurs, gouttières)"
+  },
   "security_features": "Fonctionnalités de sécurité",
   "exterior_cladding": "Revêtement extérieur",
   "additional_openings": "Ouvertures supplémentaires",
@@ -422,7 +472,7 @@
   "paint_finish": "Finition peinte",
   "electrical": {
     "basic": "De base (éclairage + prises)",
-    "standard": "Standard (circuit 15A)",
+    "standard": "Standard (circuit 15a)",
     "industrial": "Industriel (30A + panneau)",
     "smart_system": "Système intelligent (automatisation IoT)"
   },
@@ -441,7 +491,7 @@
   },
   "security": {
     "basic": "Sécurité de base (serrures renforcées)",
-    "standard": "Sécurité standard (prêt à l'alarme)",
+    "standard": "Standard (préparation d'alarme)",
     "advanced": "Sécurité avancée (caméras + capteurs)",
     "high_security": "Sécurité élevée (biométrique)"
   },
@@ -474,11 +524,18 @@
   "construction_material_steel": "Acier",
   "construction_material_aluminum": "Aluminium",
   "construction_material_composite": "Matériau composite",
-  "lighting": "Éclairage",
+  "lighting": {
+    "basic_led": "LED standard (base)"
+  },
   "lighting_basic": "LED de base",
   "lighting_professional": "Professionnel",
   "lighting_none": "Aucune éclairage",
-  "ventilation": "Ventilation",
+  "ventilation": {
+    "none": "Sans bouches d'aération (naturelles et mécaniques)",
+    "gravity": "Évents gravitationnels (2-4 pcs, réglables)",
+    "heat_recovery": "Récupération (récupération de chaleur 80-95%)",
+    "split_ac": "Climatisation divisée (1-3 unités)"
+  },
   "ventilation_natural": "Ventilation naturelle",
   "ventilation_forced": "Ventilation forcée",
   "ventilation_hvac": "Ventilation HVAC complète",
@@ -508,14 +565,14 @@
   "delivery_zone_regional": "Régional (200 km)",
   "delivery_zone_national": "Zone de livraison nationale",
   "delivery_zone_international": "Zone de livraison internationale",
-  "transport_type": "Type Transport",
+  "transport_type": "Type de transport",
   "transport_type_standard": "Standard",
   "transport_type_crane": "Avec grue",
   "transport_type_special": "Transport spécial",
   "installation": "Installation",
-  "installation_none": "Auto-installation",
-  "installation_basic": "Configuration de base",
-  "installation_full": "Installation complète",
+  "installation_none": "Assemblée auto-assemblée",
+  "installation_basic": "Assemblage de base",
+  "installation_full": "Assemblage complet",
   "office_equipment": "Matériel de bureau",
   "office_equipment_none": "Aucun",
   "office_equipment_basic": "Fournitures de base",
@@ -547,7 +604,7 @@
     "hvac_system": "Options de climatisation. Les pompes à chaleur sont des effistants énergétiques pour une utilisation annuelle.",
     "security_features": "Niveaux de sécurité des verrous de base aux systèmes de contrôle d'accès biométriques.",
     "exterior_cladding": "Protection des intempéries et amélioration esthétique. Le revêtement métallique offre la meilleure durabilité.",
-    "additional_openings": "Points d'accès spécialisés au-delà des portes et des fenêtres standard.",
+    "additional_openings": "Points d'accès spécialisés en dehors des portes standard et des fenêtres.",
     "fire_safety": "Systèmes de protection contre les incendies. Les systèmes de gicleurs recommandés à usage commercial.",
     "accessibility": "La conformité ADA garantit l'accessibilité aux personnes handicapées.",
     "paint_finish": "La qualité de l'enduit affecte la durabilité. C5M recommandé pour les environnements marins. C4 pour l'industrie.",
@@ -601,8 +658,8 @@
     },
     "finish_levels": {
       "basic": "Niveau de finition de base",
-      "standard": "Niveau de finition standard",
-      "premium": "Niveau de finition premium",
+      "standard": "Standard",
+      "premium": "Premium (la plus haute qualité)",
       "luxury": "Niveau de finition de luxe"
     },
     "flooring": {
@@ -660,7 +717,7 @@
     "adjusted_estimate": "Estimation ajustée",
     "next_steps": "Étapes suivantes",
     "get_detailed_quote": "Obtenez une citation détaillée",
-    "refine_config": "Affiner la configuration",
+    "refine_config": "Clarifier la configuration",
     "disclaimer_title": "Avertissement important",
     "disclaimer_text": "Il s'agit d'une analyse automatisée pour l'estimation du violet. Le prix final nécessite une vérification manuelle par notre équipe technique.",
     "tips_title": "Conseils pour une meilleure analyse",
@@ -697,7 +754,7 @@
   "contingency_10": "Contingence (10%)",
   "complexity_multiplier": "Multiplieur de complexité",
   "standard_recommendations": "Recommendations standard",
-  "plan_standard_delivery": "Plan pour une livraison et une installation standard",
+  "plan_standard_delivery": "Planifiez le calendrier de livraison et d'installation standard",
   "consider_building_codes": "Prenez en compte les exigences du code de construction local",
   "budget_site_preparation": "Prevoyez un budget pour les besoins potentiels de préparation du site",
   "review_electrical_plumbing": "Examinez les exigences électriques et en plomberie dès le début",
@@ -738,7 +795,17 @@
     "outdoor_extreme": "Extreme extérieur (côte, montagnes)",
     "industrial": "Industriel (plantes, raffineries, mines)",
     "construction": "Construction (sites de construction, infrastructure)",
-    "agricultural": "Agricole (fermes, installations)",
+    "agricultural": "Agricole",
     "marine": "Marine / chantier naval (environnement corrosif)"
+  },
+  "insulation_label": "Isolation",
+  "finish_levels": {
+    "shell": "État brut (isolation + plaque OSB)",
+    "specialist": "Spécialiste (normes médicales / laboratoires)"
+  },
+  "climate_zones": {
+    "maritime": "Climat maritime (humidité élevée)",
+    "mountain": "Climat de montagne (UV élevé, neige)",
+    "tropical": "Climat tropical (températures élevées, humidité)"
   }
 }
