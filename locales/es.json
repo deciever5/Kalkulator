@@ -230,11 +230,27 @@
   "construction_material_steel": "Acero",
   "construction_material_aluminum": "Aluminio",
   "construction_material_composite": "Compuesto",
-  "lighting": "Iluminación",
+  "lighting": {
+    "none": "Sin iluminación",
+    "basic_led": "LED estándar (básico)",
+    "energy_efficient": "LED eficiente con sensores",
+    "exterior": "Iluminación exterior (focos)",
+    "emergency": "Iluminación de emergencia (batería)",
+    "smart": "Sistema inteligente (iluminación inteligente)"
+  },
   "lighting_basic": "LED Básico",
   "lighting_professional": "Profesional",
   "lighting_none": "Ninguna",
-  "ventilation": "Ventilación",
+  "ventilation": {
+    "none": "Sin ventilación (natural ni mecánica)",
+    "gravity": "Ventilación por gravedad (2-4 unidades, regulables)",
+    "wall_fans": "Ventiladores de pared (extracción 100-150mm)",
+    "mechanical": "Ventilación mecánica (entrada + extracción)",
+    "heat_recovery": "Recuperación de calor (80-95% eficiencia)",
+    "split_ac": "Aire acondicionado split (1-3 unidades)",
+    "central_ac": "Aire acondicionado central (VRV/VRF)",
+    "industrial": "Ventilación industrial (ATEX, resistente químicos)"
+  },
   "ventilation_natural": "Natural",
   "ventilation_forced": "Aire Forzado",
   "ventilation_hvac": "HVAC Completo",
@@ -287,7 +303,7 @@
   "system_comments": "Comentarios de Requisitos del Sistema",
   "advanced_comments": "Comentarios de Modificaciones Avanzadas",
   "general_comments": "Comentarios Generales",
-  "window_types": "Tipos de Ventanas",
+  "window_types": "Tipos de ventanas",
   "window_types_standard": "Estándar",
   "window_types_double": "Doble Acristalamiento",
   "window_types_security": "Ventanas de Seguridad",
@@ -314,16 +330,7 @@
     "luxury": "Lujo (clase más alta + acabado hotelero)",
     "specialist": "Especialista (estándares médicos/laboratorio)"
   },
-  "flooring": {
-    "none": "Sin suelo (chapa ondulada)",
-    "plywood": "Contrachapado impermeable 18mm (estándar)",
-    "anti_slip": "Contrachapado antideslizante 21mm",
-    "laminate": "Paneles laminados AC4/AC5",
-    "vinyl": "Paneles vinílicos (LVT) impermeables",
-    "carpet": "Baldosas de alfombra comerciales",
-    "epoxy": "Suelo epoxi (industrial)",
-    "concrete": "Hormigón pulido"
-  },
+  "flooring": "Suelo",
   "climate_zones": {
     "northern_europe": "Europa del Norte (Escandinavia, -30°C a +25°C)",
     "central_europe": "Europa Central (Polonia, Alemania, -20°C a +35°C)",
@@ -333,41 +340,7 @@
     "mountain": "Clima montañoso (UV alto, nieve)",
     "tropical": "Clima tropical (altas temperaturas, humedad)"
   },
-  "windows": {
-    "none": "Sin ventanas (contenedor cerrado)",
-    "one": "1 ventana",
-    "two": "2 ventanas",
-    "three": "3 ventanas", 
-    "four": "4 ventanas",
-    "five_plus": "5+ ventanas (configuración personalizada)"
-  },
-  "window_types": {
-    "standard": "Estándar (100x80cm)",
-    "panoramic": "Panorámicas (150x120cm)", 
-    "sliding": "Deslizantes",
-    "tilt": "Abatibles",
-    "security": "Antirrobo (clase P4-P8)",
-    "energy_efficient": "Eficiencia energética (3 cristales)",
-    "skylight": "Claraboyas de techo (adicional)"
-  },
-  "lighting": {
-    "none": "Sin iluminación",
-    "basic_led": "LED estándar (básico)",
-    "energy_efficient": "LED eficiente con sensores",
-    "exterior": "Iluminación exterior (focos)",
-    "emergency": "Iluminación de emergencia (batería)",
-    "smart": "Sistema inteligente (iluminación inteligente)"
-  },
-  "ventilation": {
-    "none": "Sin ventilación (natural ni mecánica)",
-    "gravity": "Ventilación por gravedad (2-4 unidades, regulables)",
-    "wall_fans": "Ventiladores de pared (extracción 100-150mm)",
-    "mechanical": "Ventilación mecánica (entrada + extracción)",
-    "heat_recovery": "Recuperación de calor (80-95% eficiencia)",
-    "split_ac": "Aire acondicionado split (1-3 unidades)",
-    "central_ac": "Aire acondicionado central (VRV/VRF)",
-    "industrial": "Ventilación industrial (ATEX, resistente químicos)"
-  },
+  "windows": "Ventanas",
   "reinforcement": {
     "none": "Sin refuerzo",
     "standard": "Refuerzo estándar",
@@ -491,9 +464,7 @@
   "purpose": "Propósito",
   "environment": "Ambiente",
   "finish_level": "Nivel de Acabado",
-  "flooring": "Suelo",
   "climate_zone": "Zona Climática",
-  "windows": "Ventanas",
   "additional_doors_included": "Puertas adicionales incluidas",
   "yes": "Sí",
   "no": "No",
