@@ -30,35 +30,27 @@ def generate_cost_estimate(config, ai_model):
     # Initialize container-themed loading spinner
     loader = ContainerLoadingSpinner()
     
-    # Show container-themed loading animation during AI processing
+    # Show container assembly animation during AI processing
     with st.container():
         st.markdown(f"### 🤖 {t('generating_ai_estimate')}")
         
-        # Show progress animation while AI processes
-        loader.show_interactive_progress(
-            total_steps=5,
-            current_step=1, 
-            message=t('ai_analyzing_requirements')
-        )
+        # Custom assembly steps for AI cost estimation
+        ai_assembly_steps = [
+            "🏗️ Przygotowywanie specyfikacji technicznej...",
+            "📦 Analizowanie wymagań kontenerowych...", 
+            "🔧 Obliczanie kosztów materiałów i robocizny...",
+            "⚡ Optymalizacja projektu przez AI...",
+            "✅ Finalizowanie oszacowania kosztów..."
+        ]
         
-        # Brief pause for animation effect
-        import time
-        time.sleep(1)
+        # Show the assembly process animation
+        loader.show_container_assembly(ai_assembly_steps)
 
     try:
-        # Show progressive loading steps
-        loader.show_interactive_progress(2, 1, t('ai_calculating_costs'))
-        time.sleep(0.5)
-        
-        loader.show_interactive_progress(3, 2, t('ai_optimizing_design'))
-        time.sleep(0.5)
-        
         # Call the actual AI service with the configuration
         ai_estimate = estimate_cost_with_ai(config, ai_model)
         
-        # Show completion
-        loader.show_interactive_progress(5, 5, t('ai_finalizing_estimate'))
-        time.sleep(0.3)
+        # Show success animation
         loader.success_animation("Oszacowanie AI zostało wygenerowane!")
         
         return ai_estimate
