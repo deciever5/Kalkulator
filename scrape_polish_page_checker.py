@@ -168,6 +168,9 @@ class PolishPageChecker:
             if words:
                 print(f"🔤 First 50 words: {' '.join(words[:50])}")
             
+            # Store words in content for analysis
+            content['all_words'] = words
+            
             return content
             
         except requests.RequestException as e:
@@ -202,12 +205,22 @@ class PolishPageChecker:
             r'ing$',  # -ing endings
             r'tion$', # -tion endings
             r'ment$', # -ment endings
+            r'ness$', # -ness endings
+            r'able$', # -able endings
+            r'ible$', # -ible endings
             r'^choose',
             r'^select',
             r'^please',
             r'system$',
             r'type$',
-            r'level$'
+            r'level$',
+            r'layout$',
+            r'option$',
+            r'equipment$',
+            r'material$',
+            r'delivery$',
+            r'installation$',
+            r'configuration$'
         ]
         
         for pattern in english_patterns:
@@ -268,11 +281,22 @@ class PolishPageChecker:
         
         # Also analyze the full text
         all_text = content.get('all_text', '')
-        all_words = re.findall(r'\b\w+\b', all_text)
+        all_words = content.get('all_words', re.findall(r'\b\w+\b', all_text))
         
-        for word in all_words:
+        print(f"🔍 Analyzing {len(all_words)} words for English content...")
+        
+        # Process all words
+        english_count = 0
+        for i, word in enumerate(all_words):
             if self.is_english_word(word):
                 findings['english_words'].add(word)
+                english_count += 1
+            
+            # Progress indicator for large text
+            if i > 0 and i % 1000 == 0:
+                print(f"   Processed {i}/{len(all_words)} words, found {english_count} English words so far...")
+        
+        print(f"✅ Completed analysis: {english_count} English words found out of {len(all_words)} total words")
         
         # Calculate statistics
         findings['statistics'] = {
