@@ -1,0 +1,13 @@
+{
+  "english_words": [],
+  "suspicious_phrases": [],
+  "section_analysis": {},
+  "statistics": {
+    "total_words_found": 10,
+    "english_words_count": 0,
+    "suspicious_phrases_count": 0,
+    "sections_with_issues": 0
+  },
+  "timestamp": "2025-06-01 23:22:19",
+  "url": "http://0.0.0.0:5000/Container_Configurator?language=pl"
+}
