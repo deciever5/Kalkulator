@@ -84,9 +84,13 @@ class AdvancedTranslationFixer:
         
         return any(indicator in text for indicator in placeholder_indicators)
     
-    def is_likely_english(self, text: str) -> bool:
-        """Check if text is likely English"""
+    def is_likely_english(self, text: str, target_language: str = None) -> bool:
+        """Check if text is likely English (only relevant for non-English languages)"""
         if not text or len(text) < 3:
+            return False
+        
+        # If target language is English, English words are expected and correct
+        if target_language == 'en':
             return False
         
         english_indicators = [
@@ -190,18 +194,19 @@ class AdvancedTranslationFixer:
         if placeholder_fixes:
             print(f"   🏷️  Fixed {placeholder_fixes} placeholder translations")
         
-        # Fix English translations
+        # Fix English translations (skip for English language)
         english_fixes = 0
-        for key, target_value in lang_translations.items():
-            if self.is_likely_english(target_value):
-                polish_value = base_translations.get(key)
-                if polish_value and self.should_translate(polish_value):
-                    translated = self.ai_service._translate_text(polish_value, language)
-                    if translated and translated != target_value and translated != polish_value:
-                        self.set_nested_value(lang_data, key, translated)
-                        english_fixes += 1
-                        fixes_made += 1
-                        time.sleep(0.1)
+        if language != 'en':  # Only check for English in non-English languages
+            for key, target_value in lang_translations.items():
+                if self.is_likely_english(target_value, language):
+                    polish_value = base_translations.get(key)
+                    if polish_value and self.should_translate(polish_value):
+                        translated = self.ai_service._translate_text(polish_value, language)
+                        if translated and translated != target_value and translated != polish_value:
+                            self.set_nested_value(lang_data, key, translated)
+                            english_fixes += 1
+                            fixes_made += 1
+                            time.sleep(0.1)
         
         if english_fixes:
             print(f"   🔤 Fixed {english_fixes} English translations")
