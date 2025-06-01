@@ -11,8 +11,10 @@ from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
 from utils.translations import t, init_language, get_current_language, set_language
 from utils.shared_header import render_shared_header
+from utils.polish_ui_override import initialize_polish_ui
 
 init_language()
+initialize_polish_ui()
 
 # Initialize session state for login
 if 'employee_logged_in' not in st.session_state:
