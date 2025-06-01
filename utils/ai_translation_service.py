@@ -33,7 +33,8 @@ class AITranslationService:
             'sk': 'Slovak',
             'hu': 'Hungarian',
             'uk': 'Ukrainian',
-            'ru': 'Russian'
+            'ru': 'Russian',
+            'pl': 'Polish'
         }
 
     def translate_missing_keys(self, target_lang: str, source_lang: str = 'pl'):

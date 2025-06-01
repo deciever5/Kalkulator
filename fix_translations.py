@@ -65,10 +65,10 @@ class TranslationRepairer:
         """Repair translations for a specific language"""
         print(f"🔧 Repairing {language.upper()} translations...")
 
-        # Load base English translations
-        en_data = self.load_json_file(os.path.join(self.locales_dir, "en.json"))
-        if not en_data:
-            print(f"❌ Could not load English base translations")
+        # Load base Polish translations (configured base language)
+        base_data = self.load_json_file(os.path.join(self.locales_dir, f"{self.analyzer.base_language}.json"))
+        if not base_data:
+            print(f"❌ Could not load base language ({self.analyzer.base_language}) translations")
             return False
 
         # Load target language
@@ -79,10 +79,10 @@ class TranslationRepairer:
             return False
 
         # Get flat key-value pairs
-        en_translations = self.analyzer.get_all_keys_flat(en_data)
+        base_translations = self.analyzer.get_all_keys_flat(base_data)
 
         # Analyze current quality
-        analysis = self.analyzer.analyze_language_quality(language, en_translations)
+        analysis = self.analyzer.analyze_language_quality(language, base_translations)
         if "error" in analysis:
             print(f"❌ Analysis error: {analysis['error']}")
             return False
@@ -93,10 +93,10 @@ class TranslationRepairer:
         if analysis['missing']:
             print(f"   📝 Fixing {len(analysis['missing'])} missing translations...")
             for key in analysis['missing']:
-                en_value = en_translations.get(key)
-                if en_value:
-                    translated = self.ai_service._translate_text(en_value, language)
-                    if translated and translated != en_value:
+                base_value = base_translations.get(key)
+                if base_value:
+                    translated = self.ai_service._translate_text(base_value, language)
+                    if translated and translated != base_value:
                         self.set_nested_value(lang_data, key, translated)
                         repairs_made += 1
                         time.sleep(0.1)  # Rate limiting
@@ -129,7 +129,7 @@ class TranslationRepairer:
         if analysis['suspicious']:
             print(f"   ⚠️  Reviewing {len(analysis['suspicious'])} suspicious translations...")
             for key, suspicious_value in analysis['suspicious']:
-                base_value = en_translations.get(key)
+                base_value = base_translations.get(key)
                 if base_value and self._should_translate(base_value):
                     translated = self.ai_service._translate_text(base_value, language)
                     if translated and translated != base_value and translated != suspicious_value:
