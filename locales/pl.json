@@ -671,6 +671,13 @@
   "ai_calculating_costs": "Obliczanie kosztów materiałów...",
   "ai_optimizing_design": "Optymalizacja projektu...",
   "ai_finalizing_estimate": "Finalizowanie oszacowania...",
+  "flooring": "Podłoga",
+  "window_types": "Typy Okien",
+  "lighting": "Oświetlenie",
+  "electrical_system": "System Elektryczny",
+  "plumbing_system": "System Wodny",
+  "hvac_system": "System HVAC",
+  "accessibility": "Dostępność",
   "container_types": {
     "10ft_compact": "10ft Kompaktowy (3m x 2.4m)",
     "20ft_standard": "20ft Standardowy (6m x 2.4m)",
@@ -894,6 +901,53 @@
     "comfort": "Komfortowy (+ zmywarka, piekarnik, wyciąg)",
     "premium": "Premium (sprzęt w zabudowie, indukcja)",
     "smart": "Smart AGD (WiFi, aplikacje, programowanie)"
+  },
+  "flooring_options": {
+    "plywood": "Sklejka wodoodporna 18mm (standard)",
+    "vinyl": "Panele winylowe LVT (komfort)",
+    "laminate": "Panele laminowane (ekonomiczne)",
+    "epoxy": "Żywica epoksydowa (przemysł)",
+    "concrete": "Beton polerowany (nowoczesny)",
+    "ceramic": "Płytki ceramiczne (łazienki)"
+  },
+  "window_options": {
+    "none": "Bez okien (kontener zamknięty)",
+    "basic": "Okna PVC (1-2 szt., podstawowe)",
+    "standard": "Okna PVC (3-4 szt., standardowe)",
+    "premium": "Okna aluminiowe (duże, panoramiczne)",
+    "security": "Okna antywłamaniowe (wzmocnione)"
+  },
+  "lighting_options": {
+    "basic": "Podstawowe LED (4-6 punktów)",
+    "standard": "Standardowe LED (8-12 punktów)",
+    "premium": "Oświetlenie architektoniczne (smart LED)",
+    "industrial": "Oświetlenie przemysłowe (wzmocnione)"
+  },
+  "electrical_options": {
+    "basic": "Podstawowy (16A, 4 gniazdki)",
+    "standard": "Standardowy (25A, 8 gniazdków)",
+    "premium": "Rozszerzony (40A, 12 gniazdków)",
+    "industrial": "Przemysłowy (63A, rozdzielnica)"
+  },
+  "plumbing_options": {
+    "none": "Bez instalacji wodnej",
+    "basic": "Podstawowa (zimna woda, odpływ)",
+    "standard": "Standardowa (ciepła/zimna, WC)",
+    "premium": "Pełna (łazienka, kuchnia)",
+    "industrial": "Przemysłowa (wysokie ciśnienie)"
+  },
+  "hvac_options": {
+    "none": "Bez klimatyzacji",
+    "basic": "Wentylacja grawitacyjna",
+    "standard": "Klimatyzacja rozdzielna",
+    "premium": "System centralny z rekuperacją",
+    "industrial": "HVAC przemysłowy"
+  },
+  "accessibility_options": {
+    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "ramp": "Podjazd dla niepełnosprawnych",
+    "platform": "Platforma wyrównawcza",
+    "full": "Pełne dostosowanie (EN/PN normy)"
   },
   "environments": {
     "indoor": "Wewnętrzne",
