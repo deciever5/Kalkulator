@@ -8,6 +8,30 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# Hide sidebar completely
+st.markdown("""
+<style>
+[data-testid="stSidebar"] {
+    display: none !important;
+}
+[data-testid="stSidebarNav"] {
+    display: none !important;
+}
+.css-1d391kg {
+    display: none !important;
+}
+.css-1y4p8pa {
+    max-width: 100% !important;
+}
+section[data-testid="stSidebar"] {
+    display: none !important;
+}
+.st-emotion-cache-1d391kg {
+    display: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Import after page config
 from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
