@@ -31,11 +31,11 @@
     "technical_analysis": "Technická Analýza",
     "quote_generator": "Generátor Nabídek",
     "send_inquiry": "Odeslat\nPoptávku",
-    "send_inquiry_desc": "Formulář pro poptávku",
+    "send_inquiry_desc": "Formulář nabídky",
     "drawing_analysis_customer": "Analýza\nVýkresů",
-    "drawing_analysis_customer_desc": "Bezplatná analýza dokumentů",
+    "drawing_analysis_customer_desc": "Analýza dokumentů zdarma",
     "custom_sizing": "Custom\nSizing",
-    "bulk_pricing_desc": "Volume discounts for multiple containers",
+    "bulk_pricing_desc": "Velkoobchodní slevy při nákupu mnoha kontejnerů",
     "bulk_pricing": "Hromad\nCeny",
     "custom_sizing_desc": "Konstrukční kontejnery s přesnými specifikacemi"
   },
@@ -85,7 +85,10 @@
     "preparation": "Elektrická příprava (pouze propustky)",
     "basic": "Basic (15A, LED, 4 zásuvky)",
     "industrial": "Průmyslová (63a, 3-fáze, rozváděč)",
-    "it_server": "IT/Server Room (UPS, stabilizátory, monitorování)"
+    "it_server": "IT/Server Room (UPS, stabilizátory, monitorování)",
+    "standard": "Standard (25A, osvětlení, 8 zásuvek)",
+    "extended": "Rozšířené (40a, síla, UPS, nouzová nouze)",
+    "smart": "Inteligentní (KNX, automatizace)"
   },
   "plumbing_system": {
     "none": "Bez instalace vody",
@@ -95,13 +98,19 @@
     "basic_sanitary": "Základní sanitární uzel (WC + Sink)",
     "standard_sanitary": "Standardní uzel (WC + Sink + sprcha)",
     "comfort_sanitary": "Pohodlný uzel (WC + Sink + Cabin)",
-    "premium_sanitary": "Prémiový uzel (jacuzzi, bidé, 2 dřez)"
+    "premium_sanitary": "Prémiový uzel (jacuzzi, bidé, 2 dřez)",
+    "industrial": "Průmyslová instalace (tlak, filtrace)"
   },
   "hvac_system": {
     "electric_heaters": "Elektrické ohřívače (1-3kW, konvektory)",
     "heat_pump": "Tepelné čerpadlo (typ rozdělení, výkon 2-12 kW)",
     "vrv_vrf": "Systém VRV/VRF (multi -rekord, ovládání zóny)",
-    "underfloor_heating": "Podlahové vytápění (elektrická/voda)"
+    "underfloor_heating": "Podlahové vytápění (elektrická/voda)",
+    "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
+    "electric_heating": "Elektrické vytápění (IR radiátory)",
+    "gas_heating": "Vytápění plynu (kondenzační kamna)",
+    "split_ac": "Samostatná klimatizace (chlazení + zahřívání)",
+    "central_ac": "Ovládací panel klimatizace (s filtrací, zvlhčování)"
   },
   "insulation_package": "Izolační Balíček",
   "structural_reinforcement": "Strukturální Posílení",
@@ -113,10 +122,10 @@
   "get_detailed_quote_text": "Získejte podrobnou nabídku pro složité projekty",
   "analyze_drawings": "Analyzovat Výkresy",
   "send_inquiry": {
-    "title": "Formulář dotazu",
+    "title": "Forma dotazu",
     "description": "Získejte podrobnou nabídku na míru pro váš kontejnerový projekt",
     "disclaimer_title": "Důležité informace",
-    "disclaimer_text": "Tento formulář slouží k podání žádostí o podrobné nabídky. Odhady z naší kalkulačky nejsou komerční nabídky podle platného práva.",
+    "disclaimer_text": "Tento formulář se používá k předkládání dotazů pro podrobné nabídky. Odhady z naší kalkulačky nejsou komerční nabídky ve smyslu příslušného práva.",
     "config_detected": "Konfigurace detekována z kalkulačky",
     "current_config": "Současná konfigurace",
     "customer_info": "Kontaktní informace zákazníka",
@@ -140,9 +149,9 @@
     },
     "budget": {
       "not_specified": "Není specifikováno",
-      "up_to_50k": "Do €50,000",
-      "50k_100k": "€50,000 - €100,000",
-      "100k_200k": "€100,000 - €200,000",
+      "up_to_50k": "Až 50 000 EUR",
+      "50k_100k": "50 000 EUR - 100 000 EUR",
+      "100k_200k": "100 000 EUR - 200 000 EUR",
       "over_200k": "Více než €200,000"
     },
     "additional_requirements": "Dodatečné požadavky",
@@ -155,9 +164,9 @@
       "general_info": "Obecné informace"
     },
     "special_requirements": "Speciální požadavky",
-    "special_requirements_placeholder": "Popište dodatečné požadavky, technické specifikace, standardy které je třeba splnit...",
+    "special_requirements_placeholder": "Popište další požadavky, technické specifikace, standardy pro splnění ...",
     "additional_message": "Dodatečná zpráva",
-    "additional_message_placeholder": "Jakékoli dodatečné informace, které pomohou vytvořit lepší nabídku...",
+    "additional_message_placeholder": "Všechny další informace, které vám pomohou vytvořit lepší nabídku ...",
     "attachments": "Přílohy",
     "upload_files": "Nahrát soubory",
     "file_formats_help": "Podporované formáty: PDF, DWG, JPG, PNG, DOC, DOCX",
@@ -180,7 +189,7 @@
     "privacy_section": "Ochrana soukromí a dat (GDPR)",
     "data_protection_info": "Informace o ochraně údajů",
     "privacy_consent": "Souhlasím se zpracováním mých osobních údajů společností KAN-BUD Sp. z o.o. za účelem vyřízení tohoto dotazu v souladu s nařízením GDPR",
-    "marketing_consent": "Souhlasím s přijímáním marketingových informací o službách a produktech KAN-BUD (volitelné)",
+    "marketing_consent": "Souhlasím s obdržením marketingových informací o službách a produktech KAN-BUD (volitelné)",
     "data_retention": "Uchovávání údajů",
     "fill_required_fields": "Vyplňte všechna povinná pole označená *",
     "submit_inquiry": "Odeslat dotaz",
@@ -188,7 +197,7 @@
     "success_message": "Děkujeme za váš dotaz. Náš tým vás bude kontaktovat do 24 hodin s podrobnou odpovědí.",
     "next_steps": "Co bude následovat",
     "step_1": "Náš expert analyzuje vaše požadavky",
-    "step_2": "Budeme vás kontaktovat pro získání dodatečných informací",
+    "step_2": "Budeme vás kontaktovat pro další informace",
     "step_3": "Obdržíte podrobnou nabídku na míru",
     "contact_info": "Kontaktní informace",
     "new_inquiry": "Odeslat nový dotaz",
@@ -214,7 +223,7 @@
   "contact_us": "Kontakt",
   "address": "Adresa",
   "phone": "Telefon",
-  "email": "Email",
+  "email": "E-mail",
   "working_hours": "Pracovní doba",
   "mon_fri": "Po-Pá 8:00-17:00",
   "labor_costs_30": "Náklady na práci (30%)",
@@ -272,7 +281,7 @@
     },
     "climate_zones": {
       "central_european": "Středoevropská",
-      "scandinavian": "Skandinávská",
+      "scandinavian": "skandinávský",
       "mediterranean": "Středomořská",
       "atlantic_maritime": "Atlantická Mořská",
       "continental": "Kontinentální",
@@ -320,7 +329,7 @@
     },
     "messages": {
       "generating": "AI analyzuje konfiguraci a generuje odhad nákladů...",
-      "quota_exceeded": "OpenAI kvóta překročena. Místo toho se používá Anthropic Claude.",
+      "quota_exceeded": "Byl překročen limit OpenAI. Používám antropický claude.",
       "unavailable": "AI analýza dočasně nedostupná",
       "estimate_generated": "AI odhad nákladů úspěšně vygenerován!",
       "error_generating": "Chyba při generování AI odhadu: {error}"
@@ -370,7 +379,7 @@
   "container_configurator_desc": "Profesionální konfigurace kontejnerů",
   "ai_cost_estimator_title": "AI Odhad\nNákladů",
   "ai_cost_estimator_desc": "Umělá inteligence odhadu nákladů",
-  "standard_recommendations": "Standardní Doporučení",
+  "standard_recommendations": "Standardní doporučení",
   "plan_standard_delivery": "Naplánujte standardní plán doručení a instalace",
   "consider_building_codes": "Zvažte místní stavební předpisy",
   "budget_site_preparation": "Rozpočet na potenciální přípravu místa",
@@ -381,7 +390,7 @@
   "site_access_limitations": "Omezení přístupu na místo pro dodávku",
   "material_price_fluctuations": "Kolísání cen materiálů",
   "basic_estimate_note": "Poznámka: Toto je základní odhad. Pro přesnější ocenění se obraťte přímo na náš tým.",
-  "quote_generator": "Quote\nGenerator",
+  "quote_generator": "Generátor\nNabídky",
   "comparison_tool": {
     "employee_only": "Nástroj porovnání je dostupný pouze pro zaměstnance KAN-BUD.",
     "login_info": "Přihlaste se jako zaměstnanec pro přístup k tomuto nástroji.",
@@ -469,7 +478,7 @@
   "advanced_modifications": "Pokročilé Modifikace",
   "air_intakes": {
     "none": "Žádný přívod vzduchu",
-    "standard": "Standardní větrání",
+    "standard": "Standardní ventilace",
     "industrial": "Průmyslová kvalita",
     "marine_grade": "Námořní kvalita (odolnost proti soli)"
   },
@@ -480,7 +489,9 @@
     "solar": "Solární instalace (2-10kW)",
     "sloped": "Šikmá střecha (jednorázová, štít)",
     "terrace": "Střešní terasa (s balustrádou)",
-    "snow_removal": "Systémy odstraňování sněhu (topení, okapy)"
+    "snow_removal": "Systémy odstraňování sněhu (topení, okapy)",
+    "fans": "Střešní fanoušky (průmyslové, tiché)",
+    "antennas": "Antény/stožáry (GSM, rádio, satelitní)"
   },
   "security_features": "Bezpečnostní Prvky",
   "exterior_cladding": "Vnější Obklad",
@@ -491,7 +502,7 @@
     "sprinkler": "Sprinklerový systém",
     "full_system": "Úplný hasicí systém"
   },
-  "accessibility_features": "Bezbariérovost",
+  "accessibility_features": "Dostupnost",
   "paint_finish": "Nátěr & Povrchová Úprava",
   "electrical": {
     "basic": "Základní (osvětlení + zásuvky)",
@@ -500,13 +511,13 @@
     "smart_system": "Chytrý systém (IoT automatizace)"
   },
   "plumbing": {
-    "none": "Bez instalatérských prací",
+    "none": "Žádná instalace",
     "basic": "Základní (dřez + odtok)",
     "full": "Plný (příprava koupelny)",
     "commercial": "Komerční kvalita"
   },
   "hvac": {
-    "none": "Bez HVAC",
+    "none": "Žádný HVAC",
     "basic": "Základní větrání",
     "split_system": "Split klimatizace",
     "central": "Centrální klimatizace",
@@ -519,7 +530,7 @@
     "high_security": "Vysoká bezpečnost (biometrické)"
   },
   "cladding": {
-    "none": "Bez vnějšího obkladu",
+    "none": "Žádné externí opláštění",
     "metal": "Kovový obklad",
     "composite": "Kompozitní panely",
     "wood": "Dřevěný obklad",
@@ -552,17 +563,17 @@
     "advanced": "Advanced (Mineral Wool 10-15cm)"
   },
   "reinforcement": {
-    "none": "Bez zpevnění",
-    "standard": "Standardní zpevnění",
+    "none": "Žádné posily",
+    "standard": "Standardní výztuž",
     "seismic": "Seismické zpevnění",
     "hurricane": "Zpevnění proti hurikánu"
   },
   "help": {
     "windows": "Dvojskla okna s tepelnými mosty. Více oken zvyšuje přirozené světlo, ale ovlivňuje izolaci.",
-    "additional_doors": "Další personální nebo nouzové dveře kromě standardních kontejnerových dveří.",
+    "additional_doors": "Další personál nebo evakuační dveře mimo standardní dveře kontejneru.",
     "air_intakes": "Ventilační systémy pro cirkulaci vzduchu. Námořní kvalita doporučena pro pobřežní oblasti.",
     "roof_modifications": "Úpravy střechy pro přístup, osvětlení nebo solární instalace.",
-    "electrical_system": "Standardní: 15A domácí. Průmyslový: 30A s rozvodnicí. Chytrý: IoT automatizace.",
+    "electrical_system": "Standard: 15a Domů. Průmyslová: 30a s rozváděčem. Inteligentní: IoT automatizace.",
     "plumbing_system": "Základní: dřez a odtok. Plný: kompletní koupelnové vybavení. Komerční: průmyslové armatury.",
     "hvac_system": "Možnosti klimatizace. Tepelná čerpadla jsou energeticky účinná pro celoroční použití.",
     "security_features": "Úrovně bezpečnosti od základních zámků po biometrické systémy řízení přístupu.",
@@ -625,7 +636,8 @@
     "sliding": "Klouzání",
     "tilt": "Závěs",
     "security": "Anti -Burglary",
-    "skylight": "Střešní světlíky"
+    "skylight": "Střešní světlíky",
+    "energy_efficient": "Energie -navádění"
   },
   "it_systems_none": "Žádný",
   "transport_type_standard": "Norma",
@@ -636,7 +648,11 @@
     "none": "Bez větracích otvorů (přírodní a mechanické)",
     "gravity": "Gravitační otvory (2-4 ks, nastavitelné)",
     "heat_recovery": "Rekuperace (obnovení tepla 80-95%)",
-    "split_ac": "Rozdělená klimatizace (1-3 jednotky)"
+    "split_ac": "Rozdělená klimatizace (1-3 jednotky)",
+    "wall_fans": "Fanoušci zdi (výtah 100-150 mm)",
+    "mechanical": "Mechanická ventilace (přívod vzduchu + výtah)",
+    "central_ac": "Centrální klimatizace (VRV/VRF)",
+    "industrial": "Průmyslová ventilace (atex, chemorezistentní)"
   },
   "it_systems": "IT systémy",
   "lighting_professional": "Profesionální",
@@ -645,14 +661,19 @@
   "exterior_cladding_wood": "Dřevo",
   "office_equipment": "Office Equipment",
   "installation": "Instalace",
-  "system_comments": "System Requirements Comments",
+  "system_comments": "Komentáře k systémovým požadavkům",
   "office_equipment_full": "Kompletní kancelář",
   "appliances": "Spotřebiče",
   "it_systems_advanced": "Pokročilé to",
-  "window_types_security": "Okna zabezpečení",
+  "window_types_security": "Anti -Burglary Windows",
   "roof_modifications_skylight": "Svěť",
   "lighting": {
-    "basic_led": "Standard LED (Basic)"
+    "basic_led": "Standard LED (Basic)",
+    "none": "Žádné osvětlení",
+    "energy_efficient": "Energie -svlékání vedou se senzory",
+    "exterior": "Externí osvětlení (světlomety)",
+    "emergency": "Nouzové osvětlení (baterie)",
+    "smart": "Inteligentní systém (kontrolované osvětlení)"
   },
   "it_systems_basic": "Základní síť",
   "fire_systems": "Požární systémy",
@@ -695,11 +716,19 @@
   "insulation_label": "Izolace",
   "finish_levels": {
     "shell": "Surový stav (izolace + deska OSB)",
-    "specialist": "Specialista (lékařské/laboratorní standardy)"
+    "specialist": "Specialista (lékařské/laboratorní standardy)",
+    "basic": "Bez wykończenia (kontener techniczny, szkielet)",
+    "standard": "Základní (izolace + technický povrch)",
+    "comfort": "Pohodlné (prémiová izolace + úprava kanceláře)",
+    "luxury": "Luxusní (nejvyšší třída + hotelový povrch)"
   },
   "climate_zones": {
     "maritime": "Mořské klima (vysoká vlhkost)",
     "mountain": "Mountain Climate (vysoký UV, sníh)",
-    "tropical": "Tropické klima (vysoké teploty, vlhkost)"
+    "tropical": "Tropické klima (vysoké teploty, vlhkost)",
+    "northern_europe": "Severní Evropa (Skandinávie, -30 ° C až +25 ° C)",
+    "central_europe": "Střední Evropa (Polsko, Německo, -20 ° C až +35 ° C)",
+    "southern_europe": "Jižní Evropa (Španělsko, Itálie, -5 ° C až +45 ° C)",
+    "continental": "Kontinentální klima (extrémní výkyvy)"
   }
 }

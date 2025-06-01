@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Professionelle Containerlösungen",
-    "subtitle": "Professionelle Container-Lösungen - Design, Bau und Montage"
+    "subtitle": "Professionelle Containerlösungen - Design, Bau und Montage"
   },
   "ui": {
     "employee_login": "Mitarbeiter-Login",
@@ -31,20 +31,20 @@
     "technical_analysis": "Technische Analyse",
     "quote_generator": "Angebotsgenerator",
     "send_inquiry": "Anfrage\nSenden",
-    "send_inquiry_desc": "Anfrageformular",
+    "send_inquiry_desc": "Anfragenformular anbieten",
     "drawing_analysis_customer": "Zeichnungs\nAnalyse",
     "drawing_analysis_customer_desc": "Kostenlose Dokumentenanalyse",
     "custom_sizing": "Brauch\nKrank",
-    "bulk_pricing_desc": "Volumenrabatte für mehrere Container",
+    "bulk_pricing_desc": "Großhandelsrabatte beim Kauf vieler Container",
     "bulk_pricing": "Schüttgut\nPreisgestaltung",
-    "custom_sizing_desc": "Entwerfen Sie Container mit genauen Spezifikationen"
+    "custom_sizing_desc": "Entwerfen von Behältern nach den genauen Spezifikationen"
   },
   "configure_container": "Konfigurieren Sie Ihren Container",
   "simple_process_2_steps": "Einfacher 2-Schritt-Prozess",
   "step_1_configuration": "Schritt 1: Konfiguration",
-  "choose_container_type": "Container-Typ und Spezifikationen wählen",
+  "choose_container_type": "Wählen Sie einen Containertyp und Änderungen",
   "step_2_ai_quote": "Schritt 2: KI-Angebot",
-  "get_instant_quote": "Sofortige Kostenschätzung erhalten",
+  "get_instant_quote": "Erhalten Sie ein sofortiges Zitat von AI",
   "start_configuration": "Konfiguration starten",
   "get_quote": "Angebot erhalten",
   "additional_services": "Zusätzliche Dienstleistungen",
@@ -54,16 +54,16 @@
   "get_detailed_quote_text": "Detailliertes Angebot nach Ihren Bedürfnissen erhalten",
   "analyze_drawings": "Zeichnungen Analysieren",
   "send_inquiry": {
-    "title": "Anfrageformular",
+    "title": "Abfrageform",
     "description": "Erhalten Sie ein detailliertes Angebot, das auf Ihr Containerprojekt zugeschnitten ist",
     "project_name_placeholder": "z.B. Container-Büro - Poznań",
-    "special_requirements_placeholder": "Beschreiben Sie zusätzliche Anforderungen, technische Spezifikationen, zu erfüllende Standards...",
-    "additional_message_placeholder": "Alle zusätzlichen Informationen, die uns helfen, ein besseres Angebot zu erstellen...",
-    "disclaimer_title": "Wichtige Information",
-    "disclaimer_text": "Dieses Formular dient zur Einreichung von Anfragen für detaillierte Angebote. Schätzungen aus unserem Rechner sind keine kommerziellen Angebote nach geltendem Recht.",
+    "special_requirements_placeholder": "Beschreiben Sie zusätzliche Anforderungen, technische Spezifikationen, Standards, um ...",
+    "additional_message_placeholder": "Alle zusätzlichen Informationen, mit denen Sie ein besseres Angebot erstellen können ...",
+    "disclaimer_title": "Wichtige Informationen",
+    "disclaimer_text": "Dieses Formular wird verwendet, um Anfragen für detaillierte Angebote einzureichen. Schätzungen aus unserem Taschenrechner sind keine kommerziellen Angebote im Sinne des geltenden Rechts.",
     "config_detected": "Konfiguration vom Rechner erkannt",
     "current_config": "Aktuelle Konfiguration",
-    "customer_info": "Kunden-Kontaktinformationen",
+    "customer_info": "Kundenkontaktinformationen",
     "full_name": "Vollständiger Name",
     "company_name": "Firmenname",
     "email": "E-Mail-Adresse",
@@ -94,9 +94,9 @@
     "types": {
       "detailed_quote": "Detailliertes Angebot",
       "technical_consultation": "Technische Beratung",
-      "site_visit": "Standortbesichtigung",
+      "site_visit": "Besuchen Sie vor Ort",
       "drawing_analysis": "Zeichnungsanalyse",
-      "general_info": "Allgemeine Informationen"
+      "general_info": "allgemeine Informationen"
     },
     "special_requirements": "Besondere Anforderungen",
     "additional_message": "Zusätzliche Nachricht",
@@ -122,7 +122,7 @@
     "privacy_section": "Datenschutz und Datenschutz (DSGVO)",
     "data_protection_info": "Datenschutzinformationen",
     "privacy_consent": "Ich stimme der Verarbeitung meiner persönlichen Daten durch KAN-BUD Sp. z o.o. zur Bearbeitung dieser Anfrage in Übereinstimmung mit DSGVO-Bestimmungen zu",
-    "marketing_consent": "Ich stimme dem Erhalt von Marketinginformationen über KAN-BUD-Services und -Produkte zu (optional)",
+    "marketing_consent": "Ich bin damit einverstanden, Marketinginformationen über Kan-Bud-Dienste und -produkte zu erhalten (optional)",
     "data_retention": "Datenspeicherung",
     "fill_required_fields": "Bitte füllen Sie alle Pflichtfelder aus, die mit * markiert sind",
     "submit_inquiry": "Anfrage senden",
@@ -130,7 +130,7 @@
     "success_message": "Vielen Dank für Ihre Anfrage. Unser Team wird Sie innerhalb von 24 Stunden mit einer detaillierten Antwort kontaktieren.",
     "next_steps": "Was passiert als Nächstes",
     "step_1": "Unser Experte wird Ihre Anforderungen analysieren",
-    "step_2": "Wir werden Sie kontaktieren, um zusätzliche Informationen zu erhalten",
+    "step_2": "Wir werden Sie für zusätzliche Informationen kontaktieren",
     "step_3": "Sie erhalten ein detailliertes, auf Ihre Bedürfnisse zugeschnittenes Angebot",
     "contact_info": "Kontaktinformationen",
     "new_inquiry": "Neue Anfrage senden",
@@ -143,7 +143,7 @@
   "advanced_modifications": "Erweiterte Modifikationen",
   "air_intakes": {
     "none": "Keine Luftzufuhr",
-    "standard": "Standard-Belüftung",
+    "standard": "Standardlüftung",
     "industrial": "Industriequalität",
     "marine_grade": "Meeresqualität (salzresistent)"
   },
@@ -154,7 +154,9 @@
     "solar": "Solarinstallation (2-10 kW)",
     "sloped": "Ein schräge Dach (eins, Giebel)",
     "terrace": "Dachterrasse (mit Balustrade)",
-    "snow_removal": "Schneeentfernungssysteme (Heizungen, Dachrinnen)"
+    "snow_removal": "Schneeentfernungssysteme (Heizungen, Dachrinnen)",
+    "fans": "Dachfans (industriell, ruhig)",
+    "antennas": "Antennen/Masten (GSM, Radio, Satellit)"
   },
   "security_features": "Sicherheitsmerkmale",
   "exterior_cladding": "Außenverkleidung",
@@ -163,10 +165,10 @@
     "basic": "Grundausstattung (Feuerlöscher)",
     "smoke_detection": "Raucherkennung",
     "sprinkler": "Sprinkleranlage",
-    "full_system": "Vollständige Brandlöschung"
+    "full_system": "Vollständiges Löschen des Feuers"
   },
   "accessibility_features": "Barrierefreiheit",
-  "paint_finish": "Anstrich & Oberflächenbehandlung",
+  "paint_finish": "Malen und Beenden",
   "electrical": {
     "basic": "Grundausstattung (Beleuchtung + Steckdosen)",
     "standard": "Standard (Schaltung 15a)",
@@ -208,7 +210,7 @@
   "accessibility": {
     "standard": "Standardzugriff",
     "ramp": "Rollstuhlrampe",
-    "full_ada": "Vollständige ADA-Konformität",
+    "full_ada": "Vollständige Kompatibilität von ADA",
     "disabled_friendly": "Vollständig barrierefrei"
   },
   "paint": {
@@ -227,23 +229,23 @@
   },
   "reinforcement": {
     "none": "Keine Verstärkung",
-    "standard": "Standard-Verstärkung",
+    "standard": "Standardverstärkung",
     "seismic": "Erdbeben-Verstärkung",
     "hurricane": "Hurrikan-Verstärkung"
   },
   "help": {
     "windows": "Doppelverglaste Fenster mit Wärmebrücken. Mehr Fenster erhöhen natürliches Licht, beeinflussen aber die Isolierung.",
-    "additional_doors": "Zusätzliche Personal- oder Notausgangstüren neben Standard-Containertüren.",
+    "additional_doors": "Zusätzliche Personal- oder Evakuierungstüren außerhalb der Standardtür des Behälters.",
     "air_intakes": "Belüftungssysteme für Luftzirkulation. Meeresqualität empfohlen für Küstengebiete.",
-    "roof_modifications": "Dachmodifikationen für Zugang, Beleuchtung oder Solarinstallationen.",
-    "electrical_system": "Standard: 15A Haushalt. Industriell: 30A mit Schaltschrank. Smart: IoT Automatisierung.",
+    "roof_modifications": "Dachänderungen für Zugang, Beleuchtung oder Solaranlagen.",
+    "electrical_system": "Standard: 15A Zuhause. Industrial: 30a mit einer Schaltanlage. Intelligent: IoT -Automatisierung.",
     "plumbing_system": "Grundausstattung: Spüle und Abfluss. Vollausstattung: komplette Badezimmerausstattung. Gewerblich: Industriearmaturen.",
     "hvac_system": "Klimakontrolloptionen. Wärmepumpen sind energieeffizient für ganzjährigen Gebrauch.",
     "security_features": "Sicherheitsniveaus von grundlegenden Schlössern bis hin zu biometrischen Zugangssystemen.",
-    "exterior_cladding": "Wetterschutz und ästhetische Verbesserung. Metallverkleidung bietet beste Haltbarkeit.",
+    "exterior_cladding": "Schutz vor Wetterbedingungen und Verbesserung der Ästhetik. Das Fassadenblatt bietet die beste Haltbarkeit.",
     "additional_openings": "Spezialisierte Zugangspunkte außerhalb von Standardtüren und Fenstern.",
     "fire_safety": "Brandschutzsysteme. Sprinklersysteme für den kommerziellen Gebrauch empfohlen.",
-    "accessibility": "ADA-Konformität gewährleistet Zugänglichkeit für Behinderte.",
+    "accessibility": "Die Einhaltung von ADA gewährleistet die Verfügbarkeit von Menschen mit Behinderungen.",
     "paint_finish": "Beschichtungsqualität beeinflusst Haltbarkeit. C5M empfohlen für Meeresumgebungen. C4 für Industrie.",
     "insulation_package": "Isolierungsdicke beeinflusst Energieeffizienz. Extrem empfohlen für arktische Klimazonen.",
     "structural_reinforcement": "Zusätzliche Verstärkung für extreme Wetter- oder seismische Bedingungen."
@@ -281,8 +283,10 @@
       "20ft_high_cube": "20 Fuß hoher Würfel (6 m x 2,7 m)",
       "custom": "Brauch",
       "multi_unit": "Multi-Unit-Behälter",
-      "custom_dimensions": "Custom -Abmessungen Container",
-      "refurbished": "Renovierter Behälter"
+      "custom_dimensions": "Ein Behälter mit nicht standardmäßigen Abmessungen",
+      "refurbished": "Renovierter Behälter",
+      "40ft_hc": "40ft HC",
+      "45ft_standard": "45ft Standard"
     },
     "use_cases": {
       "office_space": "Büroraum",
@@ -302,7 +306,7 @@
     },
     "climate_zones": {
       "central_european": "Mitteleuropäisch",
-      "scandinavian": "Skandinavisch",
+      "scandinavian": "skandinavisch",
       "mediterranean": "Mediterran",
       "atlantic_maritime": "Atlantisch-Maritim",
       "continental": "Kontinental",
@@ -358,8 +362,8 @@
   },
   "employee_tools": "Mitarbeiter-Tools",
   "ai_cost_estimation": "KI-Kostenschätzung",
-  "ai_powered_estimation": "KI-gestützte Kostenschätzung für Container-Modifikationen",
-  "no_configuration_found": "Keine Containerkonfiguration gefunden. Bitte konfigurieren Sie zuerst Ihren Container.",
+  "ai_powered_estimation": "Bewertung der Behältermodifikation mit AI",
+  "no_configuration_found": "Es wurde keine Containerkonfiguration gefunden. Bitte konfigurieren Sie zuerst den Container.",
   "current_configuration": "Aktuelle Konfiguration",
   "container_type": "Containertyp",
   "purpose": "Zweck",
@@ -380,7 +384,9 @@
     "one": "1 Fenster",
     "two": "2 Fenster",
     "three": "3 Fenster",
-    "four": "4 Fenster"
+    "four": "4 Fenster",
+    "none": "Ohne Fenster (geschlossener Behälter)",
+    "five_plus": "5+ Windows (benutzerdefinierte Konfiguration)"
   },
   "additional_doors": "Zusätzliche Türen",
   "yes": "Ja",
@@ -395,11 +401,11 @@
   "additional_project_details": "Zusätzliche Projektdetails",
   "project_specific_requirements": "Projektspezifische Anforderungen & Kommentare",
   "project_comment_placeholder": "Bitte beschreiben Sie spezifische Anforderungen, Einschränkungen oder besondere Überlegungen für Ihr Container-Projekt (z.B. 'Extra Isolierung für kaltes Klima benötigt', 'Muss bis zu bestimmtem Datum geliefert werden', 'Budget begrenzt auf €15,000', etc.)",
-  "project_comment_help": "Je mehr Details Sie angeben, desto genauer und maßgeschneiderter wird die KI-Analyse sein.",
+  "project_comment_help": "Je mehr Details Sie liefern, desto genauer und die besser angepasste KI -Analyse wird sein.",
   "specific_considerations": "Spezifische Überlegungen",
-  "special_location_requirements": "Besondere Standort-/Platzanforderungen",
+  "special_location_requirements": "Spezielle Standort/Orte Anforderungen",
   "urgent_timeline_needed": "Dringender Zeitplan benötigt",
-  "custom_modifications_needed": "Kundenspezifische Modifikationen erforderlich",
+  "custom_modifications_needed": "Benutzerdefinierte Änderungen erforderlich",
   "sustainability_priority": "Nachhaltigkeit/Umweltfreundlichkeit Priorität",
   "budget_constraints": "Budgetbeschränkungen",
   "regulatory_compliance_focus": "Regulatorischer/Compliance-Fokus",
@@ -410,7 +416,7 @@
   "error_generating_estimate": "Fehler beim Generieren der Schätzung",
   "saved_ai_estimate": "Gespeicherte KI-Schätzung",
   "full_system_access": "Voller Zugriff auf das System und fortschrittliche Funktionen",
-  "container_configurator_title": "Container\nKonfigurator",
+  "container_configurator_title": "Konfigurator\nBehälter",
   "container_configurator_desc": "Professionelle Containerkonfiguration",
   "ai_cost_estimator_title": "KI-Kosten\nSchätzer",
   "ai_cost_estimator_desc": "Künstliche Intelligenz Kostenschätzung",
@@ -441,7 +447,10 @@
     "preparation": "Elektrische Vorbereitung (nur Durchlässigkeit)",
     "basic": "Basic (15a, LED, 4 Sockets)",
     "industrial": "Industrie (63A, 3-Phasen, Schaltanlage)",
-    "it_server": "IT/Server Room (UPS, Stabilisatoren, Überwachung)"
+    "it_server": "IT/Server Room (UPS, Stabilisatoren, Überwachung)",
+    "standard": "Standard (25a, Beleuchtung, 8 Sockeln)",
+    "extended": "Erweitert (40A, Stärke, UPS, Notfall)",
+    "smart": "Intelligent (KNX, Automatisierung)"
   },
   "plumbing_system": {
     "none": "Ohne Wasserinstallation",
@@ -451,13 +460,19 @@
     "basic_sanitary": "Grundlegender Sanitärknoten (WC + Sink)",
     "standard_sanitary": "Standardknoten (WC + Waschbecken + Dusche)",
     "comfort_sanitary": "Bequemer Knoten (WC + Waschbecken + Kabine)",
-    "premium_sanitary": "Premiumknoten (Jacuzzi, Bidé, 2 Waschbecken)"
+    "premium_sanitary": "Premiumknoten (Jacuzzi, Bidé, 2 Waschbecken)",
+    "industrial": "Industrielle Installation (Druck, Filtration)"
   },
   "hvac_system": {
     "electric_heaters": "Elektrische Heizungen (1-3 kW, Konvektoren)",
     "heat_pump": "Wärmepumpe (Split-Typ, 2-12 kW Leistung)",
     "vrv_vrf": "VRV/VRF -System (Multi -Record, Zonensteuerung)",
-    "underfloor_heating": "Unterbodenheizung (elektrisches/Wasser)"
+    "underfloor_heating": "Unterbodenheizung (elektrisches/Wasser)",
+    "none": "Ohne HLK (ohne Erhitzen und Kühlung)",
+    "electric_heating": "Elektrische Erwärmung (IR -Kühler)",
+    "gas_heating": "Gaserwärmung (Kondensmittelherd)",
+    "split_ac": "Separate Klimaanlage (Kühlung + Heizung)",
+    "central_ac": "Klimaanlage Bedienfeld (mit Filtration, feuchtigkeitsspendende)"
   },
   "insulation_package": "Isolierungspaket",
   "structural_reinforcement": "Strukturelle Verstärkung",
@@ -466,13 +481,13 @@
   "delivery": {
     "zones": {
       "local": "Lokal (bis 100km)",
-      "poland": "Polen (landesweit)",
+      "poland": "Polen (ganzes Land)",
       "central_europe": "Mitteleuropa (DE, CZ, SK, AT)",
       "western_europe": "Westeuropa (FR, NL, BE, LU)",
       "northern_europe": "Nordeuropa (DK, SE, NO, FI)",
       "southern_europe": "Südeuropa (IT, ES, PT, GR)",
       "eastern_europe": "Osteuropa (HU, RO, BG, HR)",
-      "uk_ireland": "Großbritannien & Irland",
+      "uk_ireland": "Großbritannien und Irland",
       "international": "International (außerhalb Europas)"
     }
   },
@@ -481,7 +496,7 @@
     "employee_only": "Vergleichstool ist nur für KAN-BUD Mitarbeiter verfügbar.",
     "login_info": "Melden Sie sich als Mitarbeiter an, um auf dieses Tool zuzugreifen.",
     "employee_password": "Mitarbeiter-Passwort",
-    "description": "Vergleichen Sie verschiedene Container-Konfigurationen, Kosten und technische Spezifikationen"
+    "description": "Vergleichen Sie verschiedene Containerkonfigurationen, Kosten und technische Spezifikationen"
   },
   "drawing_analysis": {
     "employee_only": "Zeichnungsanalyse ist nur für KAN-BUD Mitarbeiter verfügbar.",
@@ -494,14 +509,14 @@
     "project_name_placeholder": "Z.B. Containerbüro - Poznań",
     "file_upload": "Datei Upload",
     "upload_drawings": "Technische Zeichnungen hochladen",
-    "file_formats_help": "Wir unterstützen PDF, DWG, JPG und PNG Dateien. Wir empfehlen PDF Format für beste Analyse.",
+    "file_formats_help": "Wir unterstützen PDF-, DWG-, JPG- und PNG -Dateien. Wir empfehlen das PDF -Format für die beste Analyse.",
     "other": "Andere"
   },
   "drawing_analysis_customer": {
     "description": "Kostenlose technische Zeichnungsanalyse für Kunden als Teil des Angebotsprozesses",
     "info_title": "Wie es funktioniert",
     "info_text": "Laden Sie Ihre technischen Zeichnungen hoch und unser KI-System analysiert sie und passt das Angebot an die tatsächlichen Projektanforderungen an. Dies ist ein kostenloser Service für alle Kunden.",
-    "no_config": "Keine Containerkonfiguration gefunden. Bitte konfigurieren Sie zuerst Ihren Container.",
+    "no_config": "Es wurde keine Containerkonfiguration gefunden. Konfigurieren Sie zuerst Ihren Container.",
     "config_found": "Gespeicherte Konfiguration gefunden",
     "current_config": "Aktuelle Konfiguration",
     "project_context": "Projekt-Kontext",
@@ -510,7 +525,7 @@
     "project_location": "Projektstandort",
     "file_upload": "Datei-Upload",
     "upload_drawings": "Technische Zeichnungen hochladen",
-    "file_formats_help": "Wir unterstützen PDF-, JPG-, PNG-Dateien. Wir empfehlen das PDF-Format für die beste Analyse.",
+    "file_formats_help": "Wir unterstützen PDF, JPG, PNG -Dateien. Wir empfehlen das PDF -Format für die beste Analyse.",
     "files_uploaded": "Dateien hochgeladen",
     "analyze_button": "Zeichnungen analysieren",
     "analyzing": "Zeichnungen werden analysiert...",
@@ -536,16 +551,16 @@
     "tips_title": "Tipps für bessere Analyse",
     "tips_text": "Für genauere Analyse:",
     "tip_1": "Klare, hochauflösende Zeichnungen hochladen",
-    "tip_2": "Abmessungen und Spezifikationen einbeziehen",
-    "tip_3": "Vollständigen Projektkontext bereitstellen",
+    "tip_2": "Alle technischen Details sichtbar",
+    "tip_3": "Hohe Auflösung (mindestens 300 dpi)",
     "config_required": "Konfiguration erforderlich",
-    "config_required_text": "Für eine genaue Analyse technischer Zeichnungen ist eine grundlegende Container-Konfiguration erforderlich. Ohne Konfiguration ist die Analyse auf grundlegende Schätzungen beschränkt.",
+    "config_required_text": "Für eine gründliche Analyse technischer Zeichnungen ist eine grundlegende Containerkonfiguration erforderlich. Ohne Konfiguration ist die Analyse auf grundlegende Schätzungen beschränkt.",
     "config_tip": "Tipp",
-    "config_tip_text": "Konfigurieren Sie Ihren Container vor der Analyse von Zeichnungen, um genauere Ergebnisse und maßgeschneiderte Angebote zu erhalten."
+    "config_tip_text": "Konfigurieren Sie Ihren Container, bevor Sie Zeichnungen analysieren, um genauere Ergebnisse und angepasste Bewertungen zu erhalten."
   },
   "admin": {
-    "access_required": "Admin-Zugang erforderlich",
-    "privileges_required": "Dieser Bereich erfordert Administrator-Rechte",
+    "access_required": "Administratorzugriff erforderlich",
+    "privileges_required": "In diesem Abschnitt sind Administratorrechte erforderlich",
     "enter_password": "Admin-Passwort eingeben:",
     "access_granted": "Admin-Zugang gewährt!",
     "invalid_password": "Ungültiges Passwort",
@@ -566,15 +581,15 @@
   "labor_costs_40": "Arbeitskosten (40%)",
   "contingency_10": "Eventualkosten (10%)",
   "complexity_multiplier": "Komplexitätsmultiplikator",
-  "standard_recommendations": "Standard-Empfehlungen",
+  "standard_recommendations": "Standardempfehlungen",
   "plan_standard_delivery": "Planen Sie den Standardplan für Lieferung und Installation",
   "consider_building_codes": "Lokale Bauvorschriften berücksichtigen",
-  "budget_site_preparation": "Budget für potenzielle Standortvorbereitung",
+  "budget_site_preparation": "Zahlen Sie ein Budget für die potenzielle Vorbereitung des Platzes",
   "review_electrical_plumbing": "Elektrische und Sanitärarbeiten frühzeitig prüfen",
   "standard_risk_factors": "Standardrisikofaktoren",
   "weather_delays": "Wetterverzögerungen während der Bauzeit",
   "permit_timeline_variations": "Variationen der Genehmigungszeitleiste",
-  "site_access_limitations": "Standortzugangsbeschränkungen für Lieferung",
+  "site_access_limitations": "Beschränkungen für den Zugang zum Platz für die Lieferung",
   "material_price_fluctuations": "Materialpreisschwankungen",
   "basic_estimate_note": "Hinweis: Dies ist eine grundlegende Schätzung. Für eine genauere Preisgestaltung wenden Sie sich bitte direkt an unser Team.",
   "estimate_disclaimer_title": "Wichtig - Rechtlicher Hinweis",
@@ -630,7 +645,8 @@
     "sliding": "Gleiten",
     "tilt": "Geschwächt",
     "security": "Anti -Burgylary",
-    "skylight": "Dach -Oberlichter"
+    "skylight": "Dach -Oberlichter",
+    "energy_efficient": "Energieunterhaltung"
   },
   "it_systems_none": "Keiner",
   "transport_type_standard": "Standard",
@@ -640,7 +656,7 @@
   "ventilation": {
     "none": "Keine Lüftung (natürlich oder mechanisch)",
     "gravity": "Schwerkraftlüftung (2-4 Einheiten, regelbar)",
-    "wall_fans": "Wandventilatoren (Abluft 100-150mm)",
+    "wall_fans": "Wandlüfter (100-150 mm Lift)",
     "mechanical": "Mechanische Lüftung (Zu- + Abluft)",
     "heat_recovery": "Wärmerückgewinnung (80-95% Effizienz)",
     "split_ac": "Split-Klimaanlage (1-3 Einheiten)",
@@ -702,20 +718,20 @@
     "outdoor_extreme": "Outdoor Extreme (Coastal, Berge)",
     "industrial": "Industrie (Pflanzen, Raffinerien, Minen)",
     "construction": "Bau (Baustellen, Infrastruktur)",
-    "agricultural": "Landwirtschaftliche (Farmen, Einrichtungen)",
+    "agricultural": "Landwirtschaftlich",
     "marine": "Marine/Werft (ätzende Umgebung)"
   },
   "finish_levels": {
-    "basic": "Ohne Ausbau (Technikcontainer, Rahmen)",
+    "basic": "Ohne fertig (technischer Behälter, Skelett)",
     "shell": "Rohbau (Dämmung + OSB-Platte)",
     "standard": "Basis (Dämmung + technischer Ausbau)",
-    "comfort": "Standard (vollständige Isolierung + Bürofinish)",
+    "comfort": "Komfortabel (Premium -Isolierung + Bürofinish)",
     "luxury": "Luxus (höchste Klasse + Hotelausbau)",
     "specialist": "Spezialist (medizinische/Laborstandard)"
   },
   "climate_zones": {
-    "northern_europe": "Nordeuropa (Skandinavien, -30°C bis +25°C)",
-    "central_europe": "Mitteleuropa (Polen, Deutschland, -20°C bis +35°C)",
+    "northern_europe": "Nordeuropa (Skandinavien, -30 ° C bis +25 ° C)",
+    "central_europe": "Mitteleuropa (Polen, Deutschland, -20 ° C bis +35 ° C)",
     "southern_europe": "Südeuropa (Spanien, Italien, -5°C bis +45°C)",
     "continental": "Kontinentalklima (extreme Schwankungen)",
     "maritime": "Seeklima (hohe Luftfeuchtigkeit)",

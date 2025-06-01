@@ -8,7 +8,7 @@
     "wrong_password": "Wrong password",
     "cancel": "Cancel",
     "open": "Open",
-    "language_selector": "Language / Język",
+    "language_selector": "Tongue",
     "back_to_home": "← Back to Home",
     "go_to_ai_estimate": "🤖 Go to AI Estimate →",
     "go_to_configurator": "🔧 Go to Configurator",
@@ -172,7 +172,9 @@
     "solar": "Solar installation (2-10kW)",
     "sloped": "An oblique roof (one -sided, gable)",
     "terrace": "Roof terrace (with balustrade)",
-    "snow_removal": "Snow removal systems (heaters, gutters)"
+    "snow_removal": "Snow removal systems (heaters, gutters)",
+    "fans": "Roof fans (industrial, quiet)",
+    "antennas": "Antennas/masts (GSM, Radio, satellite)"
   },
   "security_features": "Security Features",
   "exterior_cladding": "Exterior Cladding",
@@ -318,7 +320,8 @@
     "sliding": "Sliding",
     "tilt": "Hinged",
     "security": "Anti -burglary",
-    "skylight": "Roof skylights"
+    "skylight": "Roof skylights",
+    "energy_efficient": "Energy -saving"
   },
   "window_types_standard": "Standard",
   "window_types_double": "Double Glazed",
@@ -369,7 +372,9 @@
     "one": "1 window",
     "two": "2 windows",
     "three": "3 windows",
-    "four": "4 windows"
+    "four": "4 windows",
+    "none": "Without windows (closed container)",
+    "five_plus": "5+ windows (Custom configuration)"
   },
   "reinforcement": {
     "none": "No reinforcement",
@@ -396,14 +401,14 @@
   },
   "container": {
     "types": {
-      "10ft_compact": "10ft Compact (3m x 2.4m)",
+      "10ft_compact": "10ft compact (3m x 2.4m)",
       "20ft_standard": "20FT standard",
       "20ft_high_cube": "20ft High Cube (6m x 2.7m)",
       "40ft_standard": "40FT standard",
       "40ft_high_cube": "40ft High Cube (12m x 2.7m)",
       "40ft_hc": "40ft HC",
       "20ft_refrigerated": "20ft Refrigerated",
-      "20ft_double_door": "20ft DD",
+      "20ft_double_door": "20FT DD",
       "40ft_double_door": "40ft DD",
       "40ft_hc_double_door": "40ft HC DD",
       "45ft_standard": "45FT standard",
@@ -577,7 +582,10 @@
     "preparation": "Electrical preparation (only culverts)",
     "basic": "Basic (15A, LED, 4 sockets)",
     "industrial": "Industrial (63a, 3-phase, switchgear)",
-    "it_server": "IT/Server room (UPS, stabilizers, monitoring)"
+    "it_server": "IT/Server room (UPS, stabilizers, monitoring)",
+    "standard": "Standard (25A, lighting, 8 sockets)",
+    "extended": "Extended (40a, strength, ups, emergency)",
+    "smart": "Intelligent (KNX, automation)"
   },
   "plumbing_system": {
     "none": "Without water installation",
@@ -587,13 +595,19 @@
     "basic_sanitary": "Basic sanitary node (WC + sink)",
     "standard_sanitary": "Standard node (WC + sink + shower)",
     "comfort_sanitary": "Comfortable node (WC + sink + cabin)",
-    "premium_sanitary": "Premium node (jacuzzi, bidé, 2 sinks)"
+    "premium_sanitary": "Premium node (jacuzzi, bidé, 2 sinks)",
+    "industrial": "Industrial installation (pressure, filtration)"
   },
   "hvac_system": {
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "heat_pump": "Heat pump (Split type, 2-12kW performance)",
     "vrv_vrf": "VRV/VRF system (multi -record, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
+    "underfloor_heating": "Underfloor heating (electric/water)",
+    "none": "Without HVAC (without heating and cooling)",
+    "electric_heating": "Electric heating (IR radiators)",
+    "gas_heating": "Gas heating (condensing stove)",
+    "split_ac": "Separate air conditioning (cooling + heating)",
+    "central_ac": "Air conditioning control panel (with filtration, moisturizing)"
   },
   "insulation_package": "Insulation Package",
   "structural_reinforcement": "Structural Reinforcement",

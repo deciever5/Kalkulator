@@ -31,7 +31,7 @@
     "admin_panel": "Administračný panel",
     "admin_panel_desc": "Správa systému",
     "send_inquiry": "Odoslať\nDopyt",
-    "send_inquiry_desc": "Formulár žiadosti o ponuku",
+    "send_inquiry_desc": "Ponuka dopytu",
     "drawing_analysis_customer": "Kresba\nAnalsis",
     "drawing_analysis_customer_desc": "Bezplatná dokumentárna analýza",
     "bulk_pricing": "Objem\nCeny",
@@ -64,8 +64,8 @@
   "after_sales_support": "Popredajná podpora",
   "contact_us": "Kontaktujte nás",
   "address": "Adresa",
-  "phone": "Telefón",
-  "email": "Email",
+  "phone": "Telefonovať",
+  "email": "E-mail",
   "working_hours": "Pracovné hodiny",
   "mon_fri": "Po-Pia 8:00-17:00",
   "container_configurator_desc": "Profesionálna konfigurácia kontajnerov",
@@ -136,7 +136,7 @@
       "environment": "Prostredie",
       "finish_level": "Úroveň dokončenia",
       "flooring": "Podlaha",
-      "climate_zone": "Klimatická zóna",
+      "climate_zone": "Klimatizácia",
       "number_of_windows": "Počet okien",
       "additional_doors": "Dodatočné dvere",
       "electrical_system": "Elektrický systém",
@@ -144,7 +144,7 @@
       "hvac_system": "HVAC systém",
       "insulation_package": "Izolačný balík",
       "structural_reinforcement": "Štrukturálne zosilnenie",
-      "delivery_zone": "Zóna doručenia",
+      "delivery_zone": "Dodávka",
       "building_type": "Typ budovy",
       "dimensions": "Rozmery",
       "width": "Šírka (m)",
@@ -202,7 +202,7 @@
     },
     "messages": {
       "generating": "AI analyzuje vašu konfiguráciu a generuje odhady nákladov...",
-      "quota_exceeded": "Kvóta OpenAI prekročená. Používa sa Anthropic Claude namiesto toho.",
+      "quota_exceeded": "OpenAI Limit bol prekročený. Používam antropickú Claude.",
       "unavailable": "AI analýza dočasne nedostupná",
       "estimate_generated": "AI odhad nákladov úspešne vygenerovaný!",
       "error_generating": "Chyba pri generovaní AI odhadu: {error}"
@@ -227,11 +227,14 @@
     "epoxy": "Priemyselná epoxidová podlaha",
     "concrete": "Zvýšená podlaha (serverové miestnosti)"
   },
-  "climate_zone": "Klimatická zóna",
+  "climate_zone": "Klimatizácia",
   "windows": {
     "two": "2 okná",
     "three": "3 okná",
-    "four": "4 okná"
+    "four": "4 okná",
+    "none": "Bez okien (kontener zamknięty)",
+    "one": "1 okno",
+    "five_plus": "5+ Windows (vlastná konfigurácia)"
   },
   "additional_doors_included": "Dodatočné dvere zahrnuté",
   "yes": "Áno",
@@ -251,7 +254,7 @@
   "special_location_requirements": "Osobitné požiadavky na lokalitu/pozemok",
   "urgent_timeline_needed": "Potrebný urgentný časový harmonogram",
   "custom_modifications_needed": "Potrebné vlastné modifikácie",
-  "sustainability_priority": "Priorita udržateľnosti/ekológie",
+  "sustainability_priority": "Udržateľná/ekologická priorita",
   "budget_constraints": "Rozpočtové obmedzenia",
   "regulatory_compliance_focus": "Zameranie na regulačnú/súladnosť",
   "send_inquiry_cta": "Poslať profesionálny dopyt",
@@ -290,7 +293,10 @@
     "preparation": "Elektrická príprava (iba priepusti)",
     "basic": "Basic (15a, LED, 4 zásuvky)",
     "industrial": "Industrial (63a, 3-fázové, rozvádzače)",
-    "it_server": "IT/Server Room (UPS, stabilizátory, monitorovanie)"
+    "it_server": "IT/Server Room (UPS, stabilizátory, monitorovanie)",
+    "standard": "Štandard (25a, osvetlenie, 8 zásuviek)",
+    "extended": "Rozšírené (40a, sila, UPS, núdzové)",
+    "smart": "Intelligent (KNX, Automation)"
   },
   "plumbing_system": {
     "none": "Bez inštalácie vody",
@@ -300,13 +306,19 @@
     "basic_sanitary": "Základný sanitárny uzol (WC + Sink)",
     "standard_sanitary": "Štandardný uzol (WC + umývadlo + sprcha)",
     "comfort_sanitary": "Pohodlný uzol (WC + umývadlo + kabína)",
-    "premium_sanitary": "Prémiový uzol (Jacuzzi, Bidé, 2 umývadlá)"
+    "premium_sanitary": "Prémiový uzol (Jacuzzi, Bidé, 2 umývadlá)",
+    "industrial": "Priemyselná inštalácia (tlak, filtrácia)"
   },
   "hvac_system": {
     "electric_heaters": "Elektrické ohrievače (1-3 kW, konvektory)",
     "heat_pump": "Tepelné čerpadlo (typ split, výkon 2-12 kW)",
     "vrv_vrf": "Systém VRV/VRF (MULTI -RECORD, CONTROL)",
-    "underfloor_heating": "Podlahové vykurovanie (elektrická/voda)"
+    "underfloor_heating": "Podlahové vykurovanie (elektrická/voda)",
+    "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
+    "electric_heating": "Elektrické zahrievanie (IR radiátory)",
+    "gas_heating": "Zahrievanie plynu (kondenzačný sporák)",
+    "split_ac": "Oddeľte klimatizáciu (chladenie + vykurovanie)",
+    "central_ac": "Ovládací panel klimatizácie (s filtráciou, zvlhčovanie)"
   },
   "insulation_package": "Izolačný balík",
   "structural_reinforcement": "Štrukturálne zosilnenie",
@@ -328,7 +340,7 @@
   "labor_costs_30": "Náklady na prácu (30%)",
   "additional_doors": "Dodatočné dvere",
   "air_intakes_label": "Prívod vzduchu a vetranie",
-  "fire_safety_label": "Požiarne bezpečnostné systémy",
+  "fire_safety_label": "Požiarne systémy",
   "roof_modifications_label": "Úpravy strechy",
   "window_types": {
     "standard": "Norma",
@@ -336,17 +348,18 @@
     "sliding": "Posuvný",
     "tilt": "Zavesený",
     "security": "Protivník",
-    "skylight": "Strešné svetlíky"
+    "skylight": "Strešné svetlíky",
+    "energy_efficient": "Energia"
   },
-  "window_types_standard": "Štandardné",
+  "window_types_standard": "Norma",
   "window_types_double": "Dvojité zasklenie",
-  "window_types_security": "Bezpečnostné okná",
+  "window_types_security": "Okná",
   "paint_finish_standard": "Štandardné",
   "paint_finish_premium": "Prémiové",
   "paint_finish_custom": "Vlastná farba",
   "insulation": {
     "basic": "Základné (50mm)",
-    "standard": "Štandardné (100mm)",
+    "standard": "Štandard (15 cm, PIR/PUR)",
     "premium": "Prémiové (150mm)",
     "extreme": "Extrémne (200mm)",
     "none": "Žiadna izolácia",
@@ -357,10 +370,10 @@
   "additional_services": "Dodatočné služby",
   "analyze_drawings": "Analyzovať výkresy",
   "send_inquiry": {
-    "title": "Formulár na vyžiadanie",
+    "title": "Formulár dotazu",
     "description": "Získejte podrobný návod na váš kontajnerový projekt",
     "disclaimer_title": "Dôležité informácie",
-    "disclaimer_text": "Tento formulár je určený pre podanie žiadosť o podrobný návod. Odhady z našej kalkulačky nie sú komerčnými ponukami podľa aplikovanej legislatívy.",
+    "disclaimer_text": "Tento formulár sa používa na predloženie otázok pre podrobné ponuky. Odhady z našej kalkulačky nie sú komerčné ponuky v zmysle platného zákona.",
     "config_detected": "Detekovaná konfigurácia z kalkulačky",
     "current_config": "Aktuálna konfigurácia",
     "customer_info": "Kontaktné informácie zákazníka",
@@ -399,9 +412,9 @@
       "general_info": "Všeobecné informácie"
     },
     "special_requirements": "Špeciálne požiadavky",
-    "special_requirements_placeholder": "Opíšte ďalšie požiadavky, technické špecifikácie, štandardy, ktoré sa majú uspokojiť ...",
+    "special_requirements_placeholder": "Opíšte ďalšie požiadavky, technické špecifikácie, normy na splnenie ...",
     "additional_message": "Dodatočná správa",
-    "additional_message_placeholder": "Akékoľvek ďalšie informácie, ktoré nám pomôžu vytvoriť lepšiu ponuku ...",
+    "additional_message_placeholder": "Všetky ďalšie informácie, ktoré vám pomôžu vytvoriť lepšiu ponuku ...",
     "attachments": "Prílohy",
     "upload_files": "Nahrať súbory",
     "file_formats_help": "Podporované formáty: PDF, DWG, JPG, PNG, DOC, DOCX",
@@ -424,7 +437,7 @@
     "privacy_section": "Súkromie a ochrana údajov (GDPR)",
     "data_protection_info": "Informácie o ochrane údajov",
     "privacy_consent": "Súhlasím s procesovaním svojich osobných údajov spoločnosťou KAN-BUD Sp. z o.o. s cieľom zvládania tohto dotazu v súlade s GDPR predpismi",
-    "marketing_consent": "Súhlasím s prijímaním marketingovej informácie o službách a produktoch KAN-BUD (voliteľné)",
+    "marketing_consent": "Súhlasím s tým, že dostanem marketingové informácie o službách a produktoch Kan-Bud (voliteľné)",
     "data_retention": "Uchovávanie údajov",
     "fill_required_fields": "Prosím, vyplňte všetky povinné polia označené *",
     "submit_inquiry": "Odoslať dotaz",
@@ -432,7 +445,7 @@
     "success_message": "Ďakujeme za váš dotaz. Naša tíma sa s vami kontaktuje do 24 hodín s podrobnou odpoveďou.",
     "next_steps": "Ďalšie kroky",
     "step_1": "Naša odborník analyzuje vaše požiadavky",
-    "step_2": "Kontaktujeme sa s vami na získanie ďalšie informácie",
+    "step_2": "Budeme vás kontaktovať a získať ďalšie informácie",
     "step_3": "Dostanete podrobnú ponuku zodpovedajúcu vašim potrebám",
     "contact_info": "Kontaktné údaje",
     "new_inquiry": "Odoslať Novú Žiadosť",
@@ -445,7 +458,7 @@
   "advanced_modifications": "Pokročilé modifikácie",
   "air_intakes": {
     "none": "Žiadne vzduchové vstupné otvory",
-    "standard": "Štandardná ventilácia",
+    "standard": "Štandardné vetranie",
     "industrial": "Priemyselná verzia",
     "marine_grade": "Morsky odolná verzia"
   },
@@ -456,7 +469,9 @@
     "solar": "Solárna inštalácia (2-10 kW)",
     "sloped": "Šikmá strecha (jedna -vedená, štítová)",
     "terrace": "Strešná terasa (s balustrádou)",
-    "snow_removal": "Systémy odstraňovania snehu (ohrievače, odkvapy)"
+    "snow_removal": "Systémy odstraňovania snehu (ohrievače, odkvapy)",
+    "fans": "Fanúšikovia strechy (priemyselné, tiché)",
+    "antennas": "Antény/stožiare (GSM, rádio, satelit)"
   },
   "security_features": "Bezpečnostné funkcie",
   "exterior_cladding": "Exteriérové obkladové prvky",
@@ -471,7 +486,7 @@
   "paint_finish": "Farebný prehľad",
   "electrical": {
     "basic": "Základná (osvetlenie + zásuvky)",
-    "standard": "Štandardná (15A obvod)",
+    "standard": "Štandard (obvod 15a)",
     "industrial": "Priemyselná (30A + panel)",
     "smart_system": "Inteligentný systém (automatizácia IoT)"
   },
@@ -489,8 +504,8 @@
     "heat_pump": "Teplomer"
   },
   "security": {
-    "basic": "Základná (zabezpečené zámky)",
-    "standard": "Štandardná (pohotovosť na alarm)",
+    "basic": "Základné (zosilnené zámky)",
+    "standard": "Štandard (príprava alarmov)",
     "advanced": "Rozšírená (kamery + senzory)",
     "high_security": "Vysoce zabezpečená (biometrická)"
   },
@@ -508,7 +523,7 @@
     "emergency_exit": "Pristupová brána"
   },
   "accessibility": {
-    "standard": "Štandardná prístupnosť",
+    "standard": "Štandardný prístup",
     "ramp": "Kolové prechádzanie",
     "full_ada": "Plná prístupnosť podľa AD",
     "disabled_friendly": "Plne prístupný"
@@ -524,7 +539,12 @@
   "construction_material_aluminum": "Alumínium",
   "construction_material_composite": "Kombinovaný materiál",
   "lighting": {
-    "basic_led": "Štandardná LED (základné)"
+    "basic_led": "Štandardná LED (základné)",
+    "none": "Žiadne osvetlenie",
+    "energy_efficient": "Energia -LED LED so senzormi",
+    "exterior": "Vonkajšie osvetlenie (svetlomety)",
+    "emergency": "Núdzové osvetlenie (batéria)",
+    "smart": "Inteligentný systém (ovládané osvetlenie)"
   },
   "lighting_basic": "Základné LED",
   "lighting_professional": "Profesionálne",
@@ -533,7 +553,11 @@
     "none": "Bez vzduchových prieduchov (prírodné a mechanické)",
     "gravity": "Gravitačné otvory (2-4 ks, nastaviteľné)",
     "heat_recovery": "Recuperation (obnovenie tepla 80-95%)",
-    "split_ac": "Split klimatizácia (1-3 jednotiek)"
+    "split_ac": "Split klimatizácia (1-3 jednotiek)",
+    "wall_fans": "Ventilátory steny (výťah 100-150 mm)",
+    "mechanical": "Mechanické vetranie (prívod vzduchu + zdvih)",
+    "central_ac": "Centrálna klimatizácia (VRV/VRF)",
+    "industrial": "Priemyselné ventilácie (ATEX, chemo -rezistentné)"
   },
   "ventilation_natural": "Prirodné odvetrenie",
   "ventilation_forced": "Nútený vzduch",
@@ -555,17 +579,17 @@
   "additional_openings_none": "Žiadne ďalšie otvorenia",
   "additional_openings_door": "Doplnkové otvory dvere",
   "additional_openings_emergency": "Povinný výstup",
-  "fire_systems": "Systémy požiarnej bezpečnosti",
+  "fire_systems": "Požiarne systémy",
   "fire_systems_none": "Žiadny",
   "fire_systems_basic": "Základný",
   "fire_systems_full": "Úplný systém",
   "delivery_zone": "Dodávka",
   "delivery_zone_local": "Miestne (50 km)",
-  "delivery_zone_regional": "Regiónálny (200km)",
+  "delivery_zone_regional": "Regionálne (200 km)",
   "delivery_zone_national": "Národné",
   "delivery_zone_international": "Medzinárodné",
   "transport_type": "Prepravovať",
-  "transport_type_standard": "Štandard",
+  "transport_type_standard": "Norma",
   "transport_type_crane": "S kránom",
   "transport_type_special": "Špeciálna preprava",
   "installation": "Inštalácia",
@@ -595,15 +619,15 @@
   },
   "help": {
     "windows": "Dvojité okná s tepelnými mostmi. Viac okien zvyšuje izoláciu prirodzeného svetla.",
-    "additional_doors": "Ďalší personál alebo núdzové dvere mimo štandardných dverí kontajnerov.",
+    "additional_doors": "Ďalší personál alebo evakuačné dvere mimo štandardných dverí kontajnera.",
     "air_intakes": "Ventilačné systémy pre cirkuláciu vzduchu. Námorná trieda je odporúčaná na pobrežné oblasti.",
     "roof_modifications": "Úpravy strechy pre prístup, osvetlenie alebo solárne inštalácie.",
-    "electrical_system": "Štandard: 15a domácnosť. Industrial: 30A s panelom. SMART: Automatizácia internetu vecí.",
+    "electrical_system": "Štandard: 15a Home. Industrial: 30A s rozvádzačom. Inteligentné: automatizácia internetu vecí.",
     "plumbing_system": "Základné: umývadlo a odtok. Plné: Kompletné príslušenstvo v kúpeľni. Obchodné: Priemyselné stupeň.",
     "hvac_system": "Možnosti kontroly podnebia. Tepelné čerpadlá sú energetický Enfistynt na celoročné použitie.",
     "security_features": "Úrovne zabezpečenia od základných zámkov po systémy riadenia biometrického prístupu.",
     "exterior_cladding": "Ochrana počasia a estetické zlepšenie. Vedľa kovu ponúka najlepšiu odolnosť.",
-    "additional_openings": "Špecializované prístupové body za štandardnými dverami a oknami.",
+    "additional_openings": "Špecializované prístupové body mimo štandardných dverí a okien.",
     "fire_safety": "Systémy požiarnej ochrany. Sprinkler Systems odporúčané na komerčné použitie.",
     "accessibility": "Dodržiavanie ADA zaisťuje prístupnosť osoby so zdravotným postihnutím.",
     "paint_finish": "Kvalita povlaku ovplyvňuje trvanlivosť. C5M Odporúčané pre morské prostredie. C4 pre priemyselné.",
@@ -651,9 +675,9 @@
       "mediterranean": "Stredomorský",
       "atlantic_maritime": "Atlantický námorník",
       "continental": "Kontinentálny",
-      "alpine": "Alpská zóna",
-      "baltic": "Baltická zóna",
-      "temperate_oceanic": "Teplomilná oceánická zóna"
+      "alpine": "Alpský",
+      "baltic": "Pobalko",
+      "temperate_oceanic": "Mierny oceánsky"
     },
     "finish_levels": {
       "basic": "Základní",
@@ -665,7 +689,7 @@
       "plywood": "Plyvová doska",
       "vinyl": "Vinyl",
       "carpet": "Koberce",
-      "hardwood": "Drevená podlaha",
+      "hardwood": "Drevo",
       "polished_concrete": "Polierovaná betónová podlaha"
     }
   },
@@ -680,7 +704,7 @@
     "project_name_placeholder": "napr. Kontajnerový úrad - Bratislava",
     "file_upload": "Nahrať súbor",
     "upload_drawings": "Nahrať technické kresby",
-    "file_formats_help": "Podporujeme formáty PDF, DWG, JPG a PNG. Dôležité je, aby bol súbor v formáte PDF pre najlepší výsledok analýzy.",
+    "file_formats_help": "Podporujeme súbory PDF, DWG, JPG a PNG. Odporúčame formát PDF pre najlepšiu analýzu.",
     "other": "Iné"
   },
   "drawing_analysis_customer": {
@@ -696,7 +720,7 @@
     "project_location": "Projekt",
     "file_upload": "Nahrávanie súborov",
     "upload_drawings": "Nahrať technické kresby",
-    "file_formats_help": "Podporujeme súbory PDF, JPG, PNG. Pre najlepšiu analýzu recenzujeme formát PDF.",
+    "file_formats_help": "Podporujeme súbory PDF, JPG, PNG. Odporúčame formát PDF pre najlepšiu analýzu.",
     "files_uploaded": "Nahrané súbory",
     "analyze_button": "Analyzovať výkresy",
     "analyzing": "Analýza výkresov ...",
@@ -720,7 +744,7 @@
     "disclaimer_title": "Dôležité upozornenie",
     "disclaimer_text": "Táto analýza je automatická a určená iba na odhadné účely. Finálna cena vyžaduje manuálnu overovanie našimi technickými zamestnancom.",
     "tips_title": "Používateľské tipy pre lepšiu analýzu",
-    "tips_text": "Pre najpresnejšiu analýzu zabezpečte, aby vaše kresby obsahovali:",
+    "tips_text": "Pre najpresnejšiu analýzu sa uistite, že vaše výkresy obsahujú:",
     "tip_1": "Jasné rozmery a špecifikácie",
     "tip_2": "Všetky technické detaily viditeľné",
     "tip_3": "Vysoká rozlíšenosť (minimálne 300 DPI)",
@@ -752,8 +776,8 @@
   "labor_costs_40": "Náklady na Pracovné Sily (40%)",
   "contingency_10": "Predpokladaný Rozpočet (10%)",
   "complexity_multiplier": "Multiplikátor Komplexity",
-  "standard_recommendations": "Stanovisko na Standardné Dopyty",
-  "plan_standard_delivery": "Plánovať na štandardnú dodávku a inštaláciu",
+  "standard_recommendations": "Štandardné odporúčania",
+  "plan_standard_delivery": "Naplánujte si štandardný rozvrh dodávok a inštalácie",
   "consider_building_codes": "Zohľadnite požiadavky na stavby",
   "budget_site_preparation": "Rozpočet na potenciálne potrebné prípravy miesta",
   "review_electrical_plumbing": "Prehľadajte požiadavky na elektrické a vodovodné rozvody",
@@ -790,7 +814,7 @@
   },
   "environments": {
     "indoor": "Vnútorné (haly, sklady)",
-    "outdoor_standard": "Vonkajší štandard (teplotné podnebie)",
+    "outdoor_standard": "Štandardný vonkajší",
     "outdoor_extreme": "Vonkajší extrém (pobrežné, hory)",
     "industrial": "Priemyselné (rastliny, rafinérie, bane)",
     "construction": "Výstavba (výstavby, infraštruktúra)",
@@ -800,11 +824,19 @@
   "insulation_label": "Izolácia",
   "finish_levels": {
     "shell": "Surový stav (izolácia + doska OSB)",
-    "specialist": "Špecialista (lekárske/laboratórne normy)"
+    "specialist": "Špecialista (lekárske/laboratórne normy)",
+    "basic": "Bez wykończenia (kontener techniczny, szkielet)",
+    "standard": "Základné (izolácia + technický povrch)",
+    "comfort": "Pohodlné (prémiová izolácia + kancelárska úprava)",
+    "luxury": "Luxus (najvyššia trieda + hotelové povrchové úpravy)"
   },
   "climate_zones": {
     "maritime": "Morské podnebie (vysoká vlhkosť)",
     "mountain": "Mountain Climate (High UV, sneh)",
-    "tropical": "Tropické podnebie (vysoké teploty, vlhkosť)"
+    "tropical": "Tropické podnebie (vysoké teploty, vlhkosť)",
+    "northern_europe": "Europa Północna (Skandynawia, -30°C do +25°C)",
+    "central_europe": "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
+    "southern_europe": "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
+    "continental": "Kontinentálne podnebie (extrémne výkyvy)"
   }
 }

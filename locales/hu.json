@@ -20,7 +20,7 @@
     "access_denied": "Hozzáférés megtagadva"
   },
   "nav": {
-    "comparison_tool": "Összehasonlító\nEszköz",
+    "comparison_tool": "Eszköz\nÖsszehasonlítás",
     "comparison_tool_desc": "Konfigurációk összehasonlítása",
     "drawing_analysis": "Rajz\nElemzés",
     "drawing_analysis_desc": "AI dokumentum elemzés",
@@ -35,7 +35,7 @@
     "drawing_analysis_customer": "Rajz\nElemzés",
     "drawing_analysis_customer_desc": "Ingyenes dokumentum elemzés",
     "custom_sizing": "Custom\nSizing",
-    "bulk_pricing_desc": "Volume discounts for multiple containers",
+    "bulk_pricing_desc": "Nagykereskedelmi kedvezmények sok konténer vásárlásakor",
     "bulk_pricing": "Tömeg\nÁrképzés",
     "custom_sizing_desc": "Tervezési konténerek pontos előírásokkal"
   },
@@ -57,7 +57,7 @@
   "flooring": {
     "none": "Nincs padló (hullámos lemez)",
     "plywood": "Vízálló rétegelt lemez 18mm (szabványos)",
-    "anti_slip": "Csúszásgátló rétegelt lemez 21mm",
+    "anti_slip": "21 mm -es nonlip rétegelt lemez",
     "laminate": "Laminált panelek AC4/AC5",
     "vinyl": "Vinil panelek (LVT) vízálló",
     "carpet": "Szőnyeglapok kereskedelmi",
@@ -68,7 +68,9 @@
     "one": "1 ablak",
     "two": "2 Windows",
     "three": "3 Windows",
-    "four": "4 ablak"
+    "four": "4 ablak",
+    "none": "Windows nélkül (zárt tartály)",
+    "five_plus": "5+ okien (konfiguracja custom)"
   },
   "additional_doors_included": "További ajtók mellékelve",
   "cost_breakdown": "Költség Lebontás",
@@ -90,7 +92,10 @@
     "preparation": "Elektromos előkészítés (csak az átruházások)",
     "basic": "Alap (15a, LED, 4 aljzat)",
     "industrial": "Ipari (63a, 3 fázis, kapcsolóberendezés)",
-    "it_server": "IT/szerver szoba (UPS, stabilizátorok, megfigyelés)"
+    "it_server": "IT/szerver szoba (UPS, stabilizátorok, megfigyelés)",
+    "standard": "Standard (25a, világítás, 8 aljzat)",
+    "extended": "Meghosszabbított (40a, erő, hullámvölgyek)",
+    "smart": "Intelligens (KNX, automatizálás)"
   },
   "plumbing_system": {
     "none": "Víz telepítés nélkül",
@@ -100,13 +105,19 @@
     "basic_sanitary": "Alapvető egészségügyi csomópont (WC + mosogató)",
     "standard_sanitary": "Standard csomópont (WC + Sink + zuhany)",
     "comfort_sanitary": "Kényelmes csomópont (WC + Sink + Cabin)",
-    "premium_sanitary": "Prémium csomópont (Jacuzzi, Bidé, 2 mosogató)"
+    "premium_sanitary": "Prémium csomópont (Jacuzzi, Bidé, 2 mosogató)",
+    "industrial": "Ipari telepítés (nyomás, szűrés)"
   },
   "hvac_system": {
     "electric_heaters": "Elektromos fűtőberendezések (1-3 kW, konvektorok)",
     "heat_pump": "Hőszivattyú (osztott típus, 2-12 kW teljesítmény)",
     "vrv_vrf": "VRV/VRF rendszer (multi -record, zónavezérlés)",
-    "underfloor_heating": "Padlófűtés (elektromos/víz)"
+    "underfloor_heating": "Padlófűtés (elektromos/víz)",
+    "none": "HVAC nélkül (fűtés és hűtés nélkül)",
+    "electric_heating": "Elektromos fűtés (IR radiátorok)",
+    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
+    "split_ac": "Külön légkondicionálás (hűtés + fűtés)",
+    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)"
   },
   "insulation_package": "Szigetelési Csomag",
   "structural_reinforcement": "Szerkezeti Megerősítés",
@@ -124,7 +135,7 @@
     "disclaimer_text": "Ez az űrlap részletes árajánlatok beküldésére szolgál. A kalkulátorunkból származó becslések nem kereskedelmi ajánlatok a hatályos jog szerint.",
     "config_detected": "A kalkulátorból észlelt konfiguráció",
     "current_config": "Jelenlegi Konfiguráció",
-    "customer_info": "Ügyfél Kapcsolati Információk",
+    "customer_info": "Ügyfél elérhetőségei",
     "full_name": "Teljes Név",
     "company_name": "Cég Neve",
     "email": "E-mail Cím",
@@ -160,7 +171,7 @@
       "general_info": "Általános Információ"
     },
     "special_requirements": "Speciális Követelmények",
-    "special_requirements_placeholder": "Írja le a további követelményeket, műszaki specifikációkat, betartandó szabványokat...",
+    "special_requirements_placeholder": "Mutassa be a további követelményeket, a műszaki előírásokat, a megfeleléshez szükséges szabványokat ...",
     "additional_message": "További Üzenet",
     "additional_message_placeholder": "Minden további információ, amely segít jobb árajánlatot készíteni...",
     "attachments": "Mellékletek",
@@ -171,7 +182,7 @@
     "contact_preferences": "Kapcsolati Beállítások",
     "preferred_contact": "Előnyben Részesített Kapcsolati Mód",
     "contact": {
-      "email": "E-mail",
+      "email": "Email",
       "phone": "Telefon",
       "both": "E-mail és Telefon"
     },
@@ -184,7 +195,7 @@
     },
     "privacy_section": "Adatvédelem és Adatvédelem (GDPR)",
     "data_protection_info": "Adatvédelmi Információk",
-    "privacy_consent": "Hozzájárulok személyes adataim feldolgozásához a KAN-BUD Sp. z o.o. által ezen kérés kezelése céljából a GDPR előírások szerint",
+    "privacy_consent": "Egyetértek a személyes adataim Kan-Bud sp. Z O.O. Annak érdekében, hogy ezt a kérdést a GDPR rendelkezéseivel összhangban kezeljék",
     "marketing_consent": "Hozzájárulok a KAN-BUD szolgáltatásokról és termékekről szóló marketing információk fogadásához (opcionális)",
     "data_retention": "Adatmegőrzés",
     "fill_required_fields": "Kérjük, töltse ki az összes kötelező mezőt, amelyek *-gal vannak jelölve",
@@ -195,7 +206,7 @@
     "step_1": "Szakértőnk elemzi az Ön követelményeit",
     "step_2": "Kapcsolatba lépünk Önnel további információkért",
     "step_3": "Részletes, az Ön igényeihez szabott árajánlatot fog kapni",
-    "contact_info": "Kapcsolati Információk",
+    "contact_info": "Kapcsolattartási adatok",
     "new_inquiry": "Új Kérdés Küldése",
     "error": "Hiba a kérdés küldésekor",
     "why_professional_inquiry": "Miért Küldjön Professzionális Kérdést?",
@@ -210,7 +221,7 @@
   "transparent_calculations": "Átlátható számítások",
   "fast_realization": "Gyors Megvalósítás",
   "hundreds_of_projects": "Több száz befejezett projekt",
-  "own_machinery": "Saját gyártó géppark",
+  "own_machinery": "Saját géppark",
   "poland_center": "Központi helyzet Lengyelországban",
   "full_service": "Teljes Szolgáltatás",
   "design_execution": "Tervezéstől a kivitelezésig",
@@ -237,7 +248,7 @@
   "current_configuration": "Jelenlegi Konfiguráció",
   "container_type": "Konténer Típus",
   "purpose": "Cél",
-  "climate_zone": "Klíma Zóna",
+  "climate_zone": "Éghajlati övezet",
   "back_to_home": "← Vissza a főoldalra",
   "go_to_configurator": "🔧 Ugrás a Konfigurátorhoz",
   "container": {
@@ -256,7 +267,8 @@
       "custom": "Szokás",
       "multi_unit": "Több egységnyi tartály",
       "custom_dimensions": "Egyedi méretű tartály",
-      "refurbished": "Felújított konténer"
+      "refurbished": "Felújított konténer",
+      "40ft_hc": "40ft HC"
     },
     "use_cases": {
       "office_space": "Irodai Tér",
@@ -276,7 +288,7 @@
     },
     "climate_zones": {
       "central_european": "Közép-európai",
-      "scandinavian": "Skandináv",
+      "scandinavian": "skandináv",
       "mediterranean": "Mediterrán",
       "atlantic_maritime": "Atlanti Tengeri",
       "continental": "Kontinentális",
@@ -305,7 +317,7 @@
       "environment": "Környezet",
       "finish_level": "Befejezési Szint",
       "flooring": "Padló",
-      "climate_zone": "Klíma Zóna",
+      "climate_zone": "Éghajlati övezet",
       "number_of_windows": "Ablakok Száma",
       "additional_doors": "További Ajtók",
       "electrical_system": "Elektromos Rendszer",
@@ -318,13 +330,13 @@
   },
   "ai": {
     "models": {
-      "openai_gpt4": "OpenAI GPT-4o",
+      "openai_gpt4": "Openai GPT-4O",
       "anthropic_claude": "Antropikus Claude",
       "auto_select": "Automatikus Legjobb Kiválasztás"
     },
     "messages": {
       "generating": "Az AI elemzi a konfigurációt és költségbecslést készít...",
-      "quota_exceeded": "OpenAI kvóta túllépve. Anthropic Claude használata helyette.",
+      "quota_exceeded": "Az Openai limit túllépték. Antropikus Claude -t használok.",
       "unavailable": "AI elemzés átmenetileg nem elérhető",
       "estimate_generated": "AI költségbecslés sikeresen elkészült!",
       "error_generating": "Hiba az AI becslés készítésében: {error}"
@@ -362,7 +374,7 @@
   "custom_modifications_needed": "Egyedi módosítások szükségesek",
   "sustainability_priority": "Fenntarthatóság/környezetbarát prioritás",
   "budget_constraints": "Költségvetési korlátok",
-  "regulatory_compliance_focus": "Szabályozási/megfelelőségi fókusz",
+  "regulatory_compliance_focus": "Összpontosítson a rendeletek betartására",
   "send_inquiry_cta": "Érdeklődés Küldése",
   "get_precise_quote": "Pontos Árajánlat Kérése",
   "contact_for_quote": "Vegye fel velünk a kapcsolatot részletes, személyre szabott árajánlatért.",
@@ -375,28 +387,28 @@
   "quote_generator": "Árajánlat\nGenerátor",
   "comparison_tool": {
     "employee_only": "Az összehasonlító eszköz csak KAN-BUD alkalmazottak számára elérhető.",
-    "login_info": "Jelentkezzen be alkalmazottként a funkció eléréséhez.",
-    "employee_password": "Alkalmazotti jelszó",
+    "login_info": "Jelentkezzen be alkalmazottként az eszköz eléréséhez.",
+    "employee_password": "Alkalmazott szlogen",
     "description": "Különböző konténer konfigurációk, költségek és műszaki specifikációk összehasonlítása"
   },
   "drawing_analysis": {
     "employee_only": "A rajzelemzés csak KAN-BUD alkalmazottak számára elérhető.",
-    "login_info": "Jelentkezzen be alkalmazottként a funkció eléréséhez.",
-    "employee_password": "Alkalmazotti jelszó",
-    "description": "Műszaki rajzok automatikus elemzése PDF/DWG formátumban pontos árajánlatokhoz",
+    "login_info": "Jelentkezzen be alkalmazottként az eszköz eléréséhez.",
+    "employee_password": "Alkalmazott szlogen",
+    "description": "A PDF/DWG műszaki rajzok automatikus elemzése a pontos értékelésekhez",
     "project_context": "Projekt Kontextus",
     "project_location": "Projekt helyszín",
     "project_name": "Projekt név",
     "project_name_placeholder": "pl. Konténer Iroda - Poznań",
     "file_upload": "Fájl Feltöltés",
     "upload_drawings": "Műszaki rajzok feltöltése",
-    "file_formats_help": "PDF, DWG, JPG és PNG fájlokat támogatjuk. A legjobb elemzéshez PDF formátumot ajánljuk.",
+    "file_formats_help": "Támogatjuk a PDF, DWG, JPG és PNG fájlokat. A legjobb elemzéshez javasoljuk a PDF formátumot.",
     "other": "Egyéb"
   },
   "admin": {
     "access_required": "Adminisztrátor Hozzáférés Szükséges",
     "privileges_required": "Ez a rész adminisztrátor jogosultságokat igényel",
-    "enter_password": "Adminisztrátor jelszó megadása:",
+    "enter_password": "Írja be a rendszergazda jelszavát:",
     "access_granted": "Adminisztrátor hozzáférés engedélyezve!",
     "invalid_password": "Érvénytelen jelszó",
     "contact_it": "Lépjen kapcsolatba a KAN-BUD IT adminisztrátorral a hozzáférési adatokért",
@@ -442,7 +454,9 @@
     "solar": "Napenergia-telepítés (2-10 kW)",
     "sloped": "Egy ferde tető (egyoldalú, gable)",
     "terrace": "Tetőterasz (balustráddal)",
-    "snow_removal": "Hó eltávolító rendszerek (melegítők, ereszcsatorna)"
+    "snow_removal": "Hó eltávolító rendszerek (melegítők, ereszcsatorna)",
+    "fans": "Tetőventilátorok (ipari, csendes)",
+    "antennas": "Anteny/maszty (GSM, radio, satelitarne)"
   },
   "security_features": "Biztonsági Jellemzők",
   "exterior_cladding": "Külső Burkolat",
@@ -451,7 +465,7 @@
     "basic": "Alapvető (tűzoltó készülék)",
     "smoke_detection": "Füstérzékelés",
     "sprinkler": "Sprinkler rendszer",
-    "full_system": "Teljes tűzoltó rendszer"
+    "full_system": "A tűz teljes oltása"
   },
   "accessibility_features": "Akadálymentesítés",
   "paint_finish": "Festés és Felületkezelés",
@@ -476,8 +490,8 @@
   },
   "security": {
     "basic": "Alapvető (megerősített zárak)",
-    "standard": "Szabványos (riasztóra kész)",
-    "advanced": "Haladó (kamerák + érzékelők)",
+    "standard": "Standard (riasztás előkészítés)",
+    "advanced": "Fejlett (kamerák + érzékelők)",
     "high_security": "Magas biztonság (biometrikus)"
   },
   "cladding": {
@@ -502,7 +516,7 @@
   "paint": {
     "standard": "Szabványos bevonat (C2)",
     "premium": "Prémium felületkezelés (C3)",
-    "anti_corrosion": "Korróziógátló (C4)",
+    "anti_corrosion": "Ant -korrozív (C4)",
     "marine_grade": "Tengerparti minőség (C5M)"
   },
   "insulation": {
@@ -522,10 +536,10 @@
   "help": {
     "windows": "Dupla üvegezésű ablakok hőhidakkal. Több ablak növeli a természetes fényt, de befolyásolja a szigetelést.",
     "additional_doors": "További személyzeti vagy vészkijárati ajtók a szabványos konténerajtókon túl.",
-    "air_intakes": "Szellőzőrendszerek levegőcirkulációhoz. Tengerparti minőség ajánlott parti területekhez.",
+    "air_intakes": "Szellőztető rendszerek a légáramláshoz. A tengerparti területek számára ajánlott a tengeri osztály.",
     "roof_modifications": "Tetőmódosítások hozzáféréshez, világításhoz vagy napelem telepítéshez.",
     "electrical_system": "Szabványos: 15A háztartási. Ipari: 30A elosztótáblával. Okos: IoT automatizálás.",
-    "plumbing_system": "Alapvető: mosogató és lefolyó. Teljes: komplett fürdőszoba felszerelés. Kereskedelmi: ipari szerelvények.",
+    "plumbing_system": "Alapvető: Süllyedjen és engedje le. Teljes: Teljes fürdőszoba felszerelés. Kereskedelmi: ipari szerelvények.",
     "hvac_system": "Klímavezérlési lehetőségek. Hőszivattyúk energiatakarékosak egész éves használatra.",
     "security_features": "Biztonsági szintek az alapzároktól a biometrikus hozzáférés-vezérlő rendszerekig.",
     "exterior_cladding": "Időjárási védelem és esztétikai javítás. Fém homlokzatburkolat kínálja a legjobb tartósságot.",
@@ -549,7 +563,7 @@
     "project_location": "Projekt helyszíne",
     "file_upload": "Fájl feltöltés",
     "upload_drawings": "Műszaki rajzok feltöltése",
-    "file_formats_help": "Támogatjuk a PDF, JPG, PNG fájlokat. A legjobb elemzéshez PDF formátumot ajánlunk.",
+    "file_formats_help": "Támogatjuk a PDF, JPG, PNG fájlokat. A legjobb elemzéshez javasoljuk a PDF formátumot.",
     "files_uploaded": "Fájlok feltöltve",
     "analyze_button": "Rajzok elemzése",
     "analyzing": "Rajzok elemzése...",
@@ -576,7 +590,7 @@
     "tips_text": "Pontosabb elemzéshez:",
     "tip_1": "Töltse fel tiszta, nagy felbontású rajzokat",
     "tip_2": "Adja meg a méreteket és specifikációkat",
-    "tip_3": "Adja meg a teljes projekt kontextust",
+    "tip_3": "Nagy felbontás (legalább 300 DPI)",
     "config_required": "Konfiguráció szükséges",
     "config_required_text": "A műszaki rajzok pontos elemzéséhez alapvető konténer konfiguráció szükséges. Konfiguráció nélkül az elemzés alapvető becslésekre korlátozódik.",
     "config_tip": "Tipp",
@@ -631,7 +645,8 @@
     "sliding": "Csúszó",
     "tilt": "Csuklós",
     "security": "Gurglary",
-    "skylight": "Tetőablakok"
+    "skylight": "Tetőablakok",
+    "energy_efficient": "Energia -befogadás"
   },
   "it_systems_none": "Egyik sem",
   "transport_type_standard": "Standard",
@@ -642,7 +657,11 @@
     "none": "Légszellőzőnyílások nélkül (természetes és mechanikus)",
     "gravity": "Gravitációs szellőzőnyílások (2-4 db, állítható)",
     "heat_recovery": "Rekuperáció (hő-visszanyerés 80-95%)",
-    "split_ac": "Osztott légkondicionáló (1-3 egység)"
+    "split_ac": "Osztott légkondicionáló (1-3 egység)",
+    "wall_fans": "Fali ventilátorok (100-150 mm-es lift)",
+    "mechanical": "Mechanikus szellőzés (levegőellátás + emelés)",
+    "central_ac": "Központi légkondicionálás (VRV/VRF)",
+    "industrial": "Ipari szellőzés (ATEX, kemo -rezisztens)"
   },
   "it_systems": "IT rendszerek",
   "lighting_professional": "Szakmai",
@@ -651,14 +670,19 @@
   "exterior_cladding_wood": "Faipari",
   "office_equipment": "Office Equipment",
   "installation": "Telepítés",
-  "system_comments": "System Requirements Comments",
+  "system_comments": "Megjegyzések a rendszerkövetelményekhez",
   "office_equipment_full": "Teljes iroda",
   "appliances": "Készülékek",
   "it_systems_advanced": "Továbbfejlesztett",
   "window_types_security": "Biztonsági ablakok",
   "roof_modifications_skylight": "Tetőablak",
   "lighting": {
-    "basic_led": "Standard LED (alap)"
+    "basic_led": "Standard LED (alap)",
+    "none": "Nincs megvilágítás",
+    "energy_efficient": "Energooszczędne LED z czujnikami",
+    "exterior": "Oświetlenie zewnętrzne (reflektory)",
+    "emergency": "Vészvilágítás (akkumulátor)",
+    "smart": "Intelligens rendszer (ellenőrzött világítás)"
   },
   "it_systems_basic": "Alaphálózat",
   "fire_systems": "Tűzrendszer",
@@ -692,10 +716,10 @@
     "indoor": "Beltéri (csarnokok, raktárak)",
     "outdoor_standard": "Standard külső",
     "outdoor_extreme": "Kültéri szélsőséges (tengerparti, hegyek)",
-    "industrial": "Ipari (növények, finomítók, bányák)",
+    "industrial": "Ipari",
     "construction": "Építés (építési helyek, infrastruktúra)",
     "agricultural": "Mezőgazdasági (gazdaságok, létesítmények)",
-    "marine": "Tengeri/hajógyár (korrozív környezet)"
+    "marine": "Tenger"
   },
   "finish_levels": {
     "basic": "Nincs befejezés (műszaki konténer, váz)",

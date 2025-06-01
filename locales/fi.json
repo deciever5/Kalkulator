@@ -52,7 +52,7 @@
   "why_kan_bud": "Miksi KAN-BUD?",
   "precise_quotes": "Tarkat tarjoukset",
   "ai_historical_data": "AI + historiallinen data",
-  "european_climate_standards": "Eurooppalaiset ilmastostandardit",
+  "european_climate_standards": "Euroopan ilmastostandardit",
   "transparent_calculations": "Läpinäkyvät laskelmat",
   "fast_realization": "Nopea toteutus",
   "hundreds_of_projects": "Satoja projekteja",
@@ -196,7 +196,7 @@
   },
   "ai": {
     "models": {
-      "openai_gpt4": "OpenAI GPT-4o",
+      "openai_gpt4": "Openai GPT-4O",
       "anthropic_claude": "Antropinen Claude",
       "auto_select": "Automaattinen paras valinta"
     },
@@ -232,7 +232,9 @@
     "one": "1 ikkuna",
     "two": "2 ikkunaa",
     "three": "3 ikkunaa",
-    "four": "4 ikkunaa"
+    "four": "4 ikkunaa",
+    "none": "Ilman ikkunoita (suljettu säiliö)",
+    "five_plus": "5+ Windows (mukautettu kokoonpano)"
   },
   "additional_doors_included": "Lisäovet mukana",
   "yes": "Kyllä",
@@ -291,7 +293,10 @@
     "preparation": "Sähköinen valmistus (vain rummut)",
     "basic": "Perus (15A, LED, 4 pistorasiaa)",
     "industrial": "Teollisuus (63A, 3-vaiheinen, kytkentälaite)",
-    "it_server": "IT/palvelinhuone (UPS, Stabilisaattorit, seuranta)"
+    "it_server": "IT/palvelinhuone (UPS, Stabilisaattorit, seuranta)",
+    "standard": "Vakio (25A, valaistus, 8 pistorasiaa)",
+    "extended": "Laajennettu (40A, vahvuus, UPS, hätätilanne)",
+    "smart": "Älykäs (KNX, automaatio)"
   },
   "plumbing_system": {
     "none": "Ilman veden asennusta",
@@ -301,13 +306,19 @@
     "basic_sanitary": "Perussanitesolmu (WC + -altaan)",
     "standard_sanitary": "Vakiosolmu (WC + -altaan + suihku)",
     "comfort_sanitary": "Mukava solmu (WC + pesuallas + hytti)",
-    "premium_sanitary": "Premium -solmu (poreallas, Bidé, 2 nieluja)"
+    "premium_sanitary": "Premium -solmu (poreallas, Bidé, 2 nieluja)",
+    "industrial": "Teollisuusasennus (paine, suodatus)"
   },
   "hvac_system": {
     "electric_heaters": "Sähkölämmittimet (1-3 kW, konvektorit)",
     "heat_pump": "Lämpöpumppu (jaettu tyyppi, 2-12 kW: n suorituskyky)",
     "vrv_vrf": "VRV/VRF -järjestelmä (Multi -Record, vyöhykkeen ohjaus)",
-    "underfloor_heating": "Lattialämmitys (sähkö/vesi)"
+    "underfloor_heating": "Lattialämmitys (sähkö/vesi)",
+    "none": "Ilman LVI: tä (ilman lämmitystä ja jäähdytystä)",
+    "electric_heating": "Sähkölämmitys (IR -jäähdyttimet)",
+    "gas_heating": "Kaasun lämmitys (lauhdutusliesi)",
+    "split_ac": "Erillinen ilmastointi (jäähdytys + lämmitys)",
+    "central_ac": "Ilmastointilaitteen ohjauspaneeli (suodatuksella, kosteuttamisella)"
   },
   "insulation_package": "Eristyspaketti",
   "structural_reinforcement": "Rakenteellinen vahvistus",
@@ -337,7 +348,8 @@
     "sliding": "Liukuva",
     "tilt": "Saranoitu",
     "security": "Anti -antipalkinto",
-    "skylight": "Kattokattoikkunat"
+    "skylight": "Kattokattoikkunat",
+    "energy_efficient": "Energiaa"
   },
   "window_types_standard": "Vakio",
   "window_types_double": "Kaksinkertainen lasi",
@@ -400,7 +412,7 @@
       "general_info": "Yleistieto"
     },
     "special_requirements": "Erityisvaatimukset",
-    "special_requirements_placeholder": "Kuvaile lisävaatimuksia, teknisiä määrityksiä, standardeja, jotka täytetään...",
+    "special_requirements_placeholder": "Kuvaile lisävaatimuksia, teknisiä eritelmiä, täytettäviä standardeja ...",
     "additional_message": "Lisäviesti",
     "additional_message_placeholder": "Mikä tahansa lisätieto, joka auttaa meitä luomaan paremman tarjouksen...",
     "attachments": "Lisäyksiköt",
@@ -457,7 +469,9 @@
     "solar": "Aurinkoenergian asennus (2-10 kW)",
     "sloped": "Vino katto (yksi -puolinen, päällikkö)",
     "terrace": "Kattoterassi (kaalella)",
-    "snow_removal": "Lumenpoistojärjestelmät (lämmittimet, kourut)"
+    "snow_removal": "Lumenpoistojärjestelmät (lämmittimet, kourut)",
+    "fans": "Kattotuulettimet (teollisuus, hiljainen)",
+    "antennas": "Antennit/mastot (GSM, radio, satelliitti)"
   },
   "security_features": "Turvallisuusominaisuudet",
   "exterior_cladding": "Ulkoasu",
@@ -525,7 +539,12 @@
   "construction_material_aluminum": "Alumiini",
   "construction_material_composite": "Komposiittimateriaali",
   "lighting": {
-    "basic_led": "Vakio LED (Basic)"
+    "basic_led": "Vakio LED (Basic)",
+    "none": "Ei valaistusta",
+    "energy_efficient": "Energiaa pitävä LED anturilla",
+    "exterior": "Ulkoinen valaistus (ajovalot)",
+    "emergency": "Hätävalaistus (akku)",
+    "smart": "Älykäs järjestelmä (ohjattu valaistus)"
   },
   "lighting_basic": "Perus LED",
   "lighting_professional": "Ammattitason",
@@ -534,7 +553,11 @@
     "none": "Ilman tuuletusaukkoja (luonnollinen ja mekaaninen)",
     "gravity": "Gravitaatioaukot (2-4 kpl, säädettävä)",
     "heat_recovery": "Palautus (lämmön talteenotto 80-95%)",
-    "split_ac": "Jaettu ilmastointi (1-3 yksikköä)"
+    "split_ac": "Jaettu ilmastointi (1-3 yksikköä)",
+    "wall_fans": "Seinäpuhaltimet (100-150 mm nosto)",
+    "mechanical": "Mekaaninen ilmanvaihto (ilmansyöttö + nosto)",
+    "central_ac": "Keski -ilmastointi (VRV/VRF)",
+    "industrial": "Teollisuustuule (ATEX, kemoteriaali)"
   },
   "ventilation_natural": "Luonnollinen",
   "ventilation_forced": "Paineilmainen",
@@ -590,7 +613,7 @@
   "general_comments": "Yleiset huomautukset",
   "reinforcement": {
     "none": "Ei vahvistusta",
-    "standard": "Standardeja vahvistusta",
+    "standard": "Vakiovahvistus",
     "seismic": "Maanjäristyksen vahvistus",
     "hurricane": "Myrskyvahvistus"
   },
@@ -599,7 +622,7 @@
     "additional_doors": "Lisäovet henkilökunnalle tai hätätilanteisiin.",
     "air_intakes": "Ilmanvaihtosysteemit ilmankierron parantamiseksi. Merimääräinen suositeltu rannikkoseutuille.",
     "roof_modifications": "Katutasot muutokset pääsyyn, valaistuksen tai aurinkopaneeleiden asentamiseksi.",
-    "electrical_system": "Standardeja: 15A kotitalous. Teollisuus: 30A paneeli. Älykkäät: IoT-automatisointi.",
+    "electrical_system": "Vakio: 15A koti. Teollisuus: 30a kytkinlaitteella. Älykäs: IoT -automaatio.",
     "plumbing_system": "Perus: sinkki ja puhdistin. Täysin: täysin varustettu wc. Kaupallinen: teollisuusluokan varusteet.",
     "hvac_system": "Ilmastointiohjelmat. Lämmityspumput ovat energiatehokkaita koko vuoden käytölle.",
     "security_features": "Turvatasot alkaen peruslukosta biometrisiin pääsyohjelmiin.",
@@ -627,7 +650,8 @@
       "custom": "Räätälöity",
       "multi_unit": "Moniyksikkö",
       "custom_dimensions": "Mukautetut mitat säiliö",
-      "refurbished": "Kunnostettu astia"
+      "refurbished": "Kunnostettu astia",
+      "40ft_hc": "40ft HC"
     },
     "use_cases": {
       "office_space": "Toimistotilat",
@@ -647,7 +671,7 @@
     },
     "climate_zones": {
       "central_european": " Keskeisen Euroopan ilmasto",
-      "scandinavian": "Skandinaavinen ilmasto",
+      "scandinavian": "Skandinaavinen",
       "mediterranean": "Mediterranen ilmasto",
       "atlantic_maritime": "Atlantin merellinen ilmasto",
       "continental": "Mantereinen ilmasto",
@@ -727,7 +751,7 @@
     "config_required": "Asetus vaaditaan",
     "config_required_text": "Tarkasta teknisen piirustuksen analyysi vaatii perustason konttoria koskevan asetuksen. Ilman asetusta analyysi on rajoittunut perustason arvioihin.",
     "config_tip": "Ohje",
-    "config_tip_text": "Määritä containeriasi ennen piirustusten analyysin aloittamista saadaksesi tarkempia tuloksia ja soviteltuja tarjouksia."
+    "config_tip_text": "Määritä säilö ennen piirustusten analysointia saadaksesi tarkempia tuloksia ja mukautettuja arvoja."
   },
   "admin": {
     "access_required": "Hallintotunnukset vaadittu",
@@ -746,13 +770,13 @@
     "system_settings": "Järjestelmän asetukset"
   },
   "fallback_cost_estimate": "Vaihtoehtoinen Kustannusarvio",
-  "total_project_cost": "Koko Projektin Kustannus",
+  "total_project_cost": "Hankkeen kokonaiskustannukset",
   "basic_calculation_ai_unavailable": "Peruslaskelma kun AI-palvelut eivät ole saatavilla",
   "materials_base_cost": "Materiaalit & Perus Kustannus",
   "labor_costs_40": "Työn Kustannukset (40%)",
   "contingency_10": "Varaudu (10%)",
   "complexity_multiplier": "Monimutkaisuuden Kertoimena",
-  "standard_recommendations": "Standardeja Suosittelemassa",
+  "standard_recommendations": "Tavalliset suositukset",
   "plan_standard_delivery": "Suunnittele tavallinen toimitus- ja asennusohjelma",
   "consider_building_codes": "Kohtaa Paikalliset Rakennuslainsäädäntövaatimukset",
   "budget_site_preparation": "Varaudu Sijaintiin Liittyviin Tarpeisiin",
@@ -764,7 +788,7 @@
   "material_price_fluctuations": "Materiaalihinnan vaihtelut",
   "basic_estimate_note": "Huom: Tämä on perusarvio. Tarkemman hinnan saa yhteystiedotteen kautta.",
   "estimate_disclaimer_title": "Tärkeää - Oikeudellinen Ilmoitus",
-  "estimate_disclaimer_text": "Yllä oleva arvio on indikaatiivinen ja ei muodosta tarjousta oikeuskaaren mukaan. Lopullinen hinta voi muuttua yksityiskohtaisempien projektin vaatimusten, nykyisten materiaalien ja työn hintojen mukaan.",
+  "estimate_disclaimer_text": "Yllä oleva arvostus on ohjeellinen, eikä se ole tarjousta siviililain merkityksessä. Lopullinen hinta voi muuttua hankkeen yksityiskohtaisista vaatimuksista, materiaalien ja työvoiman nykyisistä hinnoista.",
   "back_to_home": "← Takaisin etusivulle",
   "go_to_configurator": "🔧 Siirry konfiguroijaan",
   "basic_configuration": "Peruskokoonpano",
@@ -800,11 +824,19 @@
   "insulation_label": "Eristys",
   "finish_levels": {
     "shell": "Raaka tila (eristys + OSB -levy)",
-    "specialist": "Asiantuntija (lääketieteelliset/laboratoriostandardit)"
+    "specialist": "Asiantuntija (lääketieteelliset/laboratoriostandardit)",
+    "basic": "Ilman viimeistelyä (tekninen astia, luuranko)",
+    "standard": "Perus (eristys + tekninen viimeistely)",
+    "comfort": "Mukava (premium -eristys + toimistopinta)",
+    "luxury": "Ylellinen (korkein luokka + hotellin viimeistely)"
   },
   "climate_zones": {
     "maritime": "Meri ilmasto (korkea kosteus)",
     "mountain": "Vuoristoilmasto (korkea UV, lumi)",
-    "tropical": "Trooppinen ilmasto (korkeat lämpötilat, kosteus)"
+    "tropical": "Trooppinen ilmasto (korkeat lämpötilat, kosteus)",
+    "northern_europe": "Pohjois -Eurooppa (Skandinavia, -30 ° C -+25 ° C)",
+    "central_europe": "Keski -Eurooppa (Puola, Saksa, -20 ° C -+35 ° C)",
+    "southern_europe": "Etelä -Eurooppa (Espanja, Italia, -5 ° C -+45 ° C)",
+    "continental": "Manner -ilmasto (äärimmäiset vaihtelut)"
   }
 }
