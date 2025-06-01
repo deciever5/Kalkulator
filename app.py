@@ -2,7 +2,7 @@ import streamlit as st
 
 # Set page config first - before any other Streamlit commands
 st.set_page_config(
-    page_title="KAN-BUD Professional Container Solutions",
+    page_title="KAN-BUD Container Configurator",
     page_icon="🏗️",
     layout="wide",
     initial_sidebar_state="collapsed"
