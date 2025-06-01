@@ -481,40 +481,42 @@ with st.form("container_configuration_form"):
         )
 
         # Accessibility
+        accessibility_options = [
+            t('accessibility.standard'),
+            t('accessibility.ramp'),
+            t('accessibility.elevator'),
+            t('accessibility.automatic_doors'),
+            t('accessibility.emergency_lighting'),
+            t('accessibility.warning_systems'),
+            t('accessibility.work_ergonomics')
+        ]
         accessibility = st.selectbox(
-            "Dostępność i Ergonomia",
-            options=[
-                "Dostęp standardowy (próg 15-20cm)",
-                "Podjazd/rampa (dla wózków, niepełnosprawnych)",
-                "Winda/podnośnik (osobowa, towarowa)",
-                "Drzwi automatyczne (fotokomorka, przycisk)",
-                "Oświetlenie awaryjne (LED, akumulatorowe)",
-                "Systemy ostrzegawcze (dla niedosłyszących)",
-                "Ergonomia pracy (wysokość blatów, oświetlenie)"
-            ]
+            t('accessibility'),
+            options=accessibility_options
         )
 
         # Paint and Finish
+        paint_finish_options = [
+            t('paint_finish.none'),
+            t('paint_finish.primer'),
+            t('paint_finish.standard_c2'),
+            t('paint_finish.improved_c3'),
+            t('paint_finish.premium_c4'),
+            t('paint_finish.anticorrosive_c5m'),
+            t('paint_finish.textured'),
+            t('paint_finish.graffiti_protection')
+        ]
         paint_finish = st.selectbox(
-            "Malowanie i Wykończenie Zewnętrzne",
-            options=[
-                "Bez malowania (blacha surowa, cynkowana)",
-                "Primer antykorozyjny (zabezpieczenie podstawowe)",
-                "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
-                "Powłoka ulepszona C3 (kolory RAL, satynowa)",
-                "Powłoka premium C4 (kolory specjalne, metalic)",
-                "Powłoka antykorozyjna C5-M (środowiska agresywne)",
-                "Wykończenie teksturowane (struktura, efekty)",
-                "Graffiti protection (powłoki antywandalizm)"
-            ],
+            t('paint_finish'),
+            options=paint_finish_options,
             index=2
         )
 
     # Special Comments for Advanced Modifications
-    st.markdown("### Uwagi Specjalne - Modyfikacje")
+    st.markdown(f"### {t('special_comments_modifications')}")
     advanced_comments = st.text_area(
-        "Opisz dodatkowe wymagania dotyczące modyfikacji...",
-        placeholder="np. Specjalne kolory RAL, nietypowe rozmiary otworów, dodatkowe wzmocnienia konstrukcyjne",
+        t('modification_requirements_description'),
+        placeholder=t('modification_requirements_placeholder'),
         key="advanced_comments"
     )
 

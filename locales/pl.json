@@ -641,6 +641,11 @@
   "exterior_cladding": "Okładzina Zewnętrzna",
   "additional_openings": "Dodatkowe Otwory i Modyfikacje",
   "fire_systems": "Systemy Przeciwpożarowe",
+  "accessibility": "Dostępność i Ergonomia",
+  "paint_finish": "Malowanie i Wykończenie Zewnętrzne",
+  "special_comments_modifications": "Uwagi Specjalne - Modyfikacje",
+  "modification_requirements_description": "Opisz dodatkowe wymagania dotyczące modyfikacji...",
+  "modification_requirements_placeholder": "np. Specjalne kolory RAL, nietypowe rozmiary otworów, dodatkowe wzmocnienia konstrukcyjne",
   "container_types": {
     "10ft_compact": "10ft Kompaktowy (3m x 2.4m)",
     "20ft_standard": "20ft Standardowy (6m x 2.4m)",
@@ -802,6 +807,15 @@
     "specialized": "Specjalistyczne (FM200, inergen, pianowe)",
     "industrial": "Przemysłowe (deluge, monitor, oddymianie)",
     "certified": "Certyfikowane (zgodne z normami krajowymi)"
+  },
+  "accessibility": {
+    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "ramp": "Podjazd/rampa (dla wózków, niepełnosprawnych)",
+    "elevator": "Winda/podnośnik (osobowa, towarowa)",
+    "automatic_doors": "Drzwi automatyczne (fotokomorka, przycisk)",
+    "emergency_lighting": "Oświetlenie awaryjne (LED, akumulatorowe)",
+    "warning_systems": "Systemy ostrzegawcze (dla niedosłyszących)",
+    "work_ergonomics": "Ergonomia pracy (wysokość blatów, oświetlenie)"
   },
   "environments": {
     "indoor": "Wewnętrzne",
