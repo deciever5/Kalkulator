@@ -9,7 +9,7 @@ class TranslationQualityAnalyzer:
     
     def __init__(self):
         self.locales_dir = "locales"
-        self.base_language = "en"  # Using English as base reference
+        self.base_language = "pl"  # Using Polish as base reference
         
     def load_translation_file(self, language: str) -> Dict:
         """Load a specific translation file"""
