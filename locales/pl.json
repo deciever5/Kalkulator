@@ -783,6 +783,26 @@
     "clinker_brick": "Cegła klinkierowa (lica, elewacyjna)",
     "stone": "Kamień naturalny/sztuczny"
   },
+  "additional_openings": {
+    "none": "Bez dodatkowych otworów (standardowe drzwi)",
+    "single_door": "Drzwi dodatkowe pojedyncze (80-90cm)",
+    "double_door": "Drzwi dwuskrzydłowe (160-180cm)",
+    "sliding_door": "Drzwi przesuwne (do 300cm)",
+    "sectional_gate": "Bramy segmentowe (240-360cm)",
+    "roller_gate": "Bramy rolowane (do 400cm)",
+    "additional_windows": "Okna dodatkowe (różne wymiary)",
+    "technical_openings": "Otwory techniczne (wentylacja, kable)",
+    "loading_ramp": "Rampa załadunkowa (hydrauliczna, mechaniczna)"
+  },
+  "fire_systems": {
+    "none": "Bez systemów przeciwpożarowych",
+    "basic": "Podstawowe (gaśnica 6kg, czujka dymu)",
+    "extended": "Rozszerzone (gaśnice CO2, czujki temp.)",
+    "automatic": "Automatyczne (tryskacze, centrala pożarowa)",
+    "specialized": "Specjalistyczne (FM200, inergen, pianowe)",
+    "industrial": "Przemysłowe (deluge, monitor, oddymianie)",
+    "certified": "Certyfikowane (zgodne z normami krajowymi)"
+  },
   "environments": {
     "indoor": "Wewnętrzne",
     "outdoor_standard": "Zewnętrzne Standardowe",
