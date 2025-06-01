@@ -5,6 +5,10 @@ import re
 import json
 from typing import List, Dict, Set
 import time
+import urllib3
+
+# Disable SSL warnings for local testing
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 class PolishPageChecker:
     def __init__(self):
@@ -36,7 +40,7 @@ class PolishPageChecker:
             
             # HVAC and technical
             'ventilation', 'heating', 'cooling', 'climate', 'temperature',
-            'humidity', 'pressure', 'thermal', 'insulation', 'soundproof',
+            'humidity', 'pressure', 'thermal', 'soundproof',
             
             # Common dropdown placeholders
             'choose an option', 'select option', 'please select'
@@ -51,57 +55,123 @@ class PolishPageChecker:
             'elektryczny', 'hydrauliczny', 'oświetlenie', 'wentylacja',
             'ogrzewanie', 'chłodzenie', 'izolacja', 'wykończenie', 'podłogi',
             'okna', 'drzwi', 'bezpieczeństwo', 'przeciwpożarowe', 'dostępność',
-            'transport', 'dostawa', 'montaż', 'wyposażenie', 'sprzęt'
+            'transport', 'dostawa', 'montaż', 'wyposażenie', 'sprzęt',
+            'konfiguracji', 'kontenerów', 'materiał', 'konstrukcja', 'budowa',
+            'profesjonalne', 'rozwiązania', 'szacowana', 'zaawansowane'
         }
 
     def scrape_page(self) -> Dict:
-        """Scrape the Polish configurator page"""
+        """Scrape the Polish configurator page with better error handling"""
         try:
             print(f"🔍 Scraping Polish page: {self.polish_url}")
             
-            # Wait a moment to ensure page is ready
-            time.sleep(2)
+            # Create session with proper headers
+            session = requests.Session()
+            session.headers.update({
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Language': 'pl-PL,pl;q=0.9,en;q=0.8',
+                'Accept-Encoding': 'gzip, deflate',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1'
+            })
             
-            response = requests.get(self.polish_url, timeout=30)
+            # Wait for Streamlit to be ready
+            print("⏳ Waiting for Streamlit app to be ready...")
+            time.sleep(5)
+            
+            # Make request with longer timeout
+            response = session.get(self.polish_url, timeout=60, verify=False)
             response.raise_for_status()
             
+            print(f"✅ Page loaded successfully, content length: {len(response.content)} bytes")
+            
+            # Parse with BeautifulSoup
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # Extract different types of content
+            # Remove script and style elements to get cleaner text
+            for script in soup(["script", "style", "meta", "link"]):
+                script.decompose()
+            
+            # Extract content more aggressively
             content = {
                 'title': soup.find('title').get_text() if soup.find('title') else '',
-                'headings': [h.get_text().strip() for h in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])],
-                'labels': [label.get_text().strip() for label in soup.find_all('label')],
-                'buttons': [btn.get_text().strip() for btn in soup.find_all('button')],
+                'headings': [],
+                'labels': [],
+                'buttons': [],
                 'select_options': [],
                 'input_placeholders': [],
-                'all_text': soup.get_text(),
-                'form_elements': []
+                'all_text': '',
+                'form_elements': [],
+                'streamlit_elements': []
             }
+            
+            # Get all text content
+            all_text = soup.get_text(separator=' ', strip=True)
+            content['all_text'] = all_text
+            print(f"📝 Extracted text length: {len(all_text)} characters")
+            
+            # Extract headings
+            for h in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
+                text = h.get_text().strip()
+                if text and len(text) > 2:
+                    content['headings'].append(text)
+            
+            # Extract labels and form elements
+            for label in soup.find_all('label'):
+                text = label.get_text().strip()
+                if text and len(text) > 2:
+                    content['labels'].append(text)
+            
+            # Extract buttons
+            for btn in soup.find_all(['button', 'input']):
+                if btn.name == 'input' and btn.get('type') not in ['button', 'submit']:
+                    continue
+                text = btn.get_text().strip() or btn.get('value', '').strip()
+                if text and len(text) > 2:
+                    content['buttons'].append(text)
             
             # Extract select options
             for select in soup.find_all('select'):
                 for option in select.find_all('option'):
                     text = option.get_text().strip()
-                    if text:
+                    if text and len(text) > 2:
                         content['select_options'].append(text)
             
             # Extract input placeholders
             for input_elem in soup.find_all('input'):
-                placeholder = input_elem.get('placeholder', '')
-                if placeholder:
+                placeholder = input_elem.get('placeholder', '').strip()
+                if placeholder and len(placeholder) > 2:
                     content['input_placeholders'].append(placeholder)
             
-            # Extract form elements with data-testid (Streamlit specific)
-            for elem in soup.find_all(attrs={'data-testid': True}):
-                text = elem.get_text().strip()
-                if text and len(text) < 200:  # Avoid very long texts
-                    content['form_elements'].append(text)
+            # Extract Streamlit-specific elements
+            streamlit_selectors = [
+                '[data-testid]',
+                '.stSelectbox',
+                '.stTextInput', 
+                '.stButton',
+                '.stMarkdown',
+                '.element-container'
+            ]
+            
+            for selector in streamlit_selectors:
+                for elem in soup.select(selector):
+                    text = elem.get_text().strip()
+                    if text and len(text) > 2 and len(text) < 200:
+                        content['streamlit_elements'].append(text)
+            
+            # Split all text into words for analysis
+            words = re.findall(r'\b\w+\b', all_text)
+            print(f"📊 Total words found: {len(words)}")
+            
+            # Print first 50 words for debugging
+            if words:
+                print(f"🔤 First 50 words: {' '.join(words[:50])}")
             
             return content
             
         except requests.RequestException as e:
-            print(f"❌ Error scraping page: {e}")
+            print(f"❌ Network error scraping page: {e}")
             return {}
         except Exception as e:
             print(f"❌ Unexpected error: {e}")
@@ -113,6 +183,10 @@ class PolishPageChecker:
         
         # Skip very short words (might be abbreviations)
         if len(word_lower) < 3:
+            return False
+        
+        # Skip numbers
+        if word_lower.isdigit():
             return False
         
         # Skip if it's a known Polish word
@@ -152,7 +226,8 @@ class PolishPageChecker:
         }
         
         # Analyze each content section
-        sections = ['title', 'headings', 'labels', 'buttons', 'select_options', 'input_placeholders', 'form_elements']
+        sections = ['title', 'headings', 'labels', 'buttons', 'select_options', 
+                   'input_placeholders', 'streamlit_elements']
         
         for section in sections:
             if section in content:
@@ -173,7 +248,8 @@ class PolishPageChecker:
                         'plumbing system', 'hvac system', 'fire systems',
                         'safety systems', 'interior layout', 'exterior cladding',
                         'paint finish', 'additional openings', 'delivery zone',
-                        'office equipment', 'choose option'
+                        'office equipment', 'choose option', 'flooring',
+                        'insulation', 'lighting', 'accessibility'
                     ]
                     
                     for phrase in english_phrases:
@@ -190,13 +266,21 @@ class PolishPageChecker:
                 if section_english:
                     findings['section_analysis'][section] = list(section_english)
         
+        # Also analyze the full text
+        all_text = content.get('all_text', '')
+        all_words = re.findall(r'\b\w+\b', all_text)
+        
+        for word in all_words:
+            if self.is_english_word(word):
+                findings['english_words'].add(word)
+        
         # Calculate statistics
-        total_words = len(re.findall(r'\b\w+\b', content.get('all_text', '')))
         findings['statistics'] = {
-            'total_words_found': total_words,
+            'total_words_found': len(all_words),
             'english_words_count': len(findings['english_words']),
             'suspicious_phrases_count': len(findings['suspicious_phrases']),
-            'sections_with_issues': len([s for s in findings['section_analysis'] if findings['section_analysis'][s]])
+            'sections_with_issues': len([s for s in findings['section_analysis'] if findings['section_analysis'][s]]),
+            'total_content_length': len(all_text)
         }
         
         return findings
@@ -215,6 +299,7 @@ class PolishPageChecker:
         stats = findings['statistics']
         report.append("📊 SUMMARY STATISTICS")
         report.append("-" * 40)
+        report.append(f"Total content length: {stats['total_content_length']} characters")
         report.append(f"Total words analyzed: {stats['total_words_found']}")
         report.append(f"English words found: {stats['english_words_count']}")
         report.append(f"Suspicious phrases: {stats['suspicious_phrases_count']}")
@@ -225,8 +310,9 @@ class PolishPageChecker:
         if findings['english_words']:
             report.append("🚨 ENGLISH WORDS DETECTED")
             report.append("-" * 40)
-            for word in sorted(findings['english_words']):
-                report.append(f"  • {word}")
+            sorted_words = sorted(findings['english_words'])
+            for i, word in enumerate(sorted_words):
+                report.append(f"  {i+1:2d}. {word}")
             report.append("")
         
         # Suspicious phrases
@@ -244,10 +330,10 @@ class PolishPageChecker:
             for section, issues in findings['section_analysis'].items():
                 if issues:
                     report.append(f"\n📍 {section.upper()}:")
-                    for issue in issues[:10]:  # Limit to 10 per section
+                    for issue in issues[:15]:  # Limit to 15 per section
                         report.append(f"   {issue}")
-                    if len(issues) > 10:
-                        report.append(f"   ... and {len(issues) - 10} more")
+                    if len(issues) > 15:
+                        report.append(f"   ... and {len(issues) - 15} more")
         
         # Recommendations
         report.append("\n💡 RECOMMENDATIONS")
@@ -257,6 +343,7 @@ class PolishPageChecker:
             report.append("2. Verify form element translations")
             report.append("3. Update missing Polish translations")
             report.append("4. Run translation validation scripts")
+            report.append("5. Check dropdown options and placeholders")
         else:
             report.append("✅ Page appears to be properly translated to Polish!")
         
@@ -290,8 +377,9 @@ def main():
     
     # Scrape the page
     content = checker.scrape_page()
-    if not content:
-        print("❌ Failed to scrape page content")
+    if not content or not content.get('all_text'):
+        print("❌ Failed to scrape page content or page is empty")
+        print("💡 Make sure your Streamlit app is running on http://0.0.0.0:5000")
         return
     
     print("✅ Page scraped successfully")
