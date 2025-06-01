@@ -43,6 +43,9 @@ class AdvancedTranslationFixer:
         """Get all keys from nested dict as flat key-value pairs"""
         result = {}
         
+        if not isinstance(data, dict):
+            return result
+        
         for key, value in data.items():
             full_key = f"{prefix}.{key}" if prefix else key
             
@@ -50,6 +53,7 @@ class AdvancedTranslationFixer:
                 result.update(self.get_all_keys_flat(value, full_key))
             elif isinstance(value, str):
                 result[full_key] = value
+            # Skip non-string, non-dict values
         
         return result
     
@@ -60,6 +64,9 @@ class AdvancedTranslationFixer:
         
         for key in keys[:-1]:
             if key not in current:
+                current[key] = {}
+            elif not isinstance(current[key], dict):
+                # If current value is not a dict, replace it with empty dict
                 current[key] = {}
             current = current[key]
         
@@ -146,31 +153,39 @@ class AdvancedTranslationFixer:
         if missing_keys:
             print(f"   📝 Fixing {len(missing_keys)} missing translations...")
             for key in missing_keys:
-                polish_value = base_translations[key]
-                if self.should_translate(polish_value):
-                    translated = self.ai_service._translate_text(polish_value, language)
-                    if translated and translated != polish_value:
-                        self.set_nested_value(lang_data, key, translated)
-                        fixes_made += 1
-                        time.sleep(0.1)  # Rate limiting
+                try:
+                    polish_value = base_translations[key]
+                    if self.should_translate(polish_value):
+                        translated = self.ai_service._translate_text(polish_value, language)
+                        if translated and translated != polish_value:
+                            self.set_nested_value(lang_data, key, translated)
+                            fixes_made += 1
+                            time.sleep(0.1)  # Rate limiting
+                except Exception as e:
+                    print(f"      ⚠️ Error fixing key '{key}': {e}")
+                    continue
         
         # Fix placeholder translations
         placeholder_fixes = 0
         for key, target_value in lang_translations.items():
-            if self.is_placeholder_text(target_value):
-                polish_value = base_translations.get(key)
-                if polish_value and self.should_translate(polish_value):
-                    # Remove placeholder tags and translate the clean text
-                    clean_text = target_value.replace("[AUTO] ", "").replace("[TRANSLATE] ", "")
-                    if not clean_text:
-                        clean_text = polish_value
-                    
-                    translated = self.ai_service._translate_text(clean_text, language)
-                    if translated and not translated.startswith("["):
-                        self.set_nested_value(lang_data, key, translated)
-                        placeholder_fixes += 1
-                        fixes_made += 1
-                        time.sleep(0.1)
+            try:
+                if self.is_placeholder_text(target_value):
+                    polish_value = base_translations.get(key)
+                    if polish_value and self.should_translate(polish_value):
+                        # Remove placeholder tags and translate the clean text
+                        clean_text = target_value.replace("[AUTO] ", "").replace("[TRANSLATE] ", "")
+                        if not clean_text:
+                            clean_text = polish_value
+                        
+                        translated = self.ai_service._translate_text(clean_text, language)
+                        if translated and not translated.startswith("["):
+                            self.set_nested_value(lang_data, key, translated)
+                            placeholder_fixes += 1
+                            fixes_made += 1
+                            time.sleep(0.1)
+            except Exception as e:
+                print(f"      ⚠️ Error fixing placeholder for key '{key}': {e}")
+                continue
         
         if placeholder_fixes:
             print(f"   🏷️  Fixed {placeholder_fixes} placeholder translations")
