@@ -57,13 +57,15 @@
   },
 
   "flooring": "Podłogi",
-  "window_types": "Typy Okien",
+  "window_types": "Typy Okien", 
   "lighting": "Oświetlenie",
   "electrical_system": "System Elektryczny",
   "plumbing_system": "Instalacja Wodno-Kanalizacyjna",
   "hvac_system": "System HVAC",
   "fire_systems": "Systemy Przeciwpożarowe",
   "accessibility": "Dostępność",
+  "construction_material_title": "Materiał Konstrukcyjny",
+  "delivery_zone_title": "Strefa Dostawy",
   "interior_layout": "Układ Wewnętrzny",
   "safety_systems": "Systemy Bezpieczeństwa",
   "exterior_cladding": "Okładzina Zewnętrzna",
@@ -76,6 +78,7 @@
   "office_equipment": "Wyposażenie Biurowe",
   "appliances": "Sprzęt AGD",
   "it_systems": "Systemy IT i Multimedia",
+  "choose_an_option": "Wybierz opcję",
 
   "container_types": {
     "10ft_compact": "10ft Kompaktowy",
@@ -189,6 +192,26 @@
     "smart": "Inteligentny (smart home)"
   },
 
+  "transport_type": {
+    "standard": "Standardowy",
+    "low_loader": "Niskopodwoziowy",
+    "container": "Kontenerowy",
+    "rail": "Kolejowy",
+    "maritime": "Morski",
+    "air": "Lotniczy",
+    "multimodal": "Multimodalny"
+  },
+
+  "security_systems": {
+    "none": "Bez systemów bezpieczeństwa",
+    "basic": "Podstawowe (zamki wzmocnione)",
+    "standard": "Standardowe (przygotowanie alarmowe)",
+    "extended": "Rozszerzone (kamery + czujniki)",
+    "high": "Wysokie (biometryczne)",
+    "maximum": "Maksymalne (pełna ochrona)",
+    "industrial": "Przemysłowe (specjalistyczne)"
+  },
+
   "interior_layout": {
     "open_space": "Przestrzeń otwarta (bez podziałów)",
     "partitioned": "Podzielona (ściany działowe)",
@@ -243,5 +266,11 @@
   "save_configuration": "Zapisz Konfigurację",
   "configuration_saved": "Konfiguracja zapisana pomyślnie!",
   "home": "Strona Główna",
-  "back_to_home": "Powrót do Strony Głównej"
+  "back_to_home": "Powrót do Strony Głównej",
+  "interior_layout_title": "Układ Wewnętrzny",
+  "fire_systems_title": "Systemy Przeciwpożarowe",
+  "safety_systems_title": "Systemy Bezpieczeństwa",
+  "exterior_cladding_title": "Okładzina Zewnętrzna",
+  "additional_openings_title": "Dodatkowe Otwory",
+  "paint_finish_title": "Wykończenie Malarskie"
 }
