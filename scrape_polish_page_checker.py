@@ -1,14 +1,15 @@
 
-import requests
-from bs4 import BeautifulSoup
-import re
-import json
-from typing import List, Dict, Set
 import time
-import urllib3
-
-# Disable SSL warnings for local testing
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+import json
+import re
+from typing import Dict, Set
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, WebDriverException
+from bs4 import BeautifulSoup
 
 class PolishPageChecker:
     def __init__(self):
@@ -60,40 +61,66 @@ class PolishPageChecker:
             'profesjonalne', 'rozwiązania', 'szacowana', 'zaawansowane'
         }
 
-    def scrape_page(self) -> Dict:
-        """Scrape the Polish configurator page with better error handling"""
+    def setup_webdriver(self):
+        """Setup Chrome webdriver with headless options"""
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--window-size=1920,1080")
+        chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+        
         try:
-            print(f"🔍 Scraping Polish page: {self.polish_url}")
+            driver = webdriver.Chrome(options=chrome_options)
+            return driver
+        except Exception as e:
+            print(f"❌ Could not setup Chrome webdriver: {e}")
+            print("💡 Make sure Chrome/Chromium is installed")
+            return None
+
+    def scrape_page(self) -> Dict:
+        """Scrape the Polish configurator page using Selenium"""
+        driver = self.setup_webdriver()
+        if not driver:
+            return {}
+        
+        try:
+            print(f"🔍 Loading Polish page with Selenium: {self.polish_url}")
             
-            # Create session with proper headers
-            session = requests.Session()
-            session.headers.update({
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                'Accept-Language': 'pl-PL,pl;q=0.9,en;q=0.8',
-                'Accept-Encoding': 'gzip, deflate',
-                'Connection': 'keep-alive',
-                'Upgrade-Insecure-Requests': '1'
-            })
+            # Load the page
+            driver.get(self.polish_url)
             
-            # Wait for Streamlit to be ready
-            print("⏳ Waiting for Streamlit app to be ready...")
-            time.sleep(5)
+            # Wait for Streamlit to fully load
+            print("⏳ Waiting for Streamlit app to fully load...")
             
-            # Make request with longer timeout
-            response = session.get(self.polish_url, timeout=60, verify=False)
-            response.raise_for_status()
+            # Wait for specific Streamlit elements to appear
+            try:
+                # Wait for the main container to load
+                WebDriverWait(driver, 30).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, ".main"))
+                )
+                
+                # Additional wait for dynamic content
+                time.sleep(10)
+                
+                print("✅ Page loaded successfully")
+                
+            except TimeoutException:
+                print("⚠️ Timeout waiting for page to load, proceeding with current content...")
             
-            print(f"✅ Page loaded successfully, content length: {len(response.content)} bytes")
+            # Get page source after JavaScript execution
+            page_source = driver.page_source
+            print(f"📄 Page source length: {len(page_source)} characters")
             
             # Parse with BeautifulSoup
-            soup = BeautifulSoup(response.content, 'html.parser')
+            soup = BeautifulSoup(page_source, 'html.parser')
             
-            # Remove script and style elements to get cleaner text
+            # Remove script and style elements
             for script in soup(["script", "style", "meta", "link"]):
                 script.decompose()
             
-            # Extract content more aggressively
+            # Extract content
             content = {
                 'title': soup.find('title').get_text() if soup.find('title') else '',
                 'headings': [],
@@ -111,54 +138,52 @@ class PolishPageChecker:
             content['all_text'] = all_text
             print(f"📝 Extracted text length: {len(all_text)} characters")
             
-            # Extract headings
+            # Extract specific elements
+            
+            # Headings
             for h in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
                 text = h.get_text().strip()
                 if text and len(text) > 2:
                     content['headings'].append(text)
             
-            # Extract labels and form elements
+            # Labels
             for label in soup.find_all('label'):
                 text = label.get_text().strip()
                 if text and len(text) > 2:
                     content['labels'].append(text)
             
-            # Extract buttons
-            for btn in soup.find_all(['button', 'input']):
-                if btn.name == 'input' and btn.get('type') not in ['button', 'submit']:
-                    continue
-                text = btn.get_text().strip() or btn.get('value', '').strip()
+            # Buttons
+            for btn in soup.find_all(['button']):
+                text = btn.get_text().strip()
                 if text and len(text) > 2:
                     content['buttons'].append(text)
             
-            # Extract select options
-            for select in soup.find_all('select'):
-                for option in select.find_all('option'):
-                    text = option.get_text().strip()
-                    if text and len(text) > 2:
-                        content['select_options'].append(text)
+            # Select options (Streamlit selectboxes)
+            for select_elem in soup.find_all(['div', 'span'], attrs={'data-testid': True}):
+                text = select_elem.get_text().strip()
+                if text and len(text) > 2 and len(text) < 100:
+                    content['streamlit_elements'].append(text)
             
-            # Extract input placeholders
-            for input_elem in soup.find_all('input'):
-                placeholder = input_elem.get('placeholder', '').strip()
-                if placeholder and len(placeholder) > 2:
-                    content['input_placeholders'].append(placeholder)
-            
-            # Extract Streamlit-specific elements
+            # Streamlit-specific elements
             streamlit_selectors = [
-                '[data-testid]',
+                '[data-testid="stSelectbox"]',
+                '[data-testid="stTextInput"]',
+                '[data-testid="stButton"]',
+                '[data-testid="stMarkdown"]',
+                '.element-container',
                 '.stSelectbox',
-                '.stTextInput', 
-                '.stButton',
-                '.stMarkdown',
-                '.element-container'
+                '.stTextInput',
+                '.stButton'
             ]
             
             for selector in streamlit_selectors:
-                for elem in soup.select(selector):
-                    text = elem.get_text().strip()
-                    if text and len(text) > 2 and len(text) < 200:
-                        content['streamlit_elements'].append(text)
+                try:
+                    for elem in soup.select(selector):
+                        text = elem.get_text().strip()
+                        if text and len(text) > 2 and len(text) < 200:
+                            content['streamlit_elements'].append(text)
+                except Exception:
+                    continue
             
             # Split all text into words for analysis
             words = re.findall(r'\b\w+\b', all_text)
@@ -173,12 +198,14 @@ class PolishPageChecker:
             
             return content
             
-        except requests.RequestException as e:
-            print(f"❌ Network error scraping page: {e}")
+        except WebDriverException as e:
+            print(f"❌ WebDriver error: {e}")
             return {}
         except Exception as e:
             print(f"❌ Unexpected error: {e}")
             return {}
+        finally:
+            driver.quit()
 
     def is_english_word(self, word: str) -> bool:
         """Check if a word appears to be English"""
@@ -395,7 +422,8 @@ class PolishPageChecker:
             json.dump(findings_serializable, f, indent=2, ensure_ascii=False)
 
 def main():
-    print("🚀 Starting Polish Page Language Checker...")
+    print("🚀 Starting Polish Page Language Checker with Selenium...")
+    print("💡 Note: This requires Chrome/Chromium to be installed")
     
     checker = PolishPageChecker()
     
@@ -404,6 +432,7 @@ def main():
     if not content or not content.get('all_text'):
         print("❌ Failed to scrape page content or page is empty")
         print("💡 Make sure your Streamlit app is running on http://0.0.0.0:5000")
+        print("💡 And that Chrome/Chromium browser is installed")
         return
     
     print("✅ Page scraped successfully")
