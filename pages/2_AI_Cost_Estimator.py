@@ -127,19 +127,19 @@ else:
         st.write(f"**{t('purpose')}:** {config.get('main_purpose', 'N/A')}")
         st.write(f"**{t('environment')}:** {config.get('environment', 'N/A')}")
         st.write(f"**{t('finish_level')}:** {config.get('finish_level', 'N/A')}")
-        st.write(f"**{t('flooring')}:** {config.get('flooring', 'N/A')}")
+        st.write(f"**Podłoga:** {config.get('flooring', 'N/A')}")
         st.write(f"**{t('climate_zone')}:** {config.get('climate_zone', 'N/A')}")
 
     with col2:
-        st.write(f"**Okna:** {config.get('num_windows', 'N/A')}")
+        st.write(f"**{t('window_types')}:** {config.get('num_windows', 'N/A')}")
         if config.get('window_types'):
             st.write(f"**Typ okien:** {', '.join(config.get('window_types', []))}")
-        st.write(f"**Oświetlenie:** {config.get('lighting', 'N/A')}")
+        st.write(f"**{t('lighting')}:** {config.get('lighting', 'N/A')}")
         st.write(f"**Wentylacja:** {config.get('ventilation', 'N/A')}")
         st.write(f"**Modyfikacje dachu:** {config.get('roof_modifications', 'N/A')}")
-        st.write(f"**{t('electrical_system')}:** {config.get('electrical_system', 'N/A')}")
-        st.write(f"**{t('plumbing_system')}:** {config.get('plumbing_system', 'N/A')}")
-        st.write(f"**{t('hvac_system')}:** {config.get('hvac_system', 'N/A')}")
+        st.write(f"**System Elektryczny:** {config.get('electrical_system', 'N/A')}")
+        st.write(f"**System Wodny:** {config.get('plumbing_system', 'N/A')}")
+        st.write(f"**System HVAC:** {config.get('hvac_system', 'N/A')}")
 
     # Show additional systems and modifications
     st.markdown("### Dodatkowe systemy i modyfikacje:")
