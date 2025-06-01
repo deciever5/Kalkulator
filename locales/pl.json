@@ -182,7 +182,7 @@
     "project_name": "Nazwa Projektu",
     "project_location": "Lokalizacja Projektu",
     "expected_timeline": "Oczekiwany Harmonogram",
-    "budget_range": "Zakres Budżetu",
+    "budget_Range": "Zakres Budżetu",
     "timeline": {
       "asap": "Jak najszybciej",
       "within_month": "W ciągu miesiąca",
@@ -737,5 +737,23 @@
     "vrv_vrf": "System VRV/VRF (wielojednostkowy, sterowanie strefowe)",
     "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)",
     "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)"
+  },
+  "environments": {
+    "indoor": "Wewnętrzne",
+    "outdoor_standard": "Zewnętrzne Standardowe",
+    "outdoor_extreme": "Zewnętrzne Ekstremalne",
+    "industrial": "Przemysłowe",
+    "construction": "Budowlane",
+    "agricultural": "Rolnicze",
+    "marine": "Morskie"
+  },
+  "window_types": {
+    "standard": "Standardowe",
+    "panoramic": "Panoramiczne", 
+    "sliding": "Przesuwne",
+    "tilt": "Uchylne",
+    "security": "Antywłamaniowe",
+    "energy_efficient": "Energooszczędne",
+    "skylight": "Świetliki dachowe"
   }
 }
