@@ -627,7 +627,7 @@
     "config_required_text": "For accurate technical drawing analysis, basic container configuration is required. Without configuration, analysis will be limited to basic estimates.",
     "config_tip": "Tip",
     "config_tip_text": "Configure your container before analyzing drawings to get more accurate results and tailored quotes."
-  },
+},
   "admin": {
     "access_required": "Admin Access Required",
     "privileges_required": "This section requires administrator privileges",
@@ -817,7 +817,50 @@
     "industrial": "Industrial (plants, refineries, mines)",
     "construction": "Construction (building sites, infrastructure)",
     "agricultural": "Agricultural (farms, facilities)",
-    "marine": "Marine/shipyard (corrosive environment)"
+    "marine": "Marine"
+  },
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
+  },
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
+  },
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
+  "ventilation": {
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
+  },
+  "roof_modifications": {
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
   },
   "window_types_label": "Window Types",
   "lighting_label": "Lighting",
