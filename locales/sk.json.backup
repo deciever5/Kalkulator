@@ -225,9 +225,7 @@
     "vinyl": "Nepremokavé vinylové panely (LVT)",
     "carpet": "2-4 mm pokrývka podlahy PVC",
     "epoxy": "Priemyselná epoxidová podlaha",
-    "concrete": "Zvýšená podlaha (serverové miestnosti)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Zvýšená podlaha (serverové miestnosti)"
   },
   "climate_zone": "Klimatizácia",
   "windows": {
@@ -351,8 +349,7 @@
     "tilt": "Zavesený",
     "security": "Protivník",
     "skylight": "Strešné svetlíky",
-    "energy_efficient": "Energia",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energia"
   },
   "window_types_standard": "Norma",
   "window_types_double": "Dvojité zasklenie",
@@ -547,8 +544,7 @@
     "energy_efficient": "Energia -LED LED so senzormi",
     "exterior": "Vonkajšie osvetlenie (svetlomety)",
     "emergency": "Núdzové osvetlenie (batéria)",
-    "smart": "Inteligentný systém (ovládané osvetlenie)",
-    "basic": "Podstawowe LED"
+    "smart": "Inteligentný systém (ovládané osvetlenie)"
   },
   "lighting_basic": "Základné LED",
   "lighting_professional": "Profesionálne",
@@ -842,8 +838,5 @@
     "central_europe": "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
     "southern_europe": "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
     "continental": "Kontinentálne podnebie (extrémne výkyvy)"
-  },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  }
 }

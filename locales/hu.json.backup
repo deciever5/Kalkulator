@@ -62,9 +62,7 @@
     "vinyl": "Vinil panelek (LVT) vízálló",
     "carpet": "Szőnyeglapok kereskedelmi",
     "epoxy": "Epoxy padló (ipari)",
-    "concrete": "Polírozott beton",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Polírozott beton"
   },
   "windows": {
     "one": "1 ablak",
@@ -648,8 +646,7 @@
     "tilt": "Csuklós",
     "security": "Gurglary",
     "skylight": "Tetőablakok",
-    "energy_efficient": "Energia -befogadás",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energia -befogadás"
   },
   "it_systems_none": "Egyik sem",
   "transport_type_standard": "Standard",
@@ -685,8 +682,7 @@
     "energy_efficient": "Energooszczędne LED z czujnikami",
     "exterior": "Oświetlenie zewnętrzne (reflektory)",
     "emergency": "Vészvilágítás (akkumulátor)",
-    "smart": "Intelligens rendszer (ellenőrzött világítás)",
-    "basic": "Podstawowe LED"
+    "smart": "Intelligens rendszer (ellenőrzött világítás)"
   },
   "it_systems_basic": "Alaphálózat",
   "fire_systems": "Tűzrendszer",
@@ -742,8 +738,5 @@
     "mountain": "Hegyi éghajlat (magas UV, hó)",
     "tropical": "Trópusi éghajlat (magas hőmérséklet, páratartalom)"
   },
-  "insulation_label": "Szigetelés",
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "insulation_label": "Szigetelés"
 }

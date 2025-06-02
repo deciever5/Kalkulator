@@ -247,8 +247,7 @@
     "energy_efficient": "Energia -LED che saluta con sensori",
     "exterior": "Illuminazione esterna (fari)",
     "emergency": "Illuminazione di emergenza (batteria)",
-    "smart": "Sistema intelligente (illuminazione controllata)",
-    "basic": "Podstawowe LED"
+    "smart": "Sistema intelligente (illuminazione controllata)"
   },
   "lighting_basic": "LED Base",
   "lighting_professional": "Professionale",
@@ -322,8 +321,7 @@
     "tilt": "Incernierato",
     "security": "Anti -Burglary",
     "skylight": "Lucernari del tetto",
-    "energy_efficient": "Energia -Sage",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energia -Sage"
   },
   "window_types_standard": "Standard",
   "window_types_double": "Doppi Vetri",
@@ -474,9 +472,7 @@
     "vinyl": "Pannelli in vinile impermeabile (LVT)",
     "carpet": "Cover del pavimento in PVC da 2-4 mm",
     "epoxy": "Pavimento epossidico industriale",
-    "concrete": "Pavimento elevato (stanze del server)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Pavimento elevato (stanze del server)"
   },
   "climate_zone": "Zona Climatica",
   "windows": {
@@ -741,8 +737,5 @@
     "central_europe": "Europa centrale (Polonia, Germania, da -20 ° C a +35 ° C)",
     "southern_europe": "Europa meridionale (Spagna, Italia, da -5 ° C a +45 ° C)",
     "continental": "Clima continentale (fluttuazioni estreme)"
-  },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  }
 }

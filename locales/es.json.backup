@@ -247,8 +247,7 @@
     "energy_efficient": "LED eficiente con sensores",
     "exterior": "Iluminación exterior (focos)",
     "emergency": "Iluminación de emergencia (batería)",
-    "smart": "Sistema inteligente (iluminación inteligente)",
-    "basic": "Podstawowe LED"
+    "smart": "Sistema inteligente (iluminación inteligente)"
   },
   "lighting_basic": "LED Básico",
   "lighting_professional": "Profesional",
@@ -322,8 +321,7 @@
     "tilt": "Bisagra",
     "security": "Anti -arglar",
     "skylight": "Tragaluces para el techo",
-    "energy_efficient": "Ahorro de energía",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Ahorro de energía"
   },
   "window_types_standard": "Estándar",
   "window_types_double": "Doble Acristalamiento",
@@ -359,9 +357,7 @@
     "vinyl": "Paneles de vinilo impermeables (LVT)",
     "carpet": "Cubierta de piso de PVC de 2-4 mm",
     "epoxy": "Piso epoxi industrial",
-    "concrete": "Piso elevado (salas de servidores)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Piso elevado (salas de servidores)"
   },
   "climate_zones": {
     "northern_europe": "Europa del Norte (Escandinavia, -30 ° C a +25 ° C)",
@@ -741,8 +737,5 @@
     "agricultural": "Agricultura (granjas, instalaciones)",
     "marine": "Marine/astillero (entorno corrosivo)"
   },
-  "insulation_label": "Aislamiento",
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "insulation_label": "Aislamiento"
 }

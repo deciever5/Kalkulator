@@ -225,9 +225,7 @@
     "vinyl": "Водонепроникні вінілові панелі (LVT)",
     "carpet": "2-4 мм ПВХ-покриття",
     "epoxy": "Промислова епоксидна підлога",
-    "concrete": "Піднята підлога (серверні кімнати)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Піднята підлога (серверні кімнати)"
   },
   "climate_zone": "Кліматична зона",
   "windows": {
@@ -351,8 +349,7 @@
     "tilt": "Навісний",
     "security": "Анти -вибухневий",
     "skylight": "Скайки на даху",
-    "energy_efficient": "Енергія -",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Енергія -"
   },
   "window_types_standard": "Стандартні",
   "window_types_double": "Подвійне скління",
@@ -547,8 +544,7 @@
     "energy_efficient": "Енергетична світлодіод із датчиками",
     "exterior": "Зовнішнє освітлення (фари)",
     "emergency": "Аварійне освітлення (акумулятор)",
-    "smart": "Інтелектуальна система (контрольоване освітлення)",
-    "basic": "Podstawowe LED"
+    "smart": "Інтелектуальна система (контрольоване освітлення)"
   },
   "lighting_basic": "Базовий LED",
   "lighting_professional": "Професійне освітлення",
@@ -842,8 +838,5 @@
     "central_europe": "Центральна Європа (Польща, Німеччина, від -20 ° C до +35 ° C)",
     "southern_europe": "Південна Європа (Іспанія, Італія, від -5 ° C до +45 ° C)",
     "continental": "Континентальний клімат (екстремальні коливання)"
-  },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  }
 }

@@ -247,8 +247,7 @@
     "energy_efficient": "Energibesparande LED med sensorer",
     "exterior": "Extern belysning (strålkastare)",
     "emergency": "Nödbelysning (batteri)",
-    "smart": "System inteligentny (oświetlenie sterowane)",
-    "basic": "Podstawowe LED"
+    "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "lighting_basic": "Grundläggande LED",
   "lighting_professional": "Professionell",
@@ -322,8 +321,7 @@
     "tilt": "Gångjärn",
     "security": "Anti -burglarge",
     "skylight": "Taktakfönster",
-    "energy_efficient": "Energibesparing",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energibesparing"
   },
   "window_types_standard": "Standard",
   "window_types_double": "Dubbelglas",
@@ -474,9 +472,7 @@
     "vinyl": "Vattentät vinylpaneler (LVT)",
     "carpet": "2-4 mm PVC golvbeläggning",
     "epoxy": "Industriellt epoxigolv",
-    "concrete": "Förhöjd golv (serverrum)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Förhöjd golv (serverrum)"
   },
   "climate_zone": "Klimatzon",
   "windows": {
@@ -741,8 +737,5 @@
     "central_europe": "Centraleuropa (Polen, Tyskland, -20 ° C till +35 ° C)",
     "southern_europe": "Södra Europa (Spanien, Italien, -5 ° C till +45 ° C)",
     "continental": "Kontinentalt klimat (extrema fluktuationer)"
-  },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  }
 }

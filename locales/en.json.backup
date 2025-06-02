@@ -195,8 +195,7 @@
     "extended": "Extended (40A, power, UPS, emergency)",
     "industrial": "Industrial (63A, power, distribution panel)",
     "it_server": "IT/Server (UPS, cooling, monitoring)",
-    "smart": "Smart (home automation, KNX)",
-    "smart_system": "System inteligentny (automatyka)"
+    "smart": "Smart (home automation, KNX)"
   },
   "plumbing": {
     "none": "No plumbing",
@@ -252,8 +251,7 @@
     "energy_efficient": "Energy efficient LED with sensors",
     "exterior": "Exterior lighting (spotlights)",
     "emergency": "Emergency lighting (battery)",
-    "smart": "Smart system (smart lighting)",
-    "basic": "Podstawowe LED"
+    "smart": "Smart system (smart lighting)"
   },
   "lighting_basic": "Basic LED",
   "lighting_professional": "Professional",
@@ -327,8 +325,7 @@
     "tilt": "Hinged",
     "security": "Anti -burglary",
     "skylight": "Roof skylights",
-    "energy_efficient": "Energy -saving",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energy -saving"
   },
   "window_types_standard": "Standard",
   "window_types_double": "Double Glazed",

@@ -377,9 +377,7 @@
     "vinyl": "Wasserdichte Vinylplatten (LVT)",
     "carpet": "2-4 mm PVC-Bodenbedeckung",
     "epoxy": "Industrial Epoxy Floor",
-    "concrete": "Erhöhter Boden (Serverräume)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Erhöhter Boden (Serverräume)"
   },
   "climate_zone": "Klimazone",
   "windows": {
@@ -648,8 +646,7 @@
     "tilt": "Geschwächt",
     "security": "Anti -Burgylary",
     "skylight": "Dach -Oberlichter",
-    "energy_efficient": "Energieunterhaltung",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energieunterhaltung"
   },
   "it_systems_none": "Keiner",
   "transport_type_standard": "Standard",
@@ -685,8 +682,7 @@
     "energy_efficient": "Energieeffiziente LED mit Sensoren",
     "exterior": "Außenbeleuchtung (Strahler)",
     "emergency": "Notbeleuchtung (Batterie)",
-    "smart": "Intelligentes System (Smart Lighting)",
-    "basic": "Podstawowe LED"
+    "smart": "Intelligentes System (Smart Lighting)"
   },
   "it_systems_basic": "Grundnetzwerk",
   "fire_systems": "Feuersysteme",
@@ -742,8 +738,5 @@
     "mountain": "Gebirgsklima (hohe UV-Strahlung, Schnee)",
     "tropical": "Tropisches Klima (hohe Temperaturen, Luftfeuchtigkeit)"
   },
-  "insulation_label": "Isolierung",
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "insulation_label": "Isolierung"
 }

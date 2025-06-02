@@ -225,9 +225,7 @@
     "vinyl": "Vedenpitävä vinyylipaneelit (LVT)",
     "carpet": "2-4 mm PVC-lattiapäällyste",
     "epoxy": "Teollisuuden epoksilattia",
-    "concrete": "Korotettu lattia (palvelinhuoneet)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Korotettu lattia (palvelinhuoneet)"
   },
   "climate_zone": "Ilmastovyöhyke",
   "windows": {
@@ -351,8 +349,7 @@
     "tilt": "Saranoitu",
     "security": "Anti -antipalkinto",
     "skylight": "Kattokattoikkunat",
-    "energy_efficient": "Energiaa",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energiaa"
   },
   "window_types_standard": "Vakio",
   "window_types_double": "Kaksinkertainen lasi",
@@ -547,8 +544,7 @@
     "energy_efficient": "Energiaa pitävä LED anturilla",
     "exterior": "Ulkoinen valaistus (ajovalot)",
     "emergency": "Hätävalaistus (akku)",
-    "smart": "Älykäs järjestelmä (ohjattu valaistus)",
-    "basic": "Podstawowe LED"
+    "smart": "Älykäs järjestelmä (ohjattu valaistus)"
   },
   "lighting_basic": "Perus LED",
   "lighting_professional": "Ammattitason",
@@ -842,8 +838,5 @@
     "central_europe": "Keski -Eurooppa (Puola, Saksa, -20 ° C -+35 ° C)",
     "southern_europe": "Etelä -Eurooppa (Espanja, Italia, -5 ° C -+45 ° C)",
     "continental": "Manner -ilmasto (äärimmäiset vaihtelut)"
-  },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  }
 }

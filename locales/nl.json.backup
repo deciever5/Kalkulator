@@ -170,9 +170,7 @@
     "vinyl": "Waterdichte vinylpanelen (LVT)",
     "carpet": "2-4 mm PVC vloerbedekking",
     "epoxy": "Industriële epoxyvloer",
-    "concrete": "Verhoogde vloer (serverkamers)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Verhoogde vloer (serverkamers)"
   },
   "climate_zone": "Klimaatzone",
   "windows": {
@@ -647,8 +645,7 @@
     "tilt": "Scharnierend",
     "security": "Anti -warrglary",
     "skylight": "Daklijgen",
-    "energy_efficient": "Energie -sparen",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energie -sparen"
   },
   "it_systems_none": "Geen",
   "transport_type_standard": "Standaard",
@@ -684,8 +681,7 @@
     "energy_efficient": "Energie -redding led met sensoren",
     "exterior": "Externe verlichting (koplampen)",
     "emergency": "Noodverlichting (batterij)",
-    "smart": "System inteligentny (oświetlenie sterowane)",
-    "basic": "Podstawowe LED"
+    "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "it_systems_basic": "Basisnetwerk",
   "fire_systems": "Brandweersystemen",
@@ -741,8 +737,5 @@
     "central_europe": "Midden -Europa (Polen, Duitsland, -20 ° C tot +35 ° C)",
     "southern_europe": "Zuid -Europa (Spanje, Italië, -5 ° C tot +45 ° C)",
     "continental": "Continentaal klimaat (extreme schommelingen)"
-  },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  }
 }

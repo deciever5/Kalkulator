@@ -62,9 +62,7 @@
     "vinyl": "Vodotěsné vinylové panely (LVT)",
     "carpet": "2-4mm PVC podlahová krytina",
     "epoxy": "Průmyslová epoxidová podlaha",
-    "concrete": "Vyvýšená podlaha (serverové pokoje)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Vyvýšená podlaha (serverové pokoje)"
   },
   "windows": "Okna",
   "additional_doors_included": "Další dveře zahrnuty",
@@ -639,8 +637,7 @@
     "tilt": "Závěs",
     "security": "Anti -Burglary",
     "skylight": "Střešní světlíky",
-    "energy_efficient": "Energie -navádění",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Energie -navádění"
   },
   "it_systems_none": "Žádný",
   "transport_type_standard": "Norma",
@@ -676,8 +673,7 @@
     "energy_efficient": "Energie -svlékání vedou se senzory",
     "exterior": "Externí osvětlení (světlomety)",
     "emergency": "Nouzové osvětlení (baterie)",
-    "smart": "Inteligentní systém (kontrolované osvětlení)",
-    "basic": "Podstawowe LED"
+    "smart": "Inteligentní systém (kontrolované osvětlení)"
   },
   "it_systems_basic": "Základní síť",
   "fire_systems": "Požární systémy",
@@ -734,8 +730,5 @@
     "central_europe": "Střední Evropa (Polsko, Německo, -20 ° C až +35 ° C)",
     "southern_europe": "Jižní Evropa (Španělsko, Itálie, -5 ° C až +45 ° C)",
     "continental": "Kontinentální klima (extrémní výkyvy)"
-  },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  }
 }

@@ -225,9 +225,7 @@
     "vinyl": "Panneaux en vinyle imperméables (LVT)",
     "carpet": "Couvre-plancher en PVC de 2 à 4 mm",
     "epoxy": "Plancher époxy industriel",
-    "concrete": "Plancher élevé (salles de serveurs)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "concrete": "Plancher élevé (salles de serveurs)"
   },
   "climate_zone": "Zone climatique",
   "windows": {
@@ -351,8 +349,7 @@
     "tilt": "Articulé",
     "security": "Anti-tournage",
     "skylight": "Puits de lumière du toit",
-    "energy_efficient": "Économie d'énergie",
-    "marine_grade": "Klasa morska (antykorozyjna)"
+    "energy_efficient": "Économie d'énergie"
   },
   "window_types_standard": "Standard",
   "window_types_double": "Double vitrage",
@@ -547,8 +544,7 @@
     "energy_efficient": "LED d'énergie d'énergie avec des capteurs",
     "exterior": "Éclairage externe (phares)",
     "emergency": "Éclairage d'urgence (batterie)",
-    "smart": "Système intelligent (éclairage contrôlé)",
-    "basic": "Podstawowe LED"
+    "smart": "Système intelligent (éclairage contrôlé)"
   },
   "lighting_basic": "LED de base",
   "lighting_professional": "Professionnel",
@@ -842,8 +838,5 @@
     "central_europe": "Europe centrale (Pologne, Allemagne, -20 ° C à +35 ° C)",
     "southern_europe": "Europe du Sud (Espagne, Italie, -5 ° C à +45 ° C)",
     "continental": "Climat continental (fluctuations extrêmes)"
-  },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  }
 }
