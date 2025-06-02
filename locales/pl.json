@@ -507,7 +507,7 @@
       "southern_europe": "Europa Południowa (IT, ES, PT, GR)",
       "eastern_europe": "Europa Wschodnia (HU, RO, BG, HR)",
       "uk_ireland": "Wielka Brytania i Irlandia",
-      "Applying the provided change to add the "save_configuration" key with the value "Zapisz konfigurację" to the JSON translation file.international": "Międzynarodowy (poza Europą)"
+      "international": "Międzynarodowy (poza Europą)"
     }
   },
   "labor_costs_30": "Koszty pracy (30%)",
