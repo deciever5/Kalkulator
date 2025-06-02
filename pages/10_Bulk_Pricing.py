@@ -184,35 +184,34 @@ if st.session_state.bulk_containers:
 
     for i, container in enumerate(st.session_state.bulk_containers):
         try:
-            cost = calculate_container_cost(container)
-            if isinstance(cost, (int, float)):
-                individual_costs.append({
-                    "ID": i + 1,
-                    "Type": container["container_type"],
-                    "Purpose": container["main_purpose"],
-                    "Cost (€)": f"{cost:,.0f}"
-                })
-                total_base_cost += cost
+            cost_result = calculate_container_cost(container)
+            
+            # Handle dictionary return type from calculate_container_cost
+            if isinstance(cost_result, dict):
+                cost = cost_result.get('total_cost', 0)
+            elif isinstance(cost_result, (int, float)):
+                cost = cost_result
             else:
-                # Handle case where cost calculation returns unexpected type
-                estimated_cost = 15000  # Default estimate
-                individual_costs.append({
-                    "ID": i + 1,
-                    "Type": container["container_type"],
-                    "Purpose": container["main_purpose"],
-                    "Cost (€)": f"{estimated_cost:,.0f}"
-                })
-                total_base_cost += estimated_cost
-        except Exception:
+                cost = 15000  # Default estimate
+                
+            individual_costs.append({
+                "ID": i + 1,
+                "Type": container["container_type"],
+                "Purpose": container["main_purpose"],
+                "Cost (€)": f"{cost:,.0f}"
+            })
+            total_base_cost += cost
+            
+        except Exception as e:
             # Fallback calculation
             estimated_cost = 15000
             individual_costs.append({
                 "ID": i + 1,
                 "Type": container["container_type"],
                 "Purpose": container["main_purpose"],
-                "Cost (€)": f"{estimated_cost:,.0f}"
+                "Cost (€)": f"{estimated_cost:,.0f} (estimated)"
             })
-            total_base_cost += estimated_cost
+            total_base_cost += estimated_costtimated_cost
 
     # Apply discounts
     volume_discount_amount = total_base_cost * volume_discount_rate

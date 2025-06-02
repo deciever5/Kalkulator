@@ -50,6 +50,7 @@ def calculate_container_cost(config):
         "20ft High Cube": 9000,
         "40ft Standard": 12000,
         "40ft High Cube": 14000,
+        "20ft Refrigerated": 15000,
         "Multi-unit Container": 25000,
         "Custom Size Container": 18000,
         "Refurbished Container": 6500
@@ -466,12 +467,21 @@ def calculate_container_cost(config):
     # Calculate delivery costs based on delivery zone
     delivery_cost = calculate_delivery_cost(config.get('delivery_zone', 'Local'), config.get('container_type', '20ft Standard'))
 
-    total_cost = (base_cost + modifications_cost) * multiplier + delivery_cost
+    # Calculate subtotal before multiplier
+    subtotal_before_multiplier = base_cost + modifications_cost
+    
+    # Apply use case multiplier
+    subtotal_with_multiplier = subtotal_before_multiplier * multiplier
+    
+    # Add delivery cost
+    total_cost = subtotal_with_multiplier + delivery_cost
 
     return {
         'base_cost': base_cost,
         'modifications_cost': modifications_cost,
-        'multiplier': multiplier,
+        'use_case_multiplier': multiplier,
+        'subtotal_before_multiplier': subtotal_before_multiplier,
+        'subtotal_with_multiplier': subtotal_with_multiplier,
         'delivery_cost': delivery_cost,
         'total_cost': total_cost
     }
