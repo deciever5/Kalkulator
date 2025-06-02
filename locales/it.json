@@ -199,6 +199,16 @@
       "polished_concrete": "Cemento Lucidato"
     }
   },
+  "purposes": {
+    "office_space": "Spazio Ufficio",
+    "sanitary_containers": "Container Sanitari",
+    "residential_containers": "Container Residenziali",
+    "commercial_containers": "Container Commerciali",
+    "storage_containers": "Container di Stoccaggio",
+    "technical_containers": "Container Tecnici",
+    "changing_rooms": "Spogliatoi",
+    "guard_booths": "Cabine di Guardia"
+  },
   "form": {
     "labels": {
       "container_type": "Tipo di contenitore",
@@ -390,6 +400,126 @@
   "configuration_saved": "Configurazione salvata con successo!",
   "get_ai_analysis": "Ottieni Analisi IA",
   "systems_installations": "Sistemi e Installazioni",
+  "advanced_modifications": "Modifiche Avanzate",
+  "special_notes_systems": "Uwagi Specjalne - Systemy",
+  "describe_system_requirements": "Opisz dodatkowe wymagania dotyczące systemów...",
+  "system_requirements_placeholder": "np. Specjalne wymagania dla wentylacji, dodatkowe gniazdka, specjalistyczne instalacje",
+  "interior_layout": "Layout Interno",
+  "security_systems": "Sistemi Sicurezza",
+  "exterior_cladding": "Rivestimento Esterno",
+  "additional_openings": "Aperture Aggiuntive",
+  "fire_safety_systems": "Systemy Przeciwpożarowe",
+  "accessibility_features": "Caratteristiche Accessibilità",
+  "paint_finish": "Finitura Verniciatura",
+  "special_notes_modifications": "Uwagi Specjalne - Modyfikacje",
+  "describe_modification_requirements": "Opisz dodatkowe wymagania dotyczące modyfikacji...",
+  "modification_requirements_placeholder": "np. Specjalne kolory RAL, nietypowe rozmiary otworów, dodatkowe wzmocnienia konstrukcyjne",
+  "transport_logistics": "Trasporto e logistica",
+  "delivery_zone": "Zona Consegna",
+  "transport_type": "Tipo Trasporto",
+  "assembly_installation": "Montaż i Instalacja",
+  "equipment_extras": "Attrezzatura ed extra",
+  "office_equipment": "Equipaggiamento Ufficio",
+  "appliances": "Elettrodomestici",
+  "it_multimedia": "Systemy IT i Multimedia",
+  "special_notes_general": "Uwagi Specjalne - Ogólne",
+  "describe_general_requirements": "Opisz wszelkie dodatkowe wymagania, specyfikacje lub ograniczenia projektu...",
+  "general_requirements_placeholder": "np. Specjalne terminy realizacji, wymogi certyfikacyjne, ograniczenia budżetowe, nietypowe zastosowania",
+  "interior_layout_options": {
+    "open_space": "Przestrzeń otwarta (bez podziałów)",
+    "partitioned": "Z przegrodami (1-3 pomieszczenia)",
+    "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
+    "custom_layout": "Układ niestandardowy (projekt custom)",
+    "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
+  },
+  "security_systems_options": {
+    "none": "Bez dodatkowych zabezpieczeń (zamki standardowe)",
+    "basic": "Podstawowe (wzmocnione zamki, kraty okienne)",
+    "standard": "Standardowe (alarm, czujniki, syrena)",
+    "extended": "Rozszerzone (monitoring, czujniki ruchu/wibracji)",
+    "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
+    "maximum": "Maksymalne (sejf, biometria, central monitoring)",
+    "industrial": "Przemysłowe (ATEX, systemy gazowe, panic room)"
+  },
+  "exterior_cladding_options": {
+    "none": "Bez okładziny (blacha kontenerowa standardowa)",
+    "trapezoidal": "Blacha trapezoidalna (T18, T35, T55)",
+    "cassette": "Blacha kasetowa (płaska, przetłaczana)",
+    "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
+    "structural_plaster": "Tynk strukturalny (silikonowy, akrylowy)",
+    "wood_cladding": "Okładzina drewniana (termo, egzotyczna)",
+    "composite_panels": "Płyty kompozytowe (HPL, dibond)",
+    "clinker_brick": "Cegła klinkierowa (lica, elewacyjna)",
+    "natural_stone": "Kamień naturalny/sztuczny"
+  },
+  "additional_openings_options": {
+    "none": "Bez dodatkowych otworów (standardowe drzwi)",
+    "windows": "Okna dodatkowe (1-4 sztuki)",
+    "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
+    "garage_door": "Brama garażowa (segmentowa, rolowana)",
+    "loading_dock": "Rampa załadunkowa (hydrauliczna)",
+    "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
+    "skylights": "Okna dachowe/świetliki",
+    "custom": "Otwory niestandardowe (nietypowe wymiary)"
+  },
+  "fire_safety_options": {
+    "none": "Bez systemów przeciwpożarowych",
+    "basic": "Podstawowe (gaśnica, czujka dymu)",
+    "standard": "Standardowe (system alarmowy, oświetlenie awaryjne)",
+    "extended": "Rozszerzone (tryskacze, ewakuacja)",
+    "full": "Pełny system (gazowe, monitoring)"
+  },
+  "accessibility_options": {
+    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "ramp": "Podjazd/rampa (dla wózków inwalidzkich)",
+    "lift": "Winda hydrauliczna (dostęp dla niepełnosprawnych)",
+    "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
+  },
+  "paint_finish_options": {
+    "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
+    "extended": "Powłoka ulepszona C3 (lepsza trwałość)",
+    "marine": "Powłoka morska C5M (środowiska przybrzeżne)",
+    "industrial": "Powłoka przemysłowa C4 (środowiska agresywne)",
+    "premium": "Premium (specjalne kolory RAL, tekstury)"
+  },
+  "delivery_zone_options": {
+    "local": "Lokalny (do 50km)",
+    "regional": "Regionalny (50-200km)",
+    "national": "Krajowy (cały kraj)",
+    "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
+    "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
+    "international": "Międzynarodowy (poza Europą)"
+  },
+  "transport_type_options": {
+    "standard": "Transport standardowy (naczep 13.6m)",
+    "special": "Transport specjalny (ponadgabarytowy)",
+    "crane": "Transport z dźwigiem (montaż na miejscu)",
+    "multi_container": "Transport wielokontenerowy (2+ jednostki)"
+  },
+  "assembly_options": {
+    "none": "Bez montażu (tylko dostawa)",
+    "basic": "Montaż podstawowy (pozycjonowanie, poziomowanie)",
+    "standard": "Montaż standardowy (podłączenia, testy)",
+    "full": "Montaż pełny (kompletna instalacja)"
+  },
+  "office_equipment_options": {
+    "none": "Bez wyposażenia (pusty kontener)",
+    "basic": "Podstawowe (biurko, krzesła, szafa)",
+    "standard": "Standardowe (komplet mebli, oświetlenie)",
+    "full": "Pełne (kompletne wyposażenie biura)"
+  },
+  "appliances_options": {
+    "none": "Bez sprzętu AGD",
+    "basic": "Podstawowy (lodówka, mikrofalówka)",
+    "standard": "Standardowy (zestaw kuchenny, pralka)",
+    "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
+  },
+  "it_systems_options": {
+    "none": "Bez systemów IT",
+    "basic": "Podstawowe (internet, WiFi)",
+    "standard": "Standardowe (sieć, telefonia)",
+    "advanced": "Zaawansowane (serwerownia, bezpieczeństwo)"
+  },
   "insulation_package": "Pacchetto Isolamento",
   "structural_reinforcement": "Rinforzo strutturale",
   "delivery_logistics": "Consegna e Logistica",
@@ -510,15 +640,10 @@
     "user_management": "Gestione Utenti",
     "system_settings": "Impostazioni Sistema"
   },
-  "advanced_modifications": "Modifiche Avanzate",
   "air_intakes_label": "Prese d'Aria e Ventilazione",
   "roof_modifications_label": "Modifiche del Tetto",
   "security_features": "Caratteristiche Sicurezza",
-  "exterior_cladding": "Rivestimento Esterno",
-  "additional_openings": "Aperture Aggiuntive",
   "fire_safety_label": "Sistemi Antincendio",
-  "accessibility_features": "Caratteristiche Accessibilità",
-  "paint_finish": "Finitura Verniciatura",
   "air_intakes": {
     "none": "Nessuna presa d'aria",
     "standard": "Ventilazione standard",
@@ -635,7 +760,6 @@
   "exterior_cladding_none": "Nessuno",
   "fire_systems_none": "Nessuno",
   "roof_modifications_solar": "Pannelli Solari",
-  "delivery_zone": "Zona Consegna",
   "exterior_cladding_composite": "Composito",
   "window_types_standard": "Standard",
   "installation_none": "Auto Installazione",
@@ -650,15 +774,12 @@
   "installation_basic": "Configurazione Base",
   "delivery_zone_international": "Internazionale",
   "paint_finish_custom": "Colore Personalizzato",
-  "security_systems": "Sistemi Sicurezza",
   "construction_material_aluminum": "Alluminio",
   "construction_material": "Materiale Costruzione",
   "transport_type_special": "Trasporto Speciale",
   "security_systems_basic": "Base",
   "transport_type_crane": "Con Gru",
-  "transport_type": "Tipo Trasporto",
   "delivery_zone_national": "Nazionale",
-  "interior_layout": "Layout Interno",
   "appliances_none": "Nessuno",
   "roof_modifications_none": "Nessuna",
   "lighting_basic": "LED Base",
@@ -684,11 +805,9 @@
   "interior_layout_open": "Spazio Aperto",
   "appliances_kitchen": "Equipaggiamento Cucina",
   "exterior_cladding_wood": "Legno",
-  "office_equipment": "Equipaggiamento Ufficio",
   "installation": "Installazione",
   "system_comments": "Commenti Requisiti Sistema",
   "office_equipment_full": "Ufficio Completo",
-  "appliances": "Elettrodomestici",
   "it_systems_advanced": "IT Avanzato",
   "window_types_security": "Finestre Sicurezza",
   "roof_modifications_skylight": "Lucernario",
@@ -700,8 +819,6 @@
   "main_purpose": "Purple principale",
   "usage_environment": "Ambiente di utilizzo",
   "number_of_windows": "Numero di finestre",
-  "transport_logistics": "Trasporto e logistica",
-  "equipment_extras": "Attrezzatura ed extra",
   "insulation_label": "Isolamento",
   "finish_levels": {
     "shell": "Stato grezzo (isolamento + piastra OSB)",
@@ -731,15 +848,5 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi",
-  "purposes": {
-    "office_space": "Spazio Ufficio",
-    "sanitary_containers": "Container Sanitari",
-    "residential_containers": "Container Residenziali",
-    "commercial_containers": "Container Commerciali",
-    "storage_containers": "Container di Stoccaggio",
-    "technical_containers": "Container Tecnici",
-    "changing_rooms": "Spogliatoi",
-    "guard_booths": "Cabine di Guardia"
-  }
+  "flooring_label": "Podłogi"
 }

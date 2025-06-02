@@ -199,6 +199,16 @@
       "polished_concrete": "Полішений бетон"
     }
   },
+  "purposes": {
+    "office_space": "Офісний Простір",
+    "sanitary_containers": "Санітарні Контейнери",
+    "residential_containers": "Житлові Контейнери",
+    "commercial_containers": "Комерційні Контейнери",
+    "storage_containers": "Складські Контейнери",
+    "technical_containers": "Технічні Контейнери",
+    "changing_rooms": "Роздягальні",
+    "guard_booths": "Сторожові Будки"
+  },
   "form": {
     "labels": {
       "container_type": "Тип контейнера",
@@ -437,6 +447,126 @@
   "configuration_saved": "Конфігурацію успішно збережено!",
   "get_ai_analysis": "Отримати ШІ-аналіз",
   "systems_installations": "Системи та установки",
+  "advanced_modifications": "Розширені модифікації",
+  "special_notes_systems": "Uwagi Specjalne - Systemy",
+  "describe_system_requirements": "Opisz dodatkowe wymagania dotyczące systemów...",
+  "system_requirements_placeholder": "np. Specjalne wymagania dla wentylacji, dodatkowe gniazdka, specjalistyczne instalacje",
+  "interior_layout": "Інтер'єрне планування",
+  "security_systems": "Системи безпеки",
+  "exterior_cladding": "Зовнішнє облицювання",
+  "additional_openings": "Додаткові вікна",
+  "fire_safety_systems": "Systemy Przeciwpożarowe",
+  "accessibility_features": "Функції доступності",
+  "paint_finish": "Фініш фарбування",
+  "special_notes_modifications": "Uwagi Specjalne - Modyfikacje",
+  "describe_modification_requirements": "Opisz dodatkowe wymagania dotyczące modyfikacji...",
+  "modification_requirements_placeholder": "np. Specjalne kolory RAL, nietypowe rozmiary otworów, dodatkowe wzmocnienia konstrukcyjne",
+  "transport_logistics": "Транспорт та логістика",
+  "delivery_zone": "Зона доставки",
+  "transport_type": "Тип транспорту",
+  "assembly_installation": "Montaż i Instalacja",
+  "equipment_extras": "Обладнання та додатки",
+  "office_equipment": "Офісне обладнання",
+  "appliances": "Прилади",
+  "it_multimedia": "Systemy IT i Multimedia",
+  "special_notes_general": "Uwagi Specjalne - Ogólne",
+  "describe_general_requirements": "Opisz wszelkie dodatkowe wymagania, specyfikacje lub ograniczenia projektu...",
+  "general_requirements_placeholder": "np. Specjalne terminy realizacji, wymogi certyfikacyjne, ograniczenia budżetowe, nietypowe zastosowania",
+  "interior_layout_options": {
+    "open_space": "Przestrzeń otwarta (bez podziałów)",
+    "partitioned": "Z przegrodami (1-3 pomieszczenia)",
+    "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
+    "custom_layout": "Układ niestandardowy (projekt custom)",
+    "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
+  },
+  "security_systems_options": {
+    "none": "Bez dodatkowych zabezpieczeń (zamki standardowe)",
+    "basic": "Podstawowe (wzmocnione zamki, kraty okienne)",
+    "standard": "Standardowe (alarm, czujniki, syrena)",
+    "extended": "Rozszerzone (monitoring, czujniki ruchu/wibracji)",
+    "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
+    "maximum": "Maksymalne (sejf, biometria, central monitoring)",
+    "industrial": "Przemysłowe (ATEX, systemy gazowe, panic room)"
+  },
+  "exterior_cladding_options": {
+    "none": "Bez okładziny (blacha kontenerowa standardowa)",
+    "trapezoidal": "Blacha trapezoidalna (T18, T35, T55)",
+    "cassette": "Blacha kasetowa (płaska, przetłaczana)",
+    "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
+    "structural_plaster": "Tynk strukturalny (silikonowy, akrylowy)",
+    "wood_cladding": "Okładzina drewniana (termo, egzotyczna)",
+    "composite_panels": "Płyty kompozytowe (HPL, dibond)",
+    "clinker_brick": "Cegła klinkierowa (lica, elewacyjna)",
+    "natural_stone": "Kamień naturalny/sztuczny"
+  },
+  "additional_openings_options": {
+    "none": "Bez dodatkowych otworów (standardowe drzwi)",
+    "windows": "Okna dodatkowe (1-4 sztuki)",
+    "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
+    "garage_door": "Brama garażowa (segmentowa, rolowana)",
+    "loading_dock": "Rampa załadunkowa (hydrauliczna)",
+    "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
+    "skylights": "Okna dachowe/świetliki",
+    "custom": "Otwory niestandardowe (nietypowe wymiary)"
+  },
+  "fire_safety_options": {
+    "none": "Bez systemów przeciwpożarowych",
+    "basic": "Podstawowe (gaśnica, czujka dymu)",
+    "standard": "Standardowe (system alarmowy, oświetlenie awaryjne)",
+    "extended": "Rozszerzone (tryskacze, ewakuacja)",
+    "full": "Pełny system (gazowe, monitoring)"
+  },
+  "accessibility_options": {
+    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "ramp": "Podjazd/rampa (dla wózków inwalidzkich)",
+    "lift": "Winda hydrauliczna (dostęp dla niepełnosprawnych)",
+    "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
+  },
+  "paint_finish_options": {
+    "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
+    "extended": "Powłoka ulepszona C3 (lepsza trwałość)",
+    "marine": "Powłoka morska C5M (środowiska przybrzeżne)",
+    "industrial": "Powłoka przemysłowa C4 (środowiska agresywne)",
+    "premium": "Premium (specjalne kolory RAL, tekstury)"
+  },
+  "delivery_zone_options": {
+    "local": "Lokalny (do 50km)",
+    "regional": "Regionalny (50-200km)",
+    "national": "Krajowy (cały kraj)",
+    "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
+    "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
+    "international": "Międzynarodowy (poza Europą)"
+  },
+  "transport_type_options": {
+    "standard": "Transport standardowy (naczep 13.6m)",
+    "special": "Transport specjalny (ponadgabarytowy)",
+    "crane": "Transport z dźwigiem (montaż na miejscu)",
+    "multi_container": "Transport wielokontenerowy (2+ jednostki)"
+  },
+  "assembly_options": {
+    "none": "Bez montażu (tylko dostawa)",
+    "basic": "Montaż podstawowy (pozycjonowanie, poziomowanie)",
+    "standard": "Montaż standardowy (podłączenia, testy)",
+    "full": "Montaż pełny (kompletna instalacja)"
+  },
+  "office_equipment_options": {
+    "none": "Bez wyposażenia (pusty kontener)",
+    "basic": "Podstawowe (biurko, krzesła, szafa)",
+    "standard": "Standardowe (komplet mebli, oświetlenie)",
+    "full": "Pełne (kompletne wyposażenie biura)"
+  },
+  "appliances_options": {
+    "none": "Bez sprzętu AGD",
+    "basic": "Podstawowy (lodówka, mikrofalówka)",
+    "standard": "Standardowy (zestaw kuchenny, pralka)",
+    "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
+  },
+  "it_systems_options": {
+    "none": "Bez systemów IT",
+    "basic": "Podstawowe (internet, WiFi)",
+    "standard": "Standardowe (sieć, telefonia)",
+    "advanced": "Zaawansowane (serwerownia, bezpieczeństwo)"
+  },
   "insulation_package": "Пакет ізоляції",
   "structural_reinforcement": "Структурне підсилення",
   "delivery_logistics": "Доставка та логістика",
@@ -557,15 +687,10 @@
     "user_management": "Управління користувачами",
     "system_settings": "Налагодження системи"
   },
-  "advanced_modifications": "Розширені модифікації",
   "air_intakes_label": "Повітряні впуски та вентиляція",
   "roof_modifications_label": "Модифікації даху",
   "security_features": "Функції безпеки",
-  "exterior_cladding": "Зовнішнє облицювання",
-  "additional_openings": "Додаткові вікна",
   "fire_safety_label": "Системи пожежної безпеки",
-  "accessibility_features": "Функції доступності",
-  "paint_finish": "Фініш фарбування",
   "air_intakes": {
     "none": "Без повітряних вхідних клапанів",
     "standard": "Стандартна вентиляція",
@@ -682,7 +807,6 @@
   "exterior_cladding_none": "Ні",
   "fire_systems_none": "Ні",
   "roof_modifications_solar": "Сонячні панелі",
-  "delivery_zone": "Зона доставки",
   "exterior_cladding_composite": "Композитний",
   "window_types_standard": "Стандартні",
   "installation_none": "Самостановка",
@@ -697,15 +821,12 @@
   "installation_basic": "Базова установка",
   "delivery_zone_international": "Міжнародний",
   "paint_finish_custom": "Індивідуальний колір",
-  "security_systems": "Системи безпеки",
   "construction_material_aluminum": "Алюмінієвий матеріал",
   "construction_material": "Матеріал будівництва",
   "transport_type_special": "Спеціальний транспорт",
   "security_systems_basic": "Базова",
   "transport_type_crane": "З крана",
-  "transport_type": "Тип транспорту",
   "delivery_zone_national": "Народний",
-  "interior_layout": "Інтер'єрне планування",
   "appliances_none": "Ніякі прилади",
   "roof_modifications_none": "Ніякі зміни даху",
   "lighting_basic": "Базовий LED",
@@ -731,11 +852,9 @@
   "interior_layout_open": "Відкритий простір",
   "appliances_kitchen": "Прилади для кухні",
   "exterior_cladding_wood": "Дерево",
-  "office_equipment": "Офісне обладнання",
   "installation": "Інсталяція",
   "system_comments": "Коментарі щодо вимог системи",
   "office_equipment_full": "Повний офіс",
-  "appliances": "Прилади",
   "it_systems_advanced": "Розроблені системи IT",
   "window_types_security": "Безпекові вікна",
   "roof_modifications_skylight": "Скайлайт",
@@ -747,8 +866,6 @@
   "main_purpose": "Головний фіолетовий",
   "usage_environment": "Середовище використання",
   "number_of_windows": "Кількість вікон",
-  "transport_logistics": "Транспорт та логістика",
-  "equipment_extras": "Обладнання та додатки",
   "insulation_label": "Утеплення",
   "finish_levels": {
     "shell": "Сирий стан (утеплення + OSB пластина)",
@@ -778,15 +895,5 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi",
-  "purposes": {
-    "office_space": "Офісний Простір",
-    "sanitary_containers": "Санітарні Контейнери",
-    "residential_containers": "Житлові Контейнери",
-    "commercial_containers": "Комерційні Контейнери",
-    "storage_containers": "Складські Контейнери",
-    "technical_containers": "Технічні Контейнери",
-    "changing_rooms": "Роздягальні",
-    "guard_booths": "Сторожові Будки"
-  }
+  "flooring_label": "Podłogi"
 }

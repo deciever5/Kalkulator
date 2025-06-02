@@ -199,6 +199,16 @@
       "polished_concrete": "Polierovaná betónová podlaha"
     }
   },
+  "purposes": {
+    "office_space": "Kancelársky Priestor",
+    "sanitary_containers": "Sanitárne Kontajnery",
+    "residential_containers": "Obytné Kontajnery",
+    "commercial_containers": "Komerčné Kontajnery",
+    "storage_containers": "Skladovacie Kontajnery",
+    "technical_containers": "Technické Kontajnery",
+    "changing_rooms": "Šatne",
+    "guard_booths": "Strážne Búdky"
+  },
   "form": {
     "labels": {
       "container_type": "Typ kontajnera",
@@ -437,6 +447,126 @@
   "configuration_saved": "Konfigurácia úspešne uložená!",
   "get_ai_analysis": "Získať AI analýzu",
   "systems_installations": "Systémy a inštalácie",
+  "advanced_modifications": "Pokročilé modifikácie",
+  "special_notes_systems": "Uwagi Specjalne - Systemy",
+  "describe_system_requirements": "Opisz dodatkowe wymagania dotyczące systemów...",
+  "system_requirements_placeholder": "np. Specjalne wymagania dla wentylacji, dodatkowe gniazdka, specjalistyczne instalacje",
+  "interior_layout": "Interiérový dizajn",
+  "security_systems": "Systémy na ochranu",
+  "exterior_cladding": "Exteriérové obkladové prvky",
+  "additional_openings": "Doplnkové otvory",
+  "fire_safety_systems": "Systemy Przeciwpożarowe",
+  "accessibility_features": "Prístupnosťové funkcie",
+  "paint_finish": "Farebný prehľad",
+  "special_notes_modifications": "Uwagi Specjalne - Modyfikacje",
+  "describe_modification_requirements": "Opisz dodatkowe wymagania dotyczące modyfikacji...",
+  "modification_requirements_placeholder": "np. Specjalne kolory RAL, nietypowe rozmiary otworów, dodatkowe wzmocnienia konstrukcyjne",
+  "transport_logistics": "Doprava a logistika",
+  "delivery_zone": "Dodávka",
+  "transport_type": "Prepravovať",
+  "assembly_installation": "Montaż i Instalacja",
+  "equipment_extras": "Vybavenie a doplnky",
+  "office_equipment": "Búrové zariadenie",
+  "appliances": "Zariadenia",
+  "it_multimedia": "Systemy IT i Multimedia",
+  "special_notes_general": "Uwagi Specjalne - Ogólne",
+  "describe_general_requirements": "Opisz wszelkie dodatkowe wymagania, specyfikacje lub ograniczenia projektu...",
+  "general_requirements_placeholder": "np. Specjalne terminy realizacji, wymogi certyfikacyjne, ograniczenia budżetowe, nietypowe zastosowania",
+  "interior_layout_options": {
+    "open_space": "Przestrzeń otwarta (bez podziałów)",
+    "partitioned": "Z przegrodami (1-3 pomieszczenia)",
+    "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
+    "custom_layout": "Układ niestandardowy (projekt custom)",
+    "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
+  },
+  "security_systems_options": {
+    "none": "Bez dodatkowych zabezpieczeń (zamki standardowe)",
+    "basic": "Podstawowe (wzmocnione zamki, kraty okienne)",
+    "standard": "Standardowe (alarm, czujniki, syrena)",
+    "extended": "Rozszerzone (monitoring, czujniki ruchu/wibracji)",
+    "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
+    "maximum": "Maksymalne (sejf, biometria, central monitoring)",
+    "industrial": "Przemysłowe (ATEX, systemy gazowe, panic room)"
+  },
+  "exterior_cladding_options": {
+    "none": "Bez okładziny (blacha kontenerowa standardowa)",
+    "trapezoidal": "Blacha trapezoidalna (T18, T35, T55)",
+    "cassette": "Blacha kasetowa (płaska, przetłaczana)",
+    "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
+    "structural_plaster": "Tynk strukturalny (silikonowy, akrylowy)",
+    "wood_cladding": "Okładzina drewniana (termo, egzotyczna)",
+    "composite_panels": "Płyty kompozytowe (HPL, dibond)",
+    "clinker_brick": "Cegła klinkierowa (lica, elewacyjna)",
+    "natural_stone": "Kamień naturalny/sztuczny"
+  },
+  "additional_openings_options": {
+    "none": "Bez dodatkowych otworów (standardowe drzwi)",
+    "windows": "Okna dodatkowe (1-4 sztuki)",
+    "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
+    "garage_door": "Brama garażowa (segmentowa, rolowana)",
+    "loading_dock": "Rampa załadunkowa (hydrauliczna)",
+    "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
+    "skylights": "Okna dachowe/świetliki",
+    "custom": "Otwory niestandardowe (nietypowe wymiary)"
+  },
+  "fire_safety_options": {
+    "none": "Bez systemów przeciwpożarowych",
+    "basic": "Podstawowe (gaśnica, czujka dymu)",
+    "standard": "Standardowe (system alarmowy, oświetlenie awaryjne)",
+    "extended": "Rozszerzone (tryskacze, ewakuacja)",
+    "full": "Pełny system (gazowe, monitoring)"
+  },
+  "accessibility_options": {
+    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "ramp": "Podjazd/rampa (dla wózków inwalidzkich)",
+    "lift": "Winda hydrauliczna (dostęp dla niepełnosprawnych)",
+    "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
+  },
+  "paint_finish_options": {
+    "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
+    "extended": "Powłoka ulepszona C3 (lepsza trwałość)",
+    "marine": "Powłoka morska C5M (środowiska przybrzeżne)",
+    "industrial": "Powłoka przemysłowa C4 (środowiska agresywne)",
+    "premium": "Premium (specjalne kolory RAL, tekstury)"
+  },
+  "delivery_zone_options": {
+    "local": "Lokalny (do 50km)",
+    "regional": "Regionalny (50-200km)",
+    "national": "Krajowy (cały kraj)",
+    "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
+    "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
+    "international": "Międzynarodowy (poza Europą)"
+  },
+  "transport_type_options": {
+    "standard": "Transport standardowy (naczep 13.6m)",
+    "special": "Transport specjalny (ponadgabarytowy)",
+    "crane": "Transport z dźwigiem (montaż na miejscu)",
+    "multi_container": "Transport wielokontenerowy (2+ jednostki)"
+  },
+  "assembly_options": {
+    "none": "Bez montażu (tylko dostawa)",
+    "basic": "Montaż podstawowy (pozycjonowanie, poziomowanie)",
+    "standard": "Montaż standardowy (podłączenia, testy)",
+    "full": "Montaż pełny (kompletna instalacja)"
+  },
+  "office_equipment_options": {
+    "none": "Bez wyposażenia (pusty kontener)",
+    "basic": "Podstawowe (biurko, krzesła, szafa)",
+    "standard": "Standardowe (komplet mebli, oświetlenie)",
+    "full": "Pełne (kompletne wyposażenie biura)"
+  },
+  "appliances_options": {
+    "none": "Bez sprzętu AGD",
+    "basic": "Podstawowy (lodówka, mikrofalówka)",
+    "standard": "Standardowy (zestaw kuchenny, pralka)",
+    "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
+  },
+  "it_systems_options": {
+    "none": "Bez systemów IT",
+    "basic": "Podstawowe (internet, WiFi)",
+    "standard": "Standardowe (sieć, telefonia)",
+    "advanced": "Zaawansowane (serwerownia, bezpieczeństwo)"
+  },
   "insulation_package": "Izolačný balík",
   "structural_reinforcement": "Štrukturálne zosilnenie",
   "delivery_logistics": "Dodávka a logistika",
@@ -557,15 +687,10 @@
     "user_management": "Správa používateľov",
     "system_settings": "Nastavenia systému"
   },
-  "advanced_modifications": "Pokročilé modifikácie",
   "air_intakes_label": "Prívod vzduchu a vetranie",
   "roof_modifications_label": "Úpravy strechy",
   "security_features": "Bezpečnostné funkcie",
-  "exterior_cladding": "Exteriérové obkladové prvky",
-  "additional_openings": "Doplnkové otvory",
   "fire_safety_label": "Požiarne systémy",
-  "accessibility_features": "Prístupnosťové funkcie",
-  "paint_finish": "Farebný prehľad",
   "air_intakes": {
     "none": "Žiadne vzduchové vstupné otvory",
     "standard": "Štandardné vetranie",
@@ -682,7 +807,6 @@
   "exterior_cladding_none": "Žiadny",
   "fire_systems_none": "Žiadny",
   "roof_modifications_solar": "Solárne panely",
-  "delivery_zone": "Dodávka",
   "exterior_cladding_composite": "Kompozitný",
   "window_types_standard": "Norma",
   "installation_none": "Inštalácia",
@@ -697,15 +821,12 @@
   "installation_basic": "Základná inštalácia",
   "delivery_zone_international": "Medzinárodné",
   "paint_finish_custom": "Vlastná farba",
-  "security_systems": "Systémy na ochranu",
   "construction_material_aluminum": "Alumínium",
   "construction_material": "Stavebný materiál",
   "transport_type_special": "Špeciálna preprava",
   "security_systems_basic": "Základné",
   "transport_type_crane": "S kránom",
-  "transport_type": "Prepravovať",
   "delivery_zone_national": "Národné",
-  "interior_layout": "Interiérový dizajn",
   "appliances_none": "Žiadne príslušenstvo",
   "roof_modifications_none": "Žiadne zmeny strechy",
   "lighting_basic": "Základné LED",
@@ -731,11 +852,9 @@
   "interior_layout_open": "Otvorený priestor",
   "appliances_kitchen": "Kuchyňské zariadenie",
   "exterior_cladding_wood": "Drevo",
-  "office_equipment": "Búrové zariadenie",
   "installation": "Inštalácia",
   "system_comments": "Poznámky k systémovým požiadavkám",
   "office_equipment_full": "Kompletné búrové zariadenie",
-  "appliances": "Zariadenia",
   "it_systems_advanced": "Pokročilé IT",
   "window_types_security": "Okná",
   "roof_modifications_skylight": "Osvetlenie strechy",
@@ -747,8 +866,6 @@
   "main_purpose": "Hlavný fial",
   "usage_environment": "Využitie",
   "number_of_windows": "Počet okien",
-  "transport_logistics": "Doprava a logistika",
-  "equipment_extras": "Vybavenie a doplnky",
   "insulation_label": "Izolácia",
   "finish_levels": {
     "shell": "Surový stav (izolácia + doska OSB)",
@@ -778,15 +895,5 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi",
-  "purposes": {
-    "office_space": "Kancelársky Priestor",
-    "sanitary_containers": "Sanitárne Kontajnery",
-    "residential_containers": "Obytné Kontajnery",
-    "commercial_containers": "Komerčné Kontajnery",
-    "storage_containers": "Skladovacie Kontajnery",
-    "technical_containers": "Technické Kontajnery",
-    "changing_rooms": "Šatne",
-    "guard_booths": "Strážne Búdky"
-  }
+  "flooring_label": "Podłogi"
 }
