@@ -110,7 +110,7 @@ def render_shared_header(show_login=False, current_page="Home"):
             current_lang = 'en'  # Default to English if current language not available
             set_language(current_lang)
 
-    if show_login and col_login is not None:
+    if show_login:
         with col_login:
             # Employee login button
             if st.session_state.get('employee_logged_in', False):
