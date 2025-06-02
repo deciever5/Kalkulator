@@ -615,7 +615,7 @@ with st.form("container_configuration_form"):
     )
 
     # Submit button
-    submitted = st.form_submit_button("💾 Zapisz Konfigurację", use_container_width=True, type="primary")
+    submitted = st.form_submit_button(f"💾 {t('save_configuration')}", use_container_width=True, type="primary")
 
     if submitted:
         # Calculate pricing
