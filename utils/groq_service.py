@@ -75,12 +75,31 @@ class GroqService:
             try:
                 prompt = self._build_cost_estimation_prompt(estimation_data, base_costs)
 
+                language = estimation_data.get('response_language', 'en')
+                
+                # Language-specific system messages
+                system_messages = {
+                    'en': "You are an expert container modification cost estimator. Provide accurate cost estimates in JSON format with detailed breakdowns. Respond entirely in English.",
+                    'pl': "Jesteś ekspertem w szacowaniu kosztów modyfikacji kontenerów. Podaj dokładne szacunki kosztów w formacie JSON ze szczegółowymi podziałami. Odpowiadaj całkowicie po polsku.",
+                    'de': "Sie sind ein Experte für Containermodifikations-Kostenschätzung. Geben Sie genaue Kostenschätzungen im JSON-Format mit detaillierten Aufschlüsselungen an. Antworten Sie vollständig auf Deutsch.",
+                    'fr': "Vous êtes un expert en estimation des coûts de modification de conteneurs. Fournissez des estimations de coûts précises au format JSON avec des ventilations détaillées. Répondez entièrement en français.",
+                    'es': "Eres un experto en estimación de costos de modificación de contenedores. Proporciona estimaciones de costos precisas en formato JSON con desgloses detallados. Responde completamente en español.",
+                    'it': "Sei un esperto di stima dei costi di modifica dei container. Fornisci stime dei costi accurate in formato JSON con suddivisioni dettagliate. Rispondi completamente in italiano.",
+                    'nl': "U bent een expert in kostenschatting voor containermodificaties. Geef nauwkeurige kostenschattingen in JSON-formaat met gedetailleerde uitspraken. Reageer volledig in het Nederlands.",
+                    'sv': "Du är en expert på kostnadsbedömning för containermodifieringar. Ge noggranna kostnadsuppskattningar i JSON-format med detaljerade uppdelningar. Svara helt på svenska.",
+                    'fi': "Olet konttien muutoskustannusarvioinnin asiantuntija. Anna tarkkoja kustannusarvioita JSON-muodossa yksityiskohtaisine erittelyineen. Vastaa kokonaan suomeksi.",
+                    'cs': "Jste expert na odhady nákladů na úpravy kontejnerů. Poskytněte přesné odhady nákladů ve formátu JSON s podrobnými rozčleněními. Odpovídejte zcela v češtině.",
+                    'hu': "Ön konténer-módosítási költségbecslési szakértő. Adjon pontos költségbecsléseket JSON formátumban részletes bontásokkal. Válaszoljon teljesen magyarul.",
+                    'uk': "Ви експерт з оцінки витрат на модифікацію контейнерів. Надайте точні оцінки витрат у форматі JSON з детальними розбивками. Відповідайте повністю українською мовою.",
+                    'sk': "Ste expert na odhady nákladov na úpravy kontajnerov. Poskytnite presné odhady nákladov vo formáte JSON s podrobnými rozdeleniami. Odpovedajte úplne v slovenčine."
+                }
+                
                 response = self.client.chat.completions.create(
                     model="llama-3.1-8b-instant",
                     messages=[
                         {
                             "role": "system",
-                            "content": "You are an expert container modification cost estimator. Provide accurate cost estimates in JSON format with detailed breakdowns."
+                            "content": system_messages.get(language, system_messages['en'])
                         },
                         {
                             "role": "user", 

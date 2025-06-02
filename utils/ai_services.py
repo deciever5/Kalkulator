@@ -32,6 +32,24 @@ class OpenAIService:
         """Generate intelligent cost estimate using GPT-4o"""
 
         prompt = self._build_cost_estimation_prompt(estimation_data, base_costs)
+        language = estimation_data.get('response_language', 'en')
+        
+        # Language-specific system messages
+        system_messages = {
+            'en': "You are an expert construction cost estimator specializing in steel container modifications. Provide detailed, accurate cost estimates in JSON format. Respond entirely in English.",
+            'pl': "Jesteś ekspertem w szacowaniu kosztów budowy, specjalizującym się w modyfikacjach kontenerów stalowych. Podaj szczegółowe, dokładne szacunki kosztów w formacie JSON. Odpowiadaj całkowicie po polsku.",
+            'de': "Sie sind ein Experte für Baukostenschätzung, spezialisiert auf Stahlcontainer-Modifikationen. Geben Sie detaillierte, genaue Kostenschätzungen im JSON-Format an. Antworten Sie vollständig auf Deutsch.",
+            'fr': "Vous êtes un expert en estimation des coûts de construction, spécialisé dans les modifications de conteneurs en acier. Fournissez des estimations de coûts détaillées et précises au format JSON. Répondez entièrement en français.",
+            'es': "Eres un experto en estimación de costos de construcción especializado en modificaciones de contenedores de acero. Proporciona estimaciones de costos detalladas y precisas en formato JSON. Responde completamente en español.",
+            'it': "Sei un esperto di stima dei costi di costruzione specializzato in modifiche di container in acciaio. Fornisci stime dei costi dettagliate e accurate in formato JSON. Rispondi completamente in italiano.",
+            'nl': "U bent een expert in bouwkostenschatting, gespecialiseerd in stalen containermodificaties. Geef gedetailleerde, nauwkeurige kostenschattingen in JSON-formaat. Reageer volledig in het Nederlands.",
+            'sv': "Du är en expert på byggkostnadsbedömning som specialiserat sig på stålcontainermodifieringar. Ge detaljerade, noggranna kostnadsuppskattningar i JSON-format. Svara helt på svenska.",
+            'fi': "Olet rakennuskustannusarvioinnin asiantuntija, joka on erikoistunut teräskonttien muutoksiin. Anna yksityiskohtaiset, tarkat kustannusarviot JSON-muodossa. Vastaa kokonaan suomeksi.",
+            'cs': "Jste expert na odhady stavebních nákladů specializující se na úpravy ocelových kontejnerů. Poskytněte podrobné, přesné odhady nákladů ve formátu JSON. Odpovídejte zcela v češtině.",
+            'hu': "Ön építési költségbecslési szakértő, aki acél konténer módosításokra specializálódott. Adjon részletes, pontos költségbecsléseket JSON formátumban. Válaszoljon teljesen magyarul.",
+            'uk': "Ви експерт з оцінки будівельних витрат, який спеціалізується на модифікаціях сталевих контейнерів. Надайте детальні, точні оцінки витрат у форматі JSON. Відповідайте повністю українською мовою.",
+            'sk': "Ste expert na odhady stavebných nákladov špecializujúci sa na úpravy oceľových kontajnerov. Poskytnite podrobné, presné odhady nákladov vo formáte JSON. Odpovedajte úplne v slovenčine."
+        }
 
         try:
             response = self.client.chat.completions.create(
@@ -39,7 +57,7 @@ class OpenAIService:
                 messages=[
                     {
                         "role": "system",
-                        "content": "You are an expert construction cost estimator specializing in steel container modifications. Provide detailed, accurate cost estimates in JSON format."
+                        "content": system_messages.get(language, system_messages['en'])
                     },
                     {
                         "role": "user",
@@ -294,6 +312,11 @@ class AnthropicService:
         """Generate intelligent cost estimate using Claude"""
 
         prompt = self._build_cost_estimation_prompt(estimation_data, base_costs)
+        language = estimation_data.get('response_language', 'en')
+        
+        # Add language instruction to the prompt
+        language_instruction = f"\n\nIMPORTANT: Respond entirely in {language} language. All text, analysis, and recommendations must be in {language}."
+        prompt_with_language = prompt + language_instruction
 
         try:
             response = self.client.messages.create(
@@ -303,7 +326,7 @@ class AnthropicService:
                 messages=[
                     {
                         "role": "user",
-                        "content": prompt
+                        "content": prompt_with_language
                     }
                 ]
             )
@@ -609,8 +632,28 @@ class GeminiService:
         if estimation_data.get('paint_finish'):
             modifications.append(f"Paint: {estimation_data.get('paint_finish')}")
         
+        # Get language from estimation data
+        language = estimation_data.get('response_language', 'en')
+        
+        # Language-specific expert descriptions
+        expert_descriptions = {
+            'en': "You are a professional container modification cost estimator with expertise in European construction markets. Respond entirely in English.",
+            'pl': "Jesteś profesjonalnym szacownikiem kosztów modyfikacji kontenerów z doświadczeniem na europejskich rynkach budowlanych. Odpowiadaj całkowicie po polsku.",
+            'de': "Sie sind ein professioneller Kostenschätzer für Containermodifikationen mit Fachwissen auf europäischen Baumärkten. Antworten Sie vollständig auf Deutsch.",
+            'fr': "Vous êtes un estimateur professionnel des coûts de modification de conteneurs avec une expertise sur les marchés de la construction européens. Répondez entièrement en français.",
+            'es': "Eres un estimador profesional de costos de modificación de contenedores con experiencia en mercados de construcción europeos. Responde completamente en español.",
+            'it': "Sei uno stimatore professionale dei costi di modifica dei container con esperienza nei mercati delle costruzioni europee. Rispondi completamente in italiano.",
+            'nl': "U bent een professionele kostenschatter voor containermodificaties met expertise op Europese bouwmarkten. Reageer volledig in het Nederlands.",
+            'sv': "Du är en professionell kostnadsbedömare för containermodifieringar med expertis på europeiska byggmarknader. Svara helt på svenska.",
+            'fi': "Olet ammattimainen konttien muutoskustannusarvioija, jolla on asiantuntemusta eurooppalaisista rakennusmarkkinoista. Vastaa kokonaan suomeksi.",
+            'cs': "Jste profesionální odhadce nákladů na úpravy kontejnerů s odborností na evropských stavebních trzích. Odpovídejte zcela v češtině.",
+            'hu': "Ön professzionális konténer-módosítási költségbecslő, aki szakértő az európai építőipari piacokon. Válaszoljon teljesen magyarul.",
+            'uk': "Ви професійний оцінювач витрат на модифікацію контейнерів з експертизою на європейських будівельних ринках. Відповідайте повністю українською мовою.",
+            'sk': "Ste profesionálny odhadca nákladov na úpravy kontajnerov s odbornosťou na európskych stavebných trhoch. Odpovedajte úplne v slovenčine."
+        }
+
         prompt = f"""
-        You are a professional container modification cost estimator with expertise in European construction markets. Analyze this specific container project based on ALL user requirements.
+        {expert_descriptions.get(language, expert_descriptions['en'])} Analyze this specific container project based on ALL user requirements.
 
         **PROJECT SPECIFICATIONS:**
         Container Type: {container_type}
@@ -634,6 +677,8 @@ class GeminiService:
         - Additional gates, doors, and access points
         - Custom holes and openings in cladding
         - Any other specific technical requirements mentioned
+        
+        **CRITICAL: Respond entirely in {language} language. ALL text, technical terms, recommendations, and analysis must be in {language}.**
         
         **EUROPEAN MARKET BASE COSTS:**
         {json.dumps(base_costs, indent=2)}
@@ -1251,6 +1296,7 @@ def estimate_cost_with_ai(config: Dict[str, Any], ai_model: str = "auto") -> str
     try:
         # Get current language for response
         current_language = get_current_language()
+        print(f"🌐 AI Service using language: {current_language}")
 
         # Calculate base costs first
         base_costs = _calculate_base_costs(config)
