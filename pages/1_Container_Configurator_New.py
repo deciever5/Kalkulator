@@ -109,280 +109,268 @@ if 'container_config' not in st.session_state:
 
 # Configuration form
 with st.form("container_configuration_form"):
-
+    
     # SECTION 1: BASIC CONFIGURATION
     st.markdown(f"""
     <div class="section-header">
-        <div class="section-title">🏗️ {t('basic_configuration', 'PODSTAWOWA KONFIGURACJA')}</div>
+        <div class="section-title">🏗️ PODSTAWOWA KONFIGURACJA</div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     col1, col2 = st.columns(2)
-
+    
     with col1:
         # Container Type
-        container_type_options = [
-            "10ft Compact (3m x 2.4m)",
-            "20ft Standard (6m x 2.4m)", 
-            "20ft High Cube (6m x 2.7m)",
-            "40ft Standard (12m x 2.4m)",
-            "40ft High Cube (12m x 2.7m)",
-            "Multi-unit Container",
-            "Custom Size Container",
-            "Refurbished Container"
-        ]
         container_type = st.selectbox(
-            t('container_type'),
-            options=container_type_options,
+            t('form.labels.container_type'),
+            options=[
+                t('container.types.10ft_compact'),
+                t('container.types.20ft_standard'), 
+                t('container.types.20ft_high_cube'),
+                t('container.types.40ft_standard'),
+                t('container.types.40ft_high_cube'),
+                t('container.types.multi_unit'),
+                t('container.types.custom_dimensions'),
+                t('container.types.refurbished')
+            ],
             index=3
         )
-
+        
         # Construction Material
-        construction_material_options = [
-            t('construction_material_steel'),
-            t('construction_material_aluminum'),
-            t('construction_material_composite')
-        ]
         construction_material = st.selectbox(
-            t('construction_material'),
-            options=construction_material_options
+            t('form.labels.construction_material'),
+            options=[
+                t('construction_material.steel'),
+                t('construction_material.aluminum'), 
+                t('construction_material.composite')
+            ]
         )
-
+        
         # Insulation
-        insulation_options = [
-            t('insulation.basic'),
-            t('insulation.standard'),
-            t('insulation.premium'),
-            t('insulation.extreme')
-        ]
         insulation = st.selectbox(
-            t('insulation_label'),
-            options=insulation_options,
+            "Izolacja",
+            options=[
+                "Brak izolacji",
+                "Podstawowa (pianka PUR 5-8cm)",
+                "Zaawansowana (wełna mineralna 10-15cm)",
+                "Premium (płyty warstwowe 15-20cm)"
+            ],
             index=1
         )
-
+        
         # Main Purpose
-        main_purpose_options = [
-            t('purposes.office_space'),
-            t('purposes.sanitary_containers'), 
-            t('purposes.residential_containers'),
-            t('purposes.commercial_containers'),
-            t('purposes.storage_containers'),
-            t('purposes.technical_containers'),
-            t('purposes.changing_rooms'),
-            t('purposes.guard_booths')
-        ]
         main_purpose = st.selectbox(
-            t('main_purpose'),
-            options=main_purpose_options
+            "Główne Przeznaczenie",
+            options=[
+                "Przestrzeń Biurowa",
+                "Kontenery Sanitarne", 
+                "Kontenery Mieszkalne",
+                "Kontenery Komercyjne",
+                "Kontenery Magazynowe",
+                "Kontenery Techniczne",
+                "Szatnie",
+                "Budki Strażnicze"
+            ]
         )
-
+    
     with col2:
         # Usage Environment
-        environment_options = [
-            t('environments.indoor'),
-            t('environments.outdoor_standard'),
-            t('environments.outdoor_extreme'),
-            t('environments.industrial'),
-            t('environments.construction'),
-            t('environments.agricultural'),
-            t('environments.marine')
-        ]
         environment = st.selectbox(
-            t('environment'),
-            options=environment_options,
+            "Środowisko Użytkowania",
+            options=[
+                "Wewnętrzne (hale, magazyny)",
+                "Zewnętrzne standardowe (klimat umiarkowany)",
+                "Zewnętrzne ekstremalne (wybrzeże morskie, góry)",
+                "Przemysłowe (zakłady, rafinerie, kopalnie)",
+                "Budowlane (place budowy, infrastruktura)",
+                "Rolnicze (gospodarstwa, fermy)",
+                "Portowe/stoczniowe (środowisko korozyjne)"
+            ],
             index=1
         )
-
+        
         # Finish Level
-        finish_level_options = [
-            t('finish_levels.basic'),
-            t('finish_levels.shell'),
-            t('finish_levels.standard'),
-            t('finish_levels.comfort'),
-            t('finish_levels.luxury'),
-            t('finish_levels.specialist')
-        ]
         finish_level = st.selectbox(
-            t('finish_level'),
-            options=finish_level_options,
-            index=2
+            "Poziom Wykończenia",
+            options=[
+                "Bez wykończenia (kontener techniczny, szkielet)",
+                "Shell (izolacja + płyta OSB)",
+                "Podstawowy (izolacja + wykończenie techniczne)",
+                "Standardowy (pełna izolacja + wykończenie użytkowe)",
+                "Komfortowy (izolacja premium + wykończenie biurowe)",
+                "Luksusowy (najwyższa klasa + wykończenie hotelowe)",
+                "Specjalistyczny (normy medyczne/laboratoryjne)"
+            ],
+            index=3
         )
-
+        
         # Flooring
-        flooring_options = [
-            t('flooring.none'),
-            t('flooring.plywood'),
-            t('flooring.anti_slip'),
-            t('flooring.laminate'),
-            t('flooring.vinyl'),
-            t('flooring.carpet'),
-            t('flooring.epoxy'),
-            t('flooring.concrete')
-        ]
         flooring = st.selectbox(
-            t('flooring'),
-            options=flooring_options,
+            "Podłogi",
+            options=[
+                "Bez podłogi (blacha falistowana)",
+                "Sklejka wodoodporna 18mm (standard)",
+                "Sklejka antypoślizgowa 21mm",
+                "Panele laminowane AC4/AC5",
+                "Panele winylowe (LVT) wodoodporne",
+                "Wykładzina PVC 2-4mm",
+                "Płytki ceramiczne antypoślizgowe",
+                "Posadzka epoksydowa przemysłowa",
+                "Parkiet 3-warstwowy",
+                "Gres techniczny R11/R12",
+                "Podłoga podwyższona (serwerownie)"
+            ],
             index=1
         )
-
+        
         # Climate Zone
-        climate_zone_options = [
-            t('climate_zones.northern_europe'),
-            t('climate_zones.central_europe'),
-            t('climate_zones.southern_europe'),
-            t('climate_zones.continental'),
-            t('climate_zones.maritime'),
-            t('climate_zones.mountain'),
-            t('climate_zones.tropical')
-        ]
         climate_zone = st.selectbox(
-            t('climate_zone'),
-            options=climate_zone_options,
+            "Strefa Klimatyczna",
+            options=[
+                "Europa Północna (Skandynawia, -30°C do +25°C)",
+                "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
+                "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
+                "Klimat kontynentalny (ekstremalne wahania)",
+                "Klimat morski (wysoka wilgotność)",
+                "Klimat górski (wysokie UV, śnieg)",
+                "Klimat tropikalny (wysokie temperatury, wilgotność)"
+            ],
             index=1
         )
-
+    
     # SECTION 2: SYSTEMS AND INSTALLATIONS
     st.markdown(f"""
     <div class="section-header">
-        <div class="section-title">⚙️ {t('systems_installations', 'SYSTEMY I INSTALACJE')}</div>
+        <div class="section-title">⚙️ SYSTEMY I INSTALACJE</div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     col1, col2, col3 = st.columns(3)
-
+    
     with col1:
         # Windows
-        num_windows_options = [
-            t('windows.none'),
-            t('windows.one'),
-            t('windows.two'), 
-            t('windows.three'),
-            t('windows.four'),
-            t('windows.five_plus')
-        ]
         num_windows = st.selectbox(
-            t('number_of_windows'),
-            options=num_windows_options
+            "Liczba Okien",
+            options=[
+                "Bez okien (kontener zamknięty)",
+                "1 okno",
+                "2 okna", 
+                "3 okna",
+                "4 okna",
+                "5+ okien (konfiguracja custom)"
+            ]
         )
-
-        window_types_options = [
-            t('window_types.standard'),
-            t('window_types.panoramic'),
-            t('window_types.sliding'),
-            t('window_types.tilt'),
-            t('window_types.security'),
-            t('window_types.energy_efficient'),
-            t('window_types.skylight')
-        ]
+        
         window_types = st.multiselect(
-            t('window_types'),
-            options=window_types_options
+            "Typ Okien",
+            options=[
+                "Standardowe (100x80cm)",
+                "Panoramiczne (150x120cm)",
+                "Przesuwne",
+                "Uchylne",
+                "Antywłamaniowe (klasa P4-P8)",
+                "Energooszczędne (3-szybowe)",
+                "Świetliki dachowe (dodatkowo)"
+            ]
         )
-
+        
         # Lighting
-        lighting_options = [
-            t('lighting.none'),
-            t('lighting.basic_led'),
-            t('lighting.energy_efficient'),
-            t('lighting.exterior'),
-            t('lighting.emergency'),
-            t('lighting.smart')
-        ]
         lighting = st.selectbox(
-            t('lighting'),
-            options=lighting_options,
+            "Oświetlenie",
+            options=[
+                "Brak oświetlenia",
+                "Standardowe LED (podstawowe)",
+                "Energooszczędne LED z czujnikami",
+                "Oświetlenie zewnętrzne (reflektory)",
+                "Oświetlenie awaryjne (akumulatorowe)",
+                "System inteligentny (smart lighting)"
+            ],
             index=1
         )
-
+    
     with col2:
         # Ventilation
-        ventilation_options = [
-            t('ventilation.none'),
-            t('ventilation.gravity'),
-            t('ventilation.wall_fans'),
-            t('ventilation.mechanical'),
-            t('ventilation.heat_recovery'),
-            t('ventilation.split_ac'),
-            t('ventilation.central_ac'),
-            t('ventilation.industrial')
-        ]
         ventilation = st.selectbox(
-            t('air_intakes_label'),
-            options=ventilation_options,
+            "Nawiewy i Wentylacja",
+            options=[
+                "Bez nawiewów (naturalnych i mechanicznych)",
+                "Nawiewy grawitacyjne (2-4 szt., regulowane)",
+                "Wentylatory ściennie (wyciąg 100-150mm)",
+                "Wentylacja mechaniczna (nawiew + wyciąg)",
+                "Rekuperacja (odzysk ciepła 80-95%)",
+                "Klimatyzacja split (1-3 jednostki)",
+                "Klimatyzacja centralna (VRV/VRF)",
+                "Wentylacja przemysłowa (ATEX, chemoodporna)"
+            ],
             index=1
         )
-
+        
         # Roof Modifications
-        roof_modifications_options = [
-            t('roof_modifications.none'),
-            t('roof_modifications.insulation'),
-            t('roof_modifications.skylight'),
-            t('roof_modifications.fans'),
-            t('roof_modifications.solar'),
-            t('roof_modifications.antennas'),
-            t('roof_modifications.sloped'),
-            t('roof_modifications.terrace'),
-            t('roof_modifications.snow_removal')
-        ]
         roof_modifications = st.selectbox(
-            t('roof_modifications_label'),
-            options=roof_modifications_options
+            "Modyfikacje Dachu",
+            options=[
+                "Bez modyfikacji (dach standardowy płaski)",
+                "Izolacja dachu dodatkowo (10-20cm)",
+                "Świetlik dachowy (60x60, 90x90, 120x120cm)",
+                "Wentylatory dachowe (przemysłowe, ciche)",
+                "Instalacja fotowoltaiczna (2-10kW)",
+                "Anteny/maszty (GSM, radio, satelitarne)",
+                "Dach skośny (jednostronny, dwuspadowy)",
+                "Taras dachowy (z balustradą)",
+                "Systemy odśnieżania (grzałki, rynny)"
+            ]
         )
-
+        
         # Electrical System
-        electrical_system_options = [
-            t('electrical_system.none'),
-            t('electrical_system.preparation'),
-            t('electrical_system.basic'),
-            t('electrical_system.standard'),
-            t('electrical_system.extended'),
-            t('electrical_system.industrial'),
-            t('electrical_system.it_server'),
-            t('electrical_system.smart')
-        ]
         electrical_system = st.selectbox(
-            t('electrical_system'),
-            options=electrical_system_options,
+            "System Elektryczny",
+            options=[
+                "Bez instalacji elektrycznej",
+                "Przygotowanie elektryczne (tylko przepusty)",
+                "Podstawowy (15A, LED, 4 gniazdka)",
+                "Standardowy (25A, oświetlenie, 8 gniazdków)",
+                "Rozszerzony (40A, siła, UPS, emergency)",
+                "Przemysłowy (63A, 3-fazowy, rozdzielnica)",
+                "IT/Serwerownia (UPS, stabilizatory, monitoring)",
+                "Inteligentny (smart home, KNX, automatyka)"
+            ],
             index=3
         )
-
+    
     with col3:
         # Plumbing System
-        plumbing_system_options = [
-            t('plumbing_system.none'),
-            t('plumbing_system.preparation'),
-            t('plumbing_system.cold_water'),
-            t('plumbing_system.hot_cold_water'),
-            t('plumbing_system.basic_sanitary'),
-            t('plumbing_system.standard_sanitary'),
-            t('plumbing_system.comfort_sanitary'),
-            t('plumbing_system.premium_sanitary'),
-            t('plumbing_system.industrial')
-        ]
         plumbing_system = st.selectbox(
-            t('plumbing_system'),
-            options=plumbing_system_options
+            "System Hydrauliczny",
+            options=[
+                "Bez instalacji wodnej",
+                "Przygotowanie hydrauliczne (tylko przepusty)",
+                "Instalacja zimna woda (umywalka)",
+                "Zimna + ciepła woda (umywalka, zlewozmywak)",
+                "Podstawowy węzeł sanitarny (WC + umywalka)",
+                "Standardowy węzeł (WC + umywalka + prysznic)",
+                "Komfortowy węzeł (WC + umywalka + kabina)",
+                "Premium węzeł (jacuzzi, bidé, 2 umywalki)",
+                "Instalacja przemysłowa (ciśnieniowa, filtracja)"
+            ]
         )
-
+        
         # HVAC System
-        hvac_system_options = [
-            t('hvac_system.none'),
-            t('hvac_system.electric_heaters'),
-            t('hvac_system.electric_heating'),
-            t('hvac_system.heat_pump'),
-            t('hvac_system.gas_heating'),
-            t('hvac_system.split_ac'),
-            t('hvac_system.vrv_vrf'),
-            t('hvac_system.underfloor_heating'),
-            t('hvac_system.central_ac')
-        ]
         hvac_system = st.selectbox(
-            t('hvac_system'),
-            options=hvac_system_options,
+            "System HVAC (Ogrzewanie/Chłodzenie)",
+            options=[
+                "Bez HVAC (bez ogrzewania i chłodzenia)",
+                "Grzejniki elektryczne (1-3kW, konwektory)",
+                "Ogrzewanie elektryczne (promienniki IR)",
+                "Pompa ciepła (split, wydajność 2-12kW)",
+                "Ogrzewanie gazowe (piec kondensacyjny)",
+                "Klimatyzacja split (chłodzenie + grzanie)",
+                "System VRV/VRF (multi-split, sterowanie strefowe)",
+                "Ogrzewanie podłogowe (elektryczne/wodne)",
+                "Centrala klimatyzacyjna (z filtracją, nawilżaniem)"
+            ],
             index=5
         )
-
+    
     # Special Comments for Systems
     st.markdown("### Uwagi Specjalne - Systemy")
     system_comments = st.text_area(
@@ -390,16 +378,16 @@ with st.form("container_configuration_form"):
         placeholder="np. Specjalne wymagania dla wentylacji, dodatkowe gniazdka, specjalistyczne instalacje",
         key="system_comments"
     )
-
+    
     # SECTION 3: ADVANCED MODIFICATIONS
     st.markdown(f"""
     <div class="section-header">
-        <div class="section-title">🔧 {t('advanced_modifications', 'ZAAWANSOWANE MODYFIKACJE')}</div>
+        <div class="section-title">🔧 ZAAWANSOWANE MODYFIKACJE</div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     col1, col2 = st.columns(2)
-
+    
     with col1:
         # Interior Layout
         interior_layout = st.selectbox(
@@ -412,7 +400,7 @@ with st.form("container_configuration_form"):
                 "Antresola/piętro (zwiększenie powierzchni)"
             ]
         )
-
+        
         # Security Systems
         security_systems = st.selectbox(
             "Zabezpieczenia i Systemy Alarmowe",
@@ -427,7 +415,7 @@ with st.form("container_configuration_form"):
             ],
             index=1
         )
-
+        
         # Exterior Cladding
         exterior_cladding = st.selectbox(
             "Okładzina Zewnętrzna",
@@ -443,7 +431,7 @@ with st.form("container_configuration_form"):
                 "Kamień naturalny/sztuczny"
             ]
         )
-
+        
         # Additional Openings
         additional_openings = st.selectbox(
             "Dodatkowe Otwory i Modyfikacje",
@@ -459,7 +447,7 @@ with st.form("container_configuration_form"):
                 "Rampa załadunkowa (hydrauliczna, mechaniczna)"
             ]
         )
-
+    
     with col2:
         # Fire Safety Systems
         fire_systems = st.selectbox(
@@ -474,7 +462,7 @@ with st.form("container_configuration_form"):
                 "Certyfikowane (zgodne z normami krajowymi)"
             ]
         )
-
+        
         # Accessibility
         accessibility = st.selectbox(
             "Dostępność i Ergonomia",
@@ -488,7 +476,7 @@ with st.form("container_configuration_form"):
                 "Ergonomia pracy (wysokość blatów, oświetlenie)"
             ]
         )
-
+        
         # Paint and Finish
         paint_finish = st.selectbox(
             "Malowanie i Wykończenie Zewnętrzne",
@@ -504,7 +492,7 @@ with st.form("container_configuration_form"):
             ],
             index=2
         )
-
+    
     # Special Comments for Advanced Modifications
     st.markdown("### Uwagi Specjalne - Modyfikacje")
     advanced_comments = st.text_area(
@@ -512,16 +500,16 @@ with st.form("container_configuration_form"):
         placeholder="np. Specjalne kolory RAL, nietypowe rozmiary otworów, dodatkowe wzmocnienia konstrukcyjne",
         key="advanced_comments"
     )
-
+    
     # TRANSPORT AND LOGISTICS
     st.markdown(f"""
     <div class="section-header">
         <div class="section-title">🚛 TRANSPORT I LOGISTYKA</div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     col1, col2, col3 = st.columns(3)
-
+    
     with col1:
         delivery_zone = st.selectbox(
             "Strefa Dostawy",
@@ -535,7 +523,7 @@ with st.form("container_configuration_form"):
             ],
             index=1
         )
-
+    
     with col2:
         transport_type = st.selectbox(
             "Rodzaj Transportu",
@@ -549,7 +537,7 @@ with st.form("container_configuration_form"):
                 "Transport multimodalny (kombinowany)"
             ]
         )
-
+    
     with col3:
         installation = st.selectbox(
             "Montaż i Instalacja",
@@ -564,16 +552,16 @@ with st.form("container_configuration_form"):
             ],
             index=3
         )
-
+    
     # EQUIPMENT AND EXTRAS
     st.markdown(f"""
     <div class="section-header">
         <div class="section-title">📋 WYPOSAŻENIE I DODATKI</div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     col1, col2, col3 = st.columns(3)
-
+    
     with col1:
         office_equipment = st.selectbox(
             "Wyposażenie Biurowe/Wnętrzarskie",
@@ -587,7 +575,7 @@ with st.form("container_configuration_form"):
                 "Wyposażenie specjalistyczne (medical/lab)"
             ]
         )
-
+    
     with col2:
         appliances = st.selectbox(
             "Sprzęt AGD (dla kontenerów mieszkalnych)",
@@ -600,7 +588,7 @@ with st.form("container_configuration_form"):
                 "Smart AGD (WiFi, aplikacje, programowanie)"
             ]
         )
-
+    
     with col3:
         it_systems = st.selectbox(
             "Systemy IT i Multimedia",
@@ -613,7 +601,7 @@ with st.form("container_configuration_form"):
                 "Multimedia (TV, audio, prezentacje)"
             ]
         )
-
+    
     # Final Comments
     st.markdown("### Uwagi Specjalne - Ogólne")
     general_comments = st.text_area(
@@ -622,10 +610,10 @@ with st.form("container_configuration_form"):
         key="general_comments",
         height=100
     )
-
+    
     # Submit button
     submitted = st.form_submit_button("💾 Zapisz Konfigurację", use_container_width=True, type="primary")
-
+    
     if submitted:
         # Calculate pricing
         config = {
@@ -662,16 +650,16 @@ with st.form("container_configuration_form"):
             'advanced_comments': advanced_comments,
             'general_comments': general_comments
         }
-
+        
         # Save configuration
         st.session_state.container_config = config
-
+        
         # Calculate rough pricing (simplified)
         base_price = 15000  # Base container price
-
+        
         # Calculate modifications cost
         modifications_cost = 0
-
+        
         # Add costs based on selections
         if 'Premium' in insulation:
             modifications_cost += 3000
@@ -679,25 +667,25 @@ with st.form("container_configuration_form"):
             modifications_cost += 2000
         elif 'Podstawowa' in insulation:
             modifications_cost += 1000
-
+            
         if 'Standardowy' in electrical_system or 'Rozszerzony' in electrical_system:
             modifications_cost += 2500
         elif 'Przemysłowy' in electrical_system:
             modifications_cost += 5000
-
+            
         if 'Standard' in plumbing_system or 'Komfort' in plumbing_system:
             modifications_cost += 3000
         elif 'Premium' in plumbing_system:
             modifications_cost += 8000
-
+            
         if 'split' in hvac_system.lower():
             modifications_cost += 3500
         elif 'VRV' in hvac_system or 'centrala' in hvac_system.lower():
             modifications_cost += 8000
-
+            
         if len(window_types) > 0:
             modifications_cost += len(window_types) * 500
-
+            
         # Finish level multiplier
         if 'Luksusowy' in finish_level:
             base_price *= 1.8
@@ -705,9 +693,9 @@ with st.form("container_configuration_form"):
             base_price *= 1.5
         elif 'Standardowy' in finish_level:
             base_price *= 1.2
-
+            
         total_cost = base_price + modifications_cost
-
+        
         # Display cost summary
         st.markdown(f"""
         <div class="cost-summary">
@@ -734,20 +722,14 @@ with st.form("container_configuration_form"):
             </div>
         </div>
         """, unsafe_allow_html=True)
-
+        
         st.success("✅ Konfiguracja zapisana pomyślnie!")
-
-# Navigation buttons (outside form, only show if configuration exists)
-if 'container_config' in st.session_state and st.session_state.container_config:
-    st.markdown("### Następne kroki")
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("🤖 Przejdź do Wyceny AI", use_container_width=True, key="nav_ai"):
-            st.switch_page("pages/2_AI_Cost_Estimator.py")
-    with col2:
-        if st.button("📧 Wyślij Zapytanie", use_container_width=True, key="nav_inquiry"):
-            st.switch_page("pages/8_Send_Inquiry.py")
-
-# Initialize configuration
-if 'container_config' not in st.session_state:
-    st.session_state.container_config = {}
+        
+        # Navigation buttons
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("🤖 Przejdź do Wyceny AI", use_container_width=True):
+                st.switch_page("pages/2_AI_Cost_Estimator.py")
+        with col2:
+            if st.button("📧 Wyślij Zapytanie", use_container_width=True):
+                st.switch_page("pages/8_Send_Inquiry.py")

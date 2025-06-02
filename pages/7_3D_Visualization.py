@@ -7,15 +7,7 @@ import streamlit as st
 import plotly.graph_objects as go
 from utils.advanced_3d_visualizer import Advanced3DVisualizer
 from utils.container_database import ContainerDatabase
-from utils.translations import t, init_language
-from utils.container_loading_spinner import ContainerLoadingSpinner
-
-# Initialize translation function aliases for compatibility
-def get_translation(key, language):
-    return t(key)
-
-def translate_options(options, language):
-    return [t(option) for option in options]
+from utils.complete_translations import get_translation, translate_options
 
 st.set_page_config(page_title="3D Visualization", page_icon="🏗️", layout="wide", initial_sidebar_state="collapsed")
 
@@ -59,13 +51,13 @@ with col2:
 st.markdown("---")
 
 # Main content
-st.markdown(f"## 🎛️ {get_translation('interactive_3d_designer', st.session_state.language)}")
+st.markdown("## 🎛️ Interactive 3D Container Designer")
 
 # Configuration section
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.markdown(f"### ⚙️ {get_translation('configuration', st.session_state.language)}")
+    st.markdown("### ⚙️ Configuration")
 
     # Container type selection
     container_types = ['20ft Standard', '40ft Standard', '40ft High Cube', '20ft Refrigerated']

@@ -7,7 +7,6 @@ Simplified version for customer use as part of estimation process
 import streamlit as st
 from utils.document_analyzer import DocumentAnalyzer
 from utils.translations import t, render_language_selector
-from utils.container_loading_spinner import ContainerLoadingSpinner
 
 st.set_page_config(page_title="Drawing Analysis", page_icon="📐", layout="wide")
 

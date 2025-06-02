@@ -25,34 +25,16 @@ render_shared_header(show_login=False, current_page="AI_Cost_Estimator")
 def generate_cost_estimate(config, ai_model):
     """Generate AI-powered cost estimate with animated loading"""
     from utils.ai_services import estimate_cost_with_ai
-    from utils.container_loading_spinner import ContainerLoadingSpinner
-    
-    # Initialize container-themed loading spinner
-    loader = ContainerLoadingSpinner()
-    
-    # Show container assembly animation during AI processing
-    with st.container():
-        st.markdown(f"### 🤖 {t('generating_ai_estimate')}")
-        
-        # Custom assembly steps for AI cost estimation
-        ai_assembly_steps = [
-            "🏗️ Przygotowywanie specyfikacji technicznej...",
-            "📦 Analizowanie wymagań kontenerowych...", 
-            "🔧 Obliczanie kosztów materiałów i robocizny...",
-            "⚡ Optymalizacja projektu przez AI...",
-            "✅ Finalizowanie oszacowania kosztów..."
-        ]
-        
-        # Show the assembly process animation
-        loader.show_container_assembly(ai_assembly_steps)
+    from utils.animations import show_calculation_animation, create_animated_counter
+
+    # Show animated calculation process
+    calculation_container = st.container()
+    with calculation_container:
+        show_calculation_animation(config)
 
     try:
         # Call the actual AI service with the configuration
         ai_estimate = estimate_cost_with_ai(config, ai_model)
-        
-        # Show success animation
-        loader.success_animation("Oszacowanie AI zostało wygenerowane!")
-        
         return ai_estimate
     except Exception as e:
         # Fallback to configurator pricing when AI fails
@@ -127,19 +109,19 @@ else:
         st.write(f"**{t('purpose')}:** {config.get('main_purpose', 'N/A')}")
         st.write(f"**{t('environment')}:** {config.get('environment', 'N/A')}")
         st.write(f"**{t('finish_level')}:** {config.get('finish_level', 'N/A')}")
-        st.write(f"**Podłoga:** {config.get('flooring', 'N/A')}")
+        st.write(f"**{t('flooring')}:** {config.get('flooring', 'N/A')}")
         st.write(f"**{t('climate_zone')}:** {config.get('climate_zone', 'N/A')}")
 
     with col2:
-        st.write(f"**{t('window_types')}:** {config.get('num_windows', 'N/A')}")
+        st.write(f"**Okna:** {config.get('num_windows', 'N/A')}")
         if config.get('window_types'):
             st.write(f"**Typ okien:** {', '.join(config.get('window_types', []))}")
-        st.write(f"**{t('lighting')}:** {config.get('lighting', 'N/A')}")
+        st.write(f"**Oświetlenie:** {config.get('lighting', 'N/A')}")
         st.write(f"**Wentylacja:** {config.get('ventilation', 'N/A')}")
         st.write(f"**Modyfikacje dachu:** {config.get('roof_modifications', 'N/A')}")
-        st.write(f"**System Elektryczny:** {config.get('electrical_system', 'N/A')}")
-        st.write(f"**System Wodny:** {config.get('plumbing_system', 'N/A')}")
-        st.write(f"**System HVAC:** {config.get('hvac_system', 'N/A')}")
+        st.write(f"**{t('electrical_system')}:** {config.get('electrical_system', 'N/A')}")
+        st.write(f"**{t('plumbing_system')}:** {config.get('plumbing_system', 'N/A')}")
+        st.write(f"**{t('hvac_system')}:** {config.get('hvac_system', 'N/A')}")
 
     # Show additional systems and modifications
     st.markdown("### Dodatkowe systemy i modyfikacje:")
