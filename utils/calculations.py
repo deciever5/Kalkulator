@@ -9,12 +9,17 @@ from typing import Dict, List, Any, Tuple
 import pandas as pd
 from datetime import datetime
 
-# Cache lookup tables
+# Cache lookup tables - Enhanced with all container types
 BASE_COSTS = {
+    "10ft Compact": 6000,
     "20ft Standard": 8000,
+    "20ft High Cube": 9000,
     "40ft Standard": 12000,
     "40ft High Cube": 14000,
-    "20ft Refrigerated": 15000
+    "20ft Refrigerated": 15000,
+    "Multi-unit Container": 25000,
+    "Custom Size Container": 18000,
+    "Refurbished Container": 6500
 }
 
 USE_CASE_MULTIPLIERS = {
@@ -36,27 +41,103 @@ FINISH_COSTS = {
 }
 
 def calculate_container_cost(config):
-    """Calculate container cost based on configuration - optimized"""
-    base_cost = BASE_COSTS.get(config.get('container_type', '20ft Standard'), 8000)
+    """Calculate container cost based on configuration - comprehensive pricing"""
+    
+    # Enhanced base costs
+    enhanced_base_costs = {
+        "10ft Compact": 6000,
+        "20ft Standard": 8000,
+        "20ft High Cube": 9000,
+        "40ft Standard": 12000,
+        "40ft High Cube": 14000,
+        "Multi-unit Container": 25000,
+        "Custom Size Container": 18000,
+        "Refurbished Container": 6500
+    }
+    
+    base_cost = enhanced_base_costs.get(config.get('container_type', '20ft Standard'), 8000)
     multiplier = USE_CASE_MULTIPLIERS.get(config.get('main_purpose', 'Storage'), 1.0)
 
     # Calculate modifications cost efficiently
     modifications_cost = 0
 
+    # Construction material costs
+    construction_material_costs = {
+        'steel': 0,  # Base price
+        'aluminum': 3500,  # Premium for aluminum
+        'composite': 5000   # Highest premium for composite
+    }
+    construction_material = config.get('construction_material', 'steel').lower()
+    if any(key in construction_material.lower() for key in construction_material_costs.keys()):
+        for key, cost in construction_material_costs.items():
+            if key in construction_material.lower():
+                modifications_cost += cost
+                break
+
     # Environment costs
-    if config.get('environment') == 'Marine':
-        modifications_cost += 2000
-    elif config.get('environment') == 'Industrial':
-        modifications_cost += 1500
+    environment_costs = {
+        'indoor': 0,
+        'outdoor_standard': 500,
+        'outdoor_extreme': 2000,
+        'industrial': 1500,
+        'construction': 1200,
+        'agricultural': 800,
+        'marine': 2500
+    }
+    environment = config.get('environment', '').lower()
+    for key, cost in environment_costs.items():
+        if key in environment.lower():
+            modifications_cost += cost
+            break
 
     # Finish level costs
-    finish_costs = {
-        'Basic': 0,
-        'Standard': 3000,
-        'Premium': 8000,
-        'Luxury': 15000
+    finish_level_costs = {
+        'basic': 0,
+        'shell': 2000,
+        'standard': 4000,
+        'comfort': 8000,
+        'luxury': 15000,
+        'specialist': 20000
     }
-    modifications_cost += finish_costs.get(config.get('finish_level', 'Basic'), 0)
+    finish_level = config.get('finish_level', '').lower()
+    for key, cost in finish_level_costs.items():
+        if key in finish_level.lower():
+            modifications_cost += cost
+            break
+
+    # Flooring costs
+    flooring_costs = {
+        'none': 0,
+        'plywood': 800,
+        'anti_slip': 1200,
+        'laminate': 1500,
+        'vinyl': 1800,
+        'carpet': 1000,
+        'epoxy': 2500,
+        'concrete': 3000,
+        'hardwood': 3500
+    }
+    flooring = config.get('flooring', '').lower()
+    for key, cost in flooring_costs.items():
+        if key in flooring.lower():
+            modifications_cost += cost
+            break
+
+    # Climate zone adjustments
+    climate_zone_costs = {
+        'northern_europe': 1500,  # Extra insulation needed
+        'central_europe': 800,
+        'southern_europe': 300,
+        'continental': 1200,
+        'maritime': 1000,
+        'mountain': 2000,
+        'tropical': 1800
+    }
+    climate_zone = config.get('climate_zone', '').lower()
+    for key, cost in climate_zone_costs.items():
+        if key in climate_zone.lower():
+            modifications_cost += cost
+            break
 
     # Insulation costs based on level
     insulation_costs = {
@@ -66,25 +147,53 @@ def calculate_container_cost(config):
         'extreme': 6000
     }
     insulation = config.get('insulation', '').lower()
-    if insulation in insulation_costs:
-        modifications_cost += insulation_costs[insulation]
+    for key, cost in insulation_costs.items():
+        if key in insulation.lower():
+            modifications_cost += cost
+            break
 
-    # Windows and doors - Polish market pricing
-    num_windows = config.get('number_of_windows', 0)
-    window_type = config.get('window_types', 'standard').lower()
-    window_costs = {
-        'standard': 600,
-        'energy_efficient': 800,
-        'triple_glazed': 1000
+    # Windows costs - enhanced
+    window_count_costs = {
+        'none': 0,
+        'one': 1,
+        'two': 2,
+        'three': 3,
+        'four': 4,
+        'five': 5
     }
-    base_window_cost = window_costs.get(window_type, 600)
-    modifications_cost += num_windows * base_window_cost
+    num_windows_str = config.get('num_windows', 'none').lower()
+    num_windows = 0
+    for key, count in window_count_costs.items():
+        if key in num_windows_str:
+            num_windows = count
+            break
 
-    if config.get('additional_doors'):
-        modifications_cost += 900
+    window_type_costs = {
+        'standard': 600,
+        'panoramic': 1200,
+        'sliding': 800,
+        'tilt': 750,
+        'security': 900,
+        'energy_efficient': 1000,
+        'skylight': 1500
+    }
+    
+    window_types = config.get('window_types', [])
+    if isinstance(window_types, str):
+        window_types = [window_types]
+    
+    total_window_cost = 0
+    for window_type in window_types:
+        for key, cost in window_type_costs.items():
+            if key in window_type.lower():
+                total_window_cost += cost
+                break
+    
+    modifications_cost += num_windows * (total_window_cost if total_window_cost > 0 else 600)
 
     # Lighting system costs
     lighting_costs = {
+        'none': 0,
         'basic_led': 800,
         'energy_efficient': 1200,
         'exterior': 1500,
@@ -92,11 +201,14 @@ def calculate_container_cost(config):
         'smart': 2500
     }
     lighting = config.get('lighting', '').lower()
-    if lighting in lighting_costs:
-        modifications_cost += lighting_costs[lighting]
+    for key, cost in lighting_costs.items():
+        if key in lighting.lower():
+            modifications_cost += cost
+            break
 
     # Ventilation system costs
     ventilation_costs = {
+        'none': 0,
         'gravity': 300,
         'wall_fans': 800,
         'mechanical': 1500,
@@ -106,11 +218,14 @@ def calculate_container_cost(config):
         'industrial': 4000
     }
     ventilation = config.get('ventilation', '').lower()
-    if ventilation in ventilation_costs:
-        modifications_cost += ventilation_costs[ventilation]
+    for key, cost in ventilation_costs.items():
+        if key in ventilation.lower():
+            modifications_cost += cost
+            break
 
     # Roof modifications costs
     roof_mod_costs = {
+        'none': 0,
         'insulation': 1200,
         'skylight': 2500,
         'fans': 1000,
@@ -121,77 +236,232 @@ def calculate_container_cost(config):
         'snow_removal': 800
     }
     roof_mods = config.get('roof_modifications', '').lower()
-    if roof_mods in roof_mod_costs:
-        modifications_cost += roof_mod_costs[roof_mods]
+    for key, cost in roof_mod_costs.items():
+        if key in roof_mods.lower():
+            modifications_cost += cost
+            break
 
-    # Security features costs
-    security_costs = {
-        'basic': 800,
-        'advanced': 2000,
-        'high_security': 4000
-    }
-    security = config.get('security_features', '').lower()
-    if security in security_costs:
-        modifications_cost += security_costs[security]
-
-    # External cladding costs
-    cladding_costs = {
-        'standard': 0,
-        'wood': 2500,
-        'metal': 3000,
-        'composite': 3500,
-        'stone': 5000
-    }
-    cladding = config.get('external_cladding', '').lower()
-    if cladding in cladding_costs:
-        modifications_cost += cladding_costs[cladding]
-
-    # Interior layout costs
-    layout_costs = {
-        'open_space': 0,
-        'partitioned': 2000,
-        'custom': 3500
-    }
-    layout = config.get('interior_layout', '').lower()
-    if layout in layout_costs:
-        modifications_cost += layout_costs[layout]
-
-    # Additional openings costs
-    additional_openings = config.get('additional_openings', 0)
-    if isinstance(additional_openings, (int, float)) and additional_openings > 0:
-        modifications_cost += additional_openings * 500
-
-    # Systems - Polish market pricing
+    # Electrical system costs
     electrical_costs = {
+        'none': 0,
+        'preparation': 500,
         'basic': 1200,
         'standard': 1800,
+        'extended': 3000,
         'industrial': 3500,
+        'it_server': 4500,
         'smart': 5000
     }
     electrical = config.get('electrical_system', '').lower()
-    if electrical in electrical_costs:
-        modifications_cost += electrical_costs[electrical]
+    for key, cost in electrical_costs.items():
+        if key in electrical.lower():
+            modifications_cost += cost
+            break
 
+    # Plumbing system costs
     plumbing_costs = {
-        'basic': 2000,
-        'standard': 2500,
-        'full': 4500,
-        'commercial': 7000
+        'none': 0,
+        'preparation': 800,
+        'cold_water': 1500,
+        'hot_cold_water': 2000,
+        'basic_sanitary': 2500,
+        'standard_sanitary': 3500,
+        'comfort_sanitary': 4500,
+        'premium_sanitary': 7000,
+        'industrial': 5000
     }
     plumbing = config.get('plumbing_system', '').lower()
-    if plumbing in plumbing_costs:
-        modifications_cost += plumbing_costs[plumbing]
+    for key, cost in plumbing_costs.items():
+        if key in plumbing.lower():
+            modifications_cost += cost
+            break
 
+    # HVAC system costs
     hvac_costs = {
-        'basic': 1800,
-        'split_air_conditioning': 3000,
-        'central_air': 6000,
+        'none': 0,
+        'electric_heaters': 1200,
+        'electric_heating': 1800,
         'heat_pump': 5500,
-        'industrial': 8000
+        'gas_heating': 3000,
+        'split_ac': 3000,
+        'vrv_vrf': 8000,
+        'underfloor_heating': 4000,
+        'central_ac': 6000
     }
-    hvac = config.get('hvac_system', '').lower().replace(' ', '_')
-    if hvac in hvac_costs:
-        modifications_cost += hvac_costs[hvac]
+    hvac = config.get('hvac_system', '').lower()
+    for key, cost in hvac_costs.items():
+        if key in hvac.lower():
+            modifications_cost += cost
+            break
+
+    # Interior layout costs
+    interior_layout_costs = {
+        'open_space': 0,
+        'partitioned': 2000,
+        'built_in_furniture': 4000,
+        'custom_layout': 3500,
+        'mezzanine': 6000
+    }
+    interior_layout = config.get('interior_layout', '').lower()
+    for key, cost in interior_layout_costs.items():
+        if key in interior_layout.lower():
+            modifications_cost += cost
+            break
+
+    # Security systems costs
+    security_costs = {
+        'none': 0,
+        'basic': 800,
+        'standard': 1500,
+        'extended': 2500,
+        'high': 4000,
+        'maximum': 8000,
+        'industrial': 6000
+    }
+    security = config.get('security_systems', '').lower()
+    for key, cost in security_costs.items():
+        if key in security.lower():
+            modifications_cost += cost
+            break
+
+    # Exterior cladding costs
+    cladding_costs = {
+        'none': 0,
+        'trapezoidal': 1500,
+        'cassette': 2000,
+        'vinyl_siding': 2500,
+        'structural_plaster': 3000,
+        'wood_cladding': 3500,
+        'composite_panels': 4000,
+        'clinker_brick': 5000,
+        'natural_stone': 6000
+    }
+    cladding = config.get('exterior_cladding', '').lower()
+    for key, cost in cladding_costs.items():
+        if key in cladding.lower():
+            modifications_cost += cost
+            break
+
+    # Additional openings costs
+    additional_openings_costs = {
+        'none': 0,
+        'windows': 1500,
+        'doors': 1200,
+        'garage_door': 2500,
+        'loading_dock': 4000,
+        'ventilation': 800,
+        'skylights': 2000,
+        'custom': 2000
+    }
+    additional_openings = config.get('additional_openings', '').lower()
+    for key, cost in additional_openings_costs.items():
+        if key in additional_openings.lower():
+            modifications_cost += cost
+            break
+
+    # Fire safety systems costs
+    fire_safety_costs = {
+        'none': 0,
+        'basic': 500,
+        'standard': 1500,
+        'extended': 3000,
+        'full': 5000
+    }
+    fire_systems = config.get('fire_systems', '').lower()
+    for key, cost in fire_safety_costs.items():
+        if key in fire_systems.lower():
+            modifications_cost += cost
+            break
+
+    # Accessibility costs
+    accessibility_costs = {
+        'standard': 0,
+        'ramp': 1200,
+        'lift': 8000,
+        'full_ada': 5000
+    }
+    accessibility = config.get('accessibility', '').lower()
+    for key, cost in accessibility_costs.items():
+        if key in accessibility.lower():
+            modifications_cost += cost
+            break
+
+    # Paint and finish costs
+    paint_costs = {
+        'standard': 800,
+        'extended': 1200,
+        'marine': 2000,
+        'industrial': 1500,
+        'premium': 2500
+    }
+    paint_finish = config.get('paint_finish', '').lower()
+    for key, cost in paint_costs.items():
+        if key in paint_finish.lower():
+            modifications_cost += cost
+            break
+
+    # Transport type costs
+    transport_costs = {
+        'standard': 0,
+        'special': 1500,
+        'crane': 2000,
+        'multi_container': 800
+    }
+    transport_type = config.get('transport_type', '').lower()
+    for key, cost in transport_costs.items():
+        if key in transport_type.lower():
+            modifications_cost += cost
+            break
+
+    # Installation costs
+    installation_costs = {
+        'none': 0,
+        'basic': 1200,
+        'standard': 2000,
+        'full': 3500
+    }
+    installation = config.get('installation', '').lower()
+    for key, cost in installation_costs.items():
+        if key in installation.lower():
+            modifications_cost += cost
+            break
+
+    # Equipment costs
+    office_equipment_costs = {
+        'none': 0,
+        'basic': 2000,
+        'standard': 4000,
+        'full': 8000
+    }
+    office_equipment = config.get('office_equipment', '').lower()
+    for key, cost in office_equipment_costs.items():
+        if key in office_equipment.lower():
+            modifications_cost += cost
+            break
+
+    appliances_costs = {
+        'none': 0,
+        'basic': 1500,
+        'standard': 3000,
+        'full': 6000
+    }
+    appliances = config.get('appliances', '').lower()
+    for key, cost in appliances_costs.items():
+        if key in appliances.lower():
+            modifications_cost += cost
+            break
+
+    it_systems_costs = {
+        'none': 0,
+        'basic': 1000,
+        'standard': 2500,
+        'advanced': 5000
+    }
+    it_systems = config.get('it_systems', '').lower()
+    for key, cost in it_systems_costs.items():
+        if key in it_systems.lower():
+            modifications_cost += cost
+            break
 
     # Calculate delivery costs based on delivery zone
     delivery_cost = calculate_delivery_cost(config.get('delivery_zone', 'Local'), config.get('container_type', '20ft Standard'))
