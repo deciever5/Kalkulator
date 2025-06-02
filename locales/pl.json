@@ -679,7 +679,6 @@
   "it_systems_advanced": "Zaawansowane IT",
   "window_types_security": "Okna Antywłamaniowe",
   "roof_modifications_skylight": "Świetlik",
-  "lighting": "Oświetlenie",
   "it_systems_basic": "Podstawowa Sieć",
   "fire_systems": "Systemy Przeciwpożarowe",
   "additional_openings_door": "Dodatkowe Drzwi",
@@ -706,7 +705,6 @@
     "extreme": "Ekstremalna (30cm, aerogel/vakuum)"
   },
   "insulation_label": "Izolacja",
-  "lighting": "Oświetlenie",
   "roof_modifications_label": "Modyfikacje Dachu",
   "electrical_system": "System Elektryczny",
   "plumbing_system": "System Hydrauliczny",
