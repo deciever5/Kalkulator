@@ -39,6 +39,12 @@
     "bulk_pricing": "Ceny\nHurtowe",
     "custom_sizing_desc": "Projektowanie kontenerów według dokładnych specyfikacji"
   },
+  "flooring": "Podłogi",
+  "window_types": "Typy Okien", 
+  "lighting": "Oświetlenie",
+  "electrical_system": "System Elektryczny",
+  "plumbing_system": "System Hydrauliczny", 
+  "hvac_system": "System HVAC",
   "configure_container": "Skonfiguruj Swój Kontener",
   "simple_process_2_steps": "Prosty proces w 2 łatwych krokach",
   "step_1_configuration": "Krok 1: Konfiguracja",
