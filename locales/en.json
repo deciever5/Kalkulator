@@ -166,11 +166,11 @@
     "marine_grade": "Marine grade (salt resistance)"
   },
   "roof_modifications": {
-    "none": "Without modification (standard flat roof)",
-    "insulation": "Roof insulation additionally (10-20cm)",
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation (10-20cm)",
     "skylight": "Roof skylight (60x60, 90x90, 120x120cm)",
     "solar": "Solar installation (2-10kW)",
-    "sloped": "An oblique roof (one -sided, gable)",
+    "sloped": "Sloped roof (single-sided, gable)",
     "terrace": "Roof terrace (with balustrade)",
     "snow_removal": "Snow removal systems (heaters, gutters)",
     "fans": "Roof fans (industrial, quiet)",
@@ -249,6 +249,7 @@
   "lighting": {
     "none": "No lighting",
     "basic": "Basic LED",
+    "basic_led": "Basic LED lighting",
     "energy_efficient": "Energy efficient LED with sensors",
     "exterior": "Exterior lighting (floodlights)",
     "emergency": "Emergency lighting (battery backup)",
@@ -323,7 +324,11 @@
     "standard": "Standard (double glazing)",
     "energy_efficient": "Energy efficient (triple glazing)",
     "security": "Security (tempered glass)",
-    "marine_grade": "Marine grade (anti-corrosion)"
+    "marine_grade": "Marine grade (anti-corrosion)",
+    "panoramic": "Panoramic windows",
+    "sliding": "Sliding windows",
+    "tilt": "Tilt windows",
+    "skylight": "Skylight windows"
   },
   "window_types_standard": "Standard",
   "window_types_double": "Double Glazed",
@@ -363,9 +368,42 @@
     "basic": "Basic industrial concrete",
     "hardwood": "Hardwood flooring"
   },
-  "electrical_system": "Electrical System",
-  "plumbing_system": "Plumbing System",
-  "hvac_system": "HVAC System",
+  "electrical_system": {
+    "none": "No electrical installation",
+    "preparation": "Preparation (wiring without equipment)",
+    "basic": "Basic (lighting + outlets)",
+    "standard": "Standard (25A, lighting, 8 outlets)",
+    "extended": "Extended (40A, power, UPS, emergency)",
+    "industrial": "Industrial (63A, power, distribution panel)",
+    "it_server": "IT/Server (UPS, cooling, monitoring)",
+    "smart": "Smart (home automation, KNX)"
+  },
+  "plumbing_system": {
+    "none": "No water installation",
+    "preparation": "Preparation (pipes without fixtures)",
+    "basic": "Basic (sink + drain)",
+    "full": "Full (bathroom preparation)",
+    "commercial": "Commercial grade",
+    "industrial": "Industrial installation (pressure, filtration)",
+    "cold_water": "Cold water installation (sink)",
+    "hot_cold_water": "Cold + hot water (sink, washbasin)",
+    "basic_sanitary": "Basic sanitary (WC + sink)",
+    "standard_sanitary": "Standard (WC + sink + shower)",
+    "comfort_sanitary": "Comfort (WC + sink + cabin)",
+    "premium_sanitary": "Premium (jacuzzi, bidet, 2 sinks)"
+  },
+  "hvac_system": {
+    "none": "No HVAC (no heating and cooling)",
+    "basic": "Basic ventilation",
+    "electric_heating": "Electric heating (IR radiators)",
+    "gas_heating": "Gas heating (condensing boiler)",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "heat_pump": "Heat pump",
+    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "underfloor_heating": "Underfloor heating (electric/water)"
+  },
   "climate_zones": {
     "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
     "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
