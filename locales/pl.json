@@ -54,9 +54,13 @@
     "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "electrical_system": {
+    "none": "Bez instalacji elektrycznej",
+    "preparation": "Przygotowanie (przewody bez wyposażenia)",
     "basic": "Podstawowy (oświetlenie + gniazdka)",
     "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
     "extended": "Rozszerzony (40A, siła, UPS, emergency)",
+    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
+    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
     "smart": "Inteligentny (smart home, KNX, automatyka)"
   },
   "plumbing_system": {
@@ -75,18 +79,21 @@
     "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
     "heat_pump": "Pompa ciepła"
   },
-  "flooring": "Podłogi",
+  "flooring": {
+    "none": "Bez podłogi (blacha falista)",
+    "plywood": "Sklejka wodoodporna 18mm (standard)",
+    "anti_slip": "Sklejka antypoślizgowa 21mm",
+    "laminate": "Panele laminowane AC4/AC5",
+    "vinyl": "Panele winylowe wodoodporne (LVT)",
+    "carpet": "Wykładzina PVC 2-4mm",
+    "epoxy": "Podłoga przemysłowa epoksydowa",
+    "concrete": "Podłoga podwyższona (serwerownie)",
+    "basic": "Podstawowa (beton przemysłowy)",
+    "hardwood": "Drewno twarde (parkiet)"
+  },
   "electrical_system": "System Elektryczny", 
   "plumbing_system": "System Hydrauliczny",
   "hvac_system": "System HVAC",
-  "flooring_options": {
-    "basic": "Podstawowa (beton przemysłowy)",
-    "laminate": "Laminat (klasy handlowe)",
-    "vinyl": "Winyl LVT (wodoodporny)",
-    "epoxy": "Żywica epoksydowa (przemysłowa)",
-    "carpet": "Wykładzina dywanowa (biurowa)",
-    "hardwood": "Drewno twarde (parkiet)"
-  },
   "configure_container": "Skonfiguruj Swój Kontener",
   "simple_process_2_steps": "Prosty proces w 2 łatwych krokach",
   "step_1_configuration": "Krok 1: Konfiguracja",
