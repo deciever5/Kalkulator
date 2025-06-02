@@ -287,7 +287,7 @@
     "submit_inquiry": "Wyślij Zapytanie",
     "success_title": "Zapytanie Wysłane Pomyślnie!",
     "success_message": "Dziękujemy za zapytanie. Nasz zespół skontaktuje się z Państwem w ciągu 24 godzin ze szczegółową odpowiedzią.",
-    "next_steps": "Co Dzieje Się Dalej",
+    "next_steps": "Następne Kroki",
     "step_1": "Nasz ekspert przeanalizuje Twoje wymagania",
     "step_2": "Skontaktujemy się z Tobą w celu uzyskania dodatkowych informacji",
     "step_3": "Otrzymasz szczegółową ofertę dostosowaną do Twoich potrzeb",
@@ -295,9 +295,7 @@
     "new_inquiry": "Nowe Zapytanie",
     "error": "Błąd podczas wysyłania zapytania",
     "why_professional_inquiry": "Dlaczego Złożyć Profesjonalne Zapytanie?",
-    "preparation_tips": "Wskazówki Przygotowawcze",
-    "next_steps": "Następne Kroki",
-    "submit_inquiry": "Wyślij Zapytanie"
+    "preparation_tips": "Wskazówki Przygotowawcze"
   },
   "back_to_home": "← Powrót do strony głównej",
   "go_to_configurator": "🔧 Przejdź do konfiguratora",

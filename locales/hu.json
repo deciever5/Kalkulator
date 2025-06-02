@@ -806,7 +806,7 @@
     "total_cost_line": "A fordítás a következő:\n\n\"ÖSSZESEN KÖLTSÉG:\"\n\nA fordításban megőriztük a szimbólumokat (💰, ⚠️, ✅) és a formázást (kolon, pontok). A kifejezés hangzását is megpróbáltuk természetesnek tenni a magyar nyelvre.",
     "important_warning": "A fordítás a következő:\n\n                ⚠️ Fontos:\n\nA fordításban a következő pontokat tartottam szem előtt:\n\n- Szakmai üzleti hangnem megőrzése\n- Az emojik és szimbólumok (💰, ⚠️, ✅) fenntartása\n- A formázás (kolon, pontok) megőrzése\n- Megfelelő pénzügyi/üzleti terminológia használata\n- Természetes hangzás elérése a magyar nyelven",
     "preliminary_estimate_full": "A következő a fordítás:\n\n\"💰 Ezt a becslést tekintsd előzetesnek. A végleges ár a részletes specifikációktól, a jelenlegi anyagárak változásaitól és a rendelkezésre állásuktól függ. A pontosabb árbesorolásért kérjük, vegyél fel velünk kapcsolatot. ⚠️\"\n\nVagy rövidebb változat:\n\n\"💰 A becslés előzetes. A végleges ár a specifikációktól, anyagáraktól és a rendelkezésre állástól függ. ✅ Pontosabb árbesorolásért kérjük, vegyél fel velünk kapcsolatot.\"\n\nA második válto",
-    "configuration_saved_success": "A fordítás a következő:\n\n                ✅ A konfiguráció sikeresen mentésre került!\n\nA fordításban megőriztük a szimbólumokat (✅), a formázást (kolon, pontok), és megpróbáltuk megőrizni a szakmai üzleti hangot. A pénzügyi terminológiát is megfelelően alkalmaztuk."
+    "configuration_saved_success": "✅ Konfiguráció sikeresen elmentve!"
   },
   "destination": "Rendeltetés",
   "window_type": "Ablaktípus",

@@ -853,7 +853,7 @@
     "total_cost_line": "Preložené slovenské texty:\n\n\"CAŁKOWITY KOSZT:\" \n- \"Celková cena:\"\n\n\"💰\" \n- \"€\" (ako symbol pre euró)\n\n\"⚠️\" \n- \"⚠️\" (bez zmeny)\n\n\"✅\" \n- \"✅\" (bez zmeny)\n\nCelkový výsledok:\n\n\"Celková cena: ⚠️✅ €\"",
     "important_warning": "Preloženie textu:\n\n ⚠️ Dôležité:\n\nPoznámka: Preložené slová sú v súlade s požiadavkami na profesionálny obchodný ton, uchovanie emócií a symbolov, uchovanie formátov a používanie vhodných finančných a obchodných terminológii.\n\nPreložené slová:\n\n- ⚠️ Ważne: -> ⚠️ Dôležité:\n- 💰 (ako symbol pre peniaze) zostane bežne použité, pretože je všeobecne uznávané a používané v rôznych kontextoch.\n- ✅ (ako symbol pre potvrdenie) zostane bežne použité, pretože je všeobecne uznávané a používané v rôznych kontextoch.\n\nPreložené texty pre kont",
     "preliminary_estimate_full": "Preferovaný odhad. Konečná cena závisí od podrobných špecifikácií, aktuálnych cien materiálov a dostupnosti. Pre presný odhad sa kontaktujte našim tímom. 💰⚠️✅",
-    "configuration_saved_success": "Preložené slovenčie texty:\n\n✅ Konfigurácia uložená úspešne!"
+    "configuration_saved_success": "✅ Konfigurácia úspešne uložená!"
   },
   "destination": "Určenie",
   "window_type": "Typ Okna",
