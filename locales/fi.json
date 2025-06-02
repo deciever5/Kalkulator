@@ -308,7 +308,17 @@
     "expected_timeline": "Odottamaton aikataulu",
     "budget_range": "Rahoitusalue",
     "next_steps": "Mitä Seuraavaksi",
-    "submit_inquiry": "Lähetä Pyyntö",
+    "submit_inquiry": "Lähetä Hakemus",
+    "cost_estimation": {
+      "estimate_title": "💰 Projektin Kustannusarvio",
+      "cost_breakdown_title": "Kustannusjaottelu:",
+      "base_container_line": "Peruskontti:",
+      "modifications_equipment_line": "Muutokset ja varusteet:",
+      "total_cost_line": "KOKONAISKUSTANNUKSET:",
+      "important_warning": "⚠️ Tärkeää:",
+      "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista määrittelyistä, nykyisistä materiaalihinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
+      "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!"
+    },
     "timeline": {
       "asap": "Niin pian kuin mahdollista",
       "within_month": "Kuukauden sisällä",
@@ -503,7 +513,8 @@
     "none": "Ilman dodatkowych otworów (standardi drzwi)",
     "windows": "Lisäikkunat (1-4 kappaletta)",
     "doors": "Drzwi dodatkowe (serwisowe, hätä)",
-    "garage_door": "Autotallin ovi (segmentti, valssattu)",
+    ```text
+"garage_door": "Autotallin ovi (segmentti, valssattu)",
     "loading_dock": "Lastausramppi (hydraulinen)",
     "ventilation": "Tuuletusreiät (grillit, kaihtimet)",
     "skylights": "Kattikkunat/świetliki",
