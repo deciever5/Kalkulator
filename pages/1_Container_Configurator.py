@@ -690,81 +690,97 @@ with st.form("container_configuration_form"):
         profit_margin = cost_result.get('profit_margin', 0)
         labor_hours = cost_result.get('labor_hours', 0)
         
-        st.markdown(f"""
+        # Use proper Streamlit components instead of raw HTML
+        st.markdown("""
         <div class="cost-summary">
-            <h2 style="margin-top: 0;">{t('cost_estimation.estimate_title')}</h2>
-            <div class="cost-breakdown">
-                <h3>{t('cost_estimation.cost_breakdown_title')}</h3>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-                    <h4 style="margin-top: 0; color: #e8f4f8;">Materials & Equipment</h4>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
-                        <span>&nbsp;&nbsp;• {t('cost_estimation.base_container_line')}</span>
-                        <span>€{base_price:,.0f}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
-                        <span>&nbsp;&nbsp;• {t('cost_estimation.modifications_equipment_line')}</span>
-                        <span>€{modifications_cost:,.0f}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 0.3rem;">
-                        <span><strong>Materials Subtotal</strong></span>
-                        <span><strong>€{material_cost:,.0f}</strong></span>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-                    <h4 style="margin-top: 0; color: #e8f4f8;">Labor & Installation</h4>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
-                        <span>&nbsp;&nbsp;• Estimated Hours: {labor_hours:.0f}h</span>
-                        <span></span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
-                        <span>&nbsp;&nbsp;• Professional Installation</span>
-                        <span>€{labor_cost:,.0f}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
-                        <span>&nbsp;&nbsp;• Use Case Complexity ({use_case_multiplier:.1f}x)</span>
-                        <span>Applied</span>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-                    <h4 style="margin-top: 0; color: #e8f4f8;">Business Costs</h4>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
-                        <span>&nbsp;&nbsp;• Operating Costs (45%)</span>
-                        <span>€{operating_costs:,.0f}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
-                        <span>&nbsp;&nbsp;• Company Profit Margin (20%)</span>
-                        <span>€{profit_margin:,.0f}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin: 0.3rem 0;">
-                        <span>&nbsp;&nbsp;• Delivery & Logistics</span>
-                        <span>€{delivery_cost:,.0f}</span>
-                    </div>
-                </div>
-                
-                <hr style="border-color: rgba(255,255,255,0.3);">
-                <div style="display: flex; justify-content: space-between; margin: 1rem 0; font-size: 1.3rem;">
-                    <span><strong>{t('cost_estimation.total_cost_line')}</strong></span>
-                    <span><strong>€{total_cost:,.0f}</strong></span>
-                </div>
-                
-                <div style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9;">
-                    <strong>Price includes:</strong> All materials, professional installation, operating costs, and profit margin.<br>
-                    <strong>VAT:</strong> Not included (added separately for applicable customers)
-                </div>
-            </div>
-            <div class="special-notes">
-                <strong>{t('cost_estimation.important_warning')}</strong> {t('cost_estimation.preliminary_estimate_full')}
-                <br><br>
-                <strong>Configuration Impact:</strong> All your configurator selections are reflected in this pricing. 
-                Complex configurations require more materials, labor hours, and specialized work, which increases the total cost.
-                <br><br>
-                <strong>Cost Structure:</strong> Our pricing includes buying necessary items + professional installation work + operating costs + fair profit margin to ensure quality service.
-            </div>
         </div>
         """, unsafe_allow_html=True)
+        
+        with st.container():
+            st.markdown(f"## {t('cost_estimation.estimate_title')}")
+            st.markdown(f"### {t('cost_estimation.cost_breakdown_title')}")
+            
+            # Materials & Equipment Section
+            with st.expander("📦 Materials & Equipment", expanded=True):
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write(f"• {t('cost_estimation.base_container_line')}")
+                with col2:
+                    st.write(f"**€{base_price:,.0f}**")
+                    
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write(f"• {t('cost_estimation.modifications_equipment_line')}")
+                with col2:
+                    st.write(f"**€{modifications_cost:,.0f}**")
+                    
+                st.divider()
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write("**Materials Subtotal**")
+                with col2:
+                    st.write(f"**€{material_cost:,.0f}**")
+            
+            # Labor & Installation Section
+            with st.expander("⚙️ Labor & Installation", expanded=True):
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write(f"• Estimated Hours: {labor_hours:.0f}h")
+                with col2:
+                    st.write("")
+                    
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write("• Professional Installation")
+                with col2:
+                    st.write(f"**€{labor_cost:,.0f}**")
+                    
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write(f"• Use Case Complexity ({use_case_multiplier:.1f}x)")
+                with col2:
+                    st.write("Applied")
+            
+            # Business Costs Section
+            with st.expander("💼 Business Costs", expanded=True):
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write("• Operating Costs (45%)")
+                with col2:
+                    st.write(f"**€{operating_costs:,.0f}**")
+                    
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write("• Company Profit Margin (20%)")
+                with col2:
+                    st.write(f"**€{profit_margin:,.0f}**")
+                    
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.write("• Delivery & Logistics")
+                with col2:
+                    st.write(f"**€{delivery_cost:,.0f}**")
+            
+            # Total Cost
+            st.divider()
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                st.markdown(f"## {t('cost_estimation.total_cost_line')}")
+            with col2:
+                st.markdown(f"## **€{total_cost:,.0f}**")
+            
+            # Additional Information
+            st.info("**Price includes:** All materials, professional installation, operating costs, and profit margin.\n\n**VAT:** Not included (added separately for applicable customers)")
+            
+            # Special Notes
+            st.warning(f"**{t('cost_estimation.important_warning')}** {t('cost_estimation.preliminary_estimate_full')}")
+            
+            st.markdown("""
+            **Configuration Impact:** All your configurator selections are reflected in this pricing. 
+            Complex configurations require more materials, labor hours, and specialized work, which increases the total cost.
+            
+            **Cost Structure:** Our pricing includes buying necessary items + professional installation work + operating costs + fair profit margin to ensure quality service.
+            """)
 
         st.success(t('cost_estimation.configuration_saved_success'))
 
