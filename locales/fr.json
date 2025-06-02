@@ -49,7 +49,14 @@
     "tilt": "Fenêtres basculantes",
     "skylight": "Fenêtres de toit"
   },
-  "lighting": "Éclairage",
+  "lighting": {
+    "none": "Pas d'éclairage",
+    "basic_led": "Éclairage LED basique",
+    "energy_efficient": "LED économe en énergie",
+    "exterior": "Éclairage extérieur",
+    "emergency": "Éclairage d'urgence",
+    "smart": "Système d'éclairage intelligent"
+  },
   "electrical_system": {
     "none": "Pas d'installation électrique",
     "preparation": "Préparation (câblage sans équipement)",
@@ -377,7 +384,14 @@
   "environment": "Environnement",
   "finish_level": "Niveau de Finition",
   "climate_zone": "Zone Climatique",
-  "windows": "Fenêtres",
+  "windows": {
+    "none": "Pas de fenêtres (conteneur fermé)",
+    "one": "1 fenêtre",
+    "two": "2 fenêtres",
+    "three": "3 fenêtres",
+    "four": "4 fenêtres",
+    "five_plus": "5+ fenêtres"
+  },
   "additional_doors": "Portes supplémentaires",
   "yes": "Oui",
   "no": "Non",
@@ -682,7 +696,17 @@
     "industrial": "Grade industriel",
     "marine_grade": "Grade marin (résistance au sel)"
   },
-  "roof_modifications": "Modifications de Toit",
+  "roof_modifications": {
+    "none": "Aucune modification (toit plat standard)",
+    "insulation": "Isolation supplémentaire du toit",
+    "skylight": "Installation de puits de lumière",
+    "fans": "Ventilateurs de toit",
+    "solar": "Préparation panneaux solaires",
+    "antennas": "Supports antenne/communication",
+    "sloped": "Conversion toit en pente",
+    "terrace": "Terrasse/passerelle de toit",
+    "snow_removal": "Renforcement charge de neige"
+  },
   "electrical": {
     "basic": "De base (éclairage + prises)",
     "standard": "Standard (circuit 15a)",
@@ -729,7 +753,12 @@
     "anti_corrosion": "Anti-corrosion (C4)",
     "marine_grade": "Grade marin (C5M)"
   },
-  "insulation": "Isolation",
+  "insulation": {
+    "basic": "Basique (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extrême (200mm+)"
+  },
   "reinforcement": {
     "none": "Pas de renforts",
     "standard": "Renforcement standard",
@@ -795,7 +824,16 @@
   "advanced_comments": "Commentaires de modifications avancées",
   "delivery_zone_regional": "Régional (200 km)",
   "window_types_double": "Double vitrage",
-  "ventilation": "Ventilation",
+  "ventilation": {
+    "none": "Pas de ventilation",
+    "gravity": "Évents gravitaires (2-4 pcs, ajustables)",
+    "wall_fans": "Ventilateurs muraux (extraction)",
+    "mechanical": "Ventilation mécanique",
+    "heat_recovery": "Ventilation avec récupération de chaleur",
+    "split_ac": "Climatisation split (refroidissement + chauffage)",
+    "central_ac": "Climatisation centrale",
+    "industrial": "Ventilation industrielle"
+  },
   "it_systems": "Systèmes informatiques",
   "lighting_professional": "Professionnel",
   "interior_layout_open": "Espace ouvert",

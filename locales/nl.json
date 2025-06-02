@@ -49,7 +49,14 @@
     "tilt": "Kantelen ramen",
     "skylight": "Dakramen"
   },
-  "lighting": "Verlichting",
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
   "electrical_system": {
     "none": "Zonder elektrische installatie",
     "preparation": "Przygotowanie (bedrading zonder uitrusting)",
@@ -330,7 +337,14 @@
   "environment": "Omgeving",
   "finish_level": "Afwerkingsniveau",
   "climate_zone": "Klimaatzone",
-  "windows": "Ramen",
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
+  },
   "additional_doors": "Extra Deuren",
   "yes": "Ja",
   "no": "Nee",
@@ -635,7 +649,17 @@
     "industrial": "Industriële kwaliteit",
     "marine_grade": "Maritieme kwaliteit (zoutbestendig)"
   },
-  "roof_modifications": "Dakmodificaties",
+  "roof_modifications": {
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
+  },
   "electrical": {
     "basic": "Basis (verlichting + stopcontacten)",
     "standard": "Standaard (Circuit 15a)",
@@ -682,7 +706,12 @@
     "anti_corrosion": "Anti-corrosie (C4)",
     "marine_grade": "Maritieme kwaliteit (C5M)"
   },
-  "insulation": "Isolatie",
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
+  },
   "reinforcement": {
     "none": "Geen versterking",
     "standard": "Standaardversterking",
@@ -748,7 +777,16 @@
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dubbel geglazuurd",
-  "ventilation": "Ventilatie",
+  "ventilation": {
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
+  },
   "it_systems": "IT Systems",
   "lighting_professional": "Professioneel",
   "interior_layout_open": "Open Space",

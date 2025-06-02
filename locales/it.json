@@ -49,7 +49,14 @@
     "tilt": "Finestre a ribalta",
     "skylight": "Lucernari"
   },
-  "lighting": "Illuminazione",
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
   "electrical_system": {
     "none": "Nessun impianto elettrico",
     "preparation": "Preparazione (cablaggio senza attrezzature)",
@@ -330,7 +337,14 @@
   "environment": "Ambiente",
   "finish_level": "Livello di Finitura",
   "climate_zone": "Zona Climatica",
-  "windows": "Finestre",
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
+  },
   "additional_doors": "Porte Aggiuntive",
   "yes": "Sì",
   "no": "No",
@@ -635,7 +649,17 @@
     "industrial": "Grado industriale",
     "marine_grade": "Grado marino (resistenza salina)"
   },
-  "roof_modifications": "Modifiche al Tetto",
+  "roof_modifications": {
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
+  },
   "electrical": {
     "basic": "Base (illuminazione + prese)",
     "standard": "Standard (Circuit 15A)",
@@ -682,7 +706,12 @@
     "anti_corrosion": "Anti-corrosione (C4)",
     "marine_grade": "Grado marino (C5M)"
   },
-  "insulation": "Isolamento",
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
+  },
   "reinforcement": {
     "none": "Nessun rinforzo",
     "standard": "Rinforzo standard",
@@ -748,7 +777,16 @@
   "advanced_comments": "Commenti Modifiche Avanzate",
   "delivery_zone_regional": "Regionale (200km)",
   "window_types_double": "Doppi Vetri",
-  "ventilation": "Ventilazione",
+  "ventilation": {
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
+  },
   "it_systems": "Sistemi IT",
   "lighting_professional": "Professionale",
   "interior_layout_open": "Spazio Aperto",

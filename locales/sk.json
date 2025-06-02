@@ -49,7 +49,14 @@
     "tilt": "Nakláňanie okien",
     "skylight": "Strešné okná"
   },
-  "lighting": "Osvetlenie",
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
   "electrical_system": {
     "none": "Bez elektrickej inštalácie",
     "preparation": "Príprava (káble bez vybavenia)",
@@ -377,7 +384,14 @@
   "environment": "Prostredie",
   "finish_level": "Úroveň Dokončenia",
   "climate_zone": "Klimatická Zóna",
-  "windows": "Okná",
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
+  },
   "additional_doors": "Dodatočné dvere",
   "yes": "Áno",
   "no": "Nie",
@@ -682,7 +696,17 @@
     "industrial": "Priemyselná verzia",
     "marine_grade": "Morsky odolná verzia"
   },
-  "roof_modifications": "Úpravy Strechy",
+  "roof_modifications": {
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
+  },
   "electrical": {
     "basic": "Základná (osvetlenie + zásuvky)",
     "standard": "Štandard (obvod 15a)",
@@ -729,7 +753,12 @@
     "anti_corrosion": "Proti korózii (C4)",
     "marine_grade": "Morská trieda (C5M)"
   },
-  "insulation": "Izolácia",
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
+  },
   "reinforcement": {
     "none": "Žiadne posilnenie",
     "standard": "Štandardné posilnenie",
@@ -795,7 +824,16 @@
   "advanced_comments": "Pokročilé poznámky k modifikáciám",
   "delivery_zone_regional": "Regionálne (200 km)",
   "window_types_double": "Dvojité zasklenie",
-  "ventilation": "Ventilácia",
+  "ventilation": {
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
+  },
   "it_systems": "IT systémy",
   "lighting_professional": "Profesionálne",
   "interior_layout_open": "Otvorený priestor",

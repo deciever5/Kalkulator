@@ -49,7 +49,14 @@
     "tilt": "Bukóablakok",
     "skylight": "Tetőablakok"
   },
-  "lighting": "Világítás",
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
   "electrical_system": {
     "none": "Nélkül elektromos szerelés",
     "preparation": "Előkészítés (vezetékek nélkül felszerelés)",
@@ -330,7 +337,14 @@
   "environment": "Környezet",
   "finish_level": "Befejezési Szint",
   "climate_zone": "Klímazóna",
-  "windows": "Ablakok",
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
+  },
   "additional_doors": "További Ajtók",
   "yes": "Igen",
   "no": "Nem",
@@ -635,7 +649,17 @@
     "industrial": "Ipari minőség",
     "marine_grade": "Tengerparti minőség (sóálló)"
   },
-  "roof_modifications": "Tetőmódosítások",
+  "roof_modifications": {
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
+  },
   "electrical": {
     "basic": "Alapvető (világítás + konnektorok)",
     "standard": "Szabványos (15A áramkör)",
@@ -682,7 +706,12 @@
     "anti_corrosion": "Ant -korrozív (C4)",
     "marine_grade": "Tengerparti minőség (C5M)"
   },
-  "insulation": "Szigetelés",
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
+  },
   "reinforcement": {
     "none": "Nincs megerősítés",
     "standard": "Szabványos megerősítés",
@@ -748,7 +777,16 @@
   "advanced_comments": "Megjegyzések a fejlett módosításokról",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dupla mázas",
-  "ventilation": "Szellőztetés",
+  "ventilation": {
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
+  },
   "it_systems": "IT rendszerek",
   "lighting_professional": "Szakmai",
   "interior_layout_open": "Open Space",

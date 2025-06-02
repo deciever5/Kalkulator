@@ -49,7 +49,14 @@
     "tilt": "Kääntöikkunat",
     "skylight": "Kattikkunat"
   },
-  "lighting": "Valaistus",
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
   "electrical_system": {
     "none": "Ilman sähköasennusta",
     "preparation": "Valmistelu (johdot ilman varustusta)",
@@ -387,7 +394,14 @@
   "environment": "Ympäristö",
   "finish_level": "Viimeistelytyötaso",
   "climate_zone": "Ilmastovyöhyke",
-  "windows": "Ikkunat",
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
+  },
   "additional_doors": "Lisäovet",
   "yes": "Kyllä",
   "no": "Ei",
@@ -692,7 +706,17 @@
     "industrial": "Teollisuuslaatu",
     "marine_grade": "Merilaatu (suojaa suolaa)"
   },
-  "roof_modifications": "Kattomuutokset",
+  "roof_modifications": {
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
+  },
   "electrical": {
     "basic": "Perus (valot + virtauskaapit)",
     "standard": "Perus (15A sähkövirta)",
@@ -739,7 +763,12 @@
     "anti_corrosion": "Korroosionesto (C4)",
     "marine_grade": "Merimääräinen luokka (C5M)"
   },
-  "insulation": "Eristys",
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
+  },
   "reinforcement": {
     "none": "Ei vahvistusta",
     "standard": "Vakiovahvistus",
@@ -805,7 +834,16 @@
   "advanced_comments": "Edistyneiden muutosten kommentit",
   "delivery_zone_regional": "Alueellinen (200 km)",
   "window_types_double": "Kaksinkertainen lasi",
-  "ventilation": "Tuuletus",
+  "ventilation": {
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
+  },
   "it_systems": "Tietoliikennejärjestelmät",
   "lighting_professional": "Ammattitason",
   "interior_layout_open": "Avoin tila",

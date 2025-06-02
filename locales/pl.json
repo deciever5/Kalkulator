@@ -50,13 +50,12 @@
     "skylight": "Okna dachowe"
   },
   "lighting": {
-    "none": "Brak oświetlenia",
-    "basic": "Podstawowe LED",
-    "basic_led": "Podstawowe oświetlenie LED",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
-    "smart": "System inteligentny (oświetlenie sterowane)"
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
   },
   "electrical_system": {
     "none": "Bez instalacji elektrycznej",
@@ -310,12 +309,12 @@
   "finish_level": "Poziom Wykończenia",
   "climate_zone": "Strefa Klimatyczna",
   "windows": {
-    "none": "Bez okien (kontener zamknięty)",
-    "one": "Jedno okno (90x60cm, standardowe)",
-    "two": "Dwa okna (2x 90x60cm)",
-    "three": "Trzy okna (3x 90x60cm)",
-    "four": "Cztery okna (4x 90x60cm)",
-    "five_plus": "5+ okien (konfiguracja custom)"
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
   },
   "additional_doors": "Dodatkowe Drzwi",
   "yes": "Tak",
@@ -640,15 +639,15 @@
     "marine_grade": "Klasa morska (odporność na sól)"
   },
   "roof_modifications": {
-    "none": "Bez modyfikacji (dach standardowy płaski)",
-    "insulation": "Dodatkowa izolacja dachu (styropian/PIR)",
-    "skylight": "Świetlik dachowy (90x60cm, otwierany)",
-    "fans": "Wentylatory dachowe (przemysłowe, ciche)",
-    "solar": "Panele słoneczne (1-3kW, autonomiczne)",
-    "antennas": "Anteny/maszty (GSM, radio, satelitarne)",
-    "sloped": "Dach skośny (odpływ wody, estetyka)",
-    "terrace": "Taras dachowy (dostęp, balustrada)",
-    "snow_removal": "System usuwania śniegu (grzałki, ślizgi)"
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
   },
   "electrical": {
     "basic": "Podstawowa (oświetlenie + gniazdka)",
@@ -707,10 +706,10 @@
     "marine_grade": "Klasa morska (C5M)"
   },
   "insulation": {
-    "basic": "Podstawowa (5-10cm, styropian/wełna)",
-    "standard": "Standardowa (15cm, PIR/PUR)",
-    "premium": "Premium (20cm, wełna mineralna)",
-    "extreme": "Ekstremalna (30cm, aerogel/vakuum)"
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
     "none": "Bez wzmocnień",
@@ -778,14 +777,14 @@
   "delivery_zone_regional": "Regionalna (200km)",
   "window_types_double": "Podwójne Szyby",
   "ventilation": {
-    "none": "Bez wentylacji (kontener szczelny)",
-    "gravity": "Wentylacja grawitacyjna (kraty, wywietrzniki)",
-    "wall_fans": "Wentylatory ścienne (wyciąg 100-150mm)",
-    "mechanical": "Wentylacja mechaniczna (nawiew + wyciąg)",
-    "heat_recovery": "Rekuperacja (odzysk ciepła, filtracja)",
-    "split_ac": "Klimatyzacja split (chłodzenie + grzanie)",
-    "central_ac": "Klimatyzacja centralna (VRV/VRF)",
-    "industrial": "Wentylacja przemysłowa (ATEX, chemoodporna)"
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
   },
   "it_systems": "Systemy IT",
   "lighting_professional": "Profesjonalne",

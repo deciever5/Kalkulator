@@ -49,7 +49,14 @@
     "tilt": "Ventanas abatibles",
     "skylight": "Claraboyas"
   },
-  "lighting": "Iluminación",
+  "lighting": {
+    "none": "Sin iluminación",
+    "basic_led": "Iluminación LED básica",
+    "energy_efficient": "LED eficiente energéticamente",
+    "exterior": "Iluminación exterior",
+    "emergency": "Iluminación de emergencia",
+    "smart": "Sistema de iluminación inteligente"
+  },
   "electrical_system": {
     "none": "Sin instalación eléctrica",
     "preparation": "Preparación (cableado sin equipamiento)",
@@ -330,7 +337,14 @@
   "environment": "Ambiente",
   "finish_level": "Nivel de Acabado",
   "climate_zone": "Zona Climática",
-  "windows": "Ventanas",
+  "windows": {
+    "none": "Sin ventanas (contenedor cerrado)",
+    "one": "1 ventana",
+    "two": "2 ventanas",
+    "three": "3 ventanas",
+    "four": "4 ventanas",
+    "five_plus": "5+ ventanas"
+  },
   "additional_doors": "Puertas Adicionales",
   "yes": "Sí",
   "no": "No",
@@ -635,7 +649,17 @@
     "industrial": "Grado industrial",
     "marine_grade": "Grado marino (resistencia a la sal)"
   },
-  "roof_modifications": "Modificaciones del Techo",
+  "roof_modifications": {
+    "none": "Sin modificación (techo plano estándar)",
+    "insulation": "Aislamiento adicional del techo",
+    "skylight": "Instalación de claraboya",
+    "fans": "Ventiladores de techo",
+    "solar": "Preparación para paneles solares",
+    "antennas": "Soportes de antena/comunicación",
+    "sloped": "Conversión a techo inclinado",
+    "terrace": "Terraza/pasarela en el techo",
+    "snow_removal": "Refuerzo para carga de nieve"
+  },
   "electrical": {
     "basic": "Básico (iluminación + enchufes)",
     "standard": "Estándar (circuito 15A)",
@@ -682,7 +706,12 @@
     "anti_corrosion": "Anti -corrosivo (C4)",
     "marine_grade": "Grado marino (C5M)"
   },
-  "insulation": "Aislamiento",
+  "insulation": {
+    "basic": "Básico (50mm)",
+    "standard": "Estándar (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extremo (200mm+)"
+  },
   "reinforcement": {
     "none": "Sin refuerzo",
     "standard": "Refuerzo estándar",
@@ -748,7 +777,16 @@
   "advanced_comments": "Comentarios de Modificaciones Avanzadas",
   "delivery_zone_regional": "Regional (200 km)",
   "window_types_double": "Doble Acristalamiento",
-  "ventilation": "Ventilación",
+  "ventilation": {
+    "none": "Sin ventilación",
+    "gravity": "Respiraderos gravitacionales (2-4 pcs, ajustables)",
+    "wall_fans": "Ventiladores de pared (extracción)",
+    "mechanical": "Ventilación mecánica",
+    "heat_recovery": "Ventilación con recuperación de calor",
+    "split_ac": "Aire acondicionado split (frío + calor)",
+    "central_ac": "Aire acondicionado central",
+    "industrial": "Ventilación industrial"
+  },
   "it_systems": "Sistemas de TI",
   "lighting_professional": "Profesional",
   "interior_layout_open": "Espacio Abierto",

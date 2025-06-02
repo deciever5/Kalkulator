@@ -49,7 +49,14 @@
     "tilt": "Нахил вікон",
     "skylight": "Вікна даху"
   },
-  "lighting": "Освітлення",
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
   "electrical_system": {
     "none": "Без instalacji elektrycznej",
     "preparation": "Przygotowanie (przewody без wyposażenia)",
@@ -377,7 +384,14 @@
   "environment": "Середовище",
   "finish_level": "Рівень Оздоблення",
   "climate_zone": "Кліматична Зона",
-  "windows": "Вікна",
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
+  },
   "additional_doors": "Додаткові двері",
   "yes": "Так",
   "no": "Ні",
@@ -682,7 +696,17 @@
     "industrial": "Промисловий рівень",
     "marine_grade": "Морський рівень (стійкість до морської солі)"
   },
-  "roof_modifications": "Модифікації Даху",
+  "roof_modifications": {
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
+  },
   "electrical": {
     "basic": "Базовий (освітлення + роз'єми)",
     "standard": "Стандартний (15А обмотка)",
@@ -729,7 +753,12 @@
     "anti_corrosion": "Антикорозія (С4)",
     "marine_grade": "Морський клас (C5M)"
   },
-  "insulation": "Ізоляція",
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
+  },
   "reinforcement": {
     "none": "Немає підкріплення",
     "standard": "Стандартне підкріплення",
@@ -795,7 +824,16 @@
   "advanced_comments": "Коментарі щодо додаткових модифікацій",
   "delivery_zone_regional": "Регіональний (200км)",
   "window_types_double": "Подвійне скління",
-  "ventilation": "Вентиляція",
+  "ventilation": {
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
+  },
   "it_systems": "Системи IT",
   "lighting_professional": "Професійне освітлення",
   "interior_layout_open": "Відкритий простір",
