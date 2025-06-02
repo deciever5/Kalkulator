@@ -135,7 +135,9 @@ def render_shared_header(show_login=False, current_page="Home"):
             col_x, col_y = st.columns(2)
             with col_x:
                 if st.button(t('ui.login'), key=f"emp_login_{current_page}", use_container_width=True):
-                    if employee_password == "kan-bud-employee-2024":
+                    import os
+                    expected_password = os.getenv('EMPLOYEE_PASSWORD', '')
+                    if expected_password and employee_password == expected_password:
                         st.session_state.employee_logged_in = True
                         st.session_state.show_login = False
                         st.success(t('ui.logged_in'))
@@ -194,7 +196,9 @@ def render_shared_header(show_login=False, current_page="Home"):
             col_x, col_y = st.columns(2)
             with col_x:
                 if st.button(t('ui.login'), key="shared_emp_login", use_container_width=True):
-                    if employee_password == "kan-bud-employee-2024":
+                    import os
+                    expected_password = os.getenv('EMPLOYEE_PASSWORD', '')
+                    if expected_password and employee_password == expected_password:
                         st.session_state.employee_logged_in = True
                         st.session_state.show_login = False
                         st.success(t('ui.logged_in'))
