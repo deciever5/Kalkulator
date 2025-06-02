@@ -7,7 +7,13 @@ def translate_cost_estimation_keys():
     """Translate the new cost estimation keys to all languages"""
     
     # Initialize Groq client
-    client = Groq(api_key="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")
+    api_key = os.environ.get('GROQ_API_KEY')
+    if not api_key:
+        print("❌ Error: GROQ_API_KEY not found in environment variables")
+        print("Please set your Groq API key in the Secrets tool")
+        return
+    
+    client = Groq(api_key=api_key)
     
     # Load Polish translations (source)
     with open('locales/pl.json', 'r', encoding='utf-8') as f:
