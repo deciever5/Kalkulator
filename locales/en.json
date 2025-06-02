@@ -390,7 +390,127 @@
   "save_configuration": "💾 Save Configuration",
   "configuration_saved": "Configuration saved successfully!",
   "get_ai_analysis": "Receive AI analysis",
-  "systems_installations": "Systems and installations",
+  "systems_installations": "Systems and Installations",
+  "advanced_modifications": "Advanced Modifications",
+  "special_notes_systems": "Special Notes - Systems",
+  "describe_system_requirements": "Describe additional system requirements...",
+  "system_requirements_placeholder": "e.g. Special ventilation requirements, additional outlets, specialized installations",
+  "interior_layout": "Interior Layout",
+  "security_systems": "Security and Alarm Systems",
+  "exterior_cladding": "Exterior Cladding",
+  "additional_openings": "Additional Openings and Modifications",
+  "fire_safety_systems": "Fire Safety Systems",
+  "accessibility_features": "Accessibility and Ergonomics",
+  "paint_finish": "Painting and External Finishing",
+  "special_notes_modifications": "Special Notes - Modifications",
+  "describe_modification_requirements": "Describe additional modification requirements...",
+  "modification_requirements_placeholder": "e.g. Special RAL colors, non-standard opening sizes, additional structural reinforcements",
+  "transport_logistics": "Transport and Logistics",
+  "delivery_zone": "Delivery Zone",
+  "transport_type": "Transport Type",
+  "assembly_installation": "Assembly and Installation",
+  "equipment_extras": "Equipment and Extras",
+  "office_equipment": "Office/Interior Equipment",
+  "appliances": "Appliances (for residential containers)",
+  "it_multimedia": "IT and Multimedia Systems",
+  "special_notes_general": "Special Notes - General",
+  "describe_general_requirements": "Describe any additional requirements, specifications or project constraints...",
+  "general_requirements_placeholder": "e.g. Special completion deadlines, certification requirements, budget constraints, unusual applications",
+  "interior_layout_options": {
+    "open_space": "Open space (no partitions)",
+    "partitioned": "Partitioned (1-3 rooms)",
+    "built_in_furniture": "Built-in furniture (custom fit-out)",
+    "custom_layout": "Custom layout (custom design)",
+    "mezzanine": "Mezzanine/floor (increased space)"
+  },
+  "security_systems_options": {
+    "none": "No additional security (standard locks)",
+    "basic": "Basic (reinforced locks, window bars)",
+    "standard": "Standard (alarm, sensors, siren)",
+    "extended": "Extended (monitoring, motion/vibration sensors)",
+    "high": "High (IP CCTV, access control, intercom)",
+    "maximum": "Maximum (safe, biometrics, central monitoring)",
+    "industrial": "Industrial (ATEX, gas systems, panic room)"
+  },
+  "exterior_cladding_options": {
+    "none": "No cladding (standard container sheet)",
+    "trapezoidal": "Trapezoidal sheet (T18, T35, T55)",
+    "cassette": "Cassette sheet (flat, embossed)",
+    "vinyl_siding": "Vinyl siding (wood imitation, modern)",
+    "structural_plaster": "Structural plaster (silicone, acrylic)",
+    "wood_cladding": "Wood cladding (thermo, exotic)",
+    "composite_panels": "Composite panels (HPL, dibond)",
+    "clinker_brick": "Clinker brick (face, facade)",
+    "natural_stone": "Natural/artificial stone"
+  },
+  "additional_openings_options": {
+    "none": "No additional openings (standard doors)",
+    "windows": "Additional windows (1-4 pieces)",
+    "doors": "Additional doors (service, emergency)",
+    "garage_door": "Garage door (sectional, roller)",
+    "loading_dock": "Loading dock (hydraulic platform)",
+    "ventilation": "Ventilation openings (grilles, louvers)",
+    "skylights": "Roof windows/skylights",
+    "custom": "Custom openings (non-standard sizes)"
+  },
+  "fire_safety_options": {
+    "none": "No fire safety systems",
+    "basic": "Basic (extinguisher, smoke detector)",
+    "standard": "Standard (alarm system, emergency lighting)",
+    "extended": "Extended (sprinkler system, evacuation)",
+    "full": "Full system (gas suppression, monitoring)"
+  },
+  "accessibility_options": {
+    "standard": "Standard access (15-20cm threshold)",
+    "ramp": "Ramp (wheelchair accessible)",
+    "lift": "Hydraulic lift (disabled access)",
+    "full_ada": "Full ADA compliance (wide doors, grab bars)"
+  },
+  "paint_finish_options": {
+    "standard": "Standard coating C2 (RAL 7035 - light gray)",
+    "extended": "Extended coating C3 (improved durability)",
+    "marine": "Marine coating C5M (coastal environments)",
+    "industrial": "Industrial coating C4 (aggressive environments)",
+    "premium": "Premium (special RAL colors, textures)"
+  },
+  "delivery_zone_options": {
+    "local": "Local (up to 50km)",
+    "regional": "Regional (50-200km)",
+    "national": "National (whole country)",
+    "central_europe": "Central Europe (DE, CZ, SK, AT)",
+    "western_europe": "Western Europe (FR, NL, BE, LU)",
+    "international": "International (outside Europe)"
+  },
+  "transport_type_options": {
+    "standard": "Standard transport (13.6m semi-trailer)",
+    "special": "Special transport (oversized load)",
+    "crane": "Crane transport (assembly on site)",
+    "multi_container": "Multi-container transport (2+ units)"
+  },
+  "assembly_options": {
+    "none": "No assembly (delivery only)",
+    "basic": "Basic assembly (positioning, leveling)",
+    "standard": "Standard assembly (connections, tests)",
+    "full": "Full assembly (complete installation)"
+  },
+  "office_equipment_options": {
+    "none": "No equipment (empty container)",
+    "basic": "Basic (desk, chairs, cabinet)",
+    "standard": "Standard (furniture set, lighting)",
+    "full": "Full (complete office fit-out)"
+  },
+  "appliances_options": {
+    "none": "No appliances",
+    "basic": "Basic (refrigerator, microwave)",
+    "standard": "Standard (kitchen set, washing machine)",
+    "full": "Full (complete household appliances)"
+  },
+  "it_systems_options": {
+    "none": "No IT systems",
+    "basic": "Basic (internet, WiFi)",
+    "standard": "Standard (network, telephony)",
+    "advanced": "Advanced (server room, security)"
+  },
   "insulation_package": "Insulation Package",
   "structural_reinforcement": "Structural Reinforcement",
   "delivery_logistics": "Transport and logistics",

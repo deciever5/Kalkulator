@@ -384,10 +384,10 @@ with st.form("container_configuration_form"):
         )
 
     # Special Comments for Systems
-    st.markdown("### Uwagi Specjalne - Systemy")
+    st.markdown(f"### {t('special_notes_systems')}")
     system_comments = st.text_area(
-        "Opisz dodatkowe wymagania dotyczące systemów...",
-        placeholder="np. Specjalne wymagania dla wentylacji, dodatkowe gniazdka, specjalistyczne instalacje",
+        t('describe_system_requirements'),
+        placeholder=t('system_requirements_placeholder'),
         key="system_comments"
     )
 
@@ -402,114 +402,112 @@ with st.form("container_configuration_form"):
 
     with col1:
         # Interior Layout
+        interior_layout_options = [
+            t('interior_layout_options.open_space'),
+            t('interior_layout_options.partitioned'),
+            t('interior_layout_options.built_in_furniture'),
+            t('interior_layout_options.custom_layout'),
+            t('interior_layout_options.mezzanine')
+        ]
         interior_layout = st.selectbox(
-            "Układ Wewnętrzny",
-            options=[
-                "Przestrzeń otwarta (bez podziałów)",
-                "Z przegrodami (1-3 pomieszczenia)",
-                "Meble wbudowane (zabudowa na wymiar)",
-                "Układ niestandardowy (projekt custom)",
-                "Antresola/piętro (zwiększenie powierzchni)"
-            ]
+            t('interior_layout'),
+            options=interior_layout_options
         )
 
         # Security Systems
+        security_systems_options = [
+            t('security_systems_options.none'),
+            t('security_systems_options.basic'),
+            t('security_systems_options.standard'),
+            t('security_systems_options.extended'),
+            t('security_systems_options.high'),
+            t('security_systems_options.maximum'),
+            t('security_systems_options.industrial')
+        ]
         security_systems = st.selectbox(
-            "Zabezpieczenia i Systemy Alarmowe",
-            options=[
-                "Bez dodatkowych zabezpieczeń (zamki standardowe)",
-                "Podstawowe (wzmocnione zamki, kraty okienne)",
-                "Standardowe (alarm, czujniki, syrena)",
-                "Rozszerzone (monitoring, czujniki ruchu/wibracji)",
-                "Wysokie (CCTV IP, kontrola dostępu, domofon)",
-                "Maksymalne (sejf, biometria, central monitoring)",
-                "Przemysłowe (ATEX, systemy gazowe, panic room)"
-            ],
+            t('security_systems'),
+            options=security_systems_options,
             index=1
         )
 
         # Exterior Cladding
+        exterior_cladding_options = [
+            t('exterior_cladding_options.none'),
+            t('exterior_cladding_options.trapezoidal'),
+            t('exterior_cladding_options.cassette'),
+            t('exterior_cladding_options.vinyl_siding'),
+            t('exterior_cladding_options.structural_plaster'),
+            t('exterior_cladding_options.wood_cladding'),
+            t('exterior_cladding_options.composite_panels'),
+            t('exterior_cladding_options.clinker_brick'),
+            t('exterior_cladding_options.natural_stone')
+        ]
         exterior_cladding = st.selectbox(
-            "Okładzina Zewnętrzna",
-            options=[
-                "Bez okładziny (blacha kontenerowa standardowa)",
-                "Blacha trapezoidalna (T18, T35, T55)",
-                "Blacha kasetowa (płaska, przetłaczana)",
-                "Siding winylowy (imitacja drewna, nowoczesny)",
-                "Tynk strukturalny (silikonowy, akrylowy)",
-                "Okładzina drewniana (termo, egzotyczna)",
-                "Płyty kompozytowe (HPL, dibond)",
-                "Cegła klinkierowa (lica, elewacyjna)",
-                "Kamień naturalny/sztuczny"
-            ]
+            t('exterior_cladding'),
+            options=exterior_cladding_options
         )
 
         # Additional Openings
+        additional_openings_options = [
+            t('additional_openings_options.none'),
+            t('additional_openings_options.windows'),
+            t('additional_openings_options.doors'),
+            t('additional_openings_options.garage_door'),
+            t('additional_openings_options.loading_dock'),
+            t('additional_openings_options.ventilation'),
+            t('additional_openings_options.skylights'),
+            t('additional_openings_options.custom')
+        ]
         additional_openings = st.selectbox(
-            "Dodatkowe Otwory i Modyfikacje",
-            options=[
-                "Bez dodatkowych otworów (standardowe drzwi)",
-                "Drzwi dodatkowe pojedyncze (80-90cm)",
-                "Drzwi dwuskrzydłowe (160-180cm)",
-                "Drzwi przesuwne (do 300cm)",
-                "Bramy segmentowe (240-360cm)",
-                "Bramy rolowane (do 400cm)",
-                "Okna dodatkowe (różne wymiary)",
-                "Otwory techniczne (wentylacja, kable)",
-                "Rampa załadunkowa (hydrauliczna, mechaniczna)"
-            ]
+            t('additional_openings'),
+            options=additional_openings_options
         )
 
     with col2:
         # Fire Safety Systems
+        fire_safety_options = [
+            t('fire_safety_options.none'),
+            t('fire_safety_options.basic'),
+            t('fire_safety_options.standard'),
+            t('fire_safety_options.extended'),
+            t('fire_safety_options.full')
+        ]
         fire_systems = st.selectbox(
-            "Systemy Przeciwpożarowe",
-            options=[
-                "Bez systemów przeciwpożarowych",
-                "Podstawowe (gaśnica 6kg, czujka dymu)",
-                "Rozszerzone (gaśnice CO2, czujki temp.)",
-                "Automatyczne (tryskacze, centrala pożarowa)",
-                "Specjalistyczne (FM200, inergen, pianowe)",
-                "Przemysłowe (deluge, monitor, oddymianie)",
-                "Certyfikowane (zgodne z normami krajowymi)"
-            ]
+            t('fire_safety_systems'),
+            options=fire_safety_options
         )
 
         # Accessibility
+        accessibility_options = [
+            t('accessibility_options.standard'),
+            t('accessibility_options.ramp'),
+            t('accessibility_options.lift'),
+            t('accessibility_options.full_ada')
+        ]
         accessibility = st.selectbox(
-            "Dostępność i Ergonomia",
-            options=[
-                "Dostęp standardowy (próg 15-20cm)",
-                "Podjazd/rampa (dla wózków, niepełnosprawnych)",
-                "Winda/podnośnik (osobowa, towarowa)",
-                "Drzwi automatyczne (fotokomorka, przycisk)",
-                "Oświetlenie awaryjne (LED, akumulatorowe)",
-                "Systemy ostrzegawcze (dla niedosłyszących)",
-                "Ergonomia pracy (wysokość blatów, oświetlenie)"
-            ]
+            t('accessibility_features'),
+            options=accessibility_options
         )
 
         # Paint and Finish
+        paint_finish_options = [
+            t('paint_finish_options.standard'),
+            t('paint_finish_options.extended'),
+            t('paint_finish_options.marine'),
+            t('paint_finish_options.industrial'),
+            t('paint_finish_options.premium')
+        ]
         paint_finish = st.selectbox(
-            "Malowanie i Wykończenie Zewnętrzne",
-            options=[
-                "Bez malowania (blacha surowa, cynkowana)",
-                "Primer antykorozyjny (zabezpieczenie podstawowe)",
-                "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
-                "Powłoka ulepszona C3 (kolory RAL, satynowa)",
-                "Powłoka premium C4 (kolory specjalne, metalic)",
-                "Powłoka antykorozyjna C5-M (środowiska agresywne)",
-                "Wykończenie teksturowane (struktura, efekty)",
-                "Graffiti protection (powłoki antywandalizm)"
-            ],
-            index=2
+            t('paint_finish'),
+            options=paint_finish_options,
+            index=0
         )
 
     # Special Comments for Advanced Modifications
-    st.markdown("### Uwagi Specjalne - Modyfikacje")
+    st.markdown(f"### {t('special_notes_modifications')}")
     advanced_comments = st.text_area(
-        "Opisz dodatkowe wymagania dotyczące modyfikacji...",
-        placeholder="np. Specjalne kolory RAL, nietypowe rozmiary otworów, dodatkowe wzmocnienia konstrukcyjne",
+        t('describe_modification_requirements'),
+        placeholder=t('modification_requirements_placeholder'),
         key="advanced_comments"
     )
 
