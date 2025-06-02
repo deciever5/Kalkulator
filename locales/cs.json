@@ -41,7 +41,7 @@
   },
   "window_types": {
     "standard": "Standardní (dvojité zasklení)",
-    "energy_efficient": "[CS_NEEDS_TRANSLATION] Energooszczędne (potrójne szyby)",
+    "energy_efficient": "Energooszczędne (trojité zasklení)",
     "security": "Bezpečnost (temperované)",
     "marine_grade": "Třída moře (anti -koroze)",
     "panoramic": "Panoramatická okna",
@@ -50,10 +50,54 @@
     "skylight": "Střešní okna"
   },
   "lighting": "Osvětlení",
-  "electrical_system": "[CS_NEEDS_TRANSLATION] System elektryczny",
-  "plumbing_system": "[CS_NEEDS_TRANSLATION] System wodny",
-  "hvac_system": "[CS_NEEDS_TRANSLATION] System HVAC",
-  "flooring": "[CS_NEEDS_TRANSLATION] Podłoga",
+  "electrical_system": {
+    "none": "Bez elektrická instalace",
+    "preparation": "Przygotowanie (kabeláž bez vybavení)",
+    "basic": "Základní (osvětlení + zásuvky)",
+    "standard": "standardní",
+    "extended": "Rozšířené (40a, síla, UPS, nouzová nouze)",
+    "industrial": "Průmyslová (63a, síla, rozváděč)",
+    "it_server": "IT/server (UPS, chlazení, monitorování)",
+    "smart": "Inteligentní (KNX, automatizace)"
+  },
+  "plumbing_system": {
+    "none": "Bez vodovodní instalace",
+    "preparation": "Przygotowanie (potrubí bez armatur)",
+    "basic": "Základní (umyvadlo + odtok)",
+    "full": "Plná (příprava koupelny)",
+    "commercial": "Komerční třída",
+    "industrial": "Průmyslová instalace (tlak, filtrace)",
+    "cold_water": "Instalace studené vody (dřez)",
+    "hot_cold_water": "Studená + horká voda (dřez, dřez)",
+    "basic_sanitary": "Základní sanitární uzel (WC + Sink)",
+    "standard_sanitary": "standardní",
+    "comfort_sanitary": "Pohodlný uzel (WC + Sink + Cabin)",
+    "premium_sanitary": "prémiový"
+  },
+  "hvac_system": {
+    "none": "Bez HVAC (bez vytápění a chlazení)",
+    "basic": "Základní ventilace",
+    "electric_heating": "Electric heating (IR radiators)",
+    "gas_heating": "Gas heating (condensing boiler)",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Ovládací panel klimatizace (s filtrací, zvlhčování)",
+    "heat_pump": "Heat pump",
+    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "vrv_vrf": "systém",
+    "underfloor_heating": "Podlahové vytápění (elektrická/voda)"
+  },
+  "flooring": {
+    "none": "Bez podlahy (vlnitý list)",
+    "plywood": "Vodotěsná překližka 18 mm (standard)",
+    "anti_slip": "21 mm ne -chřipko",
+    "laminate": "AC4/AC5 laminované panely",
+    "vinyl": "Vodotěsné vinylové panely (LVT)",
+    "carpet": "2-4mm PVC podlahová krytina",
+    "epoxy": "Průmyslová epoxidová podlaha",
+    "concrete": "Vyvýšená podlaha (serverové pokoje)",
+    "basic": "Základní (průmyslový beton)",
+    "hardwood": "Tvrdé dřevo (parket)"
+  },
   "configure_container": "Nakonfigurujte Váš Kontejner",
   "simple_process_2_steps": "Jednoduchý proces ve 2 krocích",
   "step_1_configuration": "Krok 1: Konfigurace",
@@ -89,6 +133,34 @@
   "working_hours": "Pracovní doba",
   "mon_fri": "Po-Pá 8:00-17:00",
   "container": {
+    "types": {
+      "20ft_standard": "Standard 20 stop",
+      "40ft_standard": "40ft standard",
+      "40ft_high_cube": "40 stop HC",
+      "20ft_refrigerated": "20ft Chlazenný",
+      "20ft_double_door": "20 stop DD",
+      "40ft_double_door": "40 stop DD",
+      "40ft_hc_double_door": "40 stop HC DD",
+      "custom_size": "Vlastní Velikost",
+      "10ft_compact": "Kompaktní 10 stop (3 m x 2,4 m)",
+      "20ft_high_cube": "20 stop vysoká kostka (6 m x 2,7 m)",
+      "40ft_hc": "40 stop HC",
+      "45ft_standard": "Standard 45 stop",
+      "custom": "Zvyk",
+      "multi_unit": "Kontejner s více jednotkami",
+      "custom_dimensions": "Vlastní rozměry kontejneru",
+      "refurbished": "Renovovaný kontejner"
+    },
+    "use_cases": {
+      "office_space": "Kancelářský Prostor",
+      "residential": "Bydlení",
+      "storage": "Skladování",
+      "workshop": "Dílna",
+      "retail": "Maloobchod",
+      "restaurant": "Restaurace",
+      "medical": "Lékařský",
+      "laboratory": "Laboratoř"
+    },
     "environment": {
       "indoor": "Vnitřní",
       "outdoor": "Venkovní",
@@ -136,7 +208,7 @@
       "environment": "Prostředí",
       "finish_level": "Úroveň Dokončení",
       "flooring": "Podlaha",
-      "climate_zone": "[CS_NEEDS_TRANSLATION] Strefa Klimatyczna",
+      "climate_zone": "Klimatická Zóna",
       "number_of_windows": "Počet Oken",
       "additional_doors": "Další Dveře",
       "electrical_system": "Elektrický Systém",
@@ -144,7 +216,7 @@
       "hvac_system": "HVAC Systém",
       "insulation_package": "Izolační Balíček",
       "structural_reinforcement": "Strukturální Posílení",
-      "delivery_zone": "[CS_NEEDS_TRANSLATION] Strefa Dostawy"
+      "delivery_zone": "Zóna Doručení"
     }
   },
   "ai": {
@@ -179,7 +251,7 @@
     "project_name": "Název projektu",
     "project_location": "Umístění projektu",
     "expected_timeline": "Očekávaný časový plán",
-    "budget_Range": "Rozsah rozpočtu",
+    "budget_range": "Rozpočtové rozpětí",
     "timeline": {
       "asap": "Co nejdříve",
       "within_month": "Do měsíce",
@@ -243,7 +315,8 @@
     "new_inquiry": "Odeslat nový dotaz",
     "error": "Chyba při odesílání dotazu",
     "why_professional_inquiry": "Proč podat profesionální dotaz?",
-    "preparation_tips": "Tipy pro nejlepší výsledky"
+    "preparation_tips": "Tipy pro nejlepší výsledky",
+    "budget_Range": "Rozsah rozpočtu"
   },
   "back_to_home": "← Návrat na hlavní stránku",
   "go_to_configurator": "🔧 Přejděte do konfigurátoru",
@@ -256,7 +329,7 @@
   "purpose": "Účel",
   "environment": "Prostředí",
   "finish_level": "Úroveň Dokončení",
-  "climate_zone": "[CS_NEEDS_TRANSLATION] Strefa klimatyczna",
+  "climate_zone": "Klimatická Zóna",
   "windows": "Okna",
   "additional_doors": "Dodatečné dveře",
   "yes": "Ano",
@@ -327,7 +400,7 @@
   "describe_modification_requirements": "Popište další požadavky na úpravu ...",
   "modification_requirements_placeholder": "např. Speciální RAL barvy, nestandardní velikosti otvorů, další konstrukční posílení",
   "transport_logistics": "Doprava a logistika",
-  "delivery_zone": "[CS_NEEDS_TRANSLATION] Strefa dostawy",
+  "delivery_zone": "Dodací Zóna",
   "transport_type": "Typ Dopravy",
   "assembly_installation": "Montáž a instalace",
   "equipment_extras": "Vybavení a doplňky",
@@ -337,52 +410,6 @@
   "special_notes_general": "Speciální poznámky - Obecné",
   "describe_general_requirements": "Popište všechny další požadavky, specifikace nebo omezení projektu...",
   "general_requirements_placeholder": "např. Speciální termíny dokončení, certifikační požadavky, rozpočtová omezení",
-  "construction_material": "Konstrukční Materiál",
-  "insulation": {
-    "basic": "[CS_NEEDS_TRANSLATION] Podstawowa (5-10cm, styropian/wełna)",
-    "standard": "[CS_NEEDS_TRANSLATION] Standardowa (15cm, PIR/PUR)",
-    "premium": "[CS_NEEDS_TRANSLATION] Premium (20cm, wełna mineralna)",
-    "extreme": "[CS_NEEDS_TRANSLATION] Ekstremalna (30cm, aerogel/vakuum)"
-  },
-  "destination": "Určení",
-  "window_type": "Typ Okna",
-  "ventilation": {
-    "none": "[CS_NEEDS_TRANSLATION] Bez wentylacji (kontener szczelny)",
-    "gravity": "[CS_NEEDS_TRANSLATION] Wentylacja grawitacyjna (kraty, wywietrzniki)",
-    "wall_fans": "[CS_NEEDS_TRANSLATION] Wentylatory ścienne (wyciąg 100-150mm)",
-    "mechanical": "[CS_NEEDS_TRANSLATION] Wentylacja mechaniczna (nawiew + wyciąg)",
-    "heat_recovery": "[CS_NEEDS_TRANSLATION] Rekuperacja (odzysk ciepła, filtracja)",
-    "split_ac": "[CS_NEEDS_TRANSLATION] Klimatyzacja split (chłodzenie + grzanie)",
-    "central_ac": "[CS_NEEDS_TRANSLATION] Klimatyzacja centralna (VRV/VRF)",
-    "industrial": "[CS_NEEDS_TRANSLATION] Wentylacja przemysłowa (ATEX, chemoodporna)"
-  },
-  "roof_modifications": {
-    "none": "[CS_NEEDS_TRANSLATION] Bez modyfikacji (dach standardowy płaski)",
-    "insulation": "[CS_NEEDS_TRANSLATION] Dodatkowa izolacja dachu (styropian/PIR)",
-    "skylight": "[CS_NEEDS_TRANSLATION] Świetlik dachowy (90x60cm, otwierany)",
-    "fans": "[CS_NEEDS_TRANSLATION] Wentylatory dachowe (przemysłowe, ciche)",
-    "solar": "[CS_NEEDS_TRANSLATION] Panele słoneczne (1-3kW, autonomiczne)",
-    "antennas": "[CS_NEEDS_TRANSLATION] Anteny/maszty (GSM, radio, satelitarne)",
-    "sloped": "[CS_NEEDS_TRANSLATION] Dach skośny (odpływ wody, estetyka)",
-    "terrace": "[CS_NEEDS_TRANSLATION] Taras dachowy (dostęp, balustrada)",
-    "snow_removal": "[CS_NEEDS_TRANSLATION] System usuwania śniegu (grzałki, ślizgi)"
-  },
-  "additional_systems_modifications": "Další Systémy a Úpravy:",
-  "security": {
-    "basic": "[CS_NEEDS_TRANSLATION] Podstawowa (wzmocnione zamki)",
-    "standard": "[CS_NEEDS_TRANSLATION] Standardowa (przygotowanie alarmu)",
-    "advanced": "[CS_NEEDS_TRANSLATION] Zaawansowana (kamery + czujniki)",
-    "high_security": "[CS_NEEDS_TRANSLATION] Wysokie bezpieczeństwo (biometryka)"
-  },
-  "fire_systems": "Požární Systémy",
-  "accessibility": {
-    "standard": "[CS_NEEDS_TRANSLATION] Dostęp standardowy",
-    "ramp": "[CS_NEEDS_TRANSLATION] Podjazd dla wózków",
-    "full_ada": "[CS_NEEDS_TRANSLATION] Pełna zgodność ADA",
-    "disabled_friendly": "[CS_NEEDS_TRANSLATION] W pełni dostępny"
-  },
-  "painting": "Malování",
-  "assembly": "Montáž",
   "interior_layout_options": {
     "open_space": "Otevřený prostor (bez příček)",
     "partitioned": "Rozdělený (1-3 místnosti)",
@@ -501,24 +528,6 @@
   "fallback_cost_estimate": "Záložní Odhad Nákladů",
   "total_project_cost": "Celkové Náklady Projektu",
   "basic_calculation_ai_unavailable": "Základní výpočet když AI služby nejsou dostupné",
-  "cost_estimation": {
-    "project_estimate": "[CS_NEEDS_TRANSLATION] Szacunkowa Wycena Projektu",
-    "cost_breakdown": "[CS_NEEDS_TRANSLATION] Podział Kosztów",
-    "base_container": "[CS_NEEDS_TRANSLATION] Kontener bazowy",
-    "modifications_equipment": "[CS_NEEDS_TRANSLATION] Modyfikacje i wyposażenie",
-    "total_cost": "[CS_NEEDS_TRANSLATION] CAŁKOWITY KOSZT",
-    "important_notice": "[CS_NEEDS_TRANSLATION] Ważne",
-    "preliminary_estimate": "[CS_NEEDS_TRANSLATION] To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
-    "configuration_saved": "[CS_NEEDS_TRANSLATION] Konfiguracja zapisana pomyślnie!",
-    "estimate_title": "[CS_NEEDS_TRANSLATION] 💰 Szacunkowa Wycena Projektu",
-    "cost_breakdown_title": "[CS_NEEDS_TRANSLATION] Podział Kosztów:",
-    "base_container_line": "Text v polském jazyce: \"Kontener bazowy:\"\n\nPřeklad do češtiny: \"Bazový kontejner:\"\n\nPoznámka: Pokud chcete zachovat původní text včetně symbolů a emotikonek, můžete použít následující překlad:\n\n\"Bazový kontejner: 💰\"\n\nPokud chcete přidat varování, můžete použít:\n\n\"Bazový kontejner: ⚠️\"\n\nPokud chcete označit dokončený nebo schválený bazový kontejner, můžete použít:\n\n\"Bazový kontejner: ✅\"\n\nVšechny tyto varianty by měly být použity v závislosti na kontextu a požadavcích vašeho systému.",
-    "modifications_equipment_line": "[CS_NEEDS_TRANSLATION] Modyfikacje i wyposażenie:",
-    "total_cost_line": "Text v polském jazyce: \"CAŁKOWITY KOSZT:\"\n\nPřeklad do češtiny: \"CELKOVÁ ČÁSTKA:\"\n\nPoznámka: Překlad byl proveden s ohledem na požadavky, aby text zněl profesionálně a přirozeně v českém jazyce.",
-    "important_warning": "[CS_NEEDS_TRANSLATION] ⚠️ Ważne:",
-    "preliminary_estimate_full": "[CS_NEEDS_TRANSLATION] To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
-    "configuration_saved_success": "[CS_NEEDS_TRANSLATION] ✅ Konfiguracja zapisana pomyślnie!"
-  },
   "materials_base_cost": "Materiály a Základní Náklady",
   "labor_costs_40": "Náklady na Práci (40%)",
   "contingency_10": "Rezerva (10%)",
@@ -548,7 +557,7 @@
     "project_context": "Kontext Projektu",
     "project_location": "Umístění projektu",
     "project_name": "Název projektu",
-    "project_name_placeholder": "[CS_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
+    "project_name_placeholder": "např. Kontejnerová kancelář - Poznań",
     "file_upload": "Nahrání Souboru",
     "upload_drawings": "Nahrát technické výkresy",
     "file_formats_help": "Podporujeme soubory PDF, DWG, JPG a PNG. Doporučujeme formát PDF pro nejlepší analýzu.",
@@ -563,7 +572,7 @@
     "current_config": "Aktuální Konfigurace",
     "project_context": "Kontext Projektu",
     "project_name": "Název Projektu",
-    "project_name_placeholder": "[CS_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
+    "project_name_placeholder": "např. Kontejnerová kancelář - Poznań",
     "project_location": "Umístění Projektu",
     "file_upload": "Nahrání Souboru",
     "upload_drawings": "Nahrát technické výkresy",
@@ -574,11 +583,7 @@
     "analysis_results": "Výsledky Analýzy",
     "analysis_complete": "Analýza dokončena",
     "analysis_failed": "Analýza selhala",
-    "config_required": "Vyžadována Konfigurace",
-    "config_required_text": "Pro přesnou analýzu technických výkresů je vyžadována základní konfigurace kontejneru. Bez konfigurace bude analýza omezena na základní odhady.",
     "analysis_failed_reasons": "Možné důvody selhání analýzy",
-    "config_tip": "Tip",
-    "config_tip_text": "Před analýzou výkresů nakonfigurujte svůj kontejner pro získání přesnějších výsledků a přizpůsobených nabídek.",
     "error": "Chyba",
     "windows": "Okna",
     "doors": "Dveře",
@@ -598,7 +603,11 @@
     "tips_text": "Pro nejpřesnější analýzu se ujistěte, že vaše výkresy obsahují:",
     "tip_1": "Jasné rozměry a specifikace",
     "tip_2": "Všechny technické detaily viditelné",
-    "tip_3": "Vysoké rozlišení (minimum 300 DPI)"
+    "tip_3": "Vysoké rozlišení (minimum 300 DPI)",
+    "config_required": "Vyžadována Konfigurace",
+    "config_required_text": "Pro přesnou analýzu technických výkresů je vyžadována základní konfigurace kontejneru. Bez konfigurace bude analýza omezena na základní odhady.",
+    "config_tip": "Tip",
+    "config_tip_text": "Před analýzou výkresů nakonfigurujte svůj kontejner pro získání přesnějších výsledků a přizpůsobených nabídek."
   },
   "admin": {
     "access_required": "Vyžadován Přístup Administrátora",
@@ -626,6 +635,7 @@
     "industrial": "Průmyslová kvalita",
     "marine_grade": "Námořní kvalita (odolnost proti soli)"
   },
+  "roof_modifications": "Úpravy Střechy",
   "electrical": {
     "basic": "Základní (osvětlení + zásuvky)",
     "standard": "standardní",
@@ -645,6 +655,7 @@
     "central": "Centrální klimatizace",
     "heat_pump": "Tepelné čerpadlo"
   },
+  "security": "Bezpečnost",
   "cladding": {
     "none": "Žádné externí opláštění",
     "metal": "Kovový obklad",
@@ -664,12 +675,14 @@
     "sprinkler": "Sprinklerový systém",
     "full_system": "Úplný hasicí systém"
   },
+  "accessibility": "Přístupnost",
   "paint": {
     "standard": "Standardní povlak (C2)",
     "premium": "Prémiový nátěr (C3)",
     "anti_corrosion": "Antikorozní (C4)",
     "marine_grade": "Námořní kvalita (C5M)"
   },
+  "insulation": "Izolace",
   "reinforcement": {
     "none": "Žádné posily",
     "standard": "Standardní výztuž",
@@ -720,6 +733,7 @@
   "delivery_zone_international": "Mezinárodní",
   "paint_finish_custom": "Custom Color",
   "construction_material_aluminum": "Aluminum",
+  "construction_material": "Konstrukční Materiál",
   "transport_type_special": "Speciální doprava",
   "security_systems_basic": "Základní",
   "transport_type_crane": "S jeřábem",
@@ -734,6 +748,7 @@
   "advanced_comments": "Komentáře k pokročilým úpravám",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Double Glazed",
+  "ventilation": "Ventilace",
   "it_systems": "IT systémy",
   "lighting_professional": "Profesionální",
   "interior_layout_open": "Open Space",
@@ -746,6 +761,7 @@
   "window_types_security": "Anti -Burglary Windows",
   "roof_modifications_skylight": "Svěť",
   "it_systems_basic": "Základní síť",
+  "fire_systems": "Požární Systémy",
   "additional_openings_door": "Další dveře",
   "construction_material_composite": "Composite",
   "basic_configuration": "Základní konfigurace",
@@ -754,14 +770,17 @@
   "number_of_windows": "Počet oken",
   "insulation_label": "Izolace",
   "finish_levels": {
-    "basic": "Bez dokončení (technický kontejner, kostra)",
     "shell": "Surový stav (izolace + deska OSB)",
+    "specialist": "Specialista (lékařské/laboratorní standardy)",
+    "basic": "Bez dokončení (technický kontejner, kostra)",
     "standard": "Základní (izolace + technický povrch)",
     "comfort": "Pohodlné (prémiová izolace + úprava kanceláře)",
-    "luxury": "Luxusní (nejvyšší třída + hotelový povrch)",
-    "specialist": "Specialista (lékařské/laboratorní standardy)"
+    "luxury": "Luxusní (nejvyšší třída + hotelový povrch)"
   },
   "climate_zones": {
+    "maritime": "Mořské klima (vysoká vlhkost)",
+    "mountain": "Mountain Climate (vysoký UV, sníh)",
+    "tropical": "Tropické klima (vysoké teploty, vlhkost)",
     "northern_europe": "Severní Evropa (Skandinávie, -30 ° C až +25 ° C)",
     "central_europe": "Střední Evropa (Polsko, Německo, -20 ° C až +35 ° C)",
     "southern_europe": "Jižní Evropa (Španělsko, Itálie, -5 ° C až +45 ° C)",
@@ -778,5 +797,20 @@
   },
   "window_types_label": "Typy oken",
   "lighting_label": "Osvětlení",
-  "flooring_label": "Podlahy"
+  "flooring_label": "Podlahy",
+  "cost_estimation": {
+    "estimate_title": "Zde je překlad textu do češtiny:\n\n                💰 \"Odhadovaná cena projektu\"\n\nPoznámka: Pokud chcete použít více profesionální termín, můžete použít \"Odhadovaná cena realizace projektu\" nebo \"Odhadovaná cena projektu včetně nákladů\".\n\nPokud chcete zachovat stejný formát a použít stejné symboly, můžete použít:\n\n                💰 \"Odhadovaná cena projektu: ⚠️ Upozornění: cena může být odhadnuta a může se lišit od skutečné ceny ✅\"\n\nTento překlad zachovává profesionální tón, symboly a formát původního textu.",
+    "cost_breakdown_title": "Text v polském jazyce: \"Podział Kosztów:\"\n\nPřeklad do češtiny: \"Rozdělení nákladů:\"\n\nVzhledem k požadavkům na profesionální obchodní tón, zachování emojí a symbolů, uchování formátování a použití odpovídajícího měnového a podnikatelského jazyka, překlad zní přirozeně v češtině:\n\n\"Rozdělení nákladů:\"\n\nPokud je to nutné, můžete přidat další informace nebo detaily, aby překlad lépe odpovídal vašemu požadavku na container modification cost estimation interface.",
+    "base_container_line": "Text v polském jazyce: \"Kontener bazowy:\"\n\nPřeklad do češtiny: \"Bazový kontejner:\"\n\nPoznámka: Pokud chcete zachovat původní text včetně symbolů a emotikonek, můžete použít následující překlad:\n\n\"Bazový kontejner: 💰\"\n\nPokud chcete přidat varování, můžete použít:\n\n\"Bazový kontejner: ⚠️\"\n\nPokud chcete označit dokončený nebo schválený bazový kontejner, můžete použít:\n\n\"Bazový kontejner: ✅\"\n\nVšechny tyto varianty by měly být použity v závislosti na kontextu a požadavcích vašeho systému.",
+    "modifications_equipment_line": "Text v polském jazyce: \"Modyfikacje i wyposażenie:\"\n\nPřeklad do češtiny: \"Modyifikace a výbava:\"\n\nPoznámka: Překlad je poměrně jednoduchý, ale je důležité zachovat profesionální obchodní tón a správné obchodní termíny.\n\nPokud chcete přidat emojis a symbolů, můžete použít následující překlad:\n\n\"Modyifikace a výbava: 💰\"\n\nPokud chcete přidat varování nebo upozornění, můžete použít následující překlad:\n\n\"Modyifikace a výbava: ⚠️\"\n\nPokud chcete potvrdit nebo schválit, můžete použít následující překlad:\n\n\"Modyifikace a výbava: ✅\"\n\nVšechny tyto varianty by měly být použity v souladu s původním textem a požadavky.",
+    "total_cost_line": "Text v polském jazyce: \"CAŁKOWITY KOSZT:\"\n\nPřeklad do češtiny: \"CELKOVÁ ČÁSTKA:\"\n\nPoznámka: Překlad byl proveden s ohledem na požadavky, aby text zněl profesionálně a přirozeně v českém jazyce.",
+    "important_warning": "Použijte prosím následující překlad:\n\n                ⚠️ Důležité:\n\nTato verze zachovává požadované vlastnosti:\n\n- Profesionální obchodní tón\n- Emoje a symboly (💰, ⚠️, ✅)\n- Formátování (dvojtečky, interpunkce)\n- Uplatnění odpovídající měnové a obchodní terminologie\n- Přirozený projev v češtině",
+    "preliminary_estimate_full": "Převod polského textu do češtiny pro rozhraní pro odhad nákladů na modifikaci kontejneru:\n\n\"Je to pouze předběžný odhad. Konečná cena závisí na podrobných specifikacích, aktuálních cenách materiálů a dostupnosti. Pro přesnou cenovou nabídku se obraťte na náš tým.\"\n\nPoznámka: Přidávám malé vysvětlení pro lepší pochopení:\n- Používám přídavné jméno \"předběžný\" místo \"wstępne\" pro lepší přirozenost českého textu.\n- Používám přídavné jméno \"konečná\" místo \"ostateczna\" pro lepší přirozenost českého textu.\n- Používám přídavné jméno \"přesnou\" místo \"dokładnej\" pro lepší přirozenost českého textu.\n-",
+    "configuration_saved_success": "Translation of the Polish text to Czech:\n\n\"✅ Konfigurace uložena úspěšně!\"\n\nExplanation:\n- \"Konfiguracja\" is translated to \"Konfigurace\" (no change, as it's a technical term)\n- \"zapisana\" is translated to \"uložena\" (correct verb form for the given context)\n- \"pomyślnie\" is translated to \"úspěšně\" (correct adverb for the given context)\n\nNote: The translation maintains the professional business tone, keeps the emojis and symbols, preserves the formatting, and uses appropriate currency/business terminology."
+  },
+  "destination": "Určení",
+  "window_type": "Typ Okna",
+  "additional_systems_modifications": "Další Systémy a Úpravy:",
+  "painting": "Malování",
+  "assembly": "Montáž"
 }

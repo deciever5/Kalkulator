@@ -20,23 +20,23 @@
     "access_denied": "Pääsy estetty"
   },
   "nav": {
+    "container_configurator": "Konttikonfiguraattori",
+    "ai_cost_estimation": "AI-kustannusarvio",
+    "technical_analysis": "Tekninen analyysi",
+    "quote_generator": "Tarjousgeneraattori",
     "comparison_tool": "Vertailutyökalu",
     "comparison_tool_desc": "Vertaa vaihtoehtoja",
     "drawing_analysis": "Piirustusanalyysi",
     "drawing_analysis_desc": "Analysoi teknisiä piirustuksia",
     "admin_panel": "Hallintapaneeli",
     "admin_panel_desc": "Järjestelmän hallinta",
-    "ai_cost_estimation": "AI-kustannusarvio",
-    "container_configurator": "Konttikonfiguraattori",
-    "technical_analysis": "Tekninen analyysi",
-    "quote_generator": "Tarjousgeneraattori",
     "send_inquiry": "Lähetä\nHakemus",
     "send_inquiry_desc": "Tarjouspyyntömuotoilu",
     "drawing_analysis_customer": "Piirustus- ja\nAnalyysi",
     "drawing_analysis_customer_desc": "Ilmainen asiakirjan analyysi",
-    "custom_sizing": "Mukautettu\nKoon muotoilu",
-    "bulk_pricing_desc": "Useiden konttien tilausedut",
     "bulk_pricing": "Tilauksen\nHinta",
+    "bulk_pricing_desc": "Useiden konttien tilausedut",
+    "custom_sizing": "Mukautettu\nKoon muotoilu",
     "custom_sizing_desc": "Konttien suunnittelu tarkoilla mittaustiedoilla"
   },
   "window_types": {
@@ -50,10 +50,54 @@
     "skylight": "Kattikkunat"
   },
   "lighting": "Valaistus",
-  "electrical_system": "[FI_NEEDS_TRANSLATION] System elektryczny",
-  "plumbing_system": "[FI_NEEDS_TRANSLATION] System wodny",
-  "hvac_system": "[FI_NEEDS_TRANSLATION] System HVAC",
-  "flooring": "[FI_NEEDS_TRANSLATION] Podłoga",
+  "electrical_system": {
+    "none": "Ilman sähköasennusta",
+    "preparation": "Valmistelu (johdot ilman varustusta)",
+    "basic": "Perus (valaistus + pistorasiat)",
+    "standard": "Standardi (25A, valaistus, 8 pistorasiaa)",
+    "extended": "Laajennettu (40A, voima, UPS, hätä)",
+    "industrial": "Teollinen (63A, voima, jakokeskus)",
+    "it_server": "IT/Palvelin (UPS, jäähdytys, valvonta)",
+    "smart": "Älykäs (älykoti, KNX, automaatio)"
+  },
+  "plumbing_system": {
+    "none": "Ilman vesiasennus",
+    "preparation": "Valmistelu (putket ilman kalusteet)",
+    "basic": "Podstawowa (pesuallas + viemäri)",
+    "full": "Täysi (valmistelu kylpyhuone)",
+    "commercial": "Kaupallinen luokka",
+    "industrial": "Teollinen asennus (painevesi, suodatus)",
+    "cold_water": "Kylmävesiasennus (pesuallas)",
+    "hot_cold_water": "Kylmä + lämmin vesi (pesuallas, käsienpesuallas)",
+    "basic_sanitary": "Perus saniteettisolmu (WC + käsienpesuallas)",
+    "standard_sanitary": "Standardi solmu (WC + käsienpesuallas + suihku)",
+    "comfort_sanitary": "Mukava solmu (WC + käsienpesuallas + kaappi)",
+    "premium_sanitary": "Premium solmu (poreallas, bidee, 2 käsienpesuallasta)"
+  },
+  "hvac_system": {
+    "none": "No HVAC (no lämmitys and cooling)",
+    "basic": "Basic ventilation",
+    "electric_heating": "Electric heating (IR radiators)",
+    "gas_heating": "Gas heating (condensing boiler)",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Ilmastointilaitteen ohjauspaneeli (suodatuksella, kosteuttamisella)",
+    "heat_pump": "Heat pump",
+    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "vrv_vrf": "VRV/VRF järjestelmä (multi-zone, zone control)",
+    "underfloor_heating": "Lattialämmitys (sähkö/vesi)"
+  },
+  "flooring": {
+    "none": "Ilman lattiaa (aallotettu arkki)",
+    "plywood": "Vedenpitävä vaneri 18 mm (vakio)",
+    "anti_slip": "21 mm: n liukuvan vaneri",
+    "laminate": "AC4/AC5 -laminoidut paneelit",
+    "vinyl": "Vedenpitävä vinyylipaneelit (LVT)",
+    "carpet": "2-4 mm PVC-lattiapäällyste",
+    "epoxy": "Teollisuuden epoksilattia",
+    "concrete": "Korotettu lattia (palvelinhuoneet)",
+    "basic": "Podstawowa (beton teollinen)",
+    "hardwood": "Kova puu (parketti)"
+  },
   "configure_container": "Konfiguroi kontti",
   "simple_process_2_steps": "Yksinkertainen prosessi - 2 askelta",
   "step_1_configuration": "Vaihe 1: Konfiguraatio",
@@ -89,6 +133,34 @@
   "working_hours": "Työajat",
   "mon_fri": "Ma-Pe 8:00-17:00",
   "container": {
+    "types": {
+      "20ft_standard": "20ft standardi",
+      "40ft_standard": "40ft standardi",
+      "40ft_high_cube": "40ft HC",
+      "20ft_refrigerated": "20ft Jääkäyttö",
+      "20ft_double_door": "20ft Kaksiovinen",
+      "40ft_double_door": "40ft kaksoisovet",
+      "40ft_hc_double_door": "40ft HC kaksoisovet",
+      "custom_size": "Mukautettu koko",
+      "10ft_compact": "10ft Compact (3m x 2,4 m)",
+      "20ft_high_cube": "20 jalkaa korkea kuutio (6m x 2,7m)",
+      "45ft_standard": "45ft standardi",
+      "custom": "Räätälöity",
+      "multi_unit": "Moniyksikkö",
+      "custom_dimensions": "Mukautetut mitat säiliö",
+      "refurbished": "Kunnostettu astia",
+      "40ft_hc": "40ft HC"
+    },
+    "use_cases": {
+      "office_space": "Toimistotilat",
+      "residential": "Asunto",
+      "storage": "Varasto",
+      "workshop": "Työpaja",
+      "retail": "Myymälä",
+      "restaurant": "Ravintola",
+      "medical": "Lääketieteellinen",
+      "laboratory": "Laboratorio"
+    },
     "environment": {
       "indoor": "Sisätila",
       "outdoor": "Ulkoilma",
@@ -144,7 +216,54 @@
       "hvac_system": "HVAC-järjestelmä",
       "insulation_package": "Eristyspaketti",
       "structural_reinforcement": "Rakenteellinen vahvistus",
-      "delivery_zone": "Toimitusalue"
+      "delivery_zone": "Toimitusalue",
+      "building_type": "Rakennustyyppi",
+      "dimensions": "Mitat",
+      "width": "Leveys (m)",
+      "length": "Pituus (m)",
+      "height": "Korkeus (m)",
+      "wall_thickness": "Seinän paksuus (mm)",
+      "insulation": "Eristys",
+      "insulation_thickness": "Eristyksen paksuus (mm)",
+      "entrance": "Sisäänkäynti",
+      "entrance_type": "Sisäänkäynnin tyyppi",
+      "windows": "Ikkunat",
+      "window_count": "Ikkunoiden määrä",
+      "window_size": "Ikkunan koko",
+      "electrical": "Sähkö",
+      "plumbing": "Putket",
+      "heating": "Lämmitys",
+      "ventilation": "Ilmanvaihto",
+      "ceiling": "Katto",
+      "finish": "Viimeistely",
+      "exterior_finish": "Ulkopinnan viimeistely",
+      "interior_finish": "Sisäpinnan viimeistely",
+      "additional_features": "Lisäominaisuudet",
+      "quantity": "Määrä",
+      "location": "Sijainti",
+      "project_timeline": "Projektin aikataulu"
+    },
+    "placeholders": {
+      "enter_width": "Anna leveys",
+      "enter_length": "Anna pituus",
+      "enter_height": "Anna korkeus",
+      "select_option": "Valitse vaihtoehto",
+      "enter_quantity": "Anna määrä",
+      "enter_location": "Anna sijainti"
+    },
+    "options": {
+      "container_types": {
+        "office": "Toimistokontti",
+        "residential": "Asuinkontti",
+        "storage": "Varastokontti",
+        "workshop": "Työpaja",
+        "restaurant": "Ravintola/kahvila",
+        "medical": "Lääkärin vastaanotto",
+        "educational": "Luokkahuone",
+        "retail": "Myyntipiste",
+        "industrial": "Teollisuus",
+        "agricultural": "Maatalous"
+      }
     }
   },
   "ai": {
@@ -179,7 +298,19 @@
     "project_name": "Hankkeen nimi",
     "project_location": "Hankkeen sijainti",
     "expected_timeline": "Odottamaton aikataulu",
-    "budget_Range": "Budjetin laajuus",
+    "budget_range": "Rahoitusalue",
+    "next_steps": "Mitä Seuraavaksi",
+    "submit_inquiry": "Lähetä Hakemus",
+    "cost_estimation": {
+      "estimate_title": "💰 Projektin Kustannusarvio",
+      "cost_breakdown_title": "\"Kustannusten jakaminen:\"\n\nKäytän tässä yhteydessä seuraavia ohjeita:\n\n- Ammattitaitoinen liiketoimintatoni\n- Säilytä emojis ja symbolit (💰, ⚠️, ✅)\n- Säilytä muotoilu (kolonit, pisteet)\n- Käytä sopivaa valuuttaa/yrityskäsitettä\n- Säilytä luonnollinen suomenkielinen ääni\n\nKun kääntäessäsi tekstiä, muista pitää huolta siitä, että käännös on luonnollinen ja ammattimainen.",
+      "base_container_line": "Kontinerin perusversio: 💰\n\nTässä kohtaa voit määrittää perusversioksi valitun kontinerin ominaisuudet ja kustannukset. Huomioi, että muutokset perusversioon voivat vaikuttaa koko kustannukseen. ⚠️\n\nVoit valita perusversioksi olemassa olevan kontinerin tai luoda uuden. Tämän jälkeen voit määrittää kontinerin mitat, materiaalit ja muut ominaisuudet. ✅",
+      "modifications_equipment_line": "Määrittelyt ja varustukset:\n\nKäännös on tehty yllä mainituilla vaatimuksilla huomioiden:\n\n- Ammattitaitoinen liiketoimintatoni\n- Emoji- ja symbolien säilyttäminen (💰, ⚠️, ✅)\n- Muotoilun säilyttäminen (kolonit, pisteet)\n- Oikeanlainen valuutta- ja liiketoimintaterminologia\n- Luonnollinen suomenkielinen äänenkannattaminen\n\nKäännös on seuraava:\n\nMäärittelyt ja varustukset:\n\nJos haluat, voit lisätä tämän kappaleen tekstiin.",
+      "total_cost_line": "YHTEINEN KUSTANNUKSET: 💰\n\nTämä teksti on suoraan käännetty, mutta se voi vaikuttaa hieman epämukavaksi lukijalle. Yleensä suomennoksessa olisi käytetty muotoa \"Yhteinen kustannus\" tai \"Yhteiskustannukset\". \n\nJos haluatte, voimme muuttaa tekstiä hieman muotoiluun sopivammaksi. Esimerkiksi:\n\nYHTEINEN KUSTANNUKSET: 💰\n\nTai:\n\nYHTEISKUSTANNUKSET: 💰\n\nValitse sopivin muoto, joka sopii parhaiten kustannusarvioinnin käyttöliittymän tyyliin.",
+      "important_warning": "Finnish translation: \"⚠️ Huomio:\"\n\nExplanation:\n- \"Ważne\" translates to \"Huomio\" in Finnish, which means \"Important\" or \"Note\".\n- The emoji ⚠️ is preserved as it is, as it's a warning symbol.\n- The rest of the text remains the same, maintaining the professional business tone and formatting.",
+      "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista määrittelyistä, nykyisistä materiaalien hinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
+      "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!"
+    },
     "timeline": {
       "asap": "Niin pian kuin mahdollista",
       "within_month": "Kuukauden sisällä",
@@ -232,10 +363,8 @@
     "marketing_consent": "Hyväksyn markkinointitiedotteet KAN-BUDin palveluista ja tuotteista (vapaaehtoinen)",
     "data_retention": "Tietojen säilytys",
     "fill_required_fields": "Täytä kaikki vaadittavat kentät, joissa on *",
-    "submit_inquiry": "Lähetä Hakemus",
     "success_title": "Pyyntö lähetetty onnistuneesti!",
     "success_message": "Kiitos pyynnöstäsi. Meidän tiimimme yhteyttäsi 24 tuntia sisällä yksityiskohtaisella vastauksella.",
-    "next_steps": "Mitä Seuraavaksi",
     "step_1": "Asiantuntija analysoi vaatimuksiasi",
     "step_2": "Yhteyttä sinuun saadaan lisätietoja",
     "step_3": "Sinulle lähetetään yksilöllinen tarjous, joka vastaa tarpeitasi",
@@ -243,7 +372,8 @@
     "new_inquiry": "Lähetä Uusi Pyyntö",
     "error": "Virhe lähettäessä pyyntöä",
     "why_professional_inquiry": "Miksi Lähetetään Ammattitaitoinen Pyyntö?",
-    "preparation_tips": "Paras Tulos Saavutamiseksi"
+    "preparation_tips": "Paras Tulos Saavutamiseksi",
+    "budget_Range": "Budjetin laajuus"
   },
   "back_to_home": "← Takaisin etusivulle",
   "go_to_configurator": "🔧 Siirry konfiguroijaan",
@@ -335,63 +465,17 @@
   "appliances": "Kodinkoneet (asuinkonteille)",
   "it_multimedia": "IT- ja multimediajärjestelmät",
   "special_notes_general": "Erityishuomautukset - Yleinen",
-  "describe_general_requirements": "[FI_NEEDS_TRANSLATION] Opisz wszelkie dodatkowe wymagania, specyfikacje lub ograniczenia projektu...",
+  "describe_generalrequirements": "Kuvaile kaikki lisävaatimukset, spesifikaatiot tai projektin rajoitukset...",
   "general_requirements_placeholder": "esim. Erityiset valmistumispäivämäärät, sertifiointivaatimukset, budjettirajoitukset",
-  "construction_material": "Rakennusmateriaali",
-  "insulation": {
-    "basic": "[FI_NEEDS_TRANSLATION] Podstawowa (5-10cm, styropian/wełna)",
-    "standard": "[FI_NEEDS_TRANSLATION] Standardowa (15cm, PIR/PUR)",
-    "premium": "[FI_NEEDS_TRANSLATION] Premium (20cm, wełna mineralna)",
-    "extreme": "[FI_NEEDS_TRANSLATION] Ekstremalna (30cm, aerogel/vakuum)"
-  },
-  "destination": "Kohde",
-  "window_type": "Ikkunatyyppi",
-  "ventilation": {
-    "none": "[FI_NEEDS_TRANSLATION] Bez wentylacji (kontener szczelny)",
-    "gravity": "[FI_NEEDS_TRANSLATION] Wentylacja grawitacyjna (kraty, wywietrzniki)",
-    "wall_fans": "[FI_NEEDS_TRANSLATION] Wentylatory ścienne (wyciąg 100-150mm)",
-    "mechanical": "[FI_NEEDS_TRANSLATION] Wentylacja mechaniczna (nawiew + wyciąg)",
-    "heat_recovery": "[FI_NEEDS_TRANSLATION] Rekuperacja (odzysk ciepła, filtracja)",
-    "split_ac": "[FI_NEEDS_TRANSLATION] Klimatyzacja split (chłodzenie + grzanie)",
-    "central_ac": "[FI_NEEDS_TRANSLATION] Klimatyzacja centralna (VRV/VRF)",
-    "industrial": "[FI_NEEDS_TRANSLATION] Wentylacja przemysłowa (ATEX, chemoodporna)"
-  },
-  "roof_modifications": {
-    "none": "[FI_NEEDS_TRANSLATION] Bez modyfikacji (dach standardowy płaski)",
-    "insulation": "[FI_NEEDS_TRANSLATION] Dodatkowa izolacja dachu (styropian/PIR)",
-    "skylight": "[FI_NEEDS_TRANSLATION] Świetlik dachowy (90x60cm, otwierany)",
-    "fans": "[FI_NEEDS_TRANSLATION] Wentylatory dachowe (przemysłowe, ciche)",
-    "solar": "[FI_NEEDS_TRANSLATION] Panele słoneczne (1-3kW, autonomiczne)",
-    "antennas": "[FI_NEEDS_TRANSLATION] Anteny/maszty (GSM, radio, satelitarne)",
-    "sloped": "[FI_NEEDS_TRANSLATION] Dach skośny (odpływ wody, estetyka)",
-    "terrace": "[FI_NEEDS_TRANSLATION] Taras dachowy (dostęp, balustrada)",
-    "snow_removal": "[FI_NEEDS_TRANSLATION] System usuwania śniegu (grzałki, ślizgi)"
-  },
-  "additional_systems_modifications": "Lisäjärjestelmät ja Muutokset:",
-  "security": {
-    "basic": "[FI_NEEDS_TRANSLATION] Podstawowa (wzmocnione zamki)",
-    "standard": "[FI_NEEDS_TRANSLATION] Standardowa (przygotowanie alarmu)",
-    "advanced": "[FI_NEEDS_TRANSLATION] Zaawansowana (kamery + czujniki)",
-    "high_security": "[FI_NEEDS_TRANSLATION] Wysokie bezpieczeństwo (biometryka)"
-  },
-  "fire_systems": "Paloturvallisuusjärjestelmät",
-  "accessibility": {
-    "standard": "[FI_NEEDS_TRANSLATION] Dostęp standardowy",
-    "ramp": "[FI_NEEDS_TRANSLATION] Podjazd dla wózków",
-    "full_ada": "[FI_NEEDS_TRANSLATION] Pełna zgodność ADA",
-    "disabled_friendly": "[FI_NEEDS_TRANSLATION] W pełni dostępny"
-  },
-  "painting": "Maalaus",
-  "assembly": "Kokoaminen",
   "interior_layout_options": {
     "open_space": "Avoin tila (ei väliseiniä)",
     "partitioned": "Osioilla (1-3 huonetta)",
     "built_in_furniture": "Rakennetut huonekalut (räätälöityjä rakennuksia)",
-    "custom_layout": "[FI_NEEDS_TRANSLATION] Układ niestandardowy (projekt custom)",
+    "custom_layout": "Układ niestandardi (projekt custom)",
     "mezzanine": "Mezzanine/lattia (pinnan nousu)"
   },
   "security_systems_options": {
-    "none": "[FI_NEEDS_TRANSLATION] Bez dodatkowych zabezpieczeń (zamki standardowe)",
+    "none": "Ilman dodatkowych zailmanpieczeń (zamki standardi)",
     "basic": "Perus (vahvistetut lukot, ikkunarrillit)",
     "standard": "Vakio (hälytys, anturit, sireeni)",
     "extended": "Laajennettu (valvonta, liike-/värähtelyanturit)",
@@ -411,13 +495,13 @@
     "natural_stone": "Luonnollinen/keinotekoinen kivi"
   },
   "additional_openings_options": {
-    "none": "[FI_NEEDS_TRANSLATION] Bez dodatkowych otworów (standardowe drzwi)",
+    "none": "Ilman dodatkowych otworów (standardi drzwi)",
     "windows": "Lisäikkunat (1-4 kappaletta)",
     "doors": "Drzwi dodatkowe (serwisowe, hätä)",
     "garage_door": "Autotallin ovi (segmentti, valssattu)",
     "loading_dock": "Lastausramppi (hydraulinen)",
     "ventilation": "Tuuletusreiät (grillit, kaihtimet)",
-    "skylights": "[FI_NEEDS_TRANSLATION] Okna dachowe/świetliki",
+    "skylights": "Kattikkunat/świetliki",
     "custom": "Otwory niestandardi (nietypowe wymiary)"
   },
   "fire_safety_options": {
@@ -468,14 +552,14 @@
   },
   "appliances_options": {
     "none": "Ilman kodinkoneita",
-    "basic": "[FI_NEEDS_TRANSLATION] Podstawowy (lodówka, mikrofalówka)",
+    "basic": "Perus (lodówka, mikrofalówka)",
     "standard": "Standardi (zestaw kuchenny, pralka)",
     "full": "Täydelliset (täydelliset kodinkoneet)"
   },
   "it_systems_options": {
     "none": "Ilman järjestelmiä IT",
     "basic": "Perus (internet, WiFi)",
-    "standard": "[FI_NEEDS_TRANSLATION] Standardowe (sieć, telefonia)",
+    "standard": "Standardi (sieć, telefonia)",
     "advanced": "Edistynyt (palvelinhuone, suojaus)"
   },
   "insulation_package": "Eristyspaketti",
@@ -501,24 +585,6 @@
   "fallback_cost_estimate": "Vaihtoehtoinen Kustannusarvio",
   "total_project_cost": "Hankkeen kokonaiskustannukset",
   "basic_calculation_ai_unavailable": "Peruslaskelma kun AI-palvelut eivät ole saatavilla",
-  "cost_estimation": {
-    "project_estimate": "[FI_NEEDS_TRANSLATION] Szacunkowa Wycena Projektu",
-    "cost_breakdown": "[FI_NEEDS_TRANSLATION] Podział Kosztów",
-    "base_container": "[FI_NEEDS_TRANSLATION] Kontener bazowy",
-    "modifications_equipment": "[FI_NEEDS_TRANSLATION] Modyfikacje i wyposażenie",
-    "total_cost": "[FI_NEEDS_TRANSLATION] CAŁKOWITY KOSZT",
-    "important_notice": "[FI_NEEDS_TRANSLATION] Ważne",
-    "preliminary_estimate": "[FI_NEEDS_TRANSLATION] To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
-    "configuration_saved": "[FI_NEEDS_TRANSLATION] Konfiguracja zapisana pomyślnie!",
-    "estimate_title": "💰 Projektin Kustannusarvio",
-    "cost_breakdown_title": "\"Kustannusten jakaminen:\"\n\nKäytän tässä yhteydessä seuraavia ohjeita:\n\n- Ammattitaitoinen liiketoimintatoni\n- Säilytä emojis ja symbolit (💰, ⚠️, ✅)\n- Säilytä muotoilu (kolonit, pisteet)\n- Käytä sopivaa valuuttaa/yrityskäsitettä\n- Säilytä luonnollinen suomenkielinen ääni\n\nKun kääntäessäsi tekstiä, muista pitää huolta siitä, että käännös on luonnollinen ja ammattimainen.",
-    "base_container_line": "Kontinerin perusversio: 💰\n\nTässä kohtaa voit määrittää perusversioksi valitun kontinerin ominaisuudet ja kustannukset. Huomioi, että muutokset perusversioon voivat vaikuttaa koko kustannukseen. ⚠️\n\nVoit valita perusversioksi olemassa olevan kontinerin tai luoda uuden. Tämän jälkeen voit määrittää kontinerin mitat, materiaalit ja muut ominaisuudet. ✅",
-    "modifications_equipment_line": "Määrittelyt ja varustukset:\n\nKäännös on tehty yllä mainituilla vaatimuksilla huomioiden:\n\n- Ammattitaitoinen liiketoimintatoni\n- Emoji- ja symbolien säilyttäminen (💰, ⚠️, ✅)\n- Muotoilun säilyttäminen (kolonit, pisteet)\n- Oikeanlainen valuutta- ja liiketoimintaterminologia\n- Luonnollinen suomenkielinen äänenkannattaminen\n\nKäännös on seuraava:\n\nMäärittelyt ja varustukset:\n\nJos haluat, voit lisätä tämän kappaleen tekstiin.",
-    "total_cost_line": "YHTEINEN KUSTANNUKSET: 💰\n\nTämä teksti on suoraan käännetty, mutta se voi vaikuttaa hieman epämukavaksi lukijalle. Yleensä suomennoksessa olisi käytetty muotoa \"Yhteinen kustannus\" tai \"Yhteiskustannukset\". \n\nJos haluatte, voimme muuttaa tekstiä hieman muotoiluun sopivammaksi. Esimerkiksi:\n\nYHTEINEN KUSTANNUKSET: 💰\n\nTai:\n\nYHTEISKUSTANNUKSET: 💰\n\nValitse sopivin muoto, joka sopii parhaiten kustannusarvioinnin käyttöliittymän tyyliin.",
-    "important_warning": "[FI_NEEDS_TRANSLATION] ⚠️ Ważne:",
-    "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista määrittelyistä, nykyisistä materiaalien hinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
-    "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!"
-  },
   "materials_base_cost": "Materiaalit & Perus Kustannus",
   "labor_costs_40": "Työn Kustannukset (40%)",
   "contingency_10": "Varaudu (10%)",
@@ -548,7 +614,7 @@
     "project_context": "Hankkeen konteksti",
     "project_location": "Hankkeen sijainti",
     "project_name": "Hankkeen nimi",
-    "project_name_placeholder": "[FI_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
+    "project_name_placeholder": "esim. Konttihuoneisto - Poznań",
     "file_upload": "Tiedoston lataaminen",
     "upload_drawings": "Lataa teknisiä piirustuksia",
     "file_formats_help": "Tuetut tiedostomuodot ovat PDF, DWG, JPG ja PNG. Suosittelemme PDF-muotoa parhaan analyysin vuoksi.",
@@ -563,7 +629,7 @@
     "current_config": "Nykyinen Asetus",
     "project_context": "Projektikonteksti",
     "project_name": "Projektin nimi",
-    "project_name_placeholder": "[FI_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
+    "project_name_placeholder": "esim. Konttoriauto - Poznań",
     "project_location": "Projektin sijainti",
     "file_upload": "Tiedostojen lataus",
     "upload_drawings": "Lataa tekniset piirustukset",
@@ -574,11 +640,7 @@
     "analysis_results": "Analyysin tulokset",
     "analysis_complete": "Analyysi valmis",
     "analysis_failed": "Analyysi epäonnistui",
-    "config_required": "Asetus vaaditaan",
-    "config_required_text": "Tarkasta teknisen piirustuksen analyysi vaatii perustason konttoria koskevan asetuksen. Ilman asetusta analyysi on rajoittunut perustason arvioihin.",
     "analysis_failed_reasons": "Mahdolliset syynä analyysin epäonnistumiselle",
-    "config_tip": "Ohje",
-    "config_tip_text": "Määritä säilö ennen piirustusten analysointia saadaksesi tarkempia tuloksia ja mukautettuja arvoja.",
     "error": "Virhe",
     "windows": "Ikkunat",
     "doors": "Ovet",
@@ -598,7 +660,11 @@
     "tips_text": "Parhaan analyysin saavuttamiseksi varmista, että piirustukset sisältävät:",
     "tip_1": "Selkeät mitat ja määritykset",
     "tip_2": "Kaikki tekniset tiedot näkyvissä",
-    "tip_3": "Korkearesoluutio (minimi 300 DPI)"
+    "tip_3": "Korkearesoluutio (minimi 300 DPI)",
+    "config_required": "Asetus vaaditaan",
+    "config_required_text": "Tarkasta teknisen piirustuksen analyysi vaatii perustason konttoria koskevan asetuksen. Ilman asetusta analyysi on rajoittunut perustason arvioihin.",
+    "config_tip": "Ohje",
+    "config_tip_text": "Määritä säilö ennen piirustusten analysointia saadaksesi tarkempia tuloksia ja mukautettuja arvoja."
   },
   "admin": {
     "access_required": "Hallintotunnukset vaadittu",
@@ -626,6 +692,7 @@
     "industrial": "Teollisuuslaatu",
     "marine_grade": "Merilaatu (suojaa suolaa)"
   },
+  "roof_modifications": "Kattomuutokset",
   "electrical": {
     "basic": "Perus (valot + virtauskaapit)",
     "standard": "Perus (15A sähkövirta)",
@@ -645,6 +712,7 @@
     "central": "Keskusilmatointi",
     "heat_pump": "Lämmityspumppu"
   },
+  "security": "Turvallisuus",
   "cladding": {
     "none": "Ei ulkomaista kattilaa",
     "metal": "Metallinen sivu",
@@ -664,12 +732,14 @@
     "sprinkler": "Suihkulaitteet",
     "full_system": "Kokonaisuus tulenjohto"
   },
+  "accessibility": "Esteettömyys",
   "paint": {
     "standard": "Vakiopäällyste (C2)",
     "premium": "Premium-maalaus (C3)",
     "anti_corrosion": "Korroosionesto (C4)",
     "marine_grade": "Merimääräinen luokka (C5M)"
   },
+  "insulation": "Eristys",
   "reinforcement": {
     "none": "Ei vahvistusta",
     "standard": "Vakiovahvistus",
@@ -720,6 +790,7 @@
   "delivery_zone_international": "Kansainvälinen",
   "paint_finish_custom": "Mukautettu väri",
   "construction_material_aluminum": "Alumiini",
+  "construction_material": "Rakennusmateriaali",
   "transport_type_special": "Erityisliikenne",
   "security_systems_basic": "Perus",
   "transport_type_crane": "Kranilla",
@@ -734,6 +805,7 @@
   "advanced_comments": "Edistyneiden muutosten kommentit",
   "delivery_zone_regional": "Alueellinen (200 km)",
   "window_types_double": "Kaksinkertainen lasi",
+  "ventilation": "Tuuletus",
   "it_systems": "Tietoliikennejärjestelmät",
   "lighting_professional": "Ammattitason",
   "interior_layout_open": "Avoin tila",
@@ -746,6 +818,7 @@
   "window_types_security": "Turvallisuusikkunat",
   "roof_modifications_skylight": "Sähkövalaisin",
   "it_systems_basic": "Perusverkko",
+  "fire_systems": "Paloturvallisuusjärjestelmät",
   "additional_openings_door": "Lisää oviaukkoja",
   "construction_material_composite": "Komposiittimateriaali",
   "basic_configuration": "Peruskokoonpano",
@@ -754,14 +827,17 @@
   "number_of_windows": "Ikkunoiden lukumäärä",
   "insulation_label": "Eristys",
   "finish_levels": {
-    "basic": "Ilman viimeistelyä (tekninen astia, luuranko)",
     "shell": "Raaka tila (eristys + OSB -levy)",
+    "specialist": "Asiantuntija (lääketieteelliset/laboratoriostandardit)",
+    "basic": "Ilman viimeistelyä (tekninen astia, luuranko)",
     "standard": "Perus (eristys + tekninen viimeistely)",
     "comfort": "Mukava (premium -eristys + toimistopinta)",
-    "luxury": "Ylellinen (korkein luokka + hotellin viimeistely)",
-    "specialist": "Asiantuntija (lääketieteelliset/laboratoriostandardit)"
+    "luxury": "Ylellinen (korkein luokka + hotellin viimeistely)"
   },
   "climate_zones": {
+    "maritime": "Meri ilmasto (korkea kosteus)",
+    "mountain": "Vuoristoilmasto (korkea UV, lumi)",
+    "tropical": "Trooppinen ilmasto (korkeat lämpötilat, kosteus)",
     "northern_europe": "Pohjois -Eurooppa (Skandinavia, -30 ° C -+25 ° C)",
     "central_europe": "Keski -Eurooppa (Puola, Saksa, -20 ° C -+35 ° C)",
     "southern_europe": "Etelä -Eurooppa (Espanja, Italia, -5 ° C -+45 ° C)",
@@ -778,5 +854,20 @@
   },
   "window_types_label": "Ikkunatyypit",
   "lighting_label": "Valaistus",
-  "flooring_label": "Lattiat"
+  "flooring_label": "Lattiat",
+  "cost_estimation": {
+    "estimate_title": "💰 Projektin Kustannusarvio",
+    "cost_breakdown_title": "\"Kustannusten jakaminen:\"\n\nKäytän tässä yhteydessä seuraavia ohjeita:\n\n- Ammattitaitoinen liiketoimintatoni\n- Säilytä emojis ja symbolit (💰, ⚠️, ✅)\n- Säilytä muotoilu (kolonit, pisteet)\n- Käytä sopivaa valuuttaa/yrityskäsitettä\n- Säilytä luonnollinen suomenkielinen ääni\n\nKun kääntäessäsi tekstiä, muista pitää huolta siitä, että käännös on luonnollinen ja ammattimainen.",
+    "base_container_line": "Kontinerin perusversio: 💰\n\nTässä kohtaa voit määrittää perusversioksi valitun kontinerin ominaisuudet ja kustannukset. Huomioi, että muutokset perusversioon voivat vaikuttaa koko kustannukseen. ⚠️\n\nVoit valita perusversioksi olemassa olevan kontinerin tai luoda uuden. Tämän jälkeen voit määrittää kontinerin mitat, materiaalit ja muut ominaisuudet. ✅",
+    "modifications_equipment_line": "Määrittelyt ja varustukset:\n\nKäännös on tehty yllä mainituilla vaatimuksilla huomioiden:\n\n- Ammattitaitoinen liiketoimintatoni\n- Emoji- ja symbolien säilyttäminen (💰, ⚠️, ✅)\n- Muotoilun säilyttäminen (kolonit, pisteet)\n- Oikeanlainen valuutta- ja liiketoimintaterminologia\n- Luonnollinen suomenkielinen äänenkannattaminen\n\nKäännös on seuraava:\n\nMäärittelyt ja varustukset:\n\nJos haluat, voit lisätä tämän kappaleen tekstiin.",
+    "total_cost_line": "YHTEINEN KUSTANNUKSET: 💰\n\nTämä teksti on suoraan käännetty, mutta se voi vaikuttaa hieman epämukavaksi lukijalle. Yleensä suomennoksessa olisi käytetty muotoa \"Yhteinen kustannus\" tai \"Yhteiskustannukset\". \n\nJos haluatte, voimme muuttaa tekstiä hieman muotoiluun sopivammaksi. Esimerkiksi:\n\nYHTEINEN KUSTANNUKSET: 💰\n\nTai:\n\nYHTEISKUSTANNUKSET: 💰\n\nValitse sopivin muoto, joka sopii parhaiten kustannusarvioinnin käyttöliittymän tyyliin.",
+    "important_warning": "Finnish translation: \"⚠️ Huomio:\"\n\nExplanation:\n- \"Ważne\" translates to \"Huomio\" in Finnish, which means \"Important\" or \"Note\".\n- The emoji ⚠️ is preserved as it is, as it's a warning symbol.\n- The rest of the text remains the same, maintaining the professional business tone and formatting.",
+    "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista määrittelyistä, nykyisistä materiaalien hinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
+    "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!"
+  },
+  "destination": "Kohde",
+  "window_type": "Ikkunatyyppi",
+  "additional_systems_modifications": "Lisäjärjestelmät ja Muutokset:",
+  "painting": "Maalaus",
+  "assembly": "Kokoaminen"
 }

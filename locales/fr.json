@@ -20,29 +20,29 @@
     "access_denied": "Accès refusé"
   },
   "nav": {
+    "container_configurator": "Configurateur de conteneurs",
+    "ai_cost_estimation": "Estimation de coût IA",
+    "technical_analysis": "Analyse technique",
+    "quote_generator": "Générateur de devis",
     "comparison_tool": "Outil de comparaison",
     "comparison_tool_desc": "Comparer les options",
     "drawing_analysis": "Analyse de dessins",
     "drawing_analysis_desc": "Analyser les dessins techniques",
     "admin_panel": "Panneau d'administration",
     "admin_panel_desc": "Gestion du système",
-    "ai_cost_estimation": "Estimation de coût IA",
-    "container_configurator": "Configurateur de conteneurs",
-    "technical_analysis": "Analyse technique",
-    "quote_generator": "Générateur de devis",
     "send_inquiry": "Envoyer\nEnquête",
     "send_inquiry_desc": "Offrir un formulaire de demande",
     "drawing_analysis_customer": "Analyse de\nPlans",
     "drawing_analysis_customer_desc": "Analyse gratuite de documents",
-    "custom_sizing": "Taille personnalisée\n",
-    "bulk_pricing_desc": "Remises pour plusieurs conteneurs",
     "bulk_pricing": "Prix\nBulk",
+    "bulk_pricing_desc": "Remises pour plusieurs conteneurs",
+    "custom_sizing": "Taille personnalisée\n",
     "custom_sizing_desc": "Concevoir des conteneurs avec des spécifications exactes"
   },
   "window_types": {
     "standard": "Standard (25A, éclairage, 8 prises)",
     "energy_efficient": "Économie d'énergie (triple fenêtres)",
-    "security": "[FR_NEEDS_TRANSLATION] Bezpieczeństwo (hartowane)",
+    "security": "Sanspieczeństwo (hartowane)",
     "marine_grade": "Classe en mer (anti-corrosion)",
     "panoramic": "Fenêtres panoramiques",
     "sliding": "Fenêtres coulissantes",
@@ -50,10 +50,54 @@
     "skylight": "Fenêtres de toit"
   },
   "lighting": "Éclairage",
-  "electrical_system": "[FR_NEEDS_TRANSLATION] System elektryczny",
-  "plumbing_system": "[FR_NEEDS_TRANSLATION] System wodny",
-  "hvac_system": "[FR_NEEDS_TRANSLATION] System HVAC",
-  "flooring": "[FR_NEEDS_TRANSLATION] Podłoga",
+  "electrical_system": {
+    "none": "Pas d'installation électrique",
+    "preparation": "Préparation (câblage sans équipement)",
+    "basic": "De base (éclairage + prises)",
+    "standard": "Standard (25A, éclairage, 8 prises)",
+    "extended": "Étendu (40A, alimentation, UPS, urgence)",
+    "industrial": "Industriel (63A, alimentation, tableau de distribution)",
+    "it_server": "IT/Serveur (UPS, refroidissement, surveillance)",
+    "smart": "Intelligent (domotique, KNX)"
+  },
+  "plumbing_system": {
+    "none": "Pas d'installation électrique",
+    "preparation": "Préparation (câblage sans équipement)",
+    "basic": "De base (éclairage + prises)",
+    "full": "Plein (préparation de la salle de bain)",
+    "commercial": "Classe commerciale",
+    "industrial": "Industriel (63A, alimentation, tableau de distribution)",
+    "cold_water": "Installation eau froide (évier)",
+    "hot_cold_water": "Eau froide + chaude (évier, lavabo)",
+    "basic_sanitary": "Sanitaire de base (WC + lavabo)",
+    "standard_sanitary": "Standard (WC + lavabo + douche)",
+    "comfort_sanitary": "Confort (WC + lavabo + cabine)",
+    "premium_sanitary": "Premium (jacuzzi, bidet, 2 lavabos)"
+  },
+  "hvac_system": {
+    "none": "Pas de CVC (pas de chauffage et refroidissement)",
+    "basic": "Ventilation de base",
+    "electric_heating": "Chauffage électrique (radiateurs IR)",
+    "gas_heating": "Chauffage au gaz (chaudière à condensation)",
+    "split_ac": "Climatisation split (refroidissement + chauffage)",
+    "central_ac": "Panneau de commande de climatisation (avec filtration, hydratant)",
+    "heat_pump": "Pompe à chaleur",
+    "electric_heaters": "Radiateurs électriques (1-3kW, convecteurs)",
+    "vrv_vrf": "Système VRV/VRF (multizones, contrôle de zones)",
+    "underfloor_heating": "Chauffage au sol (électrique/eau)"
+  },
+  "flooring": {
+    "none": "Sans plancher (feuille ondulée)",
+    "plywood": "Contreplaqué imperméable 18 mm (standard)",
+    "anti_slip": "Contreplaqué non glissé de 21 mm",
+    "laminate": "Panneaux laminés AC4 / AC5",
+    "vinyl": "Panneaux en vinyle imperméables (LVT)",
+    "carpet": "Couvre-plancher en PVC de 2 à 4 mm",
+    "epoxy": "Plancher époxy industriel",
+    "concrete": "Plancher élevé (salles de serveurs)",
+    "basic": "Basique (béton industriel)",
+    "hardwood": "Bois dur (parquet)"
+  },
   "configure_container": "Configurez votre conteneur",
   "simple_process_2_steps": "Processus simple - 2 étapes",
   "step_1_configuration": "Étape 1: Configuration",
@@ -89,6 +133,34 @@
   "working_hours": "Heures de travail",
   "mon_fri": "Lun-Ven 8:00-17:00",
   "container": {
+    "types": {
+      "20ft_standard": "Standard de 20 pieds",
+      "40ft_standard": "Standard de 40 pieds",
+      "40ft_high_cube": "40 pieds HC",
+      "20ft_refrigerated": "20ft Réfrigéré",
+      "20ft_double_door": "20 pieds DD",
+      "40ft_double_door": "40 pieds DD",
+      "40ft_hc_double_door": "40ft HC DD",
+      "custom_size": "Taille personnalisée",
+      "10ft_compact": "10 pieds compacts (3m x 2,4 m)",
+      "20ft_high_cube": "Cube de haut de 20 pieds (6 m x 2,7 m)",
+      "40ft_hc": "40 pieds HC",
+      "45ft_standard": "Norme de 45 pieds",
+      "custom": "Coutume",
+      "multi_unit": "Conteneur à plusieurs unités",
+      "custom_dimensions": "Conteneur des dimensions personnalisées",
+      "refurbished": "Récipient rénové"
+    },
+    "use_cases": {
+      "office_space": "Espace de bureau",
+      "residential": "Résidentiel",
+      "storage": "Stockage",
+      "workshop": "Atelier",
+      "retail": "Vente au détail",
+      "restaurant": "Restaurant",
+      "medical": "Médical",
+      "laboratory": "Laboratoire"
+    },
     "environment": {
       "indoor": "Intérieur",
       "outdoor": "De plein air",
@@ -144,7 +216,54 @@
       "hvac_system": "Système CVC",
       "insulation_package": "Package d'isolation",
       "structural_reinforcement": "Renforcement structurel",
-      "delivery_zone": "Zone de livraison"
+      "delivery_zone": "Zone de livraison",
+      "building_type": "Type de bâtiment",
+      "dimensions": "Dimensions",
+      "width": "Largeur (m)",
+      "length": "Longueur (m)",
+      "height": "Hauteur (m)",
+      "wall_thickness": "Épaisseur des murs (mm)",
+      "insulation": "Isolation",
+      "insulation_thickness": "Épaisseur d'isolation (mm)",
+      "entrance": "Entrée",
+      "entrance_type": "Type d'entrée",
+      "windows": "Fenêtres",
+      "window_count": "Nombre de fenêtres",
+      "window_size": "Taille de fenêtre",
+      "electrical": "Électricité",
+      "plumbing": "Plomberie",
+      "heating": "Chauffage",
+      "ventilation": "Ventilation",
+      "ceiling": "Plafond",
+      "finish": "Finition",
+      "exterior_finish": "Finition extérieure",
+      "interior_finish": "Finition intérieure",
+      "additional_features": "Fonctionnalités supplémentaires",
+      "quantity": "Quantité",
+      "location": "Emplacement",
+      "project_timeline": "Calendrier du projet"
+    },
+    "placeholders": {
+      "enter_width": "Entrez la largeur",
+      "enter_length": "Entrez la longueur",
+      "enter_height": "Entrez la hauteur",
+      "select_option": "Sélectionnez une option",
+      "enter_quantity": "Entrez la quantité",
+      "enter_location": "Entrez l'emplacement"
+    },
+    "options": {
+      "container_types": {
+        "office": "Conteneur de bureau",
+        "residential": "Conteneur résidentiel",
+        "storage": "Conteneur de stockage",
+        "workshop": "Atelier",
+        "restaurant": "Restaurant/café",
+        "medical": "Cabinet médical",
+        "educational": "Salle de classe",
+        "retail": "Point de vente",
+        "industrial": "Industriel",
+        "agricultural": "Agricole"
+      }
     }
   },
   "ai": {
@@ -179,7 +298,7 @@
     "project_name": "Nom du projet",
     "project_location": "Emplacement du projet",
     "expected_timeline": "Calendrier prévu",
-    "budget_Range": "Portée du budget",
+    "budget_range": "Fourchette de budget",
     "timeline": {
       "asap": "Autant que possible",
       "within_month": "Dans un mois",
@@ -243,7 +362,8 @@
     "new_inquiry": "Nouvelle requête",
     "error": "Erreur lors de l'envoi d'une demande",
     "why_professional_inquiry": "Pourquoi soumettre une requête professionnelle?",
-    "preparation_tips": "Conseils pour les meilleurs résultats"
+    "preparation_tips": "Conseils pour les meilleurs résultats",
+    "budget_Range": "Portée du budget"
   },
   "back_to_home": "← Retour à la page d'accueil",
   "go_to_configurator": "🔧 Passer au configurateur",
@@ -337,52 +457,6 @@
   "special_notes_general": "Notes spéciales - Général",
   "describe_general_requirements": "Décrivez toutes les exigences supplémentaires, spécifications ou contraintes de projet...",
   "general_requirements_placeholder": "ex. Délais de réalisation spéciaux, exigences de certification, contraintes budgétaires",
-  "construction_material": "Matériau de Construction",
-  "insulation": {
-    "basic": "[FR_NEEDS_TRANSLATION] Podstawowa (5-10cm, styropian/wełna)",
-    "standard": "[FR_NEEDS_TRANSLATION] Standardowa (15cm, PIR/PUR)",
-    "premium": "[FR_NEEDS_TRANSLATION] Premium (20cm, wełna mineralna)",
-    "extreme": "[FR_NEEDS_TRANSLATION] Ekstremalna (30cm, aerogel/vakuum)"
-  },
-  "destination": "Destination",
-  "window_type": "Type de Fenêtre",
-  "ventilation": {
-    "none": "[FR_NEEDS_TRANSLATION] Bez wentylacji (kontener szczelny)",
-    "gravity": "[FR_NEEDS_TRANSLATION] Wentylacja grawitacyjna (kraty, wywietrzniki)",
-    "wall_fans": "[FR_NEEDS_TRANSLATION] Wentylatory ścienne (wyciąg 100-150mm)",
-    "mechanical": "[FR_NEEDS_TRANSLATION] Wentylacja mechaniczna (nawiew + wyciąg)",
-    "heat_recovery": "[FR_NEEDS_TRANSLATION] Rekuperacja (odzysk ciepła, filtracja)",
-    "split_ac": "[FR_NEEDS_TRANSLATION] Klimatyzacja split (chłodzenie + grzanie)",
-    "central_ac": "[FR_NEEDS_TRANSLATION] Klimatyzacja centralna (VRV/VRF)",
-    "industrial": "[FR_NEEDS_TRANSLATION] Wentylacja przemysłowa (ATEX, chemoodporna)"
-  },
-  "roof_modifications": {
-    "none": "[FR_NEEDS_TRANSLATION] Bez modyfikacji (dach standardowy płaski)",
-    "insulation": "[FR_NEEDS_TRANSLATION] Dodatkowa izolacja dachu (styropian/PIR)",
-    "skylight": "[FR_NEEDS_TRANSLATION] Świetlik dachowy (90x60cm, otwierany)",
-    "fans": "[FR_NEEDS_TRANSLATION] Wentylatory dachowe (przemysłowe, ciche)",
-    "solar": "[FR_NEEDS_TRANSLATION] Panele słoneczne (1-3kW, autonomiczne)",
-    "antennas": "[FR_NEEDS_TRANSLATION] Anteny/maszty (GSM, radio, satelitarne)",
-    "sloped": "[FR_NEEDS_TRANSLATION] Dach skośny (odpływ wody, estetyka)",
-    "terrace": "[FR_NEEDS_TRANSLATION] Taras dachowy (dostęp, balustrada)",
-    "snow_removal": "[FR_NEEDS_TRANSLATION] System usuwania śniegu (grzałki, ślizgi)"
-  },
-  "additional_systems_modifications": "Systèmes Supplémentaires et Modifications:",
-  "security": {
-    "basic": "[FR_NEEDS_TRANSLATION] Podstawowa (wzmocnione zamki)",
-    "standard": "[FR_NEEDS_TRANSLATION] Standardowa (przygotowanie alarmu)",
-    "advanced": "[FR_NEEDS_TRANSLATION] Zaawansowana (kamery + czujniki)",
-    "high_security": "[FR_NEEDS_TRANSLATION] Wysokie bezpieczeństwo (biometryka)"
-  },
-  "fire_systems": "Systèmes Anti-Incendie",
-  "accessibility": {
-    "standard": "[FR_NEEDS_TRANSLATION] Dostęp standardowy",
-    "ramp": "[FR_NEEDS_TRANSLATION] Podjazd dla wózków",
-    "full_ada": "[FR_NEEDS_TRANSLATION] Pełna zgodność ADA",
-    "disabled_friendly": "[FR_NEEDS_TRANSLATION] W pełni dostępny"
-  },
-  "painting": "Peinture",
-  "assembly": "Assemblage",
   "interior_layout_options": {
     "open_space": "Espace ouvert (sans cloisons)",
     "partitioned": "Cloisonné (1-3 pièces)",
@@ -501,24 +575,6 @@
   "fallback_cost_estimate": "Estimation de coût de remplacement",
   "total_project_cost": "Coût total du projet",
   "basic_calculation_ai_unavailable": "Calcul de base lorsqu'il n'y a pas de services AI disponibles",
-  "cost_estimation": {
-    "project_estimate": "[FR_NEEDS_TRANSLATION] Szacunkowa Wycena Projektu",
-    "cost_breakdown": "[FR_NEEDS_TRANSLATION] Podział Kosztów",
-    "base_container": "[FR_NEEDS_TRANSLATION] Kontener bazowy",
-    "modifications_equipment": "[FR_NEEDS_TRANSLATION] Modyfikacje i wyposażenie",
-    "total_cost": "[FR_NEEDS_TRANSLATION] CAŁKOWITY KOSZT",
-    "important_notice": "[FR_NEEDS_TRANSLATION] Ważne",
-    "preliminary_estimate": "[FR_NEEDS_TRANSLATION] To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
-    "configuration_saved": "[FR_NEEDS_TRANSLATION] Konfiguracja zapisana pomyślnie!",
-    "estimate_title": "\"💰 Estimation de Coût du Projet (approximatif)\"\n\nNote: I've kept the 💰 symbol as it's a currency symbol and it's common to use it in business contexts. However, I've added a note in parentheses to indicate that it's an approximate estimation.\n\nIf you want to be more precise, you could use:\n\n\"💰 Estimation de Coût du Projet (estimation approximative)\"\n\nAlternatively, you could use:\n\n\"💰 Coût estimé du Projet\"\n\nThis translation maintains a professional business tone, keeps the emojis and symbols, preserves the formatting, and uses appropriate currency/business terminology.",
-    "cost_breakdown_title": "[FR_NEEDS_TRANSLATION] Podział Kosztów:",
-    "base_container_line": "\"Conteneur de base :\"\n\n(Note: I've kept the formatting, punctuation, and emojis as per your requirements. The translation is professional and maintains a business tone.)\n\nIf you'd like to add a brief description to the French translation, here's an example:\n\n\"Conteneur de base :\"\n\nCoût estimé des modifications : 💰\n\nAttention : les coûts peuvent varier en fonction des spécifications du conteneur. ⚠️\n\nValidation des coûts : ✅\n\n(Note: This is just an example, and you can adjust it according to your needs.)",
-    "modifications_equipment_line": "\"Coûts de modification et d'équipement :\"\n\n(Note: I've kept the emojis and symbols as they were in the original text, but you may want to consider replacing the 💰 symbol with a more suitable one, such as € or $, depending on the context of your interface.)\n\nAlternatively, you could also use:\n\n\"Coûts de modification et d'équipement :\"\n\nor\n\n\"Coûts de modification et d'équipement :\"\n\nor\n\n\"Coûts de modification et d'équipement :\"\n\nAll of these translations maintain a professional business tone and preserve the original formatting.",
-    "total_cost_line": "\"COÛT TOTAL :\"\n\nNote: I've kept the same formatting and symbols as the original text to maintain consistency. The translation is professional and suitable for a business context.\n\nIf you'd like to add a more formal tone, you could also consider:\n\n\"COÛT TOTAL ESTIMÉ :\"\n\nThis version adds a sense of estimation, which is often used in business contexts to indicate that the cost is an approximation.\n\nAlternatively, if you'd like to use a more concise version, you could consider:\n\n\"COÛT TOTAL :\"\n\nThis version is more direct and to the point, while still maintaining a professional tone.",
-    "important_warning": "\"⚠️ Attention importante :\"\n\nI have translated the Polish text to French while maintaining the required tone, emojis, and formatting. The translation is professional and suitable for a business context.\n\nIf you would like me to translate the rest of the text, please provide it.",
-    "preliminary_estimate_full": "Voici la traduction du texte en français :\n\n\"Cette est une estimation préliminaire. Le prix final dépend des spécifications détaillées, des tarifs actuels des matériaux et de la disponibilité. Pour obtenir une estimation précise, veuillez nous contacter.\"\n\nJ'ai gardé le ton professionnel, les emojis et les symboles, ainsi que la mise en forme originale. J'ai également utilisé des termes de commerce et de finance appropriés pour rendre le texte naturel en français.\n\nSi vous le souhaitez, je peux également ajouter des éléments pour rendre le texte plus attrayant et professionnel, tels que :\n\n\"Cette est une estimation préliminaire 💰. Le prix final dépend des spécifications détaillées, des tarifs actuels des matériaux et de la disponibilité ⚠️. Pour obtenir une estimation précise, veuillez nous contacter",
-    "configuration_saved_success": "La traduction du texte en français est :\n\n                ✅ La configuration a été enregistrée avec succès !\n\nNotez que j'ai conservé l'emoji ✅ pour indiquer que l'opération a été effectuée avec succès. J'ai également utilisé le verbe \"enregistrée\" pour maintenir un ton professionnel et approprié pour un interface de coûts d'estimation de modification de conteneur."
-  },
   "materials_base_cost": "Matériaux et coûts de base",
   "labor_costs_40": "Coûts de main-d'œuvre (40%)",
   "contingency_10": "Contingence (10%)",
@@ -548,7 +604,7 @@
     "project_context": "Contexte du projet",
     "project_location": "Emplacement du projet",
     "project_name": "Nom du projet",
-    "project_name_placeholder": "[FR_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
+    "project_name_placeholder": "par exemple, Bureau en conteneur - Poznań",
     "file_upload": "Téléchargement de fichier",
     "upload_drawings": "Envoyer des dessins techniques",
     "file_formats_help": "Nous prenons en charge les fichiers PDF, DWG, JPG et PNG. Nous recommandons le format PDF pour la meilleure analyse.",
@@ -563,7 +619,7 @@
     "current_config": "Configuration actuelle",
     "project_context": "Contexte du projet",
     "project_name": "Nom du projet",
-    "project_name_placeholder": "[FR_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
+    "project_name_placeholder": "Par exemple Bureau des conteneurs - Poznań",
     "project_location": "Emplacement du projet",
     "file_upload": "Téléchargement de fichiers",
     "upload_drawings": "Envoyer des dessins techniques",
@@ -574,11 +630,7 @@
     "analysis_results": "Résultats de l'analyse",
     "analysis_complete": "Analyse terminée",
     "analysis_failed": "L'analyse a échoué",
-    "config_required": "Configuration requise",
-    "config_required_text": "Pour une analyse approfondie des dessins techniques, la configuration de base des conteneurs est requise. Sans configuration, l'analyse sera limitée aux estimations de base.",
     "analysis_failed_reasons": "Raisons possibles de l'échec de l'analyse",
-    "config_tip": "Conseil",
-    "config_tip_text": "Configurez votre conteneur avant d'analyser les dessins pour obtenir des résultats plus précis et des citations sur mesure.",
     "error": "Erreur",
     "windows": "Fenêtre",
     "doors": "Portes",
@@ -598,7 +650,11 @@
     "tips_text": "Pour l'analyse précise du pont, assurez-vous que vos dessins incluent:",
     "tip_1": "Dimensions et spécifications claires",
     "tip_2": "Tous les détails techniques sont visibles",
-    "tip_3": "Résolution élevée (minimum 300 DPI)"
+    "tip_3": "Résolution élevée (minimum 300 DPI)",
+    "config_required": "Configuration requise",
+    "config_required_text": "Pour une analyse approfondie des dessins techniques, la configuration de base des conteneurs est requise. Sans configuration, l'analyse sera limitée aux estimations de base.",
+    "config_tip": "Conseil",
+    "config_tip_text": "Configurez votre conteneur avant d'analyser les dessins pour obtenir des résultats plus précis et des citations sur mesure."
   },
   "admin": {
     "access_required": "Accès administrateur requis",
@@ -626,6 +682,7 @@
     "industrial": "Grade industriel",
     "marine_grade": "Grade marin (résistance au sel)"
   },
+  "roof_modifications": "Modifications de Toit",
   "electrical": {
     "basic": "De base (éclairage + prises)",
     "standard": "Standard (circuit 15a)",
@@ -645,6 +702,7 @@
     "central": "Climatisation centrale",
     "heat_pump": "Pompe à chaleur"
   },
+  "security": "Sécurité",
   "cladding": {
     "none": "Pas de revêtement extérieur",
     "metal": "Revêtement métallique",
@@ -664,12 +722,14 @@
     "sprinkler": "Système d'arrosage incendie",
     "full_system": "Système complet de suppression incendie"
   },
+  "accessibility": "Accessibilité",
   "paint": {
     "standard": "Revêtement standard (C2)",
     "premium": "Finition premium (C3)",
     "anti_corrosion": "Anti-corrosion (C4)",
     "marine_grade": "Grade marin (C5M)"
   },
+  "insulation": "Isolation",
   "reinforcement": {
     "none": "Pas de renforts",
     "standard": "Renforcement standard",
@@ -720,6 +780,7 @@
   "delivery_zone_international": "Zone de livraison internationale",
   "paint_finish_custom": "Couleur personnalisée",
   "construction_material_aluminum": "Aluminium",
+  "construction_material": "Matériau de Construction",
   "transport_type_special": "Transport spécial",
   "security_systems_basic": "Système de sécurité de base",
   "transport_type_crane": "Avec grue",
@@ -734,6 +795,7 @@
   "advanced_comments": "Commentaires de modifications avancées",
   "delivery_zone_regional": "Régional (200 km)",
   "window_types_double": "Double vitrage",
+  "ventilation": "Ventilation",
   "it_systems": "Systèmes informatiques",
   "lighting_professional": "Professionnel",
   "interior_layout_open": "Espace ouvert",
@@ -746,6 +808,7 @@
   "window_types_security": "Fenêtres de sécurité",
   "roof_modifications_skylight": "Lucarne",
   "it_systems_basic": "Réseau de base",
+  "fire_systems": "Systèmes Anti-Incendie",
   "additional_openings_door": "Porte supplémentaire",
   "construction_material_composite": "Matériau composite",
   "basic_configuration": "Configuration de base",
@@ -754,14 +817,17 @@
   "number_of_windows": "Nombre de fenêtres",
   "insulation_label": "Isolation",
   "finish_levels": {
-    "basic": "Sans finition (conteneur technique, squelette)",
     "shell": "État brut (isolation + plaque OSB)",
+    "specialist": "Spécialiste (normes médicales / laboratoires)",
+    "basic": "Sans finition (conteneur technique, squelette)",
     "standard": "Basique (isolation + finition technique)",
     "comfort": "Confortable (isolation premium + finition de bureau)",
-    "luxury": "Luxueux (classe la plus élevée + hôtel)",
-    "specialist": "Spécialiste (normes médicales / laboratoires)"
+    "luxury": "Luxueux (classe la plus élevée + hôtel)"
   },
   "climate_zones": {
+    "maritime": "Climat maritime (humidité élevée)",
+    "mountain": "Climat de montagne (UV élevé, neige)",
+    "tropical": "Climat tropical (températures élevées, humidité)",
     "northern_europe": "Europe du Nord (Scandinavie, -30 ° C à +25 ° C)",
     "central_europe": "Europe centrale (Pologne, Allemagne, -20 ° C à +35 ° C)",
     "southern_europe": "Europe du Sud (Espagne, Italie, -5 ° C à +45 ° C)",
@@ -778,5 +844,20 @@
   },
   "window_types_label": "Types de fenêtres",
   "lighting_label": "Éclairage",
-  "flooring_label": "Étages"
+  "flooring_label": "Étages",
+  "cost_estimation": {
+    "estimate_title": "\"💰 Estimation de Coût du Projet (approximatif)\"\n\nNote: I've kept the 💰 symbol as it's a currency symbol and it's common to use it in business contexts. However, I've added a note in parentheses to indicate that it's an approximate estimation.\n\nIf you want to be more precise, you could use:\n\n\"💰 Estimation de Coût du Projet (estimation approximative)\"\n\nAlternatively, you could use:\n\n\"💰 Coût estimé du Projet\"\n\nThis translation maintains a professional business tone, keeps the emojis and symbols, preserves the formatting, and uses appropriate currency/business terminology.",
+    "cost_breakdown_title": "\"Étiquetage des Coûts:\"\n\n(Note: I've kept the formatting and symbols as requested, but I've translated the text to make it sound natural in French.)\n\nIf you'd like to make it more formal, you could use:\n\n\"Classification des Coûts:\"\n\nOr, if you want to emphasize the cost estimation aspect:\n\n\"Estimation des Coûts:\"\n\nHowever, the original translation \"Étiquetage des Coûts\" is a common and professional way to translate \"Podział Kosztów\" in a business context.",
+    "base_container_line": "\"Conteneur de base :\"\n\n(Note: I've kept the formatting, punctuation, and emojis as per your requirements. The translation is professional and maintains a business tone.)\n\nIf you'd like to add a brief description to the French translation, here's an example:\n\n\"Conteneur de base :\"\n\nCoût estimé des modifications : 💰\n\nAttention : les coûts peuvent varier en fonction des spécifications du conteneur. ⚠️\n\nValidation des coûts : ✅\n\n(Note: This is just an example, and you can adjust it according to your needs.)",
+    "modifications_equipment_line": "\"Coûts de modification et d'équipement :\"\n\n(Note: I've kept the emojis and symbols as they were in the original text, but you may want to consider replacing the 💰 symbol with a more suitable one, such as € or $, depending on the context of your interface.)\n\nAlternatively, you could also use:\n\n\"Coûts de modification et d'équipement :\"\n\nor\n\n\"Coûts de modification et d'équipement :\"\n\nor\n\n\"Coûts de modification et d'équipement :\"\n\nAll of these translations maintain a professional business tone and preserve the original formatting.",
+    "total_cost_line": "\"COÛT TOTAL :\"\n\nNote: I've kept the same formatting and symbols as the original text to maintain consistency. The translation is professional and suitable for a business context.\n\nIf you'd like to add a more formal tone, you could also consider:\n\n\"COÛT TOTAL ESTIMÉ :\"\n\nThis version adds a sense of estimation, which is often used in business contexts to indicate that the cost is an approximation.\n\nAlternatively, if you'd like to use a more concise version, you could consider:\n\n\"COÛT TOTAL :\"\n\nThis version is more direct and to the point, while still maintaining a professional tone.",
+    "important_warning": "\"⚠️ Attention importante :\"\n\nI have translated the Polish text to French while maintaining the required tone, emojis, and formatting. The translation is professional and suitable for a business context.\n\nIf you would like me to translate the rest of the text, please provide it.",
+    "preliminary_estimate_full": "Voici la traduction du texte en français :\n\n\"Cette est une estimation préliminaire. Le prix final dépend des spécifications détaillées, des tarifs actuels des matériaux et de la disponibilité. Pour obtenir une estimation précise, veuillez nous contacter.\"\n\nJ'ai gardé le ton professionnel, les emojis et les symboles, ainsi que la mise en forme originale. J'ai également utilisé des termes de commerce et de finance appropriés pour rendre le texte naturel en français.\n\nSi vous le souhaitez, je peux également ajouter des éléments pour rendre le texte plus attrayant et professionnel, tels que :\n\n\"Cette est une estimation préliminaire 💰. Le prix final dépend des spécifications détaillées, des tarifs actuels des matériaux et de la disponibilité ⚠️. Pour obtenir une estimation précise, veuillez nous contacter",
+    "configuration_saved_success": "La traduction du texte en français est :\n\n                ✅ La configuration a été enregistrée avec succès !\n\nNotez que j'ai conservé l'emoji ✅ pour indiquer que l'opération a été effectuée avec succès. J'ai également utilisé le verbe \"enregistrée\" pour maintenir un ton professionnel et approprié pour un interface de coûts d'estimation de modification de conteneur."
+  },
+  "destination": "Destination",
+  "window_type": "Type de Fenêtre",
+  "additional_systems_modifications": "Systèmes Supplémentaires et Modifications:",
+  "painting": "Peinture",
+  "assembly": "Assemblage"
 }
