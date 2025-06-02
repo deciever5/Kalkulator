@@ -848,5 +848,6 @@
   },
   "window_types_label": "Tipos de ventanas",
   "lighting_label": "Iluminación",
-  "flooring_label": "Pisos"
+  "flooring_label": "Pisos",
+  "cost_estimation": {}
 }

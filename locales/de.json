@@ -849,5 +849,6 @@
   },
   "window_types_label": "Fenstertypen",
   "lighting_label": "Beleuchtung",
-  "flooring_label": "Böden"
+  "flooring_label": "Böden",
+  "cost_estimation": {}
 }

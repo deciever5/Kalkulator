@@ -895,5 +895,6 @@
   },
   "window_types_label": "Types de fenêtres",
   "lighting_label": "Éclairage",
-  "flooring_label": "Étages"
+  "flooring_label": "Étages",
+  "cost_estimation": {}
 }

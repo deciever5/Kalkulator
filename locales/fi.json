@@ -307,8 +307,8 @@
     "project_location": "Hankkeen sijainti",
     "expected_timeline": "Odottamaton aikataulu",
     "budget_range": "Rahoitusalue",
-    "next_steps": "Seuraavat vaiheet",
-    "submit_inquiry": "Lähetä Hakemus",
+    "next_steps": "Mitä Seuraavaksi",
+    "submit_inquiry": "Lähetä Pyyntö",
     "timeline": {
       "asap": "Niin pian kuin mahdollista",
       "within_month": "Kuukauden sisällä",
@@ -361,10 +361,8 @@
     "marketing_consent": "Hyväksyn markkinointitiedotteet KAN-BUDin palveluista ja tuotteista (vapaaehtoinen)",
     "data_retention": "Tietojen säilytys",
     "fill_required_fields": "Täytä kaikki vaadittavat kentät, joissa on *",
-    "submit_inquiry": "Lähetä Pyyntö",
     "success_title": "Pyyntö lähetetty onnistuneesti!",
     "success_message": "Kiitos pyynnöstäsi. Meidän tiimimme yhteyttäsi 24 tuntia sisällä yksityiskohtaisella vastauksella.",
-    "next_steps": "Mitä Seuraavaksi",
     "step_1": "Asiantuntija analysoi vaatimuksiasi",
     "step_2": "Yhteyttä sinuun saadaan lisätietoja",
     "step_3": "Sinulle lähetetään yksilöllinen tarjous, joka vastaa tarpeitasi",
@@ -897,5 +895,6 @@
   },
   "window_types_label": "Ikkunatyypit",
   "lighting_label": "Valaistus",
-  "flooring_label": "Lattiat"
+  "flooring_label": "Lattiat",
+  "cost_estimation": {}
 }
