@@ -58,18 +58,140 @@ def calculate_container_cost(config):
     }
     modifications_cost += finish_costs.get(config.get('finish_level', 'Basic'), 0)
 
+    # Insulation costs based on level
+    insulation_costs = {
+        'basic': 1500,
+        'standard': 2500,
+        'premium': 4000,
+        'extreme': 6000
+    }
+    insulation = config.get('insulation', '').lower()
+    if insulation in insulation_costs:
+        modifications_cost += insulation_costs[insulation]
+
     # Windows and doors - Polish market pricing
-    modifications_cost += config.get('number_of_windows', 0) * 600  # Reduced from 800
+    num_windows = config.get('number_of_windows', 0)
+    window_type = config.get('window_types', 'standard').lower()
+    window_costs = {
+        'standard': 600,
+        'energy_efficient': 800,
+        'triple_glazed': 1000
+    }
+    base_window_cost = window_costs.get(window_type, 600)
+    modifications_cost += num_windows * base_window_cost
+
     if config.get('additional_doors'):
-        modifications_cost += 900  # Reduced from 1200
+        modifications_cost += 900
+
+    # Lighting system costs
+    lighting_costs = {
+        'basic_led': 800,
+        'energy_efficient': 1200,
+        'exterior': 1500,
+        'emergency': 2000,
+        'smart': 2500
+    }
+    lighting = config.get('lighting', '').lower()
+    if lighting in lighting_costs:
+        modifications_cost += lighting_costs[lighting]
+
+    # Ventilation system costs
+    ventilation_costs = {
+        'gravity': 300,
+        'wall_fans': 800,
+        'mechanical': 1500,
+        'heat_recovery': 2500,
+        'split_ac': 3000,
+        'central_ac': 5000,
+        'industrial': 4000
+    }
+    ventilation = config.get('ventilation', '').lower()
+    if ventilation in ventilation_costs:
+        modifications_cost += ventilation_costs[ventilation]
+
+    # Roof modifications costs
+    roof_mod_costs = {
+        'insulation': 1200,
+        'skylight': 2500,
+        'fans': 1000,
+        'solar': 8000,
+        'antennas': 500,
+        'sloped': 3000,
+        'terrace': 5000,
+        'snow_removal': 800
+    }
+    roof_mods = config.get('roof_modifications', '').lower()
+    if roof_mods in roof_mod_costs:
+        modifications_cost += roof_mod_costs[roof_mods]
+
+    # Security features costs
+    security_costs = {
+        'basic': 800,
+        'advanced': 2000,
+        'high_security': 4000
+    }
+    security = config.get('security_features', '').lower()
+    if security in security_costs:
+        modifications_cost += security_costs[security]
+
+    # External cladding costs
+    cladding_costs = {
+        'standard': 0,
+        'wood': 2500,
+        'metal': 3000,
+        'composite': 3500,
+        'stone': 5000
+    }
+    cladding = config.get('external_cladding', '').lower()
+    if cladding in cladding_costs:
+        modifications_cost += cladding_costs[cladding]
+
+    # Interior layout costs
+    layout_costs = {
+        'open_space': 0,
+        'partitioned': 2000,
+        'custom': 3500
+    }
+    layout = config.get('interior_layout', '').lower()
+    if layout in layout_costs:
+        modifications_cost += layout_costs[layout]
+
+    # Additional openings costs
+    additional_openings = config.get('additional_openings', 0)
+    if isinstance(additional_openings, (int, float)) and additional_openings > 0:
+        modifications_cost += additional_openings * 500
 
     # Systems - Polish market pricing
-    if config.get('electrical_system'):
-        modifications_cost += 1800  # Reduced from 2500
-    if config.get('plumbing_system'):
-        modifications_cost += 2500  # Reduced from 3500
-    if config.get('hvac_system'):
-        modifications_cost += 3000  # Reduced from 4000
+    electrical_costs = {
+        'basic': 1200,
+        'standard': 1800,
+        'industrial': 3500,
+        'smart': 5000
+    }
+    electrical = config.get('electrical_system', '').lower()
+    if electrical in electrical_costs:
+        modifications_cost += electrical_costs[electrical]
+
+    plumbing_costs = {
+        'basic': 2000,
+        'standard': 2500,
+        'full': 4500,
+        'commercial': 7000
+    }
+    plumbing = config.get('plumbing_system', '').lower()
+    if plumbing in plumbing_costs:
+        modifications_cost += plumbing_costs[plumbing]
+
+    hvac_costs = {
+        'basic': 1800,
+        'split_air_conditioning': 3000,
+        'central_air': 6000,
+        'heat_pump': 5500,
+        'industrial': 8000
+    }
+    hvac = config.get('hvac_system', '').lower().replace(' ', '_')
+    if hvac in hvac_costs:
+        modifications_cost += hvac_costs[hvac]
 
     # Calculate delivery costs based on delivery zone
     delivery_cost = calculate_delivery_cost(config.get('delivery_zone', 'Local'), config.get('container_type', '20ft Standard'))
@@ -206,21 +328,52 @@ class StructuralCalculations:
         vents = modifications.get('vents', 0)
         modification_costs += vents * 200  # $200 per vent
 
-        # Systems
-        if modifications.get('electrical'):
-            modification_costs += 3500  # Basic electrical package
+        # Systems with detailed options
+        electrical_system = modifications.get('electrical_system', '')
+        if electrical_system:
+            electrical_costs = {
+                'basic': 1200,
+                'standard': 1800,
+                'industrial': 3500,
+                'smart': 5000
+            }
+            modification_costs += electrical_costs.get(electrical_system.lower(), 1800)
 
-        if modifications.get('plumbing'):
-            modification_costs += 4000  # Basic plumbing package
+        plumbing_system = modifications.get('plumbing_system', '')
+        if plumbing_system:
+            plumbing_costs = {
+                'basic': 2000,
+                'standard': 2500,
+                'full': 4500,
+                'commercial': 7000
+            }
+            modification_costs += plumbing_costs.get(plumbing_system.lower(), 2500)
 
-        if modifications.get('hvac'):
-            modification_costs += 2500  # Mini-split system
+        hvac_system = modifications.get('hvac_system', '')
+        if hvac_system:
+            hvac_costs = {
+                'basic': 1800,
+                'split_air_conditioning': 3000,
+                'central_air': 6000,
+                'heat_pump': 5500,
+                'industrial': 8000
+            }
+            modification_costs += hvac_costs.get(hvac_system.lower().replace(' ', '_'), 3000)
 
-        if modifications.get('insulation'):
-            # Calculate based on container size
+        # Insulation with levels
+        insulation_level = modifications.get('insulation', '')
+        if insulation_level:
             container_areas = self._get_container_areas(base_type)
             insulation_area = container_areas['wall_area'] + container_areas['ceiling_area']
-            modification_costs += insulation_area * 1.50  # $1.50 per sq ft
+            
+            insulation_costs_per_sqft = {
+                'basic': 1.20,
+                'standard': 1.50,
+                'premium': 2.00,
+                'extreme': 2.80
+            }
+            cost_per_sqft = insulation_costs_per_sqft.get(insulation_level.lower(), 1.50)
+            modification_costs += insulation_area * cost_per_sqft
 
         # Reinforcements
         if modifications.get('reinforcement_walls'):
