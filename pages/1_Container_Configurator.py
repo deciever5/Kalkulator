@@ -514,109 +514,102 @@ with st.form("container_configuration_form"):
     # TRANSPORT AND LOGISTICS
     st.markdown(f"""
     <div class="section-header">
-        <div class="section-title">🚛 TRANSPORT I LOGISTYKA</div>
+        <div class="section-title">🚛 {t('transport_logistics')}</div>
     </div>
     """, unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
+        delivery_zone_options = [
+            t('delivery_zone_options.local'),
+            t('delivery_zone_options.regional'),
+            t('delivery_zone_options.national'),
+            t('delivery_zone_options.central_europe'),
+            t('delivery_zone_options.western_europe'),
+            t('delivery_zone_options.international')
+        ]
         delivery_zone = st.selectbox(
-            "Strefa Dostawy",
-            options=[
-                "Lokalny (do 50km od producenta)",
-                "Regionalny (50-200km)",
-                "Krajowy (200-800km)",
-                "Międzynarodowy EU (Europa)",
-                "Intercontinental (transport morski/lotniczy)",
-                "Transport własny klienta (odbiór z fabryki)"
-            ],
+            t('delivery_zone'),
+            options=delivery_zone_options,
             index=1
         )
 
     with col2:
+        transport_type_options = [
+            t('transport_type_options.standard'),
+            t('transport_type_options.special'),
+            t('transport_type_options.crane'),
+            t('transport_type_options.multi_container')
+        ]
         transport_type = st.selectbox(
-            "Rodzaj Transportu",
-            options=[
-                "Transport standardowy (naczep 13.6m)",
-                "Transport niskopodwoziowy (gabaryty specjalne)",
-                "Transport kontenerowy (40ft HC, morski)",
-                "Transport kolejowy (wagon platform)",
-                "Transport morski (kontenerowiec)",
-                "Transport lotniczy (cargo, części)",
-                "Transport multimodalny (kombinowany)"
-            ]
+            t('transport_type'),
+            options=transport_type_options
         )
 
     with col3:
+        assembly_options = [
+            t('assembly_options.none'),
+            t('assembly_options.basic'),
+            t('assembly_options.standard'),
+            t('assembly_options.full')
+        ]
         installation = st.selectbox(
-            "Montaż i Instalacja",
-            options=[
-                "Bez montażu (tylko transport i rozładunek)",
-                "Dostawa + pozycjonowanie (dźwig/wózek)",
-                "Montaż podstawowy (ustawienie, poziomowanie)",
-                "Montaż standardowy (podłączenia, testy)",
-                "Montaż kompleksowy (pod klucz, odbiory)",
-                "Instalacja modułowa (łączenie kontenerów)",
-                "Serwis pełny (konserwacja, części)"
-            ],
-            index=3
+            t('assembly_installation'),
+            options=assembly_options,
+            index=2
         )
 
     # EQUIPMENT AND EXTRAS
     st.markdown(f"""
     <div class="section-header">
-        <div class="section-title">📋 WYPOSAŻENIE I DODATKI</div>
+        <div class="section-title">📋 {t('equipment_extras')}</div>
     </div>
     """, unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
+        office_equipment_options = [
+            t('office_equipment_options.none'),
+            t('office_equipment_options.basic'),
+            t('office_equipment_options.standard'),
+            t('office_equipment_options.full')
+        ]
         office_equipment = st.selectbox(
-            "Wyposażenie Biurowe/Wnętrzarskie",
-            options=[
-                "Bez wyposażenia (pusty kontener)",
-                "Meble podstawowe (biurko, 2 krzesła)",
-                "Meble standardowe (+ szafy, półki, stolik)",
-                "Wyposażenie biurowe (+ komputer, drukarka)",
-                "Wyposażenie komfortowe (+ lodówka, ekspres)",
-                "Wyposażenie premium (designerskie, smart)",
-                "Wyposażenie specjalistyczne (medical/lab)"
-            ]
+            t('office_equipment'),
+            options=office_equipment_options
         )
 
     with col2:
+        appliances_options = [
+            t('appliances_options.none'),
+            t('appliances_options.basic'),
+            t('appliances_options.standard'),
+            t('appliances_options.full')
+        ]
         appliances = st.selectbox(
-            "Sprzęt AGD (dla kontenerów mieszkalnych)",
-            options=[
-                "Bez sprzętu AGD",
-                "Podstawowy (lodówka, kuchenka 2-palnikowa)",
-                "Standardowy (+ pralka, mikrofala, czajnik)",
-                "Komfortowy (+ zmywarka, piekarnik, wyciąg)",
-                "Premium (sprzęt w zabudowie, indukcja)",
-                "Smart AGD (WiFi, aplikacje, programowanie)"
-            ]
+            t('appliances'),
+            options=appliances_options
         )
 
     with col3:
+        it_systems_options = [
+            t('it_systems_options.none'),
+            t('it_systems_options.basic'),
+            t('it_systems_options.standard'),
+            t('it_systems_options.advanced')
+        ]
         it_systems = st.selectbox(
-            "Systemy IT i Multimedia",
-            options=[
-                "Bez systemów IT",
-                "Podstawowe (router WiFi, gniazda RJ45)",
-                "Standardowe (+ monitoring, domofon)",
-                "Zaawansowane (serwer, UPS, backup)",
-                "Smart Building (KNX, IoT, automatyka)",
-                "Multimedia (TV, audio, prezentacje)"
-            ]
+            t('it_multimedia'),
+            options=it_systems_options
         )
 
     # Final Comments
-    st.markdown("### Uwagi Specjalne - Ogólne")
+    st.markdown(f"### {t('special_notes_general')}")
     general_comments = st.text_area(
-        "Opisz wszelkie dodatkowe wymagania, specyfikacje lub ograniczenia projektu...",
-        placeholder="np. Specjalne terminy realizacji, wymogi certyfikacyjne, ograniczenia budżetowe, nietypowe zastosowania",
+        t('describe_general_requirements'),
+        placeholder=t('general_requirements_placeholder'),
         key="general_comments",
         height=100
     )
