@@ -115,7 +115,22 @@ class AutomatedTranslationWorkflow:
             'custom': {'de': 'Benutzerdefiniert', 'fr': 'personnalisé', 'es': 'personalizado', 'it': 'personalizzato', 'nl': 'aangepast', 'cs': 'vlastní', 'hu': 'egyedi', 'sk': 'vlastný', 'sv': 'anpassad', 'fi': 'mukautettu', 'uk': 'власний'},
             'professional': {'de': 'Professionell', 'fr': 'professionnel', 'es': 'profesional', 'it': 'professionale', 'nl': 'professioneel', 'cs': 'profesionální', 'hu': 'szakmai', 'sk': 'profesionálny', 'sv': 'professionell', 'fi': 'ammattimainen', 'uk': 'професійний'},
             'materials': {'de': 'Materialien', 'fr': 'matériaux', 'es': 'materiales', 'it': 'materiali', 'nl': 'materialen', 'cs': 'materiály', 'hu': 'anyagok', 'sk': 'materiály', 'sv': 'material', 'fi': 'materiaalit', 'uk': 'матеріали'},
-            'assembly': {'de': 'Montage', 'fr': 'assemblage', 'es': 'montaje', 'it': 'assemblaggio', 'nl': 'montage', 'cs': 'montáž', 'hu': 'összeszerelés', 'sk': 'montáž', 'sv': 'montering', 'fi': 'kokoonpano', 'uk': 'збірка'}
+            'assembly': {'de': 'Montage', 'fr': 'assemblage', 'es': 'montaje', 'it': 'assemblaggio', 'nl': 'montage', 'cs': 'montáž', 'hu': 'összeszerelés', 'sk': 'montáž', 'sv': 'montering', 'fi': 'kokoonpano', 'uk': 'збірка'},
+            'none': {'de': 'Keine', 'fr': 'Aucun', 'es': 'Ninguno', 'it': 'Nessuno', 'nl': 'Geen', 'cs': 'Žádný', 'hu': 'Nincs', 'sk': 'Žiadny', 'sv': 'Ingen', 'fi': 'Ei mitään', 'uk': 'Немає'},
+            'underfloor': {'de': 'Fußboden', 'fr': 'plancher', 'es': 'suelo', 'it': 'pavimento', 'nl': 'vloer', 'cs': 'podlaha', 'hu': 'padló', 'sk': 'podlaha', 'sv': 'golv', 'fi': 'lattia', 'uk': 'підлога'},
+            'cold water': {'de': 'Kaltwasser', 'fr': 'eau froide', 'es': 'agua fría', 'it': 'acqua fredda', 'nl': 'koud water', 'cs': 'studená voda', 'hu': 'hideg víz', 'sk': 'studená voda', 'sv': 'kallt vatten', 'fi': 'kylmä vesi', 'uk': 'холодна вода'},
+            'crane': {'de': 'Kran', 'fr': 'grue', 'es': 'grúa', 'it': 'gru', 'nl': 'kraan', 'cs': 'jeřáb', 'hu': 'daru', 'sk': 'žeriav', 'sv': 'kran', 'fi': 'nosturi', 'uk': 'кран'},
+            'terrace': {'de': 'Terrasse', 'fr': 'terrasse', 'es': 'terraza', 'it': 'terrazza', 'nl': 'terras', 'cs': 'terasa', 'hu': 'terasz', 'sk': 'terasa', 'sv': 'terrass', 'fi': 'terassi', 'uk': 'тераса'},
+            'solar': {'de': 'Solar', 'fr': 'solaire', 'es': 'solar', 'it': 'solare', 'nl': 'zonne', 'cs': 'solární', 'hu': 'napenergia', 'sk': 'solárny', 'sv': 'sol', 'fi': 'aurinko', 'uk': 'сонячний'},
+            'sloped': {'de': 'Geneigt', 'fr': 'incliné', 'es': 'inclinado', 'it': 'inclinato', 'nl': 'hellend', 'cs': 'šikmý', 'hu': 'ferde', 'sk': 'šikmý', 'sv': 'lutande', 'fi': 'kalteva', 'uk': 'похилий'},
+            'insulation': {'de': 'Dämmung', 'fr': 'isolation', 'es': 'aislamiento', 'it': 'isolamento', 'nl': 'isolatie', 'cs': 'izolace', 'hu': 'szigetelés', 'sk': 'izolácia', 'sv': 'isolering', 'fi': 'eristys', 'uk': 'ізоляція'},
+            'extended': {'de': 'Erweitert', 'fr': 'étendu', 'es': 'extendido', 'it': 'esteso', 'nl': 'uitgebreid', 'cs': 'rozšířený', 'hu': 'kiterjesztett', 'sk': 'rozšírený', 'sv': 'utökad', 'fi': 'laajennettu', 'uk': 'розширений'},
+            'full': {'de': 'Vollständig', 'fr': 'complet', 'es': 'completo', 'it': 'completo', 'nl': 'volledig', 'cs': 'úplný', 'hu': 'teljes', 'sk': 'úplný', 'sv': 'fullständig', 'fi': 'täydellinen', 'uk': 'повний'},
+            'ramp': {'de': 'Rampe', 'fr': 'rampe', 'es': 'rampa', 'it': 'rampa', 'nl': 'helling', 'cs': 'rampa', 'hu': 'rámpa', 'sk': 'rampa', 'sv': 'ramp', 'fi': 'luiska', 'uk': 'пандус'},
+            'lift': {'de': 'Aufzug', 'fr': 'ascenseur', 'es': 'ascensor', 'it': 'ascensore', 'nl': 'lift', 'cs': 'výtah', 'hu': 'lift', 'sk': 'výťah', 'sv': 'hiss', 'fi': 'hissi', 'uk': 'ліфт'},
+            'built-in': {'de': 'Eingebaut', 'fr': 'intégré', 'es': 'incorporado', 'it': 'incorporato', 'nl': 'ingebouwd', 'cs': 'vestavěný', 'hu': 'beépített', 'sk': 'vstavaný', 'sv': 'inbyggd', 'fi': 'sisäänrakennettu', 'uk': 'вбудований'},
+            'furniture': {'de': 'Möbel', 'fr': 'meubles', 'es': 'muebles', 'it': 'mobili', 'nl': 'meubels', 'cs': 'nábytek', 'hu': 'bútor', 'sk': 'nábytok', 'sv': 'möbler', 'fi': 'huonekalut', 'uk': 'меблі'},
+            'layout': {'de': 'Layout', 'fr': 'disposition', 'es': 'diseño', 'it': 'layout', 'nl': 'indeling', 'cs': 'rozložení', 'hu': 'elrendezés', 'sk': 'rozloženie', 'sv': 'layout', 'fi': 'asettelu', 'uk': 'планування'}
         }
 
         # Process each significant issue
@@ -130,9 +145,20 @@ class AutomatedTranslationWorkflow:
                     current_lower = current_value.lower().strip()
                     translated = None
 
+                    # Check for exact matches and partial matches
                     for english_word, translations in common_missed_words.items():
-                        if english_word in current_lower and lang_code in translations:
+                        if lang_code in translations:
+                            # Exact match
                             if current_lower == english_word or current_value.strip() == english_word.title():
+                                translated = translations[lang_code]
+                                break
+                            # Partial match for compound words
+                            elif english_word in current_lower and len(english_word) > 3:
+                                if current_lower.replace(' ', '') == english_word.replace(' ', ''):
+                                    translated = translations[lang_code]
+                                    break
+                            # Handle hyphenated words
+                            elif '-' in current_value and english_word.replace(' ', '-') in current_value.lower():
                                 translated = translations[lang_code]
                                 break
 
