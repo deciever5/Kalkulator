@@ -53,32 +53,9 @@
     "emergency": "Oświetlenie awaryjne (akumulatorowe)",
     "smart": "System inteligentny (oświetlenie sterowane)"
   },
-  "electrical_system": {
-    "none": "Bez instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody bez wyposażenia)",
-    "basic": "Podstawowy (oświetlenie + gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
-    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
-    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
-    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
-    "smart": "Inteligentny (smart home, KNX, automatyka)"
-  },
-  "plumbing_system": {
-    "none": "Bez instalacji wodnej",
-    "basic": "Podstawowa (zlew + odpływ)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)"
-  },
-  "hvac_system": {
-    "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
-    "basic": "Podstawowa wentylacja",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "heat_pump": "Pompa ciepła"
-  },
+  "electrical_system": "System Elektryczny",
+  "plumbing_system": "System Hydrauliczny",
+  "hvac_system": "System HVAC",
   "flooring": {
     "none": "Bez podłogi (blacha falista)",
     "plywood": "Sklejka wodoodporna 18mm (standard)",
@@ -91,9 +68,6 @@
     "basic": "Podstawowa (beton przemysłowy)",
     "hardwood": "Drewno twarde (parkiet)"
   },
-  "electrical_system": "System Elektryczny", 
-  "plumbing_system": "System Hydrauliczny",
-  "hvac_system": "System HVAC",
   "configure_container": "Skonfiguruj Swój Kontener",
   "simple_process_2_steps": "Prosty proces w 2 łatwych krokach",
   "step_1_configuration": "Krok 1: Konfiguracja",
