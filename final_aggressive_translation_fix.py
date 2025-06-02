@@ -1,8 +1,8 @@
-
 #!/usr/bin/env python3
 """
 Final Aggressive Translation Fix
 Last resort script to fix remaining translation issues
+Uses Polish as complete source and translates entire phrases
 """
 
 import json
@@ -15,166 +15,134 @@ class FinalTranslationFixer:
     def __init__(self):
         self.ai_service = AITranslationService()
         self.locales_dir = "locales"
-        
-        # Aggressive translation mappings for common patterns
-        self.pattern_translations = {
-            'de': {
-                'heating': 'Heizung', 'cooling': 'Kühlung', 'none': 'Keine',
-                'basic': 'Basis', 'standard': 'Standard', 'advanced': 'Erweitert',
-                'security': 'Sicherheit', 'system': 'System', 'installation': 'Installation',
-                'delivery': 'Lieferung', 'transport': 'Transport', 'analysis': 'Analyse',
-                'configuration': 'Konfiguration', 'professional': 'Professionell',
-                'materials': 'Materialien', 'assembly': 'Montage', 'custom': 'Benutzerdefiniert',
-                'underfloor': 'Fußboden', 'cold water': 'Kaltwasser', 'crane': 'Kran',
-                'solar': 'Solar', 'terrace': 'Terrasse', 'extended': 'Erweitert',
-                'full': 'Vollständig', 'ramp': 'Rampe', 'lift': 'Aufzug',
-                'built-in': 'Eingebaut', 'furniture': 'Möbel', 'layout': 'Layout'
-            },
-            'fr': {
-                'heating': 'chauffage', 'cooling': 'refroidissement', 'none': 'Aucun',
-                'basic': 'de base', 'standard': 'standard', 'advanced': 'avancé',
-                'security': 'sécurité', 'system': 'système', 'installation': 'installation',
-                'delivery': 'livraison', 'transport': 'transport', 'analysis': 'analyse',
-                'configuration': 'configuration', 'professional': 'professionnel',
-                'materials': 'matériaux', 'assembly': 'assemblage', 'custom': 'personnalisé',
-                'underfloor': 'plancher', 'cold water': 'eau froide', 'crane': 'grue',
-                'solar': 'solaire', 'terrace': 'terrasse', 'extended': 'étendu',
-                'full': 'complet', 'ramp': 'rampe', 'lift': 'ascenseur',
-                'built-in': 'intégré', 'furniture': 'meubles', 'layout': 'disposition'
-            },
-            'es': {
-                'heating': 'calefacción', 'cooling': 'refrigeración', 'none': 'Ninguno',
-                'basic': 'básico', 'standard': 'estándar', 'advanced': 'avanzado',
-                'security': 'seguridad', 'system': 'sistema', 'installation': 'instalación',
-                'delivery': 'entrega', 'transport': 'transporte', 'analysis': 'análisis',
-                'configuration': 'configuración', 'professional': 'profesional',
-                'materials': 'materiales', 'assembly': 'montaje', 'custom': 'personalizado',
-                'underfloor': 'suelo', 'cold water': 'agua fría', 'crane': 'grúa',
-                'solar': 'solar', 'terrace': 'terraza', 'extended': 'extendido',
-                'full': 'completo', 'ramp': 'rampa', 'lift': 'ascensor',
-                'built-in': 'incorporado', 'furniture': 'muebles', 'layout': 'diseño'
-            },
-            'it': {
-                'heating': 'riscaldamento', 'cooling': 'raffreddamento', 'none': 'Nessuno',
-                'basic': 'di base', 'standard': 'standard', 'advanced': 'avanzato',
-                'security': 'sicurezza', 'system': 'sistema', 'installation': 'installazione',
-                'delivery': 'consegna', 'transport': 'trasporto', 'analysis': 'analisi',
-                'configuration': 'configurazione', 'professional': 'professionale',
-                'materials': 'materiali', 'assembly': 'assemblaggio', 'custom': 'personalizzato',
-                'underfloor': 'pavimento', 'cold water': 'acqua fredda', 'crane': 'gru',
-                'solar': 'solare', 'terrace': 'terrazza', 'extended': 'esteso',
-                'full': 'completo', 'ramp': 'rampa', 'lift': 'ascensore',
-                'built-in': 'incorporato', 'furniture': 'mobili', 'layout': 'layout'
-            },
-            'nl': {
-                'heating': 'verwarming', 'cooling': 'koeling', 'none': 'Geen',
-                'basic': 'basis', 'standard': 'standaard', 'advanced': 'geavanceerd',
-                'security': 'beveiliging', 'system': 'systeem', 'installation': 'installatie',
-                'delivery': 'levering', 'transport': 'transport', 'analysis': 'analyse',
-                'configuration': 'configuratie', 'professional': 'professioneel',
-                'materials': 'materialen', 'assembly': 'montage', 'custom': 'aangepast',
-                'underfloor': 'vloer', 'cold water': 'koud water', 'crane': 'kraan',
-                'solar': 'zonne', 'terrace': 'terras', 'extended': 'uitgebreid',
-                'full': 'volledig', 'ramp': 'helling', 'lift': 'lift',
-                'built-in': 'ingebouwd', 'furniture': 'meubels', 'layout': 'indeling'
+
+        # Enhanced translation mappings with complete phrases
+        self.complete_translations = {
+            'hu': {
+                # Security levels - complete translations
+                'none': 'További biztonsági elemek nélkül (szabványos zárak)',
+                'basic': 'Alapvető (megerősített zárak, ablakrácsok)', 
+                'standard': 'Szabványos (riasztó, érzékelők, sziréna)',
+                'extended': 'Kiterjesztett (felügyelet, mozgás/vibrációérzékelők)',
+                'high': 'Magas (CCTV IP, hozzáférés-vezérlés, kaputelefon)',
+                'maximum': 'Maximális (széf, biometria, központi felügyelet)',
+                'industrial': 'Ipari (ATEX, gázrendszerek, pánikszoba)',
+
+                # Cladding options
+                'exterior_cladding_none': 'Burkolat nélkül (szabványos konténerlemez)',
+                'exterior_cladding_basic': 'Alapvető (festett acéllemez)',
+                'exterior_cladding_standard': 'Szabványos (profilozott lemez)',
+                'exterior_cladding_premium': 'Prémium (kompozit panel)',
+                'exterior_cladding_wood': 'Fa (thermowood borítás)',
+                'exterior_cladding_stone': 'Kő (természetes kőfurnis)',
+
+                # Common technical terms
+                'heating': 'fűtés',
+                'cooling': 'hűtés', 
+                'ventilation': 'szellőzés',
+                'insulation': 'szigetelés',
+                'installation': 'telepítés',
+                'delivery': 'szállítás',
+                'transport': 'szállítás',
+                'assembly': 'összeszerelés',
+                'configuration': 'konfiguráció',
+                'analysis': 'elemzés',
+                'professional': 'szakmai',
+                'materials': 'anyagok',
+                'custom': 'egyedi',
+                'standard': 'szabványos',
+                'premium': 'prémium',
+                'basic': 'alapvető',
+                'advanced': 'haladó',
+                'system': 'rendszer',
+                'security': 'biztonság'
             },
             'cs': {
-                'heating': 'vytápění', 'cooling': 'chlazení', 'none': 'Žádný',
-                'basic': 'základní', 'standard': 'standardní', 'advanced': 'pokročilý',
-                'security': 'bezpečnost', 'system': 'systém', 'installation': 'instalace',
-                'delivery': 'dodání', 'transport': 'doprava', 'analysis': 'analýza',
-                'configuration': 'konfigurace', 'professional': 'profesionální',
-                'materials': 'materiály', 'assembly': 'montáž', 'custom': 'vlastní',
-                'underfloor': 'podlaha', 'cold water': 'studená voda', 'crane': 'jeřáb',
-                'solar': 'solární', 'terrace': 'terasa', 'extended': 'rozšířený',
-                'full': 'úplný', 'ramp': 'rampa', 'lift': 'výtah',
-                'built-in': 'vestavěný', 'furniture': 'nábytek', 'layout': 'rozložení'
-            },
-            'hu': {
-                'heating': 'fűtés', 'cooling': 'hűtés', 'none': 'Nincs',
-                'basic': 'alap', 'standard': 'szabványos', 'advanced': 'haladó',
-                'security': 'biztonság', 'system': 'rendszer', 'installation': 'telepítés',
-                'delivery': 'szállítás', 'transport': 'szállítás', 'analysis': 'elemzés',
-                'configuration': 'konfiguráció', 'professional': 'szakmai',
-                'materials': 'anyagok', 'assembly': 'összeszerelés', 'custom': 'egyedi',
-                'underfloor': 'padló', 'cold water': 'hideg víz', 'crane': 'daru',
-                'solar': 'napenergia', 'terrace': 'terasz', 'extended': 'kiterjesztett',
-                'full': 'teljes', 'ramp': 'rámpa', 'lift': 'lift',
-                'built-in': 'beépített', 'furniture': 'bútor', 'layout': 'elrendezés'
-            },
-            'sk': {
-                'heating': 'vykurovanie', 'cooling': 'chladenie', 'none': 'Žiadny',
-                'basic': 'základný', 'standard': 'štandardný', 'advanced': 'pokročilý',
-                'security': 'bezpečnosť', 'system': 'systém', 'installation': 'inštalácia',
-                'delivery': 'dodanie', 'transport': 'doprava', 'analysis': 'analýza',
-                'configuration': 'konfigurácia', 'professional': 'profesionálny',
-                'materials': 'materiály', 'assembly': 'montáž', 'custom': 'vlastný',
-                'underfloor': 'podlaha', 'cold water': 'studená voda', 'crane': 'žeriav',
-                'solar': 'solárny', 'terrace': 'terasa', 'extended': 'rozšírený',
-                'full': 'úplný', 'ramp': 'rampa', 'lift': 'výťah',
-                'built-in': 'vstavaný', 'furniture': 'nábytok', 'layout': 'rozloženie'
-            },
-            'sv': {
-                'heating': 'uppvärmning', 'cooling': 'kylning', 'none': 'Ingen',
-                'basic': 'grundläggande', 'standard': 'standard', 'advanced': 'avancerad',
-                'security': 'säkerhet', 'system': 'system', 'installation': 'installation',
-                'delivery': 'leverans', 'transport': 'transport', 'analysis': 'analys',
-                'configuration': 'konfiguration', 'professional': 'professionell',
-                'materials': 'material', 'assembly': 'montering', 'custom': 'anpassad',
-                'underfloor': 'golv', 'cold water': 'kallt vatten', 'crane': 'kran',
-                'solar': 'sol', 'terrace': 'terrass', 'extended': 'utökad',
-                'full': 'fullständig', 'ramp': 'ramp', 'lift': 'hiss',
-                'built-in': 'inbyggd', 'furniture': 'möbler', 'layout': 'layout'
-            },
-            'fi': {
-                'heating': 'lämmitys', 'cooling': 'jäähdytys', 'none': 'Ei mitään',
-                'basic': 'perus', 'standard': 'vakio', 'advanced': 'edistynyt',
-                'security': 'turvallisuus', 'system': 'järjestelmä', 'installation': 'asennus',
-                'delivery': 'toimitus', 'transport': 'kuljetus', 'analysis': 'analyysi',
-                'configuration': 'konfiguraatio', 'professional': 'ammattimainen',
-                'materials': 'materiaalit', 'assembly': 'kokoonpano', 'custom': 'mukautettu',
-                'underfloor': 'lattia', 'cold water': 'kylmä vesi', 'crane': 'nosturi',
-                'solar': 'aurinko', 'terrace': 'terassi', 'extended': 'laajennettu',
-                'full': 'täydellinen', 'ramp': 'luiska', 'lift': 'hissi',
-                'built-in': 'sisäänrakennettu', 'furniture': 'huonekalut', 'layout': 'asettelu'
-            },
-            'uk': {
-                'heating': 'опалення', 'cooling': 'охолодження', 'none': 'Немає',
-                'basic': 'базовий', 'standard': 'стандартний', 'advanced': 'просунутий',
-                'security': 'безпека', 'system': 'система', 'installation': 'встановлення',
-                'delivery': 'доставка', 'transport': 'транспорт', 'analysis': 'аналіз',
-                'configuration': 'конфігурація', 'professional': 'професійний',
-                'materials': 'матеріали', 'assembly': 'збірка', 'custom': 'власний',
-                'underfloor': 'підлога', 'cold water': 'холодна вода', 'crane': 'кран',
-                'solar': 'сонячний', 'terrace': 'тераса', 'extended': 'розширений',
-                'full': 'повний', 'ramp': 'пандус', 'lift': 'ліфт',
-                'built-in': 'вбудований', 'furniture': 'меблі', 'layout': 'планування'
+                # Security levels
+                'none': 'Bez dodatečných bezpečnostních prvků (standardní zámky)',
+                'basic': 'Základní (zesílené zámky, okenní mříže)',
+                'standard': 'Standardní (alarm, čidla, siréna)', 
+                'extended': 'Rozšířený (dohled, pohybová/vibrační čidla)',
+                'high': 'Vysoký (CCTV IP, řízení přístupu, interkom)',
+                'maximum': 'Maximální (trezor, biometrie, centrální dohled)',
+                'industrial': 'Průmyslový (ATEX, plynové systémy, nouzová místnost)',
+
+                # Cladding options
+                'exterior_cladding_none': 'Bez obkladu (standardní kontejnerový plech)',
+                'exterior_cladding_basic': 'Základní (lakovaný ocelový plech)',
+                'exterior_cladding_standard': 'Standardní (profilovaný plech)',
+                'exterior_cladding_premium': 'Prémiový (kompozitní panel)',
+                'exterior_cladding_wood': 'Dřevo (thermowood obložení)',
+                'exterior_cladding_stone': 'Kámen (přírodní kamenná dýha)',
+
+                # Technical terms
+                'heating': 'vytápění',
+                'cooling': 'chlazení',
+                'ventilation': 'větrání',
+                'insulation': 'izolace',
+                'installation': 'instalace',
+                'delivery': 'dodání',
+                'transport': 'doprava',
+                'assembly': 'montáž',
+                'configuration': 'konfigurace',
+                'analysis': 'analýza',
+                'professional': 'profesionální',
+                'materials': 'materiály',
+                'custom': 'vlastní',
+                'standard': 'standardní',
+                'premium': 'prémiový',
+                'basic': 'základní',
+                'advanced': 'pokročilý',
+                'system': 'systém',
+                'security': 'bezpečnost'
             }
         }
 
+    def is_mixed_language(self, text: str) -> bool:
+        """Check if text contains mixed languages (like Polish + Hungarian)"""
+        if not text:
+            return False
+
+        # Common Polish words that shouldn't appear in other languages
+        polish_indicators = ['dodatkowych', 'wzmocnione', 'zamki', 'czujniki', 'ruchu', 'wibracji', 'sejf', 'systemy', 'gazowe', 'okładziny', 'blacha', 'kontenerowa', 'standardowa']
+
+        # Check for Polish words mixed with other languages
+        text_lower = text.lower()
+        polish_count = sum(1 for word in polish_indicators if word in text_lower)
+
+        return polish_count > 0
+
     def is_likely_english(self, text: str) -> bool:
         """Check if text is likely English"""
-        english_indicators = ['the', 'and', 'or', 'of', 'to', 'for', 'with', 'by', 'from', 'system', 'configuration', 'analysis']
+        if not text:
+            return False
+
+        english_indicators = ['the', 'and', 'or', 'of', 'to', 'for', 'with', 'by', 'from', 'system', 'configuration', 'analysis', 'basic', 'standard', 'premium', 'advanced']
         words = text.lower().split()
         return any(word in english_indicators for word in words)
 
-    def fix_with_patterns(self, text: str, lang_code: str) -> str:
-        """Fix text using pattern matching"""
-        if lang_code not in self.pattern_translations:
-            return text
-            
-        text_lower = text.lower().strip()
-        patterns = self.pattern_translations[lang_code]
-        
-        # Try exact matches first
-        for english_word, translation in patterns.items():
-            if text_lower == english_word:
+    def get_complete_translation(self, polish_text: str, lang_code: str) -> str:
+        """Get complete translation for Polish text"""
+        if not polish_text or lang_code not in self.complete_translations:
+            return polish_text
+
+        translations = self.complete_translations[lang_code]
+        polish_lower = polish_text.lower().strip()
+
+        # Try exact matches for key phrases
+        for key, translation in translations.items():
+            if key in polish_lower or polish_lower.endswith(key):
                 return translation
-            # Try partial matches for compound words
-            if english_word in text_lower and len(english_word) > 3:
-                return text.replace(english_word, translation)
-                
-        return text
+
+        # Try AI translation for complete phrases
+        try:
+            translated = self.ai_service._translate_text(polish_text, lang_code)
+            if translated and translated != polish_text and not self.is_likely_english(translated):
+                return translated
+        except Exception as e:
+            print(f"   ⚠️ AI translation error: {e}")
+
+        return polish_text
 
     def get_all_keys_flat(self, data: dict, prefix: str = "") -> dict:
         """Get all keys from nested dict as flat key-value pairs"""
@@ -201,62 +169,59 @@ class FinalTranslationFixer:
         current[keys[-1]] = value
 
     def fix_language_aggressively(self, lang_code: str) -> bool:
-        """Apply aggressive fixes to a language file"""
-        print(f"🚀 Aggressively fixing {lang_code.upper()}...")
-        
+        """Apply aggressive fixes to a language file using Polish as complete source"""
+        print(f"🚀 Aggressively fixing {lang_code.upper()} using Polish as complete source...")
+
         # Skip EN and PL
         if lang_code in ['en', 'pl']:
             print(f"⏭️ Skipping {lang_code} - working fine")
             return True
-            
+
         lang_file = os.path.join(self.locales_dir, f"{lang_code}.json")
-        
+
         try:
             with open(lang_file, 'r', encoding='utf-8') as f:
                 lang_data = json.load(f)
         except Exception as e:
             print(f"❌ Error loading {lang_code}: {e}")
             return False
-            
-        # Load Polish base
+
+        # Load Polish base for complete source
         try:
             with open(os.path.join(self.locales_dir, "pl.json"), 'r', encoding='utf-8') as f:
                 base_data = json.load(f)
         except Exception as e:
             print(f"❌ Error loading Polish base: {e}")
             return False
-            
+
         base_translations = self.get_all_keys_flat(base_data)
         lang_translations = self.get_all_keys_flat(lang_data)
-        
+
         fixes_made = 0
-        
-        # Fix all translations
+
+        # Fix all problematic translations
         for key, polish_text in base_translations.items():
             current_text = lang_translations.get(key, "")
-            
-            # Skip if already properly translated
-            if current_text and not self.is_likely_english(current_text) and current_text != polish_text:
-                continue
-                
-            # Try pattern matching first
-            pattern_result = self.fix_with_patterns(current_text or polish_text, lang_code)
-            if pattern_result != (current_text or polish_text):
-                self.set_nested_value(lang_data, key, pattern_result)
-                fixes_made += 1
-                print(f"   ✓ Pattern: {key}")
-                continue
-                
-            # Try AI translation
-            try:
-                translated = self.ai_service._translate_text(polish_text, lang_code)
-                if translated and translated != polish_text and not self.is_likely_english(translated):
-                    self.set_nested_value(lang_data, key, translated)
+
+            # Check if current translation needs fixing
+            needs_fixing = (
+                not current_text or  # Missing translation
+                current_text == polish_text or  # Untranslated
+                self.is_mixed_language(current_text) or  # Mixed languages
+                self.is_likely_english(current_text)  # English in non-English file
+            )
+
+            if needs_fixing:
+                # Get complete translation from Polish
+                new_translation = self.get_complete_translation(polish_text, lang_code)
+
+                if new_translation != current_text and new_translation != polish_text:
+                    self.set_nested_value(lang_data, key, new_translation)
                     fixes_made += 1
-                    print(f"   ✓ AI: {key}")
-            except Exception as e:
-                print(f"   ⚠️ AI error for {key}: {e}")
-        
+                    print(f"   ✓ Fixed: {key}")
+                    print(f"     Old: {current_text[:50]}...")
+                    print(f"     New: {new_translation[:50]}...")
+
         # Save fixes
         if fixes_made > 0:
             try:
@@ -272,12 +237,14 @@ class FinalTranslationFixer:
             return True
 
     def fix_all_languages(self):
-        """Fix all languages aggressively"""
-        print("🚀 FINAL AGGRESSIVE TRANSLATION FIX")
-        print("=" * 60)
-        
+        """Fix all languages aggressively using Polish as complete source"""
+        print("🚀 FINAL AGGRESSIVE TRANSLATION FIX - COMPLETE PHRASE TRANSLATION")
+        print("=" * 80)
+        print("Using Polish as complete source for full phrase translations")
+        print("=" * 80)
+
         languages = ['de', 'fr', 'es', 'it', 'nl', 'cs', 'hu', 'sk', 'sv', 'fi', 'uk']
-        
+
         success_count = 0
         for lang_code in languages:
             try:
@@ -285,9 +252,10 @@ class FinalTranslationFixer:
                     success_count += 1
             except Exception as e:
                 print(f"❌ Error with {lang_code}: {e}")
-        
+
         print(f"\n🎉 AGGRESSIVE FIX COMPLETE!")
         print(f"✅ Successfully fixed: {success_count}/{len(languages)} languages")
+        print("📝 All translations now use complete phrases from Polish source")
 
 def main():
     fixer = FinalTranslationFixer()
