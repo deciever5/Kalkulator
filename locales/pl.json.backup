@@ -650,7 +650,7 @@
   "lighting_basic": "Podstawowe LED",
   "additional_openings_emergency": "Wyjście Awaryjne",
   "office_equipment_none": "Brak",
-
+  "window_types": "Typy Okien",
   "it_systems_none": "Brak",
   "transport_type_standard": "Standardowy",
   "advanced_comments": "Komentarze do Zaawansowanych Modyfikacji",
