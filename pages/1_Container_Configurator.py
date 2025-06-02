@@ -221,7 +221,7 @@ with st.form("container_configuration_form"):
             t('flooring.concrete')
         ]
         flooring = st.selectbox(
-            t('flooring'),
+            t('form.labels.flooring'),
             options=flooring_options,
             index=1
         )
@@ -342,7 +342,7 @@ with st.form("container_configuration_form"):
             t('electrical_system.smart')
         ]
         electrical_system = st.selectbox(
-            t('electrical_system'),
+            t('form.labels.electrical_system'),
             options=electrical_system_options,
             index=3
         )
@@ -361,7 +361,7 @@ with st.form("container_configuration_form"):
             t('plumbing_system.industrial')
         ]
         plumbing_system = st.selectbox(
-            t('plumbing_system'),
+            t('form.labels.plumbing_system'),
             options=plumbing_system_options
         )
 
@@ -378,7 +378,7 @@ with st.form("container_configuration_form"):
             t('hvac_system.central_ac')
         ]
         hvac_system = st.selectbox(
-            t('hvac_system'),
+            t('form.labels.hvac_system'),
             options=hvac_system_options,
             index=5
         )
