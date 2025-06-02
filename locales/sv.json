@@ -850,21 +850,21 @@
   "lighting_label": "Belysning",
   "flooring_label": "Golv",
   "cost_estimation": {
-      "estimate_title": "💰 Projektkostnadsuppskattning",
-      "cost_breakdown_title": "Kostnadsfördelning:",
-      "base_container_line": "Bascontainer:",
-      "modifications_equipment_line": "Modifieringar och utrustning:",
-      "total_cost_line": "TOTALKOSTNAD:",
-      "important_warning": "⚠️ Viktigt:",
-      "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
-      "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!"
-    },
     "estimate_title": "💰 Projektkostnadsuppskattning",
     "cost_breakdown_title": "Kostnadsfördelning:",
     "base_container_line": "Bascontainer:",
-    "modifications_equipment_line": "Modifikationer och utrustning:",
+    "modifications_equipment_line": "Modifieringar och utrustning:",
     "total_cost_line": "TOTALKOSTNAD:",
     "important_warning": "⚠️ Viktigt:",
     "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
     "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!"
-  }
+  },
+  "estimate_title": "💰 Projektkostnadsuppskattning",
+  "cost_breakdown_title": "Kostnadsfördelning:",
+  "base_container_line": "Bascontainer:",
+  "modifications_equipment_line": "Modifikationer och utrustning:",
+  "total_cost_line": "TOTALKOSTNAD:",
+  "important_warning": "⚠️ Viktigt:",
+  "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
+  "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!"
+}
