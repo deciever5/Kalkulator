@@ -40,7 +40,7 @@
     "custom_sizing_desc": "Design Containers with Exact Specifications"
   },
   "window_types": {
-    "standard": "Standard (25A, lighting, 8 outlets)",
+    "standard": "Standard (double glazing)",
     "energy_efficient": "Energy efficient (triple glazing)",
     "security": "Security (tempered glass)",
     "marine_grade": "Marine grade (anti-corrosion)",
@@ -443,7 +443,7 @@
     "project_context": "Project Context",
     "project_location": "Project location",
     "project_name": "Project name",
-    "project_name_placeholder": "e.g. Container Office - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "file_upload": "File Upload",
     "upload_drawings": "Upload technical drawings",
     "file_formats_help": "We support PDF, DWG, JPG and PNG files. We recommend PDF format for best analysis.",
@@ -458,7 +458,7 @@
     "current_config": "Current configuration",
     "project_context": "Project Context",
     "project_name": "Project Name",
-    "project_name_placeholder": "e.g. Container Office - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "project_location": "Project Location",
     "file_upload": "File Upload",
     "upload_drawings": "Upload technical drawings",
