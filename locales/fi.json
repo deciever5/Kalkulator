@@ -484,12 +484,12 @@
     "basic": "Perus (wzmocnione zamki, kraty okienne)",
     "standard": "Standardi (alarm, czujniki, syrena)",
     "extended": "Laajennettu (valvonta, czujniki ruchu/wibracji)",
-    "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
+    "high": "Wysokie (CCTV IP, kontrola pääsyu, domofon)",
     "maximum": "Maksymalne (sejf, biometria, central valvonta)",
-    "industrial": "Teollinen (ATEX, systemy gazowe, panic room)"
+    "industrial": "Teollinen (ATEX, systemy kaasunpoisto, panic room)"
   },
   "exterior_cladding_options": {
-    "none": "Ilman okładziny (blacha kontenerowa standardowa)",
+    "none": "Ilman okładziny (blacha kontenerowa tavallinen)",
     "trapezoidal": "Blacha trapezoidalna (T18, T35, T55)",
     "cassette": "Blacha kasetowa (płaska, przetłaczana)",
     "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
@@ -510,50 +510,50 @@
     "custom": "Otwory niestandardi (nietypowe wymiary)"
   },
   "fire_safety_options": {
-    "none": "Ilman systemów przeciwpożarowych",
-    "basic": "Perus (gaśnica, czujka dymu)",
-    "standard": "Standardi (system alarmowy, valaistus hätä)",
-    "extended": "Laajennettu (tryskacze, ewakuacja)",
-    "full": "Pełny system (gazowe, valvonta)"
+    "none": "Ei paloturvallisuusjärjestelmiä",
+    "basic": "Perus (sammutin, savuilmaisin)",
+    "standard": "Standardi (hälytysjärjestelmä, hätävalaistus)",
+    "extended": "Laajennettu (sprinklerit, evakuointi)",
+    "full": "Täysi järjestelmä (kaasunpoisto, valvonta)"
   },
   "accessibility_options": {
-    "standard": "Dostęp standardi (próg 15-20cm)",
-    "ramp": "Podjazd/rampa (dla wózków inwalidzkich)",
-    "lift": "Winda hydrauliczna (dostęp dla niepełnosprawnych)",
-    "full_ada": "Täysi zgodność ADA (szerokie drzwi, uchwyty)"
+    "standard": "Tavallinen pääsy (15-20cm kynnys)",
+    "ramp": "Luiska (pyörätuolipääsy)",
+    "lift": "Hydraulinen nostin (vammaispääsy)",
+    "full_ada": "Täysi ADA-yhteensopivuus (leveät ovet, käsijohteet)"
   },
   "paint_finish_options": {
-    "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
-    "extended": "Powłoka ulepszona C3 (lepsza trwałość)",
-    "marine": "Powłoka morska C5M (środowiska przybrzeżne)",
-    "industrial": "Powłoka przemysłowa C4 (środowiska agresywne)",
-    "premium": "Premium (specjalne kolory RAL, tekstury)"
+    "standard": "Tavallinen pinnoite C2 (RAL 7035 - vaaleanharmaa)",
+    "extended": "Laajennettu pinnoite C3 (parannettu kestävyys)",
+    "marine": "Meriympäristön pinnoite C5M (rannikkoympäristöt)",
+    "industrial": "Teollisuuspinnoite C4 (aggressiiviset ympäristöt)",
+    "premium": "Premium (erikois RAL-värit, tekstuurit)"
   },
   "delivery_zone_options": {
-    "local": "Lokalny (do 50km)",
-    "regional": "Regionalny (50-200km)",
-    "national": "Krajowy (cały kraj)",
-    "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
-    "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
-    "international": "Międzynarodowy (poza Europą)"
+    "local": "Paikallinen (enintään 50km)",
+    "regional": "Alueellinen (50-200km)",
+    "national": "Kansallinen (koko maa)",
+    "central_europe": "Keski-Eurooppa (DE, CZ, SK, AT)",
+    "western_europe": "Länsi-Eurooppa (FR, NL, BE, LU)",
+    "international": "Kansainvälinen (Euroopan ulkopuolella)"
   },
   "transport_type_options": {
-    "standard": "Transport standardi (naczep 13.6m)",
-    "special": "Transport specjalny (ponadgabarytowy)",
-    "crane": "Transport z dźwigiem (montaż na miejscu)",
-    "multi_container": "Transport wielokontenerowy (2+ jednostki)"
+    "standard": "Tavallinen kuljetus (13,6m puoliperävaunu)",
+    "special": "Erikoiskuljetus (ylimitoitettu kuorma)",
+    "crane": "Nosturikuljetus (kokoaminen paikan päällä)",
+    "multi_container": "Monikonttien kuljetus (2+ yksikköä)"
   },
   "assembly_options": {
-    "none": "Ilman montażu (tylko dostawa)",
-    "basic": "Montaż perus (pozycjonowanie, poziomowanie)",
-    "standard": "Montaż standardi (podłączenia, testy)",
-    "full": "Montaż pełny (kompletna instalacja)"
+    "none": "Ei kokoamista (vain toimitus)",
+    "basic": "Peruskokoaminen (sijoittelu, tasoitus)",
+    "standard": "Tavallinen kokoaminen (liitännät, testit)",
+    "full": "Täysi kokoaminen (täydellinen asennus)"
   },
   "office_equipment_options": {
-    "none": "Ilman varustusta (pusty kontener)",
-    "basic": "Perus (biurko, krzesła, szafa)",
-    "standard": "Standardi (komplet mebli, valaistus)",
-    "full": "Pełne (kompletne wyposażenie biura)"
+    "none": "Ei varustusta (tyhjä kontti)",
+    "basic": "Perus (pöytä, tuolit, kaappi)",
+    "standard": "Standardi (huonekaluvalikoima, valaistus)",
+    "full": "Täysi (täydellinen varustus biura)"
   },
   "appliances_options": {
     "none": "Ilman sprzętu AGD",
@@ -562,7 +562,7 @@
     "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
   },
   "it_systems_options": {
-    "none": "Ilman systemów IT",
+    "none": "Ilman järjestelmiä IT",
     "basic": "Perus (internet, WiFi)",
     "standard": "Standardi (sieć, telefonia)",
     "advanced": "Zaawansowane (serwerownia, ilmanturvallisuus)"

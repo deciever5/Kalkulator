@@ -471,42 +471,42 @@
   },
   "accessibility_options": {
     "standard": "Dostęp szabványos (próg 15-20cm)",
-    "ramp": "Podjazd/rampa (dla wózków inwalidzkich)",
-    "lift": "Winda hydrauliczna (dostęp dla niepełnosprawnych)",
+    "ramp": "Rámpa (tolószékes hozzáférés)",
+    "lift": "Hidraulikus lift (fogyatékos hozzáférés)",
     "full_ada": "Teljes zgodność ADA (szerokie drzwi, uchwyty)"
   },
   "paint_finish_options": {
-    "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
-    "extended": "Powłoka ulepszona C3 (lepsza trwałość)",
-    "marine": "Powłoka morska C5M (środowiska przybrzeżne)",
-    "industrial": "Powłoka przemysłowa C4 (środowiska agresywne)",
+    "standard": "Szabványos bevonat C2 (RAL 7035 - világosszürke)",
+    "extended": "Kiterjesztett bevonat C3 (javított tartósság)",
+    "marine": "Tengeri bevonat C5M (parti környezetek)",
+    "industrial": "Ipari bevonat C4 (agresszív környezetek)",
     "premium": "Prémium (specjalne kolory RAL, tekstury)"
   },
   "delivery_zone_options": {
-    "local": "Lokalny (do 50km)",
-    "regional": "Regionalny (50-200km)",
-    "national": "Krajowy (cały kraj)",
-    "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
-    "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
-    "international": "Międzynarodowy (poza Europą)"
+    "local": "Helyi (legfeljebb 50km)",
+    "regional": "Regionális (50-200km)",
+    "national": "Nemzeti (egész ország)",
+    "central_europe": "Közép-Európa (DE, CZ, SK, AT)",
+    "western_europe": "Nyugat-Európa (FR, NL, BE, LU)",
+    "international": "Nemzetközi (Európán kívül)"
   },
   "transport_type_options": {
     "standard": "Transport szabványos (naczep 13.6m)",
-    "special": "Transport specjalny (ponadgabarytowy)",
-    "crane": "Transport z dźwigiem (montaż na miejscu)",
-    "multi_container": "Transport wielokontenerowy (2+ jednostki)"
+    "special": "Speciális szállítás (túlméretes rakomány)",
+    "crane": "Daruszállítás (helyszíni összeszerelés)",
+    "multi_container": "Többkonténeres szállítás (2+ egység)"
   },
   "assembly_options": {
     "none": "Nélkül montażu (tylko dostawa)",
     "basic": "Montaż alapvető (pozycjonowanie, poziomowanie)",
     "standard": "Montaż szabványos (podłączenia, testy)",
-    "full": "Montaż pełny (kompletna instalacja)"
+    "full": "Teljes összeszerelés (komplett telepítés)"
   },
   "office_equipment_options": {
     "none": "Nélkül felszerelés (pusty kontener)",
     "basic": "Alapvető (biurko, krzesła, szafa)",
     "standard": "Szabványos (komplet mebli, világítás)",
-    "full": "Pełne (kompletne wyposażenie biura)"
+    "full": "Teljes (komplett felszerelés biura)"
   },
   "appliances_options": {
     "none": "Nélkül sprzętu AGD",
