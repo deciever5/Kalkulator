@@ -1,3 +1,4 @@
+json
 {
   "app": {
     "title": "Profesjonalne Rozwiązania Kontenerowe",
@@ -128,7 +129,7 @@
   "after_sales_support": "Wsparcie posprzedażowe",
   "contact_us": "Skontaktuj się z nami",
   "address": "Adres",
-  "phone": "Telefon",
+    "phone": "Telefon",
   "email": "Email",
   "working_hours": "Pon-Pt 8:00-17:00",
   "mon_fri": "Pon-Pt 8:00-17:00",
@@ -502,7 +503,7 @@
   "air_intakes_label": "Nawiewy i wentylacja",
   "roof_modifications_label": "Modyfikacje dachu",
   "security_features": "Zabezpieczenia",
-  "exterior_cladding": "Okładzina zewnętrzna",
+  "exterior_cladding": "Okładzina zewnętrzna,
   "additional_openings": "Dodatkowe otwory",
   "fire_safety_label": "Systemy przeciwpożarowe",
   "accessibility_features": "Dostępność",
@@ -513,7 +514,17 @@
     "industrial": "Klasa przemysłowa",
     "marine_grade": "Klasa morska (odporność na sól)"
   },
-  "roof_modifications": "Modyfikacje Dachu",
+  "roof_modifications": {
+    "none": "Bez modyfikacji (dach standardowy płaski)",
+    "insulation": "Dodatkowa izolacja dachu (styropian/PIR)",
+    "skylight": "Świetlik dachowy (90x60cm, otwierany)",
+    "fans": "Wentylatory dachowe (przemysłowe, ciche)",
+    "solar": "Panele słoneczne (1-3kW, autonomiczne)",
+    "antennas": "Anteny/maszty (GSM, radio, satelitarne)",
+    "sloped": "Dach skośny (odpływ wody, estetyka)",
+    "terrace": "Taras dachowy (dostęp, balustrada)",
+    "snow_removal": "System usuwania śniegu (grzałki, ślizgi)"
+  },
   "electrical": {
     "basic": "Podstawowa (oświetlenie + gniazdka)",
     "standard": "Standardowa (obwód 15A)",
@@ -646,7 +657,16 @@
   "advanced_comments": "Komentarze do Zaawansowanych Modyfikacji",
   "delivery_zone_regional": "Regionalna (200km)",
   "window_types_double": "Podwójne Szyby",
-  "ventilation": "Wentylacja",
+  "ventilation": {
+    "none": "Bez wentylacji (kontener szczelny)",
+    "gravity": "Wentylacja grawitacyjna (kraty, wywietrzniki)",
+    "wall_fans": "Wentylatory ścienne (wyciąg 100-150mm)",
+    "mechanical": "Wentylacja mechaniczna (nawiew + wyciąg)",
+    "heat_recovery": "Rekuperacja (odzysk ciepła, filtracja)",
+    "split_ac": "Klimatyzacja split (chłodzenie + grzanie)",
+    "central_ac": "Klimatyzacja centralna (VRV/VRF)",
+    "industrial": "Wentylacja przemysłowa (ATEX, chemoodporna)"
+  },
   "it_systems": "Systemy IT",
   "lighting_professional": "Profesjonalne",
   "interior_layout_open": "Otwarta Przestrzeń",
@@ -724,7 +744,7 @@
     "carpet": "Wykładzina dywanowa (biurowa)",
     "hardwood": "Drewno twarde (parkiet)"
   },
-  "window_types": {
+    "window_types": {
     "standard": "Standardowe (podwójne szyby)",
     "energy_efficient": "Energooszczędne (potrójne szyby)",
     "security": "Bezpieczeństwo (hartowane)",
@@ -759,5 +779,22 @@
     "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
     "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
     "heat_pump": "Pompa ciepła"
+  },
+   "environments": {
+    "indoor": "Wewnętrzne (hale, magazyny)",
+    "outdoor_standard": "Zewnętrzne standardowe",
+    "outdoor_extreme": "Zewnętrzne ekstremalne (wybrzeże, góry)",
+    "industrial": "Przemysłowe (zakłady, rafinerie, kopalnie)",
+    "construction": "Budowlane (place budowy, infrastruktura)",
+    "agricultural": "Rolnicze (farmy, obiekty rolnicze)",
+    "marine": "Morskie/stoczniowe (środowisko korozyjne)"
+  },
+    "windows": {
+    "none": "Bez okien (kontener zamknięty)",
+    "one": "Jedno okno (90x60cm, standardowe)",
+    "two": "Dwa okna (2x 90x60cm)", 
+    "three": "Trzy okna (3x 90x60cm)",
+    "four": "Cztery okna (4x 90x60cm)",
+    "five_plus": "5+ okien (konfiguracja custom)"
   }
 }

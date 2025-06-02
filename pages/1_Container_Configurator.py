@@ -277,7 +277,8 @@ with st.form("container_configuration_form"):
         ]
         window_types = st.multiselect(
             t('window_types'),
-            options=window_types_options
+            options=window_types_options,
+            default=[t('window_types.standard')]
         )
 
         # Lighting
