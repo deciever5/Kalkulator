@@ -555,7 +555,15 @@
     "total_cost": "TOTAL COST",
     "important_notice": "Important",
     "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote.",
-    "configuration_saved": "Configuration saved successfully!"
+    "configuration_saved": "Configuration saved successfully!",
+    "estimate_title": "💰 Project Cost Estimate",
+    "cost_breakdown_title": "Cost Breakdown:",
+    "base_container_line": "Base container:",
+    "modifications_equipment_line": "Modifications and equipment:",
+    "total_cost_line": "TOTAL COST:",
+    "important_warning": "⚠️ Important:",
+    "preliminary_estimate_full": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote.",
+    "configuration_saved_success": "✅ Configuration saved successfully!"
   },
   "materials_base_cost": "Materials & Base Cost",
   "labor_costs_40": "Labor Costs (40%)",

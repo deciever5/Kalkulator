@@ -702,30 +702,30 @@ with st.form("container_configuration_form"):
         # Display cost summary
         st.markdown(f"""
         <div class="cost-summary">
-            <h2 style="margin-top: 0;">💰 {t('cost_estimation.project_estimate')}</h2>
+            <h2 style="margin-top: 0;">{t('cost_estimation.estimate_title')}</h2>
             <div class="cost-breakdown">
-                <h3>{t('cost_estimation.cost_breakdown')}:</h3>
+                <h3>{t('cost_estimation.cost_breakdown_title')}</h3>
                 <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
-                    <span>{t('cost_estimation.base_container')}:</span>
+                    <span>{t('cost_estimation.base_container_line')}</span>
                     <span><strong>€{base_price:,.2f}</strong></span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
-                    <span>{t('cost_estimation.modifications_equipment')}:</span>
+                    <span>{t('cost_estimation.modifications_equipment_line')}</span>
                     <span><strong>€{modifications_cost:,.2f}</strong></span>
                 </div>
                 <hr style="border-color: rgba(255,255,255,0.3);">
                 <div style="display: flex; justify-content: space-between; margin: 1rem 0; font-size: 1.2rem;">
-                    <span><strong>{t('cost_estimation.total_cost')}:</strong></span>
+                    <span><strong>{t('cost_estimation.total_cost_line')}</strong></span>
                     <span><strong>€{total_cost:,.2f}</strong></span>
                 </div>
             </div>
             <div class="special-notes">
-                <strong>⚠️ {t('cost_estimation.important_notice')}:</strong> {t('cost_estimation.preliminary_estimate')}
+                <strong>{t('cost_estimation.important_warning')}</strong> {t('cost_estimation.preliminary_estimate_full')}
             </div>
         </div>
         """, unsafe_allow_html=True)
 
-        st.success(f"✅ {t('cost_estimation.configuration_saved')}")
+        st.success(t('cost_estimation.configuration_saved_success'))
 
 # Navigation buttons (outside form, only show if configuration exists)
 if 'container_config' in st.session_state and st.session_state.container_config:

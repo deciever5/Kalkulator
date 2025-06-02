@@ -524,7 +524,15 @@
     "total_cost": "CAŁKOWITY KOSZT",
     "important_notice": "Ważne",
     "preliminary_estimate": "To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
-    "configuration_saved": "Konfiguracja zapisana pomyślnie!"
+    "configuration_saved": "Konfiguracja zapisana pomyślnie!",
+    "estimate_title": "💰 Szacunkowa Wycena Projektu",
+    "cost_breakdown_title": "Podział Kosztów:",
+    "base_container_line": "Kontener bazowy:",
+    "modifications_equipment_line": "Modyfikacje i wyposażenie:",
+    "total_cost_line": "CAŁKOWITY KOSZT:",
+    "important_warning": "⚠️ Ważne:",
+    "preliminary_estimate_full": "To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
+    "configuration_saved_success": "✅ Konfiguracja zapisana pomyślnie!"
   },
   "materials_base_cost": "Materiały i Koszty Podstawowe",
   "labor_costs_40": "Koszty Pracy (40%)",
