@@ -57,6 +57,10 @@ def translate_cost_estimation_keys():
         except FileNotFoundError:
             print(f"Warning: {file_path} not found, skipping...")
             continue
+        except json.JSONDecodeError as e:
+            print(f"JSON decode error in {file_path}: {e}")
+            print(f"Skipping {lang_code} due to malformed JSON...")
+            continue
         
         # Ensure cost_estimation section exists
         if 'cost_estimation' not in lang_data:
