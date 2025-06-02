@@ -40,9 +40,9 @@
     "custom_sizing_desc": "Containers ontwerpen volgens de exacte specificaties"
   },
   "window_types": {
-    "standard": "Standardowe (podwójne szyby)",
-    "energy_efficient": "Energooszczędne (potrójne szyby)",
-    "security": "Bezpieczeństwo (hartowane)",
+    "standard": "Standaard (dubbele beglazing)",
+    "energy_efficient": "Energooszczędne (drievoudige beglazing)",
+    "security": "Zonderpieczeństwo (hartowane)",
     "marine_grade": "Klasa morska (antykorozyjna)",
     "panoramic": "Okna panoramiczne",
     "sliding": "Okna przesuwne",
@@ -51,16 +51,16 @@
   },
   "lighting": {
     "none": "Brak oświetlenia",
-    "basic": "Podstawowe LED",
-    "basic_led": "Podstawowe oświetlenie LED",
+    "basic": "Basis LED",
+    "basic_led": "Basis oświetlenie LED",
     "energy_efficient": "Energooszczędne LED z czujnikami",
     "exterior": "Oświetlenie zewnętrzne (reflektory)",
     "emergency": "Oświetlenie awaryjne (akumulatorowe)",
     "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "electrical_system": {
-    "none": "Bez instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody bez wyposażenia)",
+    "none": "Zonder elektrische installatie",
+    "preparation": "Przygotowanie (bedrading zonder uitrusting)",
     "basic": "Podstawowy (oświetlenie + gniazdka)",
     "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
     "extended": "Rozszerzony (40A, siła, UPS, emergency)",
@@ -69,8 +69,8 @@
     "smart": "Inteligentny (smart home, KNX, automatyka)"
   },
   "plumbing_system": {
-    "none": "Bez instalacji wodnej",
-    "preparation": "Przygotowanie (rury bez armatury)",
+    "none": "Zonder waterinstallatie",
+    "preparation": "Przygotowanie (leidingen zonder fittingen)",
     "basic": "Podstawowa (zlew + odpływ)",
     "full": "Pełna (przygotowanie łazienki)",
     "commercial": "Klasa komercyjna",
@@ -279,7 +279,7 @@
     "types": {
       "detailed_quote": "Gedetailleerde Offerte",
       "technical_consultation": "Technische Consultatie",
-      "site_visit": "Locatiebezoek",
+      "site_visit": "Locatiezonderoek",
       "drawing_analysis": "Tekeninganalyse",
       "general_info": "Algemene informatie"
     },

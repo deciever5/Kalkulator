@@ -40,8 +40,8 @@
     "custom_sizing_desc": "Návrh kontajnerov s presnými špecifikáciami"
   },
   "window_types": {
-    "standard": "Standardowe (podwójne szyby)",
-    "energy_efficient": "Energooszczędne (potrójne szyby)",
+    "standard": "Štandardné (dvojité zasklenie)",
+    "energy_efficient": "Energooszczędne (trojité zasklenie)",
     "security": "Bezpieczeństwo (hartowane)",
     "marine_grade": "Klasa morska (antykorozyjna)",
     "panoramic": "Okna panoramiczne",
@@ -51,8 +51,8 @@
   },
   "lighting": {
     "none": "Brak oświetlenia",
-    "basic": "Podstawowe LED",
-    "basic_led": "Podstawowe oświetlenie LED",
+    "basic": "Základné LED",
+    "basic_led": "Základné oświetlenie LED",
     "energy_efficient": "Energooszczędne LED z czujnikami",
     "exterior": "Oświetlenie zewnętrzne (reflektory)",
     "emergency": "Oświetlenie awaryjne (akumulatorowe)",
@@ -473,20 +473,20 @@
   "describe_general_requirements": "Opíšte všetky ďalšie požiadavky, špecifikácie alebo obmedzenia projektu...",
   "general_requirements_placeholder": "napr. Špeciálne termíny dokončenia, certifikačné požiadavky, rozpočtové obmedzenia",
   "interior_layout_options": {
-    "open_space": "Przestrzeń otwarta (bez podziałów)",
+    "open_space": "Otvorený priestor (bez priečok)",
     "partitioned": "Z przegrodami (1-3 pomieszczenia)",
     "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
     "custom_layout": "Układ niestandardowy (projekt custom)",
     "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
   },
   "security_systems_options": {
-    "none": "Bez dodatkowych zabezpieczeń (zamki standardowe)",
-    "basic": "Podstawowe (wzmocnione zamki, kraty okienne)",
-    "standard": "Standardowe (alarm, czujniki, syrena)",
-    "extended": "Rozszerzone (monitoring, czujniki ruchu/wibracji)",
+    "none": "Bez dodatkowych zabezpieczeń (zamki štandardné)",
+    "basic": "Základné (wzmocnione zamki, kraty okienne)",
+    "standard": "Štandardné (alarm, czujniki, syrena)",
+    "extended": "Rozšírené (monitoring, czujniki ruchu/wibracji)",
     "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
     "maximum": "Maksymalne (sejf, biometria, central monitoring)",
-    "industrial": "Przemysłowe (ATEX, systemy gazowe, panic room)"
+    "industrial": "Priemyselné (ATEX, systemy gazowe, panic room)"
   },
   "exterior_cladding_options": {
     "none": "Bez okładziny (blacha kontenerowa standardowa)",
@@ -500,20 +500,20 @@
     "natural_stone": "Kamień naturalny/sztuczny"
   },
   "additional_openings_options": {
-    "none": "Bez dodatkowych otworów (standardowe drzwi)",
+    "none": "Bez dodatkowych otworów (štandardné drzwi)",
     "windows": "Okna dodatkowe (1-4 sztuki)",
     "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
     "garage_door": "Brama garażowa (segmentowa, rolowana)",
     "loading_dock": "Rampa załadunkowa (hydrauliczna)",
     "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
     "skylights": "Okna dachowe/świetliki",
-    "custom": "Otwory niestandardowe (nietypowe wymiary)"
+    "custom": "Otwory nieštandardné (nietypowe wymiary)"
   },
   "fire_safety_options": {
     "none": "Bez systemów przeciwpożarowych",
-    "basic": "Podstawowe (gaśnica, czujka dymu)",
-    "standard": "Standardowe (system alarmowy, oświetlenie awaryjne)",
-    "extended": "Rozszerzone (tryskacze, ewakuacja)",
+    "basic": "Základné (gaśnica, czujka dymu)",
+    "standard": "Štandardné (system alarmowy, oświetlenie awaryjne)",
+    "extended": "Rozšírené (tryskacze, ewakuacja)",
     "full": "Pełny system (gazowe, monitoring)"
   },
   "accessibility_options": {
@@ -551,8 +551,8 @@
   },
   "office_equipment_options": {
     "none": "Bez wyposażenia (pusty kontener)",
-    "basic": "Podstawowe (biurko, krzesła, szafa)",
-    "standard": "Standardowe (komplet mebli, oświetlenie)",
+    "basic": "Základné (biurko, krzesła, szafa)",
+    "standard": "Štandardné (komplet mebli, oświetlenie)",
     "full": "Pełne (kompletne wyposażenie biura)"
   },
   "appliances_options": {
@@ -563,8 +563,8 @@
   },
   "it_systems_options": {
     "none": "Bez systemów IT",
-    "basic": "Podstawowe (internet, WiFi)",
-    "standard": "Standardowe (sieć, telefonia)",
+    "basic": "Základné (internet, WiFi)",
+    "standard": "Štandardné (sieć, telefonia)",
     "advanced": "Zaawansowane (serwerownia, bezpieczeństwo)"
   },
   "insulation_package": "Izolačný balík",

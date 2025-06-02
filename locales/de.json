@@ -41,8 +41,8 @@
   },
   "window_types": {
     "standard": "Standard (25A, Beleuchtung, 8 Steckdosen)",
-    "energy_efficient": "Energooszczędne (potrójne szyby)",
-    "security": "Bezpieczeństwo (hartowane)",
+    "energy_efficient": "Energooszczędne (Dreifachverglasung)",
+    "security": "Ohnepieczeństwo (hartowane)",
     "marine_grade": "Klasa morska (antykorozyjna)",
     "panoramic": "Panoramafenster",
     "sliding": "Schiebefenster",

@@ -40,9 +40,9 @@
     "custom_sizing_desc": "Konttien suunnittelu tarkoilla mittaustiedoilla"
   },
   "window_types": {
-    "standard": "Standardowe (podwójne szyby)",
-    "energy_efficient": "Energooszczędne (potrójne szyby)",
-    "security": "Bezpieczeństwo (hartowane)",
+    "standard": "Standardi (kaksinkertainen lasi)",
+    "energy_efficient": "Energooszczędne (kolminkertainen lasi)",
+    "security": "Ilmanpieczeństwo (hartowane)",
     "marine_grade": "Klasa morska (antykorozyjna)",
     "panoramic": "Okna panoramiczne",
     "sliding": "Okna przesuwne",
@@ -51,16 +51,16 @@
   },
   "lighting": {
     "none": "Brak oświetlenia",
-    "basic": "Podstawowe LED",
-    "basic_led": "Podstawowe oświetlenie LED",
+    "basic": "Perus LED",
+    "basic_led": "Perus oświetlenie LED",
     "energy_efficient": "Energooszczędne LED z czujnikami",
     "exterior": "Oświetlenie zewnętrzne (reflektory)",
     "emergency": "Oświetlenie awaryjne (akumulatorowe)",
     "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "electrical_system": {
-    "none": "Bez instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody bez wyposażenia)",
+    "none": "Ilman instalacji elektrycznej",
+    "preparation": "Przygotowanie (przewody ilman wyposażenia)",
     "basic": "Podstawowy (oświetlenie + gniazdka)",
     "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
     "extended": "Rozszerzony (40A, siła, UPS, emergency)",
@@ -69,8 +69,8 @@
     "smart": "Inteligentny (smart home, KNX, automatyka)"
   },
   "plumbing_system": {
-    "none": "Bez instalacji wodnej",
-    "preparation": "Przygotowanie (rury bez armatury)",
+    "none": "Ilman instalacji wodnej",
+    "preparation": "Przygotowanie (rury ilman armatury)",
     "basic": "Podstawowa (zlew + odpływ)",
     "full": "Pełna (przygotowanie łazienki)",
     "commercial": "Klasa komercyjna",
@@ -473,23 +473,23 @@
   "describe_general_requirements": "Kuvaile kaikki lisävaatimukset, spesifikaatiot tai projektin rajoitukset...",
   "general_requirements_placeholder": "esim. Erityiset valmistumispäivämäärät, sertifiointivaatimukset, budjettirajoitukset",
   "interior_layout_options": {
-    "open_space": "Przestrzeń otwarta (bez podziałów)",
+    "open_space": "Avoin tila (ei väliseiniä)",
     "partitioned": "Z przegrodami (1-3 pomieszczenia)",
     "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
     "custom_layout": "Układ niestandardowy (projekt custom)",
     "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
   },
   "security_systems_options": {
-    "none": "Bez dodatkowych zabezpieczeń (zamki standardowe)",
-    "basic": "Podstawowe (wzmocnione zamki, kraty okienne)",
-    "standard": "Standardowe (alarm, czujniki, syrena)",
-    "extended": "Rozszerzone (monitoring, czujniki ruchu/wibracji)",
+    "none": "Ilman dodatkowych zailmanpieczeń (zamki standardi)",
+    "basic": "Perus (wzmocnione zamki, kraty okienne)",
+    "standard": "Standardi (alarm, czujniki, syrena)",
+    "extended": "Laajennettu (monitoring, czujniki ruchu/wibracji)",
     "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
     "maximum": "Maksymalne (sejf, biometria, central monitoring)",
-    "industrial": "Przemysłowe (ATEX, systemy gazowe, panic room)"
+    "industrial": "Teollinen (ATEX, systemy gazowe, panic room)"
   },
   "exterior_cladding_options": {
-    "none": "Bez okładziny (blacha kontenerowa standardowa)",
+    "none": "Ilman okładziny (blacha kontenerowa standardowa)",
     "trapezoidal": "Blacha trapezoidalna (T18, T35, T55)",
     "cassette": "Blacha kasetowa (płaska, przetłaczana)",
     "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
@@ -500,20 +500,20 @@
     "natural_stone": "Kamień naturalny/sztuczny"
   },
   "additional_openings_options": {
-    "none": "Bez dodatkowych otworów (standardowe drzwi)",
+    "none": "Ilman dodatkowych otworów (standardi drzwi)",
     "windows": "Okna dodatkowe (1-4 sztuki)",
     "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
     "garage_door": "Brama garażowa (segmentowa, rolowana)",
     "loading_dock": "Rampa załadunkowa (hydrauliczna)",
     "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
     "skylights": "Okna dachowe/świetliki",
-    "custom": "Otwory niestandardowe (nietypowe wymiary)"
+    "custom": "Otwory niestandardi (nietypowe wymiary)"
   },
   "fire_safety_options": {
-    "none": "Bez systemów przeciwpożarowych",
-    "basic": "Podstawowe (gaśnica, czujka dymu)",
-    "standard": "Standardowe (system alarmowy, oświetlenie awaryjne)",
-    "extended": "Rozszerzone (tryskacze, ewakuacja)",
+    "none": "Ilman systemów przeciwpożarowych",
+    "basic": "Perus (gaśnica, czujka dymu)",
+    "standard": "Standardi (system alarmowy, oświetlenie awaryjne)",
+    "extended": "Laajennettu (tryskacze, ewakuacja)",
     "full": "Pełny system (gazowe, monitoring)"
   },
   "accessibility_options": {
@@ -544,28 +544,28 @@
     "multi_container": "Transport wielokontenerowy (2+ jednostki)"
   },
   "assembly_options": {
-    "none": "Bez montażu (tylko dostawa)",
+    "none": "Ilman montażu (tylko dostawa)",
     "basic": "Montaż podstawowy (pozycjonowanie, poziomowanie)",
     "standard": "Montaż standardowy (podłączenia, testy)",
     "full": "Montaż pełny (kompletna instalacja)"
   },
   "office_equipment_options": {
-    "none": "Bez wyposażenia (pusty kontener)",
-    "basic": "Podstawowe (biurko, krzesła, szafa)",
-    "standard": "Standardowe (komplet mebli, oświetlenie)",
+    "none": "Ilman wyposażenia (pusty kontener)",
+    "basic": "Perus (biurko, krzesła, szafa)",
+    "standard": "Standardi (komplet mebli, oświetlenie)",
     "full": "Pełne (kompletne wyposażenie biura)"
   },
   "appliances_options": {
-    "none": "Bez sprzętu AGD",
+    "none": "Ilman sprzętu AGD",
     "basic": "Podstawowy (lodówka, mikrofalówka)",
     "standard": "Standardowy (zestaw kuchenny, pralka)",
     "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
   },
   "it_systems_options": {
-    "none": "Bez systemów IT",
-    "basic": "Podstawowe (internet, WiFi)",
-    "standard": "Standardowe (sieć, telefonia)",
-    "advanced": "Zaawansowane (serwerownia, bezpieczeństwo)"
+    "none": "Ilman systemów IT",
+    "basic": "Perus (internet, WiFi)",
+    "standard": "Standardi (sieć, telefonia)",
+    "advanced": "Zaawansowane (serwerownia, ilmanpieczeństwo)"
   },
   "insulation_package": "Eristyspaketti",
   "structural_reinforcement": "Rakenteellinen vahvistus",

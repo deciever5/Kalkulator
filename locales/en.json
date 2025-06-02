@@ -41,9 +41,9 @@
   },
   "window_types": {
     "standard": "Standard (25A, lighting, 8 outlets)",
-    "energy_efficient": "Energooszczędne (potrójne szyby)",
-    "security": "Bezpieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
+    "energy_efficient": "Energooszczędne (triple glazing)",
+    "security": "Withoutpieczeństwo (hartowane)",
+    "marine_grade": "Klasa marine (antykorozyjna)",
     "panoramic": "Panoramic windows",
     "sliding": "Sliding windows",
     "tilt": "Tilt windows",
@@ -55,7 +55,7 @@
     "basic_led": "Basic LED lighting",
     "energy_efficient": "Energooszczędne LED z czujnikami",
     "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "emergency": "Oświetlenie emergency (akumulatorowe)",
     "smart": "Smart (home automation, KNX)"
   },
   "electrical_system": {
@@ -72,7 +72,7 @@
     "none": "No electrical installation",
     "preparation": "Preparation (wiring without equipment)",
     "basic": "Basic (lighting + outlets)",
-    "full": "Pełna (przygotowanie łazienki)",
+    "full": "Pełna (preparation łazienki)",
     "commercial": "Klasa komercyjna",
     "industrial": "Industrial (63A, power, distribution panel)",
     "cold_water": "Cold water installation (sink)",
@@ -246,7 +246,7 @@
     "title": "Inquiry Form",
     "description": "Get a detailed quote tailored to your container project",
     "disclaimer_title": "Important Information",
-    "disclaimer_text": "This form is for submitting inquiry requests for detailed quotes. Estimates from our calculator are not commercial offers under applicable law.",
+    "disclaimer_text": "This form is for submitting inquiry requests for detailed quotes. Estimates from our calculator are not commercial offers under appfaceble law.",
     "config_detected": "Configuration from the calculator was detected",
     "current_config": "Current configuration",
     "customer_info": "Customer Contact Information",
@@ -425,7 +425,7 @@
   "it_multimedia": "IT and Multimedia Systems",
   "special_notes_general": "Special Notes - General",
   "describe_general_requirements": "Describe any additional requirements, specifications or project constraints...",
-  "general_requirements_placeholder": "e.g. Special completion deadlines, certification requirements, budget constraints, unusual applications",
+  "general_requirements_placeholder": "e.g. Special completion deadlines, certification requirements, budget constraints, unusual appfacetions",
   "interior_layout_options": {
     "open_space": "Open space (no partitions)",
     "partitioned": "Partitioned (1-3 rooms)",

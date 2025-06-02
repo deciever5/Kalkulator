@@ -40,8 +40,8 @@
     "custom_sizing_desc": "Konstrukční kontejnery s přesnými specifikacemi"
   },
   "window_types": {
-    "standard": "Standardowe (podwójne szyby)",
-    "energy_efficient": "Energooszczędne (potrójne szyby)",
+    "standard": "Standardní (dvojité zasklení)",
+    "energy_efficient": "Energooszczędne (trojité zasklení)",
     "security": "Bezpieczeństwo (hartowane)",
     "marine_grade": "Klasa morska (antykorozyjna)",
     "panoramic": "Okna panoramiczne",
@@ -51,16 +51,16 @@
   },
   "lighting": {
     "none": "Brak oświetlenia",
-    "basic": "Podstawowe LED",
-    "basic_led": "Podstawowe oświetlenie LED",
+    "basic": "Základní LED",
+    "basic_led": "Základní oświetlenie LED",
     "energy_efficient": "Energooszczędne LED z czujnikami",
     "exterior": "Oświetlenie zewnętrzne (reflektory)",
     "emergency": "Oświetlenie awaryjne (akumulatorowe)",
     "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "electrical_system": {
-    "none": "Bez instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody bez wyposażenia)",
+    "none": "Bez elektrická instalace",
+    "preparation": "Przygotowanie (kabeláž bez vybavení)",
     "basic": "Podstawowy (oświetlenie + gniazdka)",
     "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
     "extended": "Rozszerzony (40A, siła, UPS, emergency)",
@@ -69,8 +69,8 @@
     "smart": "Inteligentny (smart home, KNX, automatyka)"
   },
   "plumbing_system": {
-    "none": "Bez instalacji wodnej",
-    "preparation": "Przygotowanie (rury bez armatury)",
+    "none": "Bez vodovodní instalace",
+    "preparation": "Przygotowanie (potrubí bez armatur)",
     "basic": "Podstawowa (zlew + odpływ)",
     "full": "Pełna (przygotowanie łazienki)",
     "commercial": "Klasa komercyjna",
