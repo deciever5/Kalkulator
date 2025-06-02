@@ -43,7 +43,7 @@
     "standard": "Standard (25A, illuminazione, 8 prese)",
     "energy_efficient": "Energooszczędne (tripli vetri)",
     "security": "Senzapieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
+    "marine_grade": "Sea Class (anti -Corrosione)",
     "panoramic": "Finestre panoramiche",
     "sliding": "Finestre scorrevoli",
     "tilt": "Finestre a ribalta",
@@ -53,9 +53,9 @@
     "none": "Nessun impianto elettrico",
     "basic": "Base (illuminazione + prese)",
     "basic_led": "Illuminazione LED di base",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "energy_efficient": "Energia -LED che saluta con sensori",
+    "exterior": "Illuminazione esterna (fari)",
+    "emergency": "Illuminazione di emergenza (batteria)",
     "smart": "Intelligente (automazione domestica, KNX)"
   },
   "electrical_system": {
@@ -72,8 +72,8 @@
     "none": "Nessun impianto elettrico",
     "preparation": "Preparazione (cablaggio senza attrezzature)",
     "basic": "Base (illuminazione + prese)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
+    "full": "Pieno (preparazione del bagno)",
+    "commercial": "Classe commerciale",
     "industrial": "Industriale (63A, alimentazione, quadro di distribuzione)",
     "cold_water": "Impianto acqua fredda (lavello)",
     "hot_cold_water": "Acqua fredda + calda (lavello, lavandino)",
@@ -83,7 +83,7 @@
     "premium_sanitary": "Premium (jacuzzi, bidet, 2 lavandini)"
   },
   "hvac_system": {
-    "none": "No HVAC (no heating and cooling)",
+    "none": "No HVAC (no riscaldamento and cooling)",
     "basic": "Basic ventilation",
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
@@ -91,7 +91,7 @@
     "central_ac": "Central air conditioning (with filtration, humidification)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "vrv_vrf": "VRV/VRF sistema (multi-zone, zone control)",
     "underfloor_heating": "Riscaldamento a pavimento (elettrico/acqua)"
   },
   "flooring": {
@@ -103,8 +103,8 @@
     "carpet": "Cover del pavimento in PVC da 2-4 mm",
     "epoxy": "Pavimento epossidico industriale",
     "concrete": "Pavimento elevato (stanze del server)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "basic": "Basic (cemento industriale)",
+    "hardwood": "Legno duro (parquet)"
   },
   "configure_container": "Configura il tuo container",
   "simple_process_2_steps": "Processo semplice in 2 passaggi facili",
@@ -137,7 +137,7 @@
   "contact_us": "Contattaci",
   "address": "Indirizzo",
   "phone": "Telefono",
-  "email": "Email",
+  "email": "E-mail",
   "working_hours": "Orari di Lavoro",
   "mon_fri": "Lun-Ven 8:00-17:00",
   "container": {
@@ -846,7 +846,7 @@
     "agricultural": "Agricultural (fattoria, strutture)",
     "marine": "Marine/cantiere navale (ambiente corrosivo)"
   },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "window_types_label": "Tipi di finestre",
+  "lighting_label": "Illuminazione",
+  "flooring_label": "Pavimenti"
 }

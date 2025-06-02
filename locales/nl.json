@@ -43,47 +43,47 @@
     "standard": "Standaard (dubbele beglazing)",
     "energy_efficient": "Energooszczędne (drievoudige beglazing)",
     "security": "Zonderpieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
-    "panoramic": "Okna panoramiczne",
-    "sliding": "Okna przesuwne",
-    "tilt": "Okna uchylne",
-    "skylight": "Okna dachowe"
+    "marine_grade": "Zeeklasse (anti -corrosie)",
+    "panoramic": "Panoramische ramen",
+    "sliding": "Glijdende ramen",
+    "tilt": "Kantelen ramen",
+    "skylight": "Dakramen"
   },
   "lighting": {
-    "none": "Brak oświetlenia",
+    "none": "Geen verlichting",
     "basic": "Basis LED",
     "basic_led": "Basis oświetlenie LED",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "energy_efficient": "Energie -redding led met sensoren",
+    "exterior": "Externe verlichting (koplampen)",
+    "emergency": "Noodverlichting (batterij)",
     "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "electrical_system": {
     "none": "Zonder elektrische installatie",
     "preparation": "Przygotowanie (bedrading zonder uitrusting)",
-    "basic": "Podstawowy (oświetlenie + gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
-    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
-    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
-    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
-    "smart": "Inteligentny (smart home, KNX, automatyka)"
+    "basic": "Basic (verlichting + stopcontacten)",
+    "standard": "Standaard (25a, verlichting, 8 stopcontacten)",
+    "extended": "Uitgebreid (40a, kracht, ups, noodsituatie)",
+    "industrial": "Industrial (63a, sterkte, schakel)",
+    "it_server": "It/server (UPS, koeling, monitoring)",
+    "smart": "Intelligent (KNX, Automation)"
   },
   "plumbing_system": {
     "none": "Zonder waterinstallatie",
     "preparation": "Przygotowanie (leidingen zonder fittingen)",
-    "basic": "Podstawowa (zlew + odpływ)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
-    "cold_water": "Instalacja zimnej wody (zlew)",
-    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
-    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
-    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
-    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
-    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
+    "basic": "BASIC (SUCK + uitstroom)",
+    "full": "Vol (Badkamer bereiden)",
+    "commercial": "Commerciële klas",
+    "industrial": "Industriële installatie (druk, filtratie)",
+    "cold_water": "Installatie van koud water (gootsteen)",
+    "hot_cold_water": "Koud + warm water (wastafel, gootsteen)",
+    "basic_sanitary": "Basic sanitair knooppunt (wc + gootsteen)",
+    "standard_sanitary": "Standaardknooppunt (wc + gootsteen + douche)",
+    "comfort_sanitary": "Comfortabele knooppunt (wc + gootsteen + cabine)",
+    "premium_sanitary": "Premium Node (Jacuzzi, Bidet, 2 Sinks)"
   },
   "hvac_system": {
-    "none": "No HVAC (no heating and cooling)",
+    "none": "No HVAC (no verwarming and cooling)",
     "basic": "Basic ventilation",
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
@@ -91,7 +91,7 @@
     "central_ac": "Central air conditioning (with filtration, humidification)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "vrv_vrf": "VRV/VRF systeem (multi-zone, zone control)",
     "underfloor_heating": "Underfloor heating (electric/water)"
   },
   "flooring": {
@@ -103,8 +103,8 @@
     "carpet": "2-4 mm PVC vloerbedekking",
     "epoxy": "Industriële epoxyvloer",
     "concrete": "Verhoogde vloer (serverkamers)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "basic": "Basic (industrieel beton)",
+    "hardwood": "Hard hout (parket)"
   },
   "configure_container": "Configureer uw container",
   "simple_process_2_steps": "Eenvoudig proces in 2 stappen",
@@ -846,7 +846,7 @@
     "agricultural": "Landbouw-",
     "marine": "Marine/Shipyard (corrosieve omgeving)"
   },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "window_types_label": "Raamtypen",
+  "lighting_label": "Verlichting",
+  "flooring_label": "Vloeren"
 }

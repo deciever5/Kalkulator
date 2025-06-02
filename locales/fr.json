@@ -43,7 +43,7 @@
     "standard": "Standard (25A, éclairage, 8 prises)",
     "energy_efficient": "Energooszczędne (triple vitrage)",
     "security": "Sanspieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
+    "marine_grade": "Classe en mer (anti-corrosion)",
     "panoramic": "Fenêtres panoramiques",
     "sliding": "Fenêtres coulissantes",
     "tilt": "Fenêtres basculantes",
@@ -53,9 +53,9 @@
     "none": "Pas d'installation électrique",
     "basic": "De base (éclairage + prises)",
     "basic_led": "Éclairage LED de base",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "energy_efficient": "LED d'énergie d'énergie avec des capteurs",
+    "exterior": "Éclairage externe (phares)",
+    "emergency": "Éclairage d'urgence (batterie)",
     "smart": "Intelligent (domotique, KNX)"
   },
   "electrical_system": {
@@ -72,8 +72,8 @@
     "none": "Pas d'installation électrique",
     "preparation": "Préparation (câblage sans équipement)",
     "basic": "De base (éclairage + prises)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
+    "full": "Plein (préparation de la salle de bain)",
+    "commercial": "Classe commerciale",
     "industrial": "Industriel (63A, alimentation, tableau de distribution)",
     "cold_water": "Installation eau froide (évier)",
     "hot_cold_water": "Eau froide + chaude (évier, lavabo)",
@@ -103,8 +103,8 @@
     "carpet": "Couvre-plancher en PVC de 2 à 4 mm",
     "epoxy": "Plancher époxy industriel",
     "concrete": "Plancher élevé (salles de serveurs)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "basic": "Basique (béton industriel)",
+    "hardwood": "Bois dur (parquet)"
   },
   "configure_container": "Configurez votre conteneur",
   "simple_process_2_steps": "Processus simple - 2 étapes",
@@ -893,7 +893,7 @@
     "agricultural": "Agricole",
     "marine": "Marine / chantier naval (environnement corrosif)"
   },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "window_types_label": "Types de fenêtres",
+  "lighting_label": "Éclairage",
+  "flooring_label": "Étages"
 }

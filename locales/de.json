@@ -73,7 +73,7 @@
     "preparation": "Vorbereitung (Verkabelung ohne Ausrüstung)",
     "basic": "Grundlegend (Beleuchtung + Steckdosen)",
     "full": "Vollständig (vorbereitung badezimmer)",
-    "commercial": "Klasa komercyjna",
+    "commercial": "Kommerzielle Klasse",
     "industrial": "Industriell (63A, Strom, Verteilerkasten)",
     "cold_water": "Installation des kalten Wassers (Waschbecken)",
     "hot_cold_water": "Kalt + Warmwasser (Spüle, Waschbecken)",
@@ -104,7 +104,7 @@
     "epoxy": "Industrial Epoxy Floor",
     "concrete": "Erhöhter Boden (Serverräume)",
     "basic": "Podstawowa (beton industriell)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "hardwood": "Hartes Holz (Parquet)"
   },
   "configure_container": "Container konfigurieren",
   "simple_process_2_steps": "Einfacher 2-Schritt-Prozess",
@@ -807,7 +807,7 @@
   "appliances_kitchen": "Küchenausrüstung",
   "exterior_cladding_wood": "Holz",
   "installation": "Installation",
-  "system_comments": "Anforderungen Kommentare System",
+  "system_comments": "Kommentare zu Systemanforderungen",
   "office_equipment_full": "Komplettes Büro",
   "it_systems_advanced": "Fortgeschrittene",
   "window_types_security": "Sicherheitsfenster",
@@ -847,7 +847,7 @@
     "agricultural": "Landwirtschaftlich",
     "marine": "Marine/Werft (ätzende Umgebung)"
   },
-  "window_types_label": "Typy Okien",
+  "window_types_label": "Fenstertypen",
   "lighting_label": "Beleuchtung",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Böden"
 }
