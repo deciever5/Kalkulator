@@ -131,7 +131,7 @@
   "poland_center": "Centralna lokalizacja w Polsce",
   "full_service": "Pełna Obsługa",
   "design_execution": "Od projektu do wykonania",
-  "transport_assembly": "Transport i montaż",
+    "transport_assembly": "Transport i montaż",
   "after_sales_support": "Wsparcie posprzedażowe",
   "contact_us": "Skontaktuj się z nami",
   "address": "Adres",
@@ -147,11 +147,17 @@
       "industrial": "Przemysłowe"
     },
     "climate_zones": {
+      "northern_europe": "Europa Północna (Skandynawia, -30°C do +25°C)",
+      "central_europe": "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
+      "southern_europe": "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
+      "continental": "Klimat kontynentalny (ekstremalne wahania)",
+      "maritime": "Klimat morski (łagodne, wilgotne)",
+      "mountain": "Klimat górski (niskie temperatury, silne wiatry)",
+      "tropical": "Klimat tropikalny (wysokie temperatury, wilgotność)",
       "central_european": "Europa Środkowa",
       "scandinavian": "Skandynawski",
       "mediterranean": "Śródziemnomorski",
       "atlantic_maritime": "Atlantycki Morski",
-      "continental": "Kontynentalny",
       "alpine": "Alpejski",
       "baltic": "Bałtycki",
       "temperate_oceanic": "Umiarkowany Oceaniczny"
@@ -818,7 +824,17 @@
     "northern_europe": "Europa Północna (Skandynawia, -30°C do +25°C)",
     "central_europe": "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
     "southern_europe": "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
-    "continental": "Klimat kontynentalny (ekstremalne wahania)"
+    "continental": "Klimat kontynentalny (ekstremalne wahania)",
+    "maritime": "Klimat morski (łagodne, wilgotne)",
+    "mountain": "Klimat górski (niskie temperatury, silne wiatry)",
+    "tropical": "Klimat tropikalny (wysokie temperatury, wilgotność)",
+    "central_european": "Europa Środkowa",
+    "scandinavian": "Skandynawski",
+    "mediterranean": "Śródziemnomorski",
+    "atlantic_maritime": "Atlantycki Morski",
+    "alpine": "Alpejski",
+    "baltic": "Bałtycki",
+    "temperate_oceanic": "Umiarkowany Oceaniczny"
   },
   "environments": {
     "indoor": "Wewnętrzne (hale, magazyny)",
