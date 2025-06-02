@@ -1,7 +1,7 @@
 
 import json
 import os
-from utils.ai_translation_service import translate_text
+from utils.ai_translation_service import AITranslationService
 
 def add_save_configuration_to_all_languages():
     """Add save_configuration key to all language files"""
@@ -13,6 +13,9 @@ def add_save_configuration_to_all_languages():
     }
     
     locales_dir = 'locales'
+    
+    # Initialize AI translation service
+    ai_service = AITranslationService()
     
     for filename in os.listdir(locales_dir):
         if filename.endswith('.json') and not filename.endswith('.backup'):
@@ -35,12 +38,14 @@ def add_save_configuration_to_all_languages():
                 translation = base_translations[lang_code]
             else:
                 try:
-                    translation = translate_text(
+                    translation = ai_service._translate_text(
                         "Save Configuration",
-                        target_language=lang_code,
-                        context="Button text for saving container configuration"
+                        lang_code
                     )
-                    print(f"  Translated to: {translation}")
+                    if translation:
+                        print(f"  Translated to: {translation}")
+                    else:
+                        translation = "Save Configuration"  # fallback
                 except Exception as e:
                     print(f"  Translation failed for {lang_code}: {e}")
                     translation = "Save Configuration"  # fallback
