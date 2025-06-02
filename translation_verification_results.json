@@ -1,27 +1,18 @@
 {
   "summary": {
     "total_languages_scanned": 12,
-    "total_issues_found": 317,
-    "significant_issues_found": 317,
+    "total_issues_found": 202,
+    "significant_issues_found": 202,
     "languages_with_issues": 12
   },
   "results": {
     "cs": {
       "language": "cs",
-      "total_issues": 31,
-      "high_severity": 5,
-      "medium_severity": 26,
+      "total_issues": 15,
+      "high_severity": 3,
+      "medium_severity": 12,
       "low_severity": 0,
       "issues": [
-        {
-          "path": "ui.back_to_home",
-          "text": "← Návrat na hlavní stránku",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
         {
           "path": "electrical_system.it_server",
           "text": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
@@ -96,15 +87,6 @@
           "severity": "medium"
         },
         {
-          "path": "send_inquiry.description",
-          "text": "Získejte podrobnou nabídku na míru pro váš kontejnerový projekt",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.privacy_consent",
           "text": "Souhlasím se zpracováním mých osobních údajů společností KAN-BUD Sp. z o.o. za účelem vyřízení tohoto dotazu v souladu s nařízením GDPR",
           "foreign_words": [
@@ -123,78 +105,6 @@
           "severity": "medium"
         },
         {
-          "path": "back_to_home",
-          "text": "← Návrat na hlavní stránku",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_powered_estimation",
-          "text": "AI odhad nákladů na úpravy kontejnerů",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "special_location_requirements",
-          "text": "Požadavky na speciální umístění/místa",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "regulatory_compliance_focus",
-          "text": "Zaměření na dodržování předpisů",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "contact_for_quote",
-          "text": "Kontaktujte nás pro podrobnou, profesionální nabídku na základě vašich specifikací.",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "system_requirements_placeholder",
-          "text": "např. Speciální požadavky na ventilaci, další zásuvky, specializované instalace",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "describe_modification_requirements",
-          "text": "Popište další požadavky na úpravu ...",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "security_systems_options.basic",
-          "text": "Základní (posílené zámky, mříže na okna)",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "security_systems_options.maximum",
           "text": "Maximální (trezor, biometrie, centrální monitoring)",
           "foreign_words": [
@@ -206,65 +116,7 @@
           "path": "transport_type_options.crane",
           "text": "Transport with Crane (instalace na místě)",
           "foreign_words": [
-            "EN:with",
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "high"
-        },
-        {
-          "path": "estimate_disclaimer_text",
-          "text": "Výše uvedený odhad je orientační a nepředstavuje nabídku ve smyslu Občanského zákoníku. Konečná cena se může změnit v závislosti na detailních požadavcích projektu, aktuálních nákladech na materiál a práci.",
-          "foreign_words": [
-            "PL:na",
-            "PL:na",
-            "SK:na",
-            "SK:na"
-          ],
-          "severity": "high"
-        },
-        {
-          "path": "delivery_cost",
-          "text": "Náklady na dopravu",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "budget_site_preparation",
-          "text": "Rozpočet na potenciální přípravu místa",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "site_access_limitations",
-          "text": "Omezení přístupu na místo pro dodávku",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "basic_estimate_note",
-          "text": "Poznámka: Toto je základní odhad. Pro přesnější ocenění se obraťte přímo na náš tým.",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.config_required_text",
-          "text": "Pro přesnou analýzu technických výkresů je vyžadována základní konfigurace kontejneru. Bez konfigurace bude analýza omezena na základní odhady.",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
+            "EN:with"
           ],
           "severity": "medium"
         },
@@ -296,15 +148,6 @@
       ],
       "significant_issues": [
         {
-          "path": "ui.back_to_home",
-          "text": "← Návrat na hlavní stránku",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "electrical_system.it_server",
           "text": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
           "foreign_words": [
@@ -378,15 +221,6 @@
           "severity": "medium"
         },
         {
-          "path": "send_inquiry.description",
-          "text": "Získejte podrobnou nabídku na míru pro váš kontejnerový projekt",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.privacy_consent",
           "text": "Souhlasím se zpracováním mých osobních údajů společností KAN-BUD Sp. z o.o. za účelem vyřízení tohoto dotazu v souladu s nařízením GDPR",
           "foreign_words": [
@@ -405,78 +239,6 @@
           "severity": "medium"
         },
         {
-          "path": "back_to_home",
-          "text": "← Návrat na hlavní stránku",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_powered_estimation",
-          "text": "AI odhad nákladů na úpravy kontejnerů",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "special_location_requirements",
-          "text": "Požadavky na speciální umístění/místa",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "regulatory_compliance_focus",
-          "text": "Zaměření na dodržování předpisů",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "contact_for_quote",
-          "text": "Kontaktujte nás pro podrobnou, profesionální nabídku na základě vašich specifikací.",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "system_requirements_placeholder",
-          "text": "např. Speciální požadavky na ventilaci, další zásuvky, specializované instalace",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "describe_modification_requirements",
-          "text": "Popište další požadavky na úpravu ...",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "security_systems_options.basic",
-          "text": "Základní (posílené zámky, mříže na okna)",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "security_systems_options.maximum",
           "text": "Maximální (trezor, biometrie, centrální monitoring)",
           "foreign_words": [
@@ -488,65 +250,7 @@
           "path": "transport_type_options.crane",
           "text": "Transport with Crane (instalace na místě)",
           "foreign_words": [
-            "EN:with",
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "high"
-        },
-        {
-          "path": "estimate_disclaimer_text",
-          "text": "Výše uvedený odhad je orientační a nepředstavuje nabídku ve smyslu Občanského zákoníku. Konečná cena se může změnit v závislosti na detailních požadavcích projektu, aktuálních nákladech na materiál a práci.",
-          "foreign_words": [
-            "PL:na",
-            "PL:na",
-            "SK:na",
-            "SK:na"
-          ],
-          "severity": "high"
-        },
-        {
-          "path": "delivery_cost",
-          "text": "Náklady na dopravu",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "budget_site_preparation",
-          "text": "Rozpočet na potenciální přípravu místa",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "site_access_limitations",
-          "text": "Omezení přístupu na místo pro dodávku",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "basic_estimate_note",
-          "text": "Poznámka: Toto je základní odhad. Pro přesnější ocenění se obraťte přímo na náš tým.",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.config_required_text",
-          "text": "Pro přesnou analýzu technických výkresů je vyžadována základní konfigurace kontejneru. Bez konfigurace bude analýza omezena na základní odhady.",
-          "foreign_words": [
-            "PL:na",
-            "SK:na"
+            "EN:with"
           ],
           "severity": "medium"
         },
@@ -579,9 +283,9 @@
     },
     "de": {
       "language": "de",
-      "total_issues": 44,
+      "total_issues": 38,
       "high_severity": 0,
-      "medium_severity": 44,
+      "medium_severity": 38,
       "low_severity": 0,
       "issues": [
         {
@@ -644,8 +348,7 @@
           "path": "plumbing_system.cold_water",
           "text": "Installation des kalten Wassers (Waschbecken)",
           "foreign_words": [
-            "EN:installation",
-            "FR:des"
+            "EN:installation"
           ],
           "severity": "medium"
         },
@@ -670,14 +373,6 @@
           "text": "KI analysiert Ihre Konfiguration und erstellt Kostenschätzungen...",
           "foreign_words": [
             "EN:konfiguration"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.disclaimer_text",
-          "text": "Dieses Formular wird verwendet, um Anfragen für detaillierte Angebote einzureichen. Schätzungen aus unserem Taschenrechner sind keine kommerziellen Angebote im Sinne des geltenden Rechts.",
-          "foreign_words": [
-            "FR:des"
           ],
           "severity": "medium"
         },
@@ -780,14 +475,6 @@
           "severity": "medium"
         },
         {
-          "path": "estimate_disclaimer_text",
-          "text": "Die obige Schätzung ist unverbindlich und stellt kein Angebot im Sinne des Bürgerlichen Gesetzbuchs dar. Der endgültige Preis kann sich je nach detaillierten Projektanforderungen, aktuellen Material- und Arbeitskosten ändern.",
-          "foreign_words": [
-            "FR:des"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "plan_standard_delivery",
           "text": "Planen Sie den Standardplan für Lieferung und Installation",
           "foreign_words": [
@@ -797,26 +484,10 @@
           "severity": "medium"
         },
         {
-          "path": "budget_site_preparation",
-          "text": "Zahlen Sie ein Budget für die potenzielle Vorbereitung des Platzes",
-          "foreign_words": [
-            "FR:des"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "site_access_limitations",
           "text": "Beschränkungen für den Zugang zum Platz für die Lieferung",
           "foreign_words": [
             "SV:den"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.description",
-          "text": "Kostenlose technische Zeichnungsanalyse für Kunden als Teil des Angebotsprozesses",
-          "foreign_words": [
-            "FR:des"
           ],
           "severity": "medium"
         },
@@ -890,22 +561,6 @@
           "text": "Keine Installation",
           "foreign_words": [
             "EN:installation"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "fire_safety.full_system",
-          "text": "Vollständiges Löschen des Feuers",
-          "foreign_words": [
-            "FR:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.additional_doors",
-          "text": "Zusätzliche Personal- oder Evakuierungstüren außerhalb der Standardtür des Behälters.",
-          "foreign_words": [
-            "FR:des"
           ],
           "severity": "medium"
         },
@@ -1003,8 +658,7 @@
           "path": "plumbing_system.cold_water",
           "text": "Installation des kalten Wassers (Waschbecken)",
           "foreign_words": [
-            "EN:installation",
-            "FR:des"
+            "EN:installation"
           ],
           "severity": "medium"
         },
@@ -1029,14 +683,6 @@
           "text": "KI analysiert Ihre Konfiguration und erstellt Kostenschätzungen...",
           "foreign_words": [
             "EN:konfiguration"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.disclaimer_text",
-          "text": "Dieses Formular wird verwendet, um Anfragen für detaillierte Angebote einzureichen. Schätzungen aus unserem Taschenrechner sind keine kommerziellen Angebote im Sinne des geltenden Rechts.",
-          "foreign_words": [
-            "FR:des"
           ],
           "severity": "medium"
         },
@@ -1139,14 +785,6 @@
           "severity": "medium"
         },
         {
-          "path": "estimate_disclaimer_text",
-          "text": "Die obige Schätzung ist unverbindlich und stellt kein Angebot im Sinne des Bürgerlichen Gesetzbuchs dar. Der endgültige Preis kann sich je nach detaillierten Projektanforderungen, aktuellen Material- und Arbeitskosten ändern.",
-          "foreign_words": [
-            "FR:des"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "plan_standard_delivery",
           "text": "Planen Sie den Standardplan für Lieferung und Installation",
           "foreign_words": [
@@ -1156,26 +794,10 @@
           "severity": "medium"
         },
         {
-          "path": "budget_site_preparation",
-          "text": "Zahlen Sie ein Budget für die potenzielle Vorbereitung des Platzes",
-          "foreign_words": [
-            "FR:des"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "site_access_limitations",
           "text": "Beschränkungen für den Zugang zum Platz für die Lieferung",
           "foreign_words": [
             "SV:den"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.description",
-          "text": "Kostenlose technische Zeichnungsanalyse für Kunden als Teil des Angebotsprozesses",
-          "foreign_words": [
-            "FR:des"
           ],
           "severity": "medium"
         },
@@ -1249,22 +871,6 @@
           "text": "Keine Installation",
           "foreign_words": [
             "EN:installation"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "fire_safety.full_system",
-          "text": "Vollständiges Löschen des Feuers",
-          "foreign_words": [
-            "FR:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.additional_doors",
-          "text": "Zusätzliche Personal- oder Evakuierungstüren außerhalb der Standardtür des Behälters.",
-          "foreign_words": [
-            "FR:des"
           ],
           "severity": "medium"
         },
@@ -1304,27 +910,11 @@
     },
     "es": {
       "language": "es",
-      "total_issues": 41,
-      "high_severity": 4,
-      "medium_severity": 37,
+      "total_issues": 31,
+      "high_severity": 3,
+      "medium_severity": 28,
       "low_severity": 0,
       "issues": [
-        {
-          "path": "nav.drawing_analysis_desc",
-          "text": "Análisis de documentos con IA",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "nav.custom_sizing_desc",
-          "text": "Diseñar contenedores con especificaciones exactas",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
         {
           "path": "hvac_system.none",
           "text": "No HVAC (no heating and cooling)",
@@ -1414,14 +1004,6 @@
           "severity": "medium"
         },
         {
-          "path": "ai_historical_data",
-          "text": "Análisis de IA con datos históricos",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "ai.messages.generating",
           "text": "La IA está analizando su configuración y generando estimaciones de costos...",
           "foreign_words": [
@@ -1463,15 +1045,6 @@
           "severity": "medium"
         },
         {
-          "path": "send_inquiry.privacy_consent",
-          "text": "Estoy de acuerdo con el procesamiento de mis datos personales por Kan-Bud SP. Z O.O. Para manejar esta pregunta de acuerdo con las disposiciones del GDPR",
-          "foreign_words": [
-            "IT:con",
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.marketing_consent",
           "text": "Acepto recibir información de marketing sobre servicios y productos de KAN-BUD (opcional)",
           "foreign_words": [
@@ -1483,17 +1056,7 @@
           "path": "send_inquiry.success_message",
           "text": "Gracias por la consulta. Nuestro equipo se comunicará con usted dentro de las 24 horas con una respuesta detallada.",
           "foreign_words": [
-            "IT:con",
-            "IT:con",
             "IT:una"
-          ],
-          "severity": "high"
-        },
-        {
-          "path": "send_inquiry.step_2",
-          "text": "Nos comunicaremos con usted para obtener información adicional",
-          "foreign_words": [
-            "IT:con"
           ],
           "severity": "medium"
         },
@@ -1522,14 +1085,6 @@
           "severity": "medium"
         },
         {
-          "path": "ai_powered_estimation",
-          "text": "Estimación de costos de modificación de contenedores con IA",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "no_configuration_found",
           "text": "No se encontró configuración de contenedor. Por favor configure su contenedor primero.",
           "foreign_words": [
@@ -1550,22 +1105,6 @@
           "text": "Contáctenos para obtener una cita profesional detallada basada en sus especificaciones.",
           "foreign_words": [
             "IT:una"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_cost_estimator_desc",
-          "text": "Estimación de costos con inteligencia artificial",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "transport_type_options.crane",
-          "text": "Transporte con grúa (instalación en el sitio)",
-          "foreign_words": [
-            "IT:con"
           ],
           "severity": "medium"
         },
@@ -1618,26 +1157,9 @@
           "severity": "medium"
         },
         {
-          "path": "help.windows",
-          "text": "Ventanas de doble acristalamiento con puentes térmicos. Más ventanas aumentan la luz natural pero afectan el aislamiento.",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.electrical_system",
-          "text": "Estándar: 15A doméstico. Industrial: 30A con panel. Inteligente: automatización IoT.",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "transport_type_crane",
           "text": "Con una grúa",
           "foreign_words": [
-            "IT:con",
             "IT:una"
           ],
           "severity": "medium"
@@ -1653,22 +1175,6 @@
       ],
       "significant_issues": [
         {
-          "path": "nav.drawing_analysis_desc",
-          "text": "Análisis de documentos con IA",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "nav.custom_sizing_desc",
-          "text": "Diseñar contenedores con especificaciones exactas",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "hvac_system.none",
           "text": "No HVAC (no heating and cooling)",
           "foreign_words": [
@@ -1757,14 +1263,6 @@
           "severity": "medium"
         },
         {
-          "path": "ai_historical_data",
-          "text": "Análisis de IA con datos históricos",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "ai.messages.generating",
           "text": "La IA está analizando su configuración y generando estimaciones de costos...",
           "foreign_words": [
@@ -1806,15 +1304,6 @@
           "severity": "medium"
         },
         {
-          "path": "send_inquiry.privacy_consent",
-          "text": "Estoy de acuerdo con el procesamiento de mis datos personales por Kan-Bud SP. Z O.O. Para manejar esta pregunta de acuerdo con las disposiciones del GDPR",
-          "foreign_words": [
-            "IT:con",
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.marketing_consent",
           "text": "Acepto recibir información de marketing sobre servicios y productos de KAN-BUD (opcional)",
           "foreign_words": [
@@ -1826,17 +1315,7 @@
           "path": "send_inquiry.success_message",
           "text": "Gracias por la consulta. Nuestro equipo se comunicará con usted dentro de las 24 horas con una respuesta detallada.",
           "foreign_words": [
-            "IT:con",
-            "IT:con",
             "IT:una"
-          ],
-          "severity": "high"
-        },
-        {
-          "path": "send_inquiry.step_2",
-          "text": "Nos comunicaremos con usted para obtener información adicional",
-          "foreign_words": [
-            "IT:con"
           ],
           "severity": "medium"
         },
@@ -1865,14 +1344,6 @@
           "severity": "medium"
         },
         {
-          "path": "ai_powered_estimation",
-          "text": "Estimación de costos de modificación de contenedores con IA",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "no_configuration_found",
           "text": "No se encontró configuración de contenedor. Por favor configure su contenedor primero.",
           "foreign_words": [
@@ -1893,22 +1364,6 @@
           "text": "Contáctenos para obtener una cita profesional detallada basada en sus especificaciones.",
           "foreign_words": [
             "IT:una"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_cost_estimator_desc",
-          "text": "Estimación de costos con inteligencia artificial",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "transport_type_options.crane",
-          "text": "Transporte con grúa (instalación en el sitio)",
-          "foreign_words": [
-            "IT:con"
           ],
           "severity": "medium"
         },
@@ -1961,26 +1416,9 @@
           "severity": "medium"
         },
         {
-          "path": "help.windows",
-          "text": "Ventanas de doble acristalamiento con puentes térmicos. Más ventanas aumentan la luz natural pero afectan el aislamiento.",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.electrical_system",
-          "text": "Estándar: 15A doméstico. Industrial: 30A con panel. Inteligente: automatización IoT.",
-          "foreign_words": [
-            "IT:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "transport_type_crane",
           "text": "Con una grúa",
           "foreign_words": [
-            "IT:con",
             "IT:una"
           ],
           "severity": "medium"
@@ -2136,558 +1574,26 @@
     },
     "fr": {
       "language": "fr",
-      "total_issues": 33,
-      "high_severity": 1,
-      "medium_severity": 32,
+      "total_issues": 1,
+      "high_severity": 0,
+      "medium_severity": 1,
       "low_severity": 0,
       "issues": [
-        {
-          "path": "nav.custom_sizing_desc",
-          "text": "Concevoir des conteneurs avec des spécifications exactes",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "upload_drawings_estimate",
-          "text": "Téléchargez des dessins pour estimation",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "container.types.custom_dimensions",
-          "text": "Conteneur des dimensions personnalisées",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "form.labels.wall_thickness",
-          "text": "Épaisseur des murs (mm)",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai.messages.generating",
-          "text": "L'IA analyse la configuration et génère des évaluations des coûts ...",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai.messages.estimate_generated",
-          "text": "Estimation des coûts IA générée avec succès !",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.disclaimer_text",
-          "text": "Ce formulaire est utilisé pour soumettre des demandes de demandes d'offres détaillées. Les estimations de notre calculatrice ne sont pas des offres commerciales au sens de la loi applicable.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.upload_files",
-          "text": "Envoyer des fichiers",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.data_protection_info",
-          "text": "Informations sur la protection des données",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
         {
           "path": "send_inquiry.marketing_consent",
           "text": "J'accepte de recevoir des informations marketing sur les services et produits Kan-Bud (facultatif)",
           "foreign_words": [
-            "EN:marketing",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "employee_tools",
-          "text": "Outils des employés",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_cost_estimation",
-          "text": "Estimation des coûts IA",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_powered_estimation",
-          "text": "Estimation des coûts de modification de conteneurs alimentée par l'IA",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "generate_ai_estimate",
-          "text": "Générer une estimation des coûts IA",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_cost_estimate",
-          "text": "Estimation des coûts IA",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_cost_estimator_desc",
-          "text": "Estimation des coûts avec intelligence artificielle",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "cost_breakdown",
-          "text": "Division des coûts",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "estimate_disclaimer_text",
-          "text": "L'estimation ci-dessus est indicative et ne constitue pas une offre au sens du Code civil. Le prix final peut varier en fonction des exigences détaillées du projet, des coûts actuels des matériaux et du travail.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "high"
-        },
-        {
-          "path": "material_price_fluctuations",
-          "text": "Fluctuations des prix des matières",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis.description",
-          "text": "Analyse automatique de dessins techniques PDF/DWG pour des devis précis",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis.upload_drawings",
-          "text": "Envoyer des dessins techniques",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.project_name_placeholder",
-          "text": "Par exemple Bureau des conteneurs - Poznań",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.upload_drawings",
-          "text": "Envoyer des dessins techniques",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.analyzing",
-          "text": "Analyse des dessins ...",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.cost_adjustment",
-          "text": "Correction des coûts",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.config_required_text",
-          "text": "Pour une analyse approfondie des dessins techniques, la configuration de base des conteneurs est requise. Sans configuration, l'analyse sera limitée aux estimations de base.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.config_tip_text",
-          "text": "Configurez votre conteneur avant d'analyser les dessins pour obtenir des résultats plus précis et des citations sur mesure.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "admin.panel_subtitle",
-          "text": "Configuration commerciale et gestion des données",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "admin.user_management",
-          "text": "Gestion des utilisateurs",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.hvac_system",
-          "text": "Options de climatisation. Les pompes à chaleur sont des effistants énergétiques pour une utilisation annuelle.",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.security_features",
-          "text": "Niveaux de sécurité des verrous de base aux systèmes d'accès biométriques.",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.additional_openings",
-          "text": "Points d'accès spécialisés en dehors des portes standard et des fenêtres.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.accessibility",
-          "text": "Le respect de l'ADA assure la disponibilité des personnes handicapées.",
-          "foreign_words": [
-            "DE:des"
+            "EN:marketing"
           ],
           "severity": "medium"
         }
       ],
       "significant_issues": [
         {
-          "path": "nav.custom_sizing_desc",
-          "text": "Concevoir des conteneurs avec des spécifications exactes",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "upload_drawings_estimate",
-          "text": "Téléchargez des dessins pour estimation",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "container.types.custom_dimensions",
-          "text": "Conteneur des dimensions personnalisées",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "form.labels.wall_thickness",
-          "text": "Épaisseur des murs (mm)",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai.messages.generating",
-          "text": "L'IA analyse la configuration et génère des évaluations des coûts ...",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai.messages.estimate_generated",
-          "text": "Estimation des coûts IA générée avec succès !",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.disclaimer_text",
-          "text": "Ce formulaire est utilisé pour soumettre des demandes de demandes d'offres détaillées. Les estimations de notre calculatrice ne sont pas des offres commerciales au sens de la loi applicable.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.upload_files",
-          "text": "Envoyer des fichiers",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.data_protection_info",
-          "text": "Informations sur la protection des données",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.marketing_consent",
           "text": "J'accepte de recevoir des informations marketing sur les services et produits Kan-Bud (facultatif)",
           "foreign_words": [
-            "EN:marketing",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "employee_tools",
-          "text": "Outils des employés",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_cost_estimation",
-          "text": "Estimation des coûts IA",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_powered_estimation",
-          "text": "Estimation des coûts de modification de conteneurs alimentée par l'IA",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "generate_ai_estimate",
-          "text": "Générer une estimation des coûts IA",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_cost_estimate",
-          "text": "Estimation des coûts IA",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_cost_estimator_desc",
-          "text": "Estimation des coûts avec intelligence artificielle",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "cost_breakdown",
-          "text": "Division des coûts",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "estimate_disclaimer_text",
-          "text": "L'estimation ci-dessus est indicative et ne constitue pas une offre au sens du Code civil. Le prix final peut varier en fonction des exigences détaillées du projet, des coûts actuels des matériaux et du travail.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "high"
-        },
-        {
-          "path": "material_price_fluctuations",
-          "text": "Fluctuations des prix des matières",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis.description",
-          "text": "Analyse automatique de dessins techniques PDF/DWG pour des devis précis",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis.upload_drawings",
-          "text": "Envoyer des dessins techniques",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.project_name_placeholder",
-          "text": "Par exemple Bureau des conteneurs - Poznań",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.upload_drawings",
-          "text": "Envoyer des dessins techniques",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.analyzing",
-          "text": "Analyse des dessins ...",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.cost_adjustment",
-          "text": "Correction des coûts",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.config_required_text",
-          "text": "Pour une analyse approfondie des dessins techniques, la configuration de base des conteneurs est requise. Sans configuration, l'analyse sera limitée aux estimations de base.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.config_tip_text",
-          "text": "Configurez votre conteneur avant d'analyser les dessins pour obtenir des résultats plus précis et des citations sur mesure.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "admin.panel_subtitle",
-          "text": "Configuration commerciale et gestion des données",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "admin.user_management",
-          "text": "Gestion des utilisateurs",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.hvac_system",
-          "text": "Options de climatisation. Les pompes à chaleur sont des effistants énergétiques pour une utilisation annuelle.",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.security_features",
-          "text": "Niveaux de sécurité des verrous de base aux systèmes d'accès biométriques.",
-          "foreign_words": [
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.additional_openings",
-          "text": "Points d'accès spécialisés en dehors des portes standard et des fenêtres.",
-          "foreign_words": [
-            "DE:des",
-            "DE:des"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.accessibility",
-          "text": "Le respect de l'ADA assure la disponibilité des personnes handicapées.",
-          "foreign_words": [
-            "DE:des"
+            "EN:marketing"
           ],
           "severity": "medium"
         }
@@ -2882,19 +1788,11 @@
     },
     "it": {
       "language": "it",
-      "total_issues": 27,
+      "total_issues": 14,
       "high_severity": 3,
-      "medium_severity": 24,
+      "medium_severity": 11,
       "low_severity": 0,
       "issues": [
-        {
-          "path": "nav.custom_sizing_desc",
-          "text": "Progetta contenitori con specifiche esatte",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
         {
           "path": "hvac_system.none",
           "text": "No HVAC (no heating and cooling)",
@@ -2952,50 +1850,10 @@
           "severity": "high"
         },
         {
-          "path": "get_instant_quote",
-          "text": "Ottieni stima costi istantanea con IA",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_historical_data",
-          "text": "Analisi dell'intelligenza artificiale con dati storici",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai.messages.estimate_generated",
-          "text": "Stima costi IA generata con successo!",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.description",
           "text": "Ricevi una valutazione dettagliata adattata al progetto del container",
           "foreign_words": [
             "ES:una"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.customer_info",
-          "text": "Informazioni di contatto con il cliente",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.privacy_consent",
-          "text": "Accetto il trattamento dei miei dati personali da KAN-BUD Sp. z o.o. per scopo gestione questa richiesta in accordo con regolamenti GDPR",
-          "foreign_words": [
-            "ES:con"
           ],
           "severity": "medium"
         },
@@ -3008,18 +1866,9 @@
           "severity": "medium"
         },
         {
-          "path": "send_inquiry.success_title",
-          "text": "Query inviata con successo!",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.success_message",
           "text": "Grazie per l'inchiesta. Il nostro team ti contatterà entro 24 ore con una risposta dettagliata.",
           "foreign_words": [
-            "ES:con",
             "ES:una"
           ],
           "severity": "medium"
@@ -3033,34 +1882,10 @@
           "severity": "medium"
         },
         {
-          "path": "estimate_saved",
-          "text": "Stima salvata con successo",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry_cta",
           "text": "Invia una richiesta professionale",
           "foreign_words": [
             "ES:una"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "configuration_saved",
-          "text": "Configurazione salvata con successo!",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "transport_type_options.crane",
-          "text": "Trasporto con gru (installazione in loco)",
-          "foreign_words": [
-            "ES:con"
           ],
           "severity": "medium"
         },
@@ -3073,34 +1898,9 @@
           "severity": "medium"
         },
         {
-          "path": "help.windows",
-          "text": "Finestre doppi vetri con ponti termici. Più finestre aumentano luce naturale ma influenzano isolamento.",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.electrical_system",
-          "text": "Standard: 15A Home. Industriale: 30A con un quadro. Intelligente: Automazione IoT.",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.accessibility",
-          "text": "Il rispetto dell'ADA garantisce la disponibilità per le persone con disabilità.",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "transport_type_crane",
           "text": "Con una gru",
           "foreign_words": [
-            "ES:con",
             "ES:una"
           ],
           "severity": "medium"
@@ -3116,14 +1916,6 @@
       ],
       "significant_issues": [
         {
-          "path": "nav.custom_sizing_desc",
-          "text": "Progetta contenitori con specifiche esatte",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "hvac_system.none",
           "text": "No HVAC (no heating and cooling)",
           "foreign_words": [
@@ -3180,50 +1972,10 @@
           "severity": "high"
         },
         {
-          "path": "get_instant_quote",
-          "text": "Ottieni stima costi istantanea con IA",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai_historical_data",
-          "text": "Analisi dell'intelligenza artificiale con dati storici",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ai.messages.estimate_generated",
-          "text": "Stima costi IA generata con successo!",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.description",
           "text": "Ricevi una valutazione dettagliata adattata al progetto del container",
           "foreign_words": [
             "ES:una"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.customer_info",
-          "text": "Informazioni di contatto con il cliente",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.privacy_consent",
-          "text": "Accetto il trattamento dei miei dati personali da KAN-BUD Sp. z o.o. per scopo gestione questa richiesta in accordo con regolamenti GDPR",
-          "foreign_words": [
-            "ES:con"
           ],
           "severity": "medium"
         },
@@ -3236,18 +1988,9 @@
           "severity": "medium"
         },
         {
-          "path": "send_inquiry.success_title",
-          "text": "Query inviata con successo!",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.success_message",
           "text": "Grazie per l'inchiesta. Il nostro team ti contatterà entro 24 ore con una risposta dettagliata.",
           "foreign_words": [
-            "ES:con",
             "ES:una"
           ],
           "severity": "medium"
@@ -3261,34 +2004,10 @@
           "severity": "medium"
         },
         {
-          "path": "estimate_saved",
-          "text": "Stima salvata con successo",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry_cta",
           "text": "Invia una richiesta professionale",
           "foreign_words": [
             "ES:una"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "configuration_saved",
-          "text": "Configurazione salvata con successo!",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "transport_type_options.crane",
-          "text": "Trasporto con gru (installazione in loco)",
-          "foreign_words": [
-            "ES:con"
           ],
           "severity": "medium"
         },
@@ -3301,34 +2020,9 @@
           "severity": "medium"
         },
         {
-          "path": "help.windows",
-          "text": "Finestre doppi vetri con ponti termici. Più finestre aumentano luce naturale ma influenzano isolamento.",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.electrical_system",
-          "text": "Standard: 15A Home. Industriale: 30A con un quadro. Intelligente: Automazione IoT.",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.accessibility",
-          "text": "Il rispetto dell'ADA garantisce la disponibilità per le persone con disabilità.",
-          "foreign_words": [
-            "ES:con"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "transport_type_crane",
           "text": "Con una gru",
           "foreign_words": [
-            "ES:con",
             "ES:una"
           ],
           "severity": "medium"
@@ -3536,9 +2230,9 @@
     },
     "pl": {
       "language": "pl",
-      "total_issues": 22,
+      "total_issues": 9,
       "high_severity": 0,
-      "medium_severity": 22,
+      "medium_severity": 9,
       "low_severity": 0,
       "issues": [
         {
@@ -3559,65 +2253,11 @@
           "severity": "medium"
         },
         {
-          "path": "send_inquiry.types.site_visit",
-          "text": "Wizyta na Miejscu",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.privacy_consent",
-          "text": "Wyrażam zgodę na przetwarzanie moich danych osobowych przez KAN-BUD Sp. z o.o. w celu obsługi tego zapytania zgodnie z przepisami RODO",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.marketing_consent",
-          "text": "Wyrażam zgodę na otrzymywanie informacji marketingowych o usługach i produktach KAN-BUD (opcjonalne)",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.success_message",
           "text": "Dziękujemy za zapytanie. Nasz zespół skontaktuje się z Państwem w ciągu 24 godzin ze szczegółową odpowiedzią.",
           "foreign_words": [
             "CS:za",
             "SK:za"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "regulatory_compliance_focus",
-          "text": "Fokus na zgodność z przepisami",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "contact_for_quote",
-          "text": "Skontaktuj się z nami po szczegółową, profesjonalną wycenę na podstawie Twoich specyfikacji.",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "interior_layout_options.built_in_furniture",
-          "text": "Meble wbudowane (zabudowa na wymiar)",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
           ],
           "severity": "medium"
         },
@@ -3654,15 +2294,6 @@
           "severity": "medium"
         },
         {
-          "path": "transport_type_options.crane",
-          "text": "Transport z dźwigiem (montaż na miejscu)",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "estimate_disclaimer_text",
           "text": "Powyższa wycena ma charakter orientacyjny i nie stanowi oferty w rozumieniu Kodeksu Cywilnego. Ostateczna cena może ulec zmianie w zależności od szczegółowych wymagań projektu, aktualnych cen materiałów i robocizny.",
           "foreign_words": [
@@ -3672,65 +2303,11 @@
           "severity": "medium"
         },
         {
-          "path": "budget_site_preparation",
-          "text": "Przewidź budżet na potencjalne przygotowanie placu",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "air_intakes.marine_grade",
-          "text": "Klasa morska (odporność na sól)",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "reinforcement.hurricane",
-          "text": "Wzmocnienie na huragany",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.windows",
-          "text": "Okna dwuszybowe z mostkami termicznymi. Więcej okien zwiększa naturalne oświetlenie, ale wpływa na izolację.",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "help.security_features",
           "text": "Poziomy bezpieczeństwa od podstawowych zamków do biometrycznych systemów kontroli dostępu.",
           "foreign_words": [
             "CS:od",
             "SK:od"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.paint_finish",
-          "text": "Jakość powłoki wpływa na trwałość. C5M zalecana dla środowisk morskich. C4 dla przemysłu.",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.insulation_package",
-          "text": "Grubość izolacji wpływa na efektywność energetyczną. Ekstremalna zalecana dla klimatu arktycznego.",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
           ],
           "severity": "medium"
         }
@@ -3754,65 +2331,11 @@
           "severity": "medium"
         },
         {
-          "path": "send_inquiry.types.site_visit",
-          "text": "Wizyta na Miejscu",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.privacy_consent",
-          "text": "Wyrażam zgodę na przetwarzanie moich danych osobowych przez KAN-BUD Sp. z o.o. w celu obsługi tego zapytania zgodnie z przepisami RODO",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.marketing_consent",
-          "text": "Wyrażam zgodę na otrzymywanie informacji marketingowych o usługach i produktach KAN-BUD (opcjonalne)",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.success_message",
           "text": "Dziękujemy za zapytanie. Nasz zespół skontaktuje się z Państwem w ciągu 24 godzin ze szczegółową odpowiedzią.",
           "foreign_words": [
             "CS:za",
             "SK:za"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "regulatory_compliance_focus",
-          "text": "Fokus na zgodność z przepisami",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "contact_for_quote",
-          "text": "Skontaktuj się z nami po szczegółową, profesjonalną wycenę na podstawie Twoich specyfikacji.",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "interior_layout_options.built_in_furniture",
-          "text": "Meble wbudowane (zabudowa na wymiar)",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
           ],
           "severity": "medium"
         },
@@ -3849,15 +2372,6 @@
           "severity": "medium"
         },
         {
-          "path": "transport_type_options.crane",
-          "text": "Transport z dźwigiem (montaż na miejscu)",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "estimate_disclaimer_text",
           "text": "Powyższa wycena ma charakter orientacyjny i nie stanowi oferty w rozumieniu Kodeksu Cywilnego. Ostateczna cena może ulec zmianie w zależności od szczegółowych wymagań projektu, aktualnych cen materiałów i robocizny.",
           "foreign_words": [
@@ -3867,65 +2381,11 @@
           "severity": "medium"
         },
         {
-          "path": "budget_site_preparation",
-          "text": "Przewidź budżet na potencjalne przygotowanie placu",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "air_intakes.marine_grade",
-          "text": "Klasa morska (odporność na sól)",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "reinforcement.hurricane",
-          "text": "Wzmocnienie na huragany",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.windows",
-          "text": "Okna dwuszybowe z mostkami termicznymi. Więcej okien zwiększa naturalne oświetlenie, ale wpływa na izolację.",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "help.security_features",
           "text": "Poziomy bezpieczeństwa od podstawowych zamków do biometrycznych systemów kontroli dostępu.",
           "foreign_words": [
             "CS:od",
             "SK:od"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.paint_finish",
-          "text": "Jakość powłoki wpływa na trwałość. C5M zalecana dla środowisk morskich. C4 dla przemysłu.",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.insulation_package",
-          "text": "Grubość izolacji wpływa na efektywność energetyczną. Ekstremalna zalecana dla klimatu arktycznego.",
-          "foreign_words": [
-            "CS:na",
-            "SK:na"
           ],
           "severity": "medium"
         }
@@ -3933,38 +2393,11 @@
     },
     "sk": {
       "language": "sk",
-      "total_issues": 37,
+      "total_issues": 12,
       "high_severity": 3,
-      "medium_severity": 34,
+      "medium_severity": 9,
       "low_severity": 0,
       "issues": [
-        {
-          "path": "ui.back_to_home",
-          "text": "← Vráťte sa na hlavnú stránku",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ui.go_to_ai_estimate",
-          "text": "🤖 Ísť na AI odhad →",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ui.go_to_configurator",
-          "text": "🔧 Prejdite na konfigurátor",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
         {
           "path": "electrical_system.it_server",
           "text": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
@@ -4030,110 +2463,11 @@
           "severity": "high"
         },
         {
-          "path": "container.types.multi_unit",
-          "text": "Nádoba na viacerých jednotiek",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.description",
-          "text": "Získejte podrobný návod na váš kontajnerový projekt",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.disclaimer_text",
-          "text": "Tento formulár sa používa na predloženie otázok pre podrobné ponuky. Odhady z našej kalkulačky nie sú komerčné ponuky v zmysle platného zákona.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.special_requirements_placeholder",
-          "text": "Opíšte ďalšie požiadavky, technické špecifikácie, normy na splnenie ...",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.success_message",
           "text": "Ďakujem za otázku. Náš tím vás bude kontaktovať do 24 hodín s podrobnou odpoveďou.",
           "foreign_words": [
             "PL:za",
             "CS:za"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "back_to_home",
-          "text": "← Vráťte sa na hlavnú stránku",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "go_to_configurator",
-          "text": "🔧 Prejdite na konfigurátor",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "special_location_requirements",
-          "text": "Špeciálne požiadavky na miesto/miesta",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "regulatory_compliance_focus",
-          "text": "Zamerajte sa na dodržiavanie predpisov",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "contact_for_quote",
-          "text": "Kontaktujte nás pre podrobnú a profesionálnu ponuku založenú na vašich špecifikáciách.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "system_requirements_placeholder",
-          "text": "napr. Špeciálne požiadavky na vetranie, ďalšie zásuvky, špecializované inštalácie",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "describe_modification_requirements",
-          "text": "Opíšte ďalšie požiadavky na úpravu ...",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
           ],
           "severity": "medium"
         },
@@ -4154,24 +2488,6 @@
           "severity": "medium"
         },
         {
-          "path": "accessibility_options.ramp",
-          "text": "Príjazdová cesta/rampa (na invalidné vozíky)",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "transport_type_options.crane",
-          "text": "Preprava so žeriavom (inštalácia na mieste)",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "estimate_disclaimer_text",
           "text": "Nasledujúca odhady je indikatívna a nekonštituuje ponuku v zmysle Občianskeho zákonníka. Finálna cena môže sa meniť v závislosti od podrobností projektu, aktuálnych materiálových a pracovných nákladov.",
           "foreign_words": [
@@ -4181,125 +2497,17 @@
           "severity": "medium"
         },
         {
-          "path": "total_project_cost",
-          "text": "Celkové náklady na projekt",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "budget_site_preparation",
-          "text": "Rozpočet na potenciálne potrebné prípravy miesta",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "site_access_limitations",
-          "text": "Omezení prístupu na stavebné miesto pre doručenie",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.disclaimer_text",
-          "text": "Táto analýza je automatická a určená iba na odhadné účely. Finálna cena vyžaduje manuálnu overovanie našimi technickými zamestnancom.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.config_required_text",
-          "text": "Pre presnú analýzu technického výkresu je potrebná základná konfigurácia kontajnera. Bez konfigurácie sa analýza obmedzí na základné odhady.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.air_intakes",
-          "text": "Ventilačné systémy pre cirkuláciu vzduchu. Námorná trieda je odporúčaná na pobrežné oblasti.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.hvac_system",
-          "text": "Možnosti kontroly podnebia. Tepelné čerpadlá sú energetický Enfistynt na celoročné použitie.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "help.security_features",
           "text": "Úrovne bezpečnosti od základných zámkov po systémy biometrického prístupu.",
           "foreign_words": [
             "PL:od",
             "CS:od"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.fire_safety",
-          "text": "Systémy požiarnej ochrany. Sprinkler Systems odporúčané na komerčné použitie.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "appliances_laundry",
-          "text": "Príslušenstvo na prácu s odevmi",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
           ],
           "severity": "medium"
         }
       ],
       "significant_issues": [
         {
-          "path": "ui.back_to_home",
-          "text": "← Vráťte sa na hlavnú stránku",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ui.go_to_ai_estimate",
-          "text": "🤖 Ísť na AI odhad →",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "ui.go_to_configurator",
-          "text": "🔧 Prejdite na konfigurátor",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "electrical_system.it_server",
           "text": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
           "foreign_words": [
@@ -4364,110 +2572,11 @@
           "severity": "high"
         },
         {
-          "path": "container.types.multi_unit",
-          "text": "Nádoba na viacerých jednotiek",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.description",
-          "text": "Získejte podrobný návod na váš kontajnerový projekt",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.disclaimer_text",
-          "text": "Tento formulár sa používa na predloženie otázok pre podrobné ponuky. Odhady z našej kalkulačky nie sú komerčné ponuky v zmysle platného zákona.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "send_inquiry.special_requirements_placeholder",
-          "text": "Opíšte ďalšie požiadavky, technické špecifikácie, normy na splnenie ...",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "send_inquiry.success_message",
           "text": "Ďakujem za otázku. Náš tím vás bude kontaktovať do 24 hodín s podrobnou odpoveďou.",
           "foreign_words": [
             "PL:za",
             "CS:za"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "back_to_home",
-          "text": "← Vráťte sa na hlavnú stránku",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "go_to_configurator",
-          "text": "🔧 Prejdite na konfigurátor",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "special_location_requirements",
-          "text": "Špeciálne požiadavky na miesto/miesta",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "regulatory_compliance_focus",
-          "text": "Zamerajte sa na dodržiavanie predpisov",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "contact_for_quote",
-          "text": "Kontaktujte nás pre podrobnú a profesionálnu ponuku založenú na vašich špecifikáciách.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "system_requirements_placeholder",
-          "text": "napr. Špeciálne požiadavky na vetranie, ďalšie zásuvky, špecializované inštalácie",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "describe_modification_requirements",
-          "text": "Opíšte ďalšie požiadavky na úpravu ...",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
           ],
           "severity": "medium"
         },
@@ -4488,24 +2597,6 @@
           "severity": "medium"
         },
         {
-          "path": "accessibility_options.ramp",
-          "text": "Príjazdová cesta/rampa (na invalidné vozíky)",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "transport_type_options.crane",
-          "text": "Preprava so žeriavom (inštalácia na mieste)",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "estimate_disclaimer_text",
           "text": "Nasledujúca odhady je indikatívna a nekonštituuje ponuku v zmysle Občianskeho zákonníka. Finálna cena môže sa meniť v závislosti od podrobností projektu, aktuálnych materiálových a pracovných nákladov.",
           "foreign_words": [
@@ -4515,92 +2606,11 @@
           "severity": "medium"
         },
         {
-          "path": "total_project_cost",
-          "text": "Celkové náklady na projekt",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "budget_site_preparation",
-          "text": "Rozpočet na potenciálne potrebné prípravy miesta",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "site_access_limitations",
-          "text": "Omezení prístupu na stavebné miesto pre doručenie",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.disclaimer_text",
-          "text": "Táto analýza je automatická a určená iba na odhadné účely. Finálna cena vyžaduje manuálnu overovanie našimi technickými zamestnancom.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "drawing_analysis_customer.config_required_text",
-          "text": "Pre presnú analýzu technického výkresu je potrebná základná konfigurácia kontajnera. Bez konfigurácie sa analýza obmedzí na základné odhady.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.air_intakes",
-          "text": "Ventilačné systémy pre cirkuláciu vzduchu. Námorná trieda je odporúčaná na pobrežné oblasti.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.hvac_system",
-          "text": "Možnosti kontroly podnebia. Tepelné čerpadlá sú energetický Enfistynt na celoročné použitie.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
           "path": "help.security_features",
           "text": "Úrovne bezpečnosti od základných zámkov po systémy biometrického prístupu.",
           "foreign_words": [
             "PL:od",
             "CS:od"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "help.fire_safety",
-          "text": "Systémy požiarnej ochrany. Sprinkler Systems odporúčané na komerčné použitie.",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
-          ],
-          "severity": "medium"
-        },
-        {
-          "path": "appliances_laundry",
-          "text": "Príslušenstvo na prácu s odevmi",
-          "foreign_words": [
-            "PL:na",
-            "CS:na"
           ],
           "severity": "medium"
         }
