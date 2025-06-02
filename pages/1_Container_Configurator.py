@@ -618,7 +618,7 @@ with st.form("container_configuration_form"):
     submitted = st.form_submit_button(f"💾 {t('save_configuration')}", use_container_width=True, type="primary")
 
     if submitted:
-        # Calculate pricing
+        # Calculate pricing using comprehensive calculation
         config = {
             'container_type': container_type,
             'construction_material': construction_material,
@@ -657,49 +657,33 @@ with st.form("container_configuration_form"):
         # Save configuration
         st.session_state.container_config = config
 
-        # Calculate rough pricing (simplified)
-        base_price = 15000  # Base container price
+        # Calculate comprehensive pricing using the proper calculation function
+        try:
+            cost_result = calculate_container_cost(config)
+            
+            if isinstance(cost_result, dict):
+                base_price = cost_result.get('base_cost', 15000)
+                modifications_cost = cost_result.get('modifications_cost', 0)
+                delivery_cost = cost_result.get('delivery_cost', 800)
+                total_cost = cost_result.get('total_cost', base_price + modifications_cost + delivery_cost)
+                use_case_multiplier = cost_result.get('use_case_multiplier', 1.0)
+            else:
+                # Fallback for unexpected return type
+                total_cost = cost_result if isinstance(cost_result, (int, float)) else 15000
+                base_price = total_cost * 0.6
+                modifications_cost = total_cost * 0.25
+                delivery_cost = total_cost * 0.15
+                use_case_multiplier = 1.0
+        except Exception as e:
+            st.error(f"Error calculating cost: {str(e)}")
+            # Fallback values
+            base_price = 15000
+            modifications_cost = 5000
+            delivery_cost = 800
+            total_cost = base_price + modifications_cost + delivery_cost
+            use_case_multiplier = 1.0
 
-        # Calculate modifications cost
-        modifications_cost = 0
-
-        # Add costs based on selections
-        if 'Premium' in insulation:
-            modifications_cost += 3000
-        elif 'Zaawansowana' in insulation:
-            modifications_cost += 2000
-        elif 'Podstawowa' in insulation:
-            modifications_cost += 1000
-
-        if 'Standardowy' in electrical_system or 'Rozszerzony' in electrical_system:
-            modifications_cost += 2500
-        elif 'Przemysłowy' in electrical_system:
-            modifications_cost += 5000
-
-        if 'Standard' in plumbing_system or 'Komfort' in plumbing_system:
-            modifications_cost += 3000
-        elif 'Premium' in plumbing_system:
-            modifications_cost += 8000
-
-        if 'split' in hvac_system.lower():
-            modifications_cost += 3500
-        elif 'VRV' in hvac_system or 'centrala' in hvac_system.lower():
-            modifications_cost += 8000
-
-        if len(window_types) > 0:
-            modifications_cost += len(window_types) * 500
-
-        # Finish level multiplier
-        if 'Luksusowy' in finish_level:
-            base_price *= 1.8
-        elif 'Komfortowy' in finish_level:
-            base_price *= 1.5
-        elif 'Standardowy' in finish_level:
-            base_price *= 1.2
-
-        total_cost = base_price + modifications_cost
-
-        # Display cost summary
+        # Display comprehensive cost summary
         st.markdown(f"""
         <div class="cost-summary">
             <h2 style="margin-top: 0;">{t('cost_estimation.estimate_title')}</h2>
@@ -707,20 +691,31 @@ with st.form("container_configuration_form"):
                 <h3>{t('cost_estimation.cost_breakdown_title')}</h3>
                 <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
                     <span>{t('cost_estimation.base_container_line')}</span>
-                    <span><strong>€{base_price:,.2f}</strong></span>
+                    <span><strong>€{base_price:,.0f}</strong></span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
                     <span>{t('cost_estimation.modifications_equipment_line')}</span>
-                    <span><strong>€{modifications_cost:,.2f}</strong></span>
+                    <span><strong>€{modifications_cost:,.0f}</strong></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
+                    <span>Use Case Multiplier ({use_case_multiplier:.1f}x)</span>
+                    <span><strong>Applied</strong></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
+                    <span>Delivery & Logistics</span>
+                    <span><strong>€{delivery_cost:,.0f}</strong></span>
                 </div>
                 <hr style="border-color: rgba(255,255,255,0.3);">
                 <div style="display: flex; justify-content: space-between; margin: 1rem 0; font-size: 1.2rem;">
                     <span><strong>{t('cost_estimation.total_cost_line')}</strong></span>
-                    <span><strong>€{total_cost:,.2f}</strong></span>
+                    <span><strong>€{total_cost:,.0f}</strong></span>
                 </div>
             </div>
             <div class="special-notes">
                 <strong>{t('cost_estimation.important_warning')}</strong> {t('cost_estimation.preliminary_estimate_full')}
+                <br><br>
+                <strong>Configuration Impact:</strong> Your selections for systems, materials, finishes, and use case significantly affect the final price. 
+                More advanced configurations will show higher costs that reflect the complexity and quality of your requirements.
             </div>
         </div>
         """, unsafe_allow_html=True)
