@@ -50,12 +50,12 @@
     "skylight": "Okna dachowe"
   },
   "lighting": {
-    "none": "No lighting",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energy efficient LED",
-    "exterior": "Exterior lighting",
-    "emergency": "Emergency lighting",
-    "smart": "Smart lighting system"
+    "none": "Bez oświetlenia",
+    "basic_led": "Podstawowe oświetlenie LED",
+    "energy_efficient": "Energooszczędne LED",
+    "exterior": "Oświetlenie zewnętrzne",
+    "emergency": "Oświetlenie awaryjne",
+    "smart": "Inteligentny system oświetleniowy"
   },
   "electrical_system": {
     "none": "Bez instalacji elektrycznej",
@@ -315,7 +315,7 @@
   "finish_level": "Poziom Wykończenia",
   "climate_zone": "Strefa Klimatyczna",
   "windows": {
-    "none": "No windows (closed container)",
+    "none": "Bez okien (kontener zamknięty)",
     "one": "1 window",
     "two": "2 windows",
     "three": "3 windows",
@@ -645,15 +645,15 @@
     "marine_grade": "Klasa morska (odporność na sól)"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
-    "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
-    "fans": "Roof ventilation fans",
-    "solar": "Solar panel preparation",
-    "antennas": "Antenna/communication mounts",
-    "sloped": "Sloped roof conversion",
-    "terrace": "Roof terrace/walkway",
-    "snow_removal": "Snow load reinforcement"
+    "none": "Bez modyfikacji (standardowy płaski dach)",
+    "insulation": "Dodatkowa izolacja dachu",
+    "skylight": "Montaż świetlika",
+    "fans": "Wentylatory dachowe",
+    "solar": "Przygotowanie pod panele słoneczne",
+    "antennas": "Mocowania anten/komunikacyjne",
+    "sloped": "Przebudowa na dach skośny",
+    "terrace": "Taras dachowy/przejście",
+    "snow_removal": "Wzmocnienie na obciążenie śniegiem"
   },
   "electrical": {
     "basic": "Podstawowa (oświetlenie + gniazdka)",
@@ -712,10 +712,10 @@
     "marine_grade": "Klasa morska (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
+    "basic": "Podstawowa (50mm)",
+    "standard": "Standardowa (100mm)",
     "premium": "Premium (150mm)",
-    "extreme": "Extreme (200mm+)"
+    "extreme": "Ekstremalna (200mm+)"
   },
   "reinforcement": {
     "none": "Bez wzmocnień",
@@ -783,14 +783,14 @@
   "delivery_zone_regional": "Regionalna (200km)",
   "window_types_double": "Podwójne Szyby",
   "ventilation": {
-    "none": "No ventilation",
-    "gravity": "Gravity vents (2-4 pcs, adjustable)",
-    "wall_fans": "Wall fans (exhaust)",
-    "mechanical": "Mechanical ventilation",
-    "heat_recovery": "Heat recovery ventilation",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning",
-    "industrial": "Industrial ventilation"
+    "none": "Bez wentylacji",
+    "gravity": "Wentylacja grawitacyjna (2-4 szt., regulowana)",
+    "wall_fans": "Wentylatory ścienne (wywiewne)",
+    "mechanical": "Wentylacja mechaniczna",
+    "heat_recovery": "Wentylacja z odzyskiem ciepła",
+    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
+    "central_ac": "Centralna klimatyzacja",
+    "industrial": "Wentylacja przemysłowa"
   },
   "it_systems": "Systemy IT",
   "lighting_professional": "Profesjonalne",
