@@ -314,6 +314,9 @@
   "system_comments": "Requirements Comments system",
   "advanced_comments": "Advanced Modifications Comments",
   "general_comments": "General Comments",
+  "window_types": "Window Types",
+  "lighting": "Lighting", 
+  "flooring": "Flooring",
   "window_types": {
     "standard": "Standard",
     "panoramic": "Panoramic",

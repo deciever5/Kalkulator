@@ -41,7 +41,7 @@
   },
   "window_types": {
     "standard": "Standardowe",
-    "panoramic": "Panoramiczne",
+    "panoramic": "Panoramiczne", 
     "sliding": "Przesuwne",
     "tilt": "Skrzynkowe",
     "security": "Antywłamaniowe",
