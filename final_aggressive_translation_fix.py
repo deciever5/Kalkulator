@@ -194,6 +194,9 @@ class FinalTranslationFixer:
         for key in keys[:-1]:
             if key not in current:
                 current[key] = {}
+            elif not isinstance(current[key], dict):
+                # If the current value is not a dict, replace it with an empty dict
+                current[key] = {}
             current = current[key]
         current[keys[-1]] = value
 
