@@ -45,7 +45,8 @@ def render_shared_header(show_login=False, current_page="Home"):
     if show_login:
         col_spacer, col_lang, col_login = st.columns([4, 1.5, 0.5])
     else:
-        col_spacer, col_lang = st.columns([5, 1])  # Only create columns we need
+        col_spacer, col_lang = st.columns([5, 1])
+        col_login = None  # Define col_login to avoid unbound variable error
 
     with col_lang:
         # Language selector in top-right area (matching main page)
@@ -110,7 +111,9 @@ def render_shared_header(show_login=False, current_page="Home"):
             current_lang = 'en'  # Default to English if current language not available
             set_language(current_lang)
 
+    # Handle login button only when show_login is True
     if show_login:
+        # We know col_login exists here since show_login is True
         with col_login:
             # Employee login button
             if st.session_state.get('employee_logged_in', False):
