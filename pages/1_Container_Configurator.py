@@ -6,10 +6,9 @@ st.set_page_config(
     layout="wide"
 )
 
-import pandas as pd
 from utils.container_database import ContainerDatabase
 from utils.calculations import calculate_container_cost
-from utils.translations import t, init_language, get_current_language, set_language
+from utils.translations import t, init_language
 from utils.shared_header import render_shared_header
 
 init_language()
@@ -21,7 +20,7 @@ if 'show_login' not in st.session_state:
     st.session_state.show_login = False
 
 # Load animations
-from utils.animations import add_hover_animations, show_loading_animation, create_animated_counter
+from utils.animations import add_hover_animations
 add_hover_animations()
 
 # Render shared header without login button
