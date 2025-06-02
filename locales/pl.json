@@ -205,5 +205,162 @@
   "choose_an_option": "Wybierz opcję",
   "system_requirements_placeholder": "Np. specjalne wymagania elektryczne, automatyka...",
   "modification_requirements_placeholder": "Np. specjalne otwory, konstrukcje stalowe...",
-  "general_comments_placeholder": "Np. Specjalne terminy realizacji, wymogi certyfikacyjne, ograniczenia budżetowe, nietypowe zastosowania"
+  "general_comments_placeholder": "Np. Specjalne terminy realizacji, wymogi certyfikacyjne, ograniczenia budżetowe, nietypowe zastosowania",
+  "electrical_system": "System Elektryczny",
+  "plumbing_system": "Instalacja Wodno-Kanalizacyjna",
+  "hvac_system": "System HVAC",
+  "special_comments_modifications": "Komentarze dotyczące modyfikacji",
+  "modification_requirements_description": "Opisz dodatkowe modyfikacje",
+  "special_comments_systems": "Komentarze dotyczące systemów",
+  "system_requirements_description": "Opisz szczegółowe wymagania systemowe",
+  "accessibility_features": "Udogodnienia dla Niepełnosprawnych",
+  "air_intakes_label": "Nawiewy i Wentylacja",
+  "fire_safety_label": "Systemy Przeciwpożarowe",
+  "roof_modifications_label": "Modyfikacje Dachu",
+  "advanced_modifications": "Zaawansowane Modyfikacje",
+  "equipment_extras": "Wyposażenie i Dodatki",
+  "transport_delivery": "Transport i Dostawa",
+  "container": {
+    "types": {
+      "10ft_compact": "10ft kompaktowy (3m x 2.4m)",
+      "20ft_standard": "20FT standardowy",
+      "20ft_high_cube": "20ft High Cube (6m x 2.7m)",
+      "40ft_standard": "40FT standardowy",
+      "40ft_high_cube": "40ft High Cube (12m x 2.7m)",
+      "40ft_hc": "40ft HC",
+      "20ft_refrigerated": "20ft chłodniczy",
+      "20ft_double_door": "20FT DD",
+      "40ft_double_door": "40ft DD",
+      "40ft_hc_double_door": "40ft HC DD",
+      "45ft_standard": "45FT standardowy",
+      "custom": "Niestandardowy",
+      "custom_size": "Wymiary niestandardowe",
+      "multi_unit": "Kontener wielosekcyjny",
+      "custom_dimensions": "Kontener o wymiarach niestandardowych",
+      "refurbished": "Kontener odnowiony"
+    },
+    "flooring": {
+      "none": "Bez podłogi",
+      "plywood": "Sklejka",
+      "vinyl": "Winyl",
+      "carpet": "Wykładzina",
+      "hardwood": "Drewno twarde",
+      "polished_concrete": "Polerowany beton"
+    }
+  },
+  "form": {
+    "labels": {
+      "container_type": "Typ Kontenera",
+      "main_purpose": "Główny Cel",
+      "environment": "Środowisko",
+      "finish_level": "Poziom Wykończenia",
+      "flooring": "Podłogi",
+      "climate_zone": "Strefa Klimatyczna",
+      "number_of_windows": "Liczba Okien",
+      "additional_doors": "Dodatkowe Drzwi",
+      "electrical_system": "System Elektryczny",
+      "plumbing_system": "Instalacja Wodno-Kanalizacyjna",
+      "hvac_system": "System HVAC",
+      "insulation_package": "Pakiet Izolacyjny",
+      "structural_reinforcement": "Wzmocnienie Konstrukcyjne",
+      "delivery_zone": "Strefa Dostawy"
+    }
+  },
+  "exterior_cladding": {
+    "none": "Bez okładziny zewnętrznej",
+    "trapezoidal_sheet": "Blacha trapezowa",
+    "cassette_sheet": "Blacha kasetowa",
+    "vinyl_siding": "Siding winylowy",
+    "structural_plaster": "Tynk strukturalny",
+    "wood_cladding": "Okładzina drewniana",
+    "composite_panels": "Panele kompozytowe",
+    "clinker_brick": "Cegła klinkierowa",
+    "stone": "Kamień naturalny"
+  },
+  "additional_openings": {
+    "none": "Bez dodatkowych otworów",
+    "single_door": "Pojedyncze drzwi (890x2100mm)",
+    "double_door": "Podwójne drzwi (1800x2100mm)",
+    "sliding_door": "Drzwi przesuwne",
+    "sectional_gate": "Brama segmentowa",
+    "roller_gate": "Brama rolowana",
+    "additional_windows": "Dodatkowe okna",
+    "technical_openings": "Otwory techniczne",
+    "loading_ramp": "Rampa załadunkowa"
+  },
+  "interior_layout": {
+    "open_space": "Przestrzeń otwarta",
+    "partitioned": "Podzielona",
+    "built_in_furniture": "Wbudowane meble",
+    "custom_design": "Projekt niestandardowy",
+    "mezzanine": "Antresola"
+  },
+  "air_intakes": {
+    "none": "Bez nawiewów",
+    "standard": "Standardowa wentylacja",
+    "industrial": "Klasa przemysłowa",
+    "marine_grade": "Klasa morska (odporność na sól)"
+  },
+  "roof_modifications": {
+    "none": "Bez modyfikacji (standardowy płaski dach)",
+    "insulation": "Dodatkowa izolacja dachu (10-20cm)",
+    "skylight": "Świetlik dachowy (60x60, 90x90, 120x120cm)",
+    "solar": "Instalacja solarna (2-10kW)",
+    "sloped": "Dach skośny (jednospadowy, dwuspadowy)",
+    "terrace": "Taras dachowy (z balustradą)",
+    "snow_removal": "Systemy odśnieżania (grzejniki, rynny)",
+    "fans": "Wentylatory dachowe (przemysłowe, ciche)",
+    "antennas": "Anteny/maszty (GSM, Radio, satelita)"
+  },
+  "fire_safety": {
+    "basic": "Podstawowy (gaśnica)",
+    "smoke_detection": "Wykrywanie dymu",
+    "sprinkler": "System tryskaczowy",
+    "full_system": "Pełny system przeciwpożarowy"
+  },
+  "electrical": {
+    "basic": "Podstawowy (oświetlenie + gniazdka)",
+    "standard": "Standardowy (obwód 15A)",
+    "industrial": "Przemysłowy (30A + rozdzielnica)",
+    "smart_system": "System inteligentny (automatyka IoT)"
+  },
+  "plumbing": {
+    "none": "Bez instalacji wodno-kanalizacyjnej",
+    "basic": "Podstawowa (zlew + odpływ)",
+    "full": "Pełna (przygotowanie łazienki)",
+    "commercial": "Klasa komercyjna"
+  },
+  "hvac": {
+    "none": "Bez HVAC",
+    "basic": "Podstawowa wentylacja",
+    "split_system": "System split",
+    "central": "Klimatyzacja centralna",
+    "heat_pump": "Pompa ciepła"
+  },
+  "insulation": {
+    "none": "Bez izolacji",
+    "basic": "Podstawowa (5-10cm)",
+    "standard": "Standardowa (15cm)",
+    "advanced": "Zaawansowana (10-15cm)",
+    "premium": "Premium (20cm)",
+    "extreme": "Ekstremalna (30cm)"
+  },
+  "lighting": {
+    "none": "Bez oświetlenia",
+    "basic_led": "Podstawowe LED",
+    "energy_efficient": "Energooszczędne LED z czujnikami",
+    "exterior": "Oświetlenie zewnętrzne",
+    "emergency": "Oświetlenie awaryjne",
+    "smart": "System inteligentny"
+  },
+  "paint_finish": {
+    "none": "Bez malowania",
+    "primer": "Podkład",
+    "standard_c2": "Standardowy C2",
+    "improved_c3": "Ulepszony C3",
+    "premium_c4": "Premium C4",
+    "anticorrosive_c5m": "Antykorozyjny C5M",
+    "textured": "Teksturowany",
+    "graffiti_protection": "Ochrona antygraffiti"
+  }
 }
