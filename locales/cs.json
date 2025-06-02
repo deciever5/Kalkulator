@@ -88,7 +88,7 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Ovládací panel klimatizace (s filtrací, zvlhčování)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "systém",

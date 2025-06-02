@@ -88,7 +88,7 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Панель управління кондиціонуванням (з фільтрацією, зволоження)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF система (multi-zone, zone control)",
@@ -481,15 +481,15 @@
   },
   "security_systems_options": {
     "none": "Без dodatkowych zaбезpieczeń (zamki стандартний)",
-    "basic": "Базовий (wzmocnione zamki, kraty okienne)",
-    "standard": "Стандартний (alarm, czujniki, syrena)",
+    "basic": "Основні (армовані замки, віконні грилі)",
+    "standard": "Стандарт (тривога, датчики, сирена)",
     "extended": "Розширені (датчики моніторингу, руху/вібрації)",
     "high": "Високий (CCTV IP, контроль доступу, домофон)",
     "maximum": "Максимум (безпечна, біометрика, центральний моніторинг)",
-    "industrial": "Промисловий (ATEX, systemy gazowe, panic room)"
+    "industrial": "Промислові (Atex, Gas Systems, Panic Room)"
   },
   "exterior_cladding_options": {
-    "none": "Без okładziny (blacha kontenerowa standardowa)",
+    "none": "Без обшивки (стандартний контейнерний лист)",
     "trapezoidal": "Трапецієподібний аркуш (T18, T35, T55)",
     "cassette": "Касетний аркуш (плоский, роздутий)",
     "vinyl_siding": "Вініловий сайдинг (імітація деревини, сучасний)",
@@ -510,7 +510,7 @@
     "custom": "Otwory nieстандартний (nietypowe wymiary)"
   },
   "fire_safety_options": {
-    "none": "Без systemów przeciwpożarowych",
+    "none": "Без вогню -бойових систем",
     "basic": "Базовий (gaśnica, czujka dymu)",
     "standard": "Стандартний (system alarmowy, oświetlenie awaryjne)",
     "extended": "Розширений (tryskacze, ewakuacja)",
@@ -544,7 +544,7 @@
     "multi_container": "Мульти -онний транспорт (2+ одиниць)"
   },
   "assembly_options": {
-    "none": "Без montażu (tylko dostawa)",
+    "none": "Без складання (лише доставка)",
     "basic": "Основна збірка (позиціонування, вирівнювання)",
     "standard": "Montaż стандартнийowy (podłączenia, testy)",
     "full": "Повна збірка (повна установка)"
@@ -556,16 +556,16 @@
     "full": "Повне (повне офісне обладнання)"
   },
   "appliances_options": {
-    "none": "Без sprzętu AGD",
+    "none": "Без побутових приладів",
     "basic": "Базовий (холодильник, мікрохвильова піч)",
     "standard": "Стандартний (кухонний комплект, пральна машина)",
     "full": "Повна (повна побутова техніка)"
   },
   "it_systems_options": {
-    "none": "Без systemów IT",
+    "none": "Без ІТ -систем",
     "basic": "Базовий (internet, WiFi)",
     "standard": "Стандартний (sieć, telefonia)",
-    "advanced": "Zaawansowane (serwerownia, безpieczeństwo)"
+    "advanced": "Розширений (серверна кімната, безпека)"
   },
   "insulation_package": "Пакет ізоляції",
   "structural_reinforcement": "Структурне підсилення",

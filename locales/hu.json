@@ -65,7 +65,7 @@
     "standard": "Szabványos (25A, világítás, 8 aljzat)",
     "extended": "Kiterjesztett (40A, erő, UPS, vészhelyzet)",
     "industrial": "Ipari (63A, erő, elosztószekrény)",
-    "it_server": "IT/Szerver (UPS, hűtés, felügyelet)",
+    "it_server": "IT/szerver (UPS, hűtés, megfigyelés)",
     "smart": "Intelligens (okos otthon, KNX, automatizálás)"
   },
   "plumbing_system": {
@@ -88,10 +88,10 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Légkondicionáló kezelőpanel (szűréssel, hidratálással)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF rendszer (multi-zone, zone control)",
+    "vrv_vrf": "VRV/VRF rendszer (multi -zone, zónavezérlés)",
     "underfloor_heating": "Padlófűtés (elektromos/víz)"
   },
   "flooring": {
@@ -439,7 +439,7 @@
     "extended": "Bővített (megfigyelés, mozgás/rezgés -érzékelők)",
     "high": "High (CCTV IP, Access Control, Intercom)",
     "maximum": "Maximum (biztonságos, biometria, központi megfigyelés)",
-    "industrial": "rendszer"
+    "industrial": "Ipari (ATEX, gázrendszerek, pánikterem)"
   },
   "exterior_cladding_options": {
     "none": "szabványos",
@@ -463,11 +463,11 @@
     "custom": "Otwory nieszabványos (nietypowe wymiary)"
   },
   "fire_safety_options": {
-    "none": "Nélkül systemów przeciwpożarowych",
+    "none": "Tűzoltó rendszerek nélkül",
     "basic": "Alapvető (gaśnica, czujka dymu)",
     "standard": "Szabványos (system alarmowy, világítás vészhelyzeti)",
     "extended": "Kiterjesztett (tryskacze, ewakuacja)",
-    "full": "rendszer"
+    "full": "Teljes rendszer (gáz, megfigyelés)"
   },
   "accessibility_options": {
     "standard": "Dostęp szabványos (próg 15-20cm)",
@@ -497,7 +497,7 @@
     "multi_container": "Többkonténeres szállítás (2+ egység)"
   },
   "assembly_options": {
-    "none": "Nélkül montażu (tylko dostawa)",
+    "none": "Összeszerelés nélkül (csak kézbesítés)",
     "basic": "Montaż alapvető (pozycjonowanie, poziomowanie)",
     "standard": "Montaż szabványos (podłączenia, testy)",
     "full": "Teljes összeszerelés (komplett telepítés)"
@@ -509,16 +509,16 @@
     "full": "Teljes (komplett felszerelés biura)"
   },
   "appliances_options": {
-    "none": "Nélkül sprzętu AGD",
+    "none": "Háztartási készülékek nélkül",
     "basic": "Alapvető (lodówka, mikrofalówka)",
     "standard": "Szabványos (zestaw kuchenny, pralka)",
     "full": "Teljes (teljes háztartási készülékek)"
   },
   "it_systems_options": {
-    "none": "Nélkül systemów IT",
+    "none": "IT rendszerek nélkül",
     "basic": "Alapvető (internet, WiFi)",
     "standard": "Szabványos (sieć, telefonia)",
-    "advanced": "Zaawansowane (serwerownia, nélkülbiztonság)"
+    "advanced": "Haladó (szerverszoba, biztonság)"
   },
   "insulation_package": "Szigetelési Csomag",
   "structural_reinforcement": "Szerkezeti Megerősítés",

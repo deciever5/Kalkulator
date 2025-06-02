@@ -41,7 +41,7 @@
   },
   "window_types": {
     "standard": "Standard (dubbelglas)",
-    "energy_efficient": "Energooszczędne (trippelglas)",
+    "energy_efficient": "Energibesparing (trippelfönster)",
     "security": "Utanpieczeństwo (hartowane)",
     "marine_grade": "Havsklass (anti -korrosion)",
     "panoramic": "Panoramafönster",
@@ -60,7 +60,7 @@
   },
   "electrical_system": {
     "none": "Utan instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody utan wyposażenia)",
+    "preparation": "Förberedelse (kablar utan utrustning)",
     "basic": "Basic (belysning + uttag)",
     "standard": "Standard (25A, belysning, 8 uttag)",
     "extended": "Utökad (40A, styrka, UPS, nödsituation)",
@@ -88,7 +88,7 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Luftkonditioneringskontrollpanel (med filtrering, fuktgivande)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF -system (multi -zon, zonkontroll)",
@@ -129,7 +129,7 @@
   "fast_realization": "Snabb implementering",
   "hundreds_of_projects": "Hundratals genomförda projekt",
   "own_machinery": "Egen produktionsmaskiner",
-  "poland_center": "Central placering i Polen",
+  "poland_center": "Centralt läge i Polen",
   "full_service": "Fullständig Service",
   "design_execution": "Från design till exekvering",
   "transport_assembly": "Transport och montering",
@@ -176,7 +176,7 @@
       "industrial": "Industriell"
     },
     "climate_zones": {
-      "central_european": "Centraleuropeisk",
+      "central_european": "Centraleuropa",
       "scandinavian": "Skandinavisk",
       "mediterranean": "Medelhavs",
       "atlantic_maritime": "Atlantisk Maritim",
@@ -434,15 +434,15 @@
   },
   "security_systems_options": {
     "none": "Utan dodatkowych zautanpieczeń (zamki standard)",
-    "basic": "Grundläggande (wzmocnione zamki, kraty okienne)",
-    "standard": "Standard (alarm, czujniki, syrena)",
+    "basic": "Grundläggande (förstärkta lås, fönstergriller)",
+    "standard": "Standard (larm, sensorer, siren)",
     "extended": "Utökad (övervakning, rörelse/vibrationssensorer)",
     "high": "Hög (CCTV IP, Access Control, Intercom)",
     "maximum": "Maximal (säker, biometri, central övervakning)",
-    "industrial": "Industriell (ATEX, systemy gazowe, panic room)"
+    "industrial": "Industrial (ATEX, Gas Systems, Panic Room)"
   },
   "exterior_cladding_options": {
-    "none": "Utan okładziny (blacha kontenerowa standardowa)",
+    "none": "Utan beklädnad (standard containerark)",
     "trapezoidal": "Trapezoidal ark (T18, T35, T55)",
     "cassette": "Kassettark (platt, puffed)",
     "vinyl_siding": "Vinylsidor (träimitation, modern)",
@@ -463,7 +463,7 @@
     "custom": "Otwory niestandard (nietypowe wymiary)"
   },
   "fire_safety_options": {
-    "none": "Utan systemów przeciwpożarowych",
+    "none": "Utan brandkampsystem",
     "basic": "Grundläggande (gaśnica, czujka dymu)",
     "standard": "Standard (system alarmowy, oświetlenie awaryjne)",
     "extended": "Utökad (tryskacze, ewakuacja)",
@@ -497,28 +497,28 @@
     "multi_container": "Multi -evic transport (2+ enheter)"
   },
   "assembly_options": {
-    "none": "Utan montażu (tylko dostawa)",
+    "none": "Utan montering (endast leverans)",
     "basic": "Grundmontering (positionering, nivellering)",
     "standard": "Standardmontering (anslutningar, tester)",
     "full": "Full montering (komplett installation)"
   },
   "office_equipment_options": {
     "none": "Utan wyposażenia (pusty kontener)",
-    "basic": "Grundläggande (biurko, krzesła, szafa)",
+    "basic": "Basic (skrivbord, stolar, garderob)",
     "standard": "Standard (komplet mebli, oświetlenie)",
     "full": "Full (komplett kontorsutrustning)"
   },
   "appliances_options": {
-    "none": "Utan sprzętu AGD",
+    "none": "Utan hushållsapparater",
     "basic": "Basic (kylskåp, mikrovågsugn)",
     "standard": "Standard (kökssats, tvättmaskin)",
     "full": "Full (kompletta hushållsapparater)"
   },
   "it_systems_options": {
-    "none": "Utan systemów IT",
+    "none": "Utan IT -system",
     "basic": "Grundläggande (internet, WiFi)",
     "standard": "Standard (sieć, telefonia)",
-    "advanced": "Zaawansowane (serwerownia, utanpieczeństwo)"
+    "advanced": "Avancerat (serverrum, säkerhet)"
   },
   "insulation_package": "Isoleringspaket",
   "structural_reinforcement": "Strukturell Förstärkning",

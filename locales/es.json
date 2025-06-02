@@ -88,7 +88,7 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Panel de control de aire acondicionado (con filtración, hidratación)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF sistema (multi-zone, zone control)",
@@ -176,7 +176,7 @@
       "industrial": "Industrial"
     },
     "climate_zones": {
-      "central_european": "Europeo Central",
+      "central_european": "Europa central",
       "scandinavian": "escandinavo",
       "mediterranean": "Mediterráneo",
       "atlantic_maritime": "Atlántico Marítimo",
@@ -438,7 +438,7 @@
     "standard": "Estándar (alarma, sensores, sirena)",
     "extended": "Ampliado (monitoreo, sensores de movimiento/vibración)",
     "high": "Alto (CCTV IP, control de acceso, intercomunicador)",
-    "maximum": "Máximo (caja fuerte, biometría, monitoreo central)",
+    "maximum": "Máximo (seguro, biometría, monitoreo central)",
     "industrial": "Industrial (ATEX, sistemas de gas, habitación de pánico)"
   },
   "exterior_cladding_options": {
@@ -486,7 +486,7 @@
     "local": "Local (hasta 50km)",
     "regional": "Regional (50-200km)",
     "national": "Nacional (todo el país)",
-    "central_europe": "Europa Central (DE, CZ, SK, AT)",
+    "central_europe": "Europa central (DE, CZ, SK, AT)",
     "western_europe": "Europa Occidental (FR, NL, BE, LU)",
     "international": "Internacional (fuera de Europa)"
   },
@@ -530,7 +530,7 @@
     "zones": {
       "local": "Local (hasta 100km)",
       "poland": "Polonia (nacional)",
-      "central_europe": "Europa Central (DE, CZ, SK, AT)",
+      "central_europe": "Europa central (DE, CZ, SK, AT)",
       "western_europe": "Europa Occidental (FR, NL, BE, LU)",
       "northern_europe": "Europa del Norte (DK, SE, NO, FI)",
       "southern_europe": "Europa del Sur (IT, ES, PT, GR)",
@@ -830,7 +830,7 @@
   },
   "climate_zones": {
     "northern_europe": "Europa del Norte (Escandinavia, -30 ° C a +25 ° C)",
-    "central_europe": "Europa Central (Polonia, Alemania, -20°C a +35°C)",
+    "central_europe": "Europa central (Polonia, Alemania, -20 ° C a +35 ° C)",
     "southern_europe": "Europa del Sur (España, Italia, -5°C a +45°C)",
     "continental": "Clima continental (variaciones extremas)",
     "maritime": "Clima marítimo (alta humedad)",

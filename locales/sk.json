@@ -88,7 +88,7 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Ovládací panel klimatizácie (s filtráciou, zvlhčovanie)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF systém (multi-zone, zone control)",
@@ -481,15 +481,15 @@
   },
   "security_systems_options": {
     "none": "Bez dodatkowych zabezpieczeń (zamki štandardné)",
-    "basic": "Základné (wzmocnione zamki, kraty okienne)",
-    "standard": "Štandardné (alarm, czujniki, syrena)",
+    "basic": "Základné (zosilnené zámky, okenné mriežky)",
+    "standard": "Štandard (alarm, senzory, siréna)",
     "extended": "Rozšírené (monitorovanie, senzory pohybu/vibrácie)",
     "high": "Vysoký (CCTV IP, riadenie prístupu, intercom)",
     "maximum": "Maximálne (bezpečné, biometrické, centrálne monitorovanie)",
-    "industrial": "Priemyselné (ATEX, systemy gazowe, panic room)"
+    "industrial": "Industrial (ATEX, plynové systémy, panická miestnosť)"
   },
   "exterior_cladding_options": {
-    "none": "Bez okładziny (blacha kontenerowa štandardnýowa)",
+    "none": "Bez opláštenia (štandardný list s kontajnermi)",
     "trapezoidal": "Lichobežník (T18, T35, T55)",
     "cassette": "Kazetový list (plochý, nafúknutý)",
     "vinyl_siding": "Vinylová vlečka (Imitácia dreva, moderná)",

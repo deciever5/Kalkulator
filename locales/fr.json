@@ -41,7 +41,7 @@
   },
   "window_types": {
     "standard": "Standard (25A, éclairage, 8 prises)",
-    "energy_efficient": "Energooszczędne (triple vitrage)",
+    "energy_efficient": "Économie d'énergie (triple fenêtres)",
     "security": "Sanspieczeństwo (hartowane)",
     "marine_grade": "Classe en mer (anti-corrosion)",
     "panoramic": "Fenêtres panoramiques",
@@ -88,7 +88,7 @@
     "electric_heating": "Chauffage électrique (radiateurs IR)",
     "gas_heating": "Chauffage au gaz (chaudière à condensation)",
     "split_ac": "Climatisation split (refroidissement + chauffage)",
-    "central_ac": "Climatisation centrale (avec filtration, humidification)",
+    "central_ac": "Panneau de commande de climatisation (avec filtration, hydratant)",
     "heat_pump": "Pompe à chaleur",
     "electric_heaters": "Radiateurs électriques (1-3kW, convecteurs)",
     "vrv_vrf": "Système VRV/VRF (multizones, contrôle de zones)",
@@ -176,7 +176,7 @@
       "industrial": "Industriel"
     },
     "climate_zones": {
-      "central_european": "Européen central",
+      "central_european": "Europe Centrale",
       "scandinavian": "scandinave",
       "mediterranean": "méditerranéen",
       "atlantic_maritime": "Atlantique maritime",
@@ -485,7 +485,7 @@
     "standard": "Standard (alarme, capteurs, sirène)",
     "extended": "Étendu (surveillance, capteurs de mouvement/vibration)",
     "high": "Élevé (CCTV IP, contrôle d'accès, interphone)",
-    "maximum": "Maximum (coffre-fort, biométrie, surveillance centrale)",
+    "maximum": "Maximum (sûr, biométrie, surveillance centrale)",
     "industrial": "Industriel (ATEX, systèmes à gaz, salle de panique)"
   },
   "exterior_cladding_options": {

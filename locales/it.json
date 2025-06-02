@@ -88,7 +88,7 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Pannello di controllo del condizionamento dell'aria (con filtrazione, idratante)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF sistema (multi-zone, zone control)",
@@ -438,8 +438,8 @@
     "standard": "Standard (allarme, sensori, sirena)",
     "extended": "Esteso (monitoraggio, sensori di movimento/vibrazione)",
     "high": "Alto (CCTV IP, controllo accessi, citofono)",
-    "maximum": "Massimo (cassaforte, biometria, monitoraggio centrale)",
-    "industrial": "Industriale (ATEX, sistemi a gas, stanza del panico)"
+    "maximum": "Massimo (sicuro, biometria, monitoraggio centrale)",
+    "industrial": "Industrial (Atex, Sistemi di gas, sala panico)"
   },
   "exterior_cladding_options": {
     "none": "Nessun rivestimento (lamiera container standard)",
@@ -530,7 +530,7 @@
     "zones": {
       "local": "Locale (fino 100km)",
       "poland": "Polonia (nazionale)",
-      "central_europe": "Europa Centrale (DE, CZ, SK, AT)",
+      "central_europe": "Europa centrale (DE, CZ, SK, AT)",
       "western_europe": "Europa Occidentale (FR, NL, BE, LU)",
       "northern_europe": "Europa Settentrionale (DK, SE, NO, FI)",
       "southern_europe": "Europa Meridionale (IT, ES, PT, GR)",
@@ -677,7 +677,7 @@
     "none": "Nessun HVAC",
     "basic": "Ventilazione base",
     "split_system": "Sistema aria condizionata split",
-    "central": "Aria condizionata centralizzata",
+    "central": "Aria condizionata centrale",
     "heat_pump": "Pompa di calore"
   },
   "security": {

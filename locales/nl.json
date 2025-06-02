@@ -41,7 +41,7 @@
   },
   "window_types": {
     "standard": "Standaard (dubbele beglazing)",
-    "energy_efficient": "Energooszczędne (drievoudige beglazing)",
+    "energy_efficient": "Energie -redding (drievoudige ramen)",
     "security": "Zonderpieczeństwo (hartowane)",
     "marine_grade": "Zeeklasse (anti -corrosie)",
     "panoramic": "Panoramische ramen",
@@ -88,7 +88,7 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Airconditioning bedieningspaneel (met filtratie, hydrateren)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF systeem (multi-zone, zone control)",
@@ -129,7 +129,7 @@
   "fast_realization": "Snelle Realisatie",
   "hundreds_of_projects": "Honderden voltooide projecten",
   "own_machinery": "Eigen machinepark",
-  "poland_center": "Centrale ligging in Polen",
+  "poland_center": "Centrale locatie in Polen",
   "full_service": "Volledige Service",
   "design_execution": "Van ontwerp tot uitvoering",
   "transport_assembly": "Transport en montage",
@@ -438,7 +438,7 @@
     "standard": "Standaard (alarm, sensoren, sirene)",
     "extended": "Uitgebreid (bewaking, bewegings-/trillingsensoren)",
     "high": "Hoog (IP CCTV, toegangscontrole, intercom)",
-    "maximum": "Maximum (kluis, biometrie, centrale bewaking)",
+    "maximum": "Maximaal (veilige, biometrie, centrale monitoring)",
     "industrial": "Industrieel (ATEX, gassystemen, paniekkamer)"
   },
   "exterior_cladding_options": {
@@ -477,7 +477,7 @@
   },
   "paint_finish_options": {
     "standard": "Standaardbekleding C2 (RAL 7035 - lichtgrijs)",
-    "extended": "Uitgebreide bekleding C3 (verbeterde duurzaamheid)",
+    "extended": "C3 verbeterde coating (betere duurzaamheid)",
     "marine": "Marine bekleding C5M (kustomgevingen)",
     "industrial": "Industriële bekleding C4 (agressieve omgevingen)",
     "premium": "Premium (speciale RAL-kleuren, texturen)"

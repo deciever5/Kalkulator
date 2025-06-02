@@ -91,7 +91,7 @@
     "central_ac": "Zentrale Klimaanlage (mit Filterung, Befeuchtung)",
     "heat_pump": "Wärmepumpe",
     "electric_heaters": "Elektroheizgeräte (1-3kW, Konvektoren)",
-    "vrv_vrf": "VRV/VRF-System (Mehrzonenregelung)",
+    "vrv_vrf": "VRV/VRF -System (Multi -Zone, Zonensteuerung)",
     "underfloor_heating": "Fußbodenheizung (elektrisch/Wasser)"
   },
   "flooring": {
@@ -138,7 +138,7 @@
   "address": "Adresse",
   "phone": "Telefon",
   "email": "E-Mail",
-  "working_hours": "Arbeitszeiten",
+  "working_hours": "Mo-Fr 8: 00-17: 00",
   "mon_fri": "Mo-Fr 8:00-16:00",
   "container": {
     "types": {
@@ -305,7 +305,7 @@
       "morning": "Morgens (8:00-12:00)",
       "afternoon": "Nachmittags (12:00-17:00)",
       "evening": "Abends (17:00-20:00)",
-      "anytime": "Jederzeit"
+      "anytime": "Wann immer"
     },
     "privacy_section": "Datenschutz und Datenschutz (DSGVO)",
     "data_protection_info": "Datenschutzinformationen",
@@ -385,7 +385,7 @@
   "configuration_summary": "Konfigurationsübersicht",
   "base_container": "Basisbehälter",
   "type": "Typ",
-  "use_case": "Verwendungszweck",
+  "use_case": "Anwendung",
   "key_modifications": "Wichtige Modifikationen",
   "additional_doors_included": "Zusätzliche Türen enthalten",
   "cost_breakdown": "Kostenaufschlüsselung",
@@ -450,7 +450,7 @@
     "structural_plaster": "Strukturputz (Silikon, Acryl)",
     "wood_cladding": "Holzverkleidung (Thermo, exotisch)",
     "composite_panels": "Verbundplatten (HPL, Dibond)",
-    "clinker_brick": "Klinkerziegel (Sicht-, Fassade)",
+    "clinker_brick": "Klinkerziegel (Gesicht, Fassade)",
     "natural_stone": "Natur-/Kunststein"
   },
   "additional_openings_options": {
@@ -555,7 +555,7 @@
   "review_electrical_plumbing": "Elektrische und Sanitärarbeiten frühzeitig prüfen",
   "standard_risk_factors": "Standardrisikofaktoren",
   "weather_delays": "Wetterverzögerungen während der Bauzeit",
-  "permit_timeline_variations": "Variationen der Genehmigungszeitleiste",
+  "permit_timeline_variations": "Unterschiede im Erlaubnisplan",
   "site_access_limitations": "Beschränkungen für den Zugang zum Platz für die Lieferung",
   "material_price_fluctuations": "Materialpreisschwankungen",
   "basic_estimate_note": "Hinweis: Dies ist eine grundlegende Schätzung. Für eine genauere Preisgestaltung wenden Sie sich bitte direkt an unser Team.",

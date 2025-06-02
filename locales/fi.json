@@ -88,7 +88,7 @@
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "central_ac": "Ilmastointilaitteen ohjauspaneeli (suodatuksella, kosteuttamisella)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF järjestelmä (multi-zone, zone control)",
@@ -481,15 +481,15 @@
   },
   "security_systems_options": {
     "none": "Ilman dodatkowych zailmanpieczeń (zamki standardi)",
-    "basic": "Perus (wzmocnione zamki, kraty okienne)",
-    "standard": "Standardi (alarm, czujniki, syrena)",
-    "extended": "Laajennettu (valvonta, czujniki ruchu/wibracji)",
+    "basic": "Perus (vahvistetut lukot, ikkunarrillit)",
+    "standard": "Vakio (hälytys, anturit, sireeni)",
+    "extended": "Laajennettu (valvonta, liike-/värähtelyanturit)",
     "high": "Wysokie (CCTV IP, kontrola pääsyu, domofon)",
-    "maximum": "Maksymalne (sejf, biometria, central valvonta)",
-    "industrial": "Teollinen (ATEX, systemy kaasunpoisto, panic room)"
+    "maximum": "Suurin (turvallinen, biometriset tiedot, keskusvalvonta)",
+    "industrial": "Teollisuus (ATEX, kaasujärjestelmät, paniikkihuone)"
   },
   "exterior_cladding_options": {
-    "none": "Ilman okładziny (blacha kontenerowa tavallinen)",
+    "none": "Ilman verhousta (vakio säiliölevy)",
     "trapezoidal": "Trapetsoidinen arkki (T18, T35, T55)",
     "cassette": "Kasettiarkki (litteä, täynnä)",
     "vinyl_siding": "Vinyylisivu (puu jäljitelmä, moderni)",
@@ -533,7 +533,7 @@
     "local": "Paikallinen (enintään 50km)",
     "regional": "Alueellinen (50-200km)",
     "national": "Kansallinen (koko maa)",
-    "central_europe": "Keski-Eurooppa (DE, CZ, SK, AT)",
+    "central_europe": "Keski -Eurooppa (DE, CZ, SK, AT)",
     "western_europe": "Länsi-Eurooppa (FR, NL, BE, LU)",
     "international": "Kansainvälinen (Euroopan ulkopuolella)"
   },
@@ -556,7 +556,7 @@
     "full": "Täysi (täydellinen varustus biura)"
   },
   "appliances_options": {
-    "none": "Ilman sprzętu AGD",
+    "none": "Ilman kodinkoneita",
     "basic": "Perus (lodówka, mikrofalówka)",
     "standard": "Standardi (zestaw kuchenny, pralka)",
     "full": "Täydelliset (täydelliset kodinkoneet)"
@@ -565,7 +565,7 @@
     "none": "Ilman järjestelmiä IT",
     "basic": "Perus (internet, WiFi)",
     "standard": "Standardi (sieć, telefonia)",
-    "advanced": "Zaawansowane (serwerownia, ilmanturvallisuus)"
+    "advanced": "Edistynyt (palvelinhuone, suojaus)"
   },
   "insulation_package": "Eristyspaketti",
   "structural_reinforcement": "Rakenteellinen vahvistus",
@@ -577,7 +577,7 @@
     "zones": {
       "local": "Paikallinen (enintään 100km)",
       "poland": "Puola (koko maa)",
-      "central_europe": "Keski-Eurooppa (DE, CZ, SK, AT)",
+      "central_europe": "Keski -Eurooppa (DE, CZ, SK, AT)",
       "western_europe": "Länsi-Eurooppa (FR, NL, BE, LU)",
       "northern_europe": "Pohjois-Eurooppa (DK, SE, NO, FI)",
       "southern_europe": "Etelä-Eurooppa (IT, ES, PT, GR)",
