@@ -92,7 +92,7 @@
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
+    "underfloor_heating": "Calefacción por suelo radiante (eléctrico/agua)"
   },
   "flooring": {
     "none": "Sin piso (hoja corrugada)",
@@ -123,7 +123,7 @@
   "send_inquiry_button": "Enviar Consulta",
   "why_kan_bud": "¿Por Qué Elegir KAN-BUD?",
   "precise_quotes": "Cotizaciones Precisas",
-  "ai_historical_data": "Análisis IA con datos históricos",
+  "ai_historical_data": "Análisis de IA con datos históricos",
   "european_climate_standards": "Estándares climáticos europeos",
   "transparent_calculations": "Cálculos transparentes",
   "fast_realization": "Realización Rápida",
@@ -311,18 +311,18 @@
     "privacy_consent": "Estoy de acuerdo con el procesamiento de mis datos personales por Kan-Bud SP. Z O.O. Para manejar esta pregunta de acuerdo con las disposiciones del GDPR",
     "marketing_consent": "Acepto recibir información de marketing sobre servicios y productos de KAN-BUD (opcional)",
     "data_retention": "Almacenamiento de datos",
-    "fill_required_fields": "Por favor complete todos los campos requeridos marcados con *",
+    "fill_required_fields": "Complete todos los campos requeridos marcados *",
     "submit_inquiry": "Enviar Consulta",
     "success_title": "¡Consulta Enviada Exitosamente!",
-    "success_message": "Gracias por su consulta. Nuestro equipo se pondrá en contacto con usted dentro de 24 horas con una respuesta detallada.",
+    "success_message": "Gracias por la consulta. Nuestro equipo se comunicará con usted dentro de las 24 horas con una respuesta detallada.",
     "next_steps": "Qué Sigue",
     "step_1": "Nuestro experto analizará sus requisitos",
-    "step_2": "Nos pondremos en contacto con usted para obtener información adicional",
+    "step_2": "Nos comunicaremos con usted para obtener información adicional",
     "step_3": "Recibirá una oferta detallada adaptada a sus necesidades",
     "contact_info": "Información de Contacto",
     "new_inquiry": "Enviar Nueva Consulta",
     "error": "Error al enviar una consulta",
-    "why_professional_inquiry": "¿Por Qué Enviar una Consulta Profesional?",
+    "why_professional_inquiry": "¿Por qué enviar una consulta profesional?",
     "preparation_tips": "Consejos para Mejores Resultados",
     "budget_Range": "Alcance del presupuesto"
   },
@@ -493,7 +493,7 @@
   "transport_type_options": {
     "standard": "Transporte estándar (semirremolque 13,6m)",
     "special": "Transporte especial (carga sobredimensionada)",
-    "crane": "Transporte con grúa (montaje en sitio)",
+    "crane": "Transporte con grúa (instalación en el sitio)",
     "multi_container": "Transporte multi-contenedor (2+ unidades)"
   },
   "assembly_options": {
@@ -656,7 +656,7 @@
     "skylight": "Skylight de techo (60x60, 90x90, 120x120 cm)",
     "solar": "Instalación solar (2-10kW)",
     "sloped": "Un techo oblicuo (un lado, aficionado)",
-    "terrace": "Terraza del techo (con balaustrada)",
+    "terrace": "Terraza del techo (acceso, balaustrada)",
     "snow_removal": "Sistemas de eliminación de nieve (calentadores, canaletas)",
     "fans": "Fan de los techos (industrial, tranquilo)",
     "antennas": "Antenas/mástiles (GSM, Radio, Satélite)"
@@ -778,7 +778,7 @@
   "construction_material": "Material de Construcción",
   "transport_type_special": "Transporte especial",
   "security_systems_basic": "Básico",
-  "transport_type_crane": "Con Grúa",
+  "transport_type_crane": "Con una grúa",
   "delivery_zone_national": "Nacional",
   "appliances_none": "Ninguno",
   "roof_modifications_none": "Ninguna",

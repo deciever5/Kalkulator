@@ -59,7 +59,7 @@
     "smart": "Intelligent (Hausautomation, KNX)"
   },
   "electrical_system": {
-    "none": "Keine Elektroinstallation",
+    "none": "Ohne elektrische Installation",
     "preparation": "Vorbereitung (Verkabelung ohne Ausrüstung)",
     "basic": "Grundlegend (Beleuchtung + Steckdosen)",
     "standard": "Standard (25A, Beleuchtung, 8 Steckdosen)",
@@ -69,13 +69,13 @@
     "smart": "Intelligent (Hausautomation, KNX)"
   },
   "plumbing_system": {
-    "none": "Keine Elektroinstallation",
+    "none": "Ohne Wasserinstallation",
     "preparation": "Vorbereitung (Verkabelung ohne Ausrüstung)",
     "basic": "Grundlegend (Beleuchtung + Steckdosen)",
     "full": "Vollständig (vorbereitung badezimmer)",
     "commercial": "Klasa komercyjna",
     "industrial": "Industriell (63A, Strom, Verteilerkasten)",
-    "cold_water": "Kaltwasserinstallation (Spüle)",
+    "cold_water": "Installation des kalten Wassers (Waschbecken)",
     "hot_cold_water": "Kalt + Warmwasser (Spüle, Waschbecken)",
     "basic_sanitary": "Grundlegend sanitär (WC + Waschbecken)",
     "standard_sanitary": "Standard (WC + Waschbecken + Dusche)",
@@ -249,7 +249,7 @@
     "additional_message_placeholder": "Alle zusätzlichen Informationen, mit denen Sie ein besseres Angebot erstellen können ...",
     "disclaimer_title": "Wichtige Informationen",
     "disclaimer_text": "Dieses Formular wird verwendet, um Anfragen für detaillierte Angebote einzureichen. Schätzungen aus unserem Taschenrechner sind keine kommerziellen Angebote im Sinne des geltenden Rechts.",
-    "config_detected": "Konfiguration vom Rechner erkannt",
+    "config_detected": "Die Konfiguration aus dem Taschenrechner wurde erkannt",
     "current_config": "Aktuelle Konfiguration",
     "customer_info": "Kundenkontaktinformationen",
     "full_name": "Vollständiger Name",
@@ -418,7 +418,7 @@
   "transport_logistics": "Transport und Logistik",
   "delivery_zone": "Lieferzone",
   "transport_type": "Transportart",
-  "assembly_installation": "Montage und Installation",
+  "assembly_installation": "Installation und Installation",
   "equipment_extras": "Ausrüstung & Extras",
   "office_equipment": "Büro-/Innenausstattung",
   "appliances": "Haushaltsgeräte (für Wohncontainer)",
@@ -501,7 +501,7 @@
     "none": "Keine Montage (nur Lieferung)",
     "basic": "Grundmontage (Positionierung, Ausrichtung)",
     "standard": "Standardmontage (Anschlüsse, Tests)",
-    "full": "Vollmontage (komplette Installation)"
+    "full": "Vollbaugruppe (vollständige Installation)"
   },
   "office_equipment_options": {
     "none": "Keine Ausstattung (leerer Container)",
@@ -612,7 +612,7 @@
     "adjusted_estimate": "Angepasste Schätzung",
     "next_steps": "Nächste Schritte",
     "get_detailed_quote": "Detailliertes Angebot erhalten",
-    "refine_config": "Konfiguration verfeinern",
+    "refine_config": "Klären Sie die Konfiguration",
     "disclaimer_title": "Wichtiger Haftungsausschluss",
     "disclaimer_text": "Diese Analyse ist vorläufig und basiert auf KI-Interpretation von Zeichnungen. Das endgültige Angebot kann nach detaillierter technischer Überprüfung abweichen.",
     "tips_title": "Tipps für bessere Analyse",
@@ -655,7 +655,7 @@
     "none": "Ohne Änderung (Standard -Flachdach)",
     "insulation": "Dachisolierung zusätzlich (10-20 cm)",
     "skylight": "Dachoberlicht (60x60, 90x90, 120x120 cm)",
-    "solar": "Solarinstallation (2-10 kW)",
+    "solar": "Sonnenkollektoren (1-3KW, autonom)",
     "sloped": "Ein schräge Dach (eins, Giebel)",
     "terrace": "Dachterrasse (mit Balustrade)",
     "snow_removal": "Schneeentfernungssysteme (Heizungen, Dachrinnen)",

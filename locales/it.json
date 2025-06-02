@@ -92,7 +92,7 @@
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
+    "underfloor_heating": "Riscaldamento a pavimento (elettrico/acqua)"
   },
   "flooring": {
     "none": "Senza un pavimento (foglio ondulato)",
@@ -123,7 +123,7 @@
   "send_inquiry_button": "Invia Richiesta",
   "why_kan_bud": "Perché Scegliere KAN-BUD?",
   "precise_quotes": "Preventivi Precisi",
-  "ai_historical_data": "Analisi IA con dati storici",
+  "ai_historical_data": "Analisi dell'intelligenza artificiale con dati storici",
   "european_climate_standards": "Standard climatici europei",
   "transparent_calculations": "Calcoli trasparenti",
   "fast_realization": "Realizzazione Veloce",
@@ -311,10 +311,10 @@
     "privacy_consent": "Accetto il trattamento dei miei dati personali da KAN-BUD Sp. z o.o. per scopo gestione questa richiesta in accordo con regolamenti GDPR",
     "marketing_consent": "Accetto di ricevere informazioni di marketing sui servizi e sui prodotti Kan-BUD (opzionale)",
     "data_retention": "Conservazione Dati",
-    "fill_required_fields": "Compila tutti i campi richiesti marcati con *",
+    "fill_required_fields": "Compila tutti i campi richiesti contrassegnati *",
     "submit_inquiry": "Invia Richiesta",
-    "success_title": "Richiesta Inviata con Successo!",
-    "success_message": "Grazie per la tua richiesta. Il nostro team ti contatterà entro 24 ore con risposta dettagliata.",
+    "success_title": "Query inviata con successo!",
+    "success_message": "Grazie per l'inchiesta. Il nostro team ti contatterà entro 24 ore con una risposta dettagliata.",
     "next_steps": "Cosa Succede Dopo",
     "step_1": "Il nostro esperto analizzerà i tuoi requisiti",
     "step_2": "Ti contatteremo per ulteriori informazioni",
@@ -493,7 +493,7 @@
   "transport_type_options": {
     "standard": "Trasporto standard (semirimorchio 13,6m)",
     "special": "Trasporto speciale (carico fuori misura)",
-    "crane": "Trasporto con gru (assemblaggio in loco)",
+    "crane": "Trasporto con gru (installazione in loco)",
     "multi_container": "Trasporto multi-container (2+ unità)"
   },
   "assembly_options": {
@@ -632,7 +632,7 @@
     "invalid_password": "Password non valida",
     "contact_it": "Contatta amministratore IT KAN-BUD per credenziali accesso",
     "panel_title": "Pannello Admin KAN-BUD",
-    "panel_subtitle": "Configurazione Business e Gestione Dati",
+    "panel_subtitle": "Configurazione aziendale e gestione dei dati",
     "logout": "Logout Amministratore",
     "cost_settings": "Impostazioni Costi",
     "margins_pricing": "Margini e Prezzi",
@@ -656,7 +656,7 @@
     "skylight": "SkyLight del tetto (60x60, 90x90, 120x120cm)",
     "solar": "Installazione solare (2-10kW)",
     "sloped": "Un tetto obliquo (un lato unico, timpano)",
-    "terrace": "Tetto terrazza (con balaustra)",
+    "terrace": "Tetto terrazza (accesso, balaustra)",
     "snow_removal": "Sistemi di rimozione della neve (riscaldatori, grondaie)",
     "fans": "Fan del tetto (industriale, tranquillo)",
     "antennas": "Antenne/alberi (GSM, radio, satellite)"
@@ -778,7 +778,7 @@
   "construction_material": "Materiale Costruzione",
   "transport_type_special": "Trasporto Speciale",
   "security_systems_basic": "Base",
-  "transport_type_crane": "Con Gru",
+  "transport_type_crane": "Con una gru",
   "delivery_zone_national": "Nazionale",
   "appliances_none": "Nessuno",
   "roof_modifications_none": "Nessuna",

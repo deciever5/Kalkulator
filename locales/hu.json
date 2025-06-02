@@ -34,7 +34,7 @@
     "send_inquiry_desc": "Árajánlat kérő űrlap",
     "drawing_analysis_customer": "Rajz\nElemzés",
     "drawing_analysis_customer_desc": "Ingyenes dokumentum elemzés",
-    "custom_sizing": "Custom\nSizing",
+    "custom_sizing": "Méretek\nNon -standard",
     "bulk_pricing_desc": "Nagykereskedelmi kedvezmények sok konténer vásárlásakor",
     "bulk_pricing": "Tömeg\nÁrképzés",
     "custom_sizing_desc": "Tervezési konténerek pontos előírásokkal"
@@ -92,7 +92,7 @@
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
+    "underfloor_heating": "Padlófűtés (elektromos/víz)"
   },
   "flooring": {
     "none": "Nincs padló (hullámos lemez)",
@@ -428,7 +428,7 @@
   "interior_layout_options": {
     "open_space": "Nyitott tér (válaszfalak nélkül)",
     "partitioned": "Z przegrodami (1-3 pomieszczenia)",
-    "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
+    "built_in_furniture": "Épített bútorok (egyedi -gyártású épületek)",
     "custom_layout": "Układ nieszabványos (projekt custom)",
     "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
   },
@@ -655,7 +655,7 @@
     "insulation": "Tetőszigetelés emellett (10-20 cm)",
     "skylight": "Tető tetőablak (60x60, 90x90, 120x120cm)",
     "solar": "Napenergia-telepítés (2-10 kW)",
-    "sloped": "Egy ferde tető (egyoldalú, gable)",
+    "sloped": "Ferde tető (vízkiáramlás, esztétika)",
     "terrace": "Tetőterasz (balustráddal)",
     "snow_removal": "Hó eltávolító rendszerek (melegítők, ereszcsatorna)",
     "fans": "Tetőventilátorok (ipari, csendes)",
@@ -775,7 +775,7 @@
   "delivery_zone_international": "Nemzetközi",
   "paint_finish_custom": "Custom Color",
   "construction_material_aluminum": "Aluminum",
-  "construction_material": "Construction Material",
+  "construction_material": "Építőanyag",
   "transport_type_special": "Speciális szállítás",
   "security_systems_basic": "Alapvető",
   "transport_type_crane": "Daruval",

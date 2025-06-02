@@ -13,9 +13,9 @@
     "cancel": "Zrušiť",
     "open": "Otvoriť",
     "language_selector": "Jazyk / Language",
-    "back_to_home": "← Späť na hlavnú",
+    "back_to_home": "← Vráťte sa na hlavnú stránku",
     "go_to_ai_estimate": "🤖 Ísť na AI odhad →",
-    "go_to_configurator": "🔧 Ísť na konfigurátor",
+    "go_to_configurator": "🔧 Prejdite na konfigurátor",
     "get_ai_estimate": "🤖 Získať AI odhad",
     "access_denied": "Prístup zamietnutý"
   },
@@ -92,7 +92,7 @@
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
+    "underfloor_heating": "Podlahové vykurovanie (elektrická/voda)"
   },
   "flooring": {
     "none": "Bez podlahy (vlnitá vrh)",
@@ -346,7 +346,7 @@
       "phone": "Telefonovať",
       "both": "Kontaktné údaje: e-mail a telefón"
     },
-    "best_time": "Najlepšie čas na kontakt",
+    "best_time": "Najlepší kontaktný čas",
     "time": {
       "morning": "Ráno (8:00-12:00)",
       "afternoon": "Popoludnie (12:00-17:00)",
@@ -361,7 +361,7 @@
     "fill_required_fields": "Prosím, vyplňte všetky povinné polia označené *",
     "submit_inquiry": "Odoslať dotaz",
     "success_title": "Dotaz úspešne odoslaný!",
-    "success_message": "Ďakujeme za váš dotaz. Naša tíma sa s vami kontaktuje do 24 hodín s podrobnou odpoveďou.",
+    "success_message": "Ďakujem za otázku. Náš tím vás bude kontaktovať do 24 hodín s podrobnou odpoveďou.",
     "next_steps": "Ďalšie kroky",
     "step_1": "Naša odborník analyzuje vaše požiadavky",
     "step_2": "Budeme vás kontaktovať a získať ďalšie informácie",
@@ -408,12 +408,12 @@
   "project_comment_placeholder": "Opíšte akékoľvek špecifické požiadavky, obmedzenia alebo osobitné úvahy pre váš kontajnerový projekt",
   "project_comment_help": "Čím viac detailov poskytnete, tým presnejšia a prispôsobená bude AI analýza.",
   "specific_considerations": "Špecifické úvahy",
-  "special_location_requirements": "Osobitné požiadavky na lokalitu/pozemok",
+  "special_location_requirements": "Špeciálne požiadavky na miesto/miesta",
   "urgent_timeline_needed": "Potrebný urgentný časový harmonogram",
   "custom_modifications_needed": "Potrebné vlastné modifikácie",
   "sustainability_priority": "Udržateľná/ekologická priorita",
   "budget_constraints": "Rozpočtové obmedzenia",
-  "regulatory_compliance_focus": "Zameranie na regulačnú/súladnosť",
+  "regulatory_compliance_focus": "Zamerajte sa na dodržiavanie predpisov",
   "send_inquiry_cta": "Poslať profesionálny dopyt",
   "get_precise_quote": "Získať presnú ponuku",
   "contact_for_quote": "Kontaktujte nás pre podrobnú a profesionálnu ponuku založenú na vašich špecifikáciách.",
@@ -459,7 +459,7 @@
   "accessibility_features": "Prístupnosť a ergonómia",
   "paint_finish": "Maľovanie a vonkajšia úprava",
   "special_notes_modifications": "Špeciálne poznámky - Úpravy",
-  "describe_modification_requirements": "Opíšte ďalšie požiadavky na úpravy...",
+  "describe_modification_requirements": "Opíšte ďalšie požiadavky na úpravu ...",
   "modification_requirements_placeholder": "napr. Špeciálne RAL farby, neštandardné veľkosti otvorov, ďalšie konštrukčné posilnenie",
   "transport_logistics": "Doprava a logistika",
   "delivery_zone": "Dodacia zóna",
@@ -475,7 +475,7 @@
   "interior_layout_options": {
     "open_space": "Otvorený priestor (bez priečok)",
     "partitioned": "Z przegrodami (1-3 pomieszczenia)",
-    "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
+    "built_in_furniture": "Postavený -nábytok (vlastné budovy)",
     "custom_layout": "Układ niestandardowy (projekt custom)",
     "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
   },
@@ -483,7 +483,7 @@
     "none": "Bez dodatkowych zabezpieczeń (zamki štandardné)",
     "basic": "Základné (wzmocnione zamki, kraty okienne)",
     "standard": "Štandardné (alarm, czujniki, syrena)",
-    "extended": "Rozšírené (monitoring, czujniki ruchu/wibracji)",
+    "extended": "Rozšírené (monitorovanie, senzory pohybu/vibrácie)",
     "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
     "maximum": "Maksymalne (sejf, biometria, central monitoring)",
     "industrial": "Priemyselné (ATEX, systemy gazowe, panic room)"
@@ -514,12 +514,12 @@
     "basic": "Základné (gaśnica, czujka dymu)",
     "standard": "Štandardné (system alarmowy, oświetlenie awaryjne)",
     "extended": "Rozšírené (tryskacze, ewakuacja)",
-    "full": "Pełny system (gazowe, monitoring)"
+    "full": "Úplný systém (plyn, monitorovanie)"
   },
   "accessibility_options": {
     "standard": "Dostęp standardowy (próg 15-20cm)",
-    "ramp": "Podjazd/rampa (dla wózków inwalidzkich)",
-    "lift": "Winda hydrauliczna (dostęp dla niepełnosprawnych)",
+    "ramp": "Príjazdová cesta/rampa (na invalidné vozíky)",
+    "lift": "Hydraulický výťah (prístup k postihnutým)",
     "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
   },
   "paint_finish_options": {
@@ -540,7 +540,7 @@
   "transport_type_options": {
     "standard": "Transport standardowy (naczep 13.6m)",
     "special": "Transport specjalny (ponadgabarytowy)",
-    "crane": "Transport z dźwigiem (montaż na miejscu)",
+    "crane": "Preprava so žeriavom (inštalácia na mieste)",
     "multi_container": "Transport wielokontenerowy (2+ jednostki)"
   },
   "assembly_options": {
@@ -572,7 +572,7 @@
   "delivery_logistics": "Dodávka a logistika",
   "estimate_disclaimer_title": "Dôležité - Legálna Poznámka",
   "estimate_disclaimer_text": "Nasledujúca odhady je indikatívna a nekonštituuje ponuku v zmysle Občianskeho zákonníka. Finálna cena môže sa meniť v závislosti od podrobností projektu, aktuálnych materiálových a pracovných nákladov.",
-  "delivery_cost": "Náklady na doručenie",
+  "delivery_cost": "Prepravné náklady",
   "delivery": {
     "zones": {
       "local": "Miestny (do 100km)",
@@ -588,7 +588,7 @@
   },
   "labor_costs_30": "Náklady na prácu (30%)",
   "fallback_cost_estimate": "Nástupná Odhady Nákladov",
-  "total_project_cost": "Celkové Náklady na Projekt",
+  "total_project_cost": "Celkové náklady na projekt",
   "basic_calculation_ai_unavailable": "Základná Kalkulácia pri Nedostupnosti AI služieb",
   "materials_base_cost": "Materiály a Základné Náklady",
   "labor_costs_40": "Náklady na Pracovné Sily (40%)",
@@ -596,12 +596,12 @@
   "complexity_multiplier": "Multiplikátor Komplexity",
   "standard_recommendations": "Štandardné odporúčania",
   "plan_standard_delivery": "Naplánujte si štandardný rozvrh dodávok a inštalácie",
-  "consider_building_codes": "Zohľadnite požiadavky na stavby",
+  "consider_building_codes": "Zvážte miestne stavebné predpisy",
   "budget_site_preparation": "Rozpočet na potenciálne potrebné prípravy miesta",
-  "review_electrical_plumbing": "Prehľadajte požiadavky na elektrické a vodovodné rozvody",
+  "review_electrical_plumbing": "Skontrolujte elektrické a hydraulické požiadavky včas",
   "standard_risk_factors": "Štandardné rizikové faktory",
   "weather_delays": "Zdrženia v dôsledku počasí",
-  "permit_timeline_variations": "Variácie povolenia na stavebný úrad",
+  "permit_timeline_variations": "Rozdiely v harmonograme povolenia",
   "site_access_limitations": "Omezení prístupu na stavebné miesto pre doručenie",
   "material_price_fluctuations": "Fluktuácie cien materiálov",
   "basic_estimate_note": "Poznámka: Táto je základná odhady. Pre presnejšie ceny, prosím kontaktujte našu tímu priamo.",
@@ -786,7 +786,7 @@
     "electrical_system": "Štandard: 15a Home. Industrial: 30A s rozvádzačom. Inteligentné: automatizácia internetu vecí.",
     "plumbing_system": "Základné: umývadlo a odtok. Plné: Kompletné príslušenstvo v kúpeľni. Obchodné: Priemyselné stupeň.",
     "hvac_system": "Možnosti kontroly podnebia. Tepelné čerpadlá sú energetický Enfistynt na celoročné použitie.",
-    "security_features": "Úrovne zabezpečenia od základných zámkov po systémy riadenia biometrického prístupu.",
+    "security_features": "Úrovne bezpečnosti od základných zámkov po systémy biometrického prístupu.",
     "exterior_cladding": "Ochrana počasia a estetické zlepšenie. Vedľa kovu ponúka najlepšiu odolnosť.",
     "additional_openings": "Špecializované prístupové body mimo štandardných dverí a okien.",
     "fire_safety": "Systémy požiarnej ochrany. Sprinkler Systems odporúčané na komerčné použitie.",

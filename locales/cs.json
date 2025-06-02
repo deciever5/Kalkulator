@@ -13,7 +13,7 @@
     "cancel": "Zrušit",
     "open": "Otevřít",
     "language_selector": "Jazyk / Language",
-    "back_to_home": "← Zpět na hlavní stránku",
+    "back_to_home": "← Návrat na hlavní stránku",
     "go_to_ai_estimate": "🤖 K AI Odhadu →",
     "go_to_configurator": "🔧 Konfigurátor",
     "get_ai_estimate": "🤖 Získat AI odhad",
@@ -34,7 +34,7 @@
     "send_inquiry_desc": "Formulář nabídky",
     "drawing_analysis_customer": "Analýza\nVýkresů",
     "drawing_analysis_customer_desc": "Analýza dokumentů zdarma",
-    "custom_sizing": "Custom\nSizing",
+    "custom_sizing": "Rozměry\nNestandardní",
     "bulk_pricing_desc": "Velkoobchodní slevy při nákupu mnoha kontejnerů",
     "bulk_pricing": "Hromad\nCeny",
     "custom_sizing_desc": "Konstrukční kontejnery s přesnými specifikacemi"
@@ -92,7 +92,7 @@
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
+    "underfloor_heating": "Podlahové vytápění (elektrická/voda)"
   },
   "flooring": {
     "none": "Bez podlahy (vlnitý list)",
@@ -131,7 +131,7 @@
   "own_machinery": "Vlastní strojní park",
   "poland_center": "Centrální poloha v Polsku",
   "full_service": "Kompletní Služby",
-  "design_execution": "Od návrhu po realizaci",
+  "design_execution": "Od designu po provedení",
   "transport_assembly": "Doprava a montáž",
   "after_sales_support": "Poprodejní podpora",
   "contact_us": "Kontakt",
@@ -314,11 +314,11 @@
     "fill_required_fields": "Vyplňte všechna povinná pole označená *",
     "submit_inquiry": "Odeslat dotaz",
     "success_title": "Dotaz úspěšně odeslán!",
-    "success_message": "Děkujeme za váš dotaz. Náš tým vás bude kontaktovat do 24 hodin s podrobnou odpovědí.",
+    "success_message": "Děkuji za dotaz. Náš tým vás bude kontaktovat do 24 hodin s podrobnou odpovědí.",
     "next_steps": "Co bude následovat",
     "step_1": "Náš expert analyzuje vaše požadavky",
     "step_2": "Budeme vás kontaktovat pro další informace",
-    "step_3": "Obdržíte podrobnou nabídku na míru",
+    "step_3": "Obdržíte podrobnou nabídku přizpůsobenou vašim potřebám",
     "contact_info": "Kontaktní informace",
     "new_inquiry": "Odeslat nový dotaz",
     "error": "Chyba při odesílání dotazu",
@@ -326,8 +326,8 @@
     "preparation_tips": "Tipy pro nejlepší výsledky",
     "budget_Range": "Rozsah rozpočtu"
   },
-  "back_to_home": "← Zpět na hlavní stránku",
-  "go_to_configurator": "🔧 Přejít na Konfigurátor",
+  "back_to_home": "← Návrat na hlavní stránku",
+  "go_to_configurator": "🔧 Přejděte do konfigurátoru",
   "employee_tools": "Nástroje Zaměstnanců",
   "ai_cost_estimation": "AI Odhad Nákladů",
   "ai_powered_estimation": "AI odhad nákladů na úpravy kontejnerů",
@@ -354,7 +354,7 @@
   "project_comment_placeholder": "Popište prosím specifické požadavky, omezení nebo zvláštní úvahy pro váš kontejnerový projekt (např. 'Potřeba extra izolace pro chladné klima', 'Musí být dodáno do určitého data', 'Rozpočet omezen na €15,000', atd.)",
   "project_comment_help": "Čím více detailů poskytnete, tím přesnější a lépe přizpůsobená bude AI analýza.",
   "specific_considerations": "Specifické Úvahy",
-  "special_location_requirements": "Speciální požadavky na umístění/místo",
+  "special_location_requirements": "Požadavky na speciální umístění/místa",
   "urgent_timeline_needed": "Potřebný urgentní časový plán",
   "custom_modifications_needed": "Vyžadované vlastní úpravy",
   "sustainability_priority": "Priorita udržitelnosti/ekologie",
@@ -405,7 +405,7 @@
   "accessibility_features": "Přístupnost a ergonomie",
   "paint_finish": "Malování a vnější úprava",
   "special_notes_modifications": "Speciální poznámky - Úpravy",
-  "describe_modification_requirements": "Popište další požadavky na úpravy...",
+  "describe_modification_requirements": "Popište další požadavky na úpravu ...",
   "modification_requirements_placeholder": "např. Speciální RAL barvy, nestandardní velikosti otvorů, další konstrukční posílení",
   "transport_logistics": "Doprava a logistika",
   "delivery_zone": "Dodací zóna",
@@ -421,15 +421,15 @@
   "interior_layout_options": {
     "open_space": "Otevřený prostor (bez příček)",
     "partitioned": "Rozdělený (1-3 místnosti)",
-    "built_in_furniture": "Vestavěný nábytek (vybavení na míru)",
-    "custom_layout": "Vlastní uspořádání (design na míru)",
+    "built_in_furniture": "Postaveno -v nábytku (vlastní budovy)",
+    "custom_layout": "Nestandardní systém (vlastní projekt)",
     "mezzanine": "Mezipatro/patro (zvětšený prostor)"
   },
   "security_systems_options": {
     "none": "Žádná další bezpečnost (standardní zámky)",
     "basic": "Základní (posílené zámky, mříže na okna)",
     "standard": "Standardní (alarm, senzory, siréna)",
-    "extended": "Rozšířený (monitoring, pohybové/vibrační senzory)",
+    "extended": "Rozšířené (monitorování, senzory pohybu/vibrací)",
     "high": "Vysoký (IP CCTV, kontrola přístupu, interkom)",
     "maximum": "Maximální (trezor, biometrie, centrální monitoring)",
     "industrial": "Průmyslový (ATEX, plynové systémy, panikový pokoj)"
@@ -460,7 +460,7 @@
     "basic": "Základní (hasicí přístroj, detektor kouře)",
     "standard": "Standardní (alarmový systém, nouzové osvětlení)",
     "extended": "Rozšířený (sprinklerový systém, evakuace)",
-    "full": "Úplný systém (plynové potlačení, monitoring)"
+    "full": "Plný systém (plyn, monitorování)"
   },
   "accessibility_options": {
     "standard": "Standardní přístup (práh 15-20cm)",
@@ -486,7 +486,7 @@
   "transport_type_options": {
     "standard": "Standardní doprava (13,6m návěs)",
     "special": "Speciální doprava (nadrozměrný náklad)",
-    "crane": "Doprava s jeřábem (montáž na místě)",
+    "crane": "Transport with Crane (instalace na místě)",
     "multi_container": "Multi-kontejnerová doprava (2+ jednotky)"
   },
   "assembly_options": {
@@ -732,7 +732,7 @@
     "electrical_system": "Standard: 15a Domů. Průmyslová: 30a s rozváděčem. Inteligentní: IoT automatizace.",
     "plumbing_system": "Základní: dřez a odtok. Plný: kompletní koupelnové vybavení. Komerční: průmyslové armatury.",
     "hvac_system": "Možnosti klimatizace. Tepelná čerpadla jsou energeticky účinná pro celoroční použití.",
-    "security_features": "Úrovně bezpečnosti od základních zámků po biometrické systémy řízení přístupu.",
+    "security_features": "Bezpečnostní úrovně od základních zámků po biometrické přístupové systémy.",
     "exterior_cladding": "Ochrana před počasím a estetické zlepšení. Kovový obklad nabízí nejlepší trvanlivost.",
     "additional_openings": "Specializované přístupové body mimo standardní dveře a okna.",
     "fire_safety": "Požární ochranné systémy. Sprinklerové systémy doporučeny pro komerční použití.",
@@ -768,7 +768,7 @@
   "delivery_zone_international": "Mezinárodní",
   "paint_finish_custom": "Custom Color",
   "construction_material_aluminum": "Aluminum",
-  "construction_material": "Construction Material",
+  "construction_material": "Stavební materiál",
   "transport_type_special": "Speciální doprava",
   "security_systems_basic": "Základní",
   "transport_type_crane": "S jeřábem",

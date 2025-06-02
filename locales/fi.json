@@ -92,7 +92,7 @@
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
+    "underfloor_heating": "Lattialämmitys (sähkö/vesi)"
   },
   "flooring": {
     "none": "Ilman lattiaa (aallotettu arkki)",
@@ -428,7 +428,7 @@
   "technical_analysis": "Tekninen\nanalyysi",
   "quote_generator": "Tarjous\ngeneraattori",
   "open_tool": "Avaa",
-  "configuration_summary": "Konfiguraation yhteenveto",
+  "configuration_summary": "Yhteenveto kokoonpanosta",
   "base_container": "Peruskontti",
   "type": "Tyyppi",
   "use_case": "Käyttötapaus",
@@ -475,7 +475,7 @@
   "interior_layout_options": {
     "open_space": "Avoin tila (ei väliseiniä)",
     "partitioned": "Z przegrodami (1-3 pomieszczenia)",
-    "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
+    "built_in_furniture": "Rakennetut huonekalut (räätälöityjä rakennuksia)",
     "custom_layout": "Układ niestandardi (projekt custom)",
     "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
   },

@@ -92,7 +92,7 @@
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
+    "underfloor_heating": "Golvvärme (elektrisk/vatten)"
   },
   "flooring": {
     "none": "Utan golv (korrugerat ark)",
@@ -318,7 +318,7 @@
     "next_steps": "Vad Händer Nu",
     "step_1": "Vår expert kommer att analysera dina krav",
     "step_2": "Vi kommer att kontakta dig för ytterligare information",
-    "step_3": "Du kommer att få en detaljerad offert anpassad till dina behov",
+    "step_3": "Du kommer att få ett detaljerat erbjudande anpassat efter dina behov",
     "contact_info": "Kontaktinformation",
     "new_inquiry": "Skicka Ny Förfrågan",
     "error": "Fel vid sändning av förfrågan",
@@ -359,7 +359,7 @@
   "additional_project_details": "Ytterligare Projektdetaljer",
   "project_specific_requirements": "Projektspecifika Krav och Kommentarer",
   "project_comment_placeholder": "Beskriv specifika krav, begränsningar eller särskilda överväganden för ditt containerprojekt (t.ex. 'Behöver extra isolering för kallt klimat', 'Måste levereras vid specifikt datum', 'Budget begränsad till €15,000', etc.)",
-  "project_comment_help": "Ju fler detaljer du ger, desto mer exakt och skräddarsydd blir AI-analysen.",
+  "project_comment_help": "Ju fler detaljer du tillhandahåller, desto mer exakta och bättre anpassade AI -analys.",
   "specific_considerations": "Specifika överväganden",
   "special_location_requirements": "Särskilda plats-/områdeskrav",
   "urgent_timeline_needed": "Brådskande schema behövs",
@@ -417,7 +417,7 @@
   "transport_logistics": "Transport och logistik",
   "delivery_zone": "Leveranszon",
   "transport_type": "Transporttyp",
-  "assembly_installation": "Montering och installation",
+  "assembly_installation": "Installation och installation",
   "equipment_extras": "Utrustning och extrafunktioner",
   "office_equipment": "Kontors-/inredningsutrustning",
   "appliances": "Hushållsapparater (för bostadscontainrar)",
@@ -428,7 +428,7 @@
   "interior_layout_options": {
     "open_space": "Öppet utrymme (inga skiljeväggar)",
     "partitioned": "Z przegrodami (1-3 pomieszczenia)",
-    "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
+    "built_in_furniture": "Byggda -in möbler (anpassade byggnader)",
     "custom_layout": "Układ niestandardowy (projekt custom)",
     "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
   },
@@ -436,7 +436,7 @@
     "none": "Utan dodatkowych zautanpieczeń (zamki standard)",
     "basic": "Grundläggande (wzmocnione zamki, kraty okienne)",
     "standard": "Standard (alarm, czujniki, syrena)",
-    "extended": "Utökad (monitoring, czujniki ruchu/wibracji)",
+    "extended": "Utökad (övervakning, rörelse/vibrationssensorer)",
     "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
     "maximum": "Maksymalne (sejf, biometria, central monitoring)",
     "industrial": "Industriell (ATEX, systemy gazowe, panic room)"
@@ -467,12 +467,12 @@
     "basic": "Grundläggande (gaśnica, czujka dymu)",
     "standard": "Standard (system alarmowy, oświetlenie awaryjne)",
     "extended": "Utökad (tryskacze, ewakuacja)",
-    "full": "Pełny system (gazowe, monitoring)"
+    "full": "Fullt system (gas, övervakning)"
   },
   "accessibility_options": {
     "standard": "Dostęp standardowy (próg 15-20cm)",
-    "ramp": "Podjazd/rampa (dla wózków inwalidzkich)",
-    "lift": "Winda hydrauliczna (dostęp dla niepełnosprawnych)",
+    "ramp": "Uppfart/ramp (för rullstolar)",
+    "lift": "Hydraulisk hiss (åtkomst för funktionshindrade)",
     "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
   },
   "paint_finish_options": {
@@ -493,7 +493,7 @@
   "transport_type_options": {
     "standard": "Transport standardowy (naczep 13.6m)",
     "special": "Transport specjalny (ponadgabarytowy)",
-    "crane": "Transport z dźwigiem (montaż na miejscu)",
+    "crane": "Transport med Crane (installation på plats)",
     "multi_container": "Transport wielokontenerowy (2+ jednostki)"
   },
   "assembly_options": {
@@ -605,7 +605,7 @@
     "electrical": "Elektriskt system",
     "plumbing": "Hydraulsystem",
     "complexity": "Komplexitet",
-    "cost_adjustment": "Kostnadsjustering",
+    "cost_adjustment": "Kostnadskorrigering",
     "updated_estimate": "Uppdaterad Uppskattning",
     "base_estimate": "Basuppskattning",
     "adjusted_estimate": "Justerad uppskattning",
@@ -632,7 +632,7 @@
     "invalid_password": "Ogiltigt lösenord",
     "contact_it": "Kontakta KAN-BUD IT-administratör för åtkomstuppgifter",
     "panel_title": "KAN-BUD Administratörspanel",
-    "panel_subtitle": "Företagskonfiguration och Datahantering",
+    "panel_subtitle": "Affärskonfiguration och datahantering",
     "logout": "Administratörsutloggning",
     "cost_settings": "Kostnadsinställningar",
     "margins_pricing": "Marginaler och Prissättning",
@@ -652,7 +652,7 @@
   },
   "roof_modifications": {
     "none": "Utan modifiering (standard platt tak)",
-    "insulation": "Takisolering dessutom (10-20 cm)",
+    "insulation": "Ytterligare takisolering (polystyren/PIR)",
     "skylight": "Takskål (60x60, 90x90, 120x120cm)",
     "solar": "Solinstallation (2-10 kW)",
     "sloped": "Ett snett tak (en -sidosid, gavel)",
