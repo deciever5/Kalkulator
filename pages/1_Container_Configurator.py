@@ -276,7 +276,7 @@ with st.form("container_configuration_form"):
             t('window_types.skylight')
         ]
         window_types = st.multiselect(
-            t('window_types'),
+            t('window_types_label'),
             options=window_types_options,
             default=[t('window_types.standard')]
         )
@@ -291,7 +291,7 @@ with st.form("container_configuration_form"):
             t('lighting.smart')
         ]
         lighting = st.selectbox(
-            t('lighting'),
+            t('lighting_label'),
             options=lighting_options,
             index=1
         )

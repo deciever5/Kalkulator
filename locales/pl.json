@@ -40,63 +40,48 @@
     "custom_sizing_desc": "Projektowanie kontenerów według dokładnych specyfikacji"
   },
   "window_types": {
-    "standard": "Standardowe",
-    "panoramic": "Panoramiczne", 
-    "sliding": "Przesuwne",
-    "tilt": "Skrzynkowe",
-    "security": "Antywłamaniowe",
-    "skylight": "Świetliki dachowe",
-    "energy_efficient": "Energooszczędne"
+    "standard": "Standardowe (podwójne szyby)",
+    "energy_efficient": "Energooszczędne (potrójne szyby)",
+    "security": "Bezpieczeństwo (hartowane)",
+    "marine_grade": "Klasa morska (antykorozyjna)"
   },
   "lighting": {
     "none": "Brak oświetlenia",
-    "basic_led": "Podstawowe LED",
-    "energy_efficient": "Energooszczędne",
-    "exterior": "Zewnętrzne",
-    "emergency": "Awaryjne",
-    "smart": "Inteligentne"
+    "basic": "Podstawowe LED",
+    "energy_efficient": "Energooszczędne LED z czujnikami",
+    "exterior": "Oświetlenie zewnętrzne (reflektory)",
+    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "electrical_system": {
-    "none": "Bez instalacji elektrycznej",
-    "preparation": "Przygotowanie elektryczne (tylko kanały)",
-    "basic": "Podstawowy (15A, LED, 4 gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdek)",
-    "extended": "Rozszerzony (40A, siła, UPS, awaryjne)",
-    "industrial": "Przemysłowy (63A, 3-fazowy, rozdzielnice)",
-    "it_server": "IT/Serwerownia (UPS, stabilizatory, monitoring)",
-    "smart": "Inteligentny (KNX, automatyka)"
+    "basic": "Podstawowy (oświetlenie + gniazdka)",
+    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
+    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
+    "smart": "Inteligentny (smart home, KNX, automatyka)"
   },
   "plumbing_system": {
     "none": "Bez instalacji wodnej",
-    "preparation": "Przygotowanie hydrauliczne (tylko kanały)",
-    "cold_water": "Instalacja zimnej wody (zlew)",
-    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
-    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + zlew)",
-    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
-    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
-    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)",
+    "basic": "Podstawowa (zlew + odpływ)",
+    "full": "Pełna (przygotowanie łazienki)",
+    "commercial": "Klasa komercyjna",
     "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)"
   },
   "hvac_system": {
     "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
-    "electric_heaters": "Grzejniki elektryczne (1-3kW, konwektory)",
+    "basic": "Podstawowa wentylacja",
     "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "heat_pump": "Pompa ciepła (typ split, wydajność 2-12kW)",
-    "gas_heating": "Ogrzewanie gazowe (kocioł kondensacyjny)",
-    "split_ac": "Klimatyzacja split (chłodzenie + ogrzewanie)",
-    "vrv_vrf": "System VRV/VRF (multi-split, kontrola strefowa)",
-    "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)",
-    "central_ac": "Centralna klimatyzacja (z filtracją, nawilżaniem)"
+    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
+    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
+    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
+    "heat_pump": "Pompa ciepła"
   },
   "flooring": {
-    "none": "Bez podłogi (blacha falistowana)",
-    "plywood": "Sklejka wodoodporna 18mm (standard)",
-    "anti_slip": "Sklejka antypoślizgowa 21mm",
-    "laminate": "Panele laminowane AC4/AC5",
-    "vinyl": "Panele winylowe (LVT) wodoodporne",
-    "carpet": "Wykładzina PVC 2-4mm",
-    "epoxy": "Posadzka epoksydowa przemysłowa",
-    "concrete": "Podłoga podwyższona (serwerownie)"
+    "basic": "Podstawowa (beton przemysłowy)",
+    "laminate": "Laminat (klasy handlowe)",
+    "vinyl": "Winyl LVT (wodoodporny)",
+    "epoxy": "Żywica epoksydowa (przemysłowa)",
+    "carpet": "Wykładzina dywanowa (biurowa)",
+    "hardwood": "Drewno twarde (parkiet)"
   },
   "configure_container": "Skonfiguruj Swój Kontener",
   "simple_process_2_steps": "Prosty proces w 2 łatwych krokach",
@@ -128,7 +113,7 @@
   "after_sales_support": "Wsparcie posprzedażowe",
   "contact_us": "Skontaktuj się z nami",
   "address": "Adres",
-    "phone": "Telefon",
+  "phone": "Telefon",
   "email": "Email",
   "working_hours": "Pon-Pt 8:00-17:00",
   "mon_fri": "Pon-Pt 8:00-17:00",
@@ -318,9 +303,15 @@
   "purpose": "Przeznaczenie",
   "environment": "Środowisko",
   "finish_level": "Poziom Wykończenia",
-  "flooring": "Podłoga",
   "climate_zone": "Strefa Klimatyczna",
-  "windows": "Okna",
+  "windows": {
+    "none": "Bez okien (kontener zamknięty)",
+    "one": "Jedno okno (90x60cm, standardowe)",
+    "two": "Dwa okna (2x 90x60cm)",
+    "three": "Trzy okna (3x 90x60cm)",
+    "four": "Cztery okna (4x 90x60cm)",
+    "five_plus": "5+ okien (konfiguracja custom)"
+  },
   "additional_doors": "Dodatkowe Drzwi",
   "yes": "Tak",
   "no": "Nie",
@@ -374,10 +365,7 @@
   "save_configuration": "💾 Zapisz Konfigurację",
   "configuration_saved": "Konfiguracja zapisana pomyślnie!",
   "get_ai_analysis": "Otrzymaj Analizę AI",
-  "systems_installations": "Systemy i Instalacje",
-  "electrical_system": "System Elektryczny",
-  "plumbing_system": "System Hydrauliczny",
-  "hvac_system": "System HVAC",
+  "systems_installations": "SYSTEMY I INSTALACJE",
   "insulation_package": "Pakiet Izolacji",
   "structural_reinforcement": "Wzmocnienie Konstrukcyjne",
   "delivery_logistics": "Transport i Logistyka",
@@ -500,7 +488,7 @@
   },
   "advanced_modifications": "Zaawansowane modyfikacje",
   "air_intakes_label": "Nawiewy i wentylacja",
-  "roof_modifications_label": "Modyfikacje dachu",
+  "roof_modifications_label": "Modyfikacje Dachu",
   "security_features": "Zabezpieczenia",
   "exterior_cladding": "Okładzina zewnętrzna",
   "additional_openings": "Dodatkowe otwory",
@@ -540,7 +528,7 @@
     "none": "Bez HVAC",
     "basic": "Wentylacja podstawowa",
     "split_system": "System klimatyzacji rozdzielnej",
-    "central": "Centralna klimatyzacja", 
+    "central": "Centralna klimatyzacja",
     "heat_pump": "Pompa ciepła"
   },
   "security": {
@@ -581,10 +569,10 @@
     "marine_grade": "Klasa morska (C5M)"
   },
   "insulation": {
-    "basic": "Podstawowa (50mm)",
-    "standard": "Standardowa (100mm)",
-    "premium": "Izolacja Premium (150mm)",
-    "extreme": "Ekstremalna (200mm)"
+    "basic": "Podstawowa (5-10cm, styropian/wełna)",
+    "standard": "Standardowa (15cm, PIR/PUR)",
+    "premium": "Premium (20cm, wełna mineralna)",
+    "extreme": "Ekstremalna (30cm, aerogel/vakuum)"
   },
   "reinforcement": {
     "none": "Bez wzmocnień",
@@ -592,7 +580,7 @@
     "seismic": "Wzmocnienie sejsmiczne",
     "hurricane": "Wzmocnienie na huragany"
   },
-  "help":{
+  "help": {
     "windows": "Okna dwuszybowe z mostkami termicznymi. Więcej okien zwiększa naturalne oświetlenie, ale wpływa na izolację.",
     "additional_doors": "Dodatkowe drzwi personalne lub ewakuacyjne poza standardowymi drzwiami kontenera.",
     "air_intakes": "Systemy wentylacyjne do cyrkulacji powietrza. Klasa morska zalecana dla obszarów nadmorskich.",
@@ -650,7 +638,6 @@
   "lighting_basic": "Podstawowe LED",
   "additional_openings_emergency": "Wyjście Awaryjne",
   "office_equipment_none": "Brak",
-
   "it_systems_none": "Brak",
   "transport_type_standard": "Standardowy",
   "advanced_comments": "Komentarze do Zaawansowanych Modyfikacji",
@@ -685,30 +672,11 @@
   "construction_material_composite": "Kompozyt",
   "basic_configuration": "KONFIGURACJA PODSTAWOWA",
   "main_purpose": "Główne Przeznaczenie",
-  "usage_environment": "Środowisko Użytkowania", 
-  "environment": "Środowisko",
+  "usage_environment": "Środowisko Użytkowania",
   "number_of_windows": "Liczba Okien",
-  "finish_level": "Poziom Wykończenia",
-  "flooring": "Podłogi",
-  "climate_zone": "Strefa Klimatyczna",
-  "systems_installations": "SYSTEMY I INSTALACJE",
   "transport_logistics": "TRANSPORT I LOGISTYKA",
   "equipment_extras": "WYPOSAŻENIE I DODATKI",
-  "construction_material": "Materiał Konstrukcyjny",
-  "construction_material_steel": "Stal",
-  "construction_material_aluminum": "Aluminium", 
-  "construction_material_composite": "Kompozyt",
-  "insulation": {
-    "basic": "Podstawowa (5-10cm, styropian/wełna)",
-    "standard": "Standardowa (15cm, PIR/PUR)",
-    "premium": "Premium (20cm, wełna mineralna)",
-    "extreme": "Ekstremalna (30cm, aerogel/vakuum)"
-  },
   "insulation_label": "Izolacja",
-  "roof_modifications_label": "Modyfikacje Dachu",
-  "electrical_system": "System Elektryczny",
-  "plumbing_system": "System Hydrauliczny",
-  "hvac_system": "System HVAC (Ogrzewanie/Chłodzenie)",
   "finish_levels": {
     "basic": "Bez wykończenia (kontener techniczny, szkielet)",
     "shell": "Surowy Stan (izolacja + płyta OSB)",
@@ -717,67 +685,13 @@
     "luxury": "Luksusowy (najwyższa klasa + wykończenie hotelowe)",
     "specialist": "Specjalistyczny (normy medyczne/laboratoryjne)"
   },
-  "flooring": {
-    "none": "Bez podłogi (blacha falistowana)",
-    "plywood": "Sklejka wodoodporna 18mm (standard)",
-    "anti_slip": "Sklejka antypoślizgowa 21mm",
-    "laminate": "Panele laminowane AC4/AC5",
-    "vinyl": "Panele winylowe (LVT) wodoodporne",
-    "carpet": "Wykładzina PVC 2-4mm",
-    "epoxy": "Posadzka epoksydowa przemysłowa",
-    "concrete": "Podłoga podwyższona (serwerownie)"
-  },
   "climate_zones": {
     "northern_europe": "Europa Północna (Skandynawia, -30°C do +25°C)",
     "central_europe": "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
     "southern_europe": "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
     "continental": "Klimat kontynentalny (ekstremalne wahania)"
   },
-  "flooring": {
-    "basic": "Podstawowa (beton przemysłowy)",
-    "laminate": "Laminat (klasy handlowe)",
-    "vinyl": "Winyl LVT (wodoodporny)",
-    "epoxy": "Żywica epoksydowa (przemysłowa)",
-    "carpet": "Wykładzina dywanowa (biurowa)",
-    "hardwood": "Drewno twarde (parkiet)"
-  },
-    "window_types": {
-    "standard": "Standardowe (podwójne szyby)",
-    "energy_efficient": "Energooszczędne (potrójne szyby)",
-    "security": "Bezpieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)"
-  },
-  "lighting": {
-    "none": "Brak oświetlenia",
-    "basic": "Podstawowe LED",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
-    "smart": "System inteligentny (oświetlenie sterowane)"
-  },
-  "electrical_system": {
-    "basic": "Podstawowy (oświetlenie + gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
-    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
-    "smart": "Inteligentny (smart home, KNX, automatyka)"
-  },
-  "plumbing_system": {
-    "none": "Bez instalacji wodnej",
-    "basic": "Podstawowa (zlew + odpływ)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)"
-  },
-  "hvac_system": {
-    "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
-    "basic": "Podstawowa wentylacja",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "heat_pump": "Pompa ciepła"
-  },
-   "environments": {
+  "environments": {
     "indoor": "Wewnętrzne (hale, magazyny)",
     "outdoor_standard": "Zewnętrzne standardowe",
     "outdoor_extreme": "Zewnętrzne ekstremalne (wybrzeże, góry)",
@@ -786,12 +700,7 @@
     "agricultural": "Rolnicze (farmy, obiekty rolnicze)",
     "marine": "Morskie/stoczniowe (środowisko korozyjne)"
   },
-    "windows": {
-    "none": "Bez okien (kontener zamknięty)",
-    "one": "Jedno okno (90x60cm, standardowe)",
-    "two": "Dwa okna (2x 90x60cm)", 
-    "three": "Trzy okna (3x 90x60cm)",
-    "four": "Cztery okna (4x 90x60cm)",
-    "five_plus": "5+ okien (konfiguracja custom)"
-  }
+  "window_types_label": "Typy Okien",
+  "lighting_label": "Oświetlenie",
+  "flooring_label": "Podłogi"
 }

@@ -314,9 +314,6 @@
   "system_comments": "Requirements Comments system",
   "advanced_comments": "Advanced Modifications Comments",
   "general_comments": "General Comments",
-  "window_types": "Window Types",
-  "lighting": "Lighting", 
-  "flooring": "Flooring",
   "window_types": {
     "standard": "Standard",
     "panoramic": "Panoramic",
@@ -741,5 +738,8 @@
   "transport_logistics": "Transport and logistics",
   "equipment_extras": "EQUIPMENT & EXTRAS",
   "go_to_configurator": "🔧 Go to Configurator",
-  "insulation_label": "Insulation"
+  "insulation_label": "Insulation",
+  "window_types_label": "Window Types",
+  "lighting_label": "Lighting",
+  "flooring_label": "Flooring"
 }
