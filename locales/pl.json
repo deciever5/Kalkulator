@@ -93,6 +93,10 @@
     "vrv_vrf": "System VRV/VRF (wielostrefowy, kontrola stref)",
     "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)"
   },
+  "flooring": "Podłogi",
+  "electrical_system": "System Elektryczny",
+  "plumbing_system": "System Hydrauliczny", 
+  "hvac_system": "System HVAC",
   "flooring": {
     "none": "Bez podłogi (blacha falista)",
     "plywood": "Sklejka wodoodporna 18mm (standard)",
@@ -632,7 +636,9 @@
     "margins_pricing": "Marże & Wycena",
     "historical_data": "Dane Historyczne",
     "user_management": "Zarządzanie Użytkownikami",
-    "system_settings": "Ustawienia Systemu"
+    "system_settings": "Ustawienia Systemu",
+    "default_language": "Język Domyślny",
+    "default_currency": "Waluta Domyślna"
   },
   "air_intakes_label": "Nawiewy i wentylacja",
   "roof_modifications_label": "Modyfikacje Dachu",
