@@ -545,6 +545,16 @@
   "fallback_cost_estimate": "Fallback Cost Estimate",
   "total_project_cost": "Total Project Cost",
   "basic_calculation_ai_unavailable": "Basic calculation when AI services are unavailable",
+  "cost_estimation": {
+    "project_estimate": "Project Cost Estimate",
+    "cost_breakdown": "Cost Breakdown",
+    "base_container": "Base container",
+    "modifications_equipment": "Modifications and equipment",
+    "total_cost": "TOTAL COST",
+    "important_notice": "Important",
+    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote.",
+    "configuration_saved": "Configuration saved successfully!"
+  },
   "materials_base_cost": "Materials & Base Cost",
   "labor_costs_40": "Labor Costs (40%)",
   "contingency_10": "Contingency (10%)",

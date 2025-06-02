@@ -514,6 +514,16 @@
   "fallback_cost_estimate": "Zapasowa Wycena Kosztów",
   "total_project_cost": "Całkowite Koszty Projektu",
   "basic_calculation_ai_unavailable": "Podstawowe obliczenie gdy usługi AI są niedostępne",
+  "cost_estimation": {
+    "project_estimate": "Szacunkowa Wycena Projektu",
+    "cost_breakdown": "Podział Kosztów",
+    "base_container": "Kontener bazowy",
+    "modifications_equipment": "Modyfikacje i wyposażenie",
+    "total_cost": "CAŁKOWITY KOSZT",
+    "important_notice": "Ważne",
+    "preliminary_estimate": "To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
+    "configuration_saved": "Konfiguracja zapisana pomyślnie!"
+  },
   "materials_base_cost": "Materiały i Koszty Podstawowe",
   "labor_costs_40": "Koszty Pracy (40%)",
   "contingency_10": "Rezerwa (10%)",
