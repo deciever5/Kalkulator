@@ -41,46 +41,46 @@
   },
   "window_types": {
     "standard": "Standardi (kaksinkertainen lasi)",
-    "energy_efficient": "Energooszczędne (kolminkertainen lasi)",
-    "security": "Ilmanpieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
-    "panoramic": "Okna panoramiczne",
-    "sliding": "Okna przesuwne",
-    "tilt": "Okna uchylne",
-    "skylight": "Okna dachowe"
+    "energy_efficient": "Energiatehokas (kolminkertainen lasi)",
+    "security": "Ilmanturvallisuus (karkaistua)",
+    "marine_grade": "Meriluokka (korroosionkestävä)",
+    "panoramic": "Panoraama-ikkunat",
+    "sliding": "Liukuikkunat",
+    "tilt": "Kääntöikkunat",
+    "skylight": "Kattikkunat"
   },
   "lighting": {
-    "none": "Brak oświetlenia",
+    "none": "Ei valaistusta",
     "basic": "Perus LED",
-    "basic_led": "Perus oświetlenie LED",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
-    "smart": "System inteligentny (oświetlenie sterowane)"
+    "basic_led": "Perus valaistus LED",
+    "energy_efficient": "Energiatehokas LED z antureilla",
+    "exterior": "Valaistus ulko (valonheittimet)",
+    "emergency": "Valaistus hätä (akku)",
+    "smart": "System älykäs (valaistus ohjattu)"
   },
   "electrical_system": {
-    "none": "Ilman instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody ilman wyposażenia)",
-    "basic": "Podstawowy (oświetlenie + gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
-    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
-    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
-    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
-    "smart": "Inteligentny (smart home, KNX, automatyka)"
+    "none": "Ilman sähköasennusta",
+    "preparation": "Valmistelu (johdot ilman varustusta)",
+    "basic": "Perus (valaistus + pistorasiat)",
+    "standard": "Standardi (25A, valaistus, 8 pistorasiaa)",
+    "extended": "Laajennettu (40A, voima, UPS, hätä)",
+    "industrial": "Teollinen (63A, voima, jakokeskus)",
+    "it_server": "IT/Palvelin (UPS, jäähdytys, valvonta)",
+    "smart": "Älykäs (älykoti, KNX, automaatio)"
   },
   "plumbing_system": {
-    "none": "Ilman instalacji wodnej",
-    "preparation": "Przygotowanie (rury ilman armatury)",
-    "basic": "Podstawowa (zlew + odpływ)",
-    "full": "Pełna (przygotowanie łazienki)",
+    "none": "Ilman vesiasennus",
+    "preparation": "Valmistelu (putket ilman kalusteet)",
+    "basic": "Podstawowa (pesuallas + viemäri)",
+    "full": "Täysi (valmistelu kylpyhuone)",
     "commercial": "Klasa komercyjna",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
-    "cold_water": "Instalacja zimnej wody (zlew)",
-    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
-    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
-    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
-    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
-    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
+    "industrial": "Teollinen asennus (painevesi, suodatus)",
+    "cold_water": "Kylmävesiasennus (pesuallas)",
+    "hot_cold_water": "Kylmä + lämmin vesi (pesuallas, käsienpesuallas)",
+    "basic_sanitary": "Perus saniteettisolmu (WC + käsienpesuallas)",
+    "standard_sanitary": "Standardi solmu (WC + käsienpesuallas + suihku)",
+    "comfort_sanitary": "Mukava solmu (WC + käsienpesuallas + kaappi)",
+    "premium_sanitary": "Premium solmu (poreallas, bidee, 2 käsienpesuallasta)"
   },
   "hvac_system": {
     "none": "No HVAC (no heating and cooling)",
@@ -103,7 +103,7 @@
     "carpet": "2-4 mm PVC-lattiapäällyste",
     "epoxy": "Teollisuuden epoksilattia",
     "concrete": "Korotettu lattia (palvelinhuoneet)",
-    "basic": "Podstawowa (beton przemysłowy)",
+    "basic": "Podstawowa (beton teollinen)",
     "hardwood": "Drewno twarde (parkiet)"
   },
   "configure_container": "Konfiguroi kontti",
@@ -476,16 +476,16 @@
     "open_space": "Avoin tila (ei väliseiniä)",
     "partitioned": "Z przegrodami (1-3 pomieszczenia)",
     "built_in_furniture": "Meble wbudowane (zabudowa na wymiar)",
-    "custom_layout": "Układ niestandardowy (projekt custom)",
+    "custom_layout": "Układ niestandardi (projekt custom)",
     "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
   },
   "security_systems_options": {
     "none": "Ilman dodatkowych zailmanpieczeń (zamki standardi)",
     "basic": "Perus (wzmocnione zamki, kraty okienne)",
     "standard": "Standardi (alarm, czujniki, syrena)",
-    "extended": "Laajennettu (monitoring, czujniki ruchu/wibracji)",
+    "extended": "Laajennettu (valvonta, czujniki ruchu/wibracji)",
     "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
-    "maximum": "Maksymalne (sejf, biometria, central monitoring)",
+    "maximum": "Maksymalne (sejf, biometria, central valvonta)",
     "industrial": "Teollinen (ATEX, systemy gazowe, panic room)"
   },
   "exterior_cladding_options": {
@@ -502,25 +502,25 @@
   "additional_openings_options": {
     "none": "Ilman dodatkowych otworów (standardi drzwi)",
     "windows": "Okna dodatkowe (1-4 sztuki)",
-    "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
+    "doors": "Drzwi dodatkowe (serwisowe, hätä)",
     "garage_door": "Brama garażowa (segmentowa, rolowana)",
     "loading_dock": "Rampa załadunkowa (hydrauliczna)",
     "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
-    "skylights": "Okna dachowe/świetliki",
+    "skylights": "Kattikkunat/świetliki",
     "custom": "Otwory niestandardi (nietypowe wymiary)"
   },
   "fire_safety_options": {
     "none": "Ilman systemów przeciwpożarowych",
     "basic": "Perus (gaśnica, czujka dymu)",
-    "standard": "Standardi (system alarmowy, oświetlenie awaryjne)",
+    "standard": "Standardi (system alarmowy, valaistus hätä)",
     "extended": "Laajennettu (tryskacze, ewakuacja)",
-    "full": "Pełny system (gazowe, monitoring)"
+    "full": "Pełny system (gazowe, valvonta)"
   },
   "accessibility_options": {
-    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "standard": "Dostęp standardi (próg 15-20cm)",
     "ramp": "Podjazd/rampa (dla wózków inwalidzkich)",
     "lift": "Winda hydrauliczna (dostęp dla niepełnosprawnych)",
-    "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
+    "full_ada": "Täysi zgodność ADA (szerokie drzwi, uchwyty)"
   },
   "paint_finish_options": {
     "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
@@ -538,34 +538,34 @@
     "international": "Międzynarodowy (poza Europą)"
   },
   "transport_type_options": {
-    "standard": "Transport standardowy (naczep 13.6m)",
+    "standard": "Transport standardi (naczep 13.6m)",
     "special": "Transport specjalny (ponadgabarytowy)",
     "crane": "Transport z dźwigiem (montaż na miejscu)",
     "multi_container": "Transport wielokontenerowy (2+ jednostki)"
   },
   "assembly_options": {
     "none": "Ilman montażu (tylko dostawa)",
-    "basic": "Montaż podstawowy (pozycjonowanie, poziomowanie)",
-    "standard": "Montaż standardowy (podłączenia, testy)",
+    "basic": "Montaż perus (pozycjonowanie, poziomowanie)",
+    "standard": "Montaż standardi (podłączenia, testy)",
     "full": "Montaż pełny (kompletna instalacja)"
   },
   "office_equipment_options": {
-    "none": "Ilman wyposażenia (pusty kontener)",
+    "none": "Ilman varustusta (pusty kontener)",
     "basic": "Perus (biurko, krzesła, szafa)",
-    "standard": "Standardi (komplet mebli, oświetlenie)",
+    "standard": "Standardi (komplet mebli, valaistus)",
     "full": "Pełne (kompletne wyposażenie biura)"
   },
   "appliances_options": {
     "none": "Ilman sprzętu AGD",
-    "basic": "Podstawowy (lodówka, mikrofalówka)",
-    "standard": "Standardowy (zestaw kuchenny, pralka)",
+    "basic": "Perus (lodówka, mikrofalówka)",
+    "standard": "Standardi (zestaw kuchenny, pralka)",
     "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
   },
   "it_systems_options": {
     "none": "Ilman systemów IT",
     "basic": "Perus (internet, WiFi)",
     "standard": "Standardi (sieć, telefonia)",
-    "advanced": "Zaawansowane (serwerownia, ilmanpieczeństwo)"
+    "advanced": "Zaawansowane (serwerownia, ilmanturvallisuus)"
   },
   "insulation_package": "Eristyspaketti",
   "structural_reinforcement": "Rakenteellinen vahvistus",
@@ -894,6 +894,6 @@
     "marine": "Marine/Telyard (syövyttävä ympäristö)"
   },
   "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
+  "lighting_label": "Valaistus",
   "flooring_label": "Podłogi"
 }

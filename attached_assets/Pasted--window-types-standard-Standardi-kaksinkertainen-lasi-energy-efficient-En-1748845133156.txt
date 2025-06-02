@@ -1,0 +1,54 @@
+ "window_types": {
+    "standard": "Standardi (kaksinkertainen lasi)",
+    "energy_efficient": "Energooszczędne (kolminkertainen lasi)",
+    "security": "Ilmanpieczeństwo (hartowane)",
+    "marine_grade": "Klasa morska (antykorozyjna)",
+    "panoramic": "Okna panoramiczne",
+    "sliding": "Okna przesuwne",
+    "tilt": "Okna uchylne",
+    "skylight": "Okna dachowe"
+  },
+  "lighting": {
+    "none": "Brak oświetlenia",
+    "basic": "Perus LED",
+    "basic_led": "Perus oświetlenie LED",
+    "energy_efficient": "Energooszczędne LED z czujnikami",
+    "exterior": "Oświetlenie zewnętrzne (reflektory)",
+    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "smart": "System inteligentny (oświetlenie sterowane)"
+  },
+  "electrical_system": {
+    "none": "Ilman instalacji elektrycznej",
+    "preparation": "Przygotowanie (przewody ilman wyposażenia)",
+    "basic": "Podstawowy (oświetlenie + gniazdka)",
+    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
+    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
+    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
+    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
+    "smart": "Inteligentny (smart home, KNX, automatyka)"
+  },
+  "plumbing_system": {
+    "none": "Ilman instalacji wodnej",
+    "preparation": "Przygotowanie (rury ilman armatury)",
+    "basic": "Podstawowa (zlew + odpływ)",
+    "full": "Pełna (przygotowanie łazienki)",
+    "commercial": "Klasa komercyjna",
+    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
+    "cold_water": "Instalacja zimnej wody (zlew)",
+    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
+    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
+    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
+    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
+    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
+  },
+  "hvac_system": {
+    "none": "No HVAC (no heating and cooling)",
+    "basic": "Basic ventilation",
+    "electric_heating": "Electric heating (IR radiators)",
+    "gas_heating": "Gas heating (condensing boiler)",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "heat_pump": "Heat pump",
+    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "underfloor_heating": "Underfloor heating (electric/water)"

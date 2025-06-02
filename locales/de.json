@@ -41,9 +41,9 @@
   },
   "window_types": {
     "standard": "Standard (25A, Beleuchtung, 8 Steckdosen)",
-    "energy_efficient": "Energooszczędne (Dreifachverglasung)",
-    "security": "Ohnepieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
+    "energy_efficient": "Energiesparend (Dreifachverglasung)",
+    "security": "Ohnesicherheit (gehärtet)",
+    "marine_grade": "Meeresklasse (korrosionsbeständig)",
     "panoramic": "Panoramafenster",
     "sliding": "Schiebefenster",
     "tilt": "Kippfenster",
@@ -53,9 +53,9 @@
     "none": "Keine Elektroinstallation",
     "basic": "Grundlegend (Beleuchtung + Steckdosen)",
     "basic_led": "Grundlegende LED-Beleuchtung",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "energy_efficient": "Energiesparend LED z mit sensoren",
+    "exterior": "Beleuchtung außen (strahler)",
+    "emergency": "Beleuchtung notfall (batterie)",
     "smart": "Intelligent (Hausautomation, KNX)"
   },
   "electrical_system": {
@@ -72,7 +72,7 @@
     "none": "Keine Elektroinstallation",
     "preparation": "Vorbereitung (Verkabelung ohne Ausrüstung)",
     "basic": "Grundlegend (Beleuchtung + Steckdosen)",
-    "full": "Pełna (przygotowanie łazienki)",
+    "full": "Vollständig (vorbereitung badezimmer)",
     "commercial": "Klasa komercyjna",
     "industrial": "Industriell (63A, Strom, Verteilerkasten)",
     "cold_water": "Kaltwasserinstallation (Spüle)",
@@ -103,7 +103,7 @@
     "carpet": "2-4 mm PVC-Bodenbedeckung",
     "epoxy": "Industrial Epoxy Floor",
     "concrete": "Erhöhter Boden (Serverräume)",
-    "basic": "Podstawowa (beton przemysłowy)",
+    "basic": "Podstawowa (beton industriell)",
     "hardwood": "Drewno twarde (parkiet)"
   },
   "configure_container": "Container konfigurieren",
@@ -848,6 +848,6 @@
     "marine": "Marine/Werft (ätzende Umgebung)"
   },
   "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
+  "lighting_label": "Beleuchtung",
   "flooring_label": "Podłogi"
 }
