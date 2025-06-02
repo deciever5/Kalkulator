@@ -42,6 +42,13 @@ class AutomatedTranslationWorkflow:
             print(f"⚠️ Error loading previous scan results: {e}")
         return {}
 
+    def contains_obvious_english(self, text: str) -> bool:
+        """Check if text contains obvious English words"""
+        english_indicators = ['the', 'and', 'or', 'of', 'to', 'for', 'with', 'by', 'from', 'up', 'about', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'between']
+        words = text.lower().split()
+        english_count = sum(1 for word in words if word in english_indicators)
+        return english_count > len(words) * 0.3  # If more than 30% are English indicators
+    
     def extract_problematic_languages(self, scan_results: Dict) -> List[str]:
         """Extract languages that have significant issues"""
         problematic_languages = []
@@ -91,20 +98,24 @@ class AutomatedTranslationWorkflow:
 
         # Common words that automatic translator often misses
         common_missed_words = {
-            'heating': {'de': 'Heizung', 'fr': 'chauffage', 'es': 'calefacción', 'it': 'riscaldamento', 'nl': 'verwarming'},
-            'cooling': {'de': 'Kühlung', 'fr': 'refroidissement', 'es': 'refrigeración', 'it': 'raffreddamento', 'nl': 'koeling'},
-            'container': {'de': 'Container', 'fr': 'conteneur', 'es': 'contenedor', 'it': 'contenitore', 'nl': 'container'},
-            'basic': {'de': 'Basis', 'fr': 'de base', 'es': 'básico', 'it': 'di base', 'nl': 'basis'},
-            'standard': {'de': 'Standard', 'fr': 'standard', 'es': 'estándar', 'it': 'standard', 'nl': 'standaard'},
-            'premium': {'de': 'Premium', 'fr': 'premium', 'es': 'premium', 'it': 'premium', 'nl': 'premium'},
-            'advanced': {'de': 'Erweitert', 'fr': 'avancé', 'es': 'avanzado', 'it': 'avanzato', 'nl': 'geavanceerd'},
-            'configuration': {'de': 'Konfiguration', 'fr': 'configuration', 'es': 'configuración', 'it': 'configurazione', 'nl': 'configuratie'},
-            'installation': {'de': 'Installation', 'fr': 'installation', 'es': 'instalación', 'it': 'installazione', 'nl': 'installatie'},
-            'delivery': {'de': 'Lieferung', 'fr': 'livraison', 'es': 'entrega', 'it': 'consegna', 'nl': 'levering'},
-            'transport': {'de': 'Transport', 'fr': 'transport', 'es': 'transporte', 'it': 'trasporto', 'nl': 'transport'},
-            'security': {'de': 'Sicherheit', 'fr': 'sécurité', 'es': 'seguridad', 'it': 'sicurezza', 'nl': 'beveiliging'},
-            'system': {'de': 'System', 'fr': 'système', 'es': 'sistema', 'it': 'sistema', 'nl': 'systeem'},
-            'analysis': {'de': 'Analyse', 'fr': 'analyse', 'es': 'análisis', 'it': 'analisi', 'nl': 'analyse'}
+            'heating': {'de': 'Heizung', 'fr': 'chauffage', 'es': 'calefacción', 'it': 'riscaldamento', 'nl': 'verwarming', 'cs': 'vytápění', 'hu': 'fűtés', 'sk': 'vykurovanie', 'sv': 'uppvärmning', 'fi': 'lämmitys', 'uk': 'опалення'},
+            'cooling': {'de': 'Kühlung', 'fr': 'refroidissement', 'es': 'refrigeración', 'it': 'raffreddamento', 'nl': 'koeling', 'cs': 'chlazení', 'hu': 'hűtés', 'sk': 'chladenie', 'sv': 'kylning', 'fi': 'jäähdytys', 'uk': 'охолодження'},
+            'container': {'de': 'Container', 'fr': 'conteneur', 'es': 'contenedor', 'it': 'contenitore', 'nl': 'container', 'cs': 'kontejner', 'hu': 'konténer', 'sk': 'kontajner', 'sv': 'container', 'fi': 'kontti', 'uk': 'контейнер'},
+            'basic': {'de': 'Basis', 'fr': 'de base', 'es': 'básico', 'it': 'di base', 'nl': 'basis', 'cs': 'základní', 'hu': 'alap', 'sk': 'základný', 'sv': 'grundläggande', 'fi': 'perus', 'uk': 'базовий'},
+            'standard': {'de': 'Standard', 'fr': 'standard', 'es': 'estándar', 'it': 'standard', 'nl': 'standaard', 'cs': 'standardní', 'hu': 'szabványos', 'sk': 'štandardný', 'sv': 'standard', 'fi': 'vakio', 'uk': 'стандартний'},
+            'premium': {'de': 'Premium', 'fr': 'premium', 'es': 'premium', 'it': 'premium', 'nl': 'premium', 'cs': 'prémiový', 'hu': 'prémium', 'sk': 'prémiový', 'sv': 'premium', 'fi': 'premium', 'uk': 'преміум'},
+            'advanced': {'de': 'Erweitert', 'fr': 'avancé', 'es': 'avanzado', 'it': 'avanzato', 'nl': 'geavanceerd', 'cs': 'pokročilý', 'hu': 'haladó', 'sk': 'pokročilý', 'sv': 'avancerad', 'fi': 'edistynyt', 'uk': 'просунутий'},
+            'configuration': {'de': 'Konfiguration', 'fr': 'configuration', 'es': 'configuración', 'it': 'configurazione', 'nl': 'configuratie', 'cs': 'konfigurace', 'hu': 'konfiguráció', 'sk': 'konfigurácia', 'sv': 'konfiguration', 'fi': 'konfiguraatio', 'uk': 'конфігурація'},
+            'installation': {'de': 'Installation', 'fr': 'installation', 'es': 'instalación', 'it': 'installazione', 'nl': 'installatie', 'cs': 'instalace', 'hu': 'telepítés', 'sk': 'inštalácia', 'sv': 'installation', 'fi': 'asennus', 'uk': 'встановлення'},
+            'delivery': {'de': 'Lieferung', 'fr': 'livraison', 'es': 'entrega', 'it': 'consegna', 'nl': 'levering', 'cs': 'dodání', 'hu': 'szállítás', 'sk': 'dodanie', 'sv': 'leverans', 'fi': 'toimitus', 'uk': 'доставка'},
+            'transport': {'de': 'Transport', 'fr': 'transport', 'es': 'transporte', 'it': 'trasporto', 'nl': 'transport', 'cs': 'doprava', 'hu': 'szállítás', 'sk': 'doprava', 'sv': 'transport', 'fi': 'kuljetus', 'uk': 'транспорт'},
+            'security': {'de': 'Sicherheit', 'fr': 'sécurité', 'es': 'seguridad', 'it': 'sicurezza', 'nl': 'beveiliging', 'cs': 'bezpečnost', 'hu': 'biztonság', 'sk': 'bezpečnosť', 'sv': 'säkerhet', 'fi': 'turvallisuus', 'uk': 'безпека'},
+            'system': {'de': 'System', 'fr': 'système', 'es': 'sistema', 'it': 'sistema', 'nl': 'systeem', 'cs': 'systém', 'hu': 'rendszer', 'sk': 'systém', 'sv': 'system', 'fi': 'järjestelmä', 'uk': 'система'},
+            'analysis': {'de': 'Analyse', 'fr': 'analyse', 'es': 'análisis', 'it': 'analisi', 'nl': 'analyse', 'cs': 'analýza', 'hu': 'elemzés', 'sk': 'analýza', 'sv': 'analys', 'fi': 'analyysi', 'uk': 'аналіз'},
+            'custom': {'de': 'Benutzerdefiniert', 'fr': 'personnalisé', 'es': 'personalizado', 'it': 'personalizzato', 'nl': 'aangepast', 'cs': 'vlastní', 'hu': 'egyedi', 'sk': 'vlastný', 'sv': 'anpassad', 'fi': 'mukautettu', 'uk': 'власний'},
+            'professional': {'de': 'Professionell', 'fr': 'professionnel', 'es': 'profesional', 'it': 'professionale', 'nl': 'professioneel', 'cs': 'profesionální', 'hu': 'szakmai', 'sk': 'profesionálny', 'sv': 'professionell', 'fi': 'ammattimainen', 'uk': 'професійний'},
+            'materials': {'de': 'Materialien', 'fr': 'matériaux', 'es': 'materiales', 'it': 'materiali', 'nl': 'materialen', 'cs': 'materiály', 'hu': 'anyagok', 'sk': 'materiály', 'sv': 'material', 'fi': 'materiaalit', 'uk': 'матеріали'},
+            'assembly': {'de': 'Montage', 'fr': 'assemblage', 'es': 'montaje', 'it': 'assemblaggio', 'nl': 'montage', 'cs': 'montáž', 'hu': 'összeszerelés', 'sk': 'montáž', 'sv': 'montering', 'fi': 'kokoonpano', 'uk': 'збірка'}
         }
 
         # Process each significant issue
@@ -129,7 +140,20 @@ class AutomatedTranslationWorkflow:
                     if not translated:
                         polish_text = base_translations.get(issue_key)
                         if polish_text and self.fixer.should_translate(polish_text):
-                            translated = self.ai_service._translate_text(polish_text, lang_code)
+                            try:
+                                translated = self.ai_service._translate_text(polish_text, lang_code)
+                                # Validate the translation isn't just a copy
+                                if translated and translated.strip() != polish_text.strip() and translated.strip() != current_value.strip():
+                                    # Additional check - make sure it's not still in English
+                                    if not self.contains_obvious_english(translated):
+                                        pass  # Translation is good
+                                    else:
+                                        translated = None  # Reject poor translation
+                                else:
+                                    translated = None  # Reject identical translation
+                            except Exception as e:
+                                print(f"   ⚠️ Translation error for {issue_key}: {e}")
+                                translated = None
 
                     if translated and translated != current_value:
                         self.fixer.set_nested_value(lang_data, issue_key, translated)
@@ -197,6 +221,11 @@ class AutomatedTranslationWorkflow:
         print(f"\n🔧 Step 3: Fixing problematic languages...")
 
         for lang_code in problematic_languages:
+            # Skip EN and PL languages as they are working fine
+            if lang_code in ['en', 'pl']:
+                print(f"⏭️ Skipping {lang_code} - language is working fine")
+                continue
+                
             try:
                 result = scan_results['results'][lang_code]
                 if 'error' in result:
