@@ -83,8 +83,8 @@
     "premium_sanitary": "Prémium csomópont (jakuzzi, bidé, 2 mosdó)"
   },
   "hvac_system": {
-    "none": "No HVAC (no fűtés and cooling)",
-    "basic": "Basic ventilation",
+    "none": "HVAC nélkül (fűtés és hűtés nélkül)",
+    "basic": "Alapvető szellőzés",
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
     "split_ac": "Split air conditioning (cooling + heating)",
@@ -433,16 +433,16 @@
     "mezzanine": "Mezzanine/padló (felületi növekedés)"
   },
   "security_systems_options": {
-    "none": "Nélkül dodatkowych zanélkülpieczeń (zamki szabványos)",
-    "basic": "Alapvető (wzmocnione zamki, kraty okienne)",
-    "standard": "Szabványos (alarm, czujniki, syrena)",
-    "extended": "Kiterjesztett (felügyelet, czujniki ruchu/wibracji)",
+    "none": "szabványos",
+    "basic": "Alapvető (megerősített zárak, ablakrácsok)",
+    "standard": "szabványos",
+    "extended": "Bővített (megfigyelés, mozgás/rezgés -érzékelők)",
     "high": "High (CCTV IP, Access Control, Intercom)",
-    "maximum": "Maksymalne (sejf, biometria, central felügyelet)",
-    "industrial": "Ipari (ATEX, systemy gazowe, panic room)"
+    "maximum": "Maximum (biztonságos, biometria, központi megfigyelés)",
+    "industrial": "rendszer"
   },
   "exterior_cladding_options": {
-    "none": "Nélkül okładziny (blacha kontenerowa standardowa)",
+    "none": "szabványos",
     "trapezoidal": "Trapezoid lap (T18, T35, T55)",
     "cassette": "Kazettalap (lapos, puffasztott)",
     "vinyl_siding": "Vinil iparvágány (fa utánzás, modern)",
@@ -453,7 +453,7 @@
     "natural_stone": "Természetes/mesterséges kő"
   },
   "additional_openings_options": {
-    "none": "Nélkül dodatkowych otworów (szabványos drzwi)",
+    "none": "szabványos",
     "windows": "További ablakok (1-4 darab)",
     "doors": "Drzwi dodatkowe (serwisowe, vészhelyzeti)",
     "garage_door": "Garázskapu (szegmentális, gördített)",
@@ -467,7 +467,7 @@
     "basic": "Alapvető (gaśnica, czujka dymu)",
     "standard": "Szabványos (system alarmowy, világítás vészhelyzeti)",
     "extended": "Kiterjesztett (tryskacze, ewakuacja)",
-    "full": "Pełny rendszer (gazowe, felügyelet)"
+    "full": "rendszer"
   },
   "accessibility_options": {
     "standard": "Dostęp szabványos (próg 15-20cm)",
@@ -682,7 +682,7 @@
   },
   "security": {
     "basic": "Alapvető (megerősített zárak)",
-    "standard": "Standard (riasztás előkészítés)",
+    "standard": "szabványos",
     "advanced": "Fejlett (kamerák + érzékelők)",
     "high_security": "Magas biztonság (biometrikus)"
   },
@@ -761,7 +761,7 @@
   "fire_systems_none": "Egyik sem",
   "roof_modifications_solar": "Napelemek",
   "exterior_cladding_composite": "Composite",
-  "window_types_standard": "Standard",
+  "window_types_standard": "szabványos",
   "installation_none": "Öngyilkosság",
   "installation_full": "Teljes telepítés",
   "lighting_none": "Egyik sem",
@@ -786,8 +786,8 @@
   "additional_openings_emergency": "Emergency Exit",
   "office_equipment_none": "Egyik sem",
   "it_systems_none": "Egyik sem",
-  "transport_type_standard": "Standard",
-  "advanced_comments": "Advanced Modifications Comments",
+  "transport_type_standard": "szabványos",
+  "advanced_comments": "Megjegyzések a fejlett módosításokról",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dupla mázas",
   "ventilation": {
@@ -839,7 +839,7 @@
   },
   "environments": {
     "indoor": "Beltéri (csarnokok, raktárak)",
-    "outdoor_standard": "Standard külső",
+    "outdoor_standard": "szabványos",
     "outdoor_extreme": "Kültéri szélsőséges (tengerparti, hegyek)",
     "industrial": "Ipari",
     "construction": "Építés (építési helyek, infrastruktúra)",
