@@ -857,12 +857,12 @@
   "flooring_label": "Lattiat",
   "cost_estimation": {
     "estimate_title": "💰 Projektin Kustannusarvio",
-    "cost_breakdown_title": "\"Kustannusten jakaminen:\"\n\nKäytän tässä yhteydessä seuraavia ohjeita:\n\n- Ammattitaitoinen liiketoimintatoni\n- Säilytä emojis ja symbolit (💰, ⚠️, ✅)\n- Säilytä muotoilu (kolonit, pisteet)\n- Käytä sopivaa valuuttaa/yrityskäsitettä\n- Säilytä luonnollinen suomenkielinen ääni\n\nKun kääntäessäsi tekstiä, muista pitää huolta siitä, että käännös on luonnollinen ja ammattimainen.",
-    "base_container_line": "Kontinerin perusversio: 💰\n\nTässä kohtaa voit määrittää perusversioksi valitun kontinerin ominaisuudet ja kustannukset. Huomioi, että muutokset perusversioon voivat vaikuttaa koko kustannukseen. ⚠️\n\nVoit valita perusversioksi olemassa olevan kontinerin tai luoda uuden. Tämän jälkeen voit määrittää kontinerin mitat, materiaalit ja muut ominaisuudet. ✅",
-    "modifications_equipment_line": "Määrittelyt ja varustukset:\n\nKäännös on tehty yllä mainituilla vaatimuksilla huomioiden:\n\n- Ammattitaitoinen liiketoimintatoni\n- Emoji- ja symbolien säilyttäminen (💰, ⚠️, ✅)\n- Muotoilun säilyttäminen (kolonit, pisteet)\n- Oikeanlainen valuutta- ja liiketoimintaterminologia\n- Luonnollinen suomenkielinen äänenkannattaminen\n\nKäännös on seuraava:\n\nMäärittelyt ja varustukset:\n\nJos haluat, voit lisätä tämän kappaleen tekstiin.",
-    "total_cost_line": "YHTEINEN KUSTANNUKSET: 💰\n\nTämä teksti on suoraan käännetty, mutta se voi vaikuttaa hieman epämukavaksi lukijalle. Yleensä suomennoksessa olisi käytetty muotoa \"Yhteinen kustannus\" tai \"Yhteiskustannukset\". \n\nJos haluatte, voimme muuttaa tekstiä hieman muotoiluun sopivammaksi. Esimerkiksi:\n\nYHTEINEN KUSTANNUKSET: 💰\n\nTai:\n\nYHTEISKUSTANNUKSET: 💰\n\nValitse sopivin muoto, joka sopii parhaiten kustannusarvioinnin käyttöliittymän tyyliin.",
-    "important_warning": "Finnish translation: \"⚠️ Huomio:\"\n\nExplanation:\n- \"Ważne\" translates to \"Huomio\" in Finnish, which means \"Important\" or \"Note\".\n- The emoji ⚠️ is preserved as it is, as it's a warning symbol.\n- The rest of the text remains the same, maintaining the professional business tone and formatting.",
-    "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista määrittelyistä, nykyisistä materiaalien hinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
+    "cost_breakdown_title": "Kustannusjaottelu:",
+    "base_container_line": "Peruskontti:",
+    "modifications_equipment_line": "Muutokset ja varusteet:",
+    "total_cost_line": "KOKONAISKUSTANNUS:",
+    "important_warning": "⚠️ Tärkeää:",
+    "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista spesifikaatioista, nykyisistä materiaalihinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
     "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!"
   },
   "destination": "Kohde",
