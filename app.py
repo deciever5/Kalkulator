@@ -13,8 +13,7 @@ from utils.container_database import ContainerDatabase
 from utils.calculations import StructuralCalculations
 from utils.database import DatabaseManager
 from utils.simple_storage import SimpleStorageManager
-from utils.translations import t, get_current_language, set_language, init_language
-
+from utils.translations import t, init_language, get_current_language, set_language
 from utils.groq_service import GroqService
 
 # Initialize services with lazy loading

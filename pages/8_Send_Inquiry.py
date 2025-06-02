@@ -5,10 +5,9 @@ Allows customers to send inquiries after getting estimates
 """
 
 import streamlit as st
-import pandas as pd
 from datetime import datetime
 from utils.translations import t, render_language_selector
-from utils.global_language import get_current_language, set_language
+from utils.global_language import get_current_language
 from utils.simple_storage import SimpleStorageManager
 
 st.set_page_config(page_title="Send Inquiry", page_icon="📧", layout="wide")

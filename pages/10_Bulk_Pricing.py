@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 import pandas as pd
-from utils.translations import t, init_language, get_current_language
+from utils.translations import t, init_language
 from utils.shared_header import render_shared_header
 from utils.calculations import calculate_container_cost
 
