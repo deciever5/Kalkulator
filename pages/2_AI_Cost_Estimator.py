@@ -126,13 +126,13 @@ else:
     # Show additional systems and modifications
     st.markdown("### Dodatkowe systemy i modyfikacje:")
     col1, col2 = st.columns(2)
-    
+
     with col1:
         st.write(f"**Układ wewnętrzny:** {config.get('interior_layout', 'N/A')}")
         st.write(f"**Zabezpieczenia:** {config.get('security_systems', 'N/A')}")
         st.write(f"**Okładzina zewnętrzna:** {config.get('exterior_cladding', 'N/A')}")
         st.write(f"**Dodatkowe otwory:** {config.get('additional_openings', 'N/A')}")
-        
+
     with col2:
         st.write(f"**Systemy przeciwpożarowe:** {config.get('fire_systems', 'N/A')}")
         st.write(f"**Dostępność:** {config.get('accessibility', 'N/A')}")
@@ -235,7 +235,7 @@ else:
                 # Prepare enhanced config with user input and comprehensive configuration
                 enhanced_config = config.copy()
                 enhanced_config['user_comment'] = user_comment
-                
+
                 # Add all comprehensive configuration details for AI analysis
                 comprehensive_details = []
                 if config.get('construction_material'):
@@ -272,7 +272,7 @@ else:
                     comprehensive_details.append(f"Sprzęt AGD: {config['appliances']}")
                 if config.get('it_systems'):
                     comprehensive_details.append(f"Systemy IT: {config['it_systems']}")
-                
+
                 # Combine all comments and requirements
                 all_comments = []
                 if config.get('system_comments'):
@@ -283,11 +283,11 @@ else:
                     all_comments.append(f"Wymagania ogólne: {config['general_comments']}")
                 if user_comment:
                     all_comments.append(f"Dodatkowe wymagania: {user_comment}")
-                
+
                 # Create detailed requirements string for AI
                 enhanced_config['comprehensive_specifications'] = "; ".join(comprehensive_details)
                 enhanced_config['all_requirements'] = "; ".join(all_comments)
-                
+
                 enhanced_config['special_requirements'] = {
                     'special_location': special_location,
                     'urgent_timeline': urgent_timeline,
@@ -338,3 +338,14 @@ else:
 
             except Exception as e:
                 st.error(f"{t('error_generating_estimate')}: {str(e)}")
+
+# Navigation buttons (outside form, only show if configuration exists)
+if 'container_config' in st.session_state and st.session_state.container_config:
+    st.markdown(f"### {t('send_inquiry.next_steps')}")
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button(f"🤖 {t('ui.get_ai_estimate')}", use_container_width=True, key="nav_ai"):
+            st.switch_page("pages/2_AI_Cost_Estimator.py")
+    with col2:
+        if st.button(f"📧 {t('send_inquiry.submit_inquiry')}", use_container_width=True, key="nav_inquiry"):
+            st.switch_page("pages/8_Send_Inquiry.py")

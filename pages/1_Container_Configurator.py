@@ -729,13 +729,13 @@ with st.form("container_configuration_form"):
 
 # Navigation buttons (outside form, only show if configuration exists)
 if 'container_config' in st.session_state and st.session_state.container_config:
-    st.markdown("### Następne kroki")
+    st.markdown(f"### {t('send_inquiry.next_steps')}")
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("🤖 Przejdź do Wyceny AI", use_container_width=True, key="nav_ai"):
+        if st.button(f"🤖 {t('ui.get_ai_estimate')}", use_container_width=True, key="nav_ai"):
             st.switch_page("pages/2_AI_Cost_Estimator.py")
     with col2:
-        if st.button("📧 Wyślij Zapytanie", use_container_width=True, key="nav_inquiry"):
+        if st.button(f"📧 {t('send_inquiry.submit_inquiry')}", use_container_width=True, key="nav_inquiry"):
             st.switch_page("pages/8_Send_Inquiry.py")
 
 # Initialize configuration
