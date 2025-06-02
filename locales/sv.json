@@ -857,7 +857,8 @@
       "total_cost_line": "TOTALKOSTNAD:",
       "important_warning": "⚠️ Viktigt:",
       "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
-      "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!", but you could also use \"kost",
+      "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!"
+    },
     "estimate_title": "💰 Projektkostnadsuppskattning",
     "cost_breakdown_title": "Kostnadsfördelning:",
     "base_container_line": "Bascontainer:",
