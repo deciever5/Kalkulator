@@ -34,77 +34,26 @@
     "send_inquiry_desc": "Quote request form",
     "drawing_analysis_customer": "Analysis\nDrawings",
     "drawing_analysis_customer_desc": "Free document analysis",
-    "bulk_pricing": "Bulk\nPricing",
-    "bulk_pricing_desc": "Volume Discounts for Multiple Containers",
     "custom_sizing": "Custom\nSizing",
+    "bulk_pricing_desc": "Volume Discounts for Multiple Containers",
+    "bulk_pricing": "Bulk\nPricing",
     "custom_sizing_desc": "Design Containers with Exact Specifications"
   },
   "window_types": {
     "standard": "Standard (25A, lighting, 8 outlets)",
-    "energy_efficient": "Energooszczędne (triple glazing)",
-    "security": "Withoutpieczeństwo (hartowane)",
+    "energy_efficient": "[EN_NEEDS_TRANSLATION] Energooszczędne (potrójne szyby)",
+    "security": "[EN_NEEDS_TRANSLATION] Bezpieczeństwo (hartowane)",
     "marine_grade": "Klasa marine (antykorozyjna)",
     "panoramic": "Panoramic windows",
     "sliding": "Sliding windows",
     "tilt": "Tilt windows",
     "skylight": "Skylight windows"
   },
-  "lighting": {
-    "none": "No lighting",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energy efficient LED",
-    "exterior": "Exterior lighting",
-    "emergency": "Emergency lighting",
-    "smart": "Smart lighting system"
-  },
-  "electrical_system": {
-    "none": "No electrical installation",
-    "preparation": "Preparation (wiring without equipment)",
-    "basic": "Basic (lighting + outlets)",
-    "standard": "Standard (25A, lighting, 8 outlets)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "industrial": "Industrial (63A, power, distribution panel)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)",
-    "smart": "Smart (home automation, KNX)"
-  },
-  "plumbing_system": {
-    "none": "No electrical installation",
-    "preparation": "Preparation (wiring without equipment)",
-    "basic": "Basic (lighting + outlets)",
-    "full": "Pełna (preparation łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Industrial (63A, power, distribution panel)",
-    "cold_water": "Cold water installation (sink)",
-    "hot_cold_water": "Cold + hot water (sink, washbasin)",
-    "basic_sanitary": "Basic sanitary (WC + sink)",
-    "standard_sanitary": "Standard (WC + sink + shower)",
-    "comfort_sanitary": "Comfort (WC + sink + cabin)",
-    "premium_sanitary": "Premium (jacuzzi, bidet, 2 sinks)"
-  },
-  "hvac_system": {
-    "none": "No HVAC (no heating and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning (with filtration, humidification)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
-  },
-  "flooring": {
-    "none": "Without a floor (corrugated sheet)",
-    "plywood": "Waterproof plywood 18mm (standard)",
-    "anti_slip": "21mm non-slip plywood",
-    "laminate": "AC4/AC5 laminated panels",
-    "vinyl": "Waterproof vinyl panels (LVT)",
-    "carpet": "2-4mm PVC floor covering",
-    "epoxy": "Industrial epoxy floor",
-    "concrete": "Elevated floor (server rooms)",
-    "basic": "Basic industrial concrete",
-    "hardwood": "Hardwood flooring"
-  },
+  "lighting": "[EN_NEEDS_TRANSLATION] Oświetlenie",
+  "electrical_system": "[EN_NEEDS_TRANSLATION] System elektryczny",
+  "plumbing_system": "[EN_NEEDS_TRANSLATION] System wodny",
+  "hvac_system": "[EN_NEEDS_TRANSLATION] System HVAC",
+  "flooring": "[EN_NEEDS_TRANSLATION] Podłoga",
   "configure_container": "Configure Your Container",
   "simple_process_2_steps": "Simple process in 2 easy steps",
   "step_1_configuration": "Step 1: Configuration",
@@ -140,34 +89,6 @@
   "working_hours": "Working hours",
   "mon_fri": "Mon-Fri 8:00-17:00",
   "container": {
-    "types": {
-      "10ft_compact": "10ft compact (3m x 2.4m)",
-      "20ft_standard": "20FT standard",
-      "20ft_high_cube": "20ft High Cube (6m x 2.7m)",
-      "40ft_standard": "40FT standard",
-      "40ft_high_cube": "40ft High Cube (12m x 2.7m)",
-      "40ft_hc": "40ft HC",
-      "20ft_refrigerated": "20ft Refrigerated",
-      "20ft_double_door": "20FT DD",
-      "40ft_double_door": "40ft DD",
-      "40ft_hc_double_door": "40ft HC DD",
-      "45ft_standard": "45FT standard",
-      "custom": "Custom",
-      "custom_size": "Custom Size",
-      "multi_unit": "Multi-unit Container",
-      "custom_dimensions": "Custom Dimensions Container",
-      "refurbished": "Refurbished Container"
-    },
-    "use_cases": {
-      "office_space": "Office space",
-      "residential": "Residential",
-      "storage": "Storage",
-      "workshop": "Workshop",
-      "retail": "Retail",
-      "restaurant": "Restaurant",
-      "medical": "Medical",
-      "laboratory": "Laboratory"
-    },
     "environment": {
       "indoor": "Indoor",
       "outdoor": "Outdoor",
@@ -195,8 +116,7 @@
       "vinyl": "Vinyl",
       "carpet": "Carpet",
       "hardwood": "Hardwood",
-      "polished_concrete": "Polished Concrete",
-      "none": "No Flooring"
+      "polished_concrete": "Polished Concrete"
     }
   },
   "purposes": {
@@ -259,7 +179,7 @@
     "project_name": "Project Name",
     "project_location": "Project Location",
     "expected_timeline": "Expected Timeline",
-    "budget_range": "Budget Range",
+    "budget_Range": "Budget scope",
     "timeline": {
       "asap": "As soon as possible",
       "within_month": "Within a month",
@@ -323,8 +243,7 @@
     "new_inquiry": "Send New Inquiry",
     "error": "Error sending inquiry",
     "why_professional_inquiry": "Why Submit a Professional Inquiry?",
-    "preparation_tips": "Tips for Best Results",
-    "budget_Range": "Budget scope"
+    "preparation_tips": "Tips for Best Results"
   },
   "back_to_home": "← Return to Home Page",
   "go_to_configurator": "🔧 Go to Configurator",
@@ -418,6 +337,52 @@
   "special_notes_general": "Special Notes - General",
   "describe_general_requirements": "Describe any additional requirements, specifications or project constraints...",
   "general_requirements_placeholder": "e.g. Special completion deadlines, certification requirements, budget constraints, unusual appfacetions",
+  "construction_material": "Construction Material",
+  "insulation": {
+    "basic": "[EN_NEEDS_TRANSLATION] Podstawowa (5-10cm, styropian/wełna)",
+    "standard": "[EN_NEEDS_TRANSLATION] Standardowa (15cm, PIR/PUR)",
+    "premium": "[EN_NEEDS_TRANSLATION] Premium (20cm, wełna mineralna)",
+    "extreme": "[EN_NEEDS_TRANSLATION] Ekstremalna (30cm, aerogel/vakuum)"
+  },
+  "destination": "Destination",
+  "window_type": "Window Type",
+  "ventilation": {
+    "none": "[EN_NEEDS_TRANSLATION] Bez wentylacji (kontener szczelny)",
+    "gravity": "[EN_NEEDS_TRANSLATION] Wentylacja grawitacyjna (kraty, wywietrzniki)",
+    "wall_fans": "[EN_NEEDS_TRANSLATION] Wentylatory ścienne (wyciąg 100-150mm)",
+    "mechanical": "[EN_NEEDS_TRANSLATION] Wentylacja mechaniczna (nawiew + wyciąg)",
+    "heat_recovery": "[EN_NEEDS_TRANSLATION] Rekuperacja (odzysk ciepła, filtracja)",
+    "split_ac": "[EN_NEEDS_TRANSLATION] Klimatyzacja split (chłodzenie + grzanie)",
+    "central_ac": "[EN_NEEDS_TRANSLATION] Klimatyzacja centralna (VRV/VRF)",
+    "industrial": "[EN_NEEDS_TRANSLATION] Wentylacja przemysłowa (ATEX, chemoodporna)"
+  },
+  "roof_modifications": {
+    "none": "[EN_NEEDS_TRANSLATION] Bez modyfikacji (dach standardowy płaski)",
+    "insulation": "[EN_NEEDS_TRANSLATION] Dodatkowa izolacja dachu (styropian/PIR)",
+    "skylight": "[EN_NEEDS_TRANSLATION] Świetlik dachowy (90x60cm, otwierany)",
+    "fans": "[EN_NEEDS_TRANSLATION] Wentylatory dachowe (przemysłowe, ciche)",
+    "solar": "[EN_NEEDS_TRANSLATION] Panele słoneczne (1-3kW, autonomiczne)",
+    "antennas": "[EN_NEEDS_TRANSLATION] Anteny/maszty (GSM, radio, satelitarne)",
+    "sloped": "[EN_NEEDS_TRANSLATION] Dach skośny (odpływ wody, estetyka)",
+    "terrace": "[EN_NEEDS_TRANSLATION] Taras dachowy (dostęp, balustrada)",
+    "snow_removal": "[EN_NEEDS_TRANSLATION] System usuwania śniegu (grzałki, ślizgi)"
+  },
+  "additional_systems_modifications": "Additional Systems and Modifications:",
+  "security": {
+    "basic": "[EN_NEEDS_TRANSLATION] Podstawowa (wzmocnione zamki)",
+    "standard": "[EN_NEEDS_TRANSLATION] Standardowa (przygotowanie alarmu)",
+    "advanced": "[EN_NEEDS_TRANSLATION] Zaawansowana (kamery + czujniki)",
+    "high_security": "[EN_NEEDS_TRANSLATION] Wysokie bezpieczeństwo (biometryka)"
+  },
+  "fire_systems": "Fire Safety Systems",
+  "accessibility": {
+    "standard": "[EN_NEEDS_TRANSLATION] Dostęp standardowy",
+    "ramp": "[EN_NEEDS_TRANSLATION] Podjazd dla wózków",
+    "full_ada": "[EN_NEEDS_TRANSLATION] Pełna zgodność ADA",
+    "disabled_friendly": "[EN_NEEDS_TRANSLATION] W pełni dostępny"
+  },
+  "painting": "Painting",
+  "assembly": "Assembly",
   "interior_layout_options": {
     "open_space": "Open space (no partitions)",
     "partitioned": "Partitioned (1-3 rooms)",
@@ -609,7 +574,11 @@
     "analysis_results": "Analysis results",
     "analysis_complete": "Analysis completed",
     "analysis_failed": "The drawing analysis failed",
+    "config_required": "Configuration required",
+    "config_required_text": "For accurate technical drawing analysis, basic container configuration is required. Without configuration, analysis will be limited to basic estimates.",
     "analysis_failed_reasons": "Possible reasons for analysis failure",
+    "config_tip": "Tip",
+    "config_tip_text": "Configure your container before analyzing drawings to get more accurate results and tailored quotes.",
     "error": "Error",
     "windows": "Windows",
     "doors": "Doors",
@@ -629,11 +598,7 @@
     "tips_text": "For the most accurate analysis, make sure your drawings contain:",
     "tip_1": "Clear dimensions and specifications",
     "tip_2": "All technical details visible",
-    "tip_3": "High resolution (minimum 300 DPI)",
-    "config_required": "Configuration required",
-    "config_required_text": "For accurate technical drawing analysis, basic container configuration is required. Without configuration, analysis will be limited to basic estimates.",
-    "config_tip": "Tip",
-    "config_tip_text": "Configure your container before analyzing drawings to get more accurate results and tailored quotes."
+    "tip_3": "High resolution (minimum 300 DPI)"
   },
   "admin": {
     "access_required": "Admin Access Required",
@@ -661,16 +626,10 @@
     "industrial": "Industrial grade",
     "marine_grade": "Marine grade (salt resistance)"
   },
-  "roof_modifications": "Roof Modifications",
   "electrical": {
-    "none": "No electrical installation",
-    "preparation": "Preparation (wiring without equipment)",
     "basic": "Basic (lighting + outlets)",
     "standard": "Standard (25A, lighting, 8 outlets)",
-    "extended": "Extended (40A, power, UPS, emergency)",
     "industrial": "Industrial (63A, power, distribution panel)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)",
-    "smart": "Smart (home automation, KNX)",
     "smart_system": "System inteligentny (automatyka)"
   },
   "plumbing": {
@@ -686,7 +645,6 @@
     "central": "Central air conditioning",
     "heat_pump": "Heat pump"
   },
-  "security": "Security",
   "cladding": {
     "none": "No exterior cladding",
     "metal": "Metal siding",
@@ -706,14 +664,12 @@
     "sprinkler": "Sprinkler system",
     "full_system": "Full fire suppression"
   },
-  "accessibility": "Accessibility",
   "paint": {
     "standard": "Standard coating (C2)",
     "premium": "Premium finish (C3)",
     "anti_corrosion": "Anti-corrosion (C4)",
     "marine_grade": "Marine grade (C5M)"
   },
-  "insulation": "Insulation",
   "reinforcement": {
     "none": "No reinforcement",
     "standard": "Standard reinforcement",
@@ -764,7 +720,6 @@
   "delivery_zone_international": "International (Outside Europe)",
   "paint_finish_custom": "Custom color",
   "construction_material_aluminum": "Aluminum",
-  "construction_material": "Construction Material",
   "transport_type_special": "Special transport",
   "security_systems_basic": "Basic Security Systems",
   "transport_type_crane": "With crane",
@@ -779,7 +734,6 @@
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Double Glazed",
-  "ventilation": "Ventilation",
   "it_systems": "IT systems",
   "lighting_professional": "Professional",
   "interior_layout_open": "Open space",
@@ -792,7 +746,6 @@
   "window_types_security": "Anti -burglary windows",
   "roof_modifications_skylight": "Skylight",
   "it_systems_basic": "Basic network",
-  "fire_systems": "Fire Safety Systems",
   "additional_openings_door": "Additional Door",
   "construction_material_composite": "Composite Material",
   "basic_configuration": "Basic configuration",
@@ -812,10 +765,7 @@
     "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
     "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
     "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
-    "continental": "Continental climate (extreme variations)",
-    "maritime": "Maritime climate (high humidity)",
-    "mountain": "Mountain climate (high UV, snow)",
-    "tropical": "Tropical climate (high temperatures, humidity)"
+    "continental": "Continental climate (extreme variations)"
   },
   "environments": {
     "indoor": "Indoor (halls, warehouses)",
@@ -828,10 +778,5 @@
   },
   "window_types_label": "Window Types",
   "lighting_label": "Lighting",
-  "flooring_label": "Flooring",
-  "destination": "Destination",
-  "window_type": "Window Type",
-  "additional_systems_modifications": "Additional Systems and Modifications:",
-  "painting": "Painting",
-  "assembly": "Assembly"
+  "flooring_label": "Flooring"
 }

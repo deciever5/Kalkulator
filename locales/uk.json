@@ -20,29 +20,29 @@
     "access_denied": "Доступ заборонено"
   },
   "nav": {
-    "container_configurator": "Конфігуратор контейнерів",
-    "ai_cost_estimation": "AI-оцінка вартості",
-    "technical_analysis": "Технічний аналіз",
-    "quote_generator": "Генератор пропозицій",
     "comparison_tool": "Інструмент порівняння",
     "comparison_tool_desc": "Порівняння варіантів",
     "drawing_analysis": "Аналіз креслень",
     "drawing_analysis_desc": "Аналіз технічних креслень",
     "admin_panel": "Панель адміністратора",
     "admin_panel_desc": "Управління системою",
+    "ai_cost_estimation": "AI-оцінка вартості",
+    "container_configurator": "Конфігуратор контейнерів",
+    "technical_analysis": "Технічний аналіз",
+    "quote_generator": "Генератор пропозицій",
     "send_inquiry": "Надсилати\nЗапит",
     "send_inquiry_desc": "Форма запитання ціни",
     "drawing_analysis_customer": "Аналіз\nПроєктування",
     "drawing_analysis_customer_desc": "Безкоштовний аналіз документів",
-    "bulk_pricing": "Блокова\nЦіна",
-    "bulk_pricing_desc": "Обсягові знижки для декілька контейнерів",
     "custom_sizing": "Індивідуальне\nРозміщення",
+    "bulk_pricing_desc": "Обсягові знижки для декілька контейнерів",
+    "bulk_pricing": "Блокова\nЦіна",
     "custom_sizing_desc": "Проєктування контейнерів з точними технічними характеристиками"
   },
   "window_types": {
     "standard": "Стандартний (подвійне скління)",
-    "energy_efficient": "Energooszczędne (потрійне скління)",
-    "security": "Безpieczeństwo (hartowane)",
+    "energy_efficient": "[UK_NEEDS_TRANSLATION] Energooszczędne (potrójne szyby)",
+    "security": "[UK_NEEDS_TRANSLATION] Bezpieczeństwo (hartowane)",
     "marine_grade": "Морський клас (антикорозія)",
     "panoramic": "Панорамні вікна",
     "sliding": "Ковзаючі вікна",
@@ -50,54 +50,10 @@
     "skylight": "Вікна даху"
   },
   "lighting": "Освітлення",
-  "electrical_system": {
-    "none": "Без instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody без wyposażenia)",
-    "basic": "Основні (освітлення + розетки)",
-    "standard": "Стандарт (25а, освітлення, 8 розетків)",
-    "extended": "Розширений (40а, сила, ДБЖ, надзвичайна ситуація)",
-    "industrial": "Промисловий (63а, міцність, розподільні пристрої)",
-    "it_server": "Це/сервер (UPS, охолодження, моніторинг)",
-    "smart": "Інтелектуальний (KNX, автоматизація)"
-  },
-  "plumbing_system": {
-    "none": "Без instalacji wodnej",
-    "preparation": "Przygotowanie (rury без armatury)",
-    "basic": "Базовий (мийка + відтік)",
-    "full": "Повна (підготовка ванної)",
-    "commercial": "Комерційний клас",
-    "industrial": "Промислова установка (тиск, фільтрація)",
-    "cold_water": "Установка холодної води (мийка)",
-    "hot_cold_water": "Холодна + гаряча вода (мийка, мийка)",
-    "basic_sanitary": "Основний санітарний вузол (wc + мийка)",
-    "standard_sanitary": "Стандартний вузол (wc + мийка + душ)",
-    "comfort_sanitary": "Зручний вузол (wc + мийка + салон)",
-    "premium_sanitary": "Преміум -вузол (Jacuzzi, Bidet, 2 мийки)"
-  },
-  "hvac_system": {
-    "none": "No HVAC (no опалення and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Панель управління кондиціонуванням (з фільтрацією, зволоження)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF система (multi-zone, zone control)",
-    "underfloor_heating": "Підлога нагрівання (електрична/вода)"
-  },
-  "flooring": {
-    "none": "Без підлоги (гофрований аркуш)",
-    "plywood": "Водонепроникна фанера 18 мм (стандарт)",
-    "anti_slip": "21 мм фанери не -ковзання",
-    "laminate": "Ламіновані панелі AC4/AC5",
-    "vinyl": "Водонепроникні вінілові панелі (LVT)",
-    "carpet": "2-4 мм ПВХ-покриття",
-    "epoxy": "Промислова епоксидна підлога",
-    "concrete": "Піднята підлога (серверні кімнати)",
-    "basic": "Базовий (промисловий бетон)",
-    "hardwood": "Тверда деревина (паркет)"
-  },
+  "electrical_system": "[UK_NEEDS_TRANSLATION] System elektryczny",
+  "plumbing_system": "[UK_NEEDS_TRANSLATION] System wodny",
+  "hvac_system": "[UK_NEEDS_TRANSLATION] System HVAC",
+  "flooring": "[UK_NEEDS_TRANSLATION] Podłoga",
   "configure_container": "Налаштувати контейнер",
   "simple_process_2_steps": "Простий процес - 2 кроки",
   "step_1_configuration": "Крок 1: Конфігурація",
@@ -133,34 +89,6 @@
   "working_hours": "Робочі години",
   "mon_fri": "Пн-Пт 8:00-17:00",
   "container": {
-    "types": {
-      "20ft_standard": "20ft Стандартний",
-      "40ft_standard": "40ft Стандартний",
-      "40ft_high_cube": "40 футів HC",
-      "20ft_refrigerated": "20ft Рефрижераторний",
-      "20ft_double_door": "20 футів DD",
-      "40ft_double_door": "40ft двосторонній двері",
-      "40ft_hc_double_door": "40ft HC двосторонній двері",
-      "custom_size": "Власний розмір",
-      "10ft_compact": "10 футів компакт (3 м х 2,4м)",
-      "20ft_high_cube": "Куб високого 20 футів (6 м х 2,7м)",
-      "40ft_hc": "40 футів HC",
-      "45ft_standard": "Стандарт 45 футів",
-      "custom": "Звичайний",
-      "multi_unit": "Багатоповерховий контейнер",
-      "custom_dimensions": "Спеціальні розміри контейнер",
-      "refurbished": "Відремонтований контейнер"
-    },
-    "use_cases": {
-      "office_space": "Працювальний простір",
-      "residential": "Житловий",
-      "storage": "Складський",
-      "workshop": "Виробничий",
-      "retail": "Роздрібний",
-      "restaurant": "Ресторан",
-      "medical": "Медичний",
-      "laboratory": "Лабораторний"
-    },
     "environment": {
       "indoor": "Інтер'єр",
       "outdoor": "Екстер'єр",
@@ -216,54 +144,7 @@
       "hvac_system": "HVAC система",
       "insulation_package": "Пакет ізоляції",
       "structural_reinforcement": "Структурне підсилення",
-      "delivery_zone": "Зона доставки",
-      "building_type": "Тип будівлі",
-      "dimensions": "Розміри",
-      "width": "Ширина (м)",
-      "length": "Довжина (м)",
-      "height": "Висота (м)",
-      "wall_thickness": "Товщина стін (мм)",
-      "insulation": "Ізоляція",
-      "insulation_thickness": "Товщина ізоляції (мм)",
-      "entrance": "Вхід",
-      "entrance_type": "Тип входу",
-      "windows": "Вікна",
-      "window_count": "Кількість вікон",
-      "window_size": "Розмір вікна",
-      "electrical": "Електрика",
-      "plumbing": "Сантехніка",
-      "heating": "Опалення",
-      "ventilation": "Вентиляція",
-      "ceiling": "Стеля",
-      "finish": "Оздоблення",
-      "exterior_finish": "Зовнішнє оздоблення",
-      "interior_finish": "Внутрішнє оздоблення",
-      "additional_features": "Додаткові функції",
-      "quantity": "Кількість",
-      "location": "Розташування",
-      "project_timeline": "Часові рамки проекту"
-    },
-    "placeholders": {
-      "enter_width": "Введіть ширину",
-      "enter_length": "Введіть довжину",
-      "enter_height": "Введіть висоту",
-      "select_option": "Оберіть варіант",
-      "enter_quantity": "Введіть кількість",
-      "enter_location": "Введіть розташування"
-    },
-    "options": {
-      "container_types": {
-        "office": "Офісний контейнер",
-        "residential": "Житловий контейнер",
-        "storage": "Складський контейнер",
-        "workshop": "Майстерня",
-        "restaurant": "Ресторан/кафе",
-        "medical": "Медична клініка",
-        "educational": "Класна кімната",
-        "retail": "Торгова точка",
-        "industrial": "Промисловий",
-        "agricultural": "Сільськогосподарський"
-      }
+      "delivery_zone": "Зона доставки"
     }
   },
   "ai": {
@@ -298,7 +179,7 @@
     "project_name": "Назва проекту",
     "project_location": "Місцезнаходження проекту",
     "expected_timeline": "Очікуваний термін виконання",
-    "budget_range": "Діапазон бюджету",
+    "budget_Range": "Бюджетний обсяг",
     "timeline": {
       "asap": "Якнайшвидше",
       "within_month": "У межах місяця",
@@ -362,8 +243,7 @@
     "new_inquiry": "Надсилати нову заявку",
     "error": "Помилка відправлення заявки",
     "why_professional_inquiry": "Чому надсилати професійну заявку?",
-    "preparation_tips": "Рекомендації для найкращих результатів",
-    "budget_Range": "Бюджетний обсяг"
+    "preparation_tips": "Рекомендації для найкращих результатів"
   },
   "back_to_home": "← Повернутися до головної сторінки",
   "go_to_configurator": "🔧 Перейти до конфігурації",
@@ -457,11 +337,57 @@
   "special_notes_general": "Спеціальні примітки - Загальні",
   "describe_general_requirements": "Опишіть всі додаткові вимоги, специфікації або обмеження проекту...",
   "general_requirements_placeholder": "напр. Спеціальні терміни завершення, вимоги до сертифікації, бюджетні обмеження",
+  "construction_material": "Будівельний Матеріал",
+  "insulation": {
+    "basic": "[UK_NEEDS_TRANSLATION] Podstawowa (5-10cm, styropian/wełna)",
+    "standard": "[UK_NEEDS_TRANSLATION] Standardowa (15cm, PIR/PUR)",
+    "premium": "[UK_NEEDS_TRANSLATION] Premium (20cm, wełna mineralna)",
+    "extreme": "[UK_NEEDS_TRANSLATION] Ekstremalna (30cm, aerogel/vakuum)"
+  },
+  "destination": "Призначення",
+  "window_type": "Тип Вікна",
+  "ventilation": {
+    "none": "[UK_NEEDS_TRANSLATION] Bez wentylacji (kontener szczelny)",
+    "gravity": "[UK_NEEDS_TRANSLATION] Wentylacja grawitacyjna (kraty, wywietrzniki)",
+    "wall_fans": "[UK_NEEDS_TRANSLATION] Wentylatory ścienne (wyciąg 100-150mm)",
+    "mechanical": "[UK_NEEDS_TRANSLATION] Wentylacja mechaniczna (nawiew + wyciąg)",
+    "heat_recovery": "[UK_NEEDS_TRANSLATION] Rekuperacja (odzysk ciepła, filtracja)",
+    "split_ac": "[UK_NEEDS_TRANSLATION] Klimatyzacja split (chłodzenie + grzanie)",
+    "central_ac": "[UK_NEEDS_TRANSLATION] Klimatyzacja centralna (VRV/VRF)",
+    "industrial": "[UK_NEEDS_TRANSLATION] Wentylacja przemysłowa (ATEX, chemoodporna)"
+  },
+  "roof_modifications": {
+    "none": "[UK_NEEDS_TRANSLATION] Bez modyfikacji (dach standardowy płaski)",
+    "insulation": "[UK_NEEDS_TRANSLATION] Dodatkowa izolacja dachu (styropian/PIR)",
+    "skylight": "[UK_NEEDS_TRANSLATION] Świetlik dachowy (90x60cm, otwierany)",
+    "fans": "[UK_NEEDS_TRANSLATION] Wentylatory dachowe (przemysłowe, ciche)",
+    "solar": "[UK_NEEDS_TRANSLATION] Panele słoneczne (1-3kW, autonomiczne)",
+    "antennas": "[UK_NEEDS_TRANSLATION] Anteny/maszty (GSM, radio, satelitarne)",
+    "sloped": "[UK_NEEDS_TRANSLATION] Dach skośny (odpływ wody, estetyka)",
+    "terrace": "[UK_NEEDS_TRANSLATION] Taras dachowy (dostęp, balustrada)",
+    "snow_removal": "[UK_NEEDS_TRANSLATION] System usuwania śniegu (grzałki, ślizgi)"
+  },
+  "additional_systems_modifications": "Додаткові Системи та Модифікації:",
+  "security": {
+    "basic": "[UK_NEEDS_TRANSLATION] Podstawowa (wzmocnione zamki)",
+    "standard": "[UK_NEEDS_TRANSLATION] Standardowa (przygotowanie alarmu)",
+    "advanced": "[UK_NEEDS_TRANSLATION] Zaawansowana (kamery + czujniki)",
+    "high_security": "[UK_NEEDS_TRANSLATION] Wysokie bezpieczeństwo (biometryka)"
+  },
+  "fire_systems": "Протипожежні Системи",
+  "accessibility": {
+    "standard": "[UK_NEEDS_TRANSLATION] Dostęp standardowy",
+    "ramp": "[UK_NEEDS_TRANSLATION] Podjazd dla wózków",
+    "full_ada": "[UK_NEEDS_TRANSLATION] Pełna zgodność ADA",
+    "disabled_friendly": "[UK_NEEDS_TRANSLATION] W pełni dostępny"
+  },
+  "painting": "Фарбування",
+  "assembly": "Збирання",
   "interior_layout_options": {
     "open_space": "Відкритий простір (без перегородок)",
     "partitioned": "З розділами (1-3 кімнати)",
     "built_in_furniture": "Побудовані меблі (на замовлення -будівлі)",
-    "custom_layout": "Układ nieстандартнийowy (projekt custom)",
+    "custom_layout": "[UK_NEEDS_TRANSLATION] Układ niestandardowy (projekt custom)",
     "mezzanine": "Мезонін/підлога (збільшення поверхні)"
   },
   "security_systems_options": {
@@ -485,7 +411,7 @@
     "natural_stone": "Природний/штучний камінь"
   },
   "additional_openings_options": {
-    "none": "Без dodatkowych otworów (стандартний drzwi)",
+    "none": "[UK_NEEDS_TRANSLATION] Bez dodatkowych otworów (standardowe drzwi)",
     "windows": "Додаткові вікна (1-4 штуки)",
     "doors": "Додаткові двері (послуга, надзвичайна ситуація)",
     "garage_door": "Гаражні двері (сегментарні, згорнуті)",
@@ -496,19 +422,19 @@
   },
   "fire_safety_options": {
     "none": "Без вогню -бойових систем",
-    "basic": "Базовий (gaśnica, czujka dymu)",
-    "standard": "Стандартний (system alarmowy, oświetlenie awaryjne)",
+    "basic": "[UK_NEEDS_TRANSLATION] Podstawowe (gaśnica, czujka dymu)",
+    "standard": "[UK_NEEDS_TRANSLATION] Standardowe (system alarmowy, oświetlenie awaryjne)",
     "extended": "Розширений (tryskacze, ewakuacja)",
     "full": "Повна система (газ, моніторинг)"
   },
   "accessibility_options": {
-    "standard": "Dostęp стандартнийowy (próg 15-20cm)",
+    "standard": "[UK_NEEDS_TRANSLATION] Dostęp standardowy (próg 15-20cm)",
     "ramp": "Проїжджа дорога/пандус (для інвалідних візків)",
     "lift": "Гідравлічний ліфт (доступ до інвалідів)",
     "full_ada": "Повна сумісність ADA (широкі двері, ручки)"
   },
   "paint_finish_options": {
-    "standard": "Powłoka стандартнийowa C2 (RAL 7035 - szary jasny)",
+    "standard": "[UK_NEEDS_TRANSLATION] Powłoka standardowa C2 (RAL 7035 - szary jasny)",
     "extended": "C3 Покращене покриття (краща довговічність)",
     "marine": "Морське покриття C5m (прибережне середовище)",
     "industrial": "C4 промислове покриття (агресивне середовище)",
@@ -531,13 +457,13 @@
   "assembly_options": {
     "none": "Без складання (лише доставка)",
     "basic": "Основна збірка (позиціонування, вирівнювання)",
-    "standard": "Montaż стандартнийowy (podłączenia, testy)",
+    "standard": "[UK_NEEDS_TRANSLATION] Montaż standardowy (podłączenia, testy)",
     "full": "Повна збірка (повна установка)"
   },
   "office_equipment_options": {
-    "none": "Без wyposażenia (pusty kontener)",
-    "basic": "Базовий (biurko, krzesła, szafa)",
-    "standard": "Стандартний (komplet mebli, oświetlenie)",
+    "none": "[UK_NEEDS_TRANSLATION] Bez wyposażenia (pusty kontener)",
+    "basic": "[UK_NEEDS_TRANSLATION] Podstawowe (biurko, krzesła, szafa)",
+    "standard": "[UK_NEEDS_TRANSLATION] Standardowe (komplet mebli, oświetlenie)",
     "full": "Повне (повне офісне обладнання)"
   },
   "appliances_options": {
@@ -549,7 +475,7 @@
   "it_systems_options": {
     "none": "Без ІТ -систем",
     "basic": "Базовий (internet, WiFi)",
-    "standard": "Стандартний (sieć, telefonia)",
+    "standard": "[UK_NEEDS_TRANSLATION] Standardowe (sieć, telefonia)",
     "advanced": "Розширений (серверна кімната, безпека)"
   },
   "insulation_package": "Пакет ізоляції",
@@ -575,6 +501,24 @@
   "fallback_cost_estimate": "Використовувати оцінку витрат за замовчуванням",
   "total_project_cost": "Всього вартість проекту",
   "basic_calculation_ai_unavailable": "Базовий розрахунок при відсутності послуг AI",
+  "cost_estimation": {
+    "project_estimate": "[UK_NEEDS_TRANSLATION] Szacunkowa Wycena Projektu",
+    "cost_breakdown": "[UK_NEEDS_TRANSLATION] Podział Kosztów",
+    "base_container": "[UK_NEEDS_TRANSLATION] Kontener bazowy",
+    "modifications_equipment": "[UK_NEEDS_TRANSLATION] Modyfikacje i wyposażenie",
+    "total_cost": "[UK_NEEDS_TRANSLATION] CAŁKOWITY KOSZT",
+    "important_notice": "[UK_NEEDS_TRANSLATION] Ważne",
+    "preliminary_estimate": "[UK_NEEDS_TRANSLATION] To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
+    "configuration_saved": "[UK_NEEDS_TRANSLATION] Konfiguracja zapisana pomyślnie!",
+    "estimate_title": "\"💰 Оціночна вартість проекту\"\n\nHowever, considering the requirements, a more detailed translation would be:\n\n\"💰 Оціночна вартість проекту: 📊 Вартість робіт, передбачена для виконання проекту\"\n\nOr, if you want to make it sound more professional:\n\n\"💰 Оціночна вартість проекту: 📊 Вартість робіт, передбачена для виконання робіт згідно з технічним завданням проекту\"\n\nIf you want to add a warning or a note, you can use:\n\n\"💰 Оціночна вартість проекту: 📊 Вартість робіт, передбачена для виконання робіт згідно з технічним завданням проекту. ⚠️ Зверніть увагу на можливі зміни вартості робіт під час виконання проекту.\"\n\nAnd if you want to indicate that the project is approved or completed, you can use:\n\n\"💰 Оціночна вартість проекту: 📊 Вартість робіт, передбачена",
+    "cost_breakdown_title": "\"Поділ витрат:\"\n\nor\n\"Розподіл витрат:\"\n\nBoth options are acceptable, but \"Поділ витрат:\" is more commonly used in Ukrainian business context.\n\nIf you want to make it sound more natural and professional, you can use:\n\n\"Витрати розподілені на:\"\n\nThis translation maintains the professional tone, preserves the formatting, and uses appropriate business terminology.\n\nIf you want to keep the emojis and symbols, you can use:\n\n\"Витрати розподілені на: 💰\"\nor\n\"Витрати розподілені на: ⚠️\"\nor\n\"Витрати розподілені на: ✅\"\n\nChoose the one that fits your interface best.",
+    "base_container_line": "\"Контейнер базовий:\"\n\nПісля перекладу, щоб зберегти професійний бізнесовий тон, я зроблю кілька змін:\n\n\"Контейнер базовий:\"\n\n* \"Kontener bazowy\" перекладається як \"Контейнер базовий\", але щоб зберегти професійний тон, можна використовувати термін \"Базовий контейнер\" або \"Контейнер основний\".\n* \"💰\" можна залишити так, як є, оскільки воно відноситься до грошей і вже є в інтерфейсі.\n* \"⚠️\" також можна залишити так, як є, оскільки воно відноситься до попередження і вже є в інтерфейсі.\n* \"✅\" можна залишити так, як є, оскільки воно відноситься до підтвердження і вже є в інтерфейсі.\n* Форматування з використанням колон і пунктуації зберігається",
+    "modifications_equipment_line": "\"Модифікації та обладнання:\"\n\nВ цьому полі вказуйте вартість модифікацій та обладнання контейнера. \n\nНаприклад:\n- Вартість модифікацій: 💰 10 000 грн.\n- Вартість обладнання: ⚠️ 5 000 грн.\n- Вартість додаткового обладнання: ✅ 8 000 грн.\n\nПримітка: вартість вказується у гривнях.",
+    "total_cost_line": "\"ВИСОКИЙ КОШТ ЗАГАЛЬНО:\"\n\nHere's the translation with the requirements in mind:\n\n- Maintained professional business tone\n- Kept emojis and symbols (💰, ⚠️, ✅)\n- Preserved formatting (colons, punctuation)\n- Used appropriate currency/business terminology\n- Made it sound natural in Ukrainian\n\nNote: I used \"ВИСОКИЙ\" (high) to emphasize the total cost, as it's a common way to express high costs in Ukrainian. If you want to use a more neutral term, you can use \"ЗАГАЛЬНІ ВИДАТКИ\" (total costs) instead.",
+    "important_warning": "[UK_NEEDS_TRANSLATION] ⚠️ Ważne:",
+    "preliminary_estimate_full": "Трансляція тексту з польської на українську мову для інтерфейсу оцінки вартості модифікації контейнера:\n\n\"Це попереднє оцінювання. Офіційна ціна залежить від детальної технічної документації, актуальних цін на матеріали та наявності. Для точної оцінки зверніться до нашого команди.\"\n\nПримітки:\n- Утримання професійного бізнесового тона\n- Збереження емодзі та символів (💰, ⚠️, ✅)\n- Збереження форматування (колони, пунктуація)\n- Використання відповідної валютної/бізнесової термінології\n- Збереження природності українського тексту",
+    "configuration_saved_success": "\"✅ Конфігурація збережена успішно! 💰\"\n\nHowever, considering the context of a container modification cost estimation interface, a more suitable translation could be:\n\n\"✅ Конфігурація збережена успішно! 💰 Вартість оцінена.\"\n\nOr, if you want to make it sound more natural in Ukrainian:\n\n\"✅ Конфігурація збережена успішно! 💰 Оцінка вартості виконана.\"\n\nIn the first translation, I added \"Вартість оцінена\" (Cost estimated) to make it clear that the configuration has been saved and the cost has been estimated.\n\nIn the second translation, I used \"Оцінка вартості виконана\" (Cost estimation completed) to make it sound more natural in Ukrainian."
+  },
   "materials_base_cost": "Матеріали та основна вартість",
   "labor_costs_40": "Витрати на працю (40%)",
   "contingency_10": "Резервний фонд (10%)",
@@ -630,7 +574,11 @@
     "analysis_results": "Результати аналізу",
     "analysis_complete": "Аналіз завершено",
     "analysis_failed": "Аналіз провалений",
+    "config_required": "Навантаження необхідне",
+    "config_required_text": "Для точного технічного аналізу проєктів необхідне базове налаштування контейнера. Без налаштувань аналіз буде обмежений лише основними оцінками.",
     "analysis_failed_reasons": "Допоміжні причини провалу аналізу",
+    "config_tip": "Рекомендація",
+    "config_tip_text": "Конфігуруйте свій контейнер перед аналізом малюнків, щоб отримати більш точні результати та індивідуальні пропозиції.",
     "error": "Помилка",
     "windows": "Вікна",
     "doors": "Двері",
@@ -650,11 +598,7 @@
     "tips_text": "Для найбільш точного аналізу переконайтеся, що ваші малюнки містять:",
     "tip_1": "Чіткі розміри та технічні характеристики",
     "tip_2": "Всі технічні дані видимі",
-    "tip_3": "Висока роздільна здатність (мінімум 300 DPI)",
-    "config_required": "Навантаження необхідне",
-    "config_required_text": "Для точного технічного аналізу проєктів необхідне базове налаштування контейнера. Без налаштувань аналіз буде обмежений лише основними оцінками.",
-    "config_tip": "Рекомендація",
-    "config_tip_text": "Конфігуруйте свій контейнер перед аналізом малюнків, щоб отримати більш точні результати та індивідуальні пропозиції."
+    "tip_3": "Висока роздільна здатність (мінімум 300 DPI)"
   },
   "admin": {
     "access_required": "Доступ адміністратора потрібен",
@@ -682,7 +626,6 @@
     "industrial": "Промисловий рівень",
     "marine_grade": "Морський рівень (стійкість до морської солі)"
   },
-  "roof_modifications": "Модифікації Даху",
   "electrical": {
     "basic": "Базовий (освітлення + роз'єми)",
     "standard": "Стандартний (15А обмотка)",
@@ -702,7 +645,6 @@
     "central": "Центральна система повітряного кондиціонування",
     "heat_pump": "Система теплового насоса"
   },
-  "security": "Безпека",
   "cladding": {
     "none": "Без зовнішньої обшивки",
     "metal": "Металева обшивка",
@@ -722,14 +664,12 @@
     "sprinkler": "Система гасіння вогню",
     "full_system": "Повна система гасіння вогню"
   },
-  "accessibility": "Доступність",
   "paint": {
     "standard": "Стандартне покриття (C2)",
     "premium": "Преміум -покриття (C3)",
     "anti_corrosion": "Антикорозія (С4)",
     "marine_grade": "Морський клас (C5M)"
   },
-  "insulation": "Ізоляція",
   "reinforcement": {
     "none": "Немає підкріплення",
     "standard": "Стандартне підкріплення",
@@ -780,7 +720,6 @@
   "delivery_zone_international": "Міжнародний",
   "paint_finish_custom": "Індивідуальний колір",
   "construction_material_aluminum": "Алюмінієвий матеріал",
-  "construction_material": "Будівельний Матеріал",
   "transport_type_special": "Спеціальний транспорт",
   "security_systems_basic": "Базова",
   "transport_type_crane": "З крана",
@@ -795,7 +734,6 @@
   "advanced_comments": "Коментарі щодо додаткових модифікацій",
   "delivery_zone_regional": "Регіональний (200км)",
   "window_types_double": "Подвійне скління",
-  "ventilation": "Вентиляція",
   "it_systems": "Системи IT",
   "lighting_professional": "Професійне освітлення",
   "interior_layout_open": "Відкритий простір",
@@ -808,7 +746,6 @@
   "window_types_security": "Безпекові вікна",
   "roof_modifications_skylight": "Скайлайт",
   "it_systems_basic": "Базова мережа",
-  "fire_systems": "Протипожежні Системи",
   "additional_openings_door": "Додаткова дверцята",
   "construction_material_composite": "Складний матеріал будівництва",
   "basic_configuration": "Основна конфігурація",
@@ -817,17 +754,14 @@
   "number_of_windows": "Кількість вікон",
   "insulation_label": "Утеплення",
   "finish_levels": {
-    "shell": "Сирий стан (утеплення + OSB пластина)",
-    "specialist": "Спеціаліст (медичні/лабораторні стандарти)",
     "basic": "Без закінчення (технічний контейнер, скелет)",
+    "shell": "Сирий стан (утеплення + OSB пластина)",
     "standard": "Основна (ізоляція + технічна обробка)",
     "comfort": "Комфортно (преміум ізоляція + офіс)",
-    "luxury": "Розкішний (найвищий клас + готель)"
+    "luxury": "Розкішний (найвищий клас + готель)",
+    "specialist": "Спеціаліст (медичні/лабораторні стандарти)"
   },
   "climate_zones": {
-    "maritime": "Морський клімат (висока вологість)",
-    "mountain": "Гірський клімат (високий УФ, сніг)",
-    "tropical": "Тропічний клімат (висока температура, вологість)",
     "northern_europe": "Північна Європа (Скандинавія, від -30 ° C до +25 ° C)",
     "central_europe": "Центральна Європа (Польща, Німеччина, від -20 ° C до +35 ° C)",
     "southern_europe": "Південна Європа (Іспанія, Італія, від -5 ° C до +45 ° C)",
@@ -844,20 +778,5 @@
   },
   "window_types_label": "Типи вікон",
   "lighting_label": "Освітлення",
-  "flooring_label": "Підлоги",
-  "cost_estimation": {
-    "estimate_title": "\"💰 Оціночна вартість проекту\"\n\nHowever, considering the requirements, a more detailed translation would be:\n\n\"💰 Оціночна вартість проекту: 📊 Вартість робіт, передбачена для виконання проекту\"\n\nOr, if you want to make it sound more professional:\n\n\"💰 Оціночна вартість проекту: 📊 Вартість робіт, передбачена для виконання робіт згідно з технічним завданням проекту\"\n\nIf you want to add a warning or a note, you can use:\n\n\"💰 Оціночна вартість проекту: 📊 Вартість робіт, передбачена для виконання робіт згідно з технічним завданням проекту. ⚠️ Зверніть увагу на можливі зміни вартості робіт під час виконання проекту.\"\n\nAnd if you want to indicate that the project is approved or completed, you can use:\n\n\"💰 Оціночна вартість проекту: 📊 Вартість робіт, передбачена",
-    "cost_breakdown_title": "\"Поділ витрат:\"\n\nor\n\"Розподіл витрат:\"\n\nBoth options are acceptable, but \"Поділ витрат:\" is more commonly used in Ukrainian business context.\n\nIf you want to make it sound more natural and professional, you can use:\n\n\"Витрати розподілені на:\"\n\nThis translation maintains the professional tone, preserves the formatting, and uses appropriate business terminology.\n\nIf you want to keep the emojis and symbols, you can use:\n\n\"Витрати розподілені на: 💰\"\nor\n\"Витрати розподілені на: ⚠️\"\nor\n\"Витрати розподілені на: ✅\"\n\nChoose the one that fits your interface best.",
-    "base_container_line": "\"Контейнер базовий:\"\n\nПісля перекладу, щоб зберегти професійний бізнесовий тон, я зроблю кілька змін:\n\n\"Контейнер базовий:\"\n\n* \"Kontener bazowy\" перекладається як \"Контейнер базовий\", але щоб зберегти професійний тон, можна використовувати термін \"Базовий контейнер\" або \"Контейнер основний\".\n* \"💰\" можна залишити так, як є, оскільки воно відноситься до грошей і вже є в інтерфейсі.\n* \"⚠️\" також можна залишити так, як є, оскільки воно відноситься до попередження і вже є в інтерфейсі.\n* \"✅\" можна залишити так, як є, оскільки воно відноситься до підтвердження і вже є в інтерфейсі.\n* Форматування з використанням колон і пунктуації зберігається",
-    "modifications_equipment_line": "\"Модифікації та обладнання:\"\n\nВ цьому полі вказуйте вартість модифікацій та обладнання контейнера. \n\nНаприклад:\n- Вартість модифікацій: 💰 10 000 грн.\n- Вартість обладнання: ⚠️ 5 000 грн.\n- Вартість додаткового обладнання: ✅ 8 000 грн.\n\nПримітка: вартість вказується у гривнях.",
-    "total_cost_line": "\"ВИСОКИЙ КОШТ ЗАГАЛЬНО:\"\n\nHere's the translation with the requirements in mind:\n\n- Maintained professional business tone\n- Kept emojis and symbols (💰, ⚠️, ✅)\n- Preserved formatting (colons, punctuation)\n- Used appropriate currency/business terminology\n- Made it sound natural in Ukrainian\n\nNote: I used \"ВИСОКИЙ\" (high) to emphasize the total cost, as it's a common way to express high costs in Ukrainian. If you want to use a more neutral term, you can use \"ЗАГАЛЬНІ ВИДАТКИ\" (total costs) instead.",
-    "important_warning": "\"⚠️ Важливо:\"\n\nI've translated the Polish text to Ukrainian, maintaining the professional business tone, keeping the emojis and symbols, preserving the formatting, and using appropriate currency/business terminology.\n\nHere's a breakdown of the translation:\n\n- \"⚠️\" is a warning symbol, which remains the same in Ukrainian.\n- \"Ważne\" translates to \"Важливо\", which means \"important\" or \"urgent\".\n- The colon (:) remains the same, as it's a formatting element.\n- The exclamation mark (!) also remains the same, as it's a punctuation mark.\n\nThe resulting translation should sound natural in Ukrainian and maintain the original message's tone and intent.",
-    "preliminary_estimate_full": "Трансляція тексту з польської на українську мову для інтерфейсу оцінки вартості модифікації контейнера:\n\n\"Це попереднє оцінювання. Офіційна ціна залежить від детальної технічної документації, актуальних цін на матеріали та наявності. Для точної оцінки зверніться до нашого команди.\"\n\nПримітки:\n- Утримання професійного бізнесового тона\n- Збереження емодзі та символів (💰, ⚠️, ✅)\n- Збереження форматування (колони, пунктуація)\n- Використання відповідної валютної/бізнесової термінології\n- Збереження природності українського тексту",
-    "configuration_saved_success": "\"✅ Конфігурація збережена успішно! 💰\"\n\nHowever, considering the context of a container modification cost estimation interface, a more suitable translation could be:\n\n\"✅ Конфігурація збережена успішно! 💰 Вартість оцінена.\"\n\nOr, if you want to make it sound more natural in Ukrainian:\n\n\"✅ Конфігурація збережена успішно! 💰 Оцінка вартості виконана.\"\n\nIn the first translation, I added \"Вартість оцінена\" (Cost estimated) to make it clear that the configuration has been saved and the cost has been estimated.\n\nIn the second translation, I used \"Оцінка вартості виконана\" (Cost estimation completed) to make it sound more natural in Ukrainian."
-  },
-  "destination": "Призначення",
-  "window_type": "Тип Вікна",
-  "additional_systems_modifications": "Додаткові Системи та Модифікації:",
-  "painting": "Фарбування",
-  "assembly": "Збирання"
+  "flooring_label": "Підлоги"
 }

@@ -16,8 +16,8 @@
     "back_to_home": "← Terug naar startpagina",
     "go_to_ai_estimate": "🤖 Naar AI Schatting →",
     "go_to_configurator": "🔧 Naar Configurator",
-    "access_denied": "Toegang Geweigerd",
-    "get_ai_estimate": "Krijg AI Schatting"
+    "get_ai_estimate": "Krijg AI Schatting",
+    "access_denied": "Toegang Geweigerd"
   },
   "nav": {
     "comparison_tool": "Vergelijkings\nTool",
@@ -42,7 +42,7 @@
   "window_types": {
     "standard": "Standaard (dubbele beglazing)",
     "energy_efficient": "Energie -redding (drievoudige ramen)",
-    "security": "Zonderpieczeństwo (hartowane)",
+    "security": "[NL_NEEDS_TRANSLATION] Bezpieczeństwo (hartowane)",
     "marine_grade": "Zeeklasse (anti -corrosie)",
     "panoramic": "Panoramische ramen",
     "sliding": "Glijdende ramen",
@@ -50,54 +50,10 @@
     "skylight": "Dakramen"
   },
   "lighting": "Verlichting",
-  "electrical_system": {
-    "none": "Zonder elektrische installatie",
-    "preparation": "Przygotowanie (bedrading zonder uitrusting)",
-    "basic": "Basic (verlichting + stopcontacten)",
-    "standard": "Standaard (25a, verlichting, 8 stopcontacten)",
-    "extended": "Uitgebreid (40a, kracht, ups, noodsituatie)",
-    "industrial": "Industrial (63a, sterkte, schakel)",
-    "it_server": "It/server (UPS, koeling, monitoring)",
-    "smart": "Intelligent (KNX, Automation)"
-  },
-  "plumbing_system": {
-    "none": "Zonder waterinstallatie",
-    "preparation": "Przygotowanie (leidingen zonder fittingen)",
-    "basic": "BASIC (SUCK + uitstroom)",
-    "full": "Vol (Badkamer bereiden)",
-    "commercial": "Commerciële klas",
-    "industrial": "Industriële installatie (druk, filtratie)",
-    "cold_water": "Installatie van koud water (gootsteen)",
-    "hot_cold_water": "Koud + warm water (wastafel, gootsteen)",
-    "basic_sanitary": "Basic sanitair knooppunt (wc + gootsteen)",
-    "standard_sanitary": "Standaardknooppunt (wc + gootsteen + douche)",
-    "comfort_sanitary": "Comfortabele knooppunt (wc + gootsteen + cabine)",
-    "premium_sanitary": "Premium Node (Jacuzzi, Bidet, 2 Sinks)"
-  },
-  "hvac_system": {
-    "none": "No HVAC (no verwarming and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Airconditioning bedieningspaneel (met filtratie, hydrateren)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF systeem (multi-zone, zone control)",
-    "underfloor_heating": "Underfloor heating (electric/water)"
-  },
-  "flooring": {
-    "none": "Zonder een vloer (gegolfd vel)",
-    "plywood": "Waterdicht multiplex 18 mm (standaard)",
-    "anti_slip": "21 mm niet -slip multiplex",
-    "laminate": "AC4/AC5 gelamineerde panelen",
-    "vinyl": "Waterdichte vinylpanelen (LVT)",
-    "carpet": "2-4 mm PVC vloerbedekking",
-    "epoxy": "Industriële epoxyvloer",
-    "concrete": "Verhoogde vloer (serverkamers)",
-    "basic": "Basic (industrieel beton)",
-    "hardwood": "Hard hout (parket)"
-  },
+  "electrical_system": "[NL_NEEDS_TRANSLATION] System elektryczny",
+  "plumbing_system": "[NL_NEEDS_TRANSLATION] System wodny",
+  "hvac_system": "[NL_NEEDS_TRANSLATION] System HVAC",
+  "flooring": "[NL_NEEDS_TRANSLATION] Podłoga",
   "configure_container": "Configureer uw container",
   "simple_process_2_steps": "Eenvoudig proces in 2 stappen",
   "step_1_configuration": "Stap 1: Configuratie",
@@ -133,34 +89,6 @@
   "working_hours": "Werkuren",
   "mon_fri": "Ma-Vr 8:00-17:00",
   "container": {
-    "types": {
-      "20ft_standard": "20ft standaard",
-      "40ft_standard": "40ft standaard",
-      "40ft_high_cube": "40ft HC",
-      "20ft_refrigerated": "20ft Gekoeld",
-      "20ft_double_door": "20ft DD",
-      "40ft_double_door": "40ft DD",
-      "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Aangepaste Maat",
-      "10ft_compact": "10ft compact (3m x 2,4 m)",
-      "20ft_high_cube": "20ft hoge kubus (6m x 2,7 m)",
-      "45ft_standard": "45ft standaard",
-      "custom": "Aangepast",
-      "multi_unit": "Multi -dodun container",
-      "custom_dimensions": "Een container met niet -standaardafmetingen",
-      "refurbished": "Vernieuwde container",
-      "40ft_hc": "40ft HC"
-    },
-    "use_cases": {
-      "office_space": "Kantoorruimte",
-      "residential": "Woonruimte",
-      "storage": "Opslag",
-      "workshop": "Werkplaats",
-      "retail": "Detailhandel",
-      "restaurant": "Restaurant",
-      "medical": "Medisch",
-      "laboratory": "Laboratorium"
-    },
     "environment": {
       "indoor": "Binnen",
       "outdoor": "Buiten",
@@ -251,7 +179,7 @@
     "project_name": "Projectnaam",
     "project_location": "Projectlocatie",
     "expected_timeline": "Verwachte Tijdlijn",
-    "budget_range": "Budgetbereik",
+    "budget_Range": "Budgetomvang",
     "timeline": {
       "asap": "Zo snel mogelijk",
       "within_month": "Binnen een maand",
@@ -315,8 +243,7 @@
     "new_inquiry": "Nieuwe Aanvraag Verzenden",
     "error": "Fout bij het verzenden van aanvraag",
     "why_professional_inquiry": "Waarom een Professionele Aanvraag Indienen?",
-    "preparation_tips": "Tips voor Beste Resultaten",
-    "budget_Range": "Budgetomvang"
+    "preparation_tips": "Tips voor Beste Resultaten"
   },
   "back_to_home": "← Terug naar Home",
   "go_to_configurator": "🔧 Ga naar Configurator",
@@ -410,6 +337,52 @@
   "special_notes_general": "Speciale opmerkingen - Algemeen",
   "describe_general_requirements": "Beschrijf alle aanvullende vereisten, specificaties of projectbeperkingen...",
   "general_requirements_placeholder": "bijv. Speciale voltooiingsdeadlines, certificeringsvereisten, budgetbeperkingen",
+  "construction_material": "Constructiemateriaal",
+  "insulation": {
+    "basic": "[NL_NEEDS_TRANSLATION] Podstawowa (5-10cm, styropian/wełna)",
+    "standard": "[NL_NEEDS_TRANSLATION] Standardowa (15cm, PIR/PUR)",
+    "premium": "[NL_NEEDS_TRANSLATION] Premium (20cm, wełna mineralna)",
+    "extreme": "[NL_NEEDS_TRANSLATION] Ekstremalna (30cm, aerogel/vakuum)"
+  },
+  "destination": "Bestemming",
+  "window_type": "Raamtype",
+  "ventilation": {
+    "none": "[NL_NEEDS_TRANSLATION] Bez wentylacji (kontener szczelny)",
+    "gravity": "[NL_NEEDS_TRANSLATION] Wentylacja grawitacyjna (kraty, wywietrzniki)",
+    "wall_fans": "[NL_NEEDS_TRANSLATION] Wentylatory ścienne (wyciąg 100-150mm)",
+    "mechanical": "[NL_NEEDS_TRANSLATION] Wentylacja mechaniczna (nawiew + wyciąg)",
+    "heat_recovery": "[NL_NEEDS_TRANSLATION] Rekuperacja (odzysk ciepła, filtracja)",
+    "split_ac": "[NL_NEEDS_TRANSLATION] Klimatyzacja split (chłodzenie + grzanie)",
+    "central_ac": "[NL_NEEDS_TRANSLATION] Klimatyzacja centralna (VRV/VRF)",
+    "industrial": "[NL_NEEDS_TRANSLATION] Wentylacja przemysłowa (ATEX, chemoodporna)"
+  },
+  "roof_modifications": {
+    "none": "[NL_NEEDS_TRANSLATION] Bez modyfikacji (dach standardowy płaski)",
+    "insulation": "[NL_NEEDS_TRANSLATION] Dodatkowa izolacja dachu (styropian/PIR)",
+    "skylight": "[NL_NEEDS_TRANSLATION] Świetlik dachowy (90x60cm, otwierany)",
+    "fans": "[NL_NEEDS_TRANSLATION] Wentylatory dachowe (przemysłowe, ciche)",
+    "solar": "[NL_NEEDS_TRANSLATION] Panele słoneczne (1-3kW, autonomiczne)",
+    "antennas": "[NL_NEEDS_TRANSLATION] Anteny/maszty (GSM, radio, satelitarne)",
+    "sloped": "[NL_NEEDS_TRANSLATION] Dach skośny (odpływ wody, estetyka)",
+    "terrace": "[NL_NEEDS_TRANSLATION] Taras dachowy (dostęp, balustrada)",
+    "snow_removal": "[NL_NEEDS_TRANSLATION] System usuwania śniegu (grzałki, ślizgi)"
+  },
+  "additional_systems_modifications": "Aanvullende Systemen en Modificaties:",
+  "security": {
+    "basic": "[NL_NEEDS_TRANSLATION] Podstawowa (wzmocnione zamki)",
+    "standard": "[NL_NEEDS_TRANSLATION] Standardowa (przygotowanie alarmu)",
+    "advanced": "[NL_NEEDS_TRANSLATION] Zaawansowana (kamery + czujniki)",
+    "high_security": "[NL_NEEDS_TRANSLATION] Wysokie bezpieczeństwo (biometryka)"
+  },
+  "fire_systems": "Brandbeveiligingssystemen",
+  "accessibility": {
+    "standard": "[NL_NEEDS_TRANSLATION] Dostęp standardowy",
+    "ramp": "[NL_NEEDS_TRANSLATION] Podjazd dla wózków",
+    "full_ada": "[NL_NEEDS_TRANSLATION] Pełna zgodność ADA",
+    "disabled_friendly": "[NL_NEEDS_TRANSLATION] W pełni dostępny"
+  },
+  "painting": "Schilderwerk",
+  "assembly": "Montage",
   "interior_layout_options": {
     "open_space": "Open ruimte (geen scheidingswanden)",
     "partitioned": "Verdeeld (1-3 kamers)",
@@ -528,6 +501,24 @@
   "fallback_cost_estimate": "Fallback Kostenschatting",
   "total_project_cost": "Totale projectkosten",
   "basic_calculation_ai_unavailable": "Basis berekening wanneer AI services niet beschikbaar zijn",
+  "cost_estimation": {
+    "project_estimate": "[NL_NEEDS_TRANSLATION] Szacunkowa Wycena Projektu",
+    "cost_breakdown": "[NL_NEEDS_TRANSLATION] Podział Kosztów",
+    "base_container": "[NL_NEEDS_TRANSLATION] Kontener bazowy",
+    "modifications_equipment": "[NL_NEEDS_TRANSLATION] Modyfikacje i wyposażenie",
+    "total_cost": "[NL_NEEDS_TRANSLATION] CAŁKOWITY KOSZT",
+    "important_notice": "[NL_NEEDS_TRANSLATION] Ważne",
+    "preliminary_estimate": "[NL_NEEDS_TRANSLATION] To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
+    "configuration_saved": "[NL_NEEDS_TRANSLATION] Konfiguracja zapisana pomyślnie!",
+    "estimate_title": "\"💰 Schatting van de Projectkosten\"\n\nIk heb de volgende aanpassingen gedaan om de vertaling professioneel en natuurlijk te laten klinken:\n\n- Gebruik van het woord \"Schatting\" in plaats van \"Wycena\" om de betekenis van \"schatting\" of \"schatting van de kosten\" over te brengen.\n- Gebruik van het woord \"Projectkosten\" in plaats van \"Projektu\" om de context van de schatting duidelijk te maken.\n- Gebruik van het geldteken (€) in plaats van de emoji 💰, maar ik heb de emoji behouden om de aandacht te vestigen op de kosten.\n- Gebruik van de juiste spatie en hoofdletters om de tekst leesbaar en professioneel te maken.\n\nAls alternatief kan je ook \"💰 Schatting van de Project",
+    "cost_breakdown_title": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"Kostenverdeling:\"\n\nIk heb de volgende aanpassingen gemaakt om de eisen te voldoen:\n\n- Ik heb de tekst vertaald in een professionele zakelijke toon.\n- Ik heb de emojis en symbolen (💰, ⚠️, ✅) behouden.\n- Ik heb de indeling en de puntjes behouden.\n- Ik heb de juiste valuta- en zakelijke termen gebruikt.\n- De vertaling klinkt natuurlijk in het Nederlands.\n\nAls je nog meer tekst wilt vertalen, laat het me weten!",
+    "base_container_line": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"Container basis:\"\n\nIk heb de vertaling gemaakt met in acht genomen van de eisen:\n\n- Professionele zakelijke toon behouden\n- Emoticon's en symbolen (💰, ⚠️, ✅) behouden\n- Formattings behouden (kolons, puntjes)\n- Geschikte valuta/zakelijke terminologie gebruiken\n- Het klinkt natuurlijk in het Nederlands\n\nAls je meer tekst wilt vertalen, laat het me weten!",
+    "modifications_equipment_line": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"Modyfikacje en inrichting:\"\n\nHieronder een suggestie voor een meer volledige vertaling, aangepast aan de eisen:\n\n\"Modyfikaties en inrichting:\"\n\n- Kosten voor modificaties en inrichting: 💰\n- Aandachtspunten voor modificaties en inrichting: ⚠️\n- Goedgekeurde modificaties en inrichting: ✅\n\nIk heb de vertaling zo gemaakt dat het klinkt als een professioneel bedrijfsbericht. Ik heb de symbolen en emojis behouden en de opmaak (kolons en puntjes) behouden. Ik heb ook geprobeerd om het te laten klinken als een natuurlijke vertaling in het Nederlands.",
+    "total_cost_line": "De vertaling van het Pools tekst naar het Nederlands is:\n\n                \"TOTAAL KOSTEN:\"\n\nIk heb de volgende aanpassingen gemaakt om de vertaling professioneel en natuurlijk te laten klinken:\n\n- Gebruik van het woord \"TOTAAL\" in plaats van \"CAŁKOWITY\" om de betekenis van \"geheel\" of \"volledig\" over te brengen.\n- Gebruik van het woord \"KOSTEN\" in plaats van \"KOSZT\" om de betekenis van \"kosten\" over te brengen.\n- Geen aanpassingen aan de symbolen en emojis (💰, ⚠️, ✅) zijn nodig, aangezien deze al geschikt zijn voor een zakelijke context.\n\nDe vertaling behoudt de professionele toon, de juiste taalgebruik en de natuurlijke kl",
+    "important_warning": "De vertaling van het Pools tekst naar het Nederlands is:\n\n                ⚠️ Aandachtspunt:\n\nIk heb de eisen in acht genomen:\n\n- Professionele zakelijke toon behouden\n- Emoticon's en symbolen (💰, ⚠️, ✅) behouden\n- Formattings behouden (kolons, puntjes)\n- Geschikte valuta/zakelijke terminologie gebruiken\n- Het klinkt natuurlijk in het Nederlands\n\nDe vertaling van de tekst is dus:\n\n                ⚠️ Aandachtspunt:",
+    "preliminary_estimate_full": "De vertaling van het Pools naar het Nederlands is als volgt:\n\n\"Deze is een voorlopige schatting. De eindprijs is afhankelijk van de specifieke specificaties, de huidige materialenprijzen en de beschikbaarheid. Voor een nauwkeurige offerte neem contact op met ons team. 💰⚠️✅\"\n\nIk heb de vertaling zo gemaakt dat het klinkt alsof het van een professioneel bedrijf komt. Ik heb de symbolen en emojis behouden en de zinnen opgebouwd om het natuurlijk te laten klinken in het Nederlands.",
+    "configuration_saved_success": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"✅ Configuratie opgeslagen met succes!\"\n\nIk heb de volgende aanpassingen gemaakt om de eisen te voldoen:\n\n- Ik heb de taal gebruikt die gebruikelijk is in een zakelijke omgeving.\n- Ik heb de emoji's en symbolen behouden.\n- Ik heb de indeling en de spatie behouden.\n- Ik heb de juiste zakelijke termen gebruikt.\n- De vertaling klinkt natuurlijk in het Nederlands.\n\nAls alternatief kan je ook \"✅ Configuratie opgeslagen met succes! Kosten zijn nu berekend.\" gebruiken, als je wilt dat de gebruiker weet dat de kosten nu zijn berekend."
+  },
   "materials_base_cost": "Materialen & Basis Kosten",
   "labor_costs_40": "Arbeidskosten (40%)",
   "contingency_10": "Onvoorzien (10%)",
@@ -557,7 +548,7 @@
     "project_context": "Projectcontext",
     "project_location": "Projectlocatie",
     "project_name": "Projectnaam",
-    "project_name_placeholder": "Bijv. Container Office - Poznań",
+    "project_name_placeholder": "[NL_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
     "file_upload": "Tekeningen verzenden",
     "upload_drawings": "Upload technische tekeningen",
     "file_formats_help": "We ondersteunen PDF-, DWG-, JPG- en PNG -bestanden. We raden het PDF -formaat aan voor de beste analyse.",
@@ -567,18 +558,14 @@
     "description": "Upload uw technische tekeningen voor AI-gestuurde analyse en kostenschatting",
     "info_title": "Hoe het werkt",
     "info_text": "Stuur uw technische tekeningen en ons AI -systeem zal ze analyseren en de waardering aanpassen aan de werkelijke vereisten van het project. Dit is een gratis service voor alle klanten.",
-    "config_required": "Configuratie Vereist",
-    "config_required_text": "Voor een grondige analyse van technische tekeningen is basiscontainerconfiguratie vereist. Zonder configuratie is de analyse beperkt tot basisschattingen.",
     "no_config": "Er is geen containerconfiguratie gevonden. Configureer eerst uw container.",
     "config_found": "Opgeslagen configuratie gevonden",
     "current_config": "Huidige Configuratie",
     "project_context": "Projectcontext",
     "project_name": "Projectnaam",
-    "project_name_placeholder": "Bijv. Container Office - Poznań",
+    "project_name_placeholder": "[NL_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
     "project_location": "Projectlocatie",
     "file_upload": "Bestandsoverdracht",
-    "config_tip": "Tip",
-    "config_tip_text": "Configureer uw container voordat u tekeningen analyseert om nauwkeurigere resultaten en aangepaste waarderingen te krijgen.",
     "upload_drawings": "Upload technische tekeningen",
     "file_formats_help": "We ondersteunen PDF, JPG, PNG -bestanden. We raden het PDF -formaat aan voor de beste analyse.",
     "files_uploaded": "Bestanden zijn verzonden",
@@ -586,6 +573,13 @@
     "analyzing": "Tekeningen analyseren ...",
     "analysis_results": "Analyse Resultaten",
     "analysis_complete": "Analyse Voltooid",
+    "analysis_failed": "Analyse Mislukt",
+    "config_required": "Configuratie Vereist",
+    "config_required_text": "Voor een grondige analyse van technische tekeningen is basiscontainerconfiguratie vereist. Zonder configuratie is de analyse beperkt tot basisschattingen.",
+    "analysis_failed_reasons": "Mogelijke oorzaken van analyse mislukking",
+    "config_tip": "Tip",
+    "config_tip_text": "Configureer uw container voordat u tekeningen analyseert om nauwkeurigere resultaten en aangepaste waarderingen te krijgen.",
+    "error": "Fout tijdens analyse",
     "windows": "Ramen",
     "doors": "Deuren",
     "electrical": "Elektrisch Systeem",
@@ -595,9 +589,6 @@
     "updated_estimate": "Bijgewerkte Schatting",
     "base_estimate": "Basis Schatting",
     "adjusted_estimate": "Aangepaste Schatting",
-    "analysis_failed": "Analyse Mislukt",
-    "analysis_failed_reasons": "Mogelijke oorzaken van analyse mislukking",
-    "error": "Fout tijdens analyse",
     "next_steps": "Volgende Stappen",
     "get_detailed_quote": "Krijg Gedetailleerde Offerte",
     "refine_config": "Verfijn Configuratie",
@@ -635,7 +626,6 @@
     "industrial": "Industriële kwaliteit",
     "marine_grade": "Maritieme kwaliteit (zoutbestendig)"
   },
-  "roof_modifications": "Dakmodificaties",
   "electrical": {
     "basic": "Basis (verlichting + stopcontacten)",
     "standard": "Standaard (Circuit 15a)",
@@ -655,7 +645,6 @@
     "central": "Centrale airconditioning",
     "heat_pump": "Warmtepomp"
   },
-  "security": "Beveiliging",
   "cladding": {
     "none": "Geen buitenbekleding",
     "metal": "Metalen gevelbekleding",
@@ -675,14 +664,12 @@
     "sprinkler": "Sprinkler systeem",
     "full_system": "Volledig blussysteem"
   },
-  "accessibility": "Toegankelijkheid",
   "paint": {
     "standard": "Standaardcoating (C2)",
     "premium": "Premium afwerking (C3)",
     "anti_corrosion": "Anti-corrosie (C4)",
     "marine_grade": "Maritieme kwaliteit (C5M)"
   },
-  "insulation": "Isolatie",
   "reinforcement": {
     "none": "Geen versterking",
     "standard": "Standaardversterking",
@@ -733,7 +720,6 @@
   "delivery_zone_international": "Internationale",
   "paint_finish_custom": "Custom Color",
   "construction_material_aluminum": "Aluminum",
-  "construction_material": "Constructiemateriaal",
   "transport_type_special": "Speciaal transport",
   "security_systems_basic": "Fundamenteel",
   "transport_type_crane": "Met kraan",
@@ -748,7 +734,6 @@
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dubbel geglazuurd",
-  "ventilation": "Ventilatie",
   "it_systems": "IT Systems",
   "lighting_professional": "Professioneel",
   "interior_layout_open": "Open Space",
@@ -761,7 +746,6 @@
   "window_types_security": "Beveiligingsvensters",
   "roof_modifications_skylight": "Dakraam",
   "it_systems_basic": "Basisnetwerk",
-  "fire_systems": "Brandbeveiligingssystemen",
   "additional_openings_door": "Extra deur",
   "construction_material_composite": "Composite",
   "basic_configuration": "Basisconfiguratie",
@@ -770,17 +754,14 @@
   "number_of_windows": "Aantal ramen",
   "insulation_label": "Isolatie",
   "finish_levels": {
-    "shell": "Raw State (isolatie + OSB -plaat)",
-    "specialist": "Specialist (medische/laboratoriumstandaarden)",
     "basic": "Zonder af te maken (technische container, skelet)",
+    "shell": "Raw State (isolatie + OSB -plaat)",
     "standard": "Basic (isolatie + technische afwerking)",
     "comfort": "Comfortabel (premium isolatie + kantoorafwerking)",
-    "luxury": "Luxe (hoogste klasse + hotelafwerking)"
+    "luxury": "Luxe (hoogste klasse + hotelafwerking)",
+    "specialist": "Specialist (medische/laboratoriumstandaarden)"
   },
   "climate_zones": {
-    "maritime": "Zeeklimaat (hoge luchtvochtigheid)",
-    "mountain": "Bergklimaat (hoge UV, sneeuw)",
-    "tropical": "Tropisch klimaat (hoge temperaturen, vochtigheid)",
     "northern_europe": "Noord -Europa (Scandinavië, -30 ° C tot +25 ° C)",
     "central_europe": "Midden -Europa (Polen, Duitsland, -20 ° C tot +35 ° C)",
     "southern_europe": "Zuid -Europa (Spanje, Italië, -5 ° C tot +45 ° C)",
@@ -797,20 +778,5 @@
   },
   "window_types_label": "Raamtypen",
   "lighting_label": "Verlichting",
-  "flooring_label": "Vloeren",
-  "cost_estimation": {
-    "estimate_title": "\"💰 Schatting van de Projectkosten\"\n\nIk heb de volgende aanpassingen gedaan om de vertaling professioneel en natuurlijk te laten klinken:\n\n- Gebruik van het woord \"Schatting\" in plaats van \"Wycena\" om de betekenis van \"schatting\" of \"schatting van de kosten\" over te brengen.\n- Gebruik van het woord \"Projectkosten\" in plaats van \"Projektu\" om de context van de schatting duidelijk te maken.\n- Gebruik van het geldteken (€) in plaats van de emoji 💰, maar ik heb de emoji behouden om de aandacht te vestigen op de kosten.\n- Gebruik van de juiste spatie en hoofdletters om de tekst leesbaar en professioneel te maken.\n\nAls alternatief kan je ook \"💰 Schatting van de Project",
-    "cost_breakdown_title": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"Kostenverdeling:\"\n\nIk heb de volgende aanpassingen gemaakt om de eisen te voldoen:\n\n- Ik heb de tekst vertaald in een professionele zakelijke toon.\n- Ik heb de emojis en symbolen (💰, ⚠️, ✅) behouden.\n- Ik heb de indeling en de puntjes behouden.\n- Ik heb de juiste valuta- en zakelijke termen gebruikt.\n- De vertaling klinkt natuurlijk in het Nederlands.\n\nAls je nog meer tekst wilt vertalen, laat het me weten!",
-    "base_container_line": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"Container basis:\"\n\nIk heb de vertaling gemaakt met in acht genomen van de eisen:\n\n- Professionele zakelijke toon behouden\n- Emoticon's en symbolen (💰, ⚠️, ✅) behouden\n- Formattings behouden (kolons, puntjes)\n- Geschikte valuta/zakelijke terminologie gebruiken\n- Het klinkt natuurlijk in het Nederlands\n\nAls je meer tekst wilt vertalen, laat het me weten!",
-    "modifications_equipment_line": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"Modyfikacje en inrichting:\"\n\nHieronder een suggestie voor een meer volledige vertaling, aangepast aan de eisen:\n\n\"Modyfikaties en inrichting:\"\n\n- Kosten voor modificaties en inrichting: 💰\n- Aandachtspunten voor modificaties en inrichting: ⚠️\n- Goedgekeurde modificaties en inrichting: ✅\n\nIk heb de vertaling zo gemaakt dat het klinkt als een professioneel bedrijfsbericht. Ik heb de symbolen en emojis behouden en de opmaak (kolons en puntjes) behouden. Ik heb ook geprobeerd om het te laten klinken als een natuurlijke vertaling in het Nederlands.",
-    "total_cost_line": "De vertaling van het Pools tekst naar het Nederlands is:\n\n                \"TOTAAL KOSTEN:\"\n\nIk heb de volgende aanpassingen gemaakt om de vertaling professioneel en natuurlijk te laten klinken:\n\n- Gebruik van het woord \"TOTAAL\" in plaats van \"CAŁKOWITY\" om de betekenis van \"geheel\" of \"volledig\" over te brengen.\n- Gebruik van het woord \"KOSTEN\" in plaats van \"KOSZT\" om de betekenis van \"kosten\" over te brengen.\n- Geen aanpassingen aan de symbolen en emojis (💰, ⚠️, ✅) zijn nodig, aangezien deze al geschikt zijn voor een zakelijke context.\n\nDe vertaling behoudt de professionele toon, de juiste taalgebruik en de natuurlijke kl",
-    "important_warning": "De vertaling van het Pools tekst naar het Nederlands is:\n\n                ⚠️ Aandachtspunt:\n\nIk heb de eisen in acht genomen:\n\n- Professionele zakelijke toon behouden\n- Emoticon's en symbolen (💰, ⚠️, ✅) behouden\n- Formattings behouden (kolons, puntjes)\n- Geschikte valuta/zakelijke terminologie gebruiken\n- Het klinkt natuurlijk in het Nederlands\n\nDe vertaling van de tekst is dus:\n\n                ⚠️ Aandachtspunt:",
-    "preliminary_estimate_full": "De vertaling van het Pools naar het Nederlands is als volgt:\n\n\"Deze is een voorlopige schatting. De eindprijs is afhankelijk van de specifieke specificaties, de huidige materialenprijzen en de beschikbaarheid. Voor een nauwkeurige offerte neem contact op met ons team. 💰⚠️✅\"\n\nIk heb de vertaling zo gemaakt dat het klinkt alsof het van een professioneel bedrijf komt. Ik heb de symbolen en emojis behouden en de zinnen opgebouwd om het natuurlijk te laten klinken in het Nederlands.",
-    "configuration_saved_success": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"✅ Configuratie opgeslagen met succes!\"\n\nIk heb de volgende aanpassingen gemaakt om de eisen te voldoen:\n\n- Ik heb de taal gebruikt die gebruikelijk is in een zakelijke omgeving.\n- Ik heb de emoji's en symbolen behouden.\n- Ik heb de indeling en de spatie behouden.\n- Ik heb de juiste zakelijke termen gebruikt.\n- De vertaling klinkt natuurlijk in het Nederlands.\n\nAls alternatief kan je ook \"✅ Configuratie opgeslagen met succes! Kosten zijn nu berekend.\" gebruiken, als je wilt dat de gebruiker weet dat de kosten nu zijn berekend."
-  },
-  "destination": "Bestemming",
-  "window_type": "Raamtype",
-  "additional_systems_modifications": "Aanvullende Systemen en Modificaties:",
-  "painting": "Schilderwerk",
-  "assembly": "Montage"
+  "flooring_label": "Vloeren"
 }

@@ -34,15 +34,15 @@
     "send_inquiry_desc": "Erbjud utredningsformulär",
     "drawing_analysis_customer": "Ritnings\nAnalys",
     "drawing_analysis_customer_desc": "Gratis dokumentanalys",
-    "bulk_pricing": "Volym\nPriser",
-    "bulk_pricing_desc": "Grossistrabatter när du köper många containrar",
     "custom_sizing": "Anpassade\nMått",
+    "bulk_pricing_desc": "Grossistrabatter när du köper många containrar",
+    "bulk_pricing": "Volym\nPriser",
     "custom_sizing_desc": "Designbehållare med exakta specifikationer"
   },
   "window_types": {
     "standard": "Standard (dubbelglas)",
     "energy_efficient": "Energibesparing (trippelfönster)",
-    "security": "Utanpieczeństwo (hartowane)",
+    "security": "[SV_NEEDS_TRANSLATION] Bezpieczeństwo (hartowane)",
     "marine_grade": "Havsklass (anti -korrosion)",
     "panoramic": "Panoramafönster",
     "sliding": "Glidande fönster",
@@ -50,54 +50,10 @@
     "skylight": "Takfönster"
   },
   "lighting": "Belysning",
-  "electrical_system": {
-    "none": "Utan instalacji elektrycznej",
-    "preparation": "Förberedelse (kablar utan utrustning)",
-    "basic": "Basic (belysning + uttag)",
-    "standard": "Standard (25A, belysning, 8 uttag)",
-    "extended": "Utökad (40A, styrka, UPS, nödsituation)",
-    "industrial": "Industrial (63a, styrka, switchgear)",
-    "it_server": "IT/Server (UPS, kylning, övervakning)",
-    "smart": "Intelligent (KNX, Automation)"
-  },
-  "plumbing_system": {
-    "none": "Utan instalacji wodnej",
-    "preparation": "Przygotowanie (rury utan armatury)",
-    "basic": "Basic (Sink + Outflow)",
-    "full": "Full (förberedande badrum)",
-    "commercial": "Handelsklass",
-    "industrial": "Industriell installation (tryck, filtrering)",
-    "cold_water": "Kallt vatteninstallation (handfat)",
-    "hot_cold_water": "Kall + varmt vatten (handfat, handfat)",
-    "basic_sanitary": "Basic Sanitary Node (WC + Sink)",
-    "standard_sanitary": "Standard Node (WC + Sink + Dusch)",
-    "comfort_sanitary": "Bekväm nod (WC + Sink + Cabin)",
-    "premium_sanitary": "Premiumnod (jacuzzi, bidet, 2 sänkor)"
-  },
-  "hvac_system": {
-    "none": "No HVAC (no uppvärmning and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Luftkonditioneringskontrollpanel (med filtrering, fuktgivande)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF -system (multi -zon, zonkontroll)",
-    "underfloor_heating": "Golvvärme (elektrisk/vatten)"
-  },
-  "flooring": {
-    "none": "Utan golv (korrugerat ark)",
-    "plywood": "Vattentät plywood 18mm (standard)",
-    "anti_slip": "21 mm icke -slip plywood",
-    "laminate": "AC4/AC5 -laminerade paneler",
-    "vinyl": "Vattentät vinylpaneler (LVT)",
-    "carpet": "2-4 mm PVC golvbeläggning",
-    "epoxy": "Industriellt epoxigolv",
-    "concrete": "Förhöjd golv (serverrum)",
-    "basic": "Grundläggande (industriell betong)",
-    "hardwood": "Hårt trä (parkett)"
-  },
+  "electrical_system": "[SV_NEEDS_TRANSLATION] System elektryczny",
+  "plumbing_system": "[SV_NEEDS_TRANSLATION] System wodny",
+  "hvac_system": "[SV_NEEDS_TRANSLATION] System HVAC",
+  "flooring": "[SV_NEEDS_TRANSLATION] Podłoga",
   "configure_container": "Konfigurera din behållare",
   "simple_process_2_steps": "Enkel process i 2 enkla steg",
   "step_1_configuration": "Steg 1: Konfiguration",
@@ -133,34 +89,6 @@
   "working_hours": "Arbetstider",
   "mon_fri": "Mån-Fre 8:00-17:00",
   "container": {
-    "types": {
-      "20ft_standard": "20ft standard",
-      "40ft_standard": "40ft standard",
-      "40ft_high_cube": "40ft HC",
-      "20ft_refrigerated": "20ft Kyld",
-      "20ft_double_door": "20ft DD",
-      "40ft_double_door": "40ft DD",
-      "40ft_hc_double_door": "40ft HC DD",
-      "custom_size": "Anpassad Storlek",
-      "10ft_compact": "10ft kompakt (3 m x 2,4 m)",
-      "20ft_high_cube": "20ft högkub (6 m x 2,7 m)",
-      "45ft_standard": "45ft standard",
-      "custom": "Beställnings",
-      "multi_unit": "Multi-enhetsbehållare",
-      "custom_dimensions": "Anpassade dimensioner behållare",
-      "refurbished": "Renoverad behållare",
-      "40ft_hc": "40ft HC"
-    },
-    "use_cases": {
-      "office_space": "Kontorsutrymme",
-      "residential": "Bostäder",
-      "storage": "Lagring",
-      "workshop": "Verkstad",
-      "retail": "Handel",
-      "restaurant": "Restaurang",
-      "medical": "Medicinsk",
-      "laboratory": "Laboratorium"
-    },
     "environment": {
       "indoor": "Inomhus",
       "outdoor": "Utomhus",
@@ -251,7 +179,7 @@
     "project_name": "Projektnamn",
     "project_location": "Projektplats",
     "expected_timeline": "Förväntad Tidslinje",
-    "budget_range": "Budgetintervall",
+    "budget_Range": "Budgetområde",
     "timeline": {
       "asap": "Så snart som möjligt",
       "within_month": "Inom en månad",
@@ -315,8 +243,7 @@
     "new_inquiry": "Skicka Ny Förfrågan",
     "error": "Fel vid sändning av förfrågan",
     "why_professional_inquiry": "Varför Skicka Professionell Förfrågan?",
-    "preparation_tips": "Tips för Bästa Resultat",
-    "budget_Range": "Budgetområde"
+    "preparation_tips": "Tips för Bästa Resultat"
   },
   "back_to_home": "← Tillbaka till startsidan",
   "go_to_configurator": "🔧 Gå till konfiguratorn",
@@ -410,6 +337,52 @@
   "special_notes_general": "Speciella anteckningar - Allmänt",
   "describe_general_requirements": "Beskriv alla ytterligare krav, specifikationer eller projektbegränsningar...",
   "general_requirements_placeholder": "t.ex. Speciella slutdatum, certifieringskrav, budgetbegränsningar",
+  "construction_material": "Konstruktionsmaterial",
+  "insulation": {
+    "basic": "[SV_NEEDS_TRANSLATION] Podstawowa (5-10cm, styropian/wełna)",
+    "standard": "[SV_NEEDS_TRANSLATION] Standardowa (15cm, PIR/PUR)",
+    "premium": "[SV_NEEDS_TRANSLATION] Premium (20cm, wełna mineralna)",
+    "extreme": "[SV_NEEDS_TRANSLATION] Ekstremalna (30cm, aerogel/vakuum)"
+  },
+  "destination": "Destination",
+  "window_type": "Fönstertyp",
+  "ventilation": {
+    "none": "[SV_NEEDS_TRANSLATION] Bez wentylacji (kontener szczelny)",
+    "gravity": "[SV_NEEDS_TRANSLATION] Wentylacja grawitacyjna (kraty, wywietrzniki)",
+    "wall_fans": "[SV_NEEDS_TRANSLATION] Wentylatory ścienne (wyciąg 100-150mm)",
+    "mechanical": "[SV_NEEDS_TRANSLATION] Wentylacja mechaniczna (nawiew + wyciąg)",
+    "heat_recovery": "[SV_NEEDS_TRANSLATION] Rekuperacja (odzysk ciepła, filtracja)",
+    "split_ac": "[SV_NEEDS_TRANSLATION] Klimatyzacja split (chłodzenie + grzanie)",
+    "central_ac": "[SV_NEEDS_TRANSLATION] Klimatyzacja centralna (VRV/VRF)",
+    "industrial": "[SV_NEEDS_TRANSLATION] Wentylacja przemysłowa (ATEX, chemoodporna)"
+  },
+  "roof_modifications": {
+    "none": "[SV_NEEDS_TRANSLATION] Bez modyfikacji (dach standardowy płaski)",
+    "insulation": "[SV_NEEDS_TRANSLATION] Dodatkowa izolacja dachu (styropian/PIR)",
+    "skylight": "[SV_NEEDS_TRANSLATION] Świetlik dachowy (90x60cm, otwierany)",
+    "fans": "[SV_NEEDS_TRANSLATION] Wentylatory dachowe (przemysłowe, ciche)",
+    "solar": "[SV_NEEDS_TRANSLATION] Panele słoneczne (1-3kW, autonomiczne)",
+    "antennas": "[SV_NEEDS_TRANSLATION] Anteny/maszty (GSM, radio, satelitarne)",
+    "sloped": "[SV_NEEDS_TRANSLATION] Dach skośny (odpływ wody, estetyka)",
+    "terrace": "[SV_NEEDS_TRANSLATION] Taras dachowy (dostęp, balustrada)",
+    "snow_removal": "[SV_NEEDS_TRANSLATION] System usuwania śniegu (grzałki, ślizgi)"
+  },
+  "additional_systems_modifications": "Ytterligare System och Modifieringar:",
+  "security": {
+    "basic": "[SV_NEEDS_TRANSLATION] Podstawowa (wzmocnione zamki)",
+    "standard": "[SV_NEEDS_TRANSLATION] Standardowa (przygotowanie alarmu)",
+    "advanced": "[SV_NEEDS_TRANSLATION] Zaawansowana (kamery + czujniki)",
+    "high_security": "[SV_NEEDS_TRANSLATION] Wysokie bezpieczeństwo (biometryka)"
+  },
+  "fire_systems": "Brandsäkerhetssystem",
+  "accessibility": {
+    "standard": "[SV_NEEDS_TRANSLATION] Dostęp standardowy",
+    "ramp": "[SV_NEEDS_TRANSLATION] Podjazd dla wózków",
+    "full_ada": "[SV_NEEDS_TRANSLATION] Pełna zgodność ADA",
+    "disabled_friendly": "[SV_NEEDS_TRANSLATION] W pełni dostępny"
+  },
+  "painting": "Målning",
+  "assembly": "Montering",
   "interior_layout_options": {
     "open_space": "Öppet utrymme (inga skiljeväggar)",
     "partitioned": "Med partitioner (1-3 rum)",
@@ -418,7 +391,7 @@
     "mezzanine": "Mezzanin/golv (ytökning)"
   },
   "security_systems_options": {
-    "none": "Utan dodatkowych zautanpieczeń (zamki standard)",
+    "none": "[SV_NEEDS_TRANSLATION] Bez dodatkowych zabezpieczeń (zamki standardowe)",
     "basic": "Grundläggande (förstärkta lås, fönstergriller)",
     "standard": "Standard (larm, sensorer, siren)",
     "extended": "Utökad (övervakning, rörelse/vibrationssensorer)",
@@ -438,7 +411,7 @@
     "natural_stone": "Naturlig sten"
   },
   "additional_openings_options": {
-    "none": "Utan dodatkowych otworów (standard drzwi)",
+    "none": "[SV_NEEDS_TRANSLATION] Bez dodatkowych otworów (standardowe drzwi)",
     "windows": "Ytterligare fönster (1-4 stycken)",
     "doors": "Ytterligare dörr (service, nödsituation)",
     "garage_door": "Garageport (segment, rullad)",
@@ -449,8 +422,8 @@
   },
   "fire_safety_options": {
     "none": "Utan brandkampsystem",
-    "basic": "Grundläggande (gaśnica, czujka dymu)",
-    "standard": "Standard (system alarmowy, oświetlenie awaryjne)",
+    "basic": "[SV_NEEDS_TRANSLATION] Podstawowe (gaśnica, czujka dymu)",
+    "standard": "[SV_NEEDS_TRANSLATION] Standardowe (system alarmowy, oświetlenie awaryjne)",
     "extended": "Utökad (tryskacze, ewakuacja)",
     "full": "Fullt system (gas, övervakning)"
   },
@@ -488,9 +461,9 @@
     "full": "Full montering (komplett installation)"
   },
   "office_equipment_options": {
-    "none": "Utan wyposażenia (pusty kontener)",
+    "none": "[SV_NEEDS_TRANSLATION] Bez wyposażenia (pusty kontener)",
     "basic": "Basic (skrivbord, stolar, garderob)",
-    "standard": "Standard (komplet mebli, oświetlenie)",
+    "standard": "[SV_NEEDS_TRANSLATION] Standardowe (komplet mebli, oświetlenie)",
     "full": "Full (komplett kontorsutrustning)"
   },
   "appliances_options": {
@@ -502,7 +475,7 @@
   "it_systems_options": {
     "none": "Utan IT -system",
     "basic": "Grundläggande (internet, WiFi)",
-    "standard": "Standard (sieć, telefonia)",
+    "standard": "[SV_NEEDS_TRANSLATION] Standardowe (sieć, telefonia)",
     "advanced": "Avancerat (serverrum, säkerhet)"
   },
   "insulation_package": "Isoleringspaket",
@@ -528,6 +501,24 @@
   "fallback_cost_estimate": "Reservkostnadsuppskattning",
   "total_project_cost": "Total Projektkostnad",
   "basic_calculation_ai_unavailable": "Grundläggande beräkning när AI -tjänster inte är tillgängliga",
+  "cost_estimation": {
+    "project_estimate": "[SV_NEEDS_TRANSLATION] Szacunkowa Wycena Projektu",
+    "cost_breakdown": "[SV_NEEDS_TRANSLATION] Podział Kosztów",
+    "base_container": "[SV_NEEDS_TRANSLATION] Kontener bazowy",
+    "modifications_equipment": "[SV_NEEDS_TRANSLATION] Modyfikacje i wyposażenie",
+    "total_cost": "[SV_NEEDS_TRANSLATION] CAŁKOWITY KOSZT",
+    "important_notice": "[SV_NEEDS_TRANSLATION] Ważne",
+    "preliminary_estimate": "[SV_NEEDS_TRANSLATION] To wstępne szacowanie. Ostateczna cena zależy od szczegółowych specyfikacji, aktualnych cen materiałów i dostępności. Dla dokładnej wyceny skontaktuj się z naszym zespołem.",
+    "configuration_saved": "[SV_NEEDS_TRANSLATION] Konfiguracja zapisana pomyślnie!",
+    "estimate_title": "💰 Projektkostnadsuppskattning",
+    "cost_breakdown_title": "Kostnadsfördelning:",
+    "base_container_line": "Bascontainer:",
+    "modifications_equipment_line": "Modifieringar och utrustning:",
+    "total_cost_line": "TOTALKOSTNAD:",
+    "important_warning": "⚠️ Viktigt:",
+    "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
+    "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!"
+  },
   "materials_base_cost": "Material och Baskostnad",
   "labor_costs_40": "Arbetskostnader (40%)",
   "contingency_10": "Beredskap (10%)",
@@ -557,7 +548,7 @@
     "project_context": "Projektkontext",
     "project_location": "Projektplats",
     "project_name": "Projektnamn",
-    "project_name_placeholder": "TILL EXEMPEL. Containerkontor - Poznań",
+    "project_name_placeholder": "[SV_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
     "file_upload": "Filuppladdning",
     "upload_drawings": "Ladda upp tekniska ritningar",
     "file_formats_help": "Vi stöder PDF-, DWG-, JPG- och PNG -filer. Vi rekommenderar PDF -formatet för bästa analys.",
@@ -572,7 +563,7 @@
     "current_config": "Aktuell Konfiguration",
     "project_context": "Projektkontext",
     "project_name": "Projektnamn",
-    "project_name_placeholder": "TILL EXEMPEL. Containerkontor - Poznań",
+    "project_name_placeholder": "[SV_NEEDS_TRANSLATION] np. Biuro kontenerowe - Poznań",
     "project_location": "Projektplats",
     "file_upload": "Filuppladdning",
     "upload_drawings": "Ladda upp tekniska ritningar",
@@ -583,7 +574,11 @@
     "analysis_results": "Analysresultat",
     "analysis_complete": "Analys slutförd",
     "analysis_failed": "Analys misslyckades",
+    "config_required": "Konfiguration Krävs",
+    "config_required_text": "För en grundlig analys av tekniska ritningar krävs grundläggande behållarkonfiguration. Utan konfiguration kommer analysen att begränsas till grundläggande uppskattningar.",
     "analysis_failed_reasons": "Möjliga orsaker till analysfel",
+    "config_tip": "Tips",
+    "config_tip_text": "Konfigurera din behållare innan du analyserar ritningar för att få mer exakta resultat och anpassade värderingar.",
     "error": "Fel",
     "windows": "Fönster",
     "doors": "Dörrar",
@@ -603,11 +598,7 @@
     "tips_text": "För mest exakt analys, se till att dina ritningar inkluderar:",
     "tip_1": "Tydliga dimensioner och specifikationer",
     "tip_2": "Alla tekniska detaljer synliga",
-    "tip_3": "Hög upplösning (minimum 300 DPI)",
-    "config_required": "Konfiguration Krävs",
-    "config_required_text": "För en grundlig analys av tekniska ritningar krävs grundläggande behållarkonfiguration. Utan konfiguration kommer analysen att begränsas till grundläggande uppskattningar.",
-    "config_tip": "Tips",
-    "config_tip_text": "Konfigurera din behållare innan du analyserar ritningar för att få mer exakta resultat och anpassade värderingar."
+    "tip_3": "Hög upplösning (minimum 300 DPI)"
   },
   "admin": {
     "access_required": "Administratörsåtkomst Krävs",
@@ -635,7 +626,6 @@
     "industrial": "Industriell kvalitet",
     "marine_grade": "Marin kvalitet (saltresistens)"
   },
-  "roof_modifications": "Takmodifieringar",
   "electrical": {
     "basic": "Basic (belysning + uttag)",
     "standard": "Standard (krets 15A)",
@@ -655,7 +645,6 @@
     "central": "Central luftkonditionering",
     "heat_pump": "Värmepump"
   },
-  "security": "Säkerhet",
   "cladding": {
     "none": "Ingen yttre beklädnad",
     "metal": "Metallbeklädnad",
@@ -675,14 +664,12 @@
     "sprinkler": "Sprinklersystem",
     "full_system": "Full släckning av elden"
   },
-  "accessibility": "Tillgänglighet",
   "paint": {
     "standard": "Standardbeläggning (C2)",
     "premium": "Premium finish (C3)",
     "anti_corrosion": "Antikorrosion (C4)",
     "marine_grade": "Marin kvalitet (C5M)"
   },
-  "insulation": "Isolering",
   "reinforcement": {
     "none": "Ingen förstärkning",
     "standard": "Förstärkning",
@@ -733,7 +720,6 @@
   "delivery_zone_international": "Internationell",
   "paint_finish_custom": "Anpassad Färg",
   "construction_material_aluminum": "Aluminium",
-  "construction_material": "Konstruktionsmaterial",
   "transport_type_special": "Specialtransporter",
   "security_systems_basic": "Grundläggande",
   "transport_type_crane": "Med Kran",
@@ -748,7 +734,6 @@
   "advanced_comments": "Avancerade Modifieringar Kommentarer",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dubbelglas",
-  "ventilation": "Ventilation",
   "it_systems": "Det system",
   "lighting_professional": "Professionell",
   "interior_layout_open": "Öppet Utrymme",
@@ -761,7 +746,6 @@
   "window_types_security": "Säkerhetsfönster",
   "roof_modifications_skylight": "Takfönster",
   "it_systems_basic": "Grundnätverk",
-  "fire_systems": "Brandsäkerhetssystem",
   "additional_openings_door": "Ytterligare Dörr",
   "construction_material_composite": "Komposit",
   "basic_configuration": "Grundläggande konfiguration",
@@ -770,17 +754,14 @@
   "number_of_windows": "Windows",
   "insulation_label": "Isolering",
   "finish_levels": {
-    "shell": "Rå tillstånd (isolering + OSB -platta)",
-    "specialist": "Specialist (medicinska/laboratoriestandarder)",
     "basic": "Utan efterbehandling (teknisk behållare, skelett)",
+    "shell": "Rå tillstånd (isolering + OSB -platta)",
     "standard": "Grundläggande (isolering + teknisk finish)",
     "comfort": "Bekväm (premiumisolering + kontorfinish)",
-    "luxury": "Lyxig (högsta klass + hotellfinish)"
+    "luxury": "Lyxig (högsta klass + hotellfinish)",
+    "specialist": "Specialist (medicinska/laboratoriestandarder)"
   },
   "climate_zones": {
-    "maritime": "Havsklimat (hög luftfuktighet)",
-    "mountain": "Mountain Climate (High UV, Snow)",
-    "tropical": "Tropiskt klimat (höga temperaturer, luftfuktighet)",
     "northern_europe": "Nordeuropa (Skandinavien, -30 ° C till +25 ° C)",
     "central_europe": "Centraleuropa (Polen, Tyskland, -20 ° C till +35 ° C)",
     "southern_europe": "Södra Europa (Spanien, Italien, -5 ° C till +45 ° C)",
@@ -797,28 +778,5 @@
   },
   "window_types_label": "Fönstertyper",
   "lighting_label": "Belysning",
-  "flooring_label": "Golv",
-  "cost_estimation": {
-    "estimate_title": "💰 Projektkostnadsuppskattning",
-    "cost_breakdown_title": "Kostnadsfördelning:",
-    "base_container_line": "Bascontainer:",
-    "modifications_equipment_line": "Modifieringar och utrustning:",
-    "total_cost_line": "TOTALKOSTNAD:",
-    "important_warning": "⚠️ Viktigt:",
-    "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
-    "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!"
-  },
-  "estimate_title": "💰 Projektkostnadsuppskattning",
-  "cost_breakdown_title": "Kostnadsfördelning:",
-  "base_container_line": "Bascontainer:",
-  "modifications_equipment_line": "Modifikationer och utrustning:",
-  "total_cost_line": "TOTALKOSTNAD:",
-  "important_warning": "⚠️ Viktigt:",
-  "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
-  "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!",
-  "destination": "Destination",
-  "window_type": "Fönstertyp",
-  "additional_systems_modifications": "Ytterligare System och Modifieringar:",
-  "painting": "Målning",
-  "assembly": "Montering"
+  "flooring_label": "Golv"
 }
