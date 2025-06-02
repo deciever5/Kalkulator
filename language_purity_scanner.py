@@ -122,6 +122,22 @@ class LanguagePurityScanner:
         word_lower = word.lower().strip('.,!?:;()[]{}"\'-')
         return word_lower in self.worldwide_terms
     
+    def is_low_severity_word(self, word: str) -> bool:
+        """Check if a word should be considered low severity (single letters, short common words)"""
+        # Single letters
+        if len(word) == 1:
+            return True
+        
+        # Very short words that are common across languages
+        low_severity_words = {
+            'a', 'an', 'i', 'o', 'u', 'e', 'de', 'da', 'do', 'la', 'le', 'il', 'el', 
+            'un', 'en', 'et', 'ou', 'si', 'no', 'ne', 'on', 'is', 'as', 'at', 'be',
+            'my', 'we', 'he', 'me', 'it', 'up', 'go', 'so', 'to', 'of', 'or', 'us',
+            'am', 'if', 'in', 'ad', 'ab', 'ex', 'id', 'ok', 'tv', 'pc', 'cd', 'dvd'
+        }
+        
+        return word.lower() in low_severity_words
+    
     def contains_foreign_language(self, text: str, target_lang: str) -> Tuple[bool, List[str]]:
         """Check if text contains words from foreign languages"""
         if not text or target_lang not in self.language_patterns:
@@ -138,7 +154,7 @@ class LanguagePurityScanner:
         if target_lang != 'en':
             english_patterns = self.language_patterns['en']
             for word in words:
-                if self.is_worldwide_term(word):
+                if self.is_worldwide_term(word) or self.is_low_severity_word(word):
                     continue
                 
                 # Check for English articles and common words
@@ -157,7 +173,7 @@ class LanguagePurityScanner:
                 continue
             
             for word in words:
-                if self.is_worldwide_term(word):
+                if self.is_worldwide_term(word) or self.is_low_severity_word(word):
                     continue
                 
                 if word in patterns['articles'] or word in patterns['common_words']:
@@ -177,11 +193,21 @@ class LanguagePurityScanner:
         elif isinstance(obj, str):
             has_foreign, foreign_words = self.contains_foreign_language(obj, target_lang)
             if has_foreign:
+                # Determine severity based on word types
+                non_low_severity_words = [w for w in foreign_words if not self.is_low_severity_word(w.split(':')[-1])]
+                
+                if len(non_low_severity_words) > 2:
+                    severity = 'high'
+                elif len(non_low_severity_words) > 0:
+                    severity = 'medium'
+                else:
+                    severity = 'low'
+                
                 issues.append({
                     'path': path,
                     'text': obj,
                     'foreign_words': foreign_words,
-                    'severity': 'high' if len(foreign_words) > 2 else 'medium'
+                    'severity': severity
                 })
         
         return issues
@@ -206,7 +232,9 @@ class LanguagePurityScanner:
             'total_issues': len(issues),
             'high_severity': len([i for i in issues if i['severity'] == 'high']),
             'medium_severity': len([i for i in issues if i['severity'] == 'medium']),
-            'issues': issues
+            'low_severity': len([i for i in issues if i['severity'] == 'low']),
+            'issues': issues,
+            'significant_issues': [i for i in issues if i['severity'] in ['high', 'medium']]
         }
     
     def scan_all_languages(self) -> Dict:
@@ -216,6 +244,7 @@ class LanguagePurityScanner:
         
         results = {}
         total_issues = 0
+        significant_issues = 0
         
         for filename in sorted(os.listdir(self.locales_dir)):
             if filename.endswith('.json') and not filename.endswith('.backup'):
@@ -228,11 +257,13 @@ class LanguagePurityScanner:
                 
                 if 'total_issues' in result:
                     total_issues += result['total_issues']
+                    significant_issues += len(result.get('significant_issues', []))
         
         return {
             'summary': {
                 'total_languages_scanned': len(results),
                 'total_issues_found': total_issues,
+                'significant_issues_found': significant_issues,
                 'languages_with_issues': len([r for r in results.values() if r.get('total_issues', 0) > 0])
             },
             'results': results
@@ -251,41 +282,54 @@ class LanguagePurityScanner:
         print(f"📊 SUMMARY:")
         print(f"   Languages scanned: {summary['total_languages_scanned']}")
         print(f"   Total issues found: {summary['total_issues_found']}")
+        print(f"   Significant issues: {summary['significant_issues_found']}")
         print(f"   Languages with issues: {summary['languages_with_issues']}")
         
-        if summary['total_issues_found'] == 0:
-            print("\n✅ All languages are pure! No foreign language content detected.")
+        if summary['significant_issues_found'] == 0:
+            if summary['total_issues_found'] > 0:
+                print(f"\n✅ All languages are clean! {summary['total_issues_found']} low-severity issues (single letters/short words) were ignored.")
+            else:
+                print("\n✅ All languages are pure! No foreign language content detected.")
             return
         
-        print(f"\n🔍 DETAILED RESULTS:")
-        print("-" * 40)
+        print(f"\n🔍 DETAILED RESULTS (High & Medium Severity Only):")
+        print("-" * 50)
         
         for lang_code, result in results['results'].items():
             if 'error' in result:
                 print(f"\n❌ {lang_code.upper()}: {result['error']}")
                 continue
             
-            if result['total_issues'] == 0:
-                print(f"\n✅ {lang_code.upper()}: Clean (no foreign content)")
+            significant_count = len(result['significant_issues'])
+            
+            if significant_count == 0:
+                if result['total_issues'] > 0:
+                    print(f"\n✅ {lang_code.upper()}: Clean ({result['total_issues']} low-severity issues ignored)")
+                else:
+                    print(f"\n✅ {lang_code.upper()}: Clean (no foreign content)")
                 continue
             
-            print(f"\n⚠️  {lang_code.upper()}: {result['total_issues']} issues found")
+            print(f"\n⚠️  {lang_code.upper()}: {significant_count} significant issues")
             print(f"   High severity: {result['high_severity']}")
             print(f"   Medium severity: {result['medium_severity']}")
+            if result['low_severity'] > 0:
+                print(f"   Low severity (ignored): {result['low_severity']}")
             
-            # Show examples of issues
-            for i, issue in enumerate(result['issues'][:5]):  # Show first 5 issues
+            # Show examples of significant issues only
+            for i, issue in enumerate(result['significant_issues'][:5]):  # Show first 5 significant issues
                 print(f"\n   📍 {issue['path']}")
                 print(f"      Text: '{issue['text'][:80]}{'...' if len(issue['text']) > 80 else ''}'")
                 print(f"      Foreign words: {', '.join(issue['foreign_words'])}")
             
-            if len(result['issues']) > 5:
-                print(f"   ... and {len(result['issues']) - 5} more issues")
+            if len(result['significant_issues']) > 5:
+                print(f"   ... and {len(result['significant_issues']) - 5} more significant issues")
         
         print(f"\n💡 RECOMMENDATIONS:")
         print("   • Review flagged translations for accuracy")
         print("   • Replace foreign language content with proper target language")
         print("   • Technical terms (HVAC, PDF, etc.) are acceptable")
+        print("   • Single letters and short common words are now treated as low-severity")
+        print("   • Focus on high and medium severity issues for translation quality")
         print("   • Consider professional translation review for high-severity issues")
 
 def main():
