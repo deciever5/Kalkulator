@@ -41,22 +41,22 @@
   },
   "window_types": {
     "standard": "Standard (25A, lighting, 8 outlets)",
-    "energy_efficient": "Energooszczędne (potrójne szyby)",
-    "security": "Bezpieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
+    "energy_efficient": "Energy efficient (triple glazing)",
+    "security": "Security (tempered glass)",
+    "marine_grade": "Marine grade (anti-corrosion)",
     "panoramic": "Panoramic windows",
     "sliding": "Sliding windows",
     "tilt": "Tilt windows",
     "skylight": "Skylight windows"
   },
   "lighting": {
-    "none": "No electrical installation",
-    "basic": "Basic (lighting + outlets)",
+    "none": "No lighting",
+    "basic": "Basic LED",
     "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
-    "smart": "Smart (home automation, KNX)"
+    "energy_efficient": "Energy efficient LED with sensors",
+    "exterior": "Exterior lighting (floodlights)",
+    "emergency": "Emergency lighting (battery backup)",
+    "smart": "Smart system (controlled lighting)"
   },
   "electrical_system": {
     "none": "No electrical installation",
@@ -69,12 +69,12 @@
     "smart": "Smart (home automation, KNX)"
   },
   "plumbing_system": {
-    "none": "No electrical installation",
-    "preparation": "Preparation (wiring without equipment)",
-    "basic": "Basic (lighting + outlets)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Industrial (63A, power, distribution panel)",
+    "none": "No water installation",
+    "preparation": "Preparation (pipes without fixtures)",
+    "basic": "Basic (sink + drain)",
+    "full": "Full (bathroom preparation)",
+    "commercial": "Commercial grade",
+    "industrial": "Industrial installation (pressure, filtration)",
     "cold_water": "Cold water installation (sink)",
     "hot_cold_water": "Cold + hot water (sink, washbasin)",
     "basic_sanitary": "Basic sanitary (WC + sink)",
@@ -83,13 +83,13 @@
     "premium_sanitary": "Premium (jacuzzi, bidet, 2 sinks)"
   },
   "hvac_system": {
-    "none": "No electrical installation",
-    "basic": "Basic (lighting + outlets)",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "heat_pump": "Pompa ciepła",
+    "none": "No HVAC (no heating and cooling)",
+    "basic": "Basic ventilation",
+    "electric_heating": "Electric heating (IR radiators)",
+    "gas_heating": "Gas heating (condensing boiler)",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
     "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
     "underfloor_heating": "Underfloor heating (electric/water)"
