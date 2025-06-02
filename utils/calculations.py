@@ -467,24 +467,178 @@ def calculate_container_cost(config):
     # Calculate delivery costs based on delivery zone
     delivery_cost = calculate_delivery_cost(config.get('delivery_zone', 'Local'), config.get('container_type', '20ft Standard'))
 
-    # Calculate subtotal before multiplier
-    subtotal_before_multiplier = base_cost + modifications_cost
+    # Calculate material costs (base + modifications)
+    material_cost = base_cost + modifications_cost
     
-    # Apply use case multiplier
-    subtotal_with_multiplier = subtotal_before_multiplier * multiplier
+    # Calculate labor cost (varies by complexity)
+    labor_hours = calculate_labor_hours(config)
+    labor_cost = calculate_labor_cost(labor_hours)
+    
+    # Calculate subtotal (materials + labor)
+    subtotal_materials_labor = material_cost + labor_cost
+    
+    # Apply use case complexity multiplier
+    subtotal_with_multiplier = subtotal_materials_labor * multiplier
+    
+    # Add operating costs (45% markup on materials + labor as per company policy)
+    operating_costs = subtotal_with_multiplier * 0.45
+    
+    # Add profit margin (additional 20% on total before delivery)
+    profit_margin = (subtotal_with_multiplier + operating_costs) * 0.20
+    
+    # Calculate subtotal before delivery
+    subtotal_before_delivery = subtotal_with_multiplier + operating_costs + profit_margin
     
     # Add delivery cost
-    total_cost = subtotal_with_multiplier + delivery_cost
+    total_cost = subtotal_before_delivery + delivery_cost
 
     return {
         'base_cost': base_cost,
         'modifications_cost': modifications_cost,
+        'material_cost': material_cost,
+        'labor_cost': labor_cost,
+        'labor_hours': labor_hours,
         'use_case_multiplier': multiplier,
-        'subtotal_before_multiplier': subtotal_before_multiplier,
+        'subtotal_materials_labor': subtotal_materials_labor,
         'subtotal_with_multiplier': subtotal_with_multiplier,
+        'operating_costs': operating_costs,
+        'profit_margin': profit_margin,
+        'subtotal_before_delivery': subtotal_before_delivery,
         'delivery_cost': delivery_cost,
         'total_cost': total_cost
     }
+
+def calculate_labor_hours(config):
+    """Calculate total labor hours needed based on configuration"""
+    
+    base_hours = 40  # Base setup hours
+    modification_hours = 0
+    
+    # Window installation hours
+    num_windows_str = config.get('num_windows', 'none').lower()
+    window_count = 0
+    if 'one' in num_windows_str:
+        window_count = 1
+    elif 'two' in num_windows_str:
+        window_count = 2
+    elif 'three' in num_windows_str:
+        window_count = 3
+    elif 'four' in num_windows_str:
+        window_count = 4
+    elif 'five' in num_windows_str:
+        window_count = 5
+    
+    modification_hours += window_count * 6  # 6 hours per window
+    
+    # Electrical system hours
+    electrical = config.get('electrical_system', '').lower()
+    if 'basic' in electrical:
+        modification_hours += 16
+    elif 'standard' in electrical:
+        modification_hours += 24
+    elif 'extended' in electrical or 'industrial' in electrical:
+        modification_hours += 40
+    elif 'smart' in electrical:
+        modification_hours += 48
+    
+    # Plumbing system hours
+    plumbing = config.get('plumbing_system', '').lower()
+    if 'preparation' in plumbing:
+        modification_hours += 8
+    elif 'cold_water' in plumbing:
+        modification_hours += 16
+    elif 'hot_cold' in plumbing:
+        modification_hours += 24
+    elif 'sanitary' in plumbing:
+        if 'basic' in plumbing:
+            modification_hours += 32
+        elif 'standard' in plumbing:
+            modification_hours += 40
+        elif 'comfort' in plumbing or 'premium' in plumbing:
+            modification_hours += 56
+    elif 'industrial' in plumbing:
+        modification_hours += 48
+    
+    # HVAC system hours
+    hvac = config.get('hvac_system', '').lower()
+    if 'electric_heaters' in hvac:
+        modification_hours += 8
+    elif 'electric_heating' in hvac:
+        modification_hours += 16
+    elif 'split_ac' in hvac:
+        modification_hours += 24
+    elif 'heat_pump' in hvac:
+        modification_hours += 32
+    elif 'central_ac' in hvac or 'vrv_vrf' in hvac:
+        modification_hours += 48
+    elif 'underfloor_heating' in hvac:
+        modification_hours += 40
+    
+    # Insulation hours
+    insulation = config.get('insulation', '').lower()
+    if 'basic' in insulation:
+        modification_hours += 16
+    elif 'standard' in insulation:
+        modification_hours += 24
+    elif 'premium' in insulation:
+        modification_hours += 32
+    elif 'extreme' in insulation:
+        modification_hours += 48
+    
+    # Interior layout complexity
+    interior = config.get('interior_layout', '').lower()
+    if 'partitioned' in interior:
+        modification_hours += 16
+    elif 'built_in_furniture' in interior:
+        modification_hours += 32
+    elif 'custom_layout' in interior:
+        modification_hours += 24
+    elif 'mezzanine' in interior:
+        modification_hours += 48
+    
+    # Additional systems
+    if config.get('lighting', '').lower() not in ['none', '']:
+        modification_hours += 8
+    
+    if config.get('ventilation', '').lower() not in ['none', '']:
+        modification_hours += 12
+    
+    if config.get('security_systems', '').lower() not in ['none', '']:
+        modification_hours += 16
+    
+    if config.get('fire_systems', '').lower() not in ['none', '']:
+        modification_hours += 12
+    
+    # Exterior modifications
+    if config.get('exterior_cladding', '').lower() not in ['none', '']:
+        modification_hours += 24
+    
+    if config.get('additional_openings', '').lower() not in ['none', '']:
+        modification_hours += 16
+    
+    # Installation complexity
+    installation = config.get('installation', '').lower()
+    if 'standard' in installation:
+        modification_hours += 16
+    elif 'full' in installation:
+        modification_hours += 32
+    
+    return base_hours + modification_hours
+
+def calculate_labor_cost(total_hours):
+    """Calculate labor cost with mixed skill rates and profit margin"""
+    
+    # Labor rate distribution (Polish market rates in EUR/hour)
+    basic_hours = total_hours * 0.4      # 40% basic work at €12/hour
+    skilled_hours = total_hours * 0.4    # 40% skilled work at €15/hour  
+    specialist_hours = total_hours * 0.2 # 20% specialist work at €18/hour
+    
+    labor_cost = (basic_hours * 12 + skilled_hours * 15 + specialist_hours * 18)
+    
+    # Add 17% profit margin on labor as per company policy
+    labor_cost_with_profit = labor_cost * 1.17
+    
+    return labor_cost_with_profit
 
 def calculate_delivery_cost(delivery_zone, container_type):
     """Calculate delivery cost based on zone and container type"""
