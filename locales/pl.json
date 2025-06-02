@@ -39,12 +39,65 @@
     "bulk_pricing": "Ceny\nHurtowe",
     "custom_sizing_desc": "Projektowanie kontenerów według dokładnych specyfikacji"
   },
-  "flooring": "Podłogi",
-  "window_types": "Typy Okien", 
-  "lighting": "Oświetlenie",
-  "electrical_system": "System Elektryczny",
-  "plumbing_system": "System Hydrauliczny", 
-  "hvac_system": "System HVAC",
+  "window_types": {
+    "standard": "Standardowe",
+    "panoramic": "Panoramiczne",
+    "sliding": "Przesuwne",
+    "tilt": "Skrzynkowe",
+    "security": "Antywłamaniowe",
+    "skylight": "Świetliki dachowe",
+    "energy_efficient": "Energooszczędne"
+  },
+  "lighting": {
+    "none": "Brak oświetlenia",
+    "basic_led": "Podstawowe LED",
+    "energy_efficient": "Energooszczędne",
+    "exterior": "Zewnętrzne",
+    "emergency": "Awaryjne",
+    "smart": "Inteligentne"
+  },
+  "electrical_system": {
+    "none": "Bez instalacji elektrycznej",
+    "preparation": "Przygotowanie elektryczne (tylko kanały)",
+    "basic": "Podstawowy (15A, LED, 4 gniazdka)",
+    "standard": "Standardowy (25A, oświetlenie, 8 gniazdek)",
+    "extended": "Rozszerzony (40A, siła, UPS, awaryjne)",
+    "industrial": "Przemysłowy (63A, 3-fazowy, rozdzielnice)",
+    "it_server": "IT/Serwerownia (UPS, stabilizatory, monitoring)",
+    "smart": "Inteligentny (KNX, automatyka)"
+  },
+  "plumbing_system": {
+    "none": "Bez instalacji wodnej",
+    "preparation": "Przygotowanie hydrauliczne (tylko kanały)",
+    "cold_water": "Instalacja zimnej wody (zlew)",
+    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
+    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + zlew)",
+    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
+    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
+    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)",
+    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)"
+  },
+  "hvac_system": {
+    "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
+    "electric_heaters": "Grzejniki elektryczne (1-3kW, konwektory)",
+    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
+    "heat_pump": "Pompa ciepła (typ split, wydajność 2-12kW)",
+    "gas_heating": "Ogrzewanie gazowe (kocioł kondensacyjny)",
+    "split_ac": "Klimatyzacja split (chłodzenie + ogrzewanie)",
+    "vrv_vrf": "System VRV/VRF (multi-split, kontrola strefowa)",
+    "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)",
+    "central_ac": "Centralna klimatyzacja (z filtracją, nawilżaniem)"
+  },
+  "flooring": {
+    "none": "Bez podłogi (blacha falistowana)",
+    "plywood": "Sklejka wodoodporna 18mm (standard)",
+    "anti_slip": "Sklejka antypoślizgowa 21mm",
+    "laminate": "Panele laminowane AC4/AC5",
+    "vinyl": "Panele winylowe (LVT) wodoodporne",
+    "carpet": "Wykładzina PVC 2-4mm",
+    "epoxy": "Posadzka epoksydowa przemysłowa",
+    "concrete": "Podłoga podwyższona (serwerownie)"
+  },
   "configure_container": "Skonfiguruj Swój Kontener",
   "simple_process_2_steps": "Prosty proces w 2 łatwych krokach",
   "step_1_configuration": "Krok 1: Konfiguracja",
