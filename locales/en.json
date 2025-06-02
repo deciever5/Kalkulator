@@ -325,7 +325,9 @@
     "error": "Error sending inquiry",
     "why_professional_inquiry": "Why Submit a Professional Inquiry?",
     "preparation_tips": "Tips for Best Results",
-    "budget_Range": "Budget scope"
+    "budget_Range": "Budget scope",
+    "next_steps": "Next Steps",
+    "submit_inquiry": "Send Inquiry"
   },
   "back_to_home": "← Return to Home Page",
   "go_to_configurator": "🔧 Go to Configurator",

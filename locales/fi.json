@@ -307,6 +307,8 @@
     "project_location": "Hankkeen sijainti",
     "expected_timeline": "Odottamaton aikataulu",
     "budget_range": "Rahoitusalue",
+    "next_steps": "Seuraavat vaiheet",
+    "submit_inquiry": "Lähetä Hakemus",
     "timeline": {
       "asap": "Niin pian kuin mahdollista",
       "within_month": "Kuukauden sisällä",
