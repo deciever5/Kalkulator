@@ -349,7 +349,11 @@
     "luxury": "Luxury (highest class + hotel finish)",
     "specialist": "Specialist (medical/laboratory standards)"
   },
-  "flooring": {
+  "flooring": "Flooring",
+  "electrical_system": "Electrical System",
+  "plumbing_system": "Plumbing System", 
+  "hvac_system": "HVAC System",
+  "flooring_options": {
     "none": "Without a floor (corrugated sheet)",
     "plywood": "Waterproof plywood 18mm (standard)",
     "anti_slip": "21mm non -slip plywood",

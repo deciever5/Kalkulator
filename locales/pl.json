@@ -75,7 +75,11 @@
     "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
     "heat_pump": "Pompa ciepła"
   },
-  "flooring": {
+  "flooring": "Podłogi",
+  "electrical_system": "System Elektryczny", 
+  "plumbing_system": "System Hydrauliczny",
+  "hvac_system": "System HVAC",
+  "flooring_options": {
     "basic": "Podstawowa (beton przemysłowy)",
     "laminate": "Laminat (klasy handlowe)",
     "vinyl": "Winyl LVT (wodoodporny)",
