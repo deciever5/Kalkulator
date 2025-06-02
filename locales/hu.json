@@ -49,15 +49,7 @@
     "tilt": "Bukóablakok",
     "skylight": "Tetőablakok"
   },
-  "lighting": {
-    "none": "Nincs világítás",
-    "basic": "Alapvető LED",
-    "basic_led": "Alapvető világítás LED",
-    "energy_efficient": "Energiatakarékos LED z érzékelőkkel",
-    "exterior": "Világítás külső (reflektorok)",
-    "emergency": "Világítás vészhelyzeti (akkumulátoros)",
-    "smart": "Intelligens rendszer (ellenőrzött világítás)"
-  },
+  "lighting": "Világítás",
   "electrical_system": {
     "none": "Nélkül elektromos szerelés",
     "preparation": "Előkészítés (vezetékek nélkül felszerelés)",
@@ -337,15 +329,8 @@
   "purpose": "Cél",
   "environment": "Környezet",
   "finish_level": "Befejezési Szint",
-  "climate_zone": "Éghajlati övezet",
-  "windows": {
-    "one": "1 ablak",
-    "two": "2 Windows",
-    "three": "3 Windows",
-    "four": "4 ablak",
-    "none": "Windows nélkül (zárt tartály)",
-    "five_plus": "5+ okien (konfiguracja egyedi)"
-  },
+  "climate_zone": "Klímazóna",
+  "windows": "Ablakok",
   "additional_doors": "További Ajtók",
   "yes": "Igen",
   "no": "Nem",
@@ -404,10 +389,10 @@
   "special_notes_systems": "Speciális megjegyzések - Rendszerek",
   "describe_system_requirements": "Írja le a további rendszerkövetelményeket...",
   "system_requirements_placeholder": "pl. Speciális szellőzési követelmények, további aljzatok, specializált telepítések",
-  "interior_layout": "Belső elrendezés",
+  "interior_layout": "Belső Elrendezés",
   "security_systems": "Biztonsági és riasztórendszerek",
-  "exterior_cladding": "Külső burkolat",
-  "additional_openings": "További nyílások és módosítások",
+  "exterior_cladding": "Külső Burkolat",
+  "additional_openings": "További Nyílások",
   "fire_safety_systems": "Tűzbiztonsági rendszerek",
   "accessibility_features": "Akadálymentesítés és ergonómia",
   "paint_finish": "Festés és külső wykończenie",
@@ -415,8 +400,8 @@
   "describe_modification_requirements": "Írja le a további módosítási követelményeket...",
   "modification_requirements_placeholder": "pl. Speciális RAL színek, nem szabványos nyílásméret, további szerkezeti megerősítések",
   "transport_logistics": "Közlekedési és logisztika",
-  "delivery_zone": "Szállítási zóna",
-  "transport_type": "Szállítás típusa",
+  "delivery_zone": "Szállítási Zóna",
+  "transport_type": "Szállítás Típusa",
   "assembly_installation": "Összeszerelés és telepítés",
   "equipment_extras": "Felszerelések és extrák",
   "office_equipment": "Irodai/belső berendezés",
@@ -650,17 +635,7 @@
     "industrial": "Ipari minőség",
     "marine_grade": "Tengerparti minőség (sóálló)"
   },
-  "roof_modifications": {
-    "none": "Módosítás nélkül (standard lapos tető)",
-    "insulation": "Tetőszigetelés emellett (10-20 cm)",
-    "skylight": "Tető tetőablak (60x60, 90x90, 120x120cm)",
-    "solar": "Napenergia-telepítés (2-10 kW)",
-    "sloped": "Ferde tető (vízkiáramlás, esztétika)",
-    "terrace": "Tetőterasz (balustráddal)",
-    "snow_removal": "Hó eltávolító rendszerek (melegítők, ereszcsatorna)",
-    "fans": "Tetőventilátorok (ipari, csendes)",
-    "antennas": "Antennák/árbocok (GSM, rádió, műholdas)"
-  },
+  "roof_modifications": "Tetőmódosítások",
   "electrical": {
     "basic": "Alapvető (világítás + konnektorok)",
     "standard": "Szabványos (15A áramkör)",
@@ -680,12 +655,7 @@
     "central": "Központi légkondicionálás",
     "heat_pump": "Hőszivattyú"
   },
-  "security": {
-    "basic": "Alapvető (megerősített zárak)",
-    "standard": "szabványos",
-    "advanced": "Fejlett (kamerák + érzékelők)",
-    "high_security": "Magas biztonság (biometrikus)"
-  },
+  "security": "Biztonság",
   "cladding": {
     "none": "Nincs külső burkolat",
     "metal": "Fém homlokzatburkolat",
@@ -705,26 +675,14 @@
     "sprinkler": "Sprinkler rendszer",
     "full_system": "A tűz teljes oltása"
   },
-  "accessibility": {
-    "standard": "Szabványos hozzáférés",
-    "ramp": "Kerekesszék rámpa",
-    "full_ada": "Teljes ADA megfelelőség",
-    "disabled_friendly": "Teljesen akadálymentes"
-  },
+  "accessibility": "Akadálymentesítés",
   "paint": {
     "standard": "Szabványos bevonat (C2)",
     "premium": "Prémium felületkezelés (C3)",
     "anti_corrosion": "Ant -korrozív (C4)",
     "marine_grade": "Tengerparti minőség (C5M)"
   },
-  "insulation": {
-    "basic": "Alapvető (50mm)",
-    "standard": "Szabványos (100mm)",
-    "premium": "Prémium (150mm)",
-    "extreme": "Szélsőséges (200mm)",
-    "none": "Nincs szigetelés",
-    "advanced": "Fejlett (ásványgyapot 10-15 cm)"
-  },
+  "insulation": "Szigetelés",
   "reinforcement": {
     "none": "Nincs megerősítés",
     "standard": "Szabványos megerősítés",
@@ -790,16 +748,7 @@
   "advanced_comments": "Megjegyzések a fejlett módosításokról",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dupla mázas",
-  "ventilation": {
-    "none": "Légszellőzőnyílások nélkül (természetes és mechanikus)",
-    "gravity": "Gravitációs szellőzőnyílások (2-4 db, állítható)",
-    "heat_recovery": "Rekuperáció (hő-visszanyerés 80-95%)",
-    "split_ac": "Osztott légkondicionáló (1-3 egység)",
-    "wall_fans": "Fali ventilátorok (100-150 mm-es lift)",
-    "mechanical": "Mechanikus szellőzés (levegőellátás + emelés)",
-    "central_ac": "Központi légkondicionálás (VRV/VRF)",
-    "industrial": "Ipari szellőzés (ATEX, kemo -rezisztens)"
-  },
+  "ventilation": "Szellőztetés",
   "it_systems": "IT rendszerek",
   "lighting_professional": "Szakmai",
   "interior_layout_open": "Open Space",
@@ -812,7 +761,7 @@
   "window_types_security": "Biztonsági ablakok",
   "roof_modifications_skylight": "Tetőablak",
   "it_systems_basic": "Alaphálózat",
-  "fire_systems": "Tűzrendszer",
+  "fire_systems": "Tűzbiztonsági Rendszerek",
   "additional_openings_door": "Kiegészítő ajtó",
   "construction_material_composite": "Composite",
   "basic_configuration": "Alapkonfiguráció",
@@ -858,5 +807,10 @@
     "important_warning": "A fordítás a következő:\n\n                ⚠️ Fontos:\n\nA fordításban a következő pontokat tartottam szem előtt:\n\n- Szakmai üzleti hangnem megőrzése\n- Az emojik és szimbólumok (💰, ⚠️, ✅) fenntartása\n- A formázás (kolon, pontok) megőrzése\n- Megfelelő pénzügyi/üzleti terminológia használata\n- Természetes hangzás elérése a magyar nyelven",
     "preliminary_estimate_full": "A következő a fordítás:\n\n\"💰 Ezt a becslést tekintsd előzetesnek. A végleges ár a részletes specifikációktól, a jelenlegi anyagárak változásaitól és a rendelkezésre állásuktól függ. A pontosabb árbesorolásért kérjük, vegyél fel velünk kapcsolatot. ⚠️\"\n\nVagy rövidebb változat:\n\n\"💰 A becslés előzetes. A végleges ár a specifikációktól, anyagáraktól és a rendelkezésre állástól függ. ✅ Pontosabb árbesorolásért kérjük, vegyél fel velünk kapcsolatot.\"\n\nA második válto",
     "configuration_saved_success": "A fordítás a következő:\n\n                ✅ A konfiguráció sikeresen mentésre került!\n\nA fordításban megőriztük a szimbólumokat (✅), a formázást (kolon, pontok), és megpróbáltuk megőrizni a szakmai üzleti hangot. A pénzügyi terminológiát is megfelelően alkalmaztuk."
-  }
+  },
+  "destination": "Rendeltetés",
+  "window_type": "Ablaktípus",
+  "additional_systems_modifications": "További Rendszerek és Módosítások:",
+  "painting": "Festés",
+  "assembly": "Összeszerelés"
 }

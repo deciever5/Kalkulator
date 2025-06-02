@@ -49,15 +49,7 @@
     "tilt": "Ventanas abatibles",
     "skylight": "Claraboyas"
   },
-  "lighting": {
-    "none": "Sin instalación eléctrica",
-    "basic": "Básico (iluminación + enchufes)",
-    "basic_led": "Iluminación LED básica",
-    "energy_efficient": "LED de ahorro de energía con sensores",
-    "exterior": "Iluminación externa (faros)",
-    "emergency": "Iluminación de emergencia (batería)",
-    "smart": "Inteligente (domótica, KNX)"
-  },
+  "lighting": "Iluminación",
   "electrical_system": {
     "none": "Sin instalación eléctrica",
     "preparation": "Preparación (cableado sin equipamiento)",
@@ -338,14 +330,7 @@
   "environment": "Ambiente",
   "finish_level": "Nivel de Acabado",
   "climate_zone": "Zona Climática",
-  "windows": {
-    "one": "1 ventana",
-    "two": "2 ventanas",
-    "three": "3 ventanas",
-    "four": "4 ventanas",
-    "none": "Sin ventanas (contenedor cerrado)",
-    "five_plus": "5+ okien (konfiguracja personalizado)"
-  },
+  "windows": "Ventanas",
   "additional_doors": "Puertas Adicionales",
   "yes": "Sí",
   "no": "No",
@@ -404,10 +389,10 @@
   "special_notes_systems": "Notas especiales - Sistemas",
   "describe_system_requirements": "Describa los requisitos adicionales del sistema...",
   "system_requirements_placeholder": "ej. Requisitos especiales de ventilación, tomas adicionales, instalaciones especializadas",
-  "interior_layout": "Distribución interior",
+  "interior_layout": "Distribución Interior",
   "security_systems": "Sistemas de seguridad y alarma",
-  "exterior_cladding": "Revestimiento exterior",
-  "additional_openings": "Aberturas adicionales y modificaciones",
+  "exterior_cladding": "Revestimiento Exterior",
+  "additional_openings": "Aberturas Adicionales",
   "fire_safety_systems": "Sistemas de seguridad contra incendios",
   "accessibility_features": "Accesibilidad y ergonomía",
   "paint_finish": "Pintura y acabado exterior",
@@ -415,8 +400,8 @@
   "describe_modification_requirements": "Describa los requisitos de modificación adicionales...",
   "modification_requirements_placeholder": "ej. Colores RAL especiales, tamaños de abertura no estándar, refuerzos estructurales adicionales",
   "transport_logistics": "Transporte y logística",
-  "delivery_zone": "Zona de entrega",
-  "transport_type": "Tipo de transporte",
+  "delivery_zone": "Zona de Entrega",
+  "transport_type": "Tipo de Transporte",
   "assembly_installation": "Montaje e instalación",
   "equipment_extras": "Equipo y extras",
   "office_equipment": "Equipamiento de oficina/interior",
@@ -650,17 +635,7 @@
     "industrial": "Grado industrial",
     "marine_grade": "Grado marino (resistencia a la sal)"
   },
-  "roof_modifications": {
-    "none": "Sin modificación (techo plano estándar)",
-    "insulation": "Aislamiento del techo adicionalmente (10-20 cm)",
-    "skylight": "Skylight de techo (60x60, 90x90, 120x120 cm)",
-    "solar": "Instalación solar (2-10kW)",
-    "sloped": "Un techo oblicuo (un lado, aficionado)",
-    "terrace": "Terraza del techo (acceso, balaustrada)",
-    "snow_removal": "Sistemas de eliminación de nieve (calentadores, canaletas)",
-    "fans": "Fan de los techos (industrial, tranquilo)",
-    "antennas": "Antenas/mástiles (GSM, Radio, Satélite)"
-  },
+  "roof_modifications": "Modificaciones del Techo",
   "electrical": {
     "basic": "Básico (iluminación + enchufes)",
     "standard": "Estándar (circuito 15A)",
@@ -680,12 +655,7 @@
     "central": "Aire acondicionado central",
     "heat_pump": "Bomba de calor"
   },
-  "security": {
-    "basic": "Básico (cerraduras reforzadas)",
-    "standard": "Estándar (listo para alarma)",
-    "advanced": "Avanzado (cámaras + sensores)",
-    "high_security": "Alta seguridad (biométrico)"
-  },
+  "security": "Seguridad",
   "cladding": {
     "none": "Sin revestimiento exterior",
     "metal": "Revestimiento metálico",
@@ -705,26 +675,14 @@
     "sprinkler": "Sistema de rociadores",
     "full_system": "Sistema completo de supresión de incendios"
   },
-  "accessibility": {
-    "standard": "Acceso estándar",
-    "ramp": "Rampa para sillas de ruedas",
-    "full_ada": "Cumplimiento completo ADA",
-    "disabled_friendly": "Completamente accesible"
-  },
+  "accessibility": "Accesibilidad",
   "paint": {
     "standard": "Revestimiento estándar (C2)",
     "premium": "Acabado premium (C3)",
     "anti_corrosion": "Anti -corrosivo (C4)",
     "marine_grade": "Grado marino (C5M)"
   },
-  "insulation": {
-    "basic": "Básico (50mm)",
-    "standard": "Estándar (100mm)",
-    "premium": "Premium (20 cm, lana mineral)",
-    "extreme": "Extremo (200mm)",
-    "none": "Sin aislamiento",
-    "advanced": "Avanzado (lana mineral 10-15cm)"
-  },
+  "insulation": "Aislamiento",
   "reinforcement": {
     "none": "Sin refuerzo",
     "standard": "Refuerzo estándar",
@@ -790,16 +748,7 @@
   "advanced_comments": "Comentarios de Modificaciones Avanzadas",
   "delivery_zone_regional": "Regional (200 km)",
   "window_types_double": "Doble Acristalamiento",
-  "ventilation": {
-    "none": "Sin ventilaciones de aire (natural y mecánica)",
-    "gravity": "Respiraderos gravitacionales (2-4 PC, ajustables)",
-    "wall_fans": "Ventiladores de pared (elevador de 100-150 mm)",
-    "mechanical": "Ventilación mecánica (entrada + extracción)",
-    "heat_recovery": "Recuperación de calor (80-95% eficiencia)",
-    "split_ac": "Aire acondicionado split (1-3 unidades)",
-    "central_ac": "Aire acondicionado central (VRV/VRF)",
-    "industrial": "Ventilación industrial (ATEX, resistente químicos)"
-  },
+  "ventilation": "Ventilación",
   "it_systems": "Sistemas de TI",
   "lighting_professional": "Profesional",
   "interior_layout_open": "Espacio Abierto",
@@ -812,7 +761,7 @@
   "window_types_security": "Ventanas de Seguridad",
   "roof_modifications_skylight": "Claraboya",
   "it_systems_basic": "Red Básica",
-  "fire_systems": "Sistemas de Seguridad contra Incendios",
+  "fire_systems": "Sistemas Contra Incendios",
   "additional_openings_door": "Puerta Adicional",
   "construction_material_composite": "Compuesto",
   "basic_configuration": "Configuración básica",
@@ -858,5 +807,10 @@
     "important_warning": "La traducción del texto polaco al español es:\n\n                ⚠️ Importante:\n\nLa traducción mantiene el tono profesional y empresarial, conserva los emojis y símbolos, preserva la formación (puntos, colones) y utiliza términos de moneda y negocios adecuados. El resultado suena natural en español.\n\nSi necesitas traducir más texto, por favor házmelo saber.",
     "preliminary_estimate_full": "La traducción del texto polaco al español es:\n\n\"Estimación previa. El precio final dependerá de las especificaciones detalladas, los precios actuales de los materiales y la disponibilidad. Para una estimación precisa, comuníquese con nuestro equipo.\"\n\nNota: He mantenido el tono profesional y la estructura original del texto, incluyendo los símbolos y emojis solicitados. He utilizado términos de negocios y finanzas adecuados y he intentado hacer que suene natural en español.\n\nSi deseas agregar un toque más formal, podrías incluir una frase como:\n\n\"Por favor, tenga en cuenta que esta es una estimación previa y sujeto a cambios. ✅\"\n\nO:\n\n\"Para obtener un presupuesto más preciso, por favor, comuníquese con nosotros. 💰\"\n\nO incluso:\n\n\"Ten en cuenta que la disponibilidad de materiales y la",
     "configuration_saved_success": "La traducción del texto en polaco al español es:\n\n\"✅ Configuración guardada con éxito!\"\n\nNota: He mantenido el emoji ✅ para indicar que la configuración se ha realizado correctamente. Si deseas mantener otros emojis o símbolos, por favor házmelo saber.\n\nSi deseas agregar un poco más de contexto, podrías traducirlo a:\n\n\"✅ Configuración guardada con éxito! El presupuesto para la modificación del contenedor se ha estimado correctamente. 💰\"\n\nO, si deseas agregar una advertencia, podrías traducirlo a:\n\n\"✅ Configuración guardada con éxito! ⚠️ Asegúrate de revisar el presupuesto antes de proceder con la modificación del contenedor. 💰\"\n\nRecuerda que la traducción debe mantener un tono profesional y ser natural en español."
-  }
+  },
+  "destination": "Destino",
+  "window_type": "Tipo de Ventana",
+  "additional_systems_modifications": "Sistemas Adicionales y Modificaciones:",
+  "painting": "Pintura",
+  "assembly": "Montaje"
 }

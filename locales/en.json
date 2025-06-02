@@ -49,15 +49,7 @@
     "tilt": "Tilt windows",
     "skylight": "Skylight windows"
   },
-  "lighting": {
-    "none": "No electrical installation",
-    "basic": "Basic (lighting + outlets)",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie emergency (akumulatorowe)",
-    "smart": "Smart (home automation, KNX)"
-  },
+  "lighting": "Lighting",
   "electrical_system": {
     "none": "No electrical installation",
     "preparation": "Preparation (wiring without equipment)",
@@ -316,7 +308,7 @@
     "submit_inquiry": "Send Inquiry",
     "success_title": "Inquiry Successfully Sent!",
     "success_message": "Thank you for your inquiry. Our team will contact you within 24 hours with a detailed response.",
-    "next_steps": "What Happens Next",
+    "next_steps": "Next Steps",
     "step_1": "Our expert will analyze your requirements",
     "step_2": "We will contact you to get additional information",
     "step_3": "You will receive a detailed quote tailored to your needs",
@@ -325,9 +317,7 @@
     "error": "Error sending inquiry",
     "why_professional_inquiry": "Why Submit a Professional Inquiry?",
     "preparation_tips": "Tips for Best Results",
-    "budget_Range": "Budget scope",
-    "next_steps": "Next Steps",
-    "submit_inquiry": "Send Inquiry"
+    "budget_Range": "Budget scope"
   },
   "back_to_home": "← Return to Home Page",
   "go_to_configurator": "🔧 Go to Configurator",
@@ -341,14 +331,7 @@
   "environment": "Environment",
   "finish_level": "Finish Level",
   "climate_zone": "Climate Zone",
-  "windows": {
-    "one": "1 window",
-    "two": "2 windows",
-    "three": "3 windows",
-    "four": "4 windows",
-    "none": "Without windows (closed container)",
-    "five_plus": "5+ windows (Custom configuration)"
-  },
+  "windows": "Windows",
   "additional_doors": "Additional Doors",
   "yes": "Yes",
   "no": "No",
@@ -399,7 +382,6 @@
   "fallback_estimate_basic": "Basic spare calculation:",
   "ai_retry_later": "Try again later for AI analysis",
   "error_details": "Error details",
-  "save_configuration": "💾 Save Configuration",
   "save_configuration": "Save Configuration",
   "configuration_saved": "Configuration saved successfully!",
   "get_ai_analysis": "Receive AI analysis",
@@ -408,7 +390,7 @@
   "special_notes_systems": "Special Notes - Systems",
   "describe_system_requirements": "Describe additional system requirements...",
   "system_requirements_placeholder": "e.g. Special ventilation requirements, additional outlets, specialized installations",
-  "interior_layout": "Interior layout",
+  "interior_layout": "Interior Layout",
   "security_systems": "Safety systems",
   "exterior_cladding": "Exterior Cladding",
   "additional_openings": "Additional Openings",
@@ -419,8 +401,8 @@
   "describe_modification_requirements": "Describe additional modification requirements...",
   "modification_requirements_placeholder": "e.g. Special RAL colors, non-standard opening sizes, additional structural reinforcements",
   "transport_logistics": "Transport and logistics",
-  "delivery_zone": "Delivery zone",
-  "transport_type": "Type of transport",
+  "delivery_zone": "Delivery Zone",
+  "transport_type": "Transport Type",
   "assembly_installation": "Assembly and Installation",
   "equipment_extras": "EQUIPMENT & EXTRAS",
   "office_equipment": "Office Equipment",
@@ -672,17 +654,7 @@
     "industrial": "Industrial grade",
     "marine_grade": "Marine grade (salt resistance)"
   },
-  "roof_modifications": {
-    "none": "No modification (standard flat roof)",
-    "insulation": "Additional roof insulation (10-20cm)",
-    "skylight": "Roof skylight (60x60, 90x90, 120x120cm)",
-    "solar": "Solar installation (2-10kW)",
-    "sloped": "Sloped roof (single-sided, gable)",
-    "terrace": "Roof terrace (with balustrade)",
-    "snow_removal": "Snow removal systems (heaters, gutters)",
-    "fans": "Roof fans (industrial, quiet)",
-    "antennas": "Antennas/masts (GSM, Radio, satellite)"
-  },
+  "roof_modifications": "Roof Modifications",
   "electrical": {
     "none": "No electrical installation",
     "preparation": "Preparation (wiring without equipment)",
@@ -707,12 +679,7 @@
     "central": "Central air conditioning",
     "heat_pump": "Heat pump"
   },
-  "security": {
-    "basic": "Basic (reinforced locks)",
-    "standard": "Standard (alarm preparation)",
-    "advanced": "Advanced (cameras + sensors)",
-    "high_security": "High security (biometric)"
-  },
+  "security": "Security",
   "cladding": {
     "none": "No exterior cladding",
     "metal": "Metal siding",
@@ -732,26 +699,14 @@
     "sprinkler": "Sprinkler system",
     "full_system": "Full fire suppression"
   },
-  "accessibility": {
-    "standard": "Standard access",
-    "ramp": "Wheelchair ramp",
-    "full_ada": "Full ADA compliance",
-    "disabled_friendly": "Fully accessible"
-  },
+  "accessibility": "Accessibility",
   "paint": {
     "standard": "Standard coating (C2)",
     "premium": "Premium finish (C3)",
     "anti_corrosion": "Anti-corrosion (C4)",
     "marine_grade": "Marine grade (C5M)"
   },
-  "insulation": {
-    "none": "No insulation",
-    "basic": "Basic (5-10cm, polystyrene/wool)",
-    "advanced": "Advanced (mineral wool 10-15cm)",
-    "premium": "Premium (20cm, mineral wool)",
-    "standard": "Standard (15cm, PIR/PUR)",
-    "extreme": "Extreme (30cm, aerogel/vakuum)"
-  },
+  "insulation": "Insulation",
   "reinforcement": {
     "none": "No reinforcement",
     "standard": "Standard reinforcement",
@@ -817,16 +772,7 @@
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Double Glazed",
-  "ventilation": {
-    "none": "No ventilation (natural or mechanical)",
-    "gravity": "Gravity ventilation (2-4 units, adjustable)",
-    "wall_fans": "Wall fans (extraction 100-150mm)",
-    "mechanical": "Mechanical ventilation (intake + extraction)",
-    "heat_recovery": "Heat recovery (80-95% efficiency)",
-    "split_ac": "Split air conditioning (1-3 units)",
-    "central_ac": "Central air conditioning (VRV/VRF)",
-    "industrial": "Industrial ventilation (ATEX, chemical resistant)"
-  },
+  "ventilation": "Ventilation",
   "it_systems": "IT systems",
   "lighting_professional": "Professional",
   "interior_layout_open": "Open space",
@@ -839,7 +785,7 @@
   "window_types_security": "Anti -burglary windows",
   "roof_modifications_skylight": "Skylight",
   "it_systems_basic": "Basic network",
-  "fire_systems": "Fire systems",
+  "fire_systems": "Fire Safety Systems",
   "additional_openings_door": "Additional Door",
   "construction_material_composite": "Composite Material",
   "basic_configuration": "Basic configuration",
@@ -875,5 +821,10 @@
   },
   "window_types_label": "Window Types",
   "lighting_label": "Lighting",
-  "flooring_label": "Flooring"
+  "flooring_label": "Flooring",
+  "destination": "Destination",
+  "window_type": "Window Type",
+  "additional_systems_modifications": "Additional Systems and Modifications:",
+  "painting": "Painting",
+  "assembly": "Assembly"
 }

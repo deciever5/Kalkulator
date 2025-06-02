@@ -49,15 +49,7 @@
     "tilt": "Fenêtres basculantes",
     "skylight": "Fenêtres de toit"
   },
-  "lighting": {
-    "none": "Pas d'installation électrique",
-    "basic": "De base (éclairage + prises)",
-    "basic_led": "Éclairage LED de base",
-    "energy_efficient": "LED d'énergie d'énergie avec des capteurs",
-    "exterior": "Éclairage externe (phares)",
-    "emergency": "Éclairage d'urgence (batterie)",
-    "smart": "Intelligent (domotique, KNX)"
-  },
+  "lighting": "Éclairage",
   "electrical_system": {
     "none": "Pas d'installation électrique",
     "preparation": "Préparation (câblage sans équipement)",
@@ -383,16 +375,9 @@
   "container_type": "Type de conteneur",
   "purpose": "Objectif",
   "environment": "Environnement",
-  "finish_level": "Niveau de finition",
-  "climate_zone": "Zone climatique",
-  "windows": {
-    "one": "1 fenêtre",
-    "two": "2 fenêtres",
-    "three": "3 fenêtres",
-    "four": "4 fenêtres",
-    "none": "Sans fenêtres (conteneur fermé)",
-    "five_plus": "5+ Windows (configuration personnalisée)"
-  },
+  "finish_level": "Niveau de Finition",
+  "climate_zone": "Zone Climatique",
+  "windows": "Fenêtres",
   "additional_doors": "Portes supplémentaires",
   "yes": "Oui",
   "no": "Non",
@@ -451,10 +436,10 @@
   "special_notes_systems": "Notes spéciales - Systèmes",
   "describe_system_requirements": "Décrivez les exigences système supplémentaires...",
   "system_requirements_placeholder": "ex. Exigences de ventilation spéciales, prises supplémentaires, installations spécialisées",
-  "interior_layout": "Aménagement intérieur",
+  "interior_layout": "Aménagement Intérieur",
   "security_systems": "Systèmes de sécurité et d'alarme",
-  "exterior_cladding": "Revêtement extérieur",
-  "additional_openings": "Ouvertures supplémentaires et modifications",
+  "exterior_cladding": "Revêtement Extérieur",
+  "additional_openings": "Ouvertures Supplémentaires",
   "fire_safety_systems": "Systèmes de sécurité incendie",
   "accessibility_features": "Accessibilité et ergonomie",
   "paint_finish": "Peinture et finition extérieure",
@@ -462,8 +447,8 @@
   "describe_modification_requirements": "Décrivez les exigences de modification supplémentaires...",
   "modification_requirements_placeholder": "ex. Couleurs RAL spéciales, tailles d'ouverture non standard, renforts structurels supplémentaires",
   "transport_logistics": "Transport et logistique",
-  "delivery_zone": "Zone de livraison",
-  "transport_type": "Type de transport",
+  "delivery_zone": "Zone de Livraison",
+  "transport_type": "Type de Transport",
   "assembly_installation": "Assemblage et installation",
   "equipment_extras": "Équipement et extras",
   "office_equipment": "Équipement de bureau/intérieur",
@@ -697,17 +682,7 @@
     "industrial": "Grade industriel",
     "marine_grade": "Grade marin (résistance au sel)"
   },
-  "roof_modifications": {
-    "none": "Sans modification (toit plat standard)",
-    "insulation": "Isolation du toit en plus (10-20 cm)",
-    "skylight": "Skylight de toit (60x60, 90x90, 120x120cm)",
-    "solar": "Installation solaire (2-10 kW)",
-    "sloped": "Un toit oblique (un acteur, pignon)",
-    "terrace": "Terrasse du toit (avec balustrade)",
-    "snow_removal": "Systèmes d'élimination de la neige (radiateurs, gouttières)",
-    "fans": "Fans de toit (industriel, calme)",
-    "antennas": "Antennes / mâts (GSM, radio, satellite)"
-  },
+  "roof_modifications": "Modifications de Toit",
   "electrical": {
     "basic": "De base (éclairage + prises)",
     "standard": "Standard (circuit 15a)",
@@ -727,12 +702,7 @@
     "central": "Climatisation centrale",
     "heat_pump": "Pompe à chaleur"
   },
-  "security": {
-    "basic": "Basique (serrures renforcées)",
-    "standard": "Standard (préparation d'alarme)",
-    "advanced": "Sécurité avancée (caméras + capteurs)",
-    "high_security": "Sécurité élevée (biométrique)"
-  },
+  "security": "Sécurité",
   "cladding": {
     "none": "Pas de revêtement extérieur",
     "metal": "Revêtement métallique",
@@ -752,26 +722,14 @@
     "sprinkler": "Système d'arrosage incendie",
     "full_system": "Système complet de suppression incendie"
   },
-  "accessibility": {
-    "standard": "Norme d'accès",
-    "ramp": "Rampe pour fauteuils roulants",
-    "full_ada": "Compatibilité complète de l'ADA",
-    "disabled_friendly": "Entièrement accessible"
-  },
+  "accessibility": "Accessibilité",
   "paint": {
     "standard": "Revêtement standard (C2)",
     "premium": "Finition premium (C3)",
     "anti_corrosion": "Anti-corrosion (C4)",
     "marine_grade": "Grade marin (C5M)"
   },
-  "insulation": {
-    "basic": "Basique (50mm)",
-    "standard": "Standard (15 cm, pir / pur)",
-    "premium": "Premium (20 cm, laine minérale)",
-    "extreme": "Extrême (200mm)",
-    "none": "Aucune isolation",
-    "advanced": "Avancé (laine minérale 10-15cm)"
-  },
+  "insulation": "Isolation",
   "reinforcement": {
     "none": "Pas de renforts",
     "standard": "Renforcement standard",
@@ -822,7 +780,7 @@
   "delivery_zone_international": "Zone de livraison internationale",
   "paint_finish_custom": "Couleur personnalisée",
   "construction_material_aluminum": "Aluminium",
-  "construction_material": "Matériau de construction",
+  "construction_material": "Matériau de Construction",
   "transport_type_special": "Transport spécial",
   "security_systems_basic": "Système de sécurité de base",
   "transport_type_crane": "Avec grue",
@@ -837,16 +795,7 @@
   "advanced_comments": "Commentaires de modifications avancées",
   "delivery_zone_regional": "Régional (200 km)",
   "window_types_double": "Double vitrage",
-  "ventilation": {
-    "none": "Sans bouches d'aération (naturelles et mécaniques)",
-    "gravity": "Évents gravitationnels (2-4 pcs, réglables)",
-    "heat_recovery": "Récupération (récupération de chaleur 80-95%)",
-    "split_ac": "Climatisation divisée (1-3 unités)",
-    "wall_fans": "Ventilateurs muraux (ascenseur de 100 à 150 mm)",
-    "mechanical": "Ventilation mécanique (alimentation à air + levage)",
-    "central_ac": "Climatisation centrale (VRV / VRF)",
-    "industrial": "Ventilation industrielle (ATEX, chimio-résistant)"
-  },
+  "ventilation": "Ventilation",
   "it_systems": "Systèmes informatiques",
   "lighting_professional": "Professionnel",
   "interior_layout_open": "Espace ouvert",
@@ -859,7 +808,7 @@
   "window_types_security": "Fenêtres de sécurité",
   "roof_modifications_skylight": "Lucarne",
   "it_systems_basic": "Réseau de base",
-  "fire_systems": "Systèmes de sécurité incendie",
+  "fire_systems": "Systèmes Anti-Incendie",
   "additional_openings_door": "Porte supplémentaire",
   "construction_material_composite": "Matériau composite",
   "basic_configuration": "Configuration de base",
@@ -905,5 +854,10 @@
     "important_warning": "\"⚠️ Attention importante :\"\n\nI have translated the Polish text to French while maintaining the required tone, emojis, and formatting. The translation is professional and suitable for a business context.\n\nIf you would like me to translate the rest of the text, please provide it.",
     "preliminary_estimate_full": "Voici la traduction du texte en français :\n\n\"Cette est une estimation préliminaire. Le prix final dépend des spécifications détaillées, des tarifs actuels des matériaux et de la disponibilité. Pour obtenir une estimation précise, veuillez nous contacter.\"\n\nJ'ai gardé le ton professionnel, les emojis et les symboles, ainsi que la mise en forme originale. J'ai également utilisé des termes de commerce et de finance appropriés pour rendre le texte naturel en français.\n\nSi vous le souhaitez, je peux également ajouter des éléments pour rendre le texte plus attrayant et professionnel, tels que :\n\n\"Cette est une estimation préliminaire 💰. Le prix final dépend des spécifications détaillées, des tarifs actuels des matériaux et de la disponibilité ⚠️. Pour obtenir une estimation précise, veuillez nous contacter",
     "configuration_saved_success": "La traduction du texte en français est :\n\n                ✅ La configuration a été enregistrée avec succès !\n\nNotez que j'ai conservé l'emoji ✅ pour indiquer que l'opération a été effectuée avec succès. J'ai également utilisé le verbe \"enregistrée\" pour maintenir un ton professionnel et approprié pour un interface de coûts d'estimation de modification de conteneur."
-  }
+  },
+  "destination": "Destination",
+  "window_type": "Type de Fenêtre",
+  "additional_systems_modifications": "Systèmes Supplémentaires et Modifications:",
+  "painting": "Peinture",
+  "assembly": "Assemblage"
 }

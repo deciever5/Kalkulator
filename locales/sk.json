@@ -49,15 +49,7 @@
     "tilt": "Nakláňanie okien",
     "skylight": "Strešné okná"
   },
-  "lighting": {
-    "none": "Žiadne osvetlenie",
-    "basic": "Základné LED",
-    "basic_led": "Základné oświetlenie LED",
-    "energy_efficient": "Energia -LED LED so senzormi",
-    "exterior": "Vonkajšie osvetlenie (svetlomety)",
-    "emergency": "Núdzové osvetlenie (batéria)",
-    "smart": "Inteligentný systém (ovládané osvetlenie)"
-  },
+  "lighting": "Osvetlenie",
   "electrical_system": {
     "none": "Bez elektrickej inštalácie",
     "preparation": "Príprava (káble bez vybavenia)",
@@ -383,16 +375,9 @@
   "container_type": "Typ kontajnera",
   "purpose": "Účel",
   "environment": "Prostredie",
-  "finish_level": "Úroveň dokončenia",
-  "climate_zone": "Klimatizácia",
-  "windows": {
-    "two": "2 okná",
-    "three": "3 okná",
-    "four": "4 okná",
-    "none": "Bez okien (uzavretý kontajner)",
-    "one": "1 okno",
-    "five_plus": "5+ Windows (vlastná konfigurácia)"
-  },
+  "finish_level": "Úroveň Dokončenia",
+  "climate_zone": "Klimatická Zóna",
+  "windows": "Okná",
   "additional_doors": "Dodatočné dvere",
   "yes": "Áno",
   "no": "Nie",
@@ -451,10 +436,10 @@
   "special_notes_systems": "Špeciálne poznámky - Systémy",
   "describe_system_requirements": "Opíšte ďalšie systémové požiadavky...",
   "system_requirements_placeholder": "napr. Špeciálne požiadavky na vetranie, ďalšie zásuvky, špecializované inštalácie",
-  "interior_layout": "Vnútorné usporiadanie",
+  "interior_layout": "Vnútorné Usporiadanie",
   "security_systems": "Bezpečnostné a poplašné systémy",
-  "exterior_cladding": "Vonkajší obklad",
-  "additional_openings": "Ďalšie otvory a úpravy",
+  "exterior_cladding": "Vonkajší Obklad",
+  "additional_openings": "Ďalšie Otvory",
   "fire_safety_systems": "Požiarne bezpečnostné systémy",
   "accessibility_features": "Prístupnosť a ergonómia",
   "paint_finish": "Maľovanie a vonkajšia úprava",
@@ -462,8 +447,8 @@
   "describe_modification_requirements": "Opíšte ďalšie požiadavky na úpravu ...",
   "modification_requirements_placeholder": "napr. Špeciálne RAL farby, neštandardné veľkosti otvorov, ďalšie konštrukčné posilnenie",
   "transport_logistics": "Doprava a logistika",
-  "delivery_zone": "Dodacia zóna",
-  "transport_type": "Typ dopravy",
+  "delivery_zone": "Dodacia Zóna",
+  "transport_type": "Typ Dopravy",
   "assembly_installation": "Montáž a inštalácia",
   "equipment_extras": "Vybavenie a doplnky",
   "office_equipment": "Kancelárske/interiérové vybavenie",
@@ -697,17 +682,7 @@
     "industrial": "Priemyselná verzia",
     "marine_grade": "Morsky odolná verzia"
   },
-  "roof_modifications": {
-    "none": "Bez úpravy (štandardná plochá strecha)",
-    "insulation": "Izolácia strechy navyše (10-20 cm)",
-    "skylight": "Strešné svetlíky (60x60, 90x90, 120x120cm)",
-    "solar": "Solárna inštalácia (2-10 kW)",
-    "sloped": "Šikmá strecha (jedna -vedená, štítová)",
-    "terrace": "Strešná terasa (s balustrádou)",
-    "snow_removal": "Systémy odstraňovania snehu (ohrievače, odkvapy)",
-    "fans": "Fanúšikovia strechy (priemyselné, tiché)",
-    "antennas": "Antény/stožiare (GSM, rádio, satelit)"
-  },
+  "roof_modifications": "Úpravy Strechy",
   "electrical": {
     "basic": "Základná (osvetlenie + zásuvky)",
     "standard": "Štandard (obvod 15a)",
@@ -727,12 +702,7 @@
     "central": "Centrálna klimatizácia",
     "heat_pump": "Teplomer"
   },
-  "security": {
-    "basic": "Základné (zosilnené zámky)",
-    "standard": "Štandard (príprava alarmov)",
-    "advanced": "Rozšírená (kamery + senzory)",
-    "high_security": "Vysoce zabezpečená (biometrická)"
-  },
+  "security": "Bezpečnosť",
   "cladding": {
     "none": "Žiadne vonkajšie oblohy",
     "metal": "Metlová obloha",
@@ -752,26 +722,14 @@
     "sprinkler": "Systém s prúžkami",
     "full_system": "Plný systém proti požiaru"
   },
-  "accessibility": {
-    "standard": "Štandardný prístup",
-    "ramp": "Kolové prechádzanie",
-    "full_ada": "Plná prístupnosť podľa AD",
-    "disabled_friendly": "Plne prístupný"
-  },
+  "accessibility": "Prístupnosť",
   "paint": {
     "standard": "Štandardný povlak (C2)",
     "premium": "Premium Finish (C3)",
     "anti_corrosion": "Proti korózii (C4)",
     "marine_grade": "Morská trieda (C5M)"
   },
-  "insulation": {
-    "basic": "Základné (50mm)",
-    "standard": "Štandard (15 cm, PIR/PUR)",
-    "premium": "Prémiové (150mm)",
-    "extreme": "Extrémne (200mm)",
-    "none": "Žiadna izolácia",
-    "advanced": "Advanced (minerálna vlna 10-15 cm)"
-  },
+  "insulation": "Izolácia",
   "reinforcement": {
     "none": "Žiadne posilnenie",
     "standard": "Štandardné posilnenie",
@@ -822,7 +780,7 @@
   "delivery_zone_international": "Medzinárodné",
   "paint_finish_custom": "Vlastná farba",
   "construction_material_aluminum": "Alumínium",
-  "construction_material": "Stavebný materiál",
+  "construction_material": "Konštrukčný Materiál",
   "transport_type_special": "Špeciálna preprava",
   "security_systems_basic": "Základné",
   "transport_type_crane": "S kránom",
@@ -837,16 +795,7 @@
   "advanced_comments": "Pokročilé poznámky k modifikáciám",
   "delivery_zone_regional": "Regionálne (200 km)",
   "window_types_double": "Dvojité zasklenie",
-  "ventilation": {
-    "none": "Bez vzduchových prieduchov (prírodné a mechanické)",
-    "gravity": "Gravitačné otvory (2-4 ks, nastaviteľné)",
-    "heat_recovery": "Recuperation (obnovenie tepla 80-95%)",
-    "split_ac": "Split klimatizácia (1-3 jednotiek)",
-    "wall_fans": "Ventilátory steny (výťah 100-150 mm)",
-    "mechanical": "Mechanické vetranie (prívod vzduchu + zdvih)",
-    "central_ac": "Centrálna klimatizácia (VRV/VRF)",
-    "industrial": "Priemyselné ventilácie (ATEX, chemo -rezistentné)"
-  },
+  "ventilation": "Ventilácia",
   "it_systems": "IT systémy",
   "lighting_professional": "Profesionálne",
   "interior_layout_open": "Otvorený priestor",
@@ -859,7 +808,7 @@
   "window_types_security": "Okná",
   "roof_modifications_skylight": "Osvetlenie strechy",
   "it_systems_basic": "Základná sieť",
-  "fire_systems": "Požiarne systémy",
+  "fire_systems": "Požiarne Systémy",
   "additional_openings_door": "Doplnkové otvory dvere",
   "construction_material_composite": "Kombinovaný materiál",
   "basic_configuration": "Základná konfigurácia",
@@ -905,5 +854,10 @@
     "important_warning": "Preloženie textu:\n\n ⚠️ Dôležité:\n\nPoznámka: Preložené slová sú v súlade s požiadavkami na profesionálny obchodný ton, uchovanie emócií a symbolov, uchovanie formátov a používanie vhodných finančných a obchodných terminológii.\n\nPreložené slová:\n\n- ⚠️ Ważne: -> ⚠️ Dôležité:\n- 💰 (ako symbol pre peniaze) zostane bežne použité, pretože je všeobecne uznávané a používané v rôznych kontextoch.\n- ✅ (ako symbol pre potvrdenie) zostane bežne použité, pretože je všeobecne uznávané a používané v rôznych kontextoch.\n\nPreložené texty pre kont",
     "preliminary_estimate_full": "Preferovaný odhad. Konečná cena závisí od podrobných špecifikácií, aktuálnych cien materiálov a dostupnosti. Pre presný odhad sa kontaktujte našim tímom. 💰⚠️✅",
     "configuration_saved_success": "Preložené slovenčie texty:\n\n✅ Konfigurácia uložená úspešne!"
-  }
+  },
+  "destination": "Určenie",
+  "window_type": "Typ Okna",
+  "additional_systems_modifications": "Ďalšie Systémy a Úpravy:",
+  "painting": "Maľovanie",
+  "assembly": "Montáž"
 }

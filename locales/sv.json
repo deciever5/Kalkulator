@@ -49,15 +49,7 @@
     "tilt": "Lutande fönster",
     "skylight": "Takfönster"
   },
-  "lighting": {
-    "none": "Ingen belysning",
-    "basic": "Grundläggande LED",
-    "basic_led": "Grundläggande oświetlenie LED",
-    "energy_efficient": "Energibesparande LED med sensorer",
-    "exterior": "Extern belysning (strålkastare)",
-    "emergency": "Nödbelysning (batteri)",
-    "smart": "System inteligentny (oświetlenie sterowane)"
-  },
+  "lighting": "Belysning",
   "electrical_system": {
     "none": "Utan instalacji elektrycznej",
     "preparation": "Förberedelse (kablar utan utrustning)",
@@ -336,16 +328,9 @@
   "container_type": "Behållartyp",
   "purpose": "Syfte",
   "environment": "Miljö",
-  "finish_level": "Finishnivå",
+  "finish_level": "Slutnivå",
   "climate_zone": "Klimatzon",
-  "windows": {
-    "one": "1 fönster",
-    "two": "2 Windows",
-    "three": "3 Windows",
-    "four": "4 Windows",
-    "none": "Utan fönster (stängd behållare)",
-    "five_plus": "5+ Windows (anpassad konfiguration)"
-  },
+  "windows": "Fönster",
   "additional_doors": "Ytterligare Dörrar",
   "yes": "Ja",
   "no": "Nej",
@@ -407,7 +392,7 @@
   "interior_layout": "Inredningslayout",
   "security_systems": "Säkerhets- och larmsystem",
   "exterior_cladding": "Fasadbeklädnad",
-  "additional_openings": "Ytterligare öppningar och modifieringar",
+  "additional_openings": "Ytterligare Öppningar",
   "fire_safety_systems": "Brandsäkerhetssystem",
   "accessibility_features": "Tillgänglighet och ergonomi",
   "paint_finish": "Målning och ytterfinish",
@@ -650,17 +635,7 @@
     "industrial": "Industriell kvalitet",
     "marine_grade": "Marin kvalitet (saltresistens)"
   },
-  "roof_modifications": {
-    "none": "Utan modifiering (standard platt tak)",
-    "insulation": "Ytterligare takisolering (polystyren/PIR)",
-    "skylight": "Takskål (60x60, 90x90, 120x120cm)",
-    "solar": "Solinstallation (2-10 kW)",
-    "sloped": "Ett snett tak (en -sidosid, gavel)",
-    "terrace": "Takterrass (med balustrad)",
-    "snow_removal": "Snöborttagningssystem (värmare, rännor)",
-    "fans": "Takfläktar (industriell, tyst)",
-    "antennas": "Antenner/master (GSM, radio, satellit)"
-  },
+  "roof_modifications": "Takmodifieringar",
   "electrical": {
     "basic": "Basic (belysning + uttag)",
     "standard": "Standard (krets 15A)",
@@ -680,12 +655,7 @@
     "central": "Central luftkonditionering",
     "heat_pump": "Värmepump"
   },
-  "security": {
-    "basic": "Grundläggande (förstärkta lås)",
-    "standard": "Standard (Alarm Preparation)",
-    "advanced": "Avancerad (kameror + sensorer)",
-    "high_security": "Hög säkerhet (biometrisk)"
-  },
+  "security": "Säkerhet",
   "cladding": {
     "none": "Ingen yttre beklädnad",
     "metal": "Metallbeklädnad",
@@ -705,26 +675,14 @@
     "sprinkler": "Sprinklersystem",
     "full_system": "Full släckning av elden"
   },
-  "accessibility": {
-    "standard": "Standardåtkomst",
-    "ramp": "Rullstolsramp",
-    "full_ada": "Fullständig ADA-efterlevnad",
-    "disabled_friendly": "Helt tillgänglig"
-  },
+  "accessibility": "Tillgänglighet",
   "paint": {
     "standard": "Standardbeläggning (C2)",
     "premium": "Premium finish (C3)",
     "anti_corrosion": "Antikorrosion (C4)",
     "marine_grade": "Marin kvalitet (C5M)"
   },
-  "insulation": {
-    "basic": "Grundläggande (5-10 cm, polystyren/ull)",
-    "standard": "Standard (15 cm, pir/pur)",
-    "premium": "Premium (20 cm, mineralull)",
-    "extreme": "Extrem (200mm)",
-    "none": "Ingen isolering",
-    "advanced": "Avancerad (mineralull 10-15 cm)"
-  },
+  "insulation": "Isolering",
   "reinforcement": {
     "none": "Ingen förstärkning",
     "standard": "Förstärkning",
@@ -790,16 +748,7 @@
   "advanced_comments": "Avancerade Modifieringar Kommentarer",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dubbelglas",
-  "ventilation": {
-    "none": "Utan luftventiler (naturligt och mekaniskt)",
-    "gravity": "Gravitationsventiler (2-4 st, justerbar)",
-    "heat_recovery": "Återvinning (värmeåtervinning 80-95%)",
-    "split_ac": "Dela luftkonditionering (1-3 enheter)",
-    "wall_fans": "Väggfläktar (100-150 mm hiss)",
-    "mechanical": "Mekanisk ventilation (lufttillförsel + hiss)",
-    "central_ac": "Central luftkonditionering (VRV/VRF)",
-    "industrial": "Industriell ventilation (ATEX, kemo -resistent)"
-  },
+  "ventilation": "Ventilation",
   "it_systems": "Det system",
   "lighting_professional": "Professionell",
   "interior_layout_open": "Öppet Utrymme",
@@ -812,7 +761,7 @@
   "window_types_security": "Säkerhetsfönster",
   "roof_modifications_skylight": "Takfönster",
   "it_systems_basic": "Grundnätverk",
-  "fire_systems": "Brandsystem",
+  "fire_systems": "Brandsäkerhetssystem",
   "additional_openings_door": "Ytterligare Dörr",
   "construction_material_composite": "Komposit",
   "basic_configuration": "Grundläggande konfiguration",
@@ -866,5 +815,10 @@
   "total_cost_line": "TOTALKOSTNAD:",
   "important_warning": "⚠️ Viktigt:",
   "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
-  "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!"
+  "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!",
+  "destination": "Destination",
+  "window_type": "Fönstertyp",
+  "additional_systems_modifications": "Ytterligare System och Modifieringar:",
+  "painting": "Målning",
+  "assembly": "Montering"
 }

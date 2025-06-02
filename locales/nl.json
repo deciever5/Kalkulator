@@ -49,15 +49,7 @@
     "tilt": "Kantelen ramen",
     "skylight": "Dakramen"
   },
-  "lighting": {
-    "none": "Geen verlichting",
-    "basic": "Basis LED",
-    "basic_led": "Basis oświetlenie LED",
-    "energy_efficient": "Energie -redding led met sensoren",
-    "exterior": "Externe verlichting (koplampen)",
-    "emergency": "Noodverlichting (batterij)",
-    "smart": "System inteligentny (oświetlenie sterowane)"
-  },
+  "lighting": "Verlichting",
   "electrical_system": {
     "none": "Zonder elektrische installatie",
     "preparation": "Przygotowanie (bedrading zonder uitrusting)",
@@ -338,14 +330,7 @@
   "environment": "Omgeving",
   "finish_level": "Afwerkingsniveau",
   "climate_zone": "Klimaatzone",
-  "windows": {
-    "one": "1 raam",
-    "two": "2 ramen",
-    "three": "3 ramen",
-    "four": "4 ramen",
-    "none": "Zonder Windows (gesloten container)",
-    "five_plus": "5+ Windows (aangepaste configuratie)"
-  },
+  "windows": "Ramen",
   "additional_doors": "Extra Deuren",
   "yes": "Ja",
   "no": "Nee",
@@ -407,7 +392,7 @@
   "interior_layout": "Binnenindeling",
   "security_systems": "Beveiligings- en alarmsystemen",
   "exterior_cladding": "Gevelbekleding",
-  "additional_openings": "Aanvullende openingen en modificaties",
+  "additional_openings": "Aanvullende Openingen",
   "fire_safety_systems": "Brandveiligheidssystemen",
   "accessibility_features": "Toegankelijkheid en ergonomie",
   "paint_finish": "Schilderwerk en buitenafwerking",
@@ -650,17 +635,7 @@
     "industrial": "Industriële kwaliteit",
     "marine_grade": "Maritieme kwaliteit (zoutbestendig)"
   },
-  "roof_modifications": {
-    "none": "Zonder aanpassing (standaard plat dak)",
-    "insulation": "Dakisolatie bovendien (10-20 cm)",
-    "skylight": "Dakslyight (60x60, 90x90, 120x120cm)",
-    "solar": "Zonne-installatie (2-10 kW)",
-    "sloped": "Een schuin dak (eenzijdige, gevel)",
-    "terrace": "Dakterras (met balustrade)",
-    "snow_removal": "Sneeuwverwijderingssystemen (kachels, goten)",
-    "fans": "Dakfans (industrieel, stil)",
-    "antennas": "Antennes/masten (GSM, radio, satelliet)"
-  },
+  "roof_modifications": "Dakmodificaties",
   "electrical": {
     "basic": "Basis (verlichting + stopcontacten)",
     "standard": "Standaard (Circuit 15a)",
@@ -680,12 +655,7 @@
     "central": "Centrale airconditioning",
     "heat_pump": "Warmtepomp"
   },
-  "security": {
-    "basic": "Basis (versterkte sloten)",
-    "standard": "Standaard (alarmvoorbereiding)",
-    "advanced": "Geavanceerd (camera's + sensoren)",
-    "high_security": "Hoge beveiliging (biometrisch)"
-  },
+  "security": "Beveiliging",
   "cladding": {
     "none": "Geen buitenbekleding",
     "metal": "Metalen gevelbekleding",
@@ -705,26 +675,14 @@
     "sprinkler": "Sprinkler systeem",
     "full_system": "Volledig blussysteem"
   },
-  "accessibility": {
-    "standard": "Standaardtoegang",
-    "ramp": "Rolstoelhelling",
-    "full_ada": "Volledige ADA naleving",
-    "disabled_friendly": "Volledig toegankelijk"
-  },
+  "accessibility": "Toegankelijkheid",
   "paint": {
     "standard": "Standaardcoating (C2)",
     "premium": "Premium afwerking (C3)",
     "anti_corrosion": "Anti-corrosie (C4)",
     "marine_grade": "Maritieme kwaliteit (C5M)"
   },
-  "insulation": {
-    "basic": "Basis (50mm)",
-    "standard": "Standaard (15 cm, PIR/PUR)",
-    "premium": "Premium (20 cm, minerale wol)",
-    "extreme": "Extreem (200mm)",
-    "none": "Geen isolatie",
-    "advanced": "Geavanceerd (minerale wol 10-15 cm)"
-  },
+  "insulation": "Isolatie",
   "reinforcement": {
     "none": "Geen versterking",
     "standard": "Standaardversterking",
@@ -775,7 +733,7 @@
   "delivery_zone_international": "Internationale",
   "paint_finish_custom": "Custom Color",
   "construction_material_aluminum": "Aluminum",
-  "construction_material": "Bouwmateriaal",
+  "construction_material": "Constructiemateriaal",
   "transport_type_special": "Speciaal transport",
   "security_systems_basic": "Fundamenteel",
   "transport_type_crane": "Met kraan",
@@ -790,16 +748,7 @@
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Dubbel geglazuurd",
-  "ventilation": {
-    "none": "Zonder luchtopeningen (natuurlijk en mechanisch)",
-    "gravity": "Gravitationele ventilatieopeningen (2-4 pc's, verstelbaar)",
-    "heat_recovery": "Recuperatie (warmteverstel 80-95%)",
-    "split_ac": "Split airconditioning (1-3 eenheden)",
-    "wall_fans": "Muurventilatoren (100-150 mm lift)",
-    "mechanical": "Mechanische ventilatie (luchttoevoer + lift)",
-    "central_ac": "Centrale airconditioning (VRV/VRF)",
-    "industrial": "Industriële ventilatie (ATEX, chemo -resistent)"
-  },
+  "ventilation": "Ventilatie",
   "it_systems": "IT Systems",
   "lighting_professional": "Professioneel",
   "interior_layout_open": "Open Space",
@@ -812,7 +761,7 @@
   "window_types_security": "Beveiligingsvensters",
   "roof_modifications_skylight": "Dakraam",
   "it_systems_basic": "Basisnetwerk",
-  "fire_systems": "Brandweersystemen",
+  "fire_systems": "Brandbeveiligingssystemen",
   "additional_openings_door": "Extra deur",
   "construction_material_composite": "Composite",
   "basic_configuration": "Basisconfiguratie",
@@ -858,5 +807,10 @@
     "important_warning": "De vertaling van het Pools tekst naar het Nederlands is:\n\n                ⚠️ Aandachtspunt:\n\nIk heb de eisen in acht genomen:\n\n- Professionele zakelijke toon behouden\n- Emoticon's en symbolen (💰, ⚠️, ✅) behouden\n- Formattings behouden (kolons, puntjes)\n- Geschikte valuta/zakelijke terminologie gebruiken\n- Het klinkt natuurlijk in het Nederlands\n\nDe vertaling van de tekst is dus:\n\n                ⚠️ Aandachtspunt:",
     "preliminary_estimate_full": "De vertaling van het Pools naar het Nederlands is als volgt:\n\n\"Deze is een voorlopige schatting. De eindprijs is afhankelijk van de specifieke specificaties, de huidige materialenprijzen en de beschikbaarheid. Voor een nauwkeurige offerte neem contact op met ons team. 💰⚠️✅\"\n\nIk heb de vertaling zo gemaakt dat het klinkt alsof het van een professioneel bedrijf komt. Ik heb de symbolen en emojis behouden en de zinnen opgebouwd om het natuurlijk te laten klinken in het Nederlands.",
     "configuration_saved_success": "De vertaling van het Pools tekst naar het Nederlands is:\n\n\"✅ Configuratie opgeslagen met succes!\"\n\nIk heb de volgende aanpassingen gemaakt om de eisen te voldoen:\n\n- Ik heb de taal gebruikt die gebruikelijk is in een zakelijke omgeving.\n- Ik heb de emoji's en symbolen behouden.\n- Ik heb de indeling en de spatie behouden.\n- Ik heb de juiste zakelijke termen gebruikt.\n- De vertaling klinkt natuurlijk in het Nederlands.\n\nAls alternatief kan je ook \"✅ Configuratie opgeslagen met succes! Kosten zijn nu berekend.\" gebruiken, als je wilt dat de gebruiker weet dat de kosten nu zijn berekend."
-  }
+  },
+  "destination": "Bestemming",
+  "window_type": "Raamtype",
+  "additional_systems_modifications": "Aanvullende Systemen en Modificaties:",
+  "painting": "Schilderwerk",
+  "assembly": "Montage"
 }
