@@ -182,7 +182,10 @@
       "continental": "Континентальний",
       "alpine": "Альпійська",
       "baltic": "Балтійська",
-      "temperate_oceanic": "Тропічно-океанічна"
+      "temperate_oceanic": "Тропічно-океанічна",
+      "maritime": "Морський клімат (м'який, вологий)",
+      "mountain": "Гірський клімат (низькі температури, сильний вітер)",
+      "tropical": "Тропічний клімат (висока температура, вологість)"
     },
     "finish_levels": {
       "basic": "Базовий",
@@ -537,7 +540,7 @@
     "international": "Міжнародний (за межами Європи)"
   },
   "transport_type_options": {
-    "standard": "Transport стандартнийowy (naczep 13.6m)",
+    "standard": "Стандартний транспорт (напів -трайлер 13,6 м)",
     "special": "Спеціальний транспорт (негабаритний)",
     "crane": "Транспорт з краном (встановлення на місці)",
     "multi_container": "Мульти -онний транспорт (2+ одиниць)"
@@ -697,9 +700,9 @@
     "marine_grade": "Морський рівень (стійкість до морської солі)"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
+    "none": "Без модифікації (стандартний плоский дах)",
     "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
+    "skylight": "Установка волонтерів",
     "fans": "Roof ventilation fans",
     "solar": "Solar panel preparation",
     "antennas": "Antenna/communication mounts",
@@ -726,7 +729,12 @@
     "central": "Центральна система повітряного кондиціонування",
     "heat_pump": "Система теплового насоса"
   },
-  "security": "Безпека",
+  "security": {
+    "basic": "Основні (посилені замки)",
+    "standard": "Стандарт (підготовка тривоги)",
+    "advanced": "Вдосконалені (камери + датчики)",
+    "high_security": "Висока безпека (біометрична)"
+  },
   "cladding": {
     "none": "Без зовнішньої обшивки",
     "metal": "Металева обшивка",
@@ -746,7 +754,12 @@
     "sprinkler": "Система гасіння вогню",
     "full_system": "Повна система гасіння вогню"
   },
-  "accessibility": "Доступність",
+  "accessibility": {
+    "standard": "Стандартний доступ",
+    "ramp": "Проїжджу дорогу для дитячих колясків",
+    "full_ada": "Повна сумісність ADA",
+    "disabled_friendly": "Повністю доступний"
+  },
   "paint": {
     "standard": "Стандартне покриття (C2)",
     "premium": "Преміум -покриття (C3)",
@@ -754,9 +767,9 @@
     "marine_grade": "Морський клас (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "basic": "Базовий (50 мм)",
+    "standard": "Стандартний (100 мм)",
+    "premium": "Премія (150 мм)",
     "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
@@ -869,7 +882,13 @@
     "northern_europe": "Північна Європа (Скандинавія, від -30 ° C до +25 ° C)",
     "central_europe": "Центральна Європа (Польща, Німеччина, від -20 ° C до +35 ° C)",
     "southern_europe": "Південна Європа (Іспанія, Італія, від -5 ° C до +45 ° C)",
-    "continental": "Континентальний клімат (екстремальні коливання)"
+    "continental": "Континентальний клімат (екстремальні коливання)",
+    "scandinavian": "Скандинавський",
+    "mediterranean": "Середземномор'я",
+    "atlantic_maritime": "Атлантичне море",
+    "alpine": "Альпійський",
+    "baltic": "Балтійський",
+    "temperate_oceanic": "Помірний океанічний"
   },
   "environments": {
     "indoor": "В приміщенні (зали, склади)",
@@ -891,7 +910,10 @@
     "total_cost_line": "ЗАГАЛЬНА ВАРТІСТЬ:",
     "important_warning": "⚠️ Важливо:",
     "preliminary_estimate_full": "Це попередня оцінка. Остаточна ціна залежить від детальних специфікацій, поточних цін на матеріали та наявності. Зверніться до нашої команди для точного кошторису.",
-    "configuration_saved_success": "✅ Конфігурацію успішно збережено!"
+    "configuration_saved_success": "✅ Конфігурацію успішно збережено!",
+    "cost_breakdown": "Відділ витрат",
+    "total_cost": "Загальна вартість",
+    "important_notice": "Важливий"
   },
   "destination": "Призначення",
   "window_type": "Тип Вікна",

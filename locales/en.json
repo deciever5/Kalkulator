@@ -49,7 +49,14 @@
     "tilt": "Tilt windows",
     "skylight": "Skylight windows"
   },
-  "lighting": "Lighting",
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
   "electrical_system": {
     "none": "No electrical installation",
     "preparation": "Preparation (wiring without equipment)",
@@ -175,7 +182,10 @@
       "continental": "Continental",
       "alpine": "Alpine",
       "baltic": "Baltic",
-      "temperate_oceanic": "Temperate Oceanic"
+      "temperate_oceanic": "Temperate Oceanic",
+      "maritime": "Sea climate (mild, moist)",
+      "mountain": "Mountain climate (low temperatures, strong winds)",
+      "tropical": "Tropical climate (high temperatures, humidity)"
     },
     "finish_levels": {
       "basic": "Basic",
@@ -331,7 +341,14 @@
   "environment": "Environment",
   "finish_level": "Finish Level",
   "climate_zone": "Climate Zone",
-  "windows": "Windows",
+  "windows": {
+    "none": "No windows (closed container)",
+    "one": "1 window",
+    "two": "2 windows",
+    "three": "3 windows",
+    "four": "4 windows",
+    "five_plus": "5+ windows"
+  },
   "additional_doors": "Additional Doors",
   "yes": "Yes",
   "no": "No",
@@ -627,7 +644,7 @@
     "config_required_text": "For accurate technical drawing analysis, basic container configuration is required. Without configuration, analysis will be limited to basic estimates.",
     "config_tip": "Tip",
     "config_tip_text": "Configure your container before analyzing drawings to get more accurate results and tailored quotes."
-},
+  },
   "admin": {
     "access_required": "Admin Access Required",
     "privileges_required": "This section requires administrator privileges",
@@ -654,7 +671,17 @@
     "industrial": "Industrial grade",
     "marine_grade": "Marine grade (salt resistance)"
   },
-  "roof_modifications": "Roof Modifications",
+  "roof_modifications": {
+    "none": "No modification (standard flat roof)",
+    "insulation": "Additional roof insulation",
+    "skylight": "Skylight installation",
+    "fans": "Roof ventilation fans",
+    "solar": "Solar panel preparation",
+    "antennas": "Antenna/communication mounts",
+    "sloped": "Sloped roof conversion",
+    "terrace": "Roof terrace/walkway",
+    "snow_removal": "Snow load reinforcement"
+  },
   "electrical": {
     "none": "No electrical installation",
     "preparation": "Preparation (wiring without equipment)",
@@ -679,7 +706,12 @@
     "central": "Central air conditioning",
     "heat_pump": "Heat pump"
   },
-  "security": "Security",
+  "security": {
+    "basic": "Basic (reinforced locks)",
+    "standard": "Standard (alarm preparation)",
+    "advanced": "Advanced (cameras + sensors)",
+    "high_security": "High security (biometric)"
+  },
   "cladding": {
     "none": "No exterior cladding",
     "metal": "Metal siding",
@@ -699,14 +731,24 @@
     "sprinkler": "Sprinkler system",
     "full_system": "Full fire suppression"
   },
-  "accessibility": "Accessibility",
+  "accessibility": {
+    "standard": "Standard access",
+    "ramp": "Driveway for prams",
+    "full_ada": "Full compatibility of Ada",
+    "disabled_friendly": "Fully available"
+  },
   "paint": {
     "standard": "Standard coating (C2)",
     "premium": "Premium finish (C3)",
     "anti_corrosion": "Anti-corrosion (C4)",
     "marine_grade": "Marine grade (C5M)"
   },
-  "insulation": "Insulation",
+  "insulation": {
+    "basic": "Basic (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extreme (200mm+)"
+  },
   "reinforcement": {
     "none": "No reinforcement",
     "standard": "Standard reinforcement",
@@ -772,7 +814,16 @@
   "advanced_comments": "Advanced Modifications Comments",
   "delivery_zone_regional": "Regional (200km)",
   "window_types_double": "Double Glazed",
-  "ventilation": "Ventilation",
+  "ventilation": {
+    "none": "No ventilation",
+    "gravity": "Gravity vents (2-4 pcs, adjustable)",
+    "wall_fans": "Wall fans (exhaust)",
+    "mechanical": "Mechanical ventilation",
+    "heat_recovery": "Heat recovery ventilation",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning",
+    "industrial": "Industrial ventilation"
+  },
   "it_systems": "IT systems",
   "lighting_professional": "Professional",
   "interior_layout_open": "Open space",
@@ -808,7 +859,13 @@
     "continental": "Continental climate (extreme variations)",
     "maritime": "Maritime climate (high humidity)",
     "mountain": "Mountain climate (high UV, snow)",
-    "tropical": "Tropical climate (high temperatures, humidity)"
+    "tropical": "Tropical climate (high temperatures, humidity)",
+    "scandinavian": "Scandinavian",
+    "mediterranean": "Mediterranean",
+    "atlantic_maritime": "Atlantic sea",
+    "alpine": "Alpine",
+    "baltic": "Baltic",
+    "temperate_oceanic": "Moderate oceanic"
   },
   "environments": {
     "indoor": "Indoor (halls, warehouses)",
@@ -818,49 +875,6 @@
     "construction": "Construction (building sites, infrastructure)",
     "agricultural": "Agricultural (farms, facilities)",
     "marine": "Marine"
-  },
-  "insulation": {
-    "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
-    "extreme": "Extreme (200mm+)"
-  },
-  "windows": {
-    "none": "No windows (closed container)",
-    "one": "1 window",
-    "two": "2 windows",
-    "three": "3 windows",
-    "four": "4 windows",
-    "five_plus": "5+ windows"
-  },
-  "lighting": {
-    "none": "No lighting",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energy efficient LED",
-    "exterior": "Exterior lighting",
-    "emergency": "Emergency lighting",
-    "smart": "Smart lighting system"
-  },
-  "ventilation": {
-    "none": "No ventilation",
-    "gravity": "Gravity vents (2-4 pcs, adjustable)",
-    "wall_fans": "Wall fans (exhaust)",
-    "mechanical": "Mechanical ventilation",
-    "heat_recovery": "Heat recovery ventilation",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning",
-    "industrial": "Industrial ventilation"
-  },
-  "roof_modifications": {
-    "none": "No modification (standard flat roof)",
-    "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
-    "fans": "Roof ventilation fans",
-    "solar": "Solar panel preparation",
-    "antennas": "Antenna/communication mounts",
-    "sloped": "Sloped roof conversion",
-    "terrace": "Roof terrace/walkway",
-    "snow_removal": "Snow load reinforcement"
   },
   "window_types_label": "Window Types",
   "lighting_label": "Lighting",

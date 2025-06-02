@@ -40,7 +40,7 @@
     "custom_sizing_desc": "Designbehållare med exakta specifikationer"
   },
   "window_types": {
-    "standard": "Standard (dubbelglas)",
+    "standard": "Standard (dubbla fönster)",
     "energy_efficient": "Energibesparing (trippelfönster)",
     "security": "Utanpieczeństwo (hartowane)",
     "marine_grade": "Havsklass (anti -korrosion)",
@@ -182,7 +182,10 @@
       "continental": "Kontinental",
       "alpine": "Alpin",
       "baltic": "Baltisk",
-      "temperate_oceanic": "Tempererat Oceaniskt"
+      "temperate_oceanic": "Tempererat Oceaniskt",
+      "maritime": "Havsklimat (mild, fuktig)",
+      "mountain": "Bergsklimat (låga temperaturer, stark vind)",
+      "tropical": "Tropiskt klimat (höga temperaturer, luftfuktighet)"
     },
     "finish_levels": {
       "basic": "Grundläggande",
@@ -400,14 +403,14 @@
   "get_ai_analysis": "Få AI-Analys",
   "systems_installations": "System och installationer",
   "advanced_modifications": "Avancerade Modifieringar",
-  "special_notes_systems": "Speciella anteckningar - System",
-  "describe_system_requirements": "Beskriv ytterligare systemkrav...",
+  "special_notes_systems": "Särskilda kommentarer - system",
+  "describe_system_requirements": "Beskriv ytterligare krav för system ...",
   "system_requirements_placeholder": "t.ex. Speciella ventilationskrav, extra uttag, specialiserade installationer",
   "interior_layout": "Inredningslayout",
-  "security_systems": "Säkerhets- och larmsystem",
+  "security_systems": "Säkerhetssystem",
   "exterior_cladding": "Fasadbeklädnad",
   "additional_openings": "Ytterligare Öppningar",
-  "fire_safety_systems": "Brandsäkerhetssystem",
+  "fire_safety_systems": "Brandsystem",
   "accessibility_features": "Tillgänglighet och ergonomi",
   "paint_finish": "Målning och ytterfinish",
   "special_notes_modifications": "Speciella anteckningar - Modifieringar",
@@ -415,12 +418,12 @@
   "modification_requirements_placeholder": "t.ex. Speciella RAL-färger, icke-standardiserade öppningsstorlekar, ytterligare strukturförstärkningar",
   "transport_logistics": "Transport och logistik",
   "delivery_zone": "Leveranszon",
-  "transport_type": "Transporttyp",
+  "transport_type": "Typ av transport",
   "assembly_installation": "Installation och installation",
   "equipment_extras": "Utrustning och extrafunktioner",
   "office_equipment": "Kontors-/inredningsutrustning",
   "appliances": "Hushållsapparater (för bostadscontainrar)",
-  "it_multimedia": "IT- och multimediasystem",
+  "it_multimedia": "IT -system och multimedia",
   "special_notes_general": "Speciella anteckningar - Allmänt",
   "describe_general_requirements": "Beskriv alla ytterligare krav, specifikationer eller projektbegränsningar...",
   "general_requirements_placeholder": "t.ex. Speciella slutdatum, certifieringskrav, budgetbegränsningar",
@@ -432,7 +435,7 @@
     "mezzanine": "Mezzanin/golv (ytökning)"
   },
   "security_systems_options": {
-    "none": "Utan dodatkowych zautanpieczeń (zamki standard)",
+    "none": "Ingen extra säkerhet (standardlås)",
     "basic": "Grundläggande (förstärkta lås, fönstergriller)",
     "standard": "Standard (larm, sensorer, siren)",
     "extended": "Utökad (övervakning, rörelse/vibrationssensorer)",
@@ -452,14 +455,14 @@
     "natural_stone": "Naturlig sten"
   },
   "additional_openings_options": {
-    "none": "Utan dodatkowych otworów (standard drzwi)",
+    "none": "Inga ytterligare hål (standarddörr)",
     "windows": "Ytterligare fönster (1-4 stycken)",
     "doors": "Ytterligare dörr (service, nödsituation)",
     "garage_door": "Garageport (segment, rullad)",
     "loading_dock": "Laddar ramp (hydraulisk)",
     "ventilation": "Ventilationshål (galler, persienner)",
     "skylights": "Takfönster/takfönster",
-    "custom": "Otwory niestandard (nietypowe wymiary)"
+    "custom": "Anpassade hål (ovanliga dimensioner)"
   },
   "fire_safety_options": {
     "none": "Utan brandkampsystem",
@@ -516,7 +519,7 @@
   "it_systems_options": {
     "none": "Utan IT -system",
     "basic": "Grundläggande (internet, WiFi)",
-    "standard": "Standard (sieć, telefonia)",
+    "standard": "Standard (nätverk, telefoni)",
     "advanced": "Avancerat (serverrum, säkerhet)"
   },
   "insulation_package": "Isoleringspaket",
@@ -650,9 +653,9 @@
     "marine_grade": "Marin kvalitet (saltresistens)"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
+    "none": "Utan modifiering (standard platt tak)",
     "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
+    "skylight": "Volontärinstallation",
     "fans": "Roof ventilation fans",
     "solar": "Solar panel preparation",
     "antennas": "Antenna/communication mounts",
@@ -679,7 +682,12 @@
     "central": "Central luftkonditionering",
     "heat_pump": "Värmepump"
   },
-  "security": "Säkerhet",
+  "security": {
+    "basic": "Grundläggande (förstärkta lås)",
+    "standard": "Standard (Alarm Preparation)",
+    "advanced": "Avancerad (kameror + sensorer)",
+    "high_security": "Hög säkerhet (biometrisk)"
+  },
   "cladding": {
     "none": "Ingen yttre beklädnad",
     "metal": "Metallbeklädnad",
@@ -699,7 +707,12 @@
     "sprinkler": "Sprinklersystem",
     "full_system": "Full släckning av elden"
   },
-  "accessibility": "Tillgänglighet",
+  "accessibility": {
+    "standard": "Standardåtkomst",
+    "ramp": "Uppfart för barnvagnar",
+    "full_ada": "Full kompatibilitet av ADA",
+    "disabled_friendly": "Helt tillgänglig"
+  },
   "paint": {
     "standard": "Standardbeläggning (C2)",
     "premium": "Premium finish (C3)",
@@ -708,8 +721,8 @@
   },
   "insulation": {
     "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "standard": "Standard (100 mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
@@ -799,7 +812,7 @@
   "window_types_security": "Säkerhetsfönster",
   "roof_modifications_skylight": "Takfönster",
   "it_systems_basic": "Grundnätverk",
-  "fire_systems": "Brandsäkerhetssystem",
+  "fire_systems": "Brandsystem",
   "additional_openings_door": "Ytterligare Dörr",
   "construction_material_composite": "Komposit",
   "basic_configuration": "Grundläggande konfiguration",
@@ -822,7 +835,13 @@
     "northern_europe": "Nordeuropa (Skandinavien, -30 ° C till +25 ° C)",
     "central_europe": "Centraleuropa (Polen, Tyskland, -20 ° C till +35 ° C)",
     "southern_europe": "Södra Europa (Spanien, Italien, -5 ° C till +45 ° C)",
-    "continental": "Kontinentalt klimat (extrema fluktuationer)"
+    "continental": "Kontinentalt klimat (extrema fluktuationer)",
+    "scandinavian": "Skandinavisk",
+    "mediterranean": "Medelhavet",
+    "atlantic_maritime": "Atlanten",
+    "alpine": "Alpin",
+    "baltic": "Baltisk",
+    "temperate_oceanic": "Måttlig oceanic"
   },
   "environments": {
     "indoor": "Inomhus (hallar, lager)",
@@ -844,7 +863,10 @@
     "total_cost_line": "TOTALKOSTNAD:",
     "important_warning": "⚠️ Viktigt:",
     "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
-    "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!"
+    "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!",
+    "cost_breakdown": "Kostnadsdelning",
+    "total_cost": "Total kostnad",
+    "important_notice": "Viktig"
   },
   "estimate_title": "💰 Projektkostnadsuppskattning",
   "cost_breakdown_title": "Kostnadsfördelning:",

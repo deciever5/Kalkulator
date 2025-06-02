@@ -182,7 +182,10 @@
       "continental": "Kontinentálny",
       "alpine": "Alpský",
       "baltic": "Pobalko",
-      "temperate_oceanic": "Mierny oceánsky"
+      "temperate_oceanic": "Mierny oceánsky",
+      "maritime": "Morské podnebie (mierne, vlhké)",
+      "mountain": "Horské podnebie (nízke teploty, silný vietor)",
+      "tropical": "Tropické podnebie (vysoké teploty, vlhkosť)"
     },
     "finish_levels": {
       "basic": "Základní",
@@ -537,7 +540,7 @@
     "international": "Medzinárodné (mimo Európy)"
   },
   "transport_type_options": {
-    "standard": "Transport štandardnýowy (naczep 13.6m)",
+    "standard": "Štandardná transport (Semi -Trailer 13,6 m)",
     "special": "Špeciálna doprava (nadrozmerná)",
     "crane": "Preprava so žeriavom (inštalácia na mieste)",
     "multi_container": "Multi -Company Transport (2+ jednotky)"
@@ -697,9 +700,9 @@
     "marine_grade": "Morsky odolná verzia"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
+    "none": "Bez úpravy (štandardná plochá strecha)",
     "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
+    "skylight": "Dobrovoľnícka inštalácia",
     "fans": "Roof ventilation fans",
     "solar": "Solar panel preparation",
     "antennas": "Antenna/communication mounts",
@@ -726,7 +729,12 @@
     "central": "Centrálna klimatizácia",
     "heat_pump": "Teplomer"
   },
-  "security": "Bezpečnosť",
+  "security": {
+    "basic": "Základné (zosilnené zámky)",
+    "standard": "Štandard (príprava alarmov)",
+    "advanced": "Pokročilé (fotoaparáty + senzory)",
+    "high_security": "Vysoká bezpečnosť (biometrická)"
+  },
   "cladding": {
     "none": "Žiadne vonkajšie oblohy",
     "metal": "Metlová obloha",
@@ -746,7 +754,12 @@
     "sprinkler": "Systém s prúžkami",
     "full_system": "Plný systém proti požiaru"
   },
-  "accessibility": "Prístupnosť",
+  "accessibility": {
+    "standard": "Štandardný prístup",
+    "ramp": "Príjazdová cesta pre kočík",
+    "full_ada": "Plná kompatibilita ADA",
+    "disabled_friendly": "Plne dostupné"
+  },
   "paint": {
     "standard": "Štandardný povlak (C2)",
     "premium": "Premium Finish (C3)",
@@ -754,9 +767,9 @@
     "marine_grade": "Morská trieda (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "basic": "Základné (50 mm)",
+    "standard": "Štandard (100 mm)",
+    "premium": "Prémiové (150 mm)",
     "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
@@ -869,7 +882,13 @@
     "northern_europe": "Severná Európa (Škandinávia, -30 ° C až +25 ° C)",
     "central_europe": "Stredná Európa (Poľsko, Nemecko, -20 ° C až +35 ° C)",
     "southern_europe": "Južná Európa (Španielsko, Taliansko, -5 ° C až +45 ° C)",
-    "continental": "Kontinentálne podnebie (extrémne výkyvy)"
+    "continental": "Kontinentálne podnebie (extrémne výkyvy)",
+    "scandinavian": "Škandinávsky",
+    "mediterranean": "Stredomorský",
+    "atlantic_maritime": "Atlantické more",
+    "alpine": "Alpský",
+    "baltic": "Pobalko",
+    "temperate_oceanic": "Mierny oceánsky"
   },
   "environments": {
     "indoor": "Vnútorné (haly, sklady)",
@@ -891,7 +910,10 @@
     "total_cost_line": "CELKOVÉ NÁKLADY:",
     "important_warning": "⚠️ Dôležité:",
     "preliminary_estimate_full": "Toto je predbežný odhad. Konečná cena závisí od podrobných špecifikácií, aktuálnych cien materiálov a dostupnosti. Pre presnú ponuku kontaktujte náš tím.",
-    "configuration_saved_success": "✅ Konfigurácia úspešne uložená!"
+    "configuration_saved_success": "✅ Konfigurácia úspešne uložená!",
+    "cost_breakdown": "Divízia nákladov",
+    "total_cost": "Celkové náklady",
+    "important_notice": "Dôležitý"
   },
   "destination": "Určenie",
   "window_type": "Typ Okna",

@@ -40,7 +40,7 @@
     "custom_sizing_desc": "Konttien suunnittelu tarkoilla mittaustiedoilla"
   },
   "window_types": {
-    "standard": "Standardi (kaksinkertainen lasi)",
+    "standard": "Vakio (kaksinkertaiset ikkunat)",
     "energy_efficient": "Energiatehokas (kolminkertainen lasi)",
     "security": "Ilmanturvallisuus (karkaistua)",
     "marine_grade": "Meriluokka (korroosionkestävä)",
@@ -77,9 +77,9 @@
     "cold_water": "Kylmävesiasennus (pesuallas)",
     "hot_cold_water": "Kylmä + lämmin vesi (pesuallas, käsienpesuallas)",
     "basic_sanitary": "Perus saniteettisolmu (WC + käsienpesuallas)",
-    "standard_sanitary": "Standardi solmu (WC + käsienpesuallas + suihku)",
+    "standard_sanitary": "Vakiosolmu (WC + -altaan + suihku)",
     "comfort_sanitary": "Mukava solmu (WC + käsienpesuallas + kaappi)",
-    "premium_sanitary": "Premium solmu (poreallas, bidee, 2 käsienpesuallasta)"
+    "premium_sanitary": "Premium -solmu (poreallas, bidet, 2 pesualtaa)"
   },
   "hvac_system": {
     "none": "No HVAC (no lämmitys and cooling)",
@@ -182,7 +182,10 @@
       "continental": "Mantereinen ilmasto",
       "alpine": "Alppi",
       "baltic": "Balttilainen",
-      "temperate_oceanic": "Manserova-merellinen"
+      "temperate_oceanic": "Manserova-merellinen",
+      "maritime": "Meri ilmasto (lievä, kostea)",
+      "mountain": "Vuoristoilmasto (matalat lämpötilat, voimakkaat tuulet)",
+      "tropical": "Trooppinen ilmasto (korkeat lämpötilat, kosteus)"
     },
     "finish_levels": {
       "basic": "Perus",
@@ -485,11 +488,11 @@
     "open_space": "Avoin tila (ei väliseiniä)",
     "partitioned": "Osioilla (1-3 huonetta)",
     "built_in_furniture": "Rakennetut huonekalut (räätälöityjä rakennuksia)",
-    "custom_layout": "Układ niestandardi (projekt custom)",
+    "custom_layout": "Ei -standardijärjestelmä (räätälöity projekti)",
     "mezzanine": "Mezzanine/lattia (pinnan nousu)"
   },
   "security_systems_options": {
-    "none": "Ilman dodatkowych zailmanpieczeń (zamki standardi)",
+    "none": "Ei ylimääräistä suojausta (vakiolukot)",
     "basic": "Perus (vahvistetut lukot, ikkunarrillit)",
     "standard": "Vakio (hälytys, anturit, sireeni)",
     "extended": "Laajennettu (valvonta, liike-/värähtelyanturit)",
@@ -509,14 +512,14 @@
     "natural_stone": "Luonnollinen/keinotekoinen kivi"
   },
   "additional_openings_options": {
-    "none": "Ilman dodatkowych otworów (standardi drzwi)",
+    "none": "Ei ylimääräisiä reikiä (vakioovi)",
     "windows": "Lisäikkunat (1-4 kappaletta)",
     "doors": "Drzwi dodatkowe (serwisowe, hätä)",
     "garage_door": "Autotallin ovi (segmentti, valssattu)",
     "loading_dock": "Lastausramppi (hydraulinen)",
     "ventilation": "Tuuletusreiät (grillit, kaihtimet)",
     "skylights": "Kattikkunat/świetliki",
-    "custom": "Otwory niestandardi (nietypowe wymiary)"
+    "custom": "Mukautetut reiät (epätavalliset mitat)"
   },
   "fire_safety_options": {
     "none": "Ei paloturvallisuusjärjestelmiä",
@@ -536,7 +539,7 @@
     "extended": "Laajennettu pinnoite C3 (parannettu kestävyys)",
     "marine": "Meriympäristön pinnoite C5M (rannikkoympäristöt)",
     "industrial": "Teollisuuspinnoite C4 (aggressiiviset ympäristöt)",
-    "premium": "Premium (erikois RAL-värit, tekstuurit)"
+    "premium": "Premium (erityiset värit RAL, tekstuurit)"
   },
   "delivery_zone_options": {
     "local": "Paikallinen (enintään 50km)",
@@ -573,7 +576,7 @@
   "it_systems_options": {
     "none": "Ilman järjestelmiä IT",
     "basic": "Perus (internet, WiFi)",
-    "standard": "Standardi (sieć, telefonia)",
+    "standard": "Standardi (verkko, puhelin)",
     "advanced": "Edistynyt (palvelinhuone, suojaus)"
   },
   "insulation_package": "Eristyspaketti",
@@ -707,9 +710,9 @@
     "marine_grade": "Merilaatu (suojaa suolaa)"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
+    "none": "Ilman muutosta (vakio litteä katto)",
     "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
+    "skylight": "Vapaaehtoistyö",
     "fans": "Roof ventilation fans",
     "solar": "Solar panel preparation",
     "antennas": "Antenna/communication mounts",
@@ -736,7 +739,12 @@
     "central": "Keskusilmatointi",
     "heat_pump": "Lämmityspumppu"
   },
-  "security": "Turvallisuus",
+  "security": {
+    "basic": "Perus (vahvistetut lukot)",
+    "standard": "Vakio (hälytyksen valmistelu)",
+    "advanced": "Edistynyt (kamerat + anturit)",
+    "high_security": "Korkea turvallisuus (biometrinen)"
+  },
   "cladding": {
     "none": "Ei ulkomaista kattilaa",
     "metal": "Metallinen sivu",
@@ -756,7 +764,12 @@
     "sprinkler": "Suihkulaitteet",
     "full_system": "Kokonaisuus tulenjohto"
   },
-  "accessibility": "Esteettömyys",
+  "accessibility": {
+    "standard": "Tavanomainen käyttöoikeus",
+    "ramp": "Ajotie vaunuihin",
+    "full_ada": "ADA: n täydellinen yhteensopivuus",
+    "disabled_friendly": "Täysin saatavilla"
+  },
   "paint": {
     "standard": "Vakiopäällyste (C2)",
     "premium": "Premium-maalaus (C3)",
@@ -764,9 +777,9 @@
     "marine_grade": "Merimääräinen luokka (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "basic": "Perus (50 mm)",
+    "standard": "Vakio (100 mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
@@ -879,7 +892,13 @@
     "northern_europe": "Pohjois -Eurooppa (Skandinavia, -30 ° C -+25 ° C)",
     "central_europe": "Keski -Eurooppa (Puola, Saksa, -20 ° C -+35 ° C)",
     "southern_europe": "Etelä -Eurooppa (Espanja, Italia, -5 ° C -+45 ° C)",
-    "continental": "Manner -ilmasto (äärimmäiset vaihtelut)"
+    "continental": "Manner -ilmasto (äärimmäiset vaihtelut)",
+    "scandinavian": "Skandinaavinen",
+    "mediterranean": "Välimeren",
+    "atlantic_maritime": "Atlantin meri",
+    "alpine": "Alppi",
+    "baltic": "Itämeri",
+    "temperate_oceanic": "Kohtalainen valtameri"
   },
   "environments": {
     "indoor": "Sisätiloissa (hallit, varastot)",
@@ -901,7 +920,10 @@
     "total_cost_line": "KOKONAISKUSTANNUS:",
     "important_warning": "⚠️ Tärkeää:",
     "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista spesifikaatioista, nykyisistä materiaalihinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
-    "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!"
+    "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!",
+    "cost_breakdown": "Kustannusjako",
+    "total_cost": "Kokonaiskustannukset",
+    "important_notice": "Tärkeä"
   },
   "destination": "Kohde",
   "window_type": "Ikkunatyyppi",

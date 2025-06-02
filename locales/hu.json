@@ -182,7 +182,10 @@
       "continental": "Kontinentális",
       "alpine": "Alpesi",
       "baltic": "Balti",
-      "temperate_oceanic": "Mérsékelt Óceáni"
+      "temperate_oceanic": "Mérsékelt Óceáni",
+      "maritime": "Tengeri éghajlat (enyhe, nedves)",
+      "mountain": "Hegyi éghajlat (alacsony hőmérséklet, erős szél)",
+      "tropical": "Trópusi éghajlat (magas hőmérséklet, páratartalom)"
     },
     "finish_levels": {
       "basic": "Alap",
@@ -490,7 +493,7 @@
     "international": "Nemzetközi (Európán kívül)"
   },
   "transport_type_options": {
-    "standard": "Transport szabványos (naczep 13.6m)",
+    "standard": "Standard Transport (Semi -Trailer 13,6m)",
     "special": "Speciális szállítás (túlméretes rakomány)",
     "crane": "Daruszállítás (helyszíni összeszerelés)",
     "multi_container": "Többkonténeres szállítás (2+ egység)"
@@ -650,9 +653,9 @@
     "marine_grade": "Tengerparti minőség (sóálló)"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
+    "none": "Módosítás nélkül (standard lapos tető)",
     "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
+    "skylight": "Önkéntes telepítés",
     "fans": "Roof ventilation fans",
     "solar": "Solar panel preparation",
     "antennas": "Antenna/communication mounts",
@@ -679,7 +682,12 @@
     "central": "Központi légkondicionálás",
     "heat_pump": "Hőszivattyú"
   },
-  "security": "Biztonság",
+  "security": {
+    "basic": "Alap (megerősített zárak)",
+    "standard": "Standard (riasztás előkészítés)",
+    "advanced": "Fejlett (kamerák + érzékelők)",
+    "high_security": "Magas biztonság (biometrikus)"
+  },
   "cladding": {
     "none": "Nincs külső burkolat",
     "metal": "Fém homlokzatburkolat",
@@ -699,7 +707,12 @@
     "sprinkler": "Sprinkler rendszer",
     "full_system": "A tűz teljes oltása"
   },
-  "accessibility": "Akadálymentesítés",
+  "accessibility": {
+    "standard": "Szabványos hozzáférés",
+    "ramp": "Autópálya a babakocsihoz",
+    "full_ada": "Az ADA teljes kompatibilitása",
+    "disabled_friendly": "Teljesen elérhető"
+  },
   "paint": {
     "standard": "Szabványos bevonat (C2)",
     "premium": "Prémium felületkezelés (C3)",
@@ -707,9 +720,9 @@
     "marine_grade": "Tengerparti minőség (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "basic": "Alap (50 mm)",
+    "standard": "Szabvány (100 mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
@@ -822,7 +835,13 @@
     "continental": "Kontinentális éghajlat (extrém változások)",
     "maritime": "Tengeri éghajlat (magas páratartalom)",
     "mountain": "Hegyi éghajlat (magas UV, hó)",
-    "tropical": "Trópusi éghajlat (magas hőmérséklet, páratartalom)"
+    "tropical": "Trópusi éghajlat (magas hőmérséklet, páratartalom)",
+    "scandinavian": "skandináv",
+    "mediterranean": "Mediterrán",
+    "atlantic_maritime": "Atlanti -óceán",
+    "alpine": "alpesi",
+    "baltic": "balti",
+    "temperate_oceanic": "Mérsékelt óceáni"
   },
   "environments": {
     "indoor": "Beltéri (csarnokok, raktárak)",
@@ -844,7 +863,10 @@
     "total_cost_line": "TELJES KÖLTSÉG:",
     "important_warning": "⚠️ Fontos:",
     "preliminary_estimate_full": "Ez egy előzetes becslés. A végső ár a részletes specifikációktól, az aktuális anyagáraktól és a rendelkezésre állástól függ. Pontos ajánlatért lépjen kapcsolatba csapatunkkal.",
-    "configuration_saved_success": "✅ Konfiguráció sikeresen elmentve!"
+    "configuration_saved_success": "✅ Konfiguráció sikeresen elmentve!",
+    "cost_breakdown": "Költségek megosztása",
+    "total_cost": "Összköltség",
+    "important_notice": "Fontos"
   },
   "destination": "Rendeltetés",
   "window_type": "Ablaktípus",

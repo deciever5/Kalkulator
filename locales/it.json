@@ -40,7 +40,7 @@
     "custom_sizing_desc": "Progetta contenitori con specifiche esatte"
   },
   "window_types": {
-    "standard": "Standard (25A, illuminazione, 8 prese)",
+    "standard": "Standard (doppio Windows)",
     "energy_efficient": "Energooszczędne (tripli vetri)",
     "security": "Senzapieczeństwo (hartowane)",
     "marine_grade": "Sea Class (anti -Corrosione)",
@@ -77,9 +77,9 @@
     "cold_water": "Impianto acqua fredda (lavello)",
     "hot_cold_water": "Acqua fredda + calda (lavello, lavandino)",
     "basic_sanitary": "Sanitario base (WC + lavandino)",
-    "standard_sanitary": "Standard (WC + lavandino + doccia)",
+    "standard_sanitary": "Nodo standard (WC + Sink + Shower)",
     "comfort_sanitary": "Comfort (WC + lavandino + cabina)",
-    "premium_sanitary": "Premium (jacuzzi, bidet, 2 lavandini)"
+    "premium_sanitary": "Nodo premium (jacuzzi, bidet, 2 lavandini)"
   },
   "hvac_system": {
     "none": "No HVAC (no riscaldamento and cooling)",
@@ -182,7 +182,10 @@
       "continental": "Continentale",
       "alpine": "Alpino",
       "baltic": "Baltico",
-      "temperate_oceanic": "Oceanico Temperato"
+      "temperate_oceanic": "Oceanico Temperato",
+      "maritime": "Clima del mare (mite, umido)",
+      "mountain": "Clima di montagna (basse temperature, venti forti)",
+      "tropical": "Clima tropicale (alte temperature, umidità)"
     },
     "finish_levels": {
       "basic": "Base",
@@ -432,7 +435,7 @@
     "mezzanine": "Mezzanino/piano (spazio aumentato)"
   },
   "security_systems_options": {
-    "none": "Nessuna sicurezza aggiuntiva (serrature standard)",
+    "none": "Nessuna sicurezza aggiuntiva (blocchi standard)",
     "basic": "Base (serrature rinforzate, barre alle finestre)",
     "standard": "Standard (allarme, sensori, sirena)",
     "extended": "Esteso (monitoraggio, sensori di movimento/vibrazione)",
@@ -452,14 +455,14 @@
     "natural_stone": "Pietra naturale/artificiale"
   },
   "additional_openings_options": {
-    "none": "Nessuna apertura aggiuntiva (porte standard)",
+    "none": "Nessun foro aggiuntivo (porta standard)",
     "windows": "Finestre aggiuntive (1-4 pezzi)",
     "doors": "Porte aggiuntive (servizio, emergenza)",
     "garage_door": "Porta garage (sezionale, avvolgibile)",
     "loading_dock": "Banchina di carico (piattaforma idraulica)",
     "ventilation": "Aperture di ventilazione (griglie, persiane)",
     "skylights": "Finestre da tetto/lucernari",
-    "custom": "Aperture personalizzate (dimensioni non standard)"
+    "custom": "Fori personalizzati (dimensioni insolite)"
   },
   "fire_safety_options": {
     "none": "Nessun sistema di sicurezza antincendio",
@@ -469,17 +472,17 @@
     "full": "Sistema completo (soppressione gas, monitoraggio)"
   },
   "accessibility_options": {
-    "standard": "Accesso standard (soglia 15-20cm)",
+    "standard": "Accesso standard (soglia da 15-20 cm)",
     "ramp": "Rampa (accessibile in sedia a rotelle)",
     "lift": "Sollevatore idraulico (accesso disabili)",
     "full_ada": "Piena conformità ADA (porte larghe, maniglioni)"
   },
   "paint_finish_options": {
-    "standard": "Rivestimento standard C2 (RAL 7035 - grigio chiaro)",
+    "standard": "Rivestimento C2 standard (RAL 7035 - Grigio brillante)",
     "extended": "Rivestimento esteso C3 (durata migliorata)",
     "marine": "Rivestimento marino C5M (ambienti costieri)",
     "industrial": "Rivestimento industriale C4 (ambienti aggressivi)",
-    "premium": "Premium (colori RAL speciali, texture)"
+    "premium": "Premium (colori speciali ral, trame)"
   },
   "delivery_zone_options": {
     "local": "Locale (fino a 50km)",
@@ -490,7 +493,7 @@
     "international": "Internazionale (fuori Europa)"
   },
   "transport_type_options": {
-    "standard": "Trasporto standard (semirimorchio 13,6m)",
+    "standard": "Trasporto standard (semi -trailer 13,6 m)",
     "special": "Trasporto speciale (carico fuori misura)",
     "crane": "Trasporto con gru (installazione in loco)",
     "multi_container": "Trasporto multi-container (2+ unità)"
@@ -650,9 +653,9 @@
     "marine_grade": "Grado marino (resistenza salina)"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
+    "none": "Senza modifica (tetto piatto standard)",
     "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
+    "skylight": "Installazione volontaria",
     "fans": "Roof ventilation fans",
     "solar": "Solar panel preparation",
     "antennas": "Antenna/communication mounts",
@@ -679,7 +682,12 @@
     "central": "Aria condizionata centrale",
     "heat_pump": "Pompa di calore"
   },
-  "security": "Sicurezza",
+  "security": {
+    "basic": "BASIC (blocchi rinforzati)",
+    "standard": "Standard (preparazione allarme)",
+    "advanced": "Avanzato (telecamere + sensori)",
+    "high_security": "Alta sicurezza (biometrico)"
+  },
   "cladding": {
     "none": "Nessun rivestimento esterno",
     "metal": "Rivestimento metallico",
@@ -699,7 +707,12 @@
     "sprinkler": "Sistema sprinkler",
     "full_system": "Sistema completo soppressione incendi"
   },
-  "accessibility": "Accessibilità",
+  "accessibility": {
+    "standard": "Accesso standard",
+    "ramp": "Vagava per carrozzine",
+    "full_ada": "Piena compatibilità di ADA",
+    "disabled_friendly": "Completamente disponibile"
+  },
   "paint": {
     "standard": "Rivestimento standard (C2)",
     "premium": "Finitura premium (C3)",
@@ -707,9 +720,9 @@
     "marine_grade": "Grado marino (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
+    "basic": "BASIC (50mm)",
     "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
@@ -822,7 +835,13 @@
     "northern_europe": "Nord Europa (Scandinavia, da -30 ° C a +25 ° C)",
     "central_europe": "Europa centrale (Polonia, Germania, da -20 ° C a +35 ° C)",
     "southern_europe": "Europa meridionale (Spagna, Italia, da -5 ° C a +45 ° C)",
-    "continental": "Clima continentale (fluttuazioni estreme)"
+    "continental": "Clima continentale (fluttuazioni estreme)",
+    "scandinavian": "scandinavo",
+    "mediterranean": "mediterraneo",
+    "atlantic_maritime": "Mare dell'Atlantico",
+    "alpine": "Alpino",
+    "baltic": "baltico",
+    "temperate_oceanic": "Moderato oceanico"
   },
   "environments": {
     "indoor": "Indoor (sale, magazzini)",
@@ -844,7 +863,10 @@
     "total_cost_line": "COSTO TOTALE:",
     "important_warning": "⚠️ Importante:",
     "preliminary_estimate_full": "Questa è una stima preliminare. Il prezzo finale dipende dalle specifiche dettagliate, dai prezzi attuali dei materiali e dalla disponibilità. Contatta il nostro team per un preventivo accurato.",
-    "configuration_saved_success": "✅ Configurazione salvata con successo!"
+    "configuration_saved_success": "✅ Configurazione salvata con successo!",
+    "cost_breakdown": "Divisione dei costi",
+    "total_cost": "Costo totale",
+    "important_notice": "Importante"
   },
   "destination": "Destinazione",
   "window_type": "Tipo di Finestra",

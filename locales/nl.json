@@ -182,7 +182,10 @@
       "continental": "Continentaal",
       "alpine": "Alpien",
       "baltic": "Baltisch",
-      "temperate_oceanic": "Gematigd Oceanisch"
+      "temperate_oceanic": "Gematigd Oceanisch",
+      "maritime": "Zeeklimaat (mild, vochtig)",
+      "mountain": "Bergklimaat (lage temperaturen, sterke wind)",
+      "tropical": "Tropisch klimaat (hoge temperaturen, vochtigheid)"
     },
     "finish_levels": {
       "basic": "Basis",
@@ -404,10 +407,10 @@
   "describe_system_requirements": "Beschrijf aanvullende systeemvereisten...",
   "system_requirements_placeholder": "bijv. Speciale ventilatievereisten, extra stopcontacten, gespecialiseerde installaties",
   "interior_layout": "Binnenindeling",
-  "security_systems": "Beveiligings- en alarmsystemen",
+  "security_systems": "Veiligheidssystemen",
   "exterior_cladding": "Gevelbekleding",
   "additional_openings": "Aanvullende Openingen",
-  "fire_safety_systems": "Brandveiligheidssystemen",
+  "fire_safety_systems": "Brandweersystemen",
   "accessibility_features": "Toegankelijkheid en ergonomie",
   "paint_finish": "Schilderwerk en buitenafwerking",
   "special_notes_modifications": "Speciale opmerkingen - Modificaties",
@@ -415,12 +418,12 @@
   "modification_requirements_placeholder": "bijv. Speciale RAL-kleuren, niet-standaard openingsafmetingen, aanvullende structurele versterkingen",
   "transport_logistics": "Transport en logistiek",
   "delivery_zone": "Leveringszone",
-  "transport_type": "Transporttype",
+  "transport_type": "Type transport",
   "assembly_installation": "Montage en installatie",
   "equipment_extras": "Apparatuur en extra's",
   "office_equipment": "Kantoor-/interieuruitrusting",
   "appliances": "Huishoudelijke apparaten (voor wooncontainers)",
-  "it_multimedia": "IT- en multimediasystemen",
+  "it_multimedia": "IT -systemen en multimedia",
   "special_notes_general": "Speciale opmerkingen - Algemeen",
   "describe_general_requirements": "Beschrijf alle aanvullende vereisten, specificaties of projectbeperkingen...",
   "general_requirements_placeholder": "bijv. Speciale voltooiingsdeadlines, certificeringsvereisten, budgetbeperkingen",
@@ -438,7 +441,7 @@
     "extended": "Uitgebreid (bewaking, bewegings-/trillingsensoren)",
     "high": "Hoog (IP CCTV, toegangscontrole, intercom)",
     "maximum": "Maximaal (veilige, biometrie, centrale monitoring)",
-    "industrial": "Industrieel (ATEX, gassystemen, paniekkamer)"
+    "industrial": "Industrial (ATEX, Gassystems, Panic Room)"
   },
   "exterior_cladding_options": {
     "none": "Geen bekleding (standaard containerplaat)",
@@ -462,7 +465,7 @@
     "custom": "Aangepaste openingen (niet-standaard afmetingen)"
   },
   "fire_safety_options": {
-    "none": "Geen brandveiligheidssystemen",
+    "none": "Zonder brandweersystemen",
     "basic": "Basis (brandblusser, rookmelder)",
     "standard": "Standaard (alarmsysteem, noodverlichting)",
     "extended": "Uitgebreid (sprinklersysteem, evacuatie)",
@@ -479,7 +482,7 @@
     "extended": "C3 verbeterde coating (betere duurzaamheid)",
     "marine": "Marine bekleding C5M (kustomgevingen)",
     "industrial": "Industriële bekleding C4 (agressieve omgevingen)",
-    "premium": "Premium (speciale RAL-kleuren, texturen)"
+    "premium": "Premium (speciale kleuren ral, texturen)"
   },
   "delivery_zone_options": {
     "local": "Lokaal (tot 50km)",
@@ -490,9 +493,9 @@
     "international": "Internationaal (buiten Europa)"
   },
   "transport_type_options": {
-    "standard": "Standaardtransport (13,6m oplegger)",
-    "special": "Speciaal transport (oversized lading)",
-    "crane": "Kraantransport (montage ter plaatse)",
+    "standard": "Standaard transport (semi -trager 13,6 m)",
+    "special": "Speciaal transport (oversized)",
+    "crane": "Transport met kraan (installatie op locatie)",
     "multi_container": "Multi-containertransport (2+ eenheden)"
   },
   "assembly_options": {
@@ -514,7 +517,7 @@
     "full": "Volledig (complete huishoudelijke apparaten)"
   },
   "it_systems_options": {
-    "none": "Geen IT-systemen",
+    "none": "Zonder dat systemen",
     "basic": "Basis (internet, WiFi)",
     "standard": "Standaard (netwerk, telefonie)",
     "advanced": "Geavanceerd (serverruimte, beveiliging)"
@@ -650,9 +653,9 @@
     "marine_grade": "Maritieme kwaliteit (zoutbestendig)"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
+    "none": "Zonder aanpassing (standaard plat dak)",
     "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
+    "skylight": "Vrijwilligersinstallatie",
     "fans": "Roof ventilation fans",
     "solar": "Solar panel preparation",
     "antennas": "Antenna/communication mounts",
@@ -679,7 +682,12 @@
     "central": "Centrale airconditioning",
     "heat_pump": "Warmtepomp"
   },
-  "security": "Beveiliging",
+  "security": {
+    "basic": "Basic (versterkte sloten)",
+    "standard": "Standaard (alarmvoorbereiding)",
+    "advanced": "Advanced (camera's + sensoren)",
+    "high_security": "Hoge beveiliging (biometrisch)"
+  },
   "cladding": {
     "none": "Geen buitenbekleding",
     "metal": "Metalen gevelbekleding",
@@ -699,7 +707,12 @@
     "sprinkler": "Sprinkler systeem",
     "full_system": "Volledig blussysteem"
   },
-  "accessibility": "Toegankelijkheid",
+  "accessibility": {
+    "standard": "Standaardtoegang",
+    "ramp": "Oprit voor kinderwagens",
+    "full_ada": "Volledige compatibiliteit van ADA",
+    "disabled_friendly": "Volledig beschikbaar"
+  },
   "paint": {
     "standard": "Standaardcoating (C2)",
     "premium": "Premium afwerking (C3)",
@@ -707,9 +720,9 @@
     "marine_grade": "Maritieme kwaliteit (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "basic": "Basis (50 mm)",
+    "standard": "Standaard (100 mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
@@ -799,7 +812,7 @@
   "window_types_security": "Beveiligingsvensters",
   "roof_modifications_skylight": "Dakraam",
   "it_systems_basic": "Basisnetwerk",
-  "fire_systems": "Brandbeveiligingssystemen",
+  "fire_systems": "Brandweersystemen",
   "additional_openings_door": "Extra deur",
   "construction_material_composite": "Composite",
   "basic_configuration": "Basisconfiguratie",
@@ -822,7 +835,13 @@
     "northern_europe": "Noord -Europa (Scandinavië, -30 ° C tot +25 ° C)",
     "central_europe": "Midden -Europa (Polen, Duitsland, -20 ° C tot +35 ° C)",
     "southern_europe": "Zuid -Europa (Spanje, Italië, -5 ° C tot +45 ° C)",
-    "continental": "Continentaal klimaat (extreme schommelingen)"
+    "continental": "Continentaal klimaat (extreme schommelingen)",
+    "scandinavian": "Scandinavisch",
+    "mediterranean": "Mediterraan",
+    "atlantic_maritime": "Atlantische Zee",
+    "alpine": "Alpine",
+    "baltic": "Baltische",
+    "temperate_oceanic": "Matig Oceanic"
   },
   "environments": {
     "indoor": "Binnen (zalen, magazijnen)",
@@ -844,7 +863,10 @@
     "total_cost_line": "TOTALE KOSTEN:",
     "important_warning": "⚠️ Belangrijk:",
     "preliminary_estimate_full": "Dit is een voorlopige schatting. De definitieve prijs hangt af van gedetailleerde specificaties, huidige materiaalprijzen en beschikbaarheid. Neem contact op met ons team voor een nauwkeurige offerte.",
-    "configuration_saved_success": "✅ Configuratie succesvol opgeslagen!"
+    "configuration_saved_success": "✅ Configuratie succesvol opgeslagen!",
+    "cost_breakdown": "Kostenverdeling",
+    "total_cost": "Totale kosten",
+    "important_notice": "Belangrijk"
   },
   "destination": "Bestemming",
   "window_type": "Raamtype",

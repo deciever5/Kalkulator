@@ -40,7 +40,7 @@
     "custom_sizing_desc": "Konstrukční kontejnery s přesnými specifikacemi"
   },
   "window_types": {
-    "standard": "Standardní (dvojité zasklení)",
+    "standard": "Standard (Double Windows)",
     "energy_efficient": "Energooszczędne (trojité zasklení)",
     "security": "Bezpečnost (temperované)",
     "marine_grade": "Třída moře (anti -koroze)",
@@ -77,7 +77,7 @@
     "cold_water": "Instalace studené vody (dřez)",
     "hot_cold_water": "Studená + horká voda (dřez, dřez)",
     "basic_sanitary": "Základní sanitární uzel (WC + Sink)",
-    "standard_sanitary": "standardní",
+    "standard_sanitary": "Standardní uzel (WC + Sink + sprcha)",
     "comfort_sanitary": "Pohodlný uzel (WC + Sink + Cabin)",
     "premium_sanitary": "prémiový"
   },
@@ -182,7 +182,10 @@
       "continental": "Kontinentální",
       "alpine": "Alpská",
       "baltic": "Baltická",
-      "temperate_oceanic": "Mírná Oceánská"
+      "temperate_oceanic": "Mírná Oceánská",
+      "maritime": "Mořské klima (mírné, vlhké)",
+      "mountain": "Horské klima (nízké teploty, silné větry)",
+      "tropical": "Tropické klima (vysoké teploty, vlhkost)"
     },
     "finish_levels": {
       "basic": "Základní",
@@ -432,7 +435,7 @@
     "mezzanine": "Mezipatro/patro (zvětšený prostor)"
   },
   "security_systems_options": {
-    "none": "Žádná další bezpečnost (standardní zámky)",
+    "none": "Žádné další zabezpečení (standardní zámky)",
     "basic": "Základní (posílené zámky, mříže na okna)",
     "standard": "Standardní (alarm, senzory, siréna)",
     "extended": "Rozšířené (monitorování, senzory pohybu/vibrací)",
@@ -459,7 +462,7 @@
     "loading_dock": "Nakládací rampa (hydraulická plošina)",
     "ventilation": "Ventilační otvory (mřížky, žaluzie)",
     "skylights": "Střešní okna/světlíky",
-    "custom": "Vlastní otvory (nestandardní velikosti)"
+    "custom": "Vlastní otvory (neobvyklé rozměry)"
   },
   "fire_safety_options": {
     "none": "Žádné požární bezpečnostní systémy",
@@ -469,13 +472,13 @@
     "full": "Plný systém (plyn, monitorování)"
   },
   "accessibility_options": {
-    "standard": "Standardní přístup (práh 15-20cm)",
+    "standard": "Standardní přístup (prahová hodnota 15-20 cm)",
     "ramp": "Rampa (přístupná pro vozíčkáře)",
     "lift": "Hydraulický výtah (přístup pro zdravotně postižené)",
     "full_ada": "Plná shoda s ADA (široké dveře, madla)"
   },
   "paint_finish_options": {
-    "standard": "Standardní nátěr C2 (RAL 7035 - světle šedá)",
+    "standard": "Standard C2 povlak (RAL 7035 - jasně šedá)",
     "extended": "Rozšířený nátěr C3 (zlepšená trvanlivost)",
     "marine": "Námořní nátěr C5M (pobřežní prostředí)",
     "industrial": "Průmyslový nátěr C4 (agresivní prostředí)",
@@ -490,7 +493,7 @@
     "international": "Mezinárodní (mimo Evropu)"
   },
   "transport_type_options": {
-    "standard": "Standardní doprava (13,6m návěs)",
+    "standard": "Standard Transport (semi -trailer 13,6m)",
     "special": "Speciální doprava (nadrozměrný náklad)",
     "crane": "doprava",
     "multi_container": "Multi-kontejnerová doprava (2+ jednotky)"
@@ -516,7 +519,7 @@
   "it_systems_options": {
     "none": "Bez IT systémů",
     "basic": "Základní (internet, WiFi)",
-    "standard": "Standardní (síť, telefonie)",
+    "standard": "Standard (síť, telefonie)",
     "advanced": "Pokročilý (serverovna, bezpečnost)"
   },
   "insulation_package": "Izolační Balíček",
@@ -650,9 +653,9 @@
     "marine_grade": "Námořní kvalita (odolnost proti soli)"
   },
   "roof_modifications": {
-    "none": "No modification (standard flat roof)",
+    "none": "Bez úpravy (standardní plochá střecha)",
     "insulation": "Additional roof insulation",
-    "skylight": "Skylight installation",
+    "skylight": "Instalace dobrovolníků",
     "fans": "Roof ventilation fans",
     "solar": "Solar panel preparation",
     "antennas": "Antenna/communication mounts",
@@ -662,7 +665,7 @@
   },
   "electrical": {
     "basic": "Základní (osvětlení + zásuvky)",
-    "standard": "standardní",
+    "standard": "Standard (obvod 15a)",
     "industrial": "Průmyslový (30A + rozvodnice)",
     "smart_system": "Chytrý systém (IoT automatizace)"
   },
@@ -679,7 +682,12 @@
     "central": "Centrální klimatizace",
     "heat_pump": "Tepelné čerpadlo"
   },
-  "security": "Bezpečnost",
+  "security": {
+    "basic": "Základní (vyztužené zámky)",
+    "standard": "Standard (příprava alarmu)",
+    "advanced": "Pokročilé (kamery + senzory)",
+    "high_security": "Vysoká zabezpečení (biometrické)"
+  },
   "cladding": {
     "none": "Žádné externí opláštění",
     "metal": "Kovový obklad",
@@ -699,7 +707,12 @@
     "sprinkler": "Sprinklerový systém",
     "full_system": "Úplný hasicí systém"
   },
-  "accessibility": "Přístupnost",
+  "accessibility": {
+    "standard": "Standardní přístup",
+    "ramp": "Příjezdová cesta pro kočárky",
+    "full_ada": "Úplná kompatibilita ADA",
+    "disabled_friendly": "Plně dostupné"
+  },
   "paint": {
     "standard": "Standardní povlak (C2)",
     "premium": "Prémiový nátěr (C3)",
@@ -707,9 +720,9 @@
     "marine_grade": "Námořní kvalita (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
-    "standard": "Standard (100mm)",
-    "premium": "Premium (150mm)",
+    "basic": "Základní (50 mm)",
+    "standard": "Standard (100 mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extreme (200mm+)"
   },
   "reinforcement": {
@@ -822,7 +835,13 @@
     "northern_europe": "Severní Evropa (Skandinávie, -30 ° C až +25 ° C)",
     "central_europe": "Střední Evropa (Polsko, Německo, -20 ° C až +35 ° C)",
     "southern_europe": "Jižní Evropa (Španělsko, Itálie, -5 ° C až +45 ° C)",
-    "continental": "Kontinentální klima (extrémní výkyvy)"
+    "continental": "Kontinentální klima (extrémní výkyvy)",
+    "scandinavian": "skandinávský",
+    "mediterranean": "Středomoří",
+    "atlantic_maritime": "Atlantické moře",
+    "alpine": "Vysokohorský",
+    "baltic": "Baltské",
+    "temperate_oceanic": "Mírný oceánský"
   },
   "environments": {
     "indoor": "Indoor (haly, skladby)",
@@ -844,7 +863,10 @@
     "total_cost_line": "CELKOVÉ NÁKLADY:",
     "important_warning": "⚠️ Důležité:",
     "preliminary_estimate_full": "Toto je předběžný odhad. Konečná cena závisí na podrobných specifikacích, aktuálních cenách materiálů a dostupnosti. Pro přesnou nabídku kontaktujte náš tým.",
-    "configuration_saved_success": "✅ Konfigurace úspěšně uložena!"
+    "configuration_saved_success": "✅ Konfigurace úspěšně uložena!",
+    "cost_breakdown": "Dělení nákladů",
+    "total_cost": "Celkové náklady",
+    "important_notice": "Důležité"
   },
   "destination": "Určení",
   "window_type": "Typ Okna",

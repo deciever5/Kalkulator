@@ -79,7 +79,7 @@
     "basic_sanitary": "Sanitario básico (WC + lavabo)",
     "standard_sanitary": "Estándar (WC + lavabo + ducha)",
     "comfort_sanitary": "Confort (WC + lavabo + cabina)",
-    "premium_sanitary": "Premium (jacuzzi, bidé, 2 lavabos)"
+    "premium_sanitary": "Nodo premium (jacuzzi, bidet, 2 sumideros)"
   },
   "hvac_system": {
     "none": "No HVAC (no calefacción and cooling)",
@@ -182,7 +182,10 @@
       "continental": "Continental",
       "alpine": "Alpino",
       "baltic": "Báltico",
-      "temperate_oceanic": "Oceánico Templado"
+      "temperate_oceanic": "Oceánico Templado",
+      "maritime": "Clima marino (suave, húmedo)",
+      "mountain": "Clima de montaña (bajas temperaturas, vientos fuertes)",
+      "tropical": "Clima tropical (altas temperaturas, humedad)"
     },
     "finish_levels": {
       "basic": "Básico",
@@ -415,7 +418,7 @@
   "modification_requirements_placeholder": "ej. Colores RAL especiales, tamaños de abertura no estándar, refuerzos estructurales adicionales",
   "transport_logistics": "Transporte y logística",
   "delivery_zone": "Zona de Entrega",
-  "transport_type": "Tipo de Transporte",
+  "transport_type": "Tipo de transporte",
   "assembly_installation": "Montaje e instalación",
   "equipment_extras": "Equipo y extras",
   "office_equipment": "Equipamiento de oficina/interior",
@@ -479,7 +482,7 @@
     "extended": "Revestimiento extendido C3 (durabilidad mejorada)",
     "marine": "Revestimiento marino C5M (entornos costeros)",
     "industrial": "Revestimiento industrial C4 (entornos agresivos)",
-    "premium": "Premium (colores RAL especiales, texturas)"
+    "premium": "Premium (colores especiales RAL, texturas)"
   },
   "delivery_zone_options": {
     "local": "Local (hasta 50km)",
@@ -490,8 +493,8 @@
     "international": "Internacional (fuera de Europa)"
   },
   "transport_type_options": {
-    "standard": "Transporte estándar (semirremolque 13,6m)",
-    "special": "Transporte especial (carga sobredimensionada)",
+    "standard": "Transporte estándar (semi -trrailer 13.6m)",
+    "special": "Transporte especial (de gran tamaño)",
     "crane": "Transporte con grúa (instalación en el sitio)",
     "multi_container": "Transporte multi-contenedor (2+ unidades)"
   },
@@ -679,7 +682,12 @@
     "central": "Aire acondicionado central",
     "heat_pump": "Bomba de calor"
   },
-  "security": "Seguridad",
+  "security": {
+    "basic": "Básico (cerraduras reforzadas)",
+    "standard": "Estándar (preparación de alarma)",
+    "advanced": "Avanzado (cámaras + sensores)",
+    "high_security": "Alta seguridad (biométrica)"
+  },
   "cladding": {
     "none": "Sin revestimiento exterior",
     "metal": "Revestimiento metálico",
@@ -699,7 +707,12 @@
     "sprinkler": "Sistema de rociadores",
     "full_system": "Sistema completo de supresión de incendios"
   },
-  "accessibility": "Accesibilidad",
+  "accessibility": {
+    "standard": "Acceso estándar",
+    "ramp": "Camino de entrada para cochecitos",
+    "full_ada": "Compatibilidad completa de ADA",
+    "disabled_friendly": "Totalmente disponible"
+  },
   "paint": {
     "standard": "Revestimiento estándar (C2)",
     "premium": "Acabado premium (C3)",
@@ -709,7 +722,7 @@
   "insulation": {
     "basic": "Básico (50mm)",
     "standard": "Estándar (100mm)",
-    "premium": "Premium (150mm)",
+    "premium": "Premium (150 mm)",
     "extreme": "Extremo (200mm+)"
   },
   "reinforcement": {
@@ -822,7 +835,13 @@
     "continental": "Clima continental (variaciones extremas)",
     "maritime": "Clima marítimo (alta humedad)",
     "mountain": "Clima montañoso (UV alto, nieve)",
-    "tropical": "Clima tropical (altas temperaturas, humedad)"
+    "tropical": "Clima tropical (altas temperaturas, humedad)",
+    "scandinavian": "escandinavo",
+    "mediterranean": "mediterráneo",
+    "atlantic_maritime": "Mar Atlántico",
+    "alpine": "alpino",
+    "baltic": "báltico",
+    "temperate_oceanic": "Oceánico moderado"
   },
   "environments": {
     "indoor": "Interior (pasillos, almacenes)",
@@ -844,7 +863,10 @@
     "total_cost_line": "COSTO TOTAL:",
     "important_warning": "⚠️ Importante:",
     "preliminary_estimate_full": "Esta es una estimación preliminar. El precio final depende de especificaciones detalladas, precios actuales de materiales y disponibilidad. Contacte nuestro equipo para una cotización precisa.",
-    "configuration_saved_success": "✅ Configuración guardada con éxito!"
+    "configuration_saved_success": "✅ Configuración guardada con éxito!",
+    "cost_breakdown": "División de Costos",
+    "total_cost": "Costo total",
+    "important_notice": "Importante"
   },
   "destination": "Destino",
   "window_type": "Tipo de Ventana",
