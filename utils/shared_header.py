@@ -45,7 +45,7 @@ def render_shared_header(show_login=False, current_page="Home"):
     if show_login:
         col_spacer, col_lang, col_login = st.columns([4, 1.5, 0.5])
     else:
-        col_spacer, col_lang, col_login = st.columns([5, 1, 0])  # Set col_login to empty column
+        col_spacer, col_lang = st.columns([5, 1])  # Only create columns we need
 
     with col_lang:
         # Language selector in top-right area (matching main page)
@@ -183,21 +183,8 @@ def render_shared_header(show_login=False, current_page="Home"):
         </div>
         """, unsafe_allow_html=True)
 
-    if show_login:
-        with col_login:
-            # Employee login button
-            if st.session_state.get('employee_logged_in', False):
-                if st.button(t('ui.logout'), key="logout_btn"):
-                    st.session_state.employee_logged_in = False
-                    st.session_state.show_login = False
-                    st.rerun()
-            else:
-                if st.button(t('ui.employee_login'), key="login_btn"):
-                    st.session_state.show_login = not st.session_state.get('show_login', False)
-                    st.rerun()
-
-        # Login form (if shown)
-    if st.session_state.get('show_login', False) and not st.session_state.get('employee_logged_in', False):
+    # Login form (if shown)
+    if show_login and st.session_state.get('show_login', False) and not st.session_state.get('employee_logged_in', False):
         col_a, col_b, col_c = st.columns([2, 2, 2])
         with col_b:
             employee_password = st.text_input(t('ui.password'), type="password", key="shared_emp_pwd")
