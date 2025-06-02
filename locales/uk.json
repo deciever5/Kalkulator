@@ -778,5 +778,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Офісний Простір",
+    "sanitary_containers": "Санітарні Контейнери",
+    "residential_containers": "Житлові Контейнери",
+    "commercial_containers": "Комерційні Контейнери",
+    "storage_containers": "Складські Контейнери",
+    "technical_containers": "Технічні Контейнери",
+    "changing_rooms": "Роздягальні",
+    "guard_booths": "Сторожові Будки"
+  }
 }

@@ -778,5 +778,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Kancelársky Priestor",
+    "sanitary_containers": "Sanitárne Kontajnery",
+    "residential_containers": "Obytné Kontajnery",
+    "commercial_containers": "Komerčné Kontajnery",
+    "storage_containers": "Skladovacie Kontajnery",
+    "technical_containers": "Technické Kontajnery",
+    "changing_rooms": "Šatne",
+    "guard_booths": "Strážne Búdky"
+  }
 }

@@ -737,5 +737,15 @@
   },
   "window_types_label": "Window Types",
   "lighting_label": "Lighting",
-  "flooring_label": "Flooring"
+  "flooring_label": "Flooring",
+  "purposes": {
+    "office_space": "Office Space",
+    "sanitary_containers": "Sanitary Containers",
+    "residential_containers": "Residential Containers",
+    "commercial_containers": "Commercial Containers",
+    "storage_containers": "Storage Containers",
+    "technical_containers": "Technical Containers",
+    "changing_rooms": "Changing Rooms",
+    "guard_booths": "Guard Booths"
+  }
 }

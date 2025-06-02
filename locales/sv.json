@@ -731,5 +731,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Kontorsutrymme",
+    "sanitary_containers": "Sanitära Containrar",
+    "residential_containers": "Bostadscontainrar",
+    "commercial_containers": "Kommersiella Containrar",
+    "storage_containers": "Förvaringscontainrar",
+    "technical_containers": "Tekniska Containrar",
+    "changing_rooms": "Omklädningsrum",
+    "guard_booths": "Vaktkurer"
+  }
 }

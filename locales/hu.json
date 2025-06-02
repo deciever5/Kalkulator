@@ -731,5 +731,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Irodai Tér",
+    "sanitary_containers": "Szaniter Konténerek",
+    "residential_containers": "Lakókonténerek",
+    "commercial_containers": "Kereskedelmi Konténerek",
+    "storage_containers": "Raktározó Konténerek",
+    "technical_containers": "Műszaki Konténerek",
+    "changing_rooms": "Öltözők",
+    "guard_booths": "Őrházak"
+  }
 }

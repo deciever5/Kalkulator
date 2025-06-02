@@ -724,5 +724,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Kancelářský Prostor",
+    "sanitary_containers": "Sanitární Kontejnery",
+    "residential_containers": "Obytné Kontejnery",
+    "commercial_containers": "Komerční Kontejnery",
+    "storage_containers": "Skladovací Kontejnery",
+    "technical_containers": "Technické Kontejnery",
+    "changing_rooms": "Šatny",
+    "guard_booths": "Strážní Budky"
+  }
 }

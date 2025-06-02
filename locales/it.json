@@ -731,5 +731,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Spazio Ufficio",
+    "sanitary_containers": "Container Sanitari",
+    "residential_containers": "Container Residenziali",
+    "commercial_containers": "Container Commerciali",
+    "storage_containers": "Container di Stoccaggio",
+    "technical_containers": "Container Tecnici",
+    "changing_rooms": "Spogliatoi",
+    "guard_booths": "Cabine di Guardia"
+  }
 }

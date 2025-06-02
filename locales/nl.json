@@ -731,5 +731,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Kantoorruimte",
+    "sanitary_containers": "Sanitaire Containers",
+    "residential_containers": "Wooncontainers",
+    "commercial_containers": "Commerciële Containers",
+    "storage_containers": "Opslagcontainers",
+    "technical_containers": "Technische Containers",
+    "changing_rooms": "Kleedkamers",
+    "guard_booths": "Wachthuisjes"
+  }
 }

@@ -778,5 +778,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Toimistotila",
+    "sanitary_containers": "Sanitaarikonttia",
+    "residential_containers": "Asuinkonttia",
+    "commercial_containers": "Kaupalliset Kontit",
+    "storage_containers": "Varastokontit",
+    "technical_containers": "Tekniset Kontit",
+    "changing_rooms": "Pukuhuoneet",
+    "guard_booths": "Vartiointikoppit"
+  }
 }

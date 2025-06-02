@@ -732,5 +732,15 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "purposes": {
+    "office_space": "Büroraum",
+    "sanitary_containers": "Sanitärcontainer",
+    "residential_containers": "Wohncontainer",
+    "commercial_containers": "Gewerbecontainer",
+    "storage_containers": "Lagercontainer",
+    "technical_containers": "Technische Container",
+    "changing_rooms": "Umkleideräume",
+    "guard_booths": "Wachhäuschen"
+  }
 }

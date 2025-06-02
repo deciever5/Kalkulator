@@ -168,7 +168,19 @@
       "restaurant": "Restauracja",
       "medical": "Medyczne",
       "laboratory": "Laboratorium"
-    },
+    }
+  },
+  "purposes": {
+    "office_space": "Przestrzeń Biurowa",
+    "sanitary_containers": "Kontenery Sanitarne",
+    "residential_containers": "Kontenery Mieszkalne",
+    "commercial_containers": "Kontenery Komercyjne",
+    "storage_containers": "Kontenery Magazynowe",
+    "technical_containers": "Kontenery Techniczne",
+    "changing_rooms": "Szatnie",
+    "guard_booths": "Budki Strażnicze"
+  },
+  "container": {
     "environment": {
       "indoor": "Wewnętrzne",
       "outdoor": "Zewnętrzne",
