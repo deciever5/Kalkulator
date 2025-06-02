@@ -201,6 +201,41 @@
     "changing_rooms": "Umkleideräume",
     "guard_booths": "Wachhäuschen"
   },
+  "ventilation": {
+    "none": "Keine Belüftung",
+    "gravity": "Schwerkraftbelüftung",
+    "wall_fans": "Wandventilatoren",
+    "mechanical": "Mechanische Belüftung",
+    "heat_recovery": "Wärmerückgewinnung",
+    "split_ac": "Split-Klimaanlage",
+    "central_ac": "Zentrale Klimaanlage",
+    "industrial": "Industrielle Belüftung"
+  },
+  "roof_modifications": {
+    "none": "Keine Änderungen",
+    "insulation": "Zusätzliche Isolierung",
+    "skylight": "Dachfenster",
+    "fans": "Dachventilatoren",
+    "solar": "Solarpaneele",
+    "antennas": "Antennen",
+    "sloped": "Geneigtes Dach",
+    "terrace": "Dachterrasse",
+    "snow_removal": "Schneeräumungssystem"
+  },
+  "insulation": {
+    "basic": "Standard (50mm)",
+    "standard": "Standard (100mm)",
+    "premium": "Premium (150mm)",
+    "extreme": "Extrem (200mm)"
+  },
+  "windows": {
+    "none": "Keine Fenster",
+    "one": "1 Fenster",
+    "two": "2 Fenster",
+    "three": "3 Fenster",
+    "four": "4 Fenster",
+    "five_plus": "5+ Fenster"
+  },
   "form": {
     "labels": {
       "container_type": "Containertyp",

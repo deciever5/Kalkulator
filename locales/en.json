@@ -49,7 +49,14 @@
     "tilt": "Tilt windows",
     "skylight": "Skylight windows"
   },
-  "lighting": "Lighting",
+  "lighting": {
+    "none": "No lighting",
+    "basic_led": "Basic LED lighting",
+    "energy_efficient": "Energy efficient LED",
+    "exterior": "Exterior lighting",
+    "emergency": "Emergency lighting",
+    "smart": "Smart lighting system"
+  },
   "electrical_system": {
     "none": "No electrical installation",
     "preparation": "Preparation (wiring without equipment)",
