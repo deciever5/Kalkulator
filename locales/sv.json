@@ -43,47 +43,47 @@
     "standard": "Standard (dubbelglas)",
     "energy_efficient": "Energooszczędne (trippelglas)",
     "security": "Utanpieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
-    "panoramic": "Okna panoramiczne",
-    "sliding": "Okna przesuwne",
-    "tilt": "Okna uchylne",
-    "skylight": "Okna dachowe"
+    "marine_grade": "Havsklass (anti -korrosion)",
+    "panoramic": "Panoramafönster",
+    "sliding": "Glidande fönster",
+    "tilt": "Lutande fönster",
+    "skylight": "Takfönster"
   },
   "lighting": {
-    "none": "Brak oświetlenia",
+    "none": "Ingen belysning",
     "basic": "Grundläggande LED",
     "basic_led": "Grundläggande oświetlenie LED",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
+    "energy_efficient": "Energibesparande LED med sensorer",
+    "exterior": "Extern belysning (strålkastare)",
+    "emergency": "Nödbelysning (batteri)",
     "smart": "System inteligentny (oświetlenie sterowane)"
   },
   "electrical_system": {
     "none": "Utan instalacji elektrycznej",
     "preparation": "Przygotowanie (przewody utan wyposażenia)",
-    "basic": "Podstawowy (oświetlenie + gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
-    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
-    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
-    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
-    "smart": "Inteligentny (smart home, KNX, automatyka)"
+    "basic": "Basic (belysning + uttag)",
+    "standard": "Standard (25A, belysning, 8 uttag)",
+    "extended": "Utökad (40A, styrka, UPS, nödsituation)",
+    "industrial": "Industrial (63a, styrka, switchgear)",
+    "it_server": "IT/Server (UPS, kylning, övervakning)",
+    "smart": "Intelligent (KNX, Automation)"
   },
   "plumbing_system": {
     "none": "Utan instalacji wodnej",
     "preparation": "Przygotowanie (rury utan armatury)",
-    "basic": "Podstawowa (zlew + odpływ)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
-    "cold_water": "Instalacja zimnej wody (zlew)",
-    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
-    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
-    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
-    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
-    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
+    "basic": "Basic (Sink + Outflow)",
+    "full": "Full (förberedande badrum)",
+    "commercial": "Handelsklass",
+    "industrial": "Industriell installation (tryck, filtrering)",
+    "cold_water": "Kallt vatteninstallation (handfat)",
+    "hot_cold_water": "Kall + varmt vatten (handfat, handfat)",
+    "basic_sanitary": "Basic Sanitary Node (WC + Sink)",
+    "standard_sanitary": "Standard Node (WC + Sink + Dusch)",
+    "comfort_sanitary": "Bekväm nod (WC + Sink + Cabin)",
+    "premium_sanitary": "Premiumnod (jacuzzi, bidet, 2 sänkor)"
   },
   "hvac_system": {
-    "none": "No HVAC (no heating and cooling)",
+    "none": "No HVAC (no uppvärmning and cooling)",
     "basic": "Basic ventilation",
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
@@ -91,7 +91,7 @@
     "central_ac": "Central air conditioning (with filtration, humidification)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "vrv_vrf": "VRV/VRF -system (multi -zon, zonkontroll)",
     "underfloor_heating": "Golvvärme (elektrisk/vatten)"
   },
   "flooring": {
@@ -103,8 +103,8 @@
     "carpet": "2-4 mm PVC golvbeläggning",
     "epoxy": "Industriellt epoxigolv",
     "concrete": "Förhöjd golv (serverrum)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "basic": "Grundläggande (industriell betong)",
+    "hardwood": "Hårt trä (parkett)"
   },
   "configure_container": "Konfigurera din behållare",
   "simple_process_2_steps": "Enkel process i 2 enkla steg",
@@ -427,39 +427,39 @@
   "general_requirements_placeholder": "t.ex. Speciella slutdatum, certifieringskrav, budgetbegränsningar",
   "interior_layout_options": {
     "open_space": "Öppet utrymme (inga skiljeväggar)",
-    "partitioned": "Z przegrodami (1-3 pomieszczenia)",
+    "partitioned": "Med partitioner (1-3 rum)",
     "built_in_furniture": "Byggda -in möbler (anpassade byggnader)",
-    "custom_layout": "Układ niestandardowy (projekt custom)",
-    "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
+    "custom_layout": "Icke -standardsystem (anpassat projekt)",
+    "mezzanine": "Mezzanin/golv (ytökning)"
   },
   "security_systems_options": {
     "none": "Utan dodatkowych zautanpieczeń (zamki standard)",
     "basic": "Grundläggande (wzmocnione zamki, kraty okienne)",
     "standard": "Standard (alarm, czujniki, syrena)",
     "extended": "Utökad (övervakning, rörelse/vibrationssensorer)",
-    "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
-    "maximum": "Maksymalne (sejf, biometria, central monitoring)",
+    "high": "Hög (CCTV IP, Access Control, Intercom)",
+    "maximum": "Maximal (säker, biometri, central övervakning)",
     "industrial": "Industriell (ATEX, systemy gazowe, panic room)"
   },
   "exterior_cladding_options": {
     "none": "Utan okładziny (blacha kontenerowa standardowa)",
-    "trapezoidal": "Blacha trapezoidalna (T18, T35, T55)",
-    "cassette": "Blacha kasetowa (płaska, przetłaczana)",
-    "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
-    "structural_plaster": "Tynk strukturalny (silikonowy, akrylowy)",
-    "wood_cladding": "Okładzina drewniana (termo, egzotyczna)",
-    "composite_panels": "Płyty kompozytowe (HPL, dibond)",
-    "clinker_brick": "Cegła klinkierowa (lica, elewacyjna)",
-    "natural_stone": "Kamień naturalny/sztuczny"
+    "trapezoidal": "Trapezoidal ark (T18, T35, T55)",
+    "cassette": "Kassettark (platt, puffed)",
+    "vinyl_siding": "Vinylsidor (träimitation, modern)",
+    "structural_plaster": "Strukturell gips (silikon, akryl)",
+    "wood_cladding": "Träbeklädnad (Thermo, Exotic)",
+    "composite_panels": "Kompositplattor (HPL, Dibond)",
+    "clinker_brick": "Clinker Brick (ansikte, fasad)",
+    "natural_stone": "Naturlig sten"
   },
   "additional_openings_options": {
     "none": "Utan dodatkowych otworów (standard drzwi)",
-    "windows": "Okna dodatkowe (1-4 sztuki)",
-    "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
-    "garage_door": "Brama garażowa (segmentowa, rolowana)",
-    "loading_dock": "Rampa załadunkowa (hydrauliczna)",
-    "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
-    "skylights": "Okna dachowe/świetliki",
+    "windows": "Ytterligare fönster (1-4 stycken)",
+    "doors": "Ytterligare dörr (service, nödsituation)",
+    "garage_door": "Garageport (segment, rullad)",
+    "loading_dock": "Laddar ramp (hydraulisk)",
+    "ventilation": "Ventilationshål (galler, persienner)",
+    "skylights": "Takfönster/takfönster",
     "custom": "Otwory niestandard (nietypowe wymiary)"
   },
   "fire_safety_options": {
@@ -470,49 +470,49 @@
     "full": "Fullt system (gas, övervakning)"
   },
   "accessibility_options": {
-    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "standard": "Standardåtkomst (15-20 cm tröskel)",
     "ramp": "Uppfart/ramp (för rullstolar)",
     "lift": "Hydraulisk hiss (åtkomst för funktionshindrade)",
-    "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
+    "full_ada": "Full kompatibilitet av ADA (breddörr, handtag)"
   },
   "paint_finish_options": {
-    "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
-    "extended": "Powłoka ulepszona C3 (lepsza trwałość)",
-    "marine": "Powłoka morska C5M (środowiska przybrzeżne)",
-    "industrial": "Powłoka przemysłowa C4 (środowiska agresywne)",
-    "premium": "Premium (specjalne kolory RAL, tekstury)"
+    "standard": "Standard C2 -beläggning (Ral 7035 - Bright Grey)",
+    "extended": "C3 förbättrad beläggning (bättre hållbarhet)",
+    "marine": "C5m havsbeläggning (kustmiljöer)",
+    "industrial": "C4 Industrial Coating (aggressiva miljöer)",
+    "premium": "Premium (Special Colors Ral, Textures)"
   },
   "delivery_zone_options": {
-    "local": "Lokalny (do 50km)",
-    "regional": "Regionalny (50-200km)",
-    "national": "Krajowy (cały kraj)",
-    "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
-    "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
-    "international": "Międzynarodowy (poza Europą)"
+    "local": "Lokalt (upp till 50 km)",
+    "regional": "Regional (50-200 km)",
+    "national": "Inhemsk (hela landet)",
+    "central_europe": "Centraleuropa (DE, CZ, SK, AT)",
+    "western_europe": "Västeuropa (FR, NL, BE, LU)",
+    "international": "Internationell (utanför Europa)"
   },
   "transport_type_options": {
-    "standard": "Transport standardowy (naczep 13.6m)",
-    "special": "Transport specjalny (ponadgabarytowy)",
+    "standard": "Standardtransport (semi -trailer 13,6 m)",
+    "special": "Specialtransport (överdimensionerad)",
     "crane": "Transport med Crane (installation på plats)",
-    "multi_container": "Transport wielokontenerowy (2+ jednostki)"
+    "multi_container": "Multi -evic transport (2+ enheter)"
   },
   "assembly_options": {
     "none": "Utan montażu (tylko dostawa)",
-    "basic": "Montaż podstawowy (pozycjonowanie, poziomowanie)",
-    "standard": "Montaż standardowy (podłączenia, testy)",
-    "full": "Montaż pełny (kompletna instalacja)"
+    "basic": "Grundmontering (positionering, nivellering)",
+    "standard": "Standardmontering (anslutningar, tester)",
+    "full": "Full montering (komplett installation)"
   },
   "office_equipment_options": {
     "none": "Utan wyposażenia (pusty kontener)",
     "basic": "Grundläggande (biurko, krzesła, szafa)",
     "standard": "Standard (komplet mebli, oświetlenie)",
-    "full": "Pełne (kompletne wyposażenie biura)"
+    "full": "Full (komplett kontorsutrustning)"
   },
   "appliances_options": {
     "none": "Utan sprzętu AGD",
-    "basic": "Podstawowy (lodówka, mikrofalówka)",
-    "standard": "Standardowy (zestaw kuchenny, pralka)",
-    "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
+    "basic": "Basic (kylskåp, mikrovågsugn)",
+    "standard": "Standard (kökssats, tvättmaskin)",
+    "full": "Full (kompletta hushållsapparater)"
   },
   "it_systems_options": {
     "none": "Utan systemów IT",
@@ -846,7 +846,7 @@
     "agricultural": "Jordbruk (gårdar, faciliteter)",
     "marine": "Hav"
   },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "window_types_label": "Fönstertyper",
+  "lighting_label": "Belysning",
+  "flooring_label": "Golv"
 }

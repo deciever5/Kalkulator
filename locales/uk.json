@@ -43,47 +43,47 @@
     "standard": "Стандартний (подвійне скління)",
     "energy_efficient": "Energooszczędne (потрійне скління)",
     "security": "Безpieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
-    "panoramic": "Okna panoramiczne",
-    "sliding": "Okna przesuwne",
-    "tilt": "Okna uchylne",
-    "skylight": "Okna dachowe"
+    "marine_grade": "Морський клас (антикорозія)",
+    "panoramic": "Панорамні вікна",
+    "sliding": "Ковзаючі вікна",
+    "tilt": "Нахил вікон",
+    "skylight": "Вікна даху"
   },
   "lighting": {
-    "none": "Brak oświetlenia",
+    "none": "Немає освітлення",
     "basic": "Базовий LED",
     "basic_led": "Базовий oświetlenie LED",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
-    "smart": "System inteligentny (oświetlenie sterowane)"
+    "energy_efficient": "Енергетична світлодіод із датчиками",
+    "exterior": "Зовнішнє освітлення (фари)",
+    "emergency": "Аварійне освітлення (акумулятор)",
+    "smart": "Інтелектуальна система (контрольоване освітлення)"
   },
   "electrical_system": {
     "none": "Без instalacji elektrycznej",
     "preparation": "Przygotowanie (przewody без wyposażenia)",
-    "basic": "Podstawowy (oświetlenie + gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
-    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
-    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
-    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
-    "smart": "Inteligentny (smart home, KNX, automatyka)"
+    "basic": "Основні (освітлення + розетки)",
+    "standard": "Стандарт (25а, освітлення, 8 розетків)",
+    "extended": "Розширений (40а, сила, ДБЖ, надзвичайна ситуація)",
+    "industrial": "Промисловий (63а, міцність, розподільні пристрої)",
+    "it_server": "Це/сервер (UPS, охолодження, моніторинг)",
+    "smart": "Інтелектуальний (KNX, автоматизація)"
   },
   "plumbing_system": {
     "none": "Без instalacji wodnej",
     "preparation": "Przygotowanie (rury без armatury)",
-    "basic": "Podstawowa (zlew + odpływ)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
-    "cold_water": "Instalacja zimnej wody (zlew)",
-    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
-    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
-    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
-    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
-    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
+    "basic": "Базовий (мийка + відтік)",
+    "full": "Повна (підготовка ванної)",
+    "commercial": "Комерційний клас",
+    "industrial": "Промислова установка (тиск, фільтрація)",
+    "cold_water": "Установка холодної води (мийка)",
+    "hot_cold_water": "Холодна + гаряча вода (мийка, мийка)",
+    "basic_sanitary": "Основний санітарний вузол (wc + мийка)",
+    "standard_sanitary": "Стандартний вузол (wc + мийка + душ)",
+    "comfort_sanitary": "Зручний вузол (wc + мийка + салон)",
+    "premium_sanitary": "Преміум -вузол (Jacuzzi, Bidet, 2 мийки)"
   },
   "hvac_system": {
-    "none": "No HVAC (no heating and cooling)",
+    "none": "No HVAC (no опалення and cooling)",
     "basic": "Basic ventilation",
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
@@ -91,7 +91,7 @@
     "central_ac": "Central air conditioning (with filtration, humidification)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "vrv_vrf": "VRV/VRF система (multi-zone, zone control)",
     "underfloor_heating": "Підлога нагрівання (електрична/вода)"
   },
   "flooring": {
@@ -103,8 +103,8 @@
     "carpet": "2-4 мм ПВХ-покриття",
     "epoxy": "Промислова епоксидна підлога",
     "concrete": "Піднята підлога (серверні кімнати)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "basic": "Базовий (промисловий бетон)",
+    "hardwood": "Тверда деревина (паркет)"
   },
   "configure_container": "Налаштувати контейнер",
   "simple_process_2_steps": "Простий процес - 2 кроки",
@@ -474,39 +474,39 @@
   "general_requirements_placeholder": "напр. Спеціальні терміни завершення, вимоги до сертифікації, бюджетні обмеження",
   "interior_layout_options": {
     "open_space": "Відкритий простір (без перегородок)",
-    "partitioned": "Z przegrodami (1-3 pomieszczenia)",
+    "partitioned": "З розділами (1-3 кімнати)",
     "built_in_furniture": "Побудовані меблі (на замовлення -будівлі)",
-    "custom_layout": "Układ niestandardowy (projekt custom)",
-    "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
+    "custom_layout": "Układ nieстандартнийowy (projekt custom)",
+    "mezzanine": "Мезонін/підлога (збільшення поверхні)"
   },
   "security_systems_options": {
     "none": "Без dodatkowych zaбезpieczeń (zamki стандартний)",
     "basic": "Базовий (wzmocnione zamki, kraty okienne)",
     "standard": "Стандартний (alarm, czujniki, syrena)",
     "extended": "Розширені (датчики моніторингу, руху/вібрації)",
-    "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
-    "maximum": "Maksymalne (sejf, biometria, central monitoring)",
+    "high": "Високий (CCTV IP, контроль доступу, домофон)",
+    "maximum": "Максимум (безпечна, біометрика, центральний моніторинг)",
     "industrial": "Промисловий (ATEX, systemy gazowe, panic room)"
   },
   "exterior_cladding_options": {
     "none": "Без okładziny (blacha kontenerowa standardowa)",
-    "trapezoidal": "Blacha trapezoidalna (T18, T35, T55)",
-    "cassette": "Blacha kasetowa (płaska, przetłaczana)",
-    "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
-    "structural_plaster": "Tynk strukturalny (silikonowy, akrylowy)",
-    "wood_cladding": "Okładzina drewniana (termo, egzotyczna)",
-    "composite_panels": "Płyty kompozytowe (HPL, dibond)",
-    "clinker_brick": "Cegła klinkierowa (lica, elewacyjna)",
-    "natural_stone": "Kamień naturalny/sztuczny"
+    "trapezoidal": "Трапецієподібний аркуш (T18, T35, T55)",
+    "cassette": "Касетний аркуш (плоский, роздутий)",
+    "vinyl_siding": "Вініловий сайдинг (імітація деревини, сучасний)",
+    "structural_plaster": "Структурна штукатурка (силікон, акрил)",
+    "wood_cladding": "Дерев’яна обшивка (термо, екзотика)",
+    "composite_panels": "Композитні пластини (HPL, Dibond)",
+    "clinker_brick": "Цегла Клінкера (обличчя, фасад)",
+    "natural_stone": "Природний/штучний камінь"
   },
   "additional_openings_options": {
     "none": "Без dodatkowych otworów (стандартний drzwi)",
-    "windows": "Okna dodatkowe (1-4 sztuki)",
-    "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
-    "garage_door": "Brama garażowa (segmentowa, rolowana)",
-    "loading_dock": "Rampa załadunkowa (hydrauliczna)",
-    "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
-    "skylights": "Okna dachowe/świetliki",
+    "windows": "Додаткові вікна (1-4 штуки)",
+    "doors": "Додаткові двері (послуга, надзвичайна ситуація)",
+    "garage_door": "Гаражні двері (сегментарні, згорнуті)",
+    "loading_dock": "Завантаження пандусу (гідравліка)",
+    "ventilation": "Вентиляційні отвори (грилі, жалюзі)",
+    "skylights": "Windows/Skylights",
     "custom": "Otwory nieстандартний (nietypowe wymiary)"
   },
   "fire_safety_options": {
@@ -517,49 +517,49 @@
     "full": "Повна система (газ, моніторинг)"
   },
   "accessibility_options": {
-    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "standard": "Dostęp стандартнийowy (próg 15-20cm)",
     "ramp": "Проїжджа дорога/пандус (для інвалідних візків)",
     "lift": "Гідравлічний ліфт (доступ до інвалідів)",
-    "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
+    "full_ada": "Повна сумісність ADA (широкі двері, ручки)"
   },
   "paint_finish_options": {
-    "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
-    "extended": "Powłoka ulepszona C3 (lepsza trwałość)",
-    "marine": "Powłoka morska C5M (środowiska przybrzeżne)",
-    "industrial": "Powłoka przemysłowa C4 (środowiska agresywne)",
-    "premium": "Premium (specjalne kolory RAL, tekstury)"
+    "standard": "Powłoka стандартнийowa C2 (RAL 7035 - szary jasny)",
+    "extended": "C3 Покращене покриття (краща довговічність)",
+    "marine": "Морське покриття C5m (прибережне середовище)",
+    "industrial": "C4 промислове покриття (агресивне середовище)",
+    "premium": "Премія (спеціальні кольори ral, текстури)"
   },
   "delivery_zone_options": {
-    "local": "Lokalny (do 50km)",
-    "regional": "Regionalny (50-200km)",
-    "national": "Krajowy (cały kraj)",
-    "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
-    "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
-    "international": "Międzynarodowy (poza Europą)"
+    "local": "Місцевий (до 50 км)",
+    "regional": "Регіональний (50-200 км)",
+    "national": "Внутрішня (ціла країна)",
+    "central_europe": "Центральна Європа (DE, CZ, SK, AT)",
+    "western_europe": "Західна Європа (fr, nl, be, lu)",
+    "international": "Міжнародний (за межами Європи)"
   },
   "transport_type_options": {
-    "standard": "Transport standardowy (naczep 13.6m)",
-    "special": "Transport specjalny (ponadgabarytowy)",
+    "standard": "Transport стандартнийowy (naczep 13.6m)",
+    "special": "Спеціальний транспорт (негабаритний)",
     "crane": "Транспорт з краном (встановлення на місці)",
-    "multi_container": "Transport wielokontenerowy (2+ jednostki)"
+    "multi_container": "Мульти -онний транспорт (2+ одиниць)"
   },
   "assembly_options": {
     "none": "Без montażu (tylko dostawa)",
-    "basic": "Montaż podstawowy (pozycjonowanie, poziomowanie)",
-    "standard": "Montaż standardowy (podłączenia, testy)",
-    "full": "Montaż pełny (kompletna instalacja)"
+    "basic": "Основна збірка (позиціонування, вирівнювання)",
+    "standard": "Montaż стандартнийowy (podłączenia, testy)",
+    "full": "Повна збірка (повна установка)"
   },
   "office_equipment_options": {
     "none": "Без wyposażenia (pusty kontener)",
     "basic": "Базовий (biurko, krzesła, szafa)",
     "standard": "Стандартний (komplet mebli, oświetlenie)",
-    "full": "Pełne (kompletne wyposażenie biura)"
+    "full": "Повне (повне офісне обладнання)"
   },
   "appliances_options": {
     "none": "Без sprzętu AGD",
-    "basic": "Podstawowy (lodówka, mikrofalówka)",
-    "standard": "Standardowy (zestaw kuchenny, pralka)",
-    "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
+    "basic": "Базовий (холодильник, мікрохвильова піч)",
+    "standard": "Стандартний (кухонний комплект, пральна машина)",
+    "full": "Повна (повна побутова техніка)"
   },
   "it_systems_options": {
     "none": "Без systemów IT",
@@ -893,7 +893,7 @@
     "agricultural": "Сільськогосподар (ферми, заклади)",
     "marine": "Морський/верфі (корозійне середовище)"
   },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "window_types_label": "Типи вікон",
+  "lighting_label": "Освітлення",
+  "flooring_label": "Підлоги"
 }

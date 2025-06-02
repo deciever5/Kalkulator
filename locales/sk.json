@@ -42,48 +42,48 @@
   "window_types": {
     "standard": "Štandardné (dvojité zasklenie)",
     "energy_efficient": "Energooszczędne (trojité zasklenie)",
-    "security": "Bezpieczeństwo (hartowane)",
-    "marine_grade": "Klasa morska (antykorozyjna)",
-    "panoramic": "Okna panoramiczne",
-    "sliding": "Okna przesuwne",
-    "tilt": "Okna uchylne",
-    "skylight": "Okna dachowe"
+    "security": "Bezpečnosť (temperované)",
+    "marine_grade": "Trieda mora (anti -korózia)",
+    "panoramic": "Panoramatické okná",
+    "sliding": "Posuvné okná",
+    "tilt": "Nakláňanie okien",
+    "skylight": "Strešné okná"
   },
   "lighting": {
-    "none": "Brak oświetlenia",
+    "none": "Žiadne osvetlenie",
     "basic": "Základné LED",
     "basic_led": "Základné oświetlenie LED",
-    "energy_efficient": "Energooszczędne LED z czujnikami",
-    "exterior": "Oświetlenie zewnętrzne (reflektory)",
-    "emergency": "Oświetlenie awaryjne (akumulatorowe)",
-    "smart": "System inteligentny (oświetlenie sterowane)"
+    "energy_efficient": "Energia -LED LED so senzormi",
+    "exterior": "Vonkajšie osvetlenie (svetlomety)",
+    "emergency": "Núdzové osvetlenie (batéria)",
+    "smart": "Inteligentný systém (ovládané osvetlenie)"
   },
   "electrical_system": {
-    "none": "Bez instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody bez wyposażenia)",
-    "basic": "Podstawowy (oświetlenie + gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
-    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
-    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
-    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
-    "smart": "Inteligentny (smart home, KNX, automatyka)"
+    "none": "Bez elektrickej inštalácie",
+    "preparation": "Príprava (káble bez vybavenia)",
+    "basic": "Základné (osvetlenie + zásuvky)",
+    "standard": "Štandard (25a, osvetlenie, 8 zásuviek)",
+    "extended": "Rozšírené (40a, sila, UPS, núdzové)",
+    "industrial": "Industrial (63a, sila, rozvádzače)",
+    "it_server": "IT/server (UPS, chladenie, monitorovanie)",
+    "smart": "Intelligent (KNX, Automation)"
   },
   "plumbing_system": {
-    "none": "Bez instalacji wodnej",
-    "preparation": "Przygotowanie (rury bez armatury)",
-    "basic": "Podstawowa (zlew + odpływ)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
-    "cold_water": "Instalacja zimnej wody (zlew)",
-    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
-    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
-    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
-    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
-    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
+    "none": "Bez inštalácie vody",
+    "preparation": "Príprava (potrubia bez príslušenstva)",
+    "basic": "Základné (Sink + odtok)",
+    "full": "Plné (príprava kúpeľne)",
+    "commercial": "Komerčná trieda",
+    "industrial": "Priemyselná inštalácia (tlak, filtrácia)",
+    "cold_water": "Inštalácia studenej vody (umývadlo)",
+    "hot_cold_water": "Studená + horúca voda (umývadlo, umývadlo)",
+    "basic_sanitary": "Základný sanitárny uzol (WC + Sink)",
+    "standard_sanitary": "Štandardný uzol (WC + umývadlo + sprcha)",
+    "comfort_sanitary": "Pohodlný uzol (WC + umývadlo + kabína)",
+    "premium_sanitary": "Prémiový uzol (Jacuzzi, bidet, 2 umývadlá)"
   },
   "hvac_system": {
-    "none": "No HVAC (no heating and cooling)",
+    "none": "No HVAC (no vykurovanie and cooling)",
     "basic": "Basic ventilation",
     "electric_heating": "Electric heating (IR radiators)",
     "gas_heating": "Gas heating (condensing boiler)",
@@ -91,7 +91,7 @@
     "central_ac": "Central air conditioning (with filtration, humidification)",
     "heat_pump": "Heat pump",
     "electric_heaters": "Electric heaters (1-3kW, convectors)",
-    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "vrv_vrf": "VRV/VRF systém (multi-zone, zone control)",
     "underfloor_heating": "Podlahové vykurovanie (elektrická/voda)"
   },
   "flooring": {
@@ -103,8 +103,8 @@
     "carpet": "2-4 mm pokrývka podlahy PVC",
     "epoxy": "Priemyselná epoxidová podlaha",
     "concrete": "Zvýšená podlaha (serverové miestnosti)",
-    "basic": "Podstawowa (beton przemysłowy)",
-    "hardwood": "Drewno twarde (parkiet)"
+    "basic": "Základný (priemyselný betón)",
+    "hardwood": "Tvrdé drevo (parquet)"
   },
   "configure_container": "Nakonfigurovať kontajner",
   "simple_process_2_steps": "Jednoduchý proces - 2 kroky",
@@ -389,7 +389,7 @@
     "two": "2 okná",
     "three": "3 okná",
     "four": "4 okná",
-    "none": "Bez okien (kontener zamknięty)",
+    "none": "Bez okien (uzavretý kontajner)",
     "one": "1 okno",
     "five_plus": "5+ Windows (vlastná konfigurácia)"
   },
@@ -474,98 +474,98 @@
   "general_requirements_placeholder": "napr. Špeciálne termíny dokončenia, certifikačné požiadavky, rozpočtové obmedzenia",
   "interior_layout_options": {
     "open_space": "Otvorený priestor (bez priečok)",
-    "partitioned": "Z przegrodami (1-3 pomieszczenia)",
+    "partitioned": "S oddielmi (1-3 izby)",
     "built_in_furniture": "Postavený -nábytok (vlastné budovy)",
-    "custom_layout": "Układ niestandardowy (projekt custom)",
-    "mezzanine": "Antresola/piętro (zwiększenie powierzchni)"
+    "custom_layout": "Układ nieštandardnýowy (projekt custom)",
+    "mezzanine": "Mezanín/podlaha (zvýšenie povrchu)"
   },
   "security_systems_options": {
     "none": "Bez dodatkowych zabezpieczeń (zamki štandardné)",
     "basic": "Základné (wzmocnione zamki, kraty okienne)",
     "standard": "Štandardné (alarm, czujniki, syrena)",
     "extended": "Rozšírené (monitorovanie, senzory pohybu/vibrácie)",
-    "high": "Wysokie (CCTV IP, kontrola dostępu, domofon)",
-    "maximum": "Maksymalne (sejf, biometria, central monitoring)",
+    "high": "Vysoký (CCTV IP, riadenie prístupu, intercom)",
+    "maximum": "Maximálne (bezpečné, biometrické, centrálne monitorovanie)",
     "industrial": "Priemyselné (ATEX, systemy gazowe, panic room)"
   },
   "exterior_cladding_options": {
-    "none": "Bez okładziny (blacha kontenerowa standardowa)",
-    "trapezoidal": "Blacha trapezoidalna (T18, T35, T55)",
-    "cassette": "Blacha kasetowa (płaska, przetłaczana)",
-    "vinyl_siding": "Siding winylowy (imitacja drewna, nowoczesny)",
-    "structural_plaster": "Tynk strukturalny (silikonowy, akrylowy)",
-    "wood_cladding": "Okładzina drewniana (termo, egzotyczna)",
-    "composite_panels": "Płyty kompozytowe (HPL, dibond)",
-    "clinker_brick": "Cegła klinkierowa (lica, elewacyjna)",
-    "natural_stone": "Kamień naturalny/sztuczny"
+    "none": "Bez okładziny (blacha kontenerowa štandardnýowa)",
+    "trapezoidal": "Lichobežník (T18, T35, T55)",
+    "cassette": "Kazetový list (plochý, nafúknutý)",
+    "vinyl_siding": "Vinylová vlečka (Imitácia dreva, moderná)",
+    "structural_plaster": "Štrukturálna omietka (silikón, akryl)",
+    "wood_cladding": "Drevené opláštenie (termo, exotické)",
+    "composite_panels": "Kompozitné platne (HPL, Dibond)",
+    "clinker_brick": "Clinker Brick (tvár, fasáda)",
+    "natural_stone": "Prírodný kameň"
   },
   "additional_openings_options": {
     "none": "Bez dodatkowych otworów (štandardné drzwi)",
-    "windows": "Okna dodatkowe (1-4 sztuki)",
-    "doors": "Drzwi dodatkowe (serwisowe, awaryjne)",
-    "garage_door": "Brama garażowa (segmentowa, rolowana)",
-    "loading_dock": "Rampa załadunkowa (hydrauliczna)",
-    "ventilation": "Otwory wentylacyjne (kratki, żaluzje)",
-    "skylights": "Okna dachowe/świetliki",
+    "windows": "Ďalšie okná (1-4 kusy)",
+    "doors": "Ďalšie dvere (služba, núdzová situácia)",
+    "garage_door": "Garážové dvere (segmentálne, valcované)",
+    "loading_dock": "Zaťažovacia rampa (hydraulická)",
+    "ventilation": "Vetracie otvory (mriežky, žalúzie)",
+    "skylights": "Strešné okná/svetlíky",
     "custom": "Otwory nieštandardné (nietypowe wymiary)"
   },
   "fire_safety_options": {
-    "none": "Bez systemów przeciwpożarowych",
+    "none": "Bez systémów przeciwpożarowych",
     "basic": "Základné (gaśnica, czujka dymu)",
     "standard": "Štandardné (system alarmowy, oświetlenie awaryjne)",
     "extended": "Rozšírené (tryskacze, ewakuacja)",
     "full": "Úplný systém (plyn, monitorovanie)"
   },
   "accessibility_options": {
-    "standard": "Dostęp standardowy (próg 15-20cm)",
+    "standard": "Dostęp štandardnýowy (próg 15-20cm)",
     "ramp": "Príjazdová cesta/rampa (na invalidné vozíky)",
     "lift": "Hydraulický výťah (prístup k postihnutým)",
-    "full_ada": "Pełna zgodność ADA (szerokie drzwi, uchwyty)"
+    "full_ada": "Plná kompatibilita ADA (široké dvere, rukoväte)"
   },
   "paint_finish_options": {
-    "standard": "Powłoka standardowa C2 (RAL 7035 - szary jasny)",
-    "extended": "Powłoka ulepszona C3 (lepsza trwałość)",
-    "marine": "Powłoka morska C5M (środowiska przybrzeżne)",
-    "industrial": "Powłoka przemysłowa C4 (środowiska agresywne)",
-    "premium": "Premium (specjalne kolory RAL, tekstury)"
+    "standard": "Powłoka štandardnýowa C2 (RAL 7035 - szary jasny)",
+    "extended": "C3 zlepšil povlak (lepšia trvanlivosť)",
+    "marine": "C5M morský povlak (pobrežné prostredie)",
+    "industrial": "C4 Priemyselný povlak (agresívne prostredie)",
+    "premium": "Premium (špeciálne farby RAL, textúry)"
   },
   "delivery_zone_options": {
-    "local": "Lokalny (do 50km)",
-    "regional": "Regionalny (50-200km)",
-    "national": "Krajowy (cały kraj)",
-    "central_europe": "Europa Środkowa (DE, CZ, SK, AT)",
-    "western_europe": "Europa Zachodnia (FR, NL, BE, LU)",
-    "international": "Międzynarodowy (poza Europą)"
+    "local": "Miestne (až 50 km)",
+    "regional": "Regionálne (50-200 km)",
+    "national": "Domáca (celá krajina)",
+    "central_europe": "Stredná Európa (DE, CZ, SK, AT)",
+    "western_europe": "Západná Európa (FR, NL, BE, LU)",
+    "international": "Medzinárodné (mimo Európy)"
   },
   "transport_type_options": {
-    "standard": "Transport standardowy (naczep 13.6m)",
-    "special": "Transport specjalny (ponadgabarytowy)",
+    "standard": "Transport štandardnýowy (naczep 13.6m)",
+    "special": "Špeciálna doprava (nadrozmerná)",
     "crane": "Preprava so žeriavom (inštalácia na mieste)",
-    "multi_container": "Transport wielokontenerowy (2+ jednostki)"
+    "multi_container": "Multi -Company Transport (2+ jednotky)"
   },
   "assembly_options": {
-    "none": "Bez montażu (tylko dostawa)",
-    "basic": "Montaż podstawowy (pozycjonowanie, poziomowanie)",
-    "standard": "Montaż standardowy (podłączenia, testy)",
-    "full": "Montaż pełny (kompletna instalacja)"
+    "none": "Bez montáže (iba dodávka)",
+    "basic": "Základná montáž (umiestnenie, vyrovnávanie)",
+    "standard": "Montaż štandardnýowy (podłączenia, testy)",
+    "full": "Plná montáž (úplná inštalácia)"
   },
   "office_equipment_options": {
-    "none": "Bez wyposażenia (pusty kontener)",
+    "none": "Bez vybavenia (prázdny nádoba)",
     "basic": "Základné (biurko, krzesła, szafa)",
     "standard": "Štandardné (komplet mebli, oświetlenie)",
-    "full": "Pełne (kompletne wyposażenie biura)"
+    "full": "Plné (kompletné kancelárske vybavenie)"
   },
   "appliances_options": {
-    "none": "Bez sprzętu AGD",
-    "basic": "Podstawowy (lodówka, mikrofalówka)",
-    "standard": "Standardowy (zestaw kuchenny, pralka)",
-    "full": "Pełny (kompletny sprzęt gospodarstwa domowego)"
+    "none": "Bez domácich spotrebičov",
+    "basic": "Základné (chladnička, mikrovlnná rúra)",
+    "standard": "Štandard (kuchynská súprava, práčka)",
+    "full": "Plné (kompletné domáce spotrebiče)"
   },
   "it_systems_options": {
-    "none": "Bez systemów IT",
+    "none": "Bez systémów IT",
     "basic": "Základné (internet, WiFi)",
     "standard": "Štandardné (sieć, telefonia)",
-    "advanced": "Zaawansowane (serwerownia, bezpieczeństwo)"
+    "advanced": "Advanced (Server Room, Security)"
   },
   "insulation_package": "Izolačný balík",
   "structural_reinforcement": "Štrukturálne zosilnenie",
@@ -870,7 +870,7 @@
   "finish_levels": {
     "shell": "Surový stav (izolácia + doska OSB)",
     "specialist": "Špecialista (lekárske/laboratórne normy)",
-    "basic": "Bez wykończenia (kontener techniczny, szkielet)",
+    "basic": "Bez dokončenia (technický nádoba, kostra)",
     "standard": "Základné (izolácia + technický povrch)",
     "comfort": "Pohodlné (prémiová izolácia + kancelárska úprava)",
     "luxury": "Luxus (najvyššia trieda + hotelové povrchové úpravy)"
@@ -879,9 +879,9 @@
     "maritime": "Morské podnebie (vysoká vlhkosť)",
     "mountain": "Mountain Climate (High UV, sneh)",
     "tropical": "Tropické podnebie (vysoké teploty, vlhkosť)",
-    "northern_europe": "Europa Północna (Skandynawia, -30°C do +25°C)",
-    "central_europe": "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
-    "southern_europe": "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
+    "northern_europe": "Severná Európa (Škandinávia, -30 ° C až +25 ° C)",
+    "central_europe": "Stredná Európa (Poľsko, Nemecko, -20 ° C až +35 ° C)",
+    "southern_europe": "Južná Európa (Španielsko, Taliansko, -5 ° C až +45 ° C)",
     "continental": "Kontinentálne podnebie (extrémne výkyvy)"
   },
   "environments": {
@@ -893,7 +893,7 @@
     "agricultural": "Poľnohospodárstvo (farmy, zariadenia)",
     "marine": "Námorník/lodenica (korozívne prostredie)"
   },
-  "window_types_label": "Typy Okien",
-  "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "window_types_label": "Typy okien",
+  "lighting_label": "Osvetlenie",
+  "flooring_label": "Podlaha"
 }
