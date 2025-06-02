@@ -83,16 +83,16 @@
     "premium_sanitary": "Premium (jacuzzi, bidé, 2 lavabos)"
   },
   "hvac_system": {
-    "none": "Sin instalación eléctrica",
-    "basic": "Básico (iluminación + enchufes)",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "heat_pump": "Pompa ciepła",
-    "electric_heaters": "Calentadores eléctricos (1-3kW, convectores)",
-    "vrv_vrf": "Sistema VRV/VRF (multi-zona, control de zonas)",
-    "underfloor_heating": "Calefacción por suelo radiante (eléctrica/agua)"
+    "none": "No HVAC (no heating and cooling)",
+    "basic": "Basic ventilation",
+    "electric_heating": "Electric heating (IR radiators)",
+    "gas_heating": "Gas heating (condensing boiler)",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "heat_pump": "Heat pump",
+    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "underfloor_heating": "Underfloor heating (electric/water)"
   },
   "flooring": {
     "none": "Sin piso (hoja corrugada)",

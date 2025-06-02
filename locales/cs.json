@@ -83,16 +83,16 @@
     "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
   },
   "hvac_system": {
-    "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
-    "basic": "Podstawowa wentylacja",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "heat_pump": "Pompa ciepła",
-    "electric_heaters": "Grzejniki elektryczne (1-3kW, konwektory)",
-    "vrv_vrf": "System VRV/VRF (wielostrefowy, kontrola stref)",
-    "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)"
+    "none": "No HVAC (no heating and cooling)",
+    "basic": "Basic ventilation",
+    "electric_heating": "Electric heating (IR radiators)",
+    "gas_heating": "Gas heating (condensing boiler)",
+    "split_ac": "Split air conditioning (cooling + heating)",
+    "central_ac": "Central air conditioning (with filtration, humidification)",
+    "heat_pump": "Heat pump",
+    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "vrv_vrf": "VRV/VRF system (multi-zone, zone control)",
+    "underfloor_heating": "Underfloor heating (electric/water)"
   },
   "flooring": {
     "none": "Bez podlahy (vlnitý list)",

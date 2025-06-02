@@ -83,15 +83,15 @@
     "premium_sanitary": "Premium (jacuzzi, bidet, 2 lavabos)"
   },
   "hvac_system": {
-    "none": "Pas d'installation électrique",
-    "basic": "De base (éclairage + prises)",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "heat_pump": "Pompa ciepła",
-    "electric_heaters": "Chauffages électriques (1-3kW, convecteurs)",
-    "vrv_vrf": "Système VRV/VRF (multi-zones, contrôle de zones)",
+    "none": "Pas de CVC (pas de chauffage et refroidissement)",
+    "basic": "Ventilation de base",
+    "electric_heating": "Chauffage électrique (radiateurs IR)",
+    "gas_heating": "Chauffage au gaz (chaudière à condensation)",
+    "split_ac": "Climatisation split (refroidissement + chauffage)",
+    "central_ac": "Climatisation centrale (avec filtration, humidification)",
+    "heat_pump": "Pompe à chaleur",
+    "electric_heaters": "Radiateurs électriques (1-3kW, convecteurs)",
+    "vrv_vrf": "Système VRV/VRF (multizones, contrôle de zones)",
     "underfloor_heating": "Chauffage au sol (électrique/eau)"
   },
   "flooring": {

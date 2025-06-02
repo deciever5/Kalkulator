@@ -83,15 +83,15 @@
     "premium_sanitary": "Premium (Jacuzzi, Bidet, 2 Waschbecken)"
   },
   "hvac_system": {
-    "none": "Keine Elektroinstallation",
-    "basic": "Grundlegend (Beleuchtung + Steckdosen)",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "heat_pump": "Pompa ciepła",
-    "electric_heaters": "Elektrische Heizungen (1-3kW, Konvektoren)",
-    "vrv_vrf": "VRV/VRF-System (Mehrzonen, Zonenkontrolle)",
+    "none": "Keine HVAC (keine Heizung und Kühlung)",
+    "basic": "Grundlüftung",
+    "electric_heating": "Elektroheizung (IR-Strahler)",
+    "gas_heating": "Gasheizung (Brennwertkessel)",
+    "split_ac": "Split-Klimaanlage (Kühlung + Heizung)",
+    "central_ac": "Zentrale Klimaanlage (mit Filterung, Befeuchtung)",
+    "heat_pump": "Wärmepumpe",
+    "electric_heaters": "Elektroheizgeräte (1-3kW, Konvektoren)",
+    "vrv_vrf": "VRV/VRF-System (Mehrzonenregelung)",
     "underfloor_heating": "Fußbodenheizung (elektrisch/Wasser)"
   },
   "flooring": {
