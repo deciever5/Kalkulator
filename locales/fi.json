@@ -13,10 +13,10 @@
     "cancel": "Peruuta",
     "open": "Avaa",
     "language_selector": "Kieli / Language",
-    "back_to_home": "← Takaisin kotiin",
-    "go_to_ai_estimate": "🤖 AI-arvioon →",
-    "go_to_configurator": "🔧 Konfigurointiin",
-    "get_ai_estimate": "🤖 Hanki AI-arvio",
+    "back_to_home": "← Back to Home",
+    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
+    "go_to_configurator": "🔧 Go to Configurator",
+    "get_ai_estimate": "🤖 Get AI Estimate",
     "access_denied": "Pääsy estetty"
   },
   "nav": {
@@ -198,7 +198,8 @@
       "vinyl": "Vinyyli",
       "carpet": "Katte",
       "hardwood": "Kovapuu",
-      "polished_concrete": "Pohjapintakivetty"
+      "polished_concrete": "Pohjapintakivetty",
+      "none": "No Flooring"
     }
   },
   "purposes": {
@@ -330,7 +331,7 @@
     },
     "budget": {
       "not_specified": "Ei määritelty",
-      "up_to_50k": "Enintään 50 000 €",
+      "up_to_50k": "Up to €50,000",
       "50k_100k": "50 000 € - 100 000 €",
       "100k_200k": "100 000 € - 200 000 €",
       "over_200k": "Yli 200 000 €"
@@ -385,8 +386,8 @@
     "preparation_tips": "Paras Tulos Saavutamiseksi",
     "budget_Range": "Budjetin laajuus"
   },
-  "back_to_home": "← Takaisin etusivulle",
-  "go_to_configurator": "🔧 Siirry konfiguroijaan",
+  "back_to_home": "← Return to Home Page",
+  "go_to_configurator": "🔧 Go to Configurator",
   "employee_tools": "Työntekijätyökalut",
   "ai_cost_estimation": "AI-kustannusarvio",
   "ai_powered_estimation": "AI-pohjainen konttien muutosten kustannusarvio",
@@ -455,7 +456,7 @@
   "fallback_estimate_basic": "Varalaskenta:",
   "ai_retry_later": "Ole hyvä ja yritä myöhemmin AI-analyysiä",
   "error_details": "Virheen yksityiskohdat",
-  "save_configuration": "💾 Tallenna konfiguraatio",
+  "save_configuration": "Save Configuration",
   "configuration_saved": "Konfiguraatio tallennettu onnistuneesti!",
   "get_ai_analysis": "Hanki AI-analyysi",
   "systems_installations": "Järjestelmät ja asennukset",
@@ -506,7 +507,7 @@
     "cassette": "Kasettiarkki (litteä, täynnä)",
     "vinyl_siding": "Vinyylisivu (puu jäljitelmä, moderni)",
     "structural_plaster": "Rakenteellinen kipsi (silikoni, akryyli)",
-    "wood_cladding": "Puinen verhous (lämpö, ​​eksoottinen)",
+    "wood_cladding": "Wood cladding (thermo, exotic)",
     "composite_panels": "Yhdistelmälevyt (HPL, Dibond)",
     "clinker_brick": "Klinkeri tiili (kasvot, julkisivu)",
     "natural_stone": "Luonnollinen/keinotekoinen kivi"
@@ -518,7 +519,7 @@
     "garage_door": "Autotallin ovi (segmentti, valssattu)",
     "loading_dock": "Lastausramppi (hydraulinen)",
     "ventilation": "Tuuletusreiät (grillit, kaihtimet)",
-    "skylights": "Kattikkunat/świetliki",
+    "skylights": "Roof windows/skylights",
     "custom": "Mukautetut reiät (epätavalliset mitat)"
   },
   "fire_safety_options": {
@@ -569,7 +570,7 @@
   },
   "appliances_options": {
     "none": "Ilman kodinkoneita",
-    "basic": "Perus (lodówka, mikrofalówka)",
+    "basic": "Basic (refrigerator, microwave)",
     "standard": "Standardi (zestaw kuchenny, pralka)",
     "full": "Täydelliset (täydelliset kodinkoneet)"
   },
@@ -631,7 +632,7 @@
     "project_context": "Hankkeen konteksti",
     "project_location": "Hankkeen sijainti",
     "project_name": "Hankkeen nimi",
-    "project_name_placeholder": "esim. Konttihuoneisto - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "file_upload": "Tiedoston lataaminen",
     "upload_drawings": "Lataa teknisiä piirustuksia",
     "file_formats_help": "Tuetut tiedostomuodot ovat PDF, DWG, JPG ja PNG. Suosittelemme PDF-muotoa parhaan analyysin vuoksi.",
@@ -646,7 +647,7 @@
     "current_config": "Nykyinen Asetus",
     "project_context": "Projektikonteksti",
     "project_name": "Projektin nimi",
-    "project_name_placeholder": "esim. Konttoriauto - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "project_location": "Projektin sijainti",
     "file_upload": "Tiedostojen lataus",
     "upload_drawings": "Lataa tekniset piirustukset",
@@ -724,7 +725,12 @@
     "basic": "Perus (valot + virtauskaapit)",
     "standard": "Perus (15A sähkövirta)",
     "industrial": "Teollisuus (30A + sähköpistorasia)",
-    "smart_system": "Älykkäät järjestelmät (IoT-automatisointi)"
+    "smart_system": "Älykkäät järjestelmät (IoT-automatisointi)",
+    "preparation": "Preparation (wiring without equipment)",
+    "none": "No electrical installation",
+    "smart": "Smart (home automation, KNX)",
+    "extended": "Extended (40A, power, UPS, emergency)",
+    "it_server": "IT/Server (UPS, cooling, monitoring)"
   },
   "plumbing": {
     "none": "Ei vesijohtoa",
@@ -889,9 +895,9 @@
     "maritime": "Meri ilmasto (korkea kosteus)",
     "mountain": "Vuoristoilmasto (korkea UV, lumi)",
     "tropical": "Trooppinen ilmasto (korkeat lämpötilat, kosteus)",
-    "northern_europe": "Pohjois -Eurooppa (Skandinavia, -30 ° C -+25 ° C)",
-    "central_europe": "Keski -Eurooppa (Puola, Saksa, -20 ° C -+35 ° C)",
-    "southern_europe": "Etelä -Eurooppa (Espanja, Italia, -5 ° C -+45 ° C)",
+    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
+    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
+    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
     "continental": "Manner -ilmasto (äärimmäiset vaihtelut)",
     "scandinavian": "Skandinaavinen",
     "mediterranean": "Välimeren",
@@ -913,21 +919,27 @@
   "lighting_label": "Valaistus",
   "flooring_label": "Lattiat",
   "cost_estimation": {
-    "estimate_title": "💰 Projektin Kustannusarvio",
+    "estimate_title": "💰 Project Cost Estimate",
     "cost_breakdown_title": "Kustannusjaottelu:",
     "base_container_line": "Peruskontti:",
     "modifications_equipment_line": "Muutokset ja varusteet:",
     "total_cost_line": "KOKONAISKUSTANNUS:",
-    "important_warning": "⚠️ Tärkeää:",
+    "important_warning": "⚠️ Important:",
     "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista spesifikaatioista, nykyisistä materiaalihinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
-    "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!",
+    "configuration_saved_success": "✅ Configuration saved successfully!",
     "cost_breakdown": "Kustannusjako",
     "total_cost": "Kokonaiskustannukset",
-    "important_notice": "Tärkeä"
+    "important_notice": "Tärkeä",
+    "project_estimate": "Project Cost Estimate",
+    "modifications_equipment": "Modifications and equipment",
+    "base_container": "Base container",
+    "configuration_saved": "Configuration saved successfully!",
+    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
   },
   "destination": "Kohde",
   "window_type": "Ikkunatyyppi",
   "additional_systems_modifications": "Lisäjärjestelmät ja Muutokset:",
   "painting": "Maalaus",
-  "assembly": "Kokoaminen"
+  "assembly": "Kokoaminen",
+  "describe_general_requirements": "Describe any additional requirements, specifications or project constraints..."
 }

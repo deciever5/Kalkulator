@@ -13,10 +13,10 @@
     "cancel": "Zrušit",
     "open": "Otevřít",
     "language_selector": "Jazyk / Language",
-    "back_to_home": "← Návrat na hlavní stránku",
-    "go_to_ai_estimate": "🤖 K AI Odhadu →",
-    "go_to_configurator": "🔧 Konfigurátor",
-    "get_ai_estimate": "🤖 Získat AI odhad",
+    "back_to_home": "← Back to Home",
+    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
+    "go_to_configurator": "🔧 Go to Configurator",
+    "get_ai_estimate": "🤖 Get AI Estimate",
     "access_denied": "Přístup odepřen"
   },
   "nav": {
@@ -41,7 +41,7 @@
   },
   "window_types": {
     "standard": "Standard (Double Windows)",
-    "energy_efficient": "Energooszczędne (trojité zasklení)",
+    "energy_efficient": "Energooszczędne (triple glazing)",
     "security": "Bezpečnost (temperované)",
     "marine_grade": "Třída moře (anti -koroze)",
     "panoramic": "Panoramatická okna",
@@ -198,7 +198,8 @@
       "vinyl": "Vinyl",
       "carpet": "Koberec",
       "hardwood": "Tvrdé dřevo",
-      "polished_concrete": "Leštěný beton"
+      "polished_concrete": "Leštěný beton",
+      "none": "No Flooring"
     }
   },
   "purposes": {
@@ -274,7 +275,7 @@
       "up_to_50k": "Až 50 000 EUR",
       "50k_100k": "50 000 EUR - 100 000 EUR",
       "100k_200k": "100 000 EUR - 200 000 EUR",
-      "over_200k": "Více než €200,000"
+      "over_200k": "Over €200,000"
     },
     "additional_requirements": "Dodatečné požadavky",
     "inquiry_type": "Typ dotazu",
@@ -328,8 +329,8 @@
     "preparation_tips": "Tipy pro nejlepší výsledky",
     "budget_Range": "Rozsah rozpočtu"
   },
-  "back_to_home": "← Návrat na hlavní stránku",
-  "go_to_configurator": "🔧 Přejděte do konfigurátoru",
+  "back_to_home": "← Return to Home Page",
+  "go_to_configurator": "🔧 Go to Configurator",
   "employee_tools": "Nástroje Zaměstnanců",
   "ai_cost_estimation": "AI Odhad Nákladů",
   "ai_powered_estimation": "AI odhad nákladů na úpravy kontejnerů",
@@ -360,7 +361,7 @@
   "estimate_saved": "Odhad úspěšně uložen",
   "additional_project_details": "Další Podrobnosti Projektu",
   "project_specific_requirements": "Specifické Požadavky a Komentáře Projektu",
-  "project_comment_placeholder": "Popište prosím specifické požadavky, omezení nebo zvláštní úvahy pro váš kontejnerový projekt (např. 'Potřeba extra izolace pro chladné klima', 'Musí být dodáno do určitého data', 'Rozpočet omezen na €15,000', atd.)",
+  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
   "project_comment_help": "Čím více detailů poskytnete, tím přesnější a lépe přizpůsobená bude AI analýza.",
   "specific_considerations": "Specifické Úvahy",
   "special_location_requirements": "Požadavky na speciální umístění/místa",
@@ -398,7 +399,7 @@
   "fallback_estimate_basic": "Základní výpočet záložní:",
   "ai_retry_later": "Zkuste to později pro AI analýzu",
   "error_details": "Detaily chyby",
-  "save_configuration": "💾 Uložit Konfiguraci",
+  "save_configuration": "Save Configuration",
   "configuration_saved": "Konfigurace úspěšně uložena!",
   "get_ai_analysis": "Získat AI Analýzu",
   "systems_installations": "Systémy a Instalace",
@@ -574,7 +575,7 @@
     "project_context": "Kontext Projektu",
     "project_location": "Umístění projektu",
     "project_name": "Název projektu",
-    "project_name_placeholder": "např. Kontejnerová kancelář - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "file_upload": "Nahrání Souboru",
     "upload_drawings": "Nahrát technické výkresy",
     "file_formats_help": "Podporujeme soubory PDF, DWG, JPG a PNG. Doporučujeme formát PDF pro nejlepší analýzu.",
@@ -589,7 +590,7 @@
     "current_config": "Aktuální Konfigurace",
     "project_context": "Kontext Projektu",
     "project_name": "Název Projektu",
-    "project_name_placeholder": "např. Kontejnerová kancelář - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "project_location": "Umístění Projektu",
     "file_upload": "Nahrání Souboru",
     "upload_drawings": "Nahrát technické výkresy",
@@ -667,7 +668,12 @@
     "basic": "Základní (osvětlení + zásuvky)",
     "standard": "Standard (obvod 15a)",
     "industrial": "Průmyslový (30A + rozvodnice)",
-    "smart_system": "Chytrý systém (IoT automatizace)"
+    "smart_system": "Chytrý systém (IoT automatizace)",
+    "preparation": "Preparation (wiring without equipment)",
+    "none": "No electrical installation",
+    "smart": "Smart (home automation, KNX)",
+    "extended": "Extended (40A, power, UPS, emergency)",
+    "it_server": "IT/Server (UPS, cooling, monitoring)"
   },
   "plumbing": {
     "none": "Žádná instalace",
@@ -832,9 +838,9 @@
     "maritime": "Mořské klima (vysoká vlhkost)",
     "mountain": "Mountain Climate (vysoký UV, sníh)",
     "tropical": "Tropické klima (vysoké teploty, vlhkost)",
-    "northern_europe": "Severní Evropa (Skandinávie, -30 ° C až +25 ° C)",
-    "central_europe": "Střední Evropa (Polsko, Německo, -20 ° C až +35 ° C)",
-    "southern_europe": "Jižní Evropa (Španělsko, Itálie, -5 ° C až +45 ° C)",
+    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
+    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
+    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
     "continental": "Kontinentální klima (extrémní výkyvy)",
     "scandinavian": "skandinávský",
     "mediterranean": "Středomoří",
@@ -856,17 +862,22 @@
   "lighting_label": "Osvětlení",
   "flooring_label": "Podlahy",
   "cost_estimation": {
-    "estimate_title": "💰 Odhad Nákladů Projektu",
+    "estimate_title": "💰 Project Cost Estimate",
     "cost_breakdown_title": "Rozpis Nákladů:",
     "base_container_line": "Základní kontejner:",
     "modifications_equipment_line": "Úpravy a vybavení:",
     "total_cost_line": "CELKOVÉ NÁKLADY:",
-    "important_warning": "⚠️ Důležité:",
+    "important_warning": "⚠️ Important:",
     "preliminary_estimate_full": "Toto je předběžný odhad. Konečná cena závisí na podrobných specifikacích, aktuálních cenách materiálů a dostupnosti. Pro přesnou nabídku kontaktujte náš tým.",
-    "configuration_saved_success": "✅ Konfigurace úspěšně uložena!",
+    "configuration_saved_success": "✅ Configuration saved successfully!",
     "cost_breakdown": "Dělení nákladů",
     "total_cost": "Celkové náklady",
-    "important_notice": "Důležité"
+    "important_notice": "Důležité",
+    "project_estimate": "Project Cost Estimate",
+    "modifications_equipment": "Modifications and equipment",
+    "base_container": "Base container",
+    "configuration_saved": "Configuration saved successfully!",
+    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
   },
   "destination": "Určení",
   "window_type": "Typ Okna",

@@ -13,10 +13,10 @@
     "cancel": "Cancelar",
     "open": "Abrir",
     "language_selector": "Idioma / Language",
-    "back_to_home": "← Volver al Inicio",
-    "go_to_ai_estimate": "🤖 Ir a Estimación IA →",
-    "go_to_configurator": "🔧 Ir al Configurador",
-    "get_ai_estimate": "🤖 Obtener Estimación IA",
+    "back_to_home": "← Back to Home",
+    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
+    "go_to_configurator": "🔧 Go to Configurator",
+    "get_ai_estimate": "🤖 Get AI Estimate",
     "access_denied": "Acceso Denegado"
   },
   "nav": {
@@ -41,8 +41,8 @@
   },
   "window_types": {
     "standard": "Estándar (25A, iluminación, 8 enchufes)",
-    "energy_efficient": "Energooszczędne (triple acristalamiento)",
-    "security": "Sinpieczeństwo (hartowane)",
+    "energy_efficient": "Energooszczędne (triple glazing)",
+    "security": "Withoutpieczeństwo (hartowane)",
     "marine_grade": "Clase de mar (anti -corrosión)",
     "panoramic": "Ventanas panorámicas",
     "sliding": "Ventanas deslizantes",
@@ -198,7 +198,8 @@
       "vinyl": "Vinilo",
       "carpet": "Alfombra",
       "hardwood": "Madera Dura",
-      "polished_concrete": "Concreto Pulido"
+      "polished_concrete": "Concreto Pulido",
+      "none": "No Flooring"
     }
   },
   "purposes": {
@@ -271,7 +272,7 @@
     },
     "budget": {
       "not_specified": "No especificado",
-      "up_to_50k": "Hasta €50,000",
+      "up_to_50k": "Up to €50,000",
       "50k_100k": "€ 50,000 - € 100,000",
       "100k_200k": "€ 100,000 - € 200,000",
       "over_200k": "Más de €200,000"
@@ -328,8 +329,8 @@
     "preparation_tips": "Consejos para Mejores Resultados",
     "budget_Range": "Alcance del presupuesto"
   },
-  "back_to_home": "← Volver a la página principal",
-  "go_to_configurator": "🔧 Ir al configurador",
+  "back_to_home": "← Return to Home Page",
+  "go_to_configurator": "🔧 Go to Configurator",
   "employee_tools": "Herramientas de Empleados",
   "ai_cost_estimation": "Estimación de Costos IA",
   "ai_powered_estimation": "Estimación de costos de modificación de contenedores con IA",
@@ -360,7 +361,7 @@
   "estimate_saved": "Estimación guardada exitosamente",
   "additional_project_details": "Detalles Adicionales del Proyecto",
   "project_specific_requirements": "Requisitos Específicos del Proyecto y Comentarios",
-  "project_comment_placeholder": "Por favor describa cualquier requisito específico, restricciones o consideraciones especiales para su proyecto de contenedor (ej. 'Necesita aislamiento extra para clima frío', 'Debe ser entregado en fecha específica', 'Presupuesto limitado a €15,000', etc.)",
+  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
   "project_comment_help": "Cuantos más detalles proporcione, más preciso y personalizado será el análisis IA.",
   "specific_considerations": "Consideraciones Específicas",
   "special_location_requirements": "Requisitos especiales de ubicación/sitio",
@@ -398,7 +399,7 @@
   "fallback_estimate_basic": "Respaldo de cálculo básico:",
   "ai_retry_later": "Por favor intente de nuevo más tarde para análisis IA",
   "error_details": "Detalles del error",
-  "save_configuration": "💾 Guardar Configuración",
+  "save_configuration": "Save Configuration",
   "configuration_saved": "¡Configuración guardada exitosamente!",
   "get_ai_analysis": "Obtener Análisis IA",
   "systems_installations": "Sistemas e Instalaciones",
@@ -667,7 +668,12 @@
     "basic": "Básico (iluminación + enchufes)",
     "standard": "Estándar (circuito 15A)",
     "industrial": "Industrial (30a + panel)",
-    "smart_system": "Sistema inteligente (automatización IoT)"
+    "smart_system": "Sistema inteligente (automatización IoT)",
+    "preparation": "Preparation (wiring without equipment)",
+    "none": "No electrical installation",
+    "smart": "Smart (home automation, KNX)",
+    "extended": "Extended (40A, power, UPS, emergency)",
+    "it_server": "IT/Server (UPS, cooling, monitoring)"
   },
   "plumbing": {
     "none": "Sin fontanería",
@@ -829,9 +835,9 @@
     "specialist": "Especialista (estándares médicos/laboratorio)"
   },
   "climate_zones": {
-    "northern_europe": "Europa del Norte (Escandinavia, -30 ° C a +25 ° C)",
-    "central_europe": "Europa central (Polonia, Alemania, -20 ° C a +35 ° C)",
-    "southern_europe": "Europa del Sur (España, Italia, -5°C a +45°C)",
+    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
+    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
+    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
     "continental": "Clima continental (variaciones extremas)",
     "maritime": "Clima marítimo (alta humedad)",
     "mountain": "Clima montañoso (UV alto, nieve)",
@@ -856,17 +862,22 @@
   "lighting_label": "Iluminación",
   "flooring_label": "Pisos",
   "cost_estimation": {
-    "estimate_title": "💰 Estimación de Costos del Proyecto",
+    "estimate_title": "💰 Project Cost Estimate",
     "cost_breakdown_title": "Desglose de Costos:",
     "base_container_line": "Contenedor base:",
     "modifications_equipment_line": "Modificaciones y equipamiento:",
     "total_cost_line": "COSTO TOTAL:",
-    "important_warning": "⚠️ Importante:",
+    "important_warning": "⚠️ Important:",
     "preliminary_estimate_full": "Esta es una estimación preliminar. El precio final depende de especificaciones detalladas, precios actuales de materiales y disponibilidad. Contacte nuestro equipo para una cotización precisa.",
-    "configuration_saved_success": "✅ Configuración guardada con éxito!",
+    "configuration_saved_success": "✅ Configuration saved successfully!",
     "cost_breakdown": "División de Costos",
     "total_cost": "Costo total",
-    "important_notice": "Importante"
+    "important_notice": "Importante",
+    "project_estimate": "Project Cost Estimate",
+    "modifications_equipment": "Modifications and equipment",
+    "base_container": "Base container",
+    "configuration_saved": "Configuration saved successfully!",
+    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
   },
   "destination": "Destino",
   "window_type": "Tipo de Ventana",

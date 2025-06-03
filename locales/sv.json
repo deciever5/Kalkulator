@@ -13,10 +13,10 @@
     "cancel": "Avbryt",
     "open": "Öppna",
     "language_selector": "Språk / Language",
-    "back_to_home": "← Tillbaka till Start",
-    "go_to_ai_estimate": "🤖 Gå till AI-Uppskattning →",
-    "go_to_configurator": "🔧 Gå till Konfigurator",
-    "get_ai_estimate": "🤖 Få AI-Uppskattning",
+    "back_to_home": "← Back to Home",
+    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
+    "go_to_configurator": "🔧 Go to Configurator",
+    "get_ai_estimate": "🤖 Get AI Estimate",
     "access_denied": "Åtkomst Nekad"
   },
   "nav": {
@@ -42,7 +42,7 @@
   "window_types": {
     "standard": "Standard (dubbla fönster)",
     "energy_efficient": "Energibesparing (trippelfönster)",
-    "security": "Utanpieczeństwo (hartowane)",
+    "security": "Withoutpieczeństwo (hartowane)",
     "marine_grade": "Havsklass (anti -korrosion)",
     "panoramic": "Panoramafönster",
     "sliding": "Glidande fönster",
@@ -198,7 +198,8 @@
       "vinyl": "Vinyl",
       "carpet": "Matta",
       "hardwood": "Hårdträ",
-      "polished_concrete": "Polerad Betong"
+      "polished_concrete": "Polerad Betong",
+      "none": "No Flooring"
     }
   },
   "purposes": {
@@ -271,10 +272,10 @@
     },
     "budget": {
       "not_specified": "Ej specificerad",
-      "up_to_50k": "Upp till €50,000",
-      "50k_100k": "50 000 € - 100 000 euro",
+      "up_to_50k": "Up to €50,000",
+      "50k_100k": "€ 50,000 - € 100,000",
       "100k_200k": "100 000 € - 200 000 €",
-      "over_200k": "Över €200,000"
+      "over_200k": "Over €200,000"
     },
     "additional_requirements": "Ytterligare Krav",
     "inquiry_type": "Förfrågantyp",
@@ -328,8 +329,8 @@
     "preparation_tips": "Tips för Bästa Resultat",
     "budget_Range": "Budgetområde"
   },
-  "back_to_home": "← Tillbaka till startsidan",
-  "go_to_configurator": "🔧 Gå till konfiguratorn",
+  "back_to_home": "← Return to Home Page",
+  "go_to_configurator": "🔧 Go to Configurator",
   "employee_tools": "Personalverktyg",
   "ai_cost_estimation": "AI-Kostnadsuppskattning",
   "ai_powered_estimation": "Värdering av containermodifiering med AI",
@@ -360,7 +361,7 @@
   "estimate_saved": "Uppskattning sparad framgångsrikt",
   "additional_project_details": "Ytterligare Projektdetaljer",
   "project_specific_requirements": "Projektspecifika Krav och Kommentarer",
-  "project_comment_placeholder": "Beskriv specifika krav, begränsningar eller särskilda överväganden för ditt containerprojekt (t.ex. 'Behöver extra isolering för kallt klimat', 'Måste levereras vid specifikt datum', 'Budget begränsad till €15,000', etc.)",
+  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
   "project_comment_help": "Ju fler detaljer du tillhandahåller, desto mer exakta och bättre anpassade AI -analys.",
   "specific_considerations": "Specifika överväganden",
   "special_location_requirements": "Särskilda plats-/områdeskrav",
@@ -398,7 +399,7 @@
   "fallback_estimate_basic": "Grundläggande reservberäkning:",
   "ai_retry_later": "Försök igen senare för AI-analys",
   "error_details": "Feldetaljer",
-  "save_configuration": "💾 Spara Konfiguration",
+  "save_configuration": "Save Configuration",
   "configuration_saved": "Konfiguration sparad framgångsrikt!",
   "get_ai_analysis": "Få AI-Analys",
   "systems_installations": "System och installationer",
@@ -466,8 +467,8 @@
   },
   "fire_safety_options": {
     "none": "Utan brandkampsystem",
-    "basic": "Grundläggande (gaśnica, czujka dymu)",
-    "standard": "Standard (system alarmowy, oświetlenie awaryjne)",
+    "basic": "Basic (extinguisher, smoke detector)",
+    "standard": "Standard (alarm system, emergency lighting)",
     "extended": "Utökad (tryskacze, ewakuacja)",
     "full": "Fullt system (gas, övervakning)"
   },
@@ -505,9 +506,9 @@
     "full": "Full montering (komplett installation)"
   },
   "office_equipment_options": {
-    "none": "Utan wyposażenia (pusty kontener)",
+    "none": "No equipment (empty container)",
     "basic": "Basic (skrivbord, stolar, garderob)",
-    "standard": "Standard (komplet mebli, oświetlenie)",
+    "standard": "Standard (furniture set, lighting)",
     "full": "Full (komplett kontorsutrustning)"
   },
   "appliances_options": {
@@ -574,7 +575,7 @@
     "project_context": "Projektkontext",
     "project_location": "Projektplats",
     "project_name": "Projektnamn",
-    "project_name_placeholder": "TILL EXEMPEL. Containerkontor - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "file_upload": "Filuppladdning",
     "upload_drawings": "Ladda upp tekniska ritningar",
     "file_formats_help": "Vi stöder PDF-, DWG-, JPG- och PNG -filer. Vi rekommenderar PDF -formatet för bästa analys.",
@@ -589,7 +590,7 @@
     "current_config": "Aktuell Konfiguration",
     "project_context": "Projektkontext",
     "project_name": "Projektnamn",
-    "project_name_placeholder": "TILL EXEMPEL. Containerkontor - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "project_location": "Projektplats",
     "file_upload": "Filuppladdning",
     "upload_drawings": "Ladda upp tekniska ritningar",
@@ -667,7 +668,12 @@
     "basic": "Basic (belysning + uttag)",
     "standard": "Standard (krets 15A)",
     "industrial": "Industriell (30A + panel)",
-    "smart_system": "Smart system (IoT-automation)"
+    "smart_system": "Smart system (IoT-automation)",
+    "preparation": "Preparation (wiring without equipment)",
+    "none": "No electrical installation",
+    "smart": "Smart (home automation, KNX)",
+    "extended": "Extended (40A, power, UPS, emergency)",
+    "it_server": "IT/Server (UPS, cooling, monitoring)"
   },
   "plumbing": {
     "none": "Inga rör",
@@ -832,9 +838,9 @@
     "maritime": "Havsklimat (hög luftfuktighet)",
     "mountain": "Mountain Climate (High UV, Snow)",
     "tropical": "Tropiskt klimat (höga temperaturer, luftfuktighet)",
-    "northern_europe": "Nordeuropa (Skandinavien, -30 ° C till +25 ° C)",
-    "central_europe": "Centraleuropa (Polen, Tyskland, -20 ° C till +35 ° C)",
-    "southern_europe": "Södra Europa (Spanien, Italien, -5 ° C till +45 ° C)",
+    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
+    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
+    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
     "continental": "Kontinentalt klimat (extrema fluktuationer)",
     "scandinavian": "Skandinavisk",
     "mediterranean": "Medelhavet",
@@ -856,17 +862,22 @@
   "lighting_label": "Belysning",
   "flooring_label": "Golv",
   "cost_estimation": {
-    "estimate_title": "💰 Projektkostnadsuppskattning",
+    "estimate_title": "💰 Project Cost Estimate",
     "cost_breakdown_title": "Kostnadsfördelning:",
     "base_container_line": "Bascontainer:",
     "modifications_equipment_line": "Modifieringar och utrustning:",
     "total_cost_line": "TOTALKOSTNAD:",
-    "important_warning": "⚠️ Viktigt:",
+    "important_warning": "⚠️ Important:",
     "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
-    "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!",
+    "configuration_saved_success": "✅ Configuration saved successfully!",
     "cost_breakdown": "Kostnadsdelning",
     "total_cost": "Total kostnad",
-    "important_notice": "Viktig"
+    "important_notice": "Viktig",
+    "project_estimate": "Project Cost Estimate",
+    "modifications_equipment": "Modifications and equipment",
+    "base_container": "Base container",
+    "configuration_saved": "Configuration saved successfully!",
+    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
   },
   "estimate_title": "💰 Projektkostnadsuppskattning",
   "cost_breakdown_title": "Kostnadsfördelning:",

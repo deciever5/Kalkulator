@@ -13,10 +13,10 @@
     "cancel": "Zrušiť",
     "open": "Otvoriť",
     "language_selector": "Jazyk / Language",
-    "back_to_home": "← Vráťte sa na hlavnú stránku",
-    "go_to_ai_estimate": "🤖 Ísť na AI odhad →",
-    "go_to_configurator": "🔧 Prejdite na konfigurátor",
-    "get_ai_estimate": "🤖 Získať AI odhad",
+    "back_to_home": "← Back to Home",
+    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
+    "go_to_configurator": "🔧 Go to Configurator",
+    "get_ai_estimate": "🤖 Get AI Estimate",
     "access_denied": "Prístup zamietnutý"
   },
   "nav": {
@@ -41,7 +41,7 @@
   },
   "window_types": {
     "standard": "Štandardné (dvojité zasklenie)",
-    "energy_efficient": "Energooszczędne (trojité zasklenie)",
+    "energy_efficient": "Energooszczędne (triple glazing)",
     "security": "Bezpečnosť (temperované)",
     "marine_grade": "Trieda mora (anti -korózia)",
     "panoramic": "Panoramatické okná",
@@ -198,7 +198,8 @@
       "vinyl": "Vinyl",
       "carpet": "Koberce",
       "hardwood": "Drevo",
-      "polished_concrete": "Polierovaná betónová podlaha"
+      "polished_concrete": "Polierovaná betónová podlaha",
+      "none": "No Flooring"
     }
   },
   "purposes": {
@@ -375,8 +376,8 @@
     "preparation_tips": "Používajte Tips pre Najlepší Výsledok",
     "budget_Range": "Rozsah rozpočtu"
   },
-  "back_to_home": "← Vráťte sa na hlavnú stránku",
-  "go_to_configurator": "🔧 Prejdite na konfigurátor",
+  "back_to_home": "← Return to Home Page",
+  "go_to_configurator": "🔧 Go to Configurator",
   "employee_tools": "Nástroje zamestnancov",
   "ai_cost_estimation": "AI odhad nákladov",
   "ai_powered_estimation": "AI odhad nákladov modifikácie kontajnerov",
@@ -445,7 +446,7 @@
   "fallback_estimate_basic": "Záložný výpočet:",
   "ai_retry_later": "Skúste neskôr pre AI analýzu",
   "error_details": "Detaily chyby",
-  "save_configuration": "💾 Uložiť konfiguráciu",
+  "save_configuration": "Save Configuration",
   "configuration_saved": "Konfigurácia úspešne uložená!",
   "get_ai_analysis": "Získať AI analýzu",
   "systems_installations": "Systémy a inštalácie",
@@ -478,11 +479,11 @@
     "open_space": "Otvorený priestor (bez priečok)",
     "partitioned": "S oddielmi (1-3 izby)",
     "built_in_furniture": "Postavený -nábytok (vlastné budovy)",
-    "custom_layout": "Układ nieštandardnýowy (projekt custom)",
+    "custom_layout": "Custom layout (custom design)",
     "mezzanine": "Mezanín/podlaha (zvýšenie povrchu)"
   },
   "security_systems_options": {
-    "none": "Bez dodatkowych zabezpieczeń (zamki štandardné)",
+    "none": "No additional security (standard locks)",
     "basic": "Základné (zosilnené zámky, okenné mriežky)",
     "standard": "Štandard (alarm, senzory, siréna)",
     "extended": "Rozšírené (monitorovanie, senzory pohybu/vibrácie)",
@@ -512,20 +513,20 @@
     "custom": "Otwory nieštandardné (nietypowe wymiary)"
   },
   "fire_safety_options": {
-    "none": "Bez systémów przeciwpożarowych",
-    "basic": "Základné (gaśnica, czujka dymu)",
-    "standard": "Štandardné (system alarmowy, oświetlenie awaryjne)",
+    "none": "No fire safety systems",
+    "basic": "Basic (extinguisher, smoke detector)",
+    "standard": "Standard (alarm system, emergency lighting)",
     "extended": "Rozšírené (tryskacze, ewakuacja)",
     "full": "Úplný systém (plyn, monitorovanie)"
   },
   "accessibility_options": {
-    "standard": "Dostęp štandardnýowy (próg 15-20cm)",
+    "standard": "Standard access (15-20cm threshold)",
     "ramp": "Príjazdová cesta/rampa (na invalidné vozíky)",
     "lift": "Hydraulický výťah (prístup k postihnutým)",
     "full_ada": "Plná kompatibilita ADA (široké dvere, rukoväte)"
   },
   "paint_finish_options": {
-    "standard": "Powłoka štandardnýowa C2 (RAL 7035 - szary jasny)",
+    "standard": "Standard coating C2 (RAL 7035 - light gray)",
     "extended": "C3 zlepšil povlak (lepšia trvanlivosť)",
     "marine": "C5M morský povlak (pobrežné prostredie)",
     "industrial": "C4 Priemyselný povlak (agresívne prostredie)",
@@ -548,13 +549,13 @@
   "assembly_options": {
     "none": "Bez montáže (iba dodávka)",
     "basic": "Základná montáž (umiestnenie, vyrovnávanie)",
-    "standard": "Montaż štandardnýowy (podłączenia, testy)",
+    "standard": "Standard assembly (connections, tests)",
     "full": "Plná montáž (úplná inštalácia)"
   },
   "office_equipment_options": {
     "none": "Bez vybavenia (prázdny nádoba)",
-    "basic": "Základné (biurko, krzesła, szafa)",
-    "standard": "Štandardné (komplet mebli, oświetlenie)",
+    "basic": "Basic (desk, chairs, cabinet)",
+    "standard": "Standard (furniture set, lighting)",
     "full": "Plné (kompletné kancelárske vybavenie)"
   },
   "appliances_options": {
@@ -566,7 +567,7 @@
   "it_systems_options": {
     "none": "Bez systémów IT",
     "basic": "Základné (internet, WiFi)",
-    "standard": "Štandardné (sieć, telefonia)",
+    "standard": "Standard (network, telephony)",
     "advanced": "Advanced (Server Room, Security)"
   },
   "insulation_package": "Izolačný balík",
@@ -660,7 +661,7 @@
     "adjusted_estimate": "Prispôsobený odhad",
     "next_steps": "Ďalšie kroky",
     "get_detailed_quote": "Získaj podrobnú ponuku",
-    "refine_config": "Přesnejte konfiguráciu",
+    "refine_config": "Clarify the configuration",
     "disclaimer_title": "Dôležité upozornenie",
     "disclaimer_text": "Táto analýza je automatická a určená iba na odhadné účely. Finálna cena vyžaduje manuálnu overovanie našimi technickými zamestnancom.",
     "tips_title": "Používateľské tipy pre lepšiu analýzu",
@@ -714,7 +715,12 @@
     "basic": "Základná (osvetlenie + zásuvky)",
     "standard": "Štandard (obvod 15a)",
     "industrial": "Priemyselná (30A + panel)",
-    "smart_system": "Inteligentný systém (automatizácia IoT)"
+    "smart_system": "Inteligentný systém (automatizácia IoT)",
+    "preparation": "Preparation (wiring without equipment)",
+    "none": "No electrical installation",
+    "smart": "Smart (home automation, KNX)",
+    "extended": "Extended (40A, power, UPS, emergency)",
+    "it_server": "IT/Server (UPS, cooling, monitoring)"
   },
   "plumbing": {
     "none": "Žiadne plnenie",
@@ -879,9 +885,9 @@
     "maritime": "Morské podnebie (vysoká vlhkosť)",
     "mountain": "Mountain Climate (High UV, sneh)",
     "tropical": "Tropické podnebie (vysoké teploty, vlhkosť)",
-    "northern_europe": "Severná Európa (Škandinávia, -30 ° C až +25 ° C)",
-    "central_europe": "Stredná Európa (Poľsko, Nemecko, -20 ° C až +35 ° C)",
-    "southern_europe": "Južná Európa (Španielsko, Taliansko, -5 ° C až +45 ° C)",
+    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
+    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
+    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
     "continental": "Kontinentálne podnebie (extrémne výkyvy)",
     "scandinavian": "Škandinávsky",
     "mediterranean": "Stredomorský",
@@ -903,17 +909,22 @@
   "lighting_label": "Osvetlenie",
   "flooring_label": "Podlaha",
   "cost_estimation": {
-    "estimate_title": "💰 Odhad Nákladov Projektu",
+    "estimate_title": "💰 Project Cost Estimate",
     "cost_breakdown_title": "Rozpis Nákladov:",
     "base_container_line": "Základný kontajner:",
     "modifications_equipment_line": "Úpravy a vybavenie:",
     "total_cost_line": "CELKOVÉ NÁKLADY:",
-    "important_warning": "⚠️ Dôležité:",
+    "important_warning": "⚠️ Important:",
     "preliminary_estimate_full": "Toto je predbežný odhad. Konečná cena závisí od podrobných špecifikácií, aktuálnych cien materiálov a dostupnosti. Pre presnú ponuku kontaktujte náš tím.",
-    "configuration_saved_success": "✅ Konfigurácia úspešne uložená!",
+    "configuration_saved_success": "✅ Configuration saved successfully!",
     "cost_breakdown": "Divízia nákladov",
     "total_cost": "Celkové náklady",
-    "important_notice": "Dôležitý"
+    "important_notice": "Dôležitý",
+    "project_estimate": "Project Cost Estimate",
+    "modifications_equipment": "Modifications and equipment",
+    "base_container": "Base container",
+    "configuration_saved": "Configuration saved successfully!",
+    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
   },
   "destination": "Určenie",
   "window_type": "Typ Okna",

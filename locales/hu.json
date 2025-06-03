@@ -13,10 +13,10 @@
     "cancel": "Mégse",
     "open": "Megnyitás",
     "language_selector": "Nyelv / Language",
-    "back_to_home": "← Vissza a főoldalra",
-    "go_to_ai_estimate": "🤖 AI Becsléshez →",
-    "go_to_configurator": "🔧 Konfigurátor",
-    "get_ai_estimate": "🤖 AI Becslés Kérése",
+    "back_to_home": "← Back to Home",
+    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
+    "go_to_configurator": "🔧 Go to Configurator",
+    "get_ai_estimate": "🤖 Get AI Estimate",
     "access_denied": "Hozzáférés megtagadva"
   },
   "nav": {
@@ -198,7 +198,8 @@
       "vinyl": "Vinil",
       "carpet": "Szőnyeg",
       "hardwood": "Keményfa",
-      "polished_concrete": "Csiszolt beton"
+      "polished_concrete": "Csiszolt beton",
+      "none": "No Flooring"
     }
   },
   "purposes": {
@@ -272,9 +273,9 @@
     "budget": {
       "not_specified": "Nincs meghatározva",
       "up_to_50k": "€50,000-ig",
-      "50k_100k": "50 000 € - 100 000 euró",
-      "100k_200k": "100 000 € - 200 000 euró",
-      "over_200k": "€200,000 felett"
+      "50k_100k": "€ 50,000 - € 100,000",
+      "100k_200k": "€ 100,000 - € 200,000",
+      "over_200k": "Over €200,000"
     },
     "additional_requirements": "További Követelmények",
     "inquiry_type": "Kérdés Típusa",
@@ -328,8 +329,8 @@
     "preparation_tips": "Előkészítési Tippek",
     "budget_Range": "Költségvetési hatókör"
   },
-  "back_to_home": "← Vissza a főoldalra",
-  "go_to_configurator": "🔧 Ugrás a Konfigurátorhoz",
+  "back_to_home": "← Return to Home Page",
+  "go_to_configurator": "🔧 Go to Configurator",
   "employee_tools": "Alkalmazotti Eszközök",
   "ai_cost_estimation": "AI Költségbecslés",
   "ai_powered_estimation": "AI-alapú konténer módosítási költségbecslés",
@@ -360,7 +361,7 @@
   "estimate_saved": "Költségbecslés sikeresen mentve",
   "additional_project_details": "További Projekt Részletek",
   "project_specific_requirements": "Projekt-specifikus Követelmények és Megjegyzések",
-  "project_comment_placeholder": "Kérjük, írja le a konténer projekthez kapcsolódó specifikus követelményeket, korlátozásokat vagy különleges megfontolásokat (pl. 'Extra szigetelés szükséges hideg éghajlathoz', 'Meghatározott dátumig szállítandó', 'Költségvetés €15,000-ra korlátozott', stb.)",
+  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
   "project_comment_help": "Minél több részletet ad meg, annál pontosabb és személyre szabottabb lesz az AI elemzés.",
   "specific_considerations": "Specifikus Megfontolások",
   "special_location_requirements": "Speciális helyszín/telephely követelmények",
@@ -398,7 +399,7 @@
   "fallback_estimate_basic": "Alapvető számítás tartalék:",
   "ai_retry_later": "Kérjük, próbálja újra később az AI elemzéshez",
   "error_details": "Hiba részletei",
-  "save_configuration": "💾 Konfiguráció Mentése",
+  "save_configuration": "Save Configuration",
   "configuration_saved": "Konfiguráció sikeresen elmentve!",
   "get_ai_analysis": "AI Elemzés Kérése",
   "systems_installations": "Rendszerek és Telepítések",
@@ -412,7 +413,7 @@
   "additional_openings": "További Nyílások",
   "fire_safety_systems": "Tűzbiztonsági rendszerek",
   "accessibility_features": "Akadálymentesítés és ergonómia",
-  "paint_finish": "Festés és külső wykończenie",
+  "paint_finish": "Paint Finish",
   "special_notes_modifications": "Speciális megjegyzések - Módosítások",
   "describe_modification_requirements": "Írja le a további módosítási követelményeket...",
   "modification_requirements_placeholder": "pl. Speciális RAL színek, nem szabványos nyílásméret, további szerkezeti megerősítések",
@@ -431,7 +432,7 @@
     "open_space": "Nyitott tér (válaszfalak nélkül)",
     "partitioned": "Partíciókkal (1-3 szobák)",
     "built_in_furniture": "Épített bútorok (egyedi -gyártású épületek)",
-    "custom_layout": "Układ nieszabványos (projekt custom)",
+    "custom_layout": "Custom layout (custom design)",
     "mezzanine": "Mezzanine/padló (felületi növekedés)"
   },
   "security_systems_options": {
@@ -461,21 +462,21 @@
     "garage_door": "Garázskapu (szegmentális, gördített)",
     "loading_dock": "Betöltési rámpák (hidraulika)",
     "ventilation": "Szellőztető lyukak (grillák, redőnyök)",
-    "skylights": "Tetőablakok/świetliki",
+    "skylights": "Roof windows/skylights",
     "custom": "Otwory nieszabványos (nietypowe wymiary)"
   },
   "fire_safety_options": {
     "none": "Tűzoltó rendszerek nélkül",
-    "basic": "Alapvető (gaśnica, czujka dymu)",
+    "basic": "Basic (extinguisher, smoke detector)",
     "standard": "Szabványos (system alarmowy, világítás vészhelyzeti)",
     "extended": "Kiterjesztett (tryskacze, ewakuacja)",
     "full": "Teljes rendszer (gáz, megfigyelés)"
   },
   "accessibility_options": {
-    "standard": "Dostęp szabványos (próg 15-20cm)",
+    "standard": "Standard access (15-20cm threshold)",
     "ramp": "Rámpa (tolószékes hozzáférés)",
     "lift": "Hidraulikus lift (fogyatékos hozzáférés)",
-    "full_ada": "Teljes zgodność ADA (szerokie drzwi, uchwyty)"
+    "full_ada": "Full ADA compliance (wide doors, grab bars)"
   },
   "paint_finish_options": {
     "standard": "Szabványos bevonat C2 (RAL 7035 - világosszürke)",
@@ -500,13 +501,13 @@
   },
   "assembly_options": {
     "none": "Összeszerelés nélkül (csak kézbesítés)",
-    "basic": "Montaż alapvető (pozycjonowanie, poziomowanie)",
-    "standard": "Montaż szabványos (podłączenia, testy)",
+    "basic": "Basic assembly (positioning, leveling)",
+    "standard": "Standard assembly (connections, tests)",
     "full": "Teljes összeszerelés (komplett telepítés)"
   },
   "office_equipment_options": {
     "none": "Nélkül felszerelés (pusty kontener)",
-    "basic": "Alapvető (biurko, krzesła, szafa)",
+    "basic": "Basic (desk, chairs, cabinet)",
     "standard": "Szabványos (komplet mebli, világítás)",
     "full": "Teljes (komplett felszerelés biura)"
   },
@@ -519,7 +520,7 @@
   "it_systems_options": {
     "none": "IT rendszerek nélkül",
     "basic": "Alapvető (internet, WiFi)",
-    "standard": "Szabványos (sieć, telefonia)",
+    "standard": "Standard (network, telephony)",
     "advanced": "Haladó (szerverszoba, biztonság)"
   },
   "insulation_package": "Szigetelési Csomag",
@@ -574,7 +575,7 @@
     "project_context": "Projekt Kontextus",
     "project_location": "Projekt helyszín",
     "project_name": "Projekt név",
-    "project_name_placeholder": "pl. Konténer Iroda - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "file_upload": "Fájl Feltöltés",
     "upload_drawings": "Műszaki rajzok feltöltése",
     "file_formats_help": "Támogatjuk a PDF, DWG, JPG és PNG fájlokat. A legjobb elemzéshez javasoljuk a PDF formátumot.",
@@ -589,7 +590,7 @@
     "current_config": "Jelenlegi konfiguráció",
     "project_context": "Projekt kontextus",
     "project_name": "Projekt neve",
-    "project_name_placeholder": "pl. Konténer iroda - Poznań",
+    "project_name_placeholder": "e.g. Container Office - Berlin",
     "project_location": "Projekt helyszíne",
     "file_upload": "Fájl feltöltés",
     "upload_drawings": "Műszaki rajzok feltöltése",
@@ -667,7 +668,12 @@
     "basic": "Alapvető (világítás + konnektorok)",
     "standard": "Szabványos (15A áramkör)",
     "industrial": "Ipari (30A + elosztótábla)",
-    "smart_system": "Okos rendszer (IoT automatizálás)"
+    "smart_system": "Okos rendszer (IoT automatizálás)",
+    "preparation": "Preparation (wiring without equipment)",
+    "none": "No electrical installation",
+    "smart": "Smart (home automation, KNX)",
+    "extended": "Extended (40A, power, UPS, emergency)",
+    "it_server": "IT/Server (UPS, cooling, monitoring)"
   },
   "plumbing": {
     "none": "Nincs vízvezeték",
@@ -829,9 +835,9 @@
     "specialist": "Szakmai (orvosi/laboratóriumi szabványok)"
   },
   "climate_zones": {
-    "northern_europe": "Észak-Európa (Skandinávia, -30°C-tól +25°C-ig)",
-    "central_europe": "Közép-Európa (Lengyelország, Németország, -20°C-tól +35°C-ig)",
-    "southern_europe": "Dél-Európa (Spanyolország, Olaszország, -5°C-tól +45°C-ig)",
+    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
+    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
+    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
     "continental": "Kontinentális éghajlat (extrém változások)",
     "maritime": "Tengeri éghajlat (magas páratartalom)",
     "mountain": "Hegyi éghajlat (magas UV, hó)",
@@ -856,17 +862,22 @@
   "lighting_label": "Világítás",
   "flooring_label": "Padló",
   "cost_estimation": {
-    "estimate_title": "💰 Projekt Költségbecslés",
+    "estimate_title": "💰 Project Cost Estimate",
     "cost_breakdown_title": "Költséglebontás:",
     "base_container_line": "Alap konténer:",
     "modifications_equipment_line": "Módosítások és felszerelés:",
     "total_cost_line": "TELJES KÖLTSÉG:",
-    "important_warning": "⚠️ Fontos:",
+    "important_warning": "⚠️ Important:",
     "preliminary_estimate_full": "Ez egy előzetes becslés. A végső ár a részletes specifikációktól, az aktuális anyagáraktól és a rendelkezésre állástól függ. Pontos ajánlatért lépjen kapcsolatba csapatunkkal.",
-    "configuration_saved_success": "✅ Konfiguráció sikeresen elmentve!",
+    "configuration_saved_success": "✅ Configuration saved successfully!",
     "cost_breakdown": "Költségek megosztása",
     "total_cost": "Összköltség",
-    "important_notice": "Fontos"
+    "important_notice": "Fontos",
+    "project_estimate": "Project Cost Estimate",
+    "modifications_equipment": "Modifications and equipment",
+    "base_container": "Base container",
+    "configuration_saved": "Configuration saved successfully!",
+    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
   },
   "destination": "Rendeltetés",
   "window_type": "Ablaktípus",
