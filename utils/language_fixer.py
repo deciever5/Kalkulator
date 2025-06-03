@@ -538,6 +538,61 @@ class LanguageFixer:
         
         print(f"\n✅ Successfully processed {success_count}/{len(language_files)} language files!")
 
+    async def print_all_incorrect_language_entries(self):
+        """Print all incorrect language entries for manual inspection"""
+        print("🔍 INCORRECT LANGUAGE ENTRIES INSPECTION")
+        print("=" * 60)
+        
+        # Load base language (English)
+        base_data = self.load_translation_file(self.base_language)
+        if not base_data:
+            print(f"❌ Could not load base language file: {self.base_language}.json")
+            return
+        
+        # Get all available language files
+        language_files = []
+        for file in os.listdir(self.locales_dir):
+            if file.endswith('.json') and file != f'{self.base_language}.json':
+                lang_code = file[:-5]  # Remove .json extension
+                language_files.append(lang_code)
+        
+        total_incorrect = 0
+        
+        for language_code in sorted(language_files):
+            print(f"\n📄 CHECKING {language_code.upper()}.json")
+            print("-" * 40)
+            
+            target_data = self.load_translation_file(language_code)
+            if not target_data:
+                print(f"  ❌ Could not load {language_code}.json")
+                continue
+            
+            # Check for incorrect language entries
+            incorrect_keys = self.check_language_accuracy(target_data, language_code)
+            
+            if not incorrect_keys:
+                print(f"  ✅ No incorrect language entries found")
+                continue
+            
+            print(f"  🚨 Found {len(incorrect_keys)} incorrect entries:")
+            print()
+            
+            for i, (key, text) in enumerate(incorrect_keys, 1):
+                # Get the English original for comparison
+                english_text = self.get_nested_value(base_data, key)
+                
+                print(f"  [{i}] KEY: {key}")
+                print(f"      ENGLISH: {english_text}")
+                print(f"      {language_code.upper()}: {text}")
+                print(f"      ISSUE: Text doesn't match {language_code} language pattern")
+                print()
+            
+            total_incorrect += len(incorrect_keys)
+        
+        print("=" * 60)
+        print(f"📊 SUMMARY: Found {total_incorrect} total incorrect language entries across all files")
+        print("💡 TIP: Use option 2 or 7 to automatically fix these entries")
+
     async def fix_all_languages(self):
         """Fix all language files"""
         print("🔧 LANGUAGE FIXING PROCESS")
@@ -582,8 +637,9 @@ async def main():
     print("6. Remove extra keys from specific language")
     print("7. Both analyze and fix")
     print("8. Complete cleanup (add missing + remove extra)")
+    print("9. Print all incorrect language entries for inspection")
     
-    choice = input("\nSelect option (1-8): ").strip()
+    choice = input("\nSelect option (1-9): ").strip()
     
     if choice == "1":
         await fixer.analyze_all_languages()
@@ -617,8 +673,10 @@ async def main():
         await fixer.add_missing_keys_to_all_languages()
         print("\n" + "=" * 50)
         await fixer.remove_extra_keys_from_all_languages()
+    elif choice == "9":
+        await fixer.print_all_incorrect_language_entries()
     else:
-        print("Invalid choice. Please run again and select 1-8.")
+        print("Invalid choice. Please run again and select 1-9.")
 
 
 if __name__ == "__main__":
