@@ -432,6 +432,112 @@ class LanguageFixer:
         
         print(f"\n✅ Successfully updated {success_count}/{len(language_files)} language files!")
 
+    def remove_nested_key(self, data: Dict[str, Any], key_path: str) -> bool:
+        """Remove a nested key from dictionary using dot notation"""
+        keys = key_path.split('.')
+        current = data
+        
+        # Navigate to the parent of the key to remove
+        for key in keys[:-1]:
+            if isinstance(current, dict) and key in current:
+                current = current[key]
+            else:
+                return False  # Path doesn't exist
+        
+        # Remove the final key
+        if isinstance(current, dict) and keys[-1] in current:
+            del current[keys[-1]]
+            return True
+        
+        return False
+
+    async def remove_extra_keys_from_language(self, language_code: str) -> bool:
+        """
+        Remove extra keys from specified language that don't exist in English
+        
+        Args:
+            language_code: Target language code (e.g., 'de', 'fr', 'sv')
+            
+        Returns:
+            bool: True if successful, False otherwise
+        """
+        print(f"\n🗑️ Removing extra keys from {language_code}.json...")
+        
+        # Load English base language
+        base_data = self.load_translation_file(self.base_language)
+        if not base_data:
+            print(f"❌ Could not load English base file: {self.base_language}.json")
+            return False
+        
+        # Load target language
+        target_data = self.load_translation_file(language_code)
+        if not target_data:
+            print(f"❌ Could not load {language_code}.json")
+            return False
+        
+        # Find extra keys
+        base_keys = self.get_all_keys_recursive(base_data)
+        target_keys = self.get_all_keys_recursive(target_data)
+        extra_keys = target_keys - base_keys
+        
+        if not extra_keys:
+            print(f"  ✅ No extra keys found in {language_code}.json")
+            return True
+        
+        print(f"  🗑️ Found {len(extra_keys)} extra keys to remove")
+        
+        # Remove extra keys
+        removal_count = 0
+        for key in sorted(extra_keys, reverse=True):  # Remove in reverse order to avoid key path issues
+            try:
+                print(f"    ❌ Removing: {key}")
+                if self.remove_nested_key(target_data, key):
+                    removal_count += 1
+                else:
+                    print(f"    ⚠️ Could not remove: {key}")
+            except Exception as e:
+                print(f"    ❌ Error removing {key}: {e}")
+        
+        # Save the updated file
+        try:
+            self.save_translation_file(language_code, target_data)
+            print(f"  ✅ Successfully removed {removal_count} extra keys from {language_code}.json")
+            return True
+        except Exception as e:
+            print(f"  ❌ Error saving {language_code}.json: {e}")
+            return False
+
+    async def remove_extra_keys_from_all_languages(self):
+        """Remove extra keys from all language files that don't exist in English"""
+        print("🗑️ REMOVING EXTRA KEYS FROM ALL LANGUAGES")
+        print("=" * 50)
+        
+        # Load base language (English)
+        base_data = self.load_translation_file(self.base_language)
+        if not base_data:
+            print(f"❌ Could not load base language file: {self.base_language}.json")
+            return
+        
+        # Get all available language files
+        language_files = []
+        for file in os.listdir(self.locales_dir):
+            if file.endswith('.json') and file != f'{self.base_language}.json':
+                lang_code = file[:-5]  # Remove .json extension
+                language_files.append(lang_code)
+        
+        print(f"🌐 Processing {len(language_files)} language files...")
+        
+        success_count = 0
+        total_removed = 0
+        for language_code in sorted(language_files):
+            try:
+                if await self.remove_extra_keys_from_language(language_code):
+                    success_count += 1
+            except Exception as e:
+                print(f"  ❌ Error processing {language_code}: {e}")
+        
+        print(f"\n✅ Successfully processed {success_count}/{len(language_files)} language files!")
+
     async def fix_all_languages(self):
         """Fix all language files"""
         print("🔧 LANGUAGE FIXING PROCESS")
@@ -472,9 +578,12 @@ async def main():
     print("2. Fix all languages")
     print("3. Add missing keys from English to all languages")
     print("4. Add missing keys to specific language")
-    print("5. Both analyze and fix")
+    print("5. Remove extra keys from all languages")
+    print("6. Remove extra keys from specific language")
+    print("7. Both analyze and fix")
+    print("8. Complete cleanup (add missing + remove extra)")
     
-    choice = input("\nSelect option (1-5): ").strip()
+    choice = input("\nSelect option (1-8): ").strip()
     
     if choice == "1":
         await fixer.analyze_all_languages()
@@ -491,11 +600,25 @@ async def main():
         else:
             print(f"Invalid language code. Available: {', '.join(available_langs)}")
     elif choice == "5":
+        await fixer.remove_extra_keys_from_all_languages()
+    elif choice == "6":
+        available_langs = ['de', 'nl', 'cs', 'hu', 'pl', 'es', 'it', 'sv', 'fi', 'uk', 'sk', 'fr']
+        print(f"Available languages: {', '.join(available_langs)}")
+        lang_code = input("Enter language code (e.g., 'sv', 'de'): ").strip().lower()
+        if lang_code in available_langs:
+            await fixer.remove_extra_keys_from_language(lang_code)
+        else:
+            print(f"Invalid language code. Available: {', '.join(available_langs)}")
+    elif choice == "7":
         await fixer.analyze_all_languages()
         print("\n" + "=" * 50)
         await fixer.fix_all_languages()
+    elif choice == "8":
+        await fixer.add_missing_keys_to_all_languages()
+        print("\n" + "=" * 50)
+        await fixer.remove_extra_keys_from_all_languages()
     else:
-        print("Invalid choice. Please run again and select 1-5.")
+        print("Invalid choice. Please run again and select 1-8.")
 
 
 if __name__ == "__main__":
