@@ -31,7 +31,8 @@ def check_admin_access():
         
         if st.button(t('ui.login')):
             # Simple password check - in production, use proper authentication
-            if admin_password == "kan-bud-admin-2024":  # Change this password!
+            import os
+            if admin_password == os.getenv("ADMIN_PASSWORD", "default-change-me"):
                 st.session_state.admin_logged_in = True
                 st.success(t('admin.access_granted'))
                 st.rerun()

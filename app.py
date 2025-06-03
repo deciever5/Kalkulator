@@ -543,7 +543,8 @@ if st.session_state.show_login and not st.session_state.employee_logged_in:
         col_x, col_y = st.columns(2)
         with col_x:
             if st.button(t('ui.login'), key="emp_login", use_container_width=True):
-                if employee_password == "kan-bud-employee-2024":
+                import os
+                if employee_password == os.getenv("EMPLOYEE_PASSWORD", "default-change-me"):
                     st.session_state.employee_logged_in = True
                     st.session_state.show_login = False
                     st.success(t('ui.logged_in'))
