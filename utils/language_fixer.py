@@ -331,6 +331,107 @@ class LanguageFixer:
                 if len(incorrect_keys) > 2:
                     print(f"      ... and {len(incorrect_keys) - 2} more")
     
+    async def add_missing_keys_from_english(self, language_code: str) -> bool:
+        """
+        Add and translate missing keys from English to specified language
+        
+        Args:
+            language_code: Target language code (e.g., 'de', 'fr', 'sv')
+            
+        Returns:
+            bool: True if successful, False otherwise
+        """
+        print(f"\n🔧 Adding missing keys to {language_code}.json from English...")
+        
+        # Load English base language
+        base_data = self.load_translation_file(self.base_language)
+        if not base_data:
+            print(f"❌ Could not load English base file: {self.base_language}.json")
+            return False
+        
+        # Load target language
+        target_data = self.load_translation_file(language_code)
+        if not target_data:
+            print(f"  ℹ️ Creating new language file for {language_code}")
+            target_data = {}
+        
+        # Find missing keys
+        base_keys = self.get_all_keys_recursive(base_data)
+        target_keys = self.get_all_keys_recursive(target_data)
+        missing_keys = base_keys - target_keys
+        
+        if not missing_keys:
+            print(f"  ✅ No missing keys found in {language_code}.json")
+            return True
+        
+        print(f"  📝 Found {len(missing_keys)} missing keys to translate")
+        
+        # Translate and add missing keys
+        translation_count = 0
+        for key in sorted(missing_keys):
+            base_text = self.get_nested_value(base_data, key)
+            
+            # Skip empty or very short texts
+            if not base_text or not self.is_text_long_enough(base_text):
+                # For short texts, just copy directly
+                self.set_nested_value(target_data, key, base_text)
+                continue
+            
+            try:
+                print(f"    🌐 Translating: {key}")
+                translated_text = await self.translate_text(base_text, language_code)
+                self.set_nested_value(target_data, key, translated_text)
+                translation_count += 1
+                
+                # Add small delay to avoid rate limiting
+                if translation_count % 10 == 0:
+                    await asyncio.sleep(1)
+                    
+            except Exception as e:
+                print(f"    ❌ Translation failed for {key}: {e}")
+                # Fallback to English text
+                self.set_nested_value(target_data, key, base_text)
+        
+        # Save the updated file
+        try:
+            self.save_translation_file(language_code, target_data)
+            print(f"  ✅ Successfully added {len(missing_keys)} keys to {language_code}.json")
+            print(f"  📊 Translated: {translation_count}, Copied: {len(missing_keys) - translation_count}")
+            return True
+        except Exception as e:
+            print(f"  ❌ Error saving {language_code}.json: {e}")
+            return False
+    
+    async def add_missing_keys_to_all_languages(self):
+        """Add missing keys from English to all language files"""
+        print("🌍 ADDING MISSING KEYS TO ALL LANGUAGES")
+        print("=" * 50)
+        
+        # Load base language (English)
+        base_data = self.load_translation_file(self.base_language)
+        if not base_data:
+            print(f"❌ Could not load base language file: {self.base_language}.json")
+            return
+        
+        # Get all available language files
+        language_files = []
+        for file in os.listdir(self.locales_dir):
+            if file.endswith('.json') and file != f'{self.base_language}.json':
+                lang_code = file[:-5]  # Remove .json extension
+                language_files.append(lang_code)
+        
+        print(f"🌐 Processing {len(language_files)} language files...")
+        
+        success_count = 0
+        for language_code in sorted(language_files):
+            try:
+                if await self.add_missing_keys_from_english(language_code):
+                    success_count += 1
+            except Exception as e:
+                print(f"  ❌ Error processing {language_code}: {e}")
+        
+        print(f"\n✅ Successfully updated {success_count}/{len(language_files)} language files!")
+
     async def fix_all_languages(self):
         """Fix all language files"""
         print("🔧 LANGUAGE FIXING PROCESS")
@@ -369,20 +470,32 @@ async def main():
     print("=" * 40)
     print("1. Analyze all languages")
     print("2. Fix all languages")
-    print("3. Both (analyze then fix)")
+    print("3. Add missing keys from English to all languages")
+    print("4. Add missing keys to specific language")
+    print("5. Both analyze and fix")
     
-    choice = input("\nSelect option (1-3): ").strip()
+    choice = input("\nSelect option (1-5): ").strip()
     
     if choice == "1":
         await fixer.analyze_all_languages()
     elif choice == "2":
         await fixer.fix_all_languages()
     elif choice == "3":
+        await fixer.add_missing_keys_to_all_languages()
+    elif choice == "4":
+        available_langs = ['de', 'nl', 'cs', 'hu', 'pl', 'es', 'it', 'sv', 'fi', 'uk', 'sk', 'fr']
+        print(f"Available languages: {', '.join(available_langs)}")
+        lang_code = input("Enter language code (e.g., 'sv', 'de'): ").strip().lower()
+        if lang_code in available_langs:
+            await fixer.add_missing_keys_from_english(lang_code)
+        else:
+            print(f"Invalid language code. Available: {', '.join(available_langs)}")
+    elif choice == "5":
         await fixer.analyze_all_languages()
         print("\n" + "=" * 50)
         await fixer.fix_all_languages()
     else:
-        print("Invalid choice. Please run again and select 1, 2, or 3.")
+        print("Invalid choice. Please run again and select 1-5.")
 
 
 if __name__ == "__main__":
