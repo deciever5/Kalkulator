@@ -107,13 +107,54 @@ class LanguageFixer:
     
     async def translate_text(self, text: str, target_language: str) -> str:
         """Translate text using Groq service"""
-        try:
-            # Use the existing groq service translation method
-            translation = await self.groq_service.translate_text(text, target_language)
-            return translation if translation else text
-        except Exception as e:
-            print(f"Translation error for '{text}' to {target_language}: {e}")
+        if not self.groq_service.client:
+            print(f"Groq client not available for translation to {target_language}")
             return text
+            
+        try:
+            # Use the existing groq service client directly for translation
+            language_names = {
+                'en': 'English', 'de': 'German', 'fr': 'French', 'es': 'Spanish',
+                'it': 'Italian', 'pl': 'Polish', 'cs': 'Czech', 'hu': 'Hungarian',
+                'nl': 'Dutch', 'fi': 'Finnish', 'uk': 'Ukrainian', 'sk': 'Slovak',
+                'sv': 'Swedish'
+            }
+            
+            target_language_name = language_names.get(target_language, target_language)
+            
+            response = self.groq_service.client.chat.completions.create(
+                model="llama-3.1-8b-instant",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": f"You are a professional translator. Translate accurately to {target_language_name}. Return only the translation, no explanations."
+                    },
+                    {
+                        "role": "user",
+                        "content": f"Translate this text to {target_language_name}: {text}"
+                    }
+                ],
+                temperature=0.2,
+                max_tokens=1000
+            )
+            
+            translation = response.choices[0].message.content.strip()
+            return translation if translation else text
+            
+        except Exception as e:
+            error_msg = str(e).lower()
+            if "rate limit" in error_msg or "429" in error_msg:
+                print(f"Translation rate limit hit, trying next API key...")
+                # Try next API key using GroqService method
+                if self.groq_service._try_next_key():
+                    # Retry translation with new key
+                    return await self.translate_text(text, target_language)
+                else:
+                    print("All translation API keys exhausted or rate limited")
+                    return text
+            else:
+                print(f"Translation error for '{text}' to {target_language}: {e}")
+                return text
     
     def check_structure_consistency(self, base_data: Dict[str, Any], target_data: Dict[str, Any], language_code: str) -> Tuple[Set[str], Set[str]]:
         """Check if target language has same structure as base language"""
