@@ -60,46 +60,6 @@
   "electrical_system": {
     "none": "Bez instalacji elektrycznej",
     "preparation": "Przygotowanie (przewody bez wyposażenia)",
-    "basic": "Podstawowy (oświetlenie + gniazdka)",
-    "standard": "Standardowy (25A, oświetlenie, 8 gniazdków)",
-    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
-    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
-    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
-    "smart": "Inteligentny (smart home, KNX, automatyka)"
-  },
-  "plumbing_system": {
-    "none": "Bez instalacji wodnej",
-    "preparation": "Przygotowanie (rury bez armatury)",
-    "basic": "Podstawowa (zlew + odpływ)",
-    "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
-    "cold_water": "Instalacja zimnej wody (zlew)",
-    "hot_cold_water": "Zimna + ciepła woda (zlew, umywalka)",
-    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
-    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
-    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
-    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
-  },
-  "hvac_system": {
-    "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
-    "basic": "Podstawowa wentylacja",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "heat_pump": "Pompa ciepła",
-    "electric_heaters": "Grzejniki elektryczne (1-3kW, konwektory)",
-    "vrv_vrf": "System VRV/VRF (wielostrefowy, kontrola stref)",
-    "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)"
-  },
-  "flooring": "Podłogi",
-  "electrical_system": "System Elektryczny",
-  "plumbing_system": "System Hydrauliczny", 
-  "hvac_system": "System HVAC",
-  "electrical_system": {
-    "none": "Bez instalacji elektrycznej",
-    "preparation": "Przygotowanie (przewody bez wyposażenia)",
     "basic": "Podstawowa (oświetlenie + gniazdka)",
     "standard": "Standardowa (25A, oświetlenie, 8 gniazdków)",
     "extended": "Rozszerzony (40A, siła, UPS, emergency)",
@@ -171,7 +131,7 @@
   "poland_center": "Centralna lokalizacja w Polsce",
   "full_service": "Pełna Obsługa",
   "design_execution": "Od projektu do wykonania",
-    "transport_assembly": "Transport i montaż",
+  "transport_assembly": "Transport i montaż",
   "after_sales_support": "Wsparcie posprzedażowe",
   "contact_us": "Skontaktuj się z nami",
   "address": "Adres",
@@ -213,7 +173,36 @@
       "vinyl": "Winyl",
       "carpet": "Wykładzina",
       "hardwood": "Drewno",
-      "polished_concrete": "Polerowany beton"
+      "polished_concrete": "Polerowany beton",
+      "none": "Brak Podłogi"
+    },
+    "types": {
+      "10ft_compact": "10ft kompaktowy (3m x 2,4m)",
+      "20ft_double_door": "20FT DD",
+      "20ft_high_cube": "20ft High Cube (6m x 2,7m)",
+      "20ft_refrigerated": "20ft chłodniowy",
+      "20ft_standard": "Standardowa 20FT",
+      "40ft_double_door": "40ft DD",
+      "40ft_hc": "40ft HC",
+      "40ft_hc_double_door": "40ft HC DD",
+      "40ft_high_cube": "40ft High Cube (12m x 2,7m)",
+      "40ft_standard": "40FT standard",
+      "45ft_standard": "45FT standard",
+      "custom": "Dostawa według zamówienia",
+      "custom_dimensions": "Pojemnik Własnych Wymiarych",
+      "custom_size": "Rozmiar na Zamówienie",
+      "multi_unit": "Zbiornik wielojednostkowy",
+      "refurbished": "Zamontowany Kontener"
+    },
+    "use_cases": {
+      "laboratory": "Laboratorium",
+      "medical": "Medyczny",
+      "office_space": "Pomieszczenie biurowe",
+      "residential": "Mieszkalny",
+      "restaurant": "Restauracja",
+      "retail": "Handel detaliczny",
+      "storage": "Magazyn",
+      "workshop": "Warsztat"
     }
   },
   "purposes": {
@@ -340,7 +329,8 @@
     "new_inquiry": "Nowe Zapytanie",
     "error": "Błąd podczas wysyłania zapytania",
     "why_professional_inquiry": "Dlaczego Złożyć Profesjonalne Zapytanie?",
-    "preparation_tips": "Wskazówki Przygotowawcze"
+    "preparation_tips": "Wskazówki Przygotowawcze",
+    "budget_range": "Zakres Budżetowy"
   },
   "back_to_home": "← Powrót do strony głównej",
   "go_to_configurator": "🔧 Przejdź do konfiguratora",
@@ -912,5 +902,10 @@
   },
   "window_types_label": "Typy Okien",
   "lighting_label": "Oświetlenie",
-  "flooring_label": "Podłogi"
+  "flooring_label": "Podłogi",
+  "additional_systems_modifications": "Dodatkowe Systemy i Modyfikacje:",
+  "assembly": "Zgromadzenie",
+  "destination": "Cel podróży",
+  "painting": "Malowanie",
+  "window_type": "Typ Okna"
 }
