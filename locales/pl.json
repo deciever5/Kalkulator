@@ -97,6 +97,42 @@
   "electrical_system": "System Elektryczny",
   "plumbing_system": "System Hydrauliczny", 
   "hvac_system": "System HVAC",
+  "electrical_system": {
+    "none": "Bez instalacji elektrycznej",
+    "preparation": "Przygotowanie (przewody bez wyposażenia)",
+    "basic": "Podstawowa (oświetlenie + gniazdka)",
+    "standard": "Standardowa (25A, oświetlenie, 8 gniazdków)",
+    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
+    "industrial": "Przemysłowy (63A, siła, rozdzielnica)",
+    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
+    "smart": "Inteligentny (smart home, KNX, automatyka)"
+  },
+  "plumbing_system": {
+    "none": "Bez instalacji wodnej",
+    "preparation": "Przygotowanie (rury bez armatury)",
+    "basic": "Podstawowa (zlew + odpływ)",
+    "full": "Pełna (przygotowanie łazienki)",
+    "commercial": "Klasa komercyjna",
+    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
+    "cold_water": "Instalacja zimnej wody (zlew)",
+    "hot_cold_water": "Zimna + ciepła woda (zlev, umywalka)",
+    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
+    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
+    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
+    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
+  },
+  "hvac_system": {
+    "none": "Bez HVAC (bez ogrzewania i chłodzenia)",
+    "basic": "Podstawowa wentylacja",
+    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
+    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
+    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
+    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
+    "heat_pump": "Pompa ciepła",
+    "electric_heaters": "Grzejniki elektryczne (1-3kW, konwektory)",
+    "vrv_vrf": "System VRV/VRF (wielostrefowy, kontrola stref)",
+    "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)"
+  },
   "flooring": {
     "none": "Bez podłogi (blacha falista)",
     "plywood": "Sklejka wodoodporna 18mm (standard)",
