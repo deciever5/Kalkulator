@@ -2,7 +2,12 @@
 import json
 import os
 import re
+import sys
 from typing import Dict, Any, List, Set, Tuple
+
+# Add parent directory to path so we can import from utils
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from utils.groq_service import GroqService
 import asyncio
 
