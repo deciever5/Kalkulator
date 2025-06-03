@@ -13,10 +13,10 @@
     "cancel": "Cancelar",
     "open": "Abrir",
     "language_selector": "Idioma / Language",
-    "back_to_home": "← Back to Home",
-    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator",
-    "get_ai_estimate": "🤖 Get AI Estimate",
+    "back_to_home": "Volver a la Página Principal",
+    "go_to_ai_estimate": "Vaya a Estimar AI →",
+    "go_to_configurator": "Vaya a Configurador",
+    "get_ai_estimate": "Obtenga una Estimación de IA",
     "access_denied": "Acceso Denegado"
   },
   "nav": {
@@ -41,8 +41,8 @@
   },
   "window_types": {
     "standard": "Estándar (25A, iluminación, 8 enchufes)",
-    "energy_efficient": "Energooszczędne (triple glazing)",
-    "security": "Withoutpieczeństwo (hartowane)",
+    "energy_efficient": "Energooszczędne (vidrio triple)",
+    "security": "Sin piecuesta (hartado)",
     "marine_grade": "Clase de mar (anti -corrosión)",
     "panoramic": "Ventanas panorámicas",
     "sliding": "Ventanas deslizantes",
@@ -83,13 +83,13 @@
   },
   "hvac_system": {
     "none": "No HVAC (no calefacción and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
+    "basic": "Ventilación básica",
+    "electric_heating": "Calefacción eléctrica (radiadores IR)",
+    "gas_heating": "Calefacción a gas (caldera de condensación)",
+    "split_ac": "Aire acondicionado de split (refrigeración + calefacción)",
     "central_ac": "Panel de control de aire acondicionado (con filtración, hidratación)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "heat_pump": "Compresor de calor",
+    "electric_heaters": "Calentadores eléctricos (1-3 kW, convectores)",
     "vrv_vrf": "VRV/VRF sistema (multi-zone, zone control)",
     "underfloor_heating": "Calefacción por suelo radiante (eléctrico/agua)"
   },
@@ -199,7 +199,7 @@
       "carpet": "Alfombra",
       "hardwood": "Madera Dura",
       "polished_concrete": "Concreto Pulido",
-      "none": "No Flooring"
+      "none": "Sin Piso de Suelo"
     }
   },
   "purposes": {
@@ -329,8 +329,8 @@
     "preparation_tips": "Consejos para Mejores Resultados",
     "budget_Range": "Alcance del presupuesto"
   },
-  "back_to_home": "← Return to Home Page",
-  "go_to_configurator": "🔧 Go to Configurator",
+  "back_to_home": "← Volver a la Página Principal",
+  "go_to_configurator": "Vaya al Configurador",
   "employee_tools": "Herramientas de Empleados",
   "ai_cost_estimation": "Estimación de Costos IA",
   "ai_powered_estimation": "Estimación de costos de modificación de contenedores con IA",
@@ -361,7 +361,7 @@
   "estimate_saved": "Estimación guardada exitosamente",
   "additional_project_details": "Detalles Adicionales del Proyecto",
   "project_specific_requirements": "Requisitos Específicos del Proyecto y Comentarios",
-  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
+  "project_comment_placeholder": "Por favor describa cualquier requisito específico, restricción o consideración especial para su proyecto de contenedor (por ejemplo, 'Se requiere aislamiento adicional para clima frío', 'Debe ser entregado antes de una fecha específica', 'El presupuesto está limitado a €15,000', etc.).",
   "project_comment_help": "Cuantos más detalles proporcione, más preciso y personalizado será el análisis IA.",
   "specific_considerations": "Consideraciones Específicas",
   "special_location_requirements": "Requisitos especiales de ubicación/sitio",
@@ -399,7 +399,7 @@
   "fallback_estimate_basic": "Respaldo de cálculo básico:",
   "ai_retry_later": "Por favor intente de nuevo más tarde para análisis IA",
   "error_details": "Detalles del error",
-  "save_configuration": "Save Configuration",
+  "save_configuration": "Guardar Configuración",
   "configuration_saved": "¡Configuración guardada exitosamente!",
   "get_ai_analysis": "Obtener Análisis IA",
   "systems_installations": "Sistemas e Instalaciones",
@@ -487,7 +487,7 @@
   },
   "delivery_zone_options": {
     "local": "Local (hasta 50km)",
-    "regional": "Regional (50-200km)",
+    "regional": "Regional (50-200km) \n\nTraducción: Regional (50-200km)",
     "national": "Nacional (todo el país)",
     "central_europe": "Europa central (DE, CZ, SK, AT)",
     "western_europe": "Europa Occidental (FR, NL, BE, LU)",
@@ -669,11 +669,11 @@
     "standard": "Estándar (circuito 15A)",
     "industrial": "Industrial (30a + panel)",
     "smart_system": "Sistema inteligente (automatización IoT)",
-    "preparation": "Preparation (wiring without equipment)",
-    "none": "No electrical installation",
-    "smart": "Smart (home automation, KNX)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)"
+    "preparation": "Preparación (enganche sin equipo)",
+    "none": "No instalación eléctrica",
+    "smart": "Inteligente (automatización de hogar, KNX)",
+    "extended": "Extendido (40A, potencia, UPS, emergencia)",
+    "it_server": "IT/Servidor (UPS, enfriamiento, monitoreo)"
   },
   "plumbing": {
     "none": "Sin fontanería",
@@ -835,9 +835,9 @@
     "specialist": "Especialista (estándares médicos/laboratorio)"
   },
   "climate_zones": {
-    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
-    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
-    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "northern_europe": "Europa del Norte (Escandinavia, -30°C a +25°C)",
+    "central_europe": "Europa Central (Polonia, Alemania, -20°C a +35°C)",
+    "southern_europe": "Europa del sur (España, Italia, -5°C a +45°C)",
     "continental": "Clima continental (variaciones extremas)",
     "maritime": "Clima marítimo (alta humedad)",
     "mountain": "Clima montañoso (UV alto, nieve)",
@@ -862,22 +862,22 @@
   "lighting_label": "Iluminación",
   "flooring_label": "Pisos",
   "cost_estimation": {
-    "estimate_title": "💰 Project Cost Estimate",
+    "estimate_title": "Estimación de Costos del Proyecto",
     "cost_breakdown_title": "Desglose de Costos:",
     "base_container_line": "Contenedor base:",
     "modifications_equipment_line": "Modificaciones y equipamiento:",
     "total_cost_line": "COSTO TOTAL:",
-    "important_warning": "⚠️ Important:",
+    "important_warning": "⚠️ Importante:",
     "preliminary_estimate_full": "Esta es una estimación preliminar. El precio final depende de especificaciones detalladas, precios actuales de materiales y disponibilidad. Contacte nuestro equipo para una cotización precisa.",
-    "configuration_saved_success": "✅ Configuration saved successfully!",
+    "configuration_saved_success": "La configuración se ha guardado con éxito.",
     "cost_breakdown": "División de Costos",
     "total_cost": "Costo total",
     "important_notice": "Importante",
-    "project_estimate": "Project Cost Estimate",
-    "modifications_equipment": "Modifications and equipment",
-    "base_container": "Base container",
-    "configuration_saved": "Configuration saved successfully!",
-    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
+    "project_estimate": "Estimación de Costos del Proyecto",
+    "modifications_equipment": "Modificaciones y equipo",
+    "base_container": "Contenedor base",
+    "configuration_saved": "La configuración se ha guardado con éxito.",
+    "preliminary_estimate": "Esta es una estimación preliminar. El precio final depende de las especificaciones detalladas, los precios actuales de los materiales y su disponibilidad. Comuníquese con nuestro equipo para obtener una cotización precisa."
   },
   "destination": "Destino",
   "window_type": "Tipo de Ventana",

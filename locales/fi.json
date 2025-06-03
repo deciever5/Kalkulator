@@ -13,10 +13,10 @@
     "cancel": "Peruuta",
     "open": "Avaa",
     "language_selector": "Kieli / Language",
-    "back_to_home": "← Back to Home",
-    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator",
-    "get_ai_estimate": "🤖 Get AI Estimate",
+    "back_to_home": "Takaisin kotisivulle",
+    "go_to_ai_estimate": "🤖 Mene AI Arvioiin →",
+    "go_to_configurator": "🔧 Mene asetuksetkoneeseen",
+    "get_ai_estimate": "🤖 Hae AI-arvio",
     "access_denied": "Pääsy estetty"
   },
   "nav": {
@@ -50,12 +50,12 @@
     "skylight": "Kattikkunat"
   },
   "lighting": {
-    "none": "No lighting",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energy efficient LED",
-    "exterior": "Exterior lighting",
-    "emergency": "Emergency lighting",
-    "smart": "Smart lighting system"
+    "none": "Ei valoa",
+    "basic_led": "Perus-LED-valaistus",
+    "energy_efficient": "Energiatehokas LED-lamppu",
+    "exterior": "Ulkovaloitus",
+    "emergency": "Tartuttavat valot",
+    "smart": "Tietoisen valaistussysteemin"
   },
   "electrical_system": {
     "none": "Ilman sähköasennusta",
@@ -83,13 +83,13 @@
   },
   "hvac_system": {
     "none": "No HVAC (no lämmitys and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
+    "basic": "Perusilmaisu",
+    "electric_heating": "Sähkölämmitys (IR-lämmittimet)",
+    "gas_heating": "Kaasulämmitys (kondensoiva kattilatyyppi)",
+    "split_ac": "Split ilmastointi (jäähtyminen + lämmitys)",
     "central_ac": "Ilmastointilaitteen ohjauspaneeli (suodatuksella, kosteuttamisella)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "heat_pump": "Lämpöpumppu",
+    "electric_heaters": "Sähkölämmittimet (1-3 kW, kääntölämmittimet)",
     "vrv_vrf": "VRV/VRF järjestelmä (multi-zone, zone control)",
     "underfloor_heating": "Lattialämmitys (sähkö/vesi)"
   },
@@ -199,7 +199,7 @@
       "carpet": "Katte",
       "hardwood": "Kovapuu",
       "polished_concrete": "Pohjapintakivetty",
-      "none": "No Flooring"
+      "none": "Ei lattiaa"
     }
   },
   "purposes": {
@@ -279,7 +279,7 @@
   },
   "ai": {
     "models": {
-      "openai_gpt4": "Openai GPT-4O",
+      "openai_gpt4": "Openai GPT-4",
       "anthropic_claude": "Antropinen Claude",
       "auto_select": "Automaattinen paras valinta"
     },
@@ -386,8 +386,8 @@
     "preparation_tips": "Paras Tulos Saavutamiseksi",
     "budget_Range": "Budjetin laajuus"
   },
-  "back_to_home": "← Return to Home Page",
-  "go_to_configurator": "🔧 Go to Configurator",
+  "back_to_home": "← Palaa kotisivulle",
+  "go_to_configurator": "🔧 Mene asetuksetkoneeseen",
   "employee_tools": "Työntekijätyökalut",
   "ai_cost_estimation": "AI-kustannusarvio",
   "ai_powered_estimation": "AI-pohjainen konttien muutosten kustannusarvio",
@@ -399,12 +399,12 @@
   "finish_level": "Viimeistelytyötaso",
   "climate_zone": "Ilmastovyöhyke",
   "windows": {
-    "none": "No windows (closed container)",
-    "one": "1 window",
-    "two": "2 windows",
-    "three": "3 windows",
-    "four": "4 windows",
-    "five_plus": "5+ windows"
+    "none": "Ei ikkunoita (suljettu säiliö)",
+    "one": "1 ikkuna",
+    "two": "2 ikkunaa",
+    "three": "3 ikkunaa",
+    "four": "4 ikkunaa",
+    "five_plus": "5 + ikkunaa"
   },
   "additional_doors": "Lisäovet",
   "yes": "Kyllä",
@@ -456,7 +456,7 @@
   "fallback_estimate_basic": "Varalaskenta:",
   "ai_retry_later": "Ole hyvä ja yritä myöhemmin AI-analyysiä",
   "error_details": "Virheen yksityiskohdat",
-  "save_configuration": "Save Configuration",
+  "save_configuration": "Tallenna asetukset",
   "configuration_saved": "Konfiguraatio tallennettu onnistuneesti!",
   "get_ai_analysis": "Hanki AI-analyysi",
   "systems_installations": "Järjestelmät ja asennukset",
@@ -507,7 +507,7 @@
     "cassette": "Kasettiarkki (litteä, täynnä)",
     "vinyl_siding": "Vinyylisivu (puu jäljitelmä, moderni)",
     "structural_plaster": "Rakenteellinen kipsi (silikoni, akryyli)",
-    "wood_cladding": "Wood cladding (thermo, exotic)",
+    "wood_cladding": "Puupintainen pinta-ala (lämmönsäädetty, eksotiikka)",
     "composite_panels": "Yhdistelmälevyt (HPL, Dibond)",
     "clinker_brick": "Klinkeri tiili (kasvot, julkisivu)",
     "natural_stone": "Luonnollinen/keinotekoinen kivi"
@@ -519,7 +519,7 @@
     "garage_door": "Autotallin ovi (segmentti, valssattu)",
     "loading_dock": "Lastausramppi (hydraulinen)",
     "ventilation": "Tuuletusreiät (grillit, kaihtimet)",
-    "skylights": "Roof windows/skylights",
+    "skylights": "Takakatot/valaisimet",
     "custom": "Mukautetut reiät (epätavalliset mitat)"
   },
   "fire_safety_options": {
@@ -570,7 +570,7 @@
   },
   "appliances_options": {
     "none": "Ilman kodinkoneita",
-    "basic": "Basic (refrigerator, microwave)",
+    "basic": "Perus (jääkaappi, mikroaaltouuni)",
     "standard": "Standardi (zestaw kuchenny, pralka)",
     "full": "Täydelliset (täydelliset kodinkoneet)"
   },
@@ -632,7 +632,7 @@
     "project_context": "Hankkeen konteksti",
     "project_location": "Hankkeen sijainti",
     "project_name": "Hankkeen nimi",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "esim. Container-työpaja - Berliini",
     "file_upload": "Tiedoston lataaminen",
     "upload_drawings": "Lataa teknisiä piirustuksia",
     "file_formats_help": "Tuetut tiedostomuodot ovat PDF, DWG, JPG ja PNG. Suosittelemme PDF-muotoa parhaan analyysin vuoksi.",
@@ -647,7 +647,7 @@
     "current_config": "Nykyinen Asetus",
     "project_context": "Projektikonteksti",
     "project_name": "Projektin nimi",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "esim. Container Toimisto - Berliini",
     "project_location": "Projektin sijainti",
     "file_upload": "Tiedostojen lataus",
     "upload_drawings": "Lataa tekniset piirustukset",
@@ -712,25 +712,25 @@
   },
   "roof_modifications": {
     "none": "Ilman muutosta (vakio litteä katto)",
-    "insulation": "Additional roof insulation",
+    "insulation": "Lisää katolla olevaa lämmöneristystä",
     "skylight": "Vapaaehtoistyö",
-    "fans": "Roof ventilation fans",
-    "solar": "Solar panel preparation",
-    "antennas": "Antenna/communication mounts",
-    "sloped": "Sloped roof conversion",
-    "terrace": "Roof terrace/walkway",
-    "snow_removal": "Snow load reinforcement"
+    "fans": "Katotilaventtiilifanit",
+    "solar": "Auringonpaneelin valmistelu",
+    "antennas": "Antenni/ viestintäasennukset",
+    "sloped": "Pystykatoinen katotilauksen muuntaminen",
+    "terrace": "Takaterassi/terassiukko",
+    "snow_removal": "Lumiin ponnerruksen vahvistus"
   },
   "electrical": {
     "basic": "Perus (valot + virtauskaapit)",
     "standard": "Perus (15A sähkövirta)",
     "industrial": "Teollisuus (30A + sähköpistorasia)",
     "smart_system": "Älykkäät järjestelmät (IoT-automatisointi)",
-    "preparation": "Preparation (wiring without equipment)",
-    "none": "No electrical installation",
-    "smart": "Smart (home automation, KNX)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)"
+    "preparation": "Valmistelu (sähkötyöt ilman laitteita)",
+    "none": "Ei sähköasennusta",
+    "smart": "Älykäs (kotiotimistalous, KNX)",
+    "extended": "Pitkittynyt (40A, virta, UPS, hätä)",
+    "it_server": "IT/Palvelin (UPS, lämmitys, seuranta)"
   },
   "plumbing": {
     "none": "Ei vesijohtoa",
@@ -786,7 +786,7 @@
     "basic": "Perus (50 mm)",
     "standard": "Vakio (100 mm)",
     "premium": "Premium (150 mm)",
-    "extreme": "Extreme (200mm+)"
+    "extreme": "Todella korkea (200mm+)"
   },
   "reinforcement": {
     "none": "Ei vahvistusta",
@@ -816,7 +816,7 @@
   "delivery_zone_local": "Paikallinen (50km)",
   "security_systems_advanced": "Edistynyt",
   "fire_systems_full": "Täysikäinen järjestelmä",
-  "paint_finish_premium": "Premium",
+  "paint_finish_premium": "Alkuperäinen",
   "construction_material_steel": "Teräs",
   "security_systems_none": "Ei mitään",
   "fire_systems_basic": "Perusjärjestelmä",
@@ -854,14 +854,14 @@
   "delivery_zone_regional": "Alueellinen (200 km)",
   "window_types_double": "Kaksinkertainen lasi",
   "ventilation": {
-    "none": "No ventilation",
-    "gravity": "Gravity vents (2-4 pcs, adjustable)",
-    "wall_fans": "Wall fans (exhaust)",
-    "mechanical": "Mechanical ventilation",
-    "heat_recovery": "Heat recovery ventilation",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning",
-    "industrial": "Industrial ventilation"
+    "none": "Ei ilmanvaihtoa",
+    "gravity": "Paineensiilaukset (2-4 kpl, säädettävissä)",
+    "wall_fans": "Pöytäkaasupuhaltimet (poistoputki)",
+    "mechanical": "Mechaaninen hengityslaitteisto",
+    "heat_recovery": "Lämpöenergian palautusventilaatio",
+    "split_ac": "Split ilmastointi (jäähtyminen + lämmitys)",
+    "central_ac": "Keskuslämmitys- ja ilmastointi",
+    "industrial": "Teollinen ilmanvaihto"
   },
   "it_systems": "Tietoliikennejärjestelmät",
   "lighting_professional": "Ammattitason",
@@ -895,9 +895,9 @@
     "maritime": "Meri ilmasto (korkea kosteus)",
     "mountain": "Vuoristoilmasto (korkea UV, lumi)",
     "tropical": "Trooppinen ilmasto (korkeat lämpötilat, kosteus)",
-    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
-    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
-    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "northern_europe": "Pohjois-Eurooppa (Skandinavia, -30°C +25°C)",
+    "central_europe": "Keski-Eurooppa (Puola, Saksa, -20°C + 35°C)",
+    "southern_europe": "Etelä-Eurooppa (Espanja, Italia, -5°C + 45°C)",
     "continental": "Manner -ilmasto (äärimmäiset vaihtelut)",
     "scandinavian": "Skandinaavinen",
     "mediterranean": "Välimeren",
@@ -919,27 +919,27 @@
   "lighting_label": "Valaistus",
   "flooring_label": "Lattiat",
   "cost_estimation": {
-    "estimate_title": "💰 Project Cost Estimate",
+    "estimate_title": "Hankkeen Kustannusarvio",
     "cost_breakdown_title": "Kustannusjaottelu:",
     "base_container_line": "Peruskontti:",
     "modifications_equipment_line": "Muutokset ja varusteet:",
     "total_cost_line": "KOKONAISKUSTANNUS:",
-    "important_warning": "⚠️ Important:",
+    "important_warning": "⚠️ Tärkeää:",
     "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista spesifikaatioista, nykyisistä materiaalihinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
-    "configuration_saved_success": "✅ Configuration saved successfully!",
+    "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!",
     "cost_breakdown": "Kustannusjako",
     "total_cost": "Kokonaiskustannukset",
     "important_notice": "Tärkeä",
-    "project_estimate": "Project Cost Estimate",
-    "modifications_equipment": "Modifications and equipment",
-    "base_container": "Base container",
-    "configuration_saved": "Configuration saved successfully!",
-    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
+    "project_estimate": "Hankkeen Kustannusarvio",
+    "modifications_equipment": "Muutokset ja laitteet",
+    "base_container": "Peruscontainer",
+    "configuration_saved": "Asetukset tallennettu onnistuneesti!",
+    "preliminary_estimate": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista määräystoimista, nykyisistä materiaalihinnoista ja saatavuudesta. Ota yhteyttä meihin saadaksesi tarkennetun tarjouksen."
   },
   "destination": "Kohde",
   "window_type": "Ikkunatyyppi",
   "additional_systems_modifications": "Lisäjärjestelmät ja Muutokset:",
   "painting": "Maalaus",
   "assembly": "Kokoaminen",
-  "describe_general_requirements": "Describe any additional requirements, specifications or project constraints..."
+  "describe_general_requirements": "Selaa kaikkia lisävaatimuksia, määräyksiä tai projekti rajoituksia..."
 }

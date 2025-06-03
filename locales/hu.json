@@ -13,10 +13,10 @@
     "cancel": "Mégse",
     "open": "Megnyitás",
     "language_selector": "Nyelv / Language",
-    "back_to_home": "← Back to Home",
-    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator",
-    "get_ai_estimate": "🤖 Get AI Estimate",
+    "back_to_home": "Vissza a Kezdőlapra",
+    "go_to_ai_estimate": "🤖 Menj a AI Estimate-re →",
+    "go_to_configurator": "🔧 Menj a Konfigurálóba",
+    "get_ai_estimate": "🤖 Számítás AI becslése",
     "access_denied": "Hozzáférés megtagadva"
   },
   "nav": {
@@ -24,7 +24,7 @@
     "comparison_tool_desc": "Konfigurációk összehasonlítása",
     "drawing_analysis": "Rajz\nElemzés",
     "drawing_analysis_desc": "AI dokumentum elemzés",
-    "admin_panel": "Admin\nPanel",
+    "admin_panel": "Adminisztrációs \nPanel",
     "admin_panel_desc": "Rendszer kezelés",
     "ai_cost_estimation": "AI Költségbecslés",
     "container_configurator": "Konténer Konfigurátor",
@@ -50,12 +50,12 @@
     "skylight": "Tetőablakok"
   },
   "lighting": {
-    "none": "No lighting",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energy efficient LED",
-    "exterior": "Exterior lighting",
-    "emergency": "Emergency lighting",
-    "smart": "Smart lighting system"
+    "none": "Nincs világítás",
+    "basic_led": "Alapvető LED világítás",
+    "energy_efficient": "Energiahatékony LED",
+    "exterior": "Külső világítás",
+    "emergency": "Vészhelyzeti világítás",
+    "smart": "Intelligens világítási rendszer"
   },
   "electrical_system": {
     "none": "Nélkül elektromos szerelés",
@@ -84,12 +84,12 @@
   "hvac_system": {
     "none": "HVAC nélkül (fűtés és hűtés nélkül)",
     "basic": "Alapvető szellőzés",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
+    "electric_heating": "Elektromos fűtés (IR sugárzók)",
+    "gas_heating": "Gáztüzelés (kondenzációs kazán)",
+    "split_ac": "Split légkondicionáló (hűtés + fűtés)",
     "central_ac": "Légkondicionáló kezelőpanel (szűréssel, hidratálással)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "heat_pump": "Hőszivattyú",
+    "electric_heaters": "Elektromos hőtermesztők (1-3 kW, konvektorok)",
     "vrv_vrf": "VRV/VRF rendszer (multi -zone, zónavezérlés)",
     "underfloor_heating": "Padlófűtés (elektromos/víz)"
   },
@@ -136,7 +136,7 @@
   "contact_us": "Kapcsolat",
   "address": "Cím",
   "phone": "Telefon",
-  "email": "Email",
+  "email": "E-mail",
   "working_hours": "Munkaidő",
   "mon_fri": "Hét-Pén 8:00-17:00",
   "container": {
@@ -199,7 +199,7 @@
       "carpet": "Szőnyeg",
       "hardwood": "Keményfa",
       "polished_concrete": "Csiszolt beton",
-      "none": "No Flooring"
+      "none": "Nincs parkettázás"
     }
   },
   "purposes": {
@@ -232,7 +232,7 @@
   },
   "ai": {
     "models": {
-      "openai_gpt4": "Openai GPT-4O",
+      "openai_gpt4": "Az Openai GPT-4",
       "anthropic_claude": "Antropikus Claude",
       "auto_select": "Automatikus Legjobb Kiválasztás"
     },
@@ -275,7 +275,7 @@
       "up_to_50k": "€50,000-ig",
       "50k_100k": "€ 50,000 - € 100,000",
       "100k_200k": "€ 100,000 - € 200,000",
-      "over_200k": "Over €200,000"
+      "over_200k": "Több mint 200 000 euró."
     },
     "additional_requirements": "További Követelmények",
     "inquiry_type": "Kérdés Típusa",
@@ -298,7 +298,7 @@
     "contact_preferences": "Kapcsolati Beállítások",
     "preferred_contact": "Előnyben Részesített Kapcsolati Mód",
     "contact": {
-      "email": "Email",
+      "email": "E-mail",
       "phone": "Telefon",
       "both": "E-mail és Telefon"
     },
@@ -329,8 +329,8 @@
     "preparation_tips": "Előkészítési Tippek",
     "budget_Range": "Költségvetési hatókör"
   },
-  "back_to_home": "← Return to Home Page",
-  "go_to_configurator": "🔧 Go to Configurator",
+  "back_to_home": "Vissza a Kezdőlapra",
+  "go_to_configurator": "🔧 Menj a Konfigurálóhoz",
   "employee_tools": "Alkalmazotti Eszközök",
   "ai_cost_estimation": "AI Költségbecslés",
   "ai_powered_estimation": "AI-alapú konténer módosítási költségbecslés",
@@ -342,12 +342,12 @@
   "finish_level": "Befejezési Szint",
   "climate_zone": "Klímazóna",
   "windows": {
-    "none": "No windows (closed container)",
-    "one": "1 window",
-    "two": "2 windows",
-    "three": "3 windows",
-    "four": "4 windows",
-    "five_plus": "5+ windows"
+    "none": "Nincsenek ablakok (zárt tartály)",
+    "one": "1 ablak",
+    "two": "2 ablak",
+    "three": "3 ablak",
+    "four": "4 ablak",
+    "five_plus": "5+ ablak"
   },
   "additional_doors": "További Ajtók",
   "yes": "Igen",
@@ -361,7 +361,7 @@
   "estimate_saved": "Költségbecslés sikeresen mentve",
   "additional_project_details": "További Projekt Részletek",
   "project_specific_requirements": "Projekt-specifikus Követelmények és Megjegyzések",
-  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
+  "project_comment_placeholder": "Kérjük, írja le a konténerprojektjéhez kapcsolódó bármilyen specifikus követelményt, korlátozást vagy különleges figyelembevételt (pl. 'Száraz éghajlat esetén extra szigetelésre van szükség', 'Különösen meghatározott időpontig kell szállítani', 'A költségkorlát 15.000 euróra korlátozódik', stb.).",
   "project_comment_help": "Minél több részletet ad meg, annál pontosabb és személyre szabottabb lesz az AI elemzés.",
   "specific_considerations": "Specifikus Megfontolások",
   "special_location_requirements": "Speciális helyszín/telephely követelmények",
@@ -399,7 +399,7 @@
   "fallback_estimate_basic": "Alapvető számítás tartalék:",
   "ai_retry_later": "Kérjük, próbálja újra később az AI elemzéshez",
   "error_details": "Hiba részletei",
-  "save_configuration": "Save Configuration",
+  "save_configuration": "Mentési Konfiguráció",
   "configuration_saved": "Konfiguráció sikeresen elmentve!",
   "get_ai_analysis": "AI Elemzés Kérése",
   "systems_installations": "Rendszerek és Telepítések",
@@ -413,7 +413,7 @@
   "additional_openings": "További Nyílások",
   "fire_safety_systems": "Tűzbiztonsági rendszerek",
   "accessibility_features": "Akadálymentesítés és ergonómia",
-  "paint_finish": "Paint Finish",
+  "paint_finish": "Festékfelszereltség",
   "special_notes_modifications": "Speciális megjegyzések - Módosítások",
   "describe_modification_requirements": "Írja le a további módosítási követelményeket...",
   "modification_requirements_placeholder": "pl. Speciális RAL színek, nem szabványos nyílásméret, további szerkezeti megerősítések",
@@ -432,7 +432,7 @@
     "open_space": "Nyitott tér (válaszfalak nélkül)",
     "partitioned": "Partíciókkal (1-3 szobák)",
     "built_in_furniture": "Épített bútorok (egyedi -gyártású épületek)",
-    "custom_layout": "Custom layout (custom design)",
+    "custom_layout": "Egyéni elrendezés (egyéni tervezés)",
     "mezzanine": "Mezzanine/padló (felületi növekedés)"
   },
   "security_systems_options": {
@@ -462,21 +462,21 @@
     "garage_door": "Garázskapu (szegmentális, gördített)",
     "loading_dock": "Betöltési rámpák (hidraulika)",
     "ventilation": "Szellőztető lyukak (grillák, redőnyök)",
-    "skylights": "Roof windows/skylights",
+    "skylights": "Tetőablakok/csillárok",
     "custom": "Otwory nieszabványos (nietypowe wymiary)"
   },
   "fire_safety_options": {
     "none": "Tűzoltó rendszerek nélkül",
-    "basic": "Basic (extinguisher, smoke detector)",
+    "basic": "Alapvető (oltóvíz, füstjelző)",
     "standard": "Szabványos (system alarmowy, világítás vészhelyzeti)",
     "extended": "Kiterjesztett (tryskacze, ewakuacja)",
     "full": "Teljes rendszer (gáz, megfigyelés)"
   },
   "accessibility_options": {
-    "standard": "Standard access (15-20cm threshold)",
+    "standard": "Általános hozzáférés (15-20 cm küszöb)",
     "ramp": "Rámpa (tolószékes hozzáférés)",
     "lift": "Hidraulikus lift (fogyatékos hozzáférés)",
-    "full_ada": "Full ADA compliance (wide doors, grab bars)"
+    "full_ada": "Teljes ADA-kompatibilitás (szerető ajtók, markolók)"
   },
   "paint_finish_options": {
     "standard": "Szabványos bevonat C2 (RAL 7035 - világosszürke)",
@@ -501,13 +501,13 @@
   },
   "assembly_options": {
     "none": "Összeszerelés nélkül (csak kézbesítés)",
-    "basic": "Basic assembly (positioning, leveling)",
-    "standard": "Standard assembly (connections, tests)",
+    "basic": "Alapvető összeszerelés (helyezés, szintezés)",
+    "standard": "Általános összeszerelés (kapcsolatok, tesztek)",
     "full": "Teljes összeszerelés (komplett telepítés)"
   },
   "office_equipment_options": {
     "none": "Nélkül felszerelés (pusty kontener)",
-    "basic": "Basic (desk, chairs, cabinet)",
+    "basic": "Alapvető (asztal, székek, szekrény)",
     "standard": "Szabványos (komplet mebli, világítás)",
     "full": "Teljes (komplett felszerelés biura)"
   },
@@ -520,7 +520,7 @@
   "it_systems_options": {
     "none": "IT rendszerek nélkül",
     "basic": "Alapvető (internet, WiFi)",
-    "standard": "Standard (network, telephony)",
+    "standard": "Általános (hálózat, telefon)",
     "advanced": "Haladó (szerverszoba, biztonság)"
   },
   "insulation_package": "Szigetelési Csomag",
@@ -575,7 +575,7 @@
     "project_context": "Projekt Kontextus",
     "project_location": "Projekt helyszín",
     "project_name": "Projekt név",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "pl. Container Iroda - Berlin",
     "file_upload": "Fájl Feltöltés",
     "upload_drawings": "Műszaki rajzok feltöltése",
     "file_formats_help": "Támogatjuk a PDF, DWG, JPG és PNG fájlokat. A legjobb elemzéshez javasoljuk a PDF formátumot.",
@@ -590,7 +590,7 @@
     "current_config": "Jelenlegi konfiguráció",
     "project_context": "Projekt kontextus",
     "project_name": "Projekt neve",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "pl. Container iroda - Berlin",
     "project_location": "Projekt helyszíne",
     "file_upload": "Fájl feltöltés",
     "upload_drawings": "Műszaki rajzok feltöltése",
@@ -655,25 +655,25 @@
   },
   "roof_modifications": {
     "none": "Módosítás nélkül (standard lapos tető)",
-    "insulation": "Additional roof insulation",
+    "insulation": "További tetőszigetelés",
     "skylight": "Önkéntes telepítés",
-    "fans": "Roof ventilation fans",
-    "solar": "Solar panel preparation",
-    "antennas": "Antenna/communication mounts",
-    "sloped": "Sloped roof conversion",
-    "terrace": "Roof terrace/walkway",
-    "snow_removal": "Snow load reinforcement"
+    "fans": "Tetőszellőztető ventilátorok",
+    "solar": "Napenergia-generátor előkészítése",
+    "antennas": "Antenna/összeköttetési támaszok",
+    "sloped": "Ingyenes tetőátalakítás",
+    "terrace": "Tetőterasz/sétány",
+    "snow_removal": "Hóterhelési megerősítés"
   },
   "electrical": {
     "basic": "Alapvető (világítás + konnektorok)",
     "standard": "Szabványos (15A áramkör)",
     "industrial": "Ipari (30A + elosztótábla)",
     "smart_system": "Okos rendszer (IoT automatizálás)",
-    "preparation": "Preparation (wiring without equipment)",
-    "none": "No electrical installation",
-    "smart": "Smart (home automation, KNX)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)"
+    "preparation": "Előkészület (berendezés nélküli vezetékfelszerelés)",
+    "none": "Nincs villamos berendezés.",
+    "smart": "Intelligens (házautomatizálás, KNX)",
+    "extended": "Kiterjesztett (40A, hatalom, UPS, katasztrófa)",
+    "it_server": "IT/Szerver (UPS, hűtés, monitorozás)"
   },
   "plumbing": {
     "none": "Nincs vízvezeték",
@@ -729,7 +729,7 @@
     "basic": "Alap (50 mm)",
     "standard": "Szabvány (100 mm)",
     "premium": "Premium (150 mm)",
-    "extreme": "Extreme (200mm+)"
+    "extreme": "Egészen extrém (200mm felett)"
   },
   "reinforcement": {
     "none": "Nincs megerősítés",
@@ -756,7 +756,7 @@
   },
   "interior_layout_custom": "Custom Layout",
   "interior_layout_partitioned": "Particionált",
-  "delivery_zone_local": "Local (50km)",
+  "delivery_zone_local": "Helyi (50km)",
   "security_systems_advanced": "Fejlett",
   "fire_systems_full": "Teljes rendszer",
   "paint_finish_premium": "Prémium",
@@ -775,12 +775,12 @@
   "ventilation_forced": "Erőltetett levegő",
   "ventilation_hvac": "Full HVAC",
   "additional_openings_none": "Egyik sem",
-  "appliances_laundry": "Laundry Equipment",
+  "appliances_laundry": "Mosógépberendezések",
   "office_equipment_basic": "Alapbútor",
   "installation_basic": "Alapbeállítás",
   "delivery_zone_international": "Nemzetközi",
   "paint_finish_custom": "Custom Color",
-  "construction_material_aluminum": "Aluminum",
+  "construction_material_aluminum": "Alumínium",
   "construction_material": "Építőanyag",
   "transport_type_special": "Speciális szállítás",
   "security_systems_basic": "Alapvető",
@@ -794,22 +794,22 @@
   "it_systems_none": "Egyik sem",
   "transport_type_standard": "szabványos",
   "advanced_comments": "Megjegyzések a fejlett módosításokról",
-  "delivery_zone_regional": "Regional (200km)",
+  "delivery_zone_regional": "Régió (200 km)",
   "window_types_double": "Dupla mázas",
   "ventilation": {
-    "none": "No ventilation",
-    "gravity": "Gravity vents (2-4 pcs, adjustable)",
-    "wall_fans": "Wall fans (exhaust)",
-    "mechanical": "Mechanical ventilation",
-    "heat_recovery": "Heat recovery ventilation",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning",
-    "industrial": "Industrial ventilation"
+    "none": "Nincs légkondíció",
+    "gravity": "Súlycsapók (2-4 db, állítható)",
+    "wall_fans": "Falventilátorok (kilépő)",
+    "mechanical": "Műtéti légzés",
+    "heat_recovery": "Hővisszanyerő légcsere",
+    "split_ac": "Split légkondicionáló (hűtés + fűtés)",
+    "central_ac": "Központi klímaberendezés",
+    "industrial": "Ipari légtechnika"
   },
   "it_systems": "IT rendszerek",
   "lighting_professional": "Szakmai",
   "interior_layout_open": "Open Space",
-  "appliances_kitchen": "Kitchen Equipment",
+  "appliances_kitchen": "Konyhai berendezések",
   "exterior_cladding_wood": "Faipari",
   "installation": "Telepítés",
   "system_comments": "Megjegyzések a rendszerkövetelményekhez",
@@ -835,9 +835,9 @@
     "specialist": "Szakmai (orvosi/laboratóriumi szabványok)"
   },
   "climate_zones": {
-    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
-    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
-    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "northern_europe": "Észak-Európa (Skandinávia, -30°C-tól +25°C-ig)",
+    "central_europe": "A Közép-Európa (Lengyelország, Németország, -20°C-tól +35°C-ig)",
+    "southern_europe": "Dél-Európa (Spanyolország, Olaszország, -5°C-tól +45°C-ig)",
     "continental": "Kontinentális éghajlat (extrém változások)",
     "maritime": "Tengeri éghajlat (magas páratartalom)",
     "mountain": "Hegyi éghajlat (magas UV, hó)",
@@ -862,22 +862,22 @@
   "lighting_label": "Világítás",
   "flooring_label": "Padló",
   "cost_estimation": {
-    "estimate_title": "💰 Project Cost Estimate",
+    "estimate_title": "💰 Projekt költségbecslés",
     "cost_breakdown_title": "Költséglebontás:",
     "base_container_line": "Alap konténer:",
     "modifications_equipment_line": "Módosítások és felszerelés:",
     "total_cost_line": "TELJES KÖLTSÉG:",
-    "important_warning": "⚠️ Important:",
+    "important_warning": "⚠️ Fontos:",
     "preliminary_estimate_full": "Ez egy előzetes becslés. A végső ár a részletes specifikációktól, az aktuális anyagáraktól és a rendelkezésre állástól függ. Pontos ajánlatért lépjen kapcsolatba csapatunkkal.",
-    "configuration_saved_success": "✅ Configuration saved successfully!",
+    "configuration_saved_success": "✅ A konfiguráció mentése sikeresen megtörtént!",
     "cost_breakdown": "Költségek megosztása",
     "total_cost": "Összköltség",
     "important_notice": "Fontos",
-    "project_estimate": "Project Cost Estimate",
-    "modifications_equipment": "Modifications and equipment",
-    "base_container": "Base container",
-    "configuration_saved": "Configuration saved successfully!",
-    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
+    "project_estimate": "Projekt költségbecslés",
+    "modifications_equipment": "Módosítások és felszerelések",
+    "base_container": "Alapkonténer",
+    "configuration_saved": "A konfiguráció sikeresen mentve lett!",
+    "preliminary_estimate": "Ez egy előzetes becslés. A végleges ár a részletes specifikációktól, a jelenlegi anyagáraktól és a rendelkezésre állástól függ. Kérjük, vegye fel a kapcsolatot csapatunkkal egy pontos ajánlatért."
   },
   "destination": "Rendeltetés",
   "window_type": "Ablaktípus",

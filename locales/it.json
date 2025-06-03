@@ -6,17 +6,17 @@
   "ui": {
     "employee_login": "Accesso Dipendenti",
     "logout": "Disconnetti",
-    "password": "Password:",
+    "password": "Parola d'ordine:",
     "login": "Accedi",
     "logged_in": "Connesso!",
     "wrong_password": "Password errata",
     "cancel": "Annulla",
     "open": "Apri",
     "language_selector": "Lingua / Language",
-    "back_to_home": "← Back to Home",
-    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator",
-    "get_ai_estimate": "🤖 Get AI Estimate",
+    "back_to_home": "Torna indietro alla Home",
+    "go_to_ai_estimate": "Vai a AI Estimate →",
+    "go_to_configurator": "Vai al Configuratore",
+    "get_ai_estimate": "Ottenere Stima AI",
     "access_denied": "Accesso Negato"
   },
   "nav": {
@@ -41,8 +41,8 @@
   },
   "window_types": {
     "standard": "Standard (doppio Windows)",
-    "energy_efficient": "Energooszczędne (triple glazing)",
-    "security": "Withoutpieczeństwo (hartowane)",
+    "energy_efficient": "Energooszczędne (triplo vetratura)",
+    "security": "Sen di piega (fritto)",
     "marine_grade": "Sea Class (anti -Corrosione)",
     "panoramic": "Finestre panoramiche",
     "sliding": "Finestre scorrevoli",
@@ -50,12 +50,12 @@
     "skylight": "Lucernari"
   },
   "lighting": {
-    "none": "No lighting",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energy efficient LED",
-    "exterior": "Exterior lighting",
-    "emergency": "Emergency lighting",
-    "smart": "Smart lighting system"
+    "none": "Nessuna illuminazione",
+    "basic_led": "Illuminazione a LED di base",
+    "energy_efficient": "LED ad efficienza energetica",
+    "exterior": "Illuminazione esterna",
+    "emergency": "Illuminazione di emergenza",
+    "smart": "Sistema di illuminazione intelligente"
   },
   "electrical_system": {
     "none": "Nessun impianto elettrico",
@@ -83,13 +83,13 @@
   },
   "hvac_system": {
     "none": "No HVAC (no riscaldamento and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
+    "basic": "Ventilazione di base",
+    "electric_heating": "Riscaldamento elettrico (riscaldatori a radiazione IR)",
+    "gas_heating": "Riscaldamento a gas (caldaia a condensazione)",
+    "split_ac": "Condizionatore d'aria a split (raffreddamento + riscaldamento)",
     "central_ac": "Pannello di controllo del condizionamento dell'aria (con filtrazione, idratante)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "heat_pump": "Pompa di calore",
+    "electric_heaters": "Riscaldatori elettrici (1-3kW, convettori)",
     "vrv_vrf": "VRV/VRF sistema (multi-zone, zone control)",
     "underfloor_heating": "Riscaldamento a pavimento (elettrico/acqua)"
   },
@@ -189,7 +189,7 @@
     },
     "finish_levels": {
       "basic": "Base",
-      "standard": "Standard",
+      "standard": "Normale",
       "premium": "Premium (massima qualità)",
       "luxury": "Lusso"
     },
@@ -199,7 +199,7 @@
       "carpet": "Moquette",
       "hardwood": "Legno Duro",
       "polished_concrete": "Cemento Lucidato",
-      "none": "No Flooring"
+      "none": "Senza Pavimento"
     }
   },
   "purposes": {
@@ -275,7 +275,7 @@
       "up_to_50k": "Up to €50,000",
       "50k_100k": "€ 50.000 - € 100.000",
       "100k_200k": "€ 100.000 - € 200.000",
-      "over_200k": "Over €200,000"
+      "over_200k": "Oltre 200.000 euro"
     },
     "additional_requirements": "Requisiti Aggiuntivi",
     "inquiry_type": "Tipo Richiesta",
@@ -298,7 +298,7 @@
     "contact_preferences": "Preferenze Contatto",
     "preferred_contact": "Metodo Contatto Preferito",
     "contact": {
-      "email": "Email",
+      "email": "Posta elettronica",
       "phone": "Telefono",
       "both": "Email e Telefono"
     },
@@ -329,8 +329,8 @@
     "preparation_tips": "Consigli per Migliori Risultati",
     "budget_Range": "Portata del budget"
   },
-  "back_to_home": "← Return to Home Page",
-  "go_to_configurator": "🔧 Go to Configurator",
+  "back_to_home": "Torna alla Pagina Iniziale",
+  "go_to_configurator": "Vai al Configuratore",
   "employee_tools": "Strumenti Dipendenti",
   "ai_cost_estimation": "Stima Costi IA",
   "ai_powered_estimation": "Valutazione della modifica del contenitore mediante AI",
@@ -342,12 +342,12 @@
   "finish_level": "Livello di Finitura",
   "climate_zone": "Zona Climatica",
   "windows": {
-    "none": "No windows (closed container)",
-    "one": "1 window",
-    "two": "2 windows",
-    "three": "3 windows",
-    "four": "4 windows",
-    "five_plus": "5+ windows"
+    "none": "Nessuna finestra (contenitore chiuso)",
+    "one": "Una finestra",
+    "two": "2 finestre",
+    "three": "3 finestre",
+    "four": "4 finestre",
+    "five_plus": "5 finestre"
   },
   "additional_doors": "Porte Aggiuntive",
   "yes": "Sì",
@@ -361,7 +361,7 @@
   "estimate_saved": "Stima salvata con successo",
   "additional_project_details": "Dettagli Aggiuntivi Progetto",
   "project_specific_requirements": "Requisiti Specifici Progetto e Commenti",
-  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
+  "project_comment_placeholder": "Per favore descrivete qualsiasi requisito specifico, vincolo o considerazione speciale per il vostro progetto di contenitore (ad esempio 'È necessario un isolamento extra per un clima freddo', 'Deve essere consegnato entro una data specifica', 'Il budget è limitato a €15.000', ecc.).",
   "project_comment_help": "Più dettagli fornite, l'analisi di intelligenza artificiale più accurata e più adattata sarà.",
   "specific_considerations": "Considerazioni Specifiche",
   "special_location_requirements": "Requisiti speciali posizione/sito",
@@ -399,7 +399,7 @@
   "fallback_estimate_basic": "Calcolo base fallback:",
   "ai_retry_later": "Riprova più tardi per analisi IA",
   "error_details": "Dettagli errore",
-  "save_configuration": "Save Configuration",
+  "save_configuration": "Salva Configurazione",
   "configuration_saved": "Configurazione salvata con successo!",
   "get_ai_analysis": "Ottieni Analisi IA",
   "systems_installations": "Sistemi e Installazioni",
@@ -575,7 +575,7 @@
     "project_context": "Contesto Progetto",
     "project_location": "Posizione progetto",
     "project_name": "Nome progetto",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "ad es. Container Office - Berlino",
     "file_upload": "Caricamento File",
     "upload_drawings": "Carica disegni tecnici",
     "file_formats_help": "Supportiamo i file PDF, DWG, JPG e PNG. Raccomandiamo il formato PDF per la migliore analisi.",
@@ -590,7 +590,7 @@
     "current_config": "Configurazione Attuale",
     "project_context": "Contesto Progetto",
     "project_name": "Nome Progetto",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "ad es. Container Office - Berlino",
     "project_location": "Posizione Progetto",
     "file_upload": "Caricamento File",
     "upload_drawings": "Carica disegni tecnici",
@@ -655,25 +655,25 @@
   },
   "roof_modifications": {
     "none": "Senza modifica (tetto piatto standard)",
-    "insulation": "Additional roof insulation",
+    "insulation": "Isolamento del tetto aggiuntivo",
     "skylight": "Installazione volontaria",
-    "fans": "Roof ventilation fans",
-    "solar": "Solar panel preparation",
-    "antennas": "Antenna/communication mounts",
-    "sloped": "Sloped roof conversion",
-    "terrace": "Roof terrace/walkway",
-    "snow_removal": "Snow load reinforcement"
+    "fans": "Ventilatori di ventilazione del tetto",
+    "solar": "Preparazione dei pannelli solari",
+    "antennas": "Montanti antenna/comunicazione",
+    "sloped": "Conversione di tetto inclinato",
+    "terrace": "Terrazza a tetto/passeggiata",
+    "snow_removal": "Rafforzamento del carico nevoso"
   },
   "electrical": {
     "basic": "Base (illuminazione + prese)",
     "standard": "Standard (Circuit 15A)",
     "industrial": "Industriale (30A + pannello)",
     "smart_system": "Sistema intelligente (automazione IoT)",
-    "preparation": "Preparation (wiring without equipment)",
-    "none": "No electrical installation",
-    "smart": "Smart (home automation, KNX)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)"
+    "preparation": "Preparazione (impiantistica senza attrezzatura)",
+    "none": "Nessuna installazione elettrica",
+    "smart": "Intelligente (automazione domestica, KNX)",
+    "extended": "Esteso (40A, potenza, UPS, emergenza)",
+    "it_server": "IT/Server (UPS, raffreddamento, monitoraggio)"
   },
   "plumbing": {
     "none": "Nessun impianto idraulico",
@@ -727,9 +727,9 @@
   },
   "insulation": {
     "basic": "BASIC (50mm)",
-    "standard": "Standard (100mm)",
+    "standard": "Standard (100mm) \n\nTraduzione: Standard (100mm)",
     "premium": "Premium (150 mm)",
-    "extreme": "Extreme (200mm+)"
+    "extreme": "Estremo (200mm+)"
   },
   "reinforcement": {
     "none": "Nessun rinforzo",
@@ -759,7 +759,7 @@
   "delivery_zone_local": "Locale (50km)",
   "security_systems_advanced": "Avanzato",
   "fire_systems_full": "Sistema Completo",
-  "paint_finish_premium": "Premium",
+  "paint_finish_premium": "Premiale",
   "construction_material_steel": "Acciaio",
   "security_systems_none": "Nessuno",
   "fire_systems_basic": "Base",
@@ -767,7 +767,7 @@
   "fire_systems_none": "Nessuno",
   "roof_modifications_solar": "Pannelli Solari",
   "exterior_cladding_composite": "Composito",
-  "window_types_standard": "Standard",
+  "window_types_standard": "Normale",
   "installation_none": "Auto Installazione",
   "installation_full": "Installazione Completa",
   "lighting_none": "Nessuna",
@@ -792,19 +792,19 @@
   "additional_openings_emergency": "Uscita Emergenza",
   "office_equipment_none": "Nessuno",
   "it_systems_none": "Nessuno",
-  "transport_type_standard": "Standard",
+  "transport_type_standard": "Normale",
   "advanced_comments": "Commenti Modifiche Avanzate",
   "delivery_zone_regional": "Regionale (200km)",
   "window_types_double": "Doppi Vetri",
   "ventilation": {
-    "none": "No ventilation",
-    "gravity": "Gravity vents (2-4 pcs, adjustable)",
-    "wall_fans": "Wall fans (exhaust)",
-    "mechanical": "Mechanical ventilation",
-    "heat_recovery": "Heat recovery ventilation",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning",
-    "industrial": "Industrial ventilation"
+    "none": "Assenza di ventilazione",
+    "gravity": "Venti di gravità (2-4 pezzi, regolabili)",
+    "wall_fans": "Ventilatori a muro (esterni)",
+    "mechanical": "Ventilazione meccanica",
+    "heat_recovery": "Ventilazione con recupero di calore",
+    "split_ac": "Condizionatore d'aria a split (raffreddamento + riscaldamento)",
+    "central_ac": "Raffreddamento centrale",
+    "industrial": "Ventilazione industriale"
   },
   "it_systems": "Sistemi IT",
   "lighting_professional": "Professionale",
@@ -838,9 +838,9 @@
     "maritime": "Clima del mare (alta umidità)",
     "mountain": "Clima di montagna (alto UV, neve)",
     "tropical": "Clima tropicale (alte temperature, umidità)",
-    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
-    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
-    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "northern_europe": "L'Europa settentrionale (Scandinavia, -30°C a +25°C)",
+    "central_europe": "Europa centrale (Polonia, Germania, -20°C a +35°C)",
+    "southern_europe": "Europa meridionale (Spagna, Italia, -5°C a +45°C)",
     "continental": "Clima continentale (fluttuazioni estreme)",
     "scandinavian": "scandinavo",
     "mediterranean": "mediterraneo",
@@ -862,22 +862,22 @@
   "lighting_label": "Illuminazione",
   "flooring_label": "Pavimenti",
   "cost_estimation": {
-    "estimate_title": "💰 Project Cost Estimate",
+    "estimate_title": "Stima del Costo del Progetto",
     "cost_breakdown_title": "Ripartizione dei Costi:",
     "base_container_line": "Container base:",
     "modifications_equipment_line": "Modifiche e attrezzature:",
     "total_cost_line": "COSTO TOTALE:",
-    "important_warning": "⚠️ Important:",
+    "important_warning": "⚠️ Importante:",
     "preliminary_estimate_full": "Questa è una stima preliminare. Il prezzo finale dipende dalle specifiche dettagliate, dai prezzi attuali dei materiali e dalla disponibilità. Contatta il nostro team per un preventivo accurato.",
-    "configuration_saved_success": "✅ Configuration saved successfully!",
+    "configuration_saved_success": "✅ La configurazione è stata salvata con successo!",
     "cost_breakdown": "Divisione dei costi",
     "total_cost": "Costo totale",
     "important_notice": "Importante",
-    "project_estimate": "Project Cost Estimate",
-    "modifications_equipment": "Modifications and equipment",
-    "base_container": "Base container",
-    "configuration_saved": "Configuration saved successfully!",
-    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
+    "project_estimate": "Stima dei Costi del Progetto",
+    "modifications_equipment": "Modifiche e attrezzature",
+    "base_container": "Contenitore base",
+    "configuration_saved": "La configurazione è stata salvata con successo!",
+    "preliminary_estimate": "Questa è una stima preliminare. Il prezzo finale dipende dalle specifiche dettagliate, dai prezzi attuali dei materiali e dalla disponibilità. Contattate il nostro team per un preventivo preciso."
   },
   "destination": "Destinazione",
   "window_type": "Tipo di Finestra",

@@ -13,10 +13,10 @@
     "cancel": "Zrušiť",
     "open": "Otvoriť",
     "language_selector": "Jazyk / Language",
-    "back_to_home": "← Back to Home",
-    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator",
-    "get_ai_estimate": "🤖 Get AI Estimate",
+    "back_to_home": "← Späť na Domov",
+    "go_to_ai_estimate": "Idiť do AI Estimate →",
+    "go_to_configurator": "🔧 Presťahuj sa do Konfiguratéra.",
+    "get_ai_estimate": "🤖 Získať odhad AI",
     "access_denied": "Prístup zamietnutý"
   },
   "nav": {
@@ -41,7 +41,7 @@
   },
   "window_types": {
     "standard": "Štandardné (dvojité zasklenie)",
-    "energy_efficient": "Energooszczędne (triple glazing)",
+    "energy_efficient": "Energeticky úsporné (trojokná okna)",
     "security": "Bezpečnosť (temperované)",
     "marine_grade": "Trieda mora (anti -korózia)",
     "panoramic": "Panoramatické okná",
@@ -50,12 +50,12 @@
     "skylight": "Strešné okná"
   },
   "lighting": {
-    "none": "No lighting",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energy efficient LED",
-    "exterior": "Exterior lighting",
-    "emergency": "Emergency lighting",
-    "smart": "Smart lighting system"
+    "none": "Žiadne osvetlenie.",
+    "basic_led": "Základné LED osvetlenie",
+    "energy_efficient": "Energeticky efektívny LED",
+    "exterior": "Exteriérové osvetlenie",
+    "emergency": "Priebehová osvetlenie",
+    "smart": "Inteligentné osvetľovacie systém"
   },
   "electrical_system": {
     "none": "Bez elektrickej inštalácie",
@@ -83,13 +83,13 @@
   },
   "hvac_system": {
     "none": "No HVAC (no vykurovanie and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
+    "basic": "Základná ventilácia",
+    "electric_heating": "Elektrické topenie (rádiátory IR)",
+    "gas_heating": "Plynový topenie (kondenzračný varný kotol)",
+    "split_ac": "Splitová klimatizácia (chladenie + topenie)",
     "central_ac": "Ovládací panel klimatizácie (s filtráciou, zvlhčovanie)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "heat_pump": "Pumpa tepla",
+    "electric_heaters": "Elektrické topidlá (1-3kW, konvektory)",
     "vrv_vrf": "VRV/VRF systém (multi-zone, zone control)",
     "underfloor_heating": "Podlahové vykurovanie (elektrická/voda)"
   },
@@ -199,7 +199,7 @@
       "carpet": "Koberce",
       "hardwood": "Drevo",
       "polished_concrete": "Polierovaná betónová podlaha",
-      "none": "No Flooring"
+      "none": "Žiadny podlahový povrch"
     }
   },
   "purposes": {
@@ -376,8 +376,8 @@
     "preparation_tips": "Používajte Tips pre Najlepší Výsledok",
     "budget_Range": "Rozsah rozpočtu"
   },
-  "back_to_home": "← Return to Home Page",
-  "go_to_configurator": "🔧 Go to Configurator",
+  "back_to_home": "← Vráť sa na Hlavnú stránku",
+  "go_to_configurator": "🔧 Přejdi do Konfiguratéra",
   "employee_tools": "Nástroje zamestnancov",
   "ai_cost_estimation": "AI odhad nákladov",
   "ai_powered_estimation": "AI odhad nákladov modifikácie kontajnerov",
@@ -389,12 +389,12 @@
   "finish_level": "Úroveň Dokončenia",
   "climate_zone": "Klimatická Zóna",
   "windows": {
-    "none": "No windows (closed container)",
-    "one": "1 window",
-    "two": "2 windows",
-    "three": "3 windows",
-    "four": "4 windows",
-    "five_plus": "5+ windows"
+    "none": "Žiadne okná (zatvorená nádoba)",
+    "one": "1 okno",
+    "two": "2 okná",
+    "three": "3 okná",
+    "four": "4 okná",
+    "five_plus": "5+ okien"
   },
   "additional_doors": "Dodatočné dvere",
   "yes": "Áno",
@@ -446,7 +446,7 @@
   "fallback_estimate_basic": "Záložný výpočet:",
   "ai_retry_later": "Skúste neskôr pre AI analýzu",
   "error_details": "Detaily chyby",
-  "save_configuration": "Save Configuration",
+  "save_configuration": "Uložiť Konfiguráciu",
   "configuration_saved": "Konfigurácia úspešne uložená!",
   "get_ai_analysis": "Získať AI analýzu",
   "systems_installations": "Systémy a inštalácie",
@@ -479,11 +479,11 @@
     "open_space": "Otvorený priestor (bez priečok)",
     "partitioned": "S oddielmi (1-3 izby)",
     "built_in_furniture": "Postavený -nábytok (vlastné budovy)",
-    "custom_layout": "Custom layout (custom design)",
+    "custom_layout": "Špecifická zostava (špecifický dizajn)",
     "mezzanine": "Mezanín/podlaha (zvýšenie povrchu)"
   },
   "security_systems_options": {
-    "none": "No additional security (standard locks)",
+    "none": "Žiadne ďalšie bezpečnostné opatrenia (štandardné zámky)",
     "basic": "Základné (zosilnené zámky, okenné mriežky)",
     "standard": "Štandard (alarm, senzory, siréna)",
     "extended": "Rozšírené (monitorovanie, senzory pohybu/vibrácie)",
@@ -513,20 +513,20 @@
     "custom": "Otwory nieštandardné (nietypowe wymiary)"
   },
   "fire_safety_options": {
-    "none": "No fire safety systems",
-    "basic": "Basic (extinguisher, smoke detector)",
-    "standard": "Standard (alarm system, emergency lighting)",
+    "none": "Žiadne systémy požiarnej bezpečnosti.",
+    "basic": "Základné (hasiace, detektor dymu)",
+    "standard": "Štandarda (systém varovania, pohotovostné osvetlenie)",
     "extended": "Rozšírené (tryskacze, ewakuacja)",
     "full": "Úplný systém (plyn, monitorovanie)"
   },
   "accessibility_options": {
-    "standard": "Standard access (15-20cm threshold)",
+    "standard": "Štandardný prístup (prahu 15-20 cm)",
     "ramp": "Príjazdová cesta/rampa (na invalidné vozíky)",
     "lift": "Hydraulický výťah (prístup k postihnutým)",
     "full_ada": "Plná kompatibilita ADA (široké dvere, rukoväte)"
   },
   "paint_finish_options": {
-    "standard": "Standard coating C2 (RAL 7035 - light gray)",
+    "standard": "Štandardná farba C2 (RAL 7035 - svetlý sivý)",
     "extended": "C3 zlepšil povlak (lepšia trvanlivosť)",
     "marine": "C5M morský povlak (pobrežné prostredie)",
     "industrial": "C4 Priemyselný povlak (agresívne prostredie)",
@@ -549,13 +549,13 @@
   "assembly_options": {
     "none": "Bez montáže (iba dodávka)",
     "basic": "Základná montáž (umiestnenie, vyrovnávanie)",
-    "standard": "Standard assembly (connections, tests)",
+    "standard": "Štandardná montáž (pripojenia, testy)",
     "full": "Plná montáž (úplná inštalácia)"
   },
   "office_equipment_options": {
     "none": "Bez vybavenia (prázdny nádoba)",
-    "basic": "Basic (desk, chairs, cabinet)",
-    "standard": "Standard (furniture set, lighting)",
+    "basic": "Základ (stůl, židle, skříňka)",
+    "standard": "Štandard (sada nábytku, osvetlenie)",
     "full": "Plné (kompletné kancelárske vybavenie)"
   },
   "appliances_options": {
@@ -567,7 +567,7 @@
   "it_systems_options": {
     "none": "Bez systémów IT",
     "basic": "Základné (internet, WiFi)",
-    "standard": "Standard (network, telephony)",
+    "standard": "Štandard (siet, telefónia)",
     "advanced": "Advanced (Server Room, Security)"
   },
   "insulation_package": "Izolačný balík",
@@ -661,7 +661,7 @@
     "adjusted_estimate": "Prispôsobený odhad",
     "next_steps": "Ďalšie kroky",
     "get_detailed_quote": "Získaj podrobnú ponuku",
-    "refine_config": "Clarify the configuration",
+    "refine_config": "Zodpovedajte konfigurácii.",
     "disclaimer_title": "Dôležité upozornenie",
     "disclaimer_text": "Táto analýza je automatická a určená iba na odhadné účely. Finálna cena vyžaduje manuálnu overovanie našimi technickými zamestnancom.",
     "tips_title": "Používateľské tipy pre lepšiu analýzu",
@@ -702,25 +702,25 @@
   },
   "roof_modifications": {
     "none": "Bez úpravy (štandardná plochá strecha)",
-    "insulation": "Additional roof insulation",
+    "insulation": "Doplňkové izolácie strechy",
     "skylight": "Dobrovoľnícka inštalácia",
-    "fans": "Roof ventilation fans",
-    "solar": "Solar panel preparation",
-    "antennas": "Antenna/communication mounts",
-    "sloped": "Sloped roof conversion",
-    "terrace": "Roof terrace/walkway",
-    "snow_removal": "Snow load reinforcement"
+    "fans": "Ventilátory strechy",
+    "solar": "Priprava solárnych panelov",
+    "antennas": "Anténa/komunikačné nosiče",
+    "sloped": "Prekonverzia priečneho strecha",
+    "terrace": "Strešná terasa/priečelie",
+    "snow_removal": "Reinforzovanie snehového zaťaženia"
   },
   "electrical": {
     "basic": "Základná (osvetlenie + zásuvky)",
     "standard": "Štandard (obvod 15a)",
     "industrial": "Priemyselná (30A + panel)",
     "smart_system": "Inteligentný systém (automatizácia IoT)",
-    "preparation": "Preparation (wiring without equipment)",
-    "none": "No electrical installation",
-    "smart": "Smart (home automation, KNX)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)"
+    "preparation": "Priprava (zabezpečenie bez zariadení)",
+    "none": "Žiadna elektrická instalácia.",
+    "smart": "Inteligentné (domáce automatizácie, KNX)",
+    "extended": "Rozšírený (40A, napájanie, UPS, havarijné)",
+    "it_server": "IT/Servery (UPS, chladenie, monitorovanie)"
   },
   "plumbing": {
     "none": "Žiadne plnenie",
@@ -776,7 +776,7 @@
     "basic": "Základné (50 mm)",
     "standard": "Štandard (100 mm)",
     "premium": "Prémiové (150 mm)",
-    "extreme": "Extreme (200mm+)"
+    "extreme": "Ekstremný (200mm+)"
   },
   "reinforcement": {
     "none": "Žiadne posilnenie",
@@ -844,14 +844,14 @@
   "delivery_zone_regional": "Regionálne (200 km)",
   "window_types_double": "Dvojité zasklenie",
   "ventilation": {
-    "none": "No ventilation",
-    "gravity": "Gravity vents (2-4 pcs, adjustable)",
-    "wall_fans": "Wall fans (exhaust)",
-    "mechanical": "Mechanical ventilation",
-    "heat_recovery": "Heat recovery ventilation",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning",
-    "industrial": "Industrial ventilation"
+    "none": "Žiadna ventilácia",
+    "gravity": "Priehradky na gravitáciu (2-4 kusy, nastavitelné)",
+    "wall_fans": "Stropné ventilátory (odvodňovací)",
+    "mechanical": "Mechanická ventilácia",
+    "heat_recovery": "Recovery ventilácia tepla",
+    "split_ac": "Systém na chladenie a topenie v Splitovej konštrukcii.",
+    "central_ac": "Centrálne chladenie vzduchu",
+    "industrial": "Priemyselná ventilácia"
   },
   "it_systems": "IT systémy",
   "lighting_professional": "Profesionálne",
@@ -885,9 +885,9 @@
     "maritime": "Morské podnebie (vysoká vlhkosť)",
     "mountain": "Mountain Climate (High UV, sneh)",
     "tropical": "Tropické podnebie (vysoké teploty, vlhkosť)",
-    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
-    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
-    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "northern_europe": "Severná Európa (Skandinávia, -30°C do +25°C)",
+    "central_europe": "Stredná Európa (Poľsko, Nemecko, -20°C do +35°C)",
+    "southern_europe": "Južná Európa (Španielsko, Taliansko, -5°C do +45°C)",
     "continental": "Kontinentálne podnebie (extrémne výkyvy)",
     "scandinavian": "Škandinávsky",
     "mediterranean": "Stredomorský",
@@ -909,22 +909,22 @@
   "lighting_label": "Osvetlenie",
   "flooring_label": "Podlaha",
   "cost_estimation": {
-    "estimate_title": "💰 Project Cost Estimate",
+    "estimate_title": "Predpokladná Nákladová Výška Projektu",
     "cost_breakdown_title": "Rozpis Nákladov:",
     "base_container_line": "Základný kontajner:",
     "modifications_equipment_line": "Úpravy a vybavenie:",
     "total_cost_line": "CELKOVÉ NÁKLADY:",
-    "important_warning": "⚠️ Important:",
+    "important_warning": "⚠️ Dôležité:",
     "preliminary_estimate_full": "Toto je predbežný odhad. Konečná cena závisí od podrobných špecifikácií, aktuálnych cien materiálov a dostupnosti. Pre presnú ponuku kontaktujte náš tím.",
-    "configuration_saved_success": "✅ Configuration saved successfully!",
+    "configuration_saved_success": "✅ Konfigurácia bola úspešne uložená!",
     "cost_breakdown": "Divízia nákladov",
     "total_cost": "Celkové náklady",
     "important_notice": "Dôležitý",
-    "project_estimate": "Project Cost Estimate",
-    "modifications_equipment": "Modifications and equipment",
-    "base_container": "Base container",
-    "configuration_saved": "Configuration saved successfully!",
-    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
+    "project_estimate": "Predpokladná Nákladová Odhada Projektu",
+    "modifications_equipment": "Zmeny a zariadenia",
+    "base_container": "Základná kontajnerová nádoba",
+    "configuration_saved": "Konfigurácia bola úspešne uložená!",
+    "preliminary_estimate": "Toto je predbežná odhadnutie. Finálny cenu závisí na podrobných špecifikáciách, súčasných cenník materiálov a dostupnosti. Kontaktujte našu tímu pre presný návod."
   },
   "destination": "Určenie",
   "window_type": "Typ Okna",

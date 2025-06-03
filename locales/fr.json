@@ -13,10 +13,10 @@
     "cancel": "Annuler",
     "open": "Ouvrir",
     "language_selector": "Langue / Language",
-    "back_to_home": "← Back to Home",
-    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator",
-    "get_ai_estimate": "🤖 Get AI Estimate",
+    "back_to_home": "Retour à l'accueil",
+    "go_to_ai_estimate": "Allez à AI Estimate →",
+    "go_to_configurator": "Allez à Configurateur",
+    "get_ai_estimate": "Obtenez une estimation d'IA",
     "access_denied": "Accès refusé"
   },
   "nav": {
@@ -42,7 +42,7 @@
   "window_types": {
     "standard": "Standard (double fenêtre)",
     "energy_efficient": "Économie d'énergie (triple fenêtres)",
-    "security": "Withoutpieczeństwo (hartowane)",
+    "security": "Sans assurance (garantie)",
     "marine_grade": "Classe en mer (anti-corrosion)",
     "panoramic": "Fenêtres panoramiques",
     "sliding": "Fenêtres coulissantes",
@@ -189,17 +189,17 @@
     },
     "finish_levels": {
       "basic": "Niveau de finition de base",
-      "standard": "Standard",
+      "standard": "Norme",
       "premium": "Premium (la plus haute qualité)",
       "luxury": "Niveau de finition de luxe"
     },
     "flooring": {
-      "plywood": "Plywood",
+      "plywood": "Bois d'œuvre multiplex",
       "vinyl": "Vinyle",
       "carpet": "Tapis",
       "hardwood": "Bois dur",
       "polished_concrete": "Béton ciré",
-      "none": "No Flooring"
+      "none": "Pas de revêtement de sol."
     }
   },
   "purposes": {
@@ -279,7 +279,7 @@
   },
   "ai": {
     "models": {
-      "openai_gpt4": "Openai GPT-4O",
+      "openai_gpt4": "Openai GPT-4 : Ouvrir",
       "anthropic_claude": "Claude anthropique",
       "auto_select": "Sélection automatique du meilleur"
     },
@@ -322,7 +322,7 @@
       "up_to_50k": "Up to €50,000",
       "50k_100k": "50 000 € - 100 000 €",
       "100k_200k": "100 000 € - 200 000 €",
-      "over_200k": "Over €200,000"
+      "over_200k": "Plus de 200 000 euros"
     },
     "additional_requirements": "Exigences supplémentaires",
     "inquiry_type": "Type de requête",
@@ -376,8 +376,8 @@
     "preparation_tips": "Conseils pour les meilleurs résultats",
     "budget_Range": "Portée du budget"
   },
-  "back_to_home": "← Return to Home Page",
-  "go_to_configurator": "🔧 Go to Configurator",
+  "back_to_home": "Retourner à la page d'accueil",
+  "go_to_configurator": "Allez à Configurateur",
   "employee_tools": "Outils des employés",
   "ai_cost_estimation": "Estimation des coûts IA",
   "ai_powered_estimation": "Estimation des coûts de modification de conteneurs alimentée par l'IA",
@@ -446,7 +446,7 @@
   "fallback_estimate_basic": "Calcul de secours :",
   "ai_retry_later": "Veuillez réessayer plus tard pour l'analyse IA",
   "error_details": "Détails de l'erreur",
-  "save_configuration": "Save Configuration",
+  "save_configuration": "Enregistrer la Configuration",
   "configuration_saved": "Configuration réussie!",
   "get_ai_analysis": "Obtenir l'analyse IA",
   "systems_installations": "Systèmes et installations",
@@ -589,12 +589,12 @@
       "international": "International (hors Europe)"
     }
   },
-  "labor_costs_30": "Labor Costs (30%)",
+  "labor_costs_30": "Coûts du Travail (30%)",
   "fallback_cost_estimate": "Estimation de coût de remplacement",
   "total_project_cost": "Coût total du projet",
   "basic_calculation_ai_unavailable": "Calcul de base lorsqu'il n'y a pas de services AI disponibles",
   "materials_base_cost": "Matériaux et coûts de base",
-  "labor_costs_40": "Labor Costs (40%)",
+  "labor_costs_40": "Coûts du Travail (40%)",
   "contingency_10": "Contingence (10%)",
   "complexity_multiplier": "Multiplieur de complexité",
   "standard_recommendations": "Recommandations standard",
@@ -622,7 +622,7 @@
     "project_context": "Contexte du projet",
     "project_location": "Emplacement du projet",
     "project_name": "Nom du projet",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "Par exemple : Bureau de Conteneurs - Berlin",
     "file_upload": "Téléchargement de fichier",
     "upload_drawings": "Envoyer des dessins techniques",
     "file_formats_help": "Nous prenons en charge les fichiers PDF, DWG, JPG et PNG. Nous recommandons le format PDF pour la meilleure analyse.",
@@ -637,7 +637,7 @@
     "current_config": "Configuration actuelle",
     "project_context": "Contexte du projet",
     "project_name": "Nom du projet",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "Exemple : Bureau Conteneur - Berlin",
     "project_location": "Emplacement du projet",
     "file_upload": "Téléchargement de fichiers",
     "upload_drawings": "Envoyer des dessins techniques",
@@ -716,11 +716,11 @@
     "standard": "Standard (circuit 15a)",
     "industrial": "Industriel (30A + panneau)",
     "smart_system": "Système intelligent (automatisation IoT)",
-    "preparation": "Preparation (wiring without equipment)",
-    "none": "No electrical installation",
-    "smart": "Smart (home automation, KNX)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)"
+    "preparation": "Préparation (branchement sans matériel)",
+    "none": "Aucune installation électrique.",
+    "smart": "Intelligent (automatisation de la maison, KNX)",
+    "extended": "Étendu (40A, puissance, UPS, d'urgence)",
+    "it_server": "IT/Serveur (UPS, refroidissement, surveillance)"
   },
   "plumbing": {
     "none": "Pas de plomberie",
@@ -814,7 +814,7 @@
   "fire_systems_none": "Aucun",
   "roof_modifications_solar": "Panels solaires",
   "exterior_cladding_composite": "Composé",
-  "window_types_standard": "Standard",
+  "window_types_standard": "Norme",
   "installation_none": "Assemblée auto-assemblée",
   "installation_full": "Assemblage complet",
   "lighting_none": "Aucune éclairage",
@@ -839,7 +839,7 @@
   "additional_openings_emergency": "ISSUE DE SECOURS",
   "office_equipment_none": "Aucun",
   "it_systems_none": "Aucun",
-  "transport_type_standard": "Standard",
+  "transport_type_standard": "Norme",
   "advanced_comments": "Commentaires de modifications avancées",
   "delivery_zone_regional": "Régional (200 km)",
   "window_types_double": "Double vitrage",
@@ -858,7 +858,7 @@
   "interior_layout_open": "Espace ouvert",
   "appliances_kitchen": "Équipement de cuisine",
   "exterior_cladding_wood": "Bois",
-  "installation": "Installation",
+  "installation": "L'installation",
   "system_comments": "Système de commentaires sur les exigences",
   "office_equipment_full": "Bureau complet",
   "it_systems_advanced": "Avancé",
@@ -885,9 +885,9 @@
     "maritime": "Climat maritime (humidité élevée)",
     "mountain": "Climat de montagne (UV élevé, neige)",
     "tropical": "Climat tropical (températures élevées, humidité)",
-    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
-    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
-    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "northern_europe": "L'Europe du Nord (Scandinavie, -30°C à +25°C)",
+    "central_europe": "L'Europe centrale (Pologne, Allemagne, -20°C à +35°C)",
+    "southern_europe": "L'Europe du Sud (Espagne, Italie, -5°C à +45°C)",
     "continental": "Climat continental (fluctuations extrêmes)",
     "scandinavian": "scandinave",
     "mediterranean": "méditerranéen",
@@ -909,22 +909,22 @@
   "lighting_label": "Éclairage",
   "flooring_label": "Étages",
   "cost_estimation": {
-    "estimate_title": "💰 Project Cost Estimate",
+    "estimate_title": "Évaluation du Coût du Projet",
     "cost_breakdown_title": "Répartition des Coûts:",
     "base_container_line": "Conteneur de base:",
     "modifications_equipment_line": "Modifications et équipement:",
     "total_cost_line": "COÛT TOTAL:",
-    "important_warning": "⚠️ Important:",
+    "important_warning": "⚠️ Attention :",
     "preliminary_estimate_full": "Ceci est une estimation préliminaire. Le prix final dépend des spécifications détaillées, des prix actuels des matériaux et de la disponibilité. Contactez notre équipe pour un devis précis.",
-    "configuration_saved_success": "✅ Configuration saved successfully!",
+    "configuration_saved_success": "La configuration a été enregistrée avec succès !",
     "cost_breakdown": "Division des coûts",
     "total_cost": "Coût total",
     "important_notice": "Important",
-    "project_estimate": "Project Cost Estimate",
-    "modifications_equipment": "Modifications and equipment",
-    "base_container": "Base container",
-    "configuration_saved": "Configuration saved successfully!",
-    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
+    "project_estimate": "Estimation de Coût du Projet",
+    "modifications_equipment": "Modifications et équipements",
+    "base_container": "Conteneur de base",
+    "configuration_saved": "La configuration a été enregistrée avec succès !",
+    "preliminary_estimate": "Ceci est une estimation préliminaire. Le prix final dépend des spécifications détaillées, des prix actuels des matériaux et de la disponibilité. Contactez notre équipe pour obtenir un devis précis."
   },
   "destination": "Destination",
   "window_type": "Type de Fenêtre",

@@ -13,10 +13,10 @@
     "cancel": "Avbryt",
     "open": "Öppna",
     "language_selector": "Språk / Language",
-    "back_to_home": "← Back to Home",
-    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator",
-    "get_ai_estimate": "🤖 Get AI Estimate",
+    "back_to_home": "← Tillbaka till Hem",
+    "go_to_ai_estimate": "Gå till AI-beräkning →",
+    "go_to_configurator": "🔧 Gå till Konfigurator",
+    "get_ai_estimate": "🤖 Få AI-beräkning",
     "access_denied": "Åtkomst Nekad"
   },
   "nav": {
@@ -24,7 +24,7 @@
     "comparison_tool_desc": "Jämför konfigurationer",
     "drawing_analysis": "Ritnings\nAnalys",
     "drawing_analysis_desc": "AI-dokumentanalys",
-    "admin_panel": "Admin\nPanel",
+    "admin_panel": "Administrationspanel",
     "admin_panel_desc": "Systemhantering",
     "ai_cost_estimation": "AI-Kostnadsuppskattning",
     "container_configurator": "Containerkonfigurator",
@@ -42,7 +42,7 @@
   "window_types": {
     "standard": "Standard (dubbla fönster)",
     "energy_efficient": "Energibesparing (trippelfönster)",
-    "security": "Withoutpieczeństwo (hartowane)",
+    "security": "Utan besvikelse (härdad)",
     "marine_grade": "Havsklass (anti -korrosion)",
     "panoramic": "Panoramafönster",
     "sliding": "Glidande fönster",
@@ -50,12 +50,12 @@
     "skylight": "Takfönster"
   },
   "lighting": {
-    "none": "No lighting",
-    "basic_led": "Basic LED lighting",
-    "energy_efficient": "Energy efficient LED",
-    "exterior": "Exterior lighting",
-    "emergency": "Emergency lighting",
-    "smart": "Smart lighting system"
+    "none": "Inget ljus",
+    "basic_led": "Grundläggande LED-belysning",
+    "energy_efficient": "Energisnål LED-lampa",
+    "exterior": "Exteriörbelysning",
+    "emergency": "Nödljus",
+    "smart": "Intelligenta belysningsystem"
   },
   "electrical_system": {
     "none": "Utan instalacji elektrycznej",
@@ -83,13 +83,13 @@
   },
   "hvac_system": {
     "none": "No HVAC (no uppvärmning and cooling)",
-    "basic": "Basic ventilation",
-    "electric_heating": "Electric heating (IR radiators)",
-    "gas_heating": "Gas heating (condensing boiler)",
-    "split_ac": "Split air conditioning (cooling + heating)",
+    "basic": "Bast ventilationsanläggning",
+    "electric_heating": "Eluppvärmning (IR-strålaradiatorer)",
+    "gas_heating": "Gasvärmepanna ( kondensationskraftvärmepanna)",
+    "split_ac": "Delad luftkonditionering (kylning + värme)",
     "central_ac": "Luftkonditioneringskontrollpanel (med filtrering, fuktgivande)",
-    "heat_pump": "Heat pump",
-    "electric_heaters": "Electric heaters (1-3kW, convectors)",
+    "heat_pump": "Värmepump",
+    "electric_heaters": "Eluppvärmare (1-3kW, konvektorer)",
     "vrv_vrf": "VRV/VRF -system (multi -zon, zonkontroll)",
     "underfloor_heating": "Golvvärme (elektrisk/vatten)"
   },
@@ -194,12 +194,12 @@
       "luxury": "Lyx"
     },
     "flooring": {
-      "plywood": "Plywood",
+      "plywood": "Fibrabord",
       "vinyl": "Vinyl",
       "carpet": "Matta",
       "hardwood": "Hårdträ",
       "polished_concrete": "Polerad Betong",
-      "none": "No Flooring"
+      "none": "Inga golvplattor"
     }
   },
   "purposes": {
@@ -275,7 +275,7 @@
       "up_to_50k": "Up to €50,000",
       "50k_100k": "€ 50,000 - € 100,000",
       "100k_200k": "100 000 € - 200 000 €",
-      "over_200k": "Over €200,000"
+      "over_200k": "Över 200 000 euro"
     },
     "additional_requirements": "Ytterligare Krav",
     "inquiry_type": "Förfrågantyp",
@@ -329,8 +329,8 @@
     "preparation_tips": "Tips för Bästa Resultat",
     "budget_Range": "Budgetområde"
   },
-  "back_to_home": "← Return to Home Page",
-  "go_to_configurator": "🔧 Go to Configurator",
+  "back_to_home": "← Gå till Hemsida",
+  "go_to_configurator": "🔧 Gå till Konfigurator",
   "employee_tools": "Personalverktyg",
   "ai_cost_estimation": "AI-Kostnadsuppskattning",
   "ai_powered_estimation": "Värdering av containermodifiering med AI",
@@ -342,12 +342,12 @@
   "finish_level": "Slutnivå",
   "climate_zone": "Klimatzon",
   "windows": {
-    "none": "No windows (closed container)",
-    "one": "1 window",
-    "two": "2 windows",
-    "three": "3 windows",
-    "four": "4 windows",
-    "five_plus": "5+ windows"
+    "none": "Inga fönster (stängd behållare)",
+    "one": "1 fönster",
+    "two": "2 fönster",
+    "three": "3 fönster",
+    "four": "4 fönster",
+    "five_plus": "5+ fönster"
   },
   "additional_doors": "Ytterligare Dörrar",
   "yes": "Ja",
@@ -361,7 +361,7 @@
   "estimate_saved": "Uppskattning sparad framgångsrikt",
   "additional_project_details": "Ytterligare Projektdetaljer",
   "project_specific_requirements": "Projektspecifika Krav och Kommentarer",
-  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
+  "project_comment_placeholder": "Beskriv eventuella specifika krav, begränsningar eller särskilda överväganden för din behållarprojekt (t.ex. 'Behöver extra isolering för kallt klimat', 'Måste levereras före en specifik datum', 'Budgeten är begränsad till 15 000 euro', etc.).",
   "project_comment_help": "Ju fler detaljer du tillhandahåller, desto mer exakta och bättre anpassade AI -analys.",
   "specific_considerations": "Specifika överväganden",
   "special_location_requirements": "Särskilda plats-/områdeskrav",
@@ -399,7 +399,7 @@
   "fallback_estimate_basic": "Grundläggande reservberäkning:",
   "ai_retry_later": "Försök igen senare för AI-analys",
   "error_details": "Feldetaljer",
-  "save_configuration": "Save Configuration",
+  "save_configuration": "Spara Konfiguration",
   "configuration_saved": "Konfiguration sparad framgångsrikt!",
   "get_ai_analysis": "Få AI-Analys",
   "systems_installations": "System och installationer",
@@ -467,8 +467,8 @@
   },
   "fire_safety_options": {
     "none": "Utan brandkampsystem",
-    "basic": "Basic (extinguisher, smoke detector)",
-    "standard": "Standard (alarm system, emergency lighting)",
+    "basic": "Grundläggande (släckare, rökdetektor)",
+    "standard": "Standard (larmförsvar, nödljus)",
     "extended": "Utökad (tryskacze, ewakuacja)",
     "full": "Fullt system (gas, övervakning)"
   },
@@ -506,9 +506,9 @@
     "full": "Full montering (komplett installation)"
   },
   "office_equipment_options": {
-    "none": "No equipment (empty container)",
+    "none": "Inget utrustning (tom behållare)",
     "basic": "Basic (skrivbord, stolar, garderob)",
-    "standard": "Standard (furniture set, lighting)",
+    "standard": "Standard (inredningssats, belysning)",
     "full": "Full (komplett kontorsutrustning)"
   },
   "appliances_options": {
@@ -575,7 +575,7 @@
     "project_context": "Projektkontext",
     "project_location": "Projektplats",
     "project_name": "Projektnamn",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "t.ex. Containerkontor - Berlin",
     "file_upload": "Filuppladdning",
     "upload_drawings": "Ladda upp tekniska ritningar",
     "file_formats_help": "Vi stöder PDF-, DWG-, JPG- och PNG -filer. Vi rekommenderar PDF -formatet för bästa analys.",
@@ -590,7 +590,7 @@
     "current_config": "Aktuell Konfiguration",
     "project_context": "Projektkontext",
     "project_name": "Projektnamn",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "t.ex. Containerkontor - Berlin",
     "project_location": "Projektplats",
     "file_upload": "Filuppladdning",
     "upload_drawings": "Ladda upp tekniska ritningar",
@@ -655,25 +655,25 @@
   },
   "roof_modifications": {
     "none": "Utan modifiering (standard platt tak)",
-    "insulation": "Additional roof insulation",
+    "insulation": "Ytterligare takisolering",
     "skylight": "Volontärinstallation",
-    "fans": "Roof ventilation fans",
-    "solar": "Solar panel preparation",
-    "antennas": "Antenna/communication mounts",
-    "sloped": "Sloped roof conversion",
-    "terrace": "Roof terrace/walkway",
-    "snow_removal": "Snow load reinforcement"
+    "fans": "Takventilationsskåp",
+    "solar": "Solpanelberedskap",
+    "antennas": "Antenn-/kommunikationsstöd",
+    "sloped": "Sjuttandsrätvåningskonvertering",
+    "terrace": "Takterrass/promenadbana",
+    "snow_removal": "Snölastbehandling"
   },
   "electrical": {
     "basic": "Basic (belysning + uttag)",
     "standard": "Standard (krets 15A)",
     "industrial": "Industriell (30A + panel)",
     "smart_system": "Smart system (IoT-automation)",
-    "preparation": "Preparation (wiring without equipment)",
-    "none": "No electrical installation",
-    "smart": "Smart (home automation, KNX)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)"
+    "preparation": "Beredskap (monteringsarbete utan utrustning)",
+    "none": "Inget elektriskt anläggande",
+    "smart": "Intelligenta (hemautomatisering, KNX)",
+    "extended": "Utökad (40A, ström, UPS, nöd)",
+    "it_server": "IT/Servrar (UPS, kylning, övervakning)"
   },
   "plumbing": {
     "none": "Inga rör",
@@ -721,15 +721,15 @@
   },
   "paint": {
     "standard": "Standardbeläggning (C2)",
-    "premium": "Premium finish (C3)",
+    "premium": "Premiumfinish (C3)",
     "anti_corrosion": "Antikorrosion (C4)",
     "marine_grade": "Marin kvalitet (C5M)"
   },
   "insulation": {
-    "basic": "Basic (50mm)",
+    "basic": "Grundläggande (50mm)",
     "standard": "Standard (100 mm)",
     "premium": "Premium (150 mm)",
-    "extreme": "Extreme (200mm+)"
+    "extreme": "Extrem (200mm+)"
   },
   "reinforcement": {
     "none": "Ingen förstärkning",
@@ -794,17 +794,17 @@
   "it_systems_none": "Ingen",
   "transport_type_standard": "Standard",
   "advanced_comments": "Avancerade Modifieringar Kommentarer",
-  "delivery_zone_regional": "Regional (200km)",
+  "delivery_zone_regional": "Regionalt (200km)",
   "window_types_double": "Dubbelglas",
   "ventilation": {
-    "none": "No ventilation",
-    "gravity": "Gravity vents (2-4 pcs, adjustable)",
-    "wall_fans": "Wall fans (exhaust)",
-    "mechanical": "Mechanical ventilation",
-    "heat_recovery": "Heat recovery ventilation",
-    "split_ac": "Split air conditioning (cooling + heating)",
-    "central_ac": "Central air conditioning",
-    "industrial": "Industrial ventilation"
+    "none": "Inget ventilationssystem",
+    "gravity": "Gravitationsventiler (2-4 st, justerbara)",
+    "wall_fans": "Väggventilatorer (utblåsning)",
+    "mechanical": "Mechaniskt andningsstöd",
+    "heat_recovery": "Värmeåtervinningssystem",
+    "split_ac": "Split luftkonditionering (kylning + värme)",
+    "central_ac": "Centralvärmepanna",
+    "industrial": "Industriell ventilation"
   },
   "it_systems": "Det system",
   "lighting_professional": "Professionell",
@@ -838,9 +838,9 @@
     "maritime": "Havsklimat (hög luftfuktighet)",
     "mountain": "Mountain Climate (High UV, Snow)",
     "tropical": "Tropiskt klimat (höga temperaturer, luftfuktighet)",
-    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
-    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
-    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "northern_europe": "Nordöstra Europa (Skandinavien, -30°C till +25°C)",
+    "central_europe": "Centrala Europa (Polen, Tyskland, -20°C till +35°C)",
+    "southern_europe": "Sydeuropa (Spanien, Italien, -5°C till +45°C)",
     "continental": "Kontinentalt klimat (extrema fluktuationer)",
     "scandinavian": "Skandinavisk",
     "mediterranean": "Medelhavet",
@@ -862,22 +862,22 @@
   "lighting_label": "Belysning",
   "flooring_label": "Golv",
   "cost_estimation": {
-    "estimate_title": "💰 Project Cost Estimate",
+    "estimate_title": "Projektkostnadsestimation",
     "cost_breakdown_title": "Kostnadsfördelning:",
     "base_container_line": "Bascontainer:",
     "modifications_equipment_line": "Modifieringar och utrustning:",
     "total_cost_line": "TOTALKOSTNAD:",
-    "important_warning": "⚠️ Important:",
+    "important_warning": "⚠️ Varning: Viktig information",
     "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
-    "configuration_saved_success": "✅ Configuration saved successfully!",
+    "configuration_saved_success": "✅ Konfigurationen sparades framgångsrikt!",
     "cost_breakdown": "Kostnadsdelning",
     "total_cost": "Total kostnad",
     "important_notice": "Viktig",
-    "project_estimate": "Project Cost Estimate",
-    "modifications_equipment": "Modifications and equipment",
-    "base_container": "Base container",
-    "configuration_saved": "Configuration saved successfully!",
-    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
+    "project_estimate": "Projektkostnadsestimation",
+    "modifications_equipment": "Ändringar och utrustning",
+    "base_container": "Bastankcontainer",
+    "configuration_saved": "Konfigurationen sparades framgångsrikt!",
+    "preliminary_estimate": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vår team för en exakt offert."
   },
   "estimate_title": "💰 Projektkostnadsuppskattning",
   "cost_breakdown_title": "Kostnadsfördelning:",
@@ -887,7 +887,7 @@
   "important_warning": "⚠️ Viktigt:",
   "preliminary_estimate_full": "Detta är en preliminär uppskattning. Slutpriset beror på detaljerade specifikationer, aktuella materialpriser och tillgänglighet. Kontakta vårt team för en exakt offert.",
   "configuration_saved_success": "✅ Konfiguration sparad framgångsrikt!",
-  "destination": "Destination",
+  "destination": "Målort",
   "window_type": "Fönstertyp",
   "additional_systems_modifications": "Ytterligare System och Modifieringar:",
   "painting": "Målning",

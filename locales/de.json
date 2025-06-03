@@ -13,10 +13,10 @@
     "cancel": "Abbrechen",
     "open": "Öffnen",
     "language_selector": "Sprache / Language",
-    "back_to_home": "← Back to Home",
-    "go_to_ai_estimate": "🤖 Go to AI Estimate →",
-    "go_to_configurator": "🔧 Go to Configurator",
-    "get_ai_estimate": "🤖 Get AI Estimate",
+    "back_to_home": "Zurück zur Startseite",
+    "go_to_ai_estimate": "Gehe zu AI-Schätzung →",
+    "go_to_configurator": "🔧 Gehe zur Konfigurator",
+    "get_ai_estimate": "Roboter 🤖 berechnet AI-Schätzung",
     "access_denied": "Zugang Verweigert"
   },
   "nav": {
@@ -24,7 +24,7 @@
     "comparison_tool_desc": "Konfigurationen vergleichen",
     "drawing_analysis": "Zeichnungs\nanalyse",
     "drawing_analysis_desc": "KI-Dokumentenanalyse",
-    "admin_panel": "Admin\nPanel",
+    "admin_panel": "Verwaltungspanel",
     "admin_panel_desc": "Systemmanagement",
     "ai_cost_estimation": "KI-Kostenschätzung",
     "container_configurator": "Containerkonfigurator",
@@ -199,7 +199,7 @@
       "carpet": "Teppich",
       "hardwood": "Hartholz",
       "polished_concrete": "Polierter Beton",
-      "none": "No Flooring"
+      "none": "Kein Bodenbelag"
     }
   },
   "purposes": {
@@ -233,7 +233,7 @@
   "ai": {
     "models": {
       "openai_gpt4": "OpenAI GPT-4O",
-      "anthropic_claude": "Anthropic Claude",
+      "anthropic_claude": "Anthropischer Claude",
       "auto_select": "Automatische Auswahl"
     },
     "messages": {
@@ -278,7 +278,7 @@
       "up_to_50k": "Bis €50.000",
       "50k_100k": "€50.000 - €100.000",
       "100k_200k": "€100.000 - €200.000",
-      "over_200k": "Over €200,000"
+      "over_200k": "Über 200.000 Euro"
     },
     "additional_requirements": "Zusätzliche Anforderungen",
     "inquiry_type": "Art der Anfrage",
@@ -330,8 +330,8 @@
     "preparation_tips": "Tipps für beste Ergebnisse",
     "budget_Range": "Haushaltsumfang"
   },
-  "back_to_home": "← Return to Home Page",
-  "go_to_configurator": "🔧 Go to Configurator",
+  "back_to_home": "Zurück zur Startseite",
+  "go_to_configurator": "🔧 Gehe zur Konfigurator",
   "employee_tools": "Mitarbeiter-Tools",
   "ai_cost_estimation": "KI-Kostenschätzung",
   "ai_powered_estimation": "Bewertung der Behältermodifikation mit AI",
@@ -362,7 +362,7 @@
   "estimate_saved": "Schätzung erfolgreich gespeichert",
   "additional_project_details": "Zusätzliche Projektdetails",
   "project_specific_requirements": "Projektspezifische Anforderungen & Kommentare",
-  "project_comment_placeholder": "Please describe any specific requirements, constraints, or special considerations for your container project (e.g., 'Need extra insulation for cold climate', 'Must be delivered by specific date', 'Budget is limited to €15,000', etc.)",
+  "project_comment_placeholder": "Beschreiben Sie bitte spezifische Anforderungen, Einschränkungen oder besondere Überlegungen für Ihr Container-Projekt (z.B. 'Braucht extra Dämmung für kalten Klima', 'Muss bis zu einem bestimmten Datum geliefert werden', 'Budget ist auf €15.000 begrenzt', usw.).",
   "project_comment_help": "Je mehr Details Sie liefern, desto genauer und die besser angepasste KI -Analyse wird sein.",
   "specific_considerations": "Spezifische Überlegungen",
   "special_location_requirements": "Spezielle Standort/Orte Anforderungen",
@@ -400,7 +400,7 @@
   "fallback_estimate_basic": "Grundlegende Berechnung Fallback:",
   "ai_retry_later": "Bitte versuchen Sie es später für AI-Analyse",
   "error_details": "Fehlerdetails",
-  "save_configuration": "Save Configuration",
+  "save_configuration": "Konfiguration speichern",
   "configuration_saved": "Konfiguration erfolgreich gespeichert!",
   "get_ai_analysis": "AI-Analyse erhalten",
   "systems_installations": "Systeme und Installationen",
@@ -488,7 +488,7 @@
   },
   "delivery_zone_options": {
     "local": "Lokal (bis 50km)",
-    "regional": "Regional (50-200km)",
+    "regional": "Regional (50-200km) \n\nÜbersetzung:\nRegional (50-200km)",
     "national": "National (ganzes Land)",
     "central_europe": "Mitteleuropa (DE, CZ, SK, AT)",
     "western_europe": "Westeuropa (FR, NL, BE, LU)",
@@ -576,7 +576,7 @@
     "project_context": "Projektkontext",
     "project_location": "Projektstandort",
     "project_name": "Projektname",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "z.B. Container Büro - Berlin",
     "file_upload": "Datei Upload",
     "upload_drawings": "Technische Zeichnungen hochladen",
     "file_formats_help": "Wir unterstützen PDF-, DWG-, JPG- und PNG -Dateien. Wir empfehlen das PDF -Format für die beste Analyse.",
@@ -591,7 +591,7 @@
     "current_config": "Aktuelle Konfiguration",
     "project_context": "Projekt-Kontext",
     "project_name": "Projektname",
-    "project_name_placeholder": "e.g. Container Office - Berlin",
+    "project_name_placeholder": "z.B. Containerbüro - Berlin",
     "project_location": "Projektstandort",
     "file_upload": "Datei-Upload",
     "upload_drawings": "Technische Zeichnungen hochladen",
@@ -670,11 +670,11 @@
     "standard": "Standard (Schaltung 15a)",
     "industrial": "Industriell (30A + Schaltschrank)",
     "smart_system": "Smart System (IoT Automatisierung)",
-    "preparation": "Preparation (wiring without equipment)",
-    "none": "No electrical installation",
-    "smart": "Smart (home automation, KNX)",
-    "extended": "Extended (40A, power, UPS, emergency)",
-    "it_server": "IT/Server (UPS, cooling, monitoring)"
+    "preparation": "Vorbereitung (Verdrahtung ohne Ausrüstung)",
+    "none": "Keine elektrische Installation",
+    "smart": "Smart (Heimautomatisierung, KNX)",
+    "extended": "Erweiterbar (40A, Leistung, UPS, Notstrom)",
+    "it_server": "IT/Server (UPS, Kühlung, Überwachung)"
   },
   "plumbing": {
     "none": "Keine Installation",
@@ -763,7 +763,7 @@
   "paint_finish_premium": "Prämie",
   "construction_material_steel": "Stahl",
   "security_systems_none": "Keiner",
-  "fire_systems_basic": "Basic",
+  "fire_systems_basic": "Grundlegend",
   "exterior_cladding_none": "Keiner",
   "fire_systems_none": "Keiner",
   "roof_modifications_solar": "Sonnenkollektoren",
@@ -786,10 +786,10 @@
   "transport_type_special": "Besonderer Transport",
   "security_systems_basic": "Basic",
   "transport_type_crane": "Mit Kran",
-  "delivery_zone_national": "National",
+  "delivery_zone_national": "Nationale",
   "appliances_none": "Keiner",
   "roof_modifications_none": "Keiner",
-  "lighting_basic": "Basic LED",
+  "lighting_basic": "Grundlegende LED",
   "additional_openings_emergency": "Notausgang",
   "office_equipment_none": "Keiner",
   "it_systems_none": "Keiner",
@@ -808,7 +808,7 @@
     "industrial": "Industrielle Belüftung"
   },
   "it_systems": "IT -Systeme",
-  "lighting_professional": "Professional",
+  "lighting_professional": "Berufsmäßig, Profi oder Beruflicher",
   "interior_layout_open": "Offener Raum",
   "appliances_kitchen": "Küchenausrüstung",
   "exterior_cladding_wood": "Holz",
@@ -836,9 +836,9 @@
     "specialist": "Spezialist (medizinische/Laborstandard)"
   },
   "climate_zones": {
-    "northern_europe": "Northern Europe (Scandinavia, -30°C to +25°C)",
-    "central_europe": "Central Europe (Poland, Germany, -20°C to +35°C)",
-    "southern_europe": "Southern Europe (Spain, Italy, -5°C to +45°C)",
+    "northern_europe": "Nordwesteuropa (Skandinavien, -30°C bis +25°C)",
+    "central_europe": "Mitteleuropa (Polen, Deutschland, -20°C bis +35°C)",
+    "southern_europe": "Südeuropa (Spanien, Italien, -5°C bis +45°C)",
     "continental": "Kontinentalklima (extreme Schwankungen)",
     "maritime": "Seeklima (hohe Luftfeuchtigkeit)",
     "mountain": "Gebirgsklima (hohe UV-Strahlung, Schnee)",
@@ -860,22 +860,22 @@
     "marine": "Marine/Werft (ätzende Umgebung)"
   },
   "cost_estimation": {
-    "estimate_title": "💰 Project Cost Estimate",
+    "estimate_title": "Projektkostenabschätzung",
     "cost_breakdown_title": "Kostenaufschlüsselung:",
     "base_container_line": "Basis-Container:",
     "modifications_equipment_line": "Änderungen und Ausstattung:",
     "total_cost_line": "GESAMTKOSTEN:",
-    "important_warning": "⚠️ Important:",
+    "important_warning": "⚠️ Wichtig:",
     "preliminary_estimate_full": "Dies ist eine vorläufige Schätzung. Der endgültige Preis hängt von detaillierten Spezifikationen, aktuellen Materialpreisen und Verfügbarkeit ab. Kontaktieren Sie unser Team für ein genaues Angebot.",
-    "configuration_saved_success": "✅ Configuration saved successfully!",
+    "configuration_saved_success": "✅ Die Konfiguration wurde erfolgreich gespeichert!",
     "cost_breakdown": "Kostensteilung",
     "total_cost": "Gesamtkosten",
     "important_notice": "Wichtig",
-    "project_estimate": "Project Cost Estimate",
-    "modifications_equipment": "Modifications and equipment",
-    "configuration_saved": "Configuration saved successfully!",
-    "base_container": "Base container",
-    "preliminary_estimate": "This is a preliminary estimate. Final price depends on detailed specifications, current material prices and availability. Contact our team for an accurate quote."
+    "project_estimate": "Projektkostenabschätzung",
+    "modifications_equipment": "Modifikationen und Ausrüstung",
+    "configuration_saved": "Konfiguration wurde erfolgreich gespeichert!",
+    "base_container": "Grundcontainer",
+    "preliminary_estimate": "Dies ist eine vorläufige Schätzung. Der endgültige Preis hängt von den detaillierten Spezifikationen, den aktuellen Materialpreisen und der Verfügbarkeit ab. Kontaktieren Sie unser Team für einen genauen Angebotspreis."
   },
   "destination": "Bestimmung",
   "window_type": "Fenstertyp",
@@ -883,6 +883,6 @@
   "painting": "Lackierung",
   "assembly": "Montage",
   "flooring_label": "Böden",
-  "lighting_label": "Lighting",
-  "window_types_label": "Window Types"
+  "lighting_label": "Beleuchtung",
+  "window_types_label": "Fensterarten"
 }
