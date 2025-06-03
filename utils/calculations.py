@@ -11,15 +11,15 @@ from datetime import datetime
 
 # Cache lookup tables - Enhanced with all container types
 BASE_COSTS = {
-    "10ft Compact": 6000,
-    "20ft Standard": 8000,
-    "20ft High Cube": 9000,
-    "40ft Standard": 12000,
-    "40ft High Cube": 14000,
-    "20ft Refrigerated": 15000,
-    "Multi-unit Container": 25000,
-    "Custom Size Container": 18000,
-    "Refurbished Container": 6500
+    "10ft Compact": 2000,
+    "20ft Standard": 2400,
+    "20ft High Cube": 2500,
+    "40ft Standard": 2800,
+    "40ft High Cube": 3000,
+    "20ft Refrigerated": 4000,
+    "Multi-unit Container": 6000,
+    "Custom Size Container": 6000,
+    "Refurbished Container": 4500
 }
 
 USE_CASE_MULTIPLIERS = {
