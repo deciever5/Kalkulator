@@ -227,54 +227,11 @@
       "hvac_system": "Système CVC",
       "insulation_package": "Package d'isolation",
       "structural_reinforcement": "Renforcement structurel",
-      "delivery_zone": "Zone de livraison",
-      "building_type": "Type de bâtiment",
-      "dimensions": "Dimensions",
-      "width": "Largeur (m)",
-      "length": "Longueur (m)",
-      "height": "Hauteur (m)",
-      "wall_thickness": "Épaisseur des murs (mm)",
-      "insulation": "Isolation",
-      "insulation_thickness": "Épaisseur d'isolation (mm)",
-      "entrance": "Entrée",
-      "entrance_type": "Type d'entrée",
-      "windows": "Fenêtres",
-      "window_count": "Nombre de fenêtres",
-      "window_size": "Taille de fenêtre",
-      "electrical": "Électricité",
-      "plumbing": "Plomberie",
-      "heating": "Chauffage",
-      "ventilation": "Ventilation",
-      "ceiling": "Plafond",
-      "finish": "Finition",
-      "exterior_finish": "Finition extérieure",
-      "interior_finish": "Finition intérieure",
-      "additional_features": "Fonctionnalités supplémentaires",
-      "quantity": "Quantité",
-      "location": "Emplacement",
-      "project_timeline": "Calendrier du projet"
+      "delivery_zone": "Zone de livraison"
     },
-    "placeholders": {
-      "enter_width": "Entrez la largeur",
-      "enter_length": "Entrez la longueur",
-      "enter_height": "Entrez la hauteur",
-      "select_option": "Sélectionnez une option",
-      "enter_quantity": "Entrez la quantité",
-      "enter_location": "Entrez l'emplacement"
-    },
+    "placeholders": {},
     "options": {
-      "container_types": {
-        "office": "Conteneur de bureau",
-        "residential": "Conteneur résidentiel",
-        "storage": "Conteneur de stockage",
-        "workshop": "Atelier",
-        "restaurant": "Restaurant/café",
-        "medical": "Cabinet médical",
-        "educational": "Salle de classe",
-        "retail": "Point de vente",
-        "industrial": "Industriel",
-        "agricultural": "Agricole"
-      }
+      "container_types": {}
     }
   },
   "ai": {

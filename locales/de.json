@@ -247,7 +247,6 @@
   "send_inquiry": {
     "title": "Abfrageform",
     "description": "Erhalten Sie ein detailliertes Angebot, das auf Ihr Containerprojekt zugeschnitten ist",
-    "project_name_placeholder": "z.B. Container-Büro - Poznań",
     "special_requirements_placeholder": "Beschreiben Sie zusätzliche Anforderungen, technische Spezifikationen, Standards, um ...",
     "additional_message_placeholder": "Alle zusätzlichen Informationen, mit denen Sie ein besseres Angebot erstellen können ...",
     "disclaimer_title": "Wichtige Informationen",

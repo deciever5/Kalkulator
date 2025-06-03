@@ -227,54 +227,11 @@
       "hvac_system": "HVAC systém",
       "insulation_package": "Izolačný balík",
       "structural_reinforcement": "Štrukturálne zosilnenie",
-      "delivery_zone": "Dodávka",
-      "building_type": "Typ budovy",
-      "dimensions": "Rozmery",
-      "width": "Šírka (m)",
-      "length": "Dĺžka (m)",
-      "height": "Výška (m)",
-      "wall_thickness": "Hrúbka steny (mm)",
-      "insulation": "Izolácia",
-      "insulation_thickness": "Hrúbka izolácie (mm)",
-      "entrance": "Vstup",
-      "entrance_type": "Typ vstupu",
-      "windows": "Okná",
-      "window_count": "Počet okien",
-      "window_size": "Veľkosť okna",
-      "electrical": "Elektrina",
-      "plumbing": "Inštalatérstvo",
-      "heating": "Kúrenie",
-      "ventilation": "Vetranie",
-      "ceiling": "Strop",
-      "finish": "Dokončenie",
-      "exterior_finish": "Vonkajšie dokončenie",
-      "interior_finish": "Vnútorné dokončenie",
-      "additional_features": "Dodatočné funkcie",
-      "quantity": "Množstvo",
-      "location": "Umiestnenie",
-      "project_timeline": "Časový harmonogram projektu"
+      "delivery_zone": "Dodávka"
     },
-    "placeholders": {
-      "enter_width": "Zadajte šírku",
-      "enter_length": "Zadajte dĺžku",
-      "enter_height": "Zadajte výšku",
-      "select_option": "Vyberte možnosť",
-      "enter_quantity": "Zadajte množstvo",
-      "enter_location": "Zadajte umiestnenie"
-    },
+    "placeholders": {},
     "options": {
-      "container_types": {
-        "office": "Kancelársky kontajner",
-        "residential": "Obytný kontajner",
-        "storage": "Skladový kontajner",
-        "workshop": "Dielňa",
-        "restaurant": "Reštaurácia/kaviareň",
-        "medical": "Lekárska ordinácia",
-        "educational": "Učebňa",
-        "retail": "Predajné miesto",
-        "industrial": "Priemyselný",
-        "agricultural": "Poľnohospodársky"
-      }
+      "container_types": {}
     }
   },
   "ai": {

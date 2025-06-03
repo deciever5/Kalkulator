@@ -227,54 +227,11 @@
       "hvac_system": "HVAC-järjestelmä",
       "insulation_package": "Eristyspaketti",
       "structural_reinforcement": "Rakenteellinen vahvistus",
-      "delivery_zone": "Toimitusalue",
-      "building_type": "Rakennustyyppi",
-      "dimensions": "Mitat",
-      "width": "Leveys (m)",
-      "length": "Pituus (m)",
-      "height": "Korkeus (m)",
-      "wall_thickness": "Seinän paksuus (mm)",
-      "insulation": "Eristys",
-      "insulation_thickness": "Eristyksen paksuus (mm)",
-      "entrance": "Sisäänkäynti",
-      "entrance_type": "Sisäänkäynnin tyyppi",
-      "windows": "Ikkunat",
-      "window_count": "Ikkunoiden määrä",
-      "window_size": "Ikkunan koko",
-      "electrical": "Sähkö",
-      "plumbing": "Putket",
-      "heating": "Lämmitys",
-      "ventilation": "Ilmanvaihto",
-      "ceiling": "Katto",
-      "finish": "Viimeistely",
-      "exterior_finish": "Ulkopinnan viimeistely",
-      "interior_finish": "Sisäpinnan viimeistely",
-      "additional_features": "Lisäominaisuudet",
-      "quantity": "Määrä",
-      "location": "Sijainti",
-      "project_timeline": "Projektin aikataulu"
+      "delivery_zone": "Toimitusalue"
     },
-    "placeholders": {
-      "enter_width": "Anna leveys",
-      "enter_length": "Anna pituus",
-      "enter_height": "Anna korkeus",
-      "select_option": "Valitse vaihtoehto",
-      "enter_quantity": "Anna määrä",
-      "enter_location": "Anna sijainti"
-    },
+    "placeholders": {},
     "options": {
-      "container_types": {
-        "office": "Toimistokontti",
-        "residential": "Asuinkontti",
-        "storage": "Varastokontti",
-        "workshop": "Työpaja",
-        "restaurant": "Ravintola/kahvila",
-        "medical": "Lääkärin vastaanotto",
-        "educational": "Luokkahuone",
-        "retail": "Myyntipiste",
-        "industrial": "Teollisuus",
-        "agricultural": "Maatalous"
-      }
+      "container_types": {}
     }
   },
   "ai": {
@@ -312,16 +269,7 @@
     "budget_range": "Rahoitusalue",
     "next_steps": "Mitä Seuraavaksi",
     "submit_inquiry": "Lähetä Hakemus",
-    "cost_estimation": {
-      "estimate_title": "💰 Projektin Kustannusarvio",
-      "cost_breakdown_title": "\"Kustannusten jakaminen:\"\n\nKäytän tässä yhteydessä seuraavia ohjeita:\n\n- Ammattitaitoinen liiketoimintatoni\n- Säilytä emojis ja symbolit (💰, ⚠️, ✅)\n- Säilytä muotoilu (kolonit, pisteet)\n- Käytä sopivaa valuuttaa/yrityskäsitettä\n- Säilytä luonnollinen suomenkielinen ääni\n\nKun kääntäessäsi tekstiä, muista pitää huolta siitä, että käännös on luonnollinen ja ammattimainen.",
-      "base_container_line": "Kontinerin perusversio: 💰\n\nTässä kohtaa voit määrittää perusversioksi valitun kontinerin ominaisuudet ja kustannukset. Huomioi, että muutokset perusversioon voivat vaikuttaa koko kustannukseen. ⚠️\n\nVoit valita perusversioksi olemassa olevan kontinerin tai luoda uuden. Tämän jälkeen voit määrittää kontinerin mitat, materiaalit ja muut ominaisuudet. ✅",
-      "modifications_equipment_line": "Määrittelyt ja varustukset:\n\nKäännös on tehty yllä mainituilla vaatimuksilla huomioiden:\n\n- Ammattitaitoinen liiketoimintatoni\n- Emoji- ja symbolien säilyttäminen (💰, ⚠️, ✅)\n- Muotoilun säilyttäminen (kolonit, pisteet)\n- Oikeanlainen valuutta- ja liiketoimintaterminologia\n- Luonnollinen suomenkielinen äänenkannattaminen\n\nKäännös on seuraava:\n\nMäärittelyt ja varustukset:\n\nJos haluat, voit lisätä tämän kappaleen tekstiin.",
-      "total_cost_line": "YHTEINEN KUSTANNUKSET: 💰\n\nTämä teksti on suoraan käännetty, mutta se voi vaikuttaa hieman epämukavaksi lukijalle. Yleensä suomennoksessa olisi käytetty muotoa \"Yhteinen kustannus\" tai \"Yhteiskustannukset\". \n\nJos haluatte, voimme muuttaa tekstiä hieman muotoiluun sopivammaksi. Esimerkiksi:\n\nYHTEINEN KUSTANNUKSET: 💰\n\nTai:\n\nYHTEISKUSTANNUKSET: 💰\n\nValitse sopivin muoto, joka sopii parhaiten kustannusarvioinnin käyttöliittymän tyyliin.",
-      "important_warning": "Finnish translation: \"⚠️ Huomio:\"\n\nExplanation:\n- \"Ważne\" translates to \"Huomio\" in Finnish, which means \"Important\" or \"Note\".\n- The emoji ⚠️ is preserved as it is, as it's a warning symbol.\n- The rest of the text remains the same, maintaining the professional business tone and formatting.",
-      "preliminary_estimate_full": "Tämä on alustava arvio. Lopullinen hinta riippuu yksityiskohtaisista määrittelyistä, nykyisistä materiaalien hinnoista ja saatavuudesta. Ota yhteyttä tiimiimme tarkan tarjouksen saamiseksi.",
-      "configuration_saved_success": "✅ Konfiguraatio tallennettu onnistuneesti!"
-    },
+    "cost_estimation": {},
     "timeline": {
       "asap": "Niin pian kuin mahdollista",
       "within_month": "Kuukauden sisällä",
@@ -483,7 +431,6 @@
   "appliances": "Kodinkoneet (asuinkonteille)",
   "it_multimedia": "IT- ja multimediajärjestelmät",
   "special_notes_general": "Erityishuomautukset - Yleinen",
-  "describe_generalrequirements": "Kuvaile kaikki lisävaatimukset, spesifikaatiot tai projektin rajoitukset...",
   "general_requirements_placeholder": "esim. Erityiset valmistumispäivämäärät, sertifiointivaatimukset, budjettirajoitukset",
   "interior_layout_options": {
     "open_space": "Avoin tila (ei väliseiniä)",

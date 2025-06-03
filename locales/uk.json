@@ -227,54 +227,11 @@
       "hvac_system": "Система охолодження та вентиляції приміщень.",
       "insulation_package": "Пакет ізоляції",
       "structural_reinforcement": "Структурне підсилення",
-      "delivery_zone": "Зона доставки",
-      "building_type": "Тип будівлі",
-      "dimensions": "Розміри",
-      "width": "Ширина (м)",
-      "length": "Довжина (м)",
-      "height": "Висота (м)",
-      "wall_thickness": "Товщина стін (мм)",
-      "insulation": "Ізоляція",
-      "insulation_thickness": "Товщина ізоляції (мм)",
-      "entrance": "Вхід",
-      "entrance_type": "Тип входу",
-      "windows": "Вікна",
-      "window_count": "Кількість вікон",
-      "window_size": "Розмір вікна",
-      "electrical": "Електрика",
-      "plumbing": "Сантехніка",
-      "heating": "Опалення",
-      "ventilation": "Вентиляція",
-      "ceiling": "Стеля",
-      "finish": "Оздоблення",
-      "exterior_finish": "Зовнішнє оздоблення",
-      "interior_finish": "Внутрішнє оздоблення",
-      "additional_features": "Додаткові функції",
-      "quantity": "Кількість",
-      "location": "Розташування",
-      "project_timeline": "Часові рамки проекту"
+      "delivery_zone": "Зона доставки"
     },
-    "placeholders": {
-      "enter_width": "Введіть ширину",
-      "enter_length": "Введіть довжину",
-      "enter_height": "Введіть висоту",
-      "select_option": "Оберіть варіант",
-      "enter_quantity": "Введіть кількість",
-      "enter_location": "Введіть розташування"
-    },
+    "placeholders": {},
     "options": {
-      "container_types": {
-        "office": "Офісний контейнер",
-        "residential": "Житловий контейнер",
-        "storage": "Складський контейнер",
-        "workshop": "Майстерня",
-        "restaurant": "Ресторан/кафе",
-        "medical": "Медична клініка",
-        "educational": "Класна кімната",
-        "retail": "Торгова точка",
-        "industrial": "Промисловий",
-        "agricultural": "Сільськогосподарський"
-      }
+      "container_types": {}
     }
   },
   "ai": {

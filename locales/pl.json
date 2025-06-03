@@ -147,9 +147,6 @@
       "industrial": "Przemysłowe"
     },
     "climate_zones": {
-      "northern_europe": "Europa Północna (Skandynawia, -30°C do +25°C)",
-      "central_europe": "Europa Środkowa (Polska, Niemcy, -20°C do +35°C)",
-      "southern_europe": "Europa Południowa (Hiszpania, Włochy, -5°C do +45°C)",
       "continental": "Klimat kontynentalny (ekstremalne wahania)",
       "maritime": "Klimat morski (łagodne, wilgotne)",
       "mountain": "Klimat górski (niskie temperatury, silne wiatry)",
@@ -662,9 +659,7 @@
     "margins_pricing": "Marże & Wycena",
     "historical_data": "Dane Historyczne",
     "user_management": "Zarządzanie Użytkownikami",
-    "system_settings": "Ustawienia Systemu",
-    "default_language": "Język Domyślny",
-    "default_currency": "Waluta Domyślna"
+    "system_settings": "Ustawienia Systemu"
   },
   "air_intakes_label": "Nawiewy i wentylacja",
   "roof_modifications_label": "Modyfikacje Dachu",
@@ -702,29 +697,14 @@
     "none": "Bez instalacji",
     "basic": "Podstawowa (zlewozmywak + odpływ)",
     "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna",
-    "preparation": "Przygotowanie (rury bez armatury)",
-    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
-    "cold_water": "Instalacja zimnej wody (zlew)",
-    "hot_cold_water": "Zimna + ciepła woda (zlev, umywalka)",
-    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
-    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
-    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
-    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
+    "commercial": "Klasa komercyjna"
   },
   "hvac": {
     "none": "Bez HVAC",
     "basic": "Wentylacja podstawowa",
     "split_system": "System klimatyzacji rozdzielnej",
     "central": "Centralna klimatyzacja",
-    "heat_pump": "Pompa ciepła",
-    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
-    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
-    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
-    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
-    "electric_heaters": "Grzejniki elektryczne (1-3kW, konwektory)",
-    "vrv_vrf": "System VRV/VRF (wielostrefowy, kontrola stref)",
-    "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)"
+    "heat_pump": "Pompa ciepła"
   },
   "security": {
     "basic": "Podstawowa (wzmocnione zamki)",
@@ -842,10 +822,7 @@
     "heat_recovery": "Wentylacja z odzyskiem ciepła",
     "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
     "central_ac": "Centralna klimatyzacja",
-    "industrial": "Wentylacja przemysłowa",
-    "natural": "Wentylacja naturalna",
-    "forced": "Wentylacja wymuszona",
-    "hvac": "Pełne HVAC"
+    "industrial": "Wentylacja przemysłowa"
   },
   "it_systems": "Systemy IT",
   "lighting_professional": "Profesjonalne",
@@ -883,7 +860,6 @@
     "maritime": "Klimat morski (łagodne, wilgotne)",
     "mountain": "Klimat górski (niskie temperatury, silne wiatry)",
     "tropical": "Klimat tropikalny (wysokie temperatury, wilgotność)",
-    "central_european": "Europa Środkowa",
     "scandinavian": "Skandynawski",
     "mediterranean": "Śródziemnomorski",
     "atlantic_maritime": "Atlantycki Morski",
