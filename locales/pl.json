@@ -665,20 +665,40 @@
     "basic": "Podstawowa (oświetlenie + gniazdka)",
     "standard": "Standardowa (obwód 15A)",
     "industrial": "Przemysłowa (30A + rozdzielnia)",
-    "smart_system": "System inteligentny (automatyka)"
+    "smart_system": "System inteligentny (automatyka)",
+    "none": "Bez instalacji elektrycznej",
+    "preparation": "Przygotowanie (przewody bez wyposażenia)",
+    "extended": "Rozszerzony (40A, siła, UPS, emergency)",
+    "it_server": "IT/Serwerowy (UPS, chłodzenie, monitoring)",
+    "smart": "Inteligentny (smart home, KNX, automatyka)"
   },
   "plumbing": {
     "none": "Bez instalacji",
     "basic": "Podstawowa (zlewozmywak + odpływ)",
     "full": "Pełna (przygotowanie łazienki)",
-    "commercial": "Klasa komercyjna"
+    "commercial": "Klasa komercyjna",
+    "preparation": "Przygotowanie (rury bez armatury)",
+    "industrial": "Instalacja przemysłowa (ciśnieniowa, filtracja)",
+    "cold_water": "Instalacja zimnej wody (zlew)",
+    "hot_cold_water": "Zimna + ciepła woda (zlev, umywalka)",
+    "basic_sanitary": "Podstawowy węzeł sanitarny (WC + umywalka)",
+    "standard_sanitary": "Standardowy węzeł (WC + umywalka + prysznic)",
+    "comfort_sanitary": "Komfortowy węzeł (WC + umywalka + kabina)",
+    "premium_sanitary": "Premium węzeł (jacuzzi, bidet, 2 umywalki)"
   },
   "hvac": {
     "none": "Bez HVAC",
     "basic": "Wentylacja podstawowa",
     "split_system": "System klimatyzacji rozdzielnej",
     "central": "Centralna klimatyzacja",
-    "heat_pump": "Pompa ciepła"
+    "heat_pump": "Pompa ciepła",
+    "electric_heating": "Ogrzewanie elektryczne (promienniki IR)",
+    "gas_heating": "Ogrzewanie gazowe (piec kondensacyjny)",
+    "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
+    "central_ac": "Centrala klimatyzacyjna (z filtracją, nawilżaniem)",
+    "electric_heaters": "Grzejniki elektryczne (1-3kW, konwektory)",
+    "vrv_vrf": "System VRV/VRF (wielostrefowy, kontrola stref)",
+    "underfloor_heating": "Ogrzewanie podłogowe (elektryczne/wodne)"
   },
   "security": {
     "basic": "Podstawowa (wzmocnione zamki)",
@@ -796,7 +816,10 @@
     "heat_recovery": "Wentylacja z odzyskiem ciepła",
     "split_ac": "Klimatyzacja rozdzielna (chłodzenie + grzanie)",
     "central_ac": "Centralna klimatyzacja",
-    "industrial": "Wentylacja przemysłowa"
+    "industrial": "Wentylacja przemysłowa",
+    "natural": "Wentylacja naturalna",
+    "forced": "Wentylacja wymuszona",
+    "hvac": "Pełne HVAC"
   },
   "it_systems": "Systemy IT",
   "lighting_professional": "Profesjonalne",
