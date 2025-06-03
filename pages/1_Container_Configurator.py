@@ -697,67 +697,67 @@ with st.form("container_configuration_form"):
         """, unsafe_allow_html=True)
         
         with st.container():
-            st.markdown(f"## {t('cost_estimation.estimate_title')}")
-            st.markdown(f"### {t('cost_estimation.cost_breakdown_title')}")
+            st.markdown(f"## {t('cost_estimation_detailed.project_estimate_title')}")
+            st.markdown(f"### {t('cost_estimation_detailed.cost_breakdown_title')}")
             
             # Materials & Equipment Section
-            with st.expander("📦 Materials & Equipment", expanded=True):
+            with st.expander(f"📦 {t('cost_estimation_detailed.materials_equipment')}", expanded=True):
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write(f"• {t('cost_estimation.base_container_line')}")
+                    st.write(f"• {t('cost_estimation_detailed.base_container_line')}")
                 with col2:
                     st.write(f"**€{base_price:,.0f}**")
                     
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write(f"• {t('cost_estimation.modifications_equipment_line')}")
+                    st.write(f"• {t('cost_estimation_detailed.modifications_equipment_line')}")
                 with col2:
                     st.write(f"**€{modifications_cost:,.0f}**")
                     
                 st.divider()
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write("**Materials Subtotal**")
+                    st.write(f"**{t('cost_estimation_detailed.materials_subtotal')}**")
                 with col2:
                     st.write(f"**€{material_cost:,.0f}**")
             
             # Labor & Installation Section
-            with st.expander("⚙️ Labor & Installation", expanded=True):
+            with st.expander(f"⚙️ {t('cost_estimation_detailed.labor_installation')}", expanded=True):
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write(f"• Estimated Hours: {labor_hours:.0f}h")
+                    st.write(f"• {t('cost_estimation_detailed.estimated_hours', hours=labor_hours)}")
                 with col2:
                     st.write("")
                     
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write("• Professional Installation")
+                    st.write(f"• {t('cost_estimation_detailed.professional_installation')}")
                 with col2:
                     st.write(f"**€{labor_cost:,.0f}**")
                     
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write(f"• Use Case Complexity ({use_case_multiplier:.1f}x)")
+                    st.write(f"• {t('cost_estimation_detailed.use_case_complexity', multiplier=use_case_multiplier)}")
                 with col2:
-                    st.write("Applied")
+                    st.write(t('cost_estimation_detailed.applied'))
             
             # Business Costs Section
-            with st.expander("💼 Business Costs", expanded=True):
+            with st.expander(f"💼 {t('cost_estimation_detailed.business_costs')}", expanded=True):
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write("• Operating Costs (45%)")
+                    st.write(f"• {t('cost_estimation_detailed.operating_costs')}")
                 with col2:
                     st.write(f"**€{operating_costs:,.0f}**")
                     
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write("• Company Profit Margin (20%)")
+                    st.write(f"• {t('cost_estimation_detailed.company_profit_margin')}")
                 with col2:
                     st.write(f"**€{profit_margin:,.0f}**")
                     
                 col1, col2 = st.columns([3, 1])
                 with col1:
-                    st.write("• Delivery & Logistics")
+                    st.write(f"• {t('cost_estimation_detailed.delivery_logistics')}")
                 with col2:
                     st.write(f"**€{delivery_cost:,.0f}**")
             
@@ -765,24 +765,23 @@ with st.form("container_configuration_form"):
             st.divider()
             col1, col2 = st.columns([3, 1])
             with col1:
-                st.markdown(f"## {t('cost_estimation.total_cost_line')}")
+                st.markdown(f"## {t('cost_estimation_detailed.total_cost_final')}")
             with col2:
                 st.markdown(f"## **€{total_cost:,.0f}**")
             
             # Additional Information
-            st.info("**Price includes:** All materials, professional installation, operating costs, and profit margin.\n\n**VAT:** Not included (added separately for applicable customers)")
+            st.info(f"**{t('cost_estimation_detailed.price_includes')}**\n\n**{t('cost_estimation_detailed.vat_notice')}**")
             
             # Special Notes
-            st.warning(f"**{t('cost_estimation.important_warning')}** {t('cost_estimation.preliminary_estimate_full')}")
+            st.warning(f"**⚠️ {t('cost_estimation_detailed.important_notice')}**")
             
-            st.markdown("""
-            **Configuration Impact:** All your configurator selections are reflected in this pricing. 
-            Complex configurations require more materials, labor hours, and specialized work, which increases the total cost.
+            st.markdown(f"""
+            **{t('cost_estimation_detailed.configuration_impact')}**
             
-            **Cost Structure:** Our pricing includes buying necessary items + professional installation work + operating costs + fair profit margin to ensure quality service.
+            **{t('cost_estimation_detailed.cost_structure')}**
             """)
 
-        st.success(t('cost_estimation.configuration_saved_success'))
+        st.success(t('cost_estimation_detailed.configuration_saved_success'))
 
 # Navigation buttons (outside form, only show if configuration exists)
 if 'container_config' in st.session_state and st.session_state.container_config:
